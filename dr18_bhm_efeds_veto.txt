@@ -1,0 +1,33 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+programname - 
+chunk - 
+platesn2 - 
+plate - 
+tile - 
+mjd - 
+fiberid - 
+run2d - 
+run1d - 
+plug_ra - 
+plug_dec - 
+z_err - 
+rchi2 - 
+dof - 
+rchi2diff - 
+wavemin - 
+wavemax - 
+wcoverage - 
+zwarning - 
+sn_median_all - 
+anyandmask - 
+anyormask - 
+pk - 
+

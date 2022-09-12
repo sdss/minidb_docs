@@ -1,0 +1,38 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+pix_32768 - 
+ra - 
+dec - 
+down_pix - 
+tile_32 - 
+valid_gaia - 
+selected_gaia - 
+sep_neighbour_gaia - 
+mag_neighbour_gaia - 
+valid_ls8 - 
+selected_ls8 - 
+sep_neighbour_ls8 - 
+mag_neighbour_ls8 - 
+valid_ps1dr2 - 
+selected_ps1dr2 - 
+sep_neighbour_ps1dr2 - 
+mag_neighbour_ps1dr2 - 
+valid_tmass - 
+selected_tmass - 
+sep_neighbour_tmass - 
+mag_neighbour_tmass - 
+valid_tycho2 - 
+selected_tycho2 - 
+sep_neighbour_tycho2 - 
+mag_neighbour_tycho2 - 
+valid_tmass_xsc - 
+selected_tmass_xsc - 
+sep_neighbour_tmass_xsc - 
+

@@ -1,0 +1,31 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+source - 
+glon - 
+glat - 
+plx - 
+e_plx - 
+pmglon - 
+e_pmglon - 
+pmglat - 
+e_pmglat - 
+pmlbcorr - 
+rv - 
+e_rv - 
+gmag - 
+bpmag - 
+rpmag - 
+bp_over_rp - 
+chi2al - 
+ngal - 
+ag - 
+bp_rp - 
+uwe - 
+

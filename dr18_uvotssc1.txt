@@ -1,0 +1,93 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+name - 
+oseq - 
+obsid - 
+nf - 
+srcid - 
+radeg - 
+dedeg - 
+e_radeg - 
+e_dedeg - 
+ruvw2 - 
+ruvm2 - 
+ruvw1 - 
+ru - 
+rb - 
+rv - 
+nd - 
+suvw2 - 
+suvm2 - 
+suvw1 - 
+su - 
+sb - 
+sv - 
+uvw2 - 
+uvm2 - 
+uvw1 - 
+umag - 
+bmag - 
+vmag - 
+uvw2_ab - 
+uvm2_ab - 
+uvw1_ab - 
+u_ab - 
+b_ab - 
+v_ab - 
+e_uvw2 - 
+e_uvm2 - 
+e_uvw1 - 
+e_umag - 
+e_bmag - 
+e_vmag - 
+f_uvw2 - 
+f_uvm2 - 
+f_uvw1 - 
+f_u - 
+f_b - 
+f_v - 
+e_f_uvw2 - 
+e_f_uvm2 - 
+e_f_uvw1 - 
+e_f_u - 
+e_f_b - 
+e_f_v - 
+auvw2 - 
+auvm2 - 
+auvw1 - 
+au - 
+ab - 
+av - 
+buvw2 - 
+buvm2 - 
+buvw1 - 
+bu - 
+bb - 
+bv - 
+pauvw2 - 
+pauvm2 - 
+pauvw1 - 
+pau - 
+pab - 
+pav - 
+xuvw2 - 
+xuvm2 - 
+xuvw1 - 
+xu - 
+xb - 
+xv - 
+fuvw2 - 
+fuvm2 - 
+fuvw1 - 
+fu - 
+fb - 
+fv - 
+id - 
+

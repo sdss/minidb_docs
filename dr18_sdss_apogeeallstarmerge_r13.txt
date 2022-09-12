@@ -1,0 +1,60 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+apogee_id - 
+nvisits - 
+nentries - 
+ra - 
+dec - 
+glon - 
+glat - 
+pmra - 
+pmdec - 
+pm_src - 
+j - 
+j_err - 
+h - 
+h_err - 
+k - 
+k_err - 
+ak - 
+vhelio_avg - 
+vhelio_err - 
+vscatter - 
+sig_rvvar - 
+baseline - 
+mean_fiber - 
+sig_fiber - 
+apstar_ids - 
+visits - 
+fields - 
+surveys - 
+telescopes - 
+targflags - 
+starflags - 
+aspcapflags - 
+teff - 
+teff_err - 
+logg - 
+logg_err - 
+feh - 
+feh_err - 
+startype - 
+vjitter - 
+dist - 
+dist_err - 
+dist_src - 
+dist_srclist - 
+mstar - 
+mstar_err - 
+rstar - 
+rstar_err - 
+mstar_src - 
+designation - 
+

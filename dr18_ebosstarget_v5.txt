@@ -1,0 +1,109 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+run - 
+camcol - 
+field - 
+id - 
+rerun - 
+fibermag_u - 
+fibermag_g - 
+fibermag_r - 
+fibermag_i - 
+fibermag_z - 
+fiber2mag_u - 
+fiber2mag_g - 
+fiber2mag_r - 
+fiber2mag_i - 
+fiber2mag_z - 
+calib_status_u - 
+calib_status_g - 
+calib_status_r - 
+calib_status_i - 
+calib_status_z - 
+ra - 
+dec - 
+epoch - 
+pmra - 
+pmdec - 
+eboss_target1 - 
+eboss_target2 - 
+eboss_target_id - 
+thing_id_targeting - 
+objc_type - 
+objc_flags - 
+objc_flags2 - 
+flags - 
+flags2 - 
+psf_fwhm_u - 
+psf_fwhm_g - 
+psf_fwhm_r - 
+psf_fwhm_i - 
+psf_fwhm_z - 
+psfflux_u - 
+psfflux_g - 
+psfflux_r - 
+psfflux_i - 
+psfflux_z - 
+psfflux_ivar_u - 
+psfflux_ivar_g - 
+psfflux_ivar_r - 
+psfflux_ivar_i - 
+psfflux_ivar_z - 
+extinction_u - 
+extinction_g - 
+extinction_r - 
+extinction_i - 
+extinction_z - 
+fiberflux_u - 
+fiberflux_g - 
+fiberflux_r - 
+fiberflux_i - 
+fiberflux_z - 
+fiberflux_ivar_u - 
+fiberflux_ivar_g - 
+fiberflux_ivar_r - 
+fiberflux_ivar_i - 
+fiberflux_ivar_z - 
+fiber2flux_ivar_u - 
+fiber2flux_ivar_g - 
+fiber2flux_ivar_r - 
+fiber2flux_ivar_i - 
+fiber2flux_ivar_z - 
+modelflux_u - 
+modelflux_g - 
+modelflux_r - 
+modelflux_i - 
+modelflux_z - 
+modelflux_ivar_u - 
+modelflux_ivar_g - 
+modelflux_ivar_r - 
+modelflux_ivar_i - 
+modelflux_ivar_z - 
+modelmag_u - 
+modelmag_g - 
+modelmag_r - 
+modelmag_i - 
+modelmag_z - 
+modelmag_ivar_u - 
+modelmag_ivar_g - 
+modelmag_ivar_r - 
+modelmag_ivar_i - 
+modelmag_ivar_z - 
+resolve_status - 
+w1_mag - 
+w1_mag_err - 
+w1_nanomaggies - 
+w1_nanomaggies_ivar - 
+w2_nanomaggies - 
+w2_nanomaggies_ivar - 
+has_wise_phot - 
+objid_targeting - 
+pk - 
+
