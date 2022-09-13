@@ -1,19 +1,18 @@
 Summary
 -------
 
-
+The table stores the results of the cross-match used for DR18 targeting. All entries in this table are expected to be unique physical objects drawn from one or more parent catalogues. The dr18_catalog_to_ tables provide the relationship between dr18_catalog objects and their parent catalogue counterparts.
 
 
 Columns
 -------
 
-catalogid - 
-iauname - 
-ra - 
-dec - 
-pmra - 
-pmdec - 
-parallax - 
-lead - 
-version_id - 
-
+catalogid - The SDSS identifier for a unique object in this cross-match run.
+iauname - The IAU-style name. Not used.
+ra - The right ascension of the target in ICRS coordinates for J2015.5, in degrees. Taken from the lead parent catalogue.
+dec - The declination of the target in ICRS coordinates for J2015.5, in degrees. Taken from the lead parent catalogue.
+pmra - The proper motion of the target in right ascension, in mas/yr. Taken from the lead parent catalogue. This is a true angle (i.e., the cos(dec) factor has been applied).
+pmra - The proper motion of the target in declination, in mas/yr. Taken from the lead parent catalogue.
+parallax - The parallax of the target, in arcsec. Taken from the lead parent catalogue.
+lead - The name of the parent catalogue from which this target was selected and whose data was used to determine its astrometric position.
+version_id - The internal version for the cross-match.
