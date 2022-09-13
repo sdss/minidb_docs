@@ -7,40 +7,40 @@ Summary
 Columns
 -------
 
-designation - 
-ra_1 - 
-dec_1 - 
-glon - 
-glat - 
-w1mpro - 
-w2mpro - 
-w3mpro - 
-w4mpro - 
-pmra - 
-pmdec - 
-j_m_2mass - 
-h_m_2mass - 
-k_m_2mass - 
-ra_2 - 
-raerr - 
-dec_2 - 
-decerr - 
+designation - 2MASS Designation
+ra_1 - WISE position
+dec_1 - WISE position
+glon - WISE position?
+glat - WISE position?
+w1mpro - WISE magnitude
+w2mpro - WISE magnitude
+w3mpro - WISE magnitude
+w4mpro - WISE magnitude
+pmra - Gaia DR2 proper motion?
+pmdec - Gaia DR2 proper motion?
+j_m_2mass - 2MASS magnitude
+h_m_2mass - 2MASS magnitude
+k_m_2mass - 2MASS magnitude
+ra_2 - 2MASS coordinate?
+raerr - 2MASS coordinate?
+dec_2 - 2MASS coordinate?
+decerr - 2MASS coordinate?
 nobs - 
 mobs - 
-vjmag - 
-bjmag - 
-gmag - 
-rmag - 
-imag - 
-evjmag - 
-ebjmag - 
-egmag - 
-ermag - 
-eimag - 
+vjmag - APASS magnitude
+bjmag - APASS magnitude
+gmag - APASS magnitude
+rmag - APASS magnitude
+imag - APASS magnitude
+evjmag - APASS magnitude
+ebjmag - APASS magnitude
+egmag - APASS magnitude
+ermag - APASS magnitude
+eimag - APASS magnitude
 name - 
 separation - 
-ebv - 
-version - 
+ebv - SFD dustmap
+version - version 2 is high priiority, version 1 is low priority (see Schlaufman + Casey 2014 for definitions)
 original_ext_source_id - 
 cntr - 
 
