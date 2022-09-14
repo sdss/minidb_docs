@@ -12,7 +12,7 @@ iauname - The IAU-style name. Not used.
 ra - The right ascension of the target in ICRS coordinates for J2015.5. Taken from the lead parent catalogue [degrees]
 dec - The declination of the target in ICRS coordinates for J2015.5. Taken from the lead parent catalogue [degrees]
 pmra - The proper motion of the target in right ascension. Taken from the lead parent catalogue. This is a true angle (i.e., the cos(dec) factor has been applied) [mas/yr]
-pmra - The proper motion of the target in declination. Taken from the lead parent catalogue [mas/yr]
+pmdec - The proper motion of the target in declination. Taken from the lead parent catalogue [mas/yr]
 parallax - The parallax of the target. Taken from the lead parent catalogue [arcsec]
 lead - The name of the parent catalogue from which this target was selected and whose data was used to determine its astrometric position.
 version_id - The internal version for the cross-match.
