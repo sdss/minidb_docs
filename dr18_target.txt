@@ -8,10 +8,10 @@ Columns
 -------
 
 target_pk - The primary key. A sequential identifier.
-ra - The right ascenscion of the target in ICRS coordinates at epoch. From dr18_catalog.
-dec - The declination of the target in ICRS coordinates at epoch. From dr18_catalog.
-pmra - The proper motion in right ascenscion of the target, in mas/yr, as a true angle. From dr18_catalog.
-pmdec - The proper motion in declination of the target, in mas/yr. From dr18_catalog.
-parallax - The parallax of the target, in arcsec. From dr18_catalog.
-epoch - The epoch of the coordinates, as a Julian epoch, in years.
+ra - The right ascension of the target in ICRS coordinates at epoch. From dr18_catalog. [degree]
+dec - The declination of the target in ICRS coordinates at epoch. From dr18_catalog. [degree]
+pmra - The proper motion in right ascenscion of the target, as a true angle. From dr18_catalog. [mas/yr]
+pmdec - The proper motion in declination of the target. From dr18_catalog. [mas/yr]
+parallax - The parallax of the target. From dr18_catalog. [arcsec]
+epoch - The epoch of the coordinates, as a Julian epoch. [years]
 catalogid - The catalogid of the entry in dr18_catalog associated with this target.

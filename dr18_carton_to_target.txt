@@ -8,7 +8,7 @@ Columns
 -------
 
 carton_to_target_pk - The primary key. A sequential identifier.
-lambda_eff - The effective wavelength at which the object will be observed, in angstroms.
+lambda_eff - The effective wavelength at which the object will be observed [angstrom]
 carton_pk - The primary key of the carton in the dr18_carton table.
 target_pk - The primary key of the target in the dr18_target table.
 cadence_pk - The primary key of the cadence in the dr18_cadence table.
