@@ -7,11 +7,11 @@ Cadences define the time between series of exposures (one "epoch") on a field, a
 Columns
 -------
 
-label - Descriptive name for the cadence with a version
-nepochs - Number of epochs in the cadence
-pk - Primary key
-label_root - Descriptive name, typically [bright/dark]_[nepochs]x[nexps]
-label_version - Version; cadences are added in versioned batches
-max_skybrightness - The maximum skybrightness for all epochs in this cadence
-nexp_total - The total number of exposures planned for this cadence
+label - Descriptive name for the cadence with a version []
+nepochs - Number of epochs in the cadence []
+pk - Primary key []
+label_root - Descriptive name, typically {bright/dark}_{nepochs}x{nexps}
+label_version - Version; cadences are added in versioned batches []
+max_skybrightness - The maximum skybrightness for all epochs in this cadence []
+nexp_total - The total number of exposures planned for this cadence []
 

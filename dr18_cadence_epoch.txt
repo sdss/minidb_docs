@@ -7,15 +7,15 @@ Constraints for a single epoch within a cadence.
 Columns
 -------
 
-label - Descriptive name for the cadence with a version
-nepochs - Number of epochs in the cadence
-cadence_pk - Primary key of the cadence this epoch belongs to
-epoch - Which epoch is this in the cadence (0-indexed)
+label - Descriptive name for the cadence with a version []
+nepochs - Number of epochs in the cadence []
+cadence_pk - Primary key of the cadence this epoch belongs to []
+epoch - Which epoch is this in the cadence (0-indexed) []
 delta - Nominal (goal) time since previous epoch [days]
-skybrightness - Maximum allowed skybrightness, i.e. moon illumination (0.0 to 1.0)
+skybrightness - Maximum allowed skybrightness, i.e. moon illumination (0.0 to 1.0) []
 delta_max - Maximum allowed time since previous epoch [days]
 delta_min - Minimum allowed time since previous epoch [days]
-nexp - Number of exposures in this epoch
-max_length - Maximum allowed length of epoch, i.e. time between first and last exposure
-obsmode_pk - Reference to the observing parameters (airmass, moon seperation, etc.)
+nexp - Number of exposures in this epoch []
+max_length - Maximum allowed length of epoch, i.e. time between first and last exposure []
+obsmode_pk - Reference to the observing parameters (airmass, moon seperation, etc.) []
 
