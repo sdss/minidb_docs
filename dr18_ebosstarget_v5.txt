@@ -38,11 +38,11 @@ eboss_target1 - eBOSS target selection information, for eBOSS plates
 eboss_target2 - eBOSS target selection information, for TDSS, SPIDERS, ELG, etc. plates
 eboss_target_id - eBOSS unique target identifier for every spectroscopic target
 thing_id_targeting - thing_id value from the version of resolve from which the targeting was created
-objc_type - 
-objc_flags - 
-objc_flags2 - 
-flags - 
-flags2 - 
+objc_type - Type classification of the object (star, galaxy, cosmic ray, etc.)
+objc_flags - Photo Object Attribute Flags(?)
+objc_flags2 - Additional Photo Object Attribute Flags(?)
+flags - Target selection flags set by ebosstarget (?)
+flags2 - Additional target selection flags set by ebosstarget (?)
 psf_fwhm_u - Imaging FWHM in u-band [arcsec]
 psf_fwhm_g - Imaging FWHM in g-band [arcsec]
 psf_fwhm_r - Imaging FWHM in r-band [arcsec]
