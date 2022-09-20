@@ -30,3 +30,5 @@ sn_median_all - Median S/N for all good pixels in all filters
 anyandmask - Mask bits which are set if any pixels for an object's ANDMASK have that bit set
 anyormask - Mask bits which are set if any pixels for an object's ORMASK have that bit set
 pk - primary key in the database table
+
+
