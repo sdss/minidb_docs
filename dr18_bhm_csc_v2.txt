@@ -18,9 +18,9 @@ xdec - Dec of X-ray source from CSC2 [deg]
 pri - Priority (based on X-ray S/N)
 ocat - optical catalog code (P for PS1, G for Gaia)
 oid - object ID from optical catalog
-ora - optical magnitude from optical catalog [mag]
-odec - right ascension (2000) from optical catalog [deg]
-omag - declination (2000) from optical catalog [deg]
+ora - right ascension (2000) from optical catalog [deg]
+odec - declination (2000) from optical catalog [deg]
+omag - optical magnitude from optical catalog [mag]
 omatchtype - X-ray/optical match type (1-4 definite/likely/multiple opt, multiple X)
 irid - object ID from 2MASS
 ra2m - right ascension (2000) from 2MASS [deg]
@@ -35,6 +35,6 @@ xsn - X-ray S/N
 xflags - concatenated X-ray source flags: extended,confused,piledup,variable,streak,saturated
 designation2m - 2MASS identifier (designation) derived from irid 
 idg2 - Gaia DR2 source_id (derived from ocat, oid)
-idps - PanSTARSS1 meanObject identifier (derived from ocat, oid) - equivalent to ObjID in MAST database, and to our panstarrs1.extid_hi_lo 
+idps - Pan-STARRS1 Object identifier (derived here from ocat+oid) - equivalent to ObjID in MAST database (https://outerspace.stsci.edu/display/PANSTARRS/PS1+Object+Identifiers), and to our panstarrs1.extid_hi_lo 
 pk - primary key of the database table
 
