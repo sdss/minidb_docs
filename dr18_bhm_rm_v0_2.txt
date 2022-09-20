@@ -11,7 +11,7 @@ Field center: Name     RA          DEC
               SDSS-RM  14:14:49.00    +53:05:00.0
               S-CVZ    06:00:00.00    -66:33:38.0
 
-Th etable includes information from the following survey data releases: 
+The table includes information from the following survey data releases: 
 DES: Dark Energy Survey, Y6, Y6A1_COADD_OBJECT_SUMMARY
 PS1: Pan-STARRS, DR1, StackObjectThin
 NSC: NOAO Source Catalog, DR1, nsc_dr1.object
@@ -179,11 +179,11 @@ infoflag2_r - PS1 flags, values listed in DetectionFlags2
 infoflag2_i - PS1 flags, values listed in DetectionFlags2
 infoflag2_z - PS1 flags, values listed in DetectionFlags2
 infoflag2_y - PS1 flags, values listed in DetectionFlags2
-mag_nsc_g - Weighted-average magnitude
-mag_nsc_r - Weighted-average magnitude
-mag_nsc_i - Weighted-average magnitude
-mag_nsc_z - Weighted-average magnitude
-mag_nsc_y - Weighted-average magnitude
+mag_nsc_g - Weighted-average magnitude [mag]
+mag_nsc_r - Weighted-average magnitude [mag]
+mag_nsc_i - Weighted-average magnitude [mag]
+mag_nsc_z - Weighted-average magnitude [mag]
+mag_nsc_y - Weighted-average magnitude [mag]
 magerr_nsc_g - Weighted-average NSC magnitude [mag]
 magerr_nsc_r - Weighted-average NSC magnitude [mag]
 magerr_nsc_i - Weighted-average NSC magnitude [mag]
