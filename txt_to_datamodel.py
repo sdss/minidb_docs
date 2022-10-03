@@ -69,23 +69,6 @@ def datamodel_from_yaml(table = None, yaml_file = None):
         if verbose: print("Error: yaml_file=%r" % yaml_file)
         
     return datamodel
-    
-"""
-In [13]: t['general']
-Out[13]:
-{'name': 'mos_target_target',
- 'short': 'MOS Target table of targets',
- 'description': 'This fits table stores the targets associated with DR18 target selection cartons. Note that the targets in this table are unique, but a target can be associated with multiple cartons. That many-to-many relationship is encoded in the mos_target_carton_to_target table',
- 'datatype': 'FITS',
- 'filesize': '457 MB',
- 'releases': ['WORK'],
- 'environments': ['MOS_TARGET'],
- 'surveys': ['SDSS'],
- 'naming_convention': '$MOS_TARGET/[V_TARG]/mos_target_target-[NUM].fits, where V_TARG=1.0 for DR18; and NUM = 1..8 to partition the file into 8 parts',
- 'generated_by': 'sdss5db> targetdb, operations database server',
- 'design': False}
-
-"""
 
 def short_description(table = None):
     description = None
