@@ -1,6 +1,6 @@
 Summary
 -------
-"The CatWISE2020 Catalog contains positions and brightnesses for 1,890,715,640 sources selected from combined WISE and NEOWISE all-sky survey data collected from 2010 to 2018 at 3.4 and 4.6 microns (W1 and W2). The CatWISE Preliminary Catalog contains positions and brightnesses for 900,849,014 sources collected from 2010 to 2016."
+The CatWISE2020 Catalog (https://ui.adsabs.harvard.edu/abs/2021ApJS..253....8M/abstract) See https://irsa.ipac.caltech.edu/data/WISE/CatWISE/gator_docs/catwise_colDescriptions.html for more detailed column descriptions
 
 
 Columns
@@ -21,8 +21,8 @@ w1conf - frame sky confusion based on the uncertainty images, band 1 ['dn']
 w2sky - frame sky background value, band 2 ['dn']
 w2sigsk - frame sky background value uncertainty, band 2 ['dn']
 w2conf - frame sky confusion based on the uncertainty images, band 2 ['dn']
-w1fitr - not define in CatWISE Catalog Definition webpage
-w2fitr - not define in CatWISE Catalog Definition webpage
+w1fitr - fitting radius for W1; see note [arcsec]
+w2fitr - fitting radius for W2; see note [arcsec]
 w1snr - instrumental profile-fit photometry S/N ratio, band 1 []
 w2snr - instrumental profile-fit photometry S/N ratio, band 2 []
 w1flux - profile-fit photometry raw flux, band 1 ['dn']
@@ -194,3 +194,6 @@ elon - Ecliptic longitude [deg]
 elat - Ecliptic latitude [deg]
 unwise_objid - 	UnWISE Object ID (only present in CatWISE 2020) []
 
+Notes
+-------------
+w1fitr and w2fitr are from the CatWISE preliminary catalog. See https://iopscience.iop.org/article/10.3847/1538-4365/ab7f2a#apjsab7f2aapp1 for more details
