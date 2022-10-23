@@ -112,69 +112,69 @@ w4sky - Average of the W4 sky background value  [dn]
 w4sigsk - Uncertainty in the W4 sky background value [dn] 
 w4conf - Estimated confusion noise in the W4 sky background annulus [dn]
 w1mag - W1 "standard" aperture magnitude [mag]
-w1sigm - 
-w1flg - 
-w1mcor - 
+w1sigm - Uncertainty in the W1 "standard" aperture magnitude [mag]
+w1flg - W1 "standard" aperture measurement quality flag []
+w1mcor - W1 aperture curve-of-growth correction [mag]
 w2mag - W2 "standard" aperture magnitude [mag]
-w2sigm - 
-w2flg - 
-w2mcor - 
+w2sigm - Uncertainty in the W2 "standard" aperture magnitude
+w2flg - W2 "standard" aperture measurement quality flag
+w2mcor - W2 aperture curve-of-growth correction
 w3mag - W3 "standard" aperture magnitude [mag]
-w3sigm - 
-w3flg - 
-w3mcor - 
+w3sigm - Uncertainty in the W3 "standard" aperture magnitude [mag]
+w3flg - W3 "standard" aperture measurement quality flag []
+w3mcor - W3 aperture curve-of-growth correction [mag]
 w4mag - W4 "standard" aperture magnitude [mag]
-w4sigm - 
-w4flg - 
-w4mcor - 
-w1mag_1 - 
-w1sigm_1 - 
-w1flg_1 - 
-w2mag_1 - 
-w2sigm_1 - 
-w2flg_1 - 
-w3mag_1 - 
-w3sigm_1 - 
-w3flg_1 - 
-w4mag_1 - 
-w4sigm_1 - 
-w4flg_1 - 
-w1mag_2 - 
-w1sigm_2 - 
-w1flg_2 - 
-w2mag_2 - 
-w2sigm_2 - 
-w2flg_2 - 
-w3mag_2 - 
-w3sigm_2 - 
-w3flg_2 - 
-w4mag_2 - 
-w4sigm_2 - 
-w4flg_2 - 
-w1mag_3 - 
-w1sigm_3 - 
-w1flg_3 - 
-w2mag_3 - 
-w2sigm_3 - 
-w2flg_3 - 
-w3mag_3 - 
-w3sigm_3 - 
-w3flg_3 - 
-w4mag_3 - 
-w4sigm_3 - 
-w4flg_3 - 
-w1mag_4 - 
-w1sigm_4 - 
-w1flg_4 - 
-w2mag_4 - 
-w2sigm_4 - 
-w2flg_4 - 
-w3mag_4 - 
-w3sigm_4 - 
-w3flg_4 - 
-w4mag_4 - 
-w4sigm_4 - 
-w4flg_4 - 
+w4sigm - Uncertainty in the W4 "standard" aperture magnitude [mag]
+w4flg - W4 "standard" aperture measurement quality flag []
+w4mcor - W4 aperture curve-of-growth correction [mag]
+w1mag_1 - W1 5.5" radius aperture magnitude [mag]
+w1sigm_1 - Uncertainty in the W1 5.5" radius aperture magnitude [mag]
+w1flg_1 - W1 5.5" radius aperture magnitude quality flag []
+w2mag_1 - W2 5.5" radius aperture magnitude [mag]
+w2sigm_1 - Uncertainty in the W2 5.5" radius aperture magnitude [mag]
+w2flg_1 - W2 5.5" radius aperture magnitude quality flag []
+w3mag_1 - W3 5.5" radius aperture magnitude [mag]
+w3sigm_1 - Uncertainty in the W3 5.5" radius aperture magnitude [mag]
+w3flg_1 - W3 5.5" radius aperture magnitude quality flag []
+w4mag_1 - W3 5.5" radius aperture magnitude [mag]
+w4sigm_1 - Uncertainty in the W4 5.5" radius aperture magnitude [mag]
+w4flg_1 - W4 5.5" radius aperture magnitude quality flag []
+w1mag_2 - W1 8.25" radius aperture magnitude [mag]
+w1sigm_2 - Uncertainty in the W1 8.25" radius aperture magnitude [mag]
+w1flg_2 - W1 8.25" radius aperture magnitude quality flag []
+w2mag_2 - W2 8.25" radius aperture magnitude [mag]
+w2sigm_2 - Uncertainty in the W2 8.25" radius aperture magnitude [mag]
+w2flg_2 - W2 8.25" radius aperture magnitude quality flag []
+w3mag_2 - W3 8.25" radius aperture magnitude [mag]
+w3sigm_2 - Uncertainty in the W3 8.25" radius aperture magnitude [mag]
+w3flg_2 - W3 8.25" radius aperture magnitude quality flag []
+w4mag_2 - W4 8.25" radius aperture magnitude [mag]
+w4sigm_2 - Uncertainty in the W4 8.25" radius aperture magnitude [mag]
+w4flg_2 - W4 8.25" radius aperture magnitude quality flag []
+w1mag_3 - W1 11.0" radius aperture magnitude [mag]
+w1sigm_3 - Uncertainty in the W1 11.0" radius aperture magnitude [mag]
+w1flg_3 - W1 11.0" radius aperture magnitude quality flag [] 
+w2mag_3 - W2 11.0" radius aperture magnitude [mag]
+w2sigm_3 - Uncertainty in the W2 11.0" radius aperture magnitude [mag]
+w2flg_3 - W2 11.0" radius aperture magnitude quality flag [] 
+w3mag_3 - W3 11.0" radius aperture magnitude [mag]
+w3sigm_3 - Uncertainty in the W3 11.0" radius aperture magnitude [mag] 
+w3flg_3 - W3 11.0" radius aperture magnitude quality flag []
+w4mag_3 - W4 11.0" radius aperture magnitude [mag]
+w4sigm_3 - Uncertainty in the W4 11.0" radius aperture magnitude [mag]
+w4flg_3 - W4 11.0" radius aperture magnitude quality flag []
+w1mag_4 - W1 13.75" radius aperture magnitude [mag]
+w1sigm_4 - Uncertainty in the W1 13.75" radius aperture magnitude [mag]
+w1flg_4 - W1 13.75" radius aperture magnitude quality flag []
+w2mag_4 - W2 13.75" radius aperture magnitude [mag]
+w2sigm_4 - Uncertainty in the W2 13.75" radius aperture magnitude [mag]
+w2flg_4 - W2 13.75" radius aperture magnitude quality flag []
+w3mag_4 - W3 13.75" radius aperture magnitude [mag]
+w3sigm_4 - Uncertainty in the W3 13.75" radius aperture magnitude [mag]
+w3flg_4 - W3 13.75" radius aperture magnitude quality flag []
+w4mag_4 - W4 13.75" radius aperture magnitude [mag]
+w4sigm_4 - Uncertainty in the W4 13.75" radius aperture magnitude [mag]
+w4flg_4 - W4 13.75" radius aperture magnitude quality flag []
 w1mag_5 - 
 w1sigm_5 - 
 w1flg_5 - 
