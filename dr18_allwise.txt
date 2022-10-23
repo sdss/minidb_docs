@@ -46,84 +46,84 @@ w1sat - Fraction of all pixels within the profile-fitting area for W1 images tha
 w2sat - Fraction of all pixels within the profile-fitting area for W2 images that are flagged as saturated []
 w3sat - Fraction of all pixels within the profile-fitting area for W3 images that are flagged as saturated []
 w4sat - Fraction of all pixels within the profile-fitting area for W4 images that are flagged as saturated []
-satnum - 
-ra_pm - 
-dec_pm - 
-sigra_pm - 
-sigdec_pm - 
-sigradec_pm - 
-pmra - 
-sigpmra - 
-pmdec - 
-sigpmdec - 
-w1rchi2_pm - 
-w2rchi2_pm - 
-w3rchi2_pm - 
-w4rchi2_pm - 
-rchi2_pm - 
-pmcode - 
-cc_flags - 
-rel - 
-ext_flg - 
-var_flg - 
-ph_qual - 
-det_bit - 
-moon_lev - 
-w1nm - 
-w1m - 
-w2nm - 
-w2m - 
-w3nm - 
-w3m - 
-w4nm - 
-w4m - 
-w1cov - 
-w2cov - 
-w3cov - 
-w4cov - 
-w1cc_map - 
-w1cc_map_str - 
-w2cc_map - 
-w2cc_map_str - 
-w3cc_map - 
-w3cc_map_str - 
-w4cc_map - 
-w4cc_map_str - 
-best_use_cntr - 
-ngrp - 
-w1flux - 
-w1sigflux - 
-w1sky - 
-w1sigsk - 
-w1conf - 
-w2flux - 
-w2sigflux - 
-w2sky - 
-w2sigsk - 
-w2conf - 
-w3flux - 
-w3sigflux - 
-w3sky - 
-w3sigsk - 
-w3conf - 
-w4flux - 
-w4sigflux - 
-w4sky - 
-w4sigsk - 
-w4conf - 
-w1mag - 
+satnum - Minimum sample at which saturation occurs in each band []
+ra_pm - Right ascension at epoch MJD=55400.0 (2010.5589) from the profile-fitting measurement model that includes motion [degrees]
+dec_pm - Declination at epoch MJD=55400.0 (2010.5589) from the profile-fitting measurement model that includes motion [degrees]
+sigra_pm - One-sigma uncertainty in right ascension from the profile-fitting measurement model that includes motion [arcsec]
+sigdec_pm - One-sigma uncertainty in declination from the profile-fitting measurement model that includes motion [arcsec]
+sigradec_pm - The co-sigma of the equatorial position uncertainties from the profile-fitting measurement model that includes motion [arcsec]
+pmra - Total apparent motion in right ascension estimated for this source [mas/yr]
+sigpmra - Uncertainty in the total right ascension motion estimation [mas/yr]
+pmdec - Total apparent motion in declination estimated for this source [mas/yr]
+sigpmdec - Uncertainty in the total declination motion estimation [mas/yr]
+w1rchi2_pm - Reduced chi^2 of the W1 profile-fit photometry measurement including motion estimation []
+w2rchi2_pm - Reduced chi^2 of the W2 profile-fit photometry measurement including motion estimation []
+w3rchi2_pm - Reduced chi^2 of the W3 profile-fit photometry measurement including motion estimation []
+w4rchi2_pm - Reduced chi^2 of the W4 profile-fit photometry measurement including motion estimation []
+rchi2_pm - Combined reduced chi^2 in all bands for the profile-fit photometry measurement including motion estimation []
+pmcode - string that encodes information about factors that impact the accuracy of the motion estimation []
+cc_flags - Contamination and confusion flag []
+rel - Small-separation, same-Tile detection flag []
+ext_flg - Extended source flag []
+var_flg - Variability flag []
+ph_qual - Photometric quality flag []
+det_bit - Bit-encoded integer indicating bands in which a source has a w#snr>2 detection []
+moon_lev - Scattered moonlight contamination flag []
+w1nm - number of individual 7.7s exposures where this source was detected with SNR>3 in the W1 profile-fit measurement []
+w1m - number of individual 7.7s W1 exposures on which a profile-fit measurement of this source was possible []
+w2nm - number of individual 7.7s exposures where this source was detected with SNR>3 in the W2 profile-fit measurement []
+w2m - number of individual 7.7s W2 exposures on which a profile-fit measurement of this source was possible []
+w3nm - number of individual 7.7s exposures where this source was detected with SNR>3 in the W3 profile-fit measurement []
+w3m - number of individual 7.7s W3 exposures on which a profile-fit measurement of this source was possible []
+w4nm - number of individual 7.7s exposures where this source was detected with SNR>3 in the W4 profile-fit measurement []
+w4m - number of individual 7.7s W4 exposures on which a profile-fit measurement of this source was possible []
+w1cov - Mean pixel coverage in W1 []
+w2cov - Mean pixel coverage in W2 []
+w3cov - Mean pixel coverage in W3 []
+w4cov - Mean pixel coverage in W4 []
+w1cc_map - Contamination and confusion map for this source in W1 []
+w1cc_map_str - Contamination and confusion string denoting all artifacts that may contaminate the W1 measurement of this source []
+w2cc_map - Contamination and confusion map for this source in W2 []
+w2cc_map_str - Contamination and confusion string denoting all artifacts that may contaminate the W2 measurement of this source []
+w3cc_map - Contamination and confusion map for this source in W3 []
+w3cc_map_str - Contamination and confusion string denoting all artifacts that may contaminate the W3 measurement of this source []
+w4cc_map - Contamination and confusion map for this source in W4 []
+w4cc_map_str - Contamination and confusion string denoting all artifacts that may contaminate the W4 measurement of this source []
+best_use_cntr - Cntr identification value of the source extraction []
+ngrp - Excess number of positionally associated duplicate resolution groups that included this source []
+w1flux - "Raw" W1 source flux measured in profile-fit photometry [dn]
+w1sigflux - Uncertainty in the "raw" W1 source flux measurement in profile-fit photometry [dn]
+w1sky -  Average of the W1 sky background value  [dn]
+w1sigsk - Uncertainty in the W1 sky background value [dn]
+w1conf - Estimated confusion noise in the W1 sky background annulus [dn]
+w2flux - "Raw" W2 source flux measured in profile-fit photometry [dn]
+w2sigflux - Uncertainty in the "raw" W2 source flux measurement in profile-fit photometry [dn]
+w2sky - Average of the W2 sky background value  [dn]
+w2sigsk - Uncertainty in the W2 sky background value [dn] 
+w2conf - Estimated confusion noise in the W2 sky background annulus [dn]
+w3flux - "Raw" W3 source flux measured in profile-fit photometry [dn]
+w3sigflux - Uncertainty in the "raw" W3 source flux measurement in profile-fit photometry [dn]
+w3sky - Average of the W3 sky background value  [dn]
+w3sigsk - Uncertainty in the W3 sky background value [dn] 
+w3conf - Estimated confusion noise in the W3 sky background annulus [dn]
+w4flux - "Raw" W4 source flux measured in profile-fit photometry [dn]
+w4sigflux - Uncertainty in the "raw" W4 source flux measurement in profile-fit photometry [dn]
+w4sky - Average of the W4 sky background value  [dn]
+w4sigsk - Uncertainty in the W4 sky background value [dn] 
+w4conf - Estimated confusion noise in the W4 sky background annulus [dn]
+w1mag - W1 "standard" aperture magnitude [mag]
 w1sigm - 
 w1flg - 
 w1mcor - 
-w2mag - 
+w2mag - W2 "standard" aperture magnitude [mag]
 w2sigm - 
 w2flg - 
 w2mcor - 
-w3mag - 
+w3mag - W3 "standard" aperture magnitude [mag]
 w3sigm - 
 w3flg - 
 w3mcor - 
-w4mag - 
+w4mag - W4 "standard" aperture magnitude [mag]
 w4sigm - 
 w4flg - 
 w4mcor - 
