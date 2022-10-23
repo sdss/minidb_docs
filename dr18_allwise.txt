@@ -1,51 +1,51 @@
 Summary
 -------
 
-ALLWISE catalog: https://wise2.ipac.caltech.edu/docs/release/allwise/
+ALLWISE catalog: https://wise2.ipac.caltech.edu/docs/release/allwise/. For detailed descriptions of the columns see: https://wise2.ipac.caltech.edu/docs/release/allwise/expsup/sec2_1a.html
 
 
 Columns
 -------
 
-designation - 
-ra - 
-dec - 
-sigra - 
-sigdec - 
-sigradec - 
-glon - 
-glat - 
-elon - 
-elat - 
-wx - 
-wy - 
-cntr - 
-source_id - 
-coadd_id - 
-src - 
-w1mpro - 
-w1sigmpro - 
-w1snr - 
-w1rchi2 - 
-w2mpro - 
-w2sigmpro - 
-w2snr - 
-w2rchi2 - 
-w3mpro - 
-w3sigmpro - 
-w3snr - 
-w3rchi2 - 
-w4mpro - 
-w4sigmpro - 
-w4snr - 
-w4rchi2 - 
-rchi2 - 
-nb - 
-na - 
-w1sat - 
-w2sat - 
-w3sat - 
-w4sat - 
+designation - Sexagesimal, equatorial position-based source name []
+ra - J2000 right ascension [degrees]
+dec - J2000 declination [degrees]
+sigra - One-sigma uncertainty in right ascension coordinate [arcsec]
+sigdec - One-sigma uncertainty in declination coordinate [arcsec]
+sigradec - The co-sigma of the equatorial position uncertainties [arcsec]
+glon - Galactic longitude [degrees]
+glat - Galactic latitude [degrees]
+elon - Ecliptic longitude [degrees]
+elat - Ecliptic latitude [degrees]
+wx - The x-pixel coordinate of this source on the WISE Atlas Image [pixel]
+wy - The y-pixel coordinate of this source on the WISE Atlas Image [pixel]
+cntr - Unique identification number for this object in the AllWISE Catalog/Reject Table []
+source_id - Unique source ID []
+coadd_id - WISE Atlas Tile identifier from which source was extracted []
+src - Sequential number of the source extraction in the WISE Atlas Tile from which this source detected and measured []
+w1mpro - W1 magnitude measured with profile-fitting photometry [mag]
+w1sigmpro - W1 profile-fit photometric measurement uncertainty [mag]
+w1snr - W1 profile-fit measurement signal-to-noise ratio []
+w1rchi2 - Reduced chi^2 of the W1 profile-fit photometry measurement []
+w2mpro - W2 magnitude measured with profile-fitting photometry [mag]
+w2sigmpro - W2 profile-fit photometric measurement uncertainty [mag]
+w2snr - W2 profile-fit measurement signal-to-noise ratio []
+w2rchi2 - Reduced chi^2 of the W2 profile-fit photometry measurement []
+w3mpro - W3 magnitude measured with profile-fitting photometry [mag]
+w3sigmpro - W3 profile-fit photometric measurement uncertainty [mag]
+w3snr - W3 profile-fit measurement signal-to-noise ratio []
+w3rchi2 - Reduced chi^2 of the W3 profile-fit photometry measurement []
+w4mpro - W4 magnitude measured with profile-fitting photometry [mag]
+w4sigmpro - W4 profile-fit photometric measurement uncertainty [mag]
+w4snr - W4 profile-fit measurement signal-to-noise ratio []
+w4rchi2 - Reduced chi^2 of the W4 profile-fit photometry measurement []
+rchi2 - Combined reduced chi^2 in all bands for the profile-fit photometry measurement []
+nb - Number of PSF components used simultaneously in the profile-fitting for this source []
+na - Active deblending flag []
+w1sat - Fraction of all pixels within the profile-fitting area for W1 images that are flagged as saturated [] 
+w2sat - Fraction of all pixels within the profile-fitting area for W2 images that are flagged as saturated []
+w3sat - Fraction of all pixels within the profile-fitting area for W3 images that are flagged as saturated []
+w4sat - Fraction of all pixels within the profile-fitting area for W4 images that are flagged as saturated []
 satnum - 
 ra_pm - 
 dec_pm - 
