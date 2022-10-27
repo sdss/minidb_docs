@@ -50,7 +50,6 @@ vjitter -
 dist - 
 dist_err - 
 dist_src - 
-dist_srclist - 
 mstar - 
 mstar_err - 
 rstar - 
