@@ -1,7 +1,8 @@
 Summary
 -------
 
-
+AAVSO cataclysmic variables from cataclysmic (explosive and novalike) variables (N, NA, NB, NC, NL, NR,
+           SN, SNI, SNII, UG, UGSS, UGSU, UGZ, ZAND), VSX in summer 2019, has been x-matched with Gaia DR2, and had some manual pruning
 
 
 Columns
