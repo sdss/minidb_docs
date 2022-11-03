@@ -7,6 +7,8 @@
 # @License: BSD 3-clause (http://www.opensource.org/licenses/BSD-3-Clause)
 
 from __future__ import annotations
+import os
+import warnings
 
 from sdssdb.peewee.sdss5db import database
 
@@ -17,7 +19,12 @@ def create_docs_files():
 
     tables = database.get_tables('minidb')
     for table in tables:
-        f = open(str(table) + '.txt', 'w')
+        fname = str(table) + '.txt'
+        if os.path.exists(fname):
+            warnings.warn(f'{fname} already exists')
+            continue
+
+        f = open(fname, 'w')
 
         f.write('Summary\n')
         f.write('-------\n')

@@ -1119,6 +1119,17 @@ CREATE TABLE minidb.dr18_catalog_to_xmm_om_suss_4_1 (
 
 
 --
+-- Name: dr18_catalogdb_version; Type: TABLE; Schema: minidb; Owner: -
+--
+
+CREATE TABLE minidb.dr18_catalogdb_version (
+    id integer NOT NULL,
+    plan text,
+    tag text
+);
+
+
+--
 -- Name: dr18_category; Type: TABLE; Schema: minidb; Owner: -
 --
 
@@ -2315,7 +2326,6 @@ CREATE TABLE minidb.dr18_sdss_apogeeallstarmerge_r13 (
     dist real,
     dist_err real,
     dist_src text,
-    dist_srclist text,
     mstar real,
     mstar_err real,
     rstar real,
@@ -3188,6 +3198,49 @@ CREATE TABLE minidb.dr18_target (
 
 
 --
+-- Name: dr18_targetdb_version; Type: TABLE; Schema: minidb; Owner: -
+--
+
+CREATE TABLE minidb.dr18_targetdb_version (
+    pk integer NOT NULL,
+    plan text,
+    tag text,
+    target_selection boolean,
+    robostrategy boolean
+);
+
+
+--
+-- Name: dr18_targeting_generation; Type: TABLE; Schema: minidb; Owner: -
+--
+
+CREATE TABLE minidb.dr18_targeting_generation (
+    pk integer NOT NULL,
+    label text
+);
+
+
+--
+-- Name: dr18_targeting_generation_pk_seq; Type: SEQUENCE; Schema: minidb; Owner: -
+--
+
+CREATE SEQUENCE minidb.dr18_targeting_generation_pk_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: dr18_targeting_generation_pk_seq; Type: SEQUENCE OWNED BY; Schema: minidb; Owner: -
+--
+
+ALTER SEQUENCE minidb.dr18_targeting_generation_pk_seq OWNED BY minidb.dr18_targeting_generation.pk;
+
+
+--
 -- Name: dr18_tic_v8; Type: TABLE; Schema: minidb; Owner: -
 --
 
@@ -3710,6 +3763,13 @@ CREATE TABLE minidb.dr18_zari18pms (
 
 
 --
+-- Name: dr18_targeting_generation pk; Type: DEFAULT; Schema: minidb; Owner: -
+--
+
+ALTER TABLE ONLY minidb.dr18_targeting_generation ALTER COLUMN pk SET DEFAULT nextval('minidb.dr18_targeting_generation_pk_seq'::regclass);
+
+
+--
 -- Name: dr18_allwise dr18_allwise_pkey; Type: CONSTRAINT; Schema: minidb; Owner: -
 --
 
@@ -3795,6 +3855,14 @@ ALTER TABLE ONLY minidb.dr18_cataclysmic_variables
 
 ALTER TABLE ONLY minidb.dr18_catalog
     ADD CONSTRAINT dr18_catalog_pkey PRIMARY KEY (catalogid);
+
+
+--
+-- Name: dr18_catalogdb_version dr18_catalogdb_version_pkey; Type: CONSTRAINT; Schema: minidb; Owner: -
+--
+
+ALTER TABLE ONLY minidb.dr18_catalogdb_version
+    ADD CONSTRAINT dr18_catalogdb_version_pkey PRIMARY KEY (id);
 
 
 --
@@ -3995,6 +4063,22 @@ ALTER TABLE ONLY minidb.dr18_supercosmos
 
 ALTER TABLE ONLY minidb.dr18_target
     ADD CONSTRAINT dr18_target_pkey PRIMARY KEY (target_pk);
+
+
+--
+-- Name: dr18_targetdb_version dr18_targetdb_version_pkey; Type: CONSTRAINT; Schema: minidb; Owner: -
+--
+
+ALTER TABLE ONLY minidb.dr18_targetdb_version
+    ADD CONSTRAINT dr18_targetdb_version_pkey PRIMARY KEY (pk);
+
+
+--
+-- Name: dr18_targeting_generation dr18_targeting_generation_pkey; Type: CONSTRAINT; Schema: minidb; Owner: -
+--
+
+ALTER TABLE ONLY minidb.dr18_targeting_generation
+    ADD CONSTRAINT dr18_targeting_generation_pkey PRIMARY KEY (pk);
 
 
 --
@@ -4807,6 +4891,13 @@ CREATE INDEX dr18_catalog_to_xmm_om_suss_4_1_version_id_idx ON minidb.dr18_catal
 --
 
 CREATE INDEX dr18_catalog_version_id_idx ON minidb.dr18_catalog USING btree (version_id);
+
+
+--
+-- Name: dr18_catalogdb_version_plan_idx; Type: INDEX; Schema: minidb; Owner: -
+--
+
+CREATE UNIQUE INDEX dr18_catalogdb_version_plan_idx ON minidb.dr18_catalogdb_version USING btree (plan);
 
 
 --
@@ -5706,6 +5797,20 @@ CREATE INDEX dr18_target_q3c_ang2ipix_idx ON minidb.dr18_target USING btree (pub
 
 
 --
+-- Name: dr18_targetdb_version_plan_idx; Type: INDEX; Schema: minidb; Owner: -
+--
+
+CREATE UNIQUE INDEX dr18_targetdb_version_plan_idx ON minidb.dr18_targetdb_version USING btree (plan);
+
+
+--
+-- Name: dr18_targeting_generation_label_idx; Type: INDEX; Schema: minidb; Owner: -
+--
+
+CREATE UNIQUE INDEX dr18_targeting_generation_label_idx ON minidb.dr18_targeting_generation USING btree (label);
+
+
+--
 -- Name: dr18_tic_v8_allwise_idx; Type: INDEX; Schema: minidb; Owner: -
 --
 
@@ -6014,6 +6119,14 @@ ALTER TABLE ONLY minidb.dr18_bhm_csc_v2
 
 ALTER TABLE ONLY minidb.dr18_bhm_csc_v2
     ADD CONSTRAINT dr18_bhm_csc_v2_idg2_fkey FOREIGN KEY (idg2) REFERENCES minidb.dr18_gaia_dr2_source(source_id);
+
+
+--
+-- Name: dr18_carton dr18_carton_target_selection_plan_fkey; Type: FK CONSTRAINT; Schema: minidb; Owner: -
+--
+
+ALTER TABLE ONLY minidb.dr18_carton
+    ADD CONSTRAINT dr18_carton_target_selection_plan_fkey FOREIGN KEY (target_selection_plan) REFERENCES minidb.dr18_targetdb_version(plan);
 
 
 --
@@ -6513,6 +6626,14 @@ GRANT SELECT ON TABLE minidb.dr18_catalog_to_xmm_om_suss_4_1 TO sdss_user;
 
 
 --
+-- Name: TABLE dr18_catalogdb_version; Type: ACL; Schema: minidb; Owner: -
+--
+
+GRANT SELECT ON TABLE minidb.dr18_catalogdb_version TO sdss;
+GRANT SELECT ON TABLE minidb.dr18_catalogdb_version TO sdss_user;
+
+
+--
 -- Name: TABLE dr18_category; Type: ACL; Schema: minidb; Owner: -
 --
 
@@ -6649,14 +6770,6 @@ GRANT SELECT ON TABLE minidb.dr18_sagitta TO sdss_user;
 
 
 --
--- Name: TABLE dr18_sdss_apogeeallstarmerge_r13; Type: ACL; Schema: minidb; Owner: -
---
-
-GRANT SELECT ON TABLE minidb.dr18_sdss_apogeeallstarmerge_r13 TO sdss;
-GRANT SELECT ON TABLE minidb.dr18_sdss_apogeeallstarmerge_r13 TO sdss_user;
-
-
---
 -- Name: TABLE dr18_sdss_dr13_photoobj_primary; Type: ACL; Schema: minidb; Owner: -
 --
 
@@ -6670,6 +6783,14 @@ GRANT SELECT ON TABLE minidb.dr18_sdss_dr13_photoobj_primary TO sdss_user;
 
 GRANT SELECT ON TABLE minidb.dr18_sdss_dr16_qso TO sdss;
 GRANT SELECT ON TABLE minidb.dr18_sdss_dr16_qso TO sdss_user;
+
+
+--
+-- Name: TABLE dr18_sdss_dr16_qso_original; Type: ACL; Schema: minidb; Owner: -
+--
+
+GRANT SELECT ON TABLE minidb.dr18_sdss_dr16_qso_original TO sdss;
+GRANT SELECT ON TABLE minidb.dr18_sdss_dr16_qso_original TO sdss_user;
 
 
 --
@@ -6710,6 +6831,30 @@ GRANT SELECT ON TABLE minidb.dr18_supercosmos TO sdss_user;
 
 GRANT SELECT ON TABLE minidb.dr18_target TO sdss;
 GRANT SELECT ON TABLE minidb.dr18_target TO sdss_user;
+
+
+--
+-- Name: TABLE dr18_targetdb_version; Type: ACL; Schema: minidb; Owner: -
+--
+
+GRANT SELECT ON TABLE minidb.dr18_targetdb_version TO sdss;
+GRANT SELECT ON TABLE minidb.dr18_targetdb_version TO sdss_user;
+
+
+--
+-- Name: TABLE dr18_targeting_generation; Type: ACL; Schema: minidb; Owner: -
+--
+
+GRANT SELECT ON TABLE minidb.dr18_targeting_generation TO sdss;
+GRANT SELECT ON TABLE minidb.dr18_targeting_generation TO sdss_user;
+
+
+--
+-- Name: SEQUENCE dr18_targeting_generation_pk_seq; Type: ACL; Schema: minidb; Owner: -
+--
+
+GRANT SELECT ON SEQUENCE minidb.dr18_targeting_generation_pk_seq TO sdss;
+GRANT SELECT ON SEQUENCE minidb.dr18_targeting_generation_pk_seq TO sdss_user;
 
 
 --
@@ -6771,3 +6916,4 @@ GRANT SELECT ON TABLE minidb.dr18_zari18pms TO sdss_user;
 --
 -- PostgreSQL database dump complete
 --
+
