@@ -1,15 +1,15 @@
 Summary
 -------
 
-
+Gaia DR2 Source Table. See https://gea.esac.esa.int/archive/documentation/GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html for complete details.
 
 
 Columns
 -------
 
-solution_id - 
-designation - 
-source_id - 
+solution_id - ID that identifies the version of all the subsystems that were used in the generation of the data as well as the input data used []
+designation - Unique source designation across all Gaia data releases []
+source_id - Unique source identifier within a particular Gaia data release []
 random_index - 
 ref_epoch - 
 ra - 
