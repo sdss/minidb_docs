@@ -1,18 +1,19 @@
 Summary
 -------
 
+Catalog of pre-main-sequence stars derived from Gaia DR2 and 2MASS from McBride et al. (2021), their Table 4. For complete details, please see the original paper: https://iopscience.iop.org/article/10.3847/1538-3881/ac2432
 
 
 
 Columns
 -------
 
-source_id - 
-ra - 
-dec - 
-av - 
-yso - 
-yso_std - 
-age - 
-age_std - 
+source_id - Gaia DR2 unique identifier []
+ra - Right ascension [degrees]
+dec - Declination [degrees]
+av - Predicted extinction [mag]
+yso - Pre-main-sequence probability []
+yso_std - Error on pre-main-sequence probability []
+age - Age [log yrs]
+age_std - Error on age [log yrs]
 
