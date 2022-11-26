@@ -9,11 +9,11 @@ Summary
 Columns
 -------
 
-run - SDSS imaging run
-camcol - SDSS imaging camcol
-field - SDSS imaging field
-id - SDSS imaging object id
-rerun - SDSS imaging rerun
+run - SDSS imaging run []
+camcol - SDSS imaging camcol []
+field - SDSS imaging field []
+id - SDSS imaging object id []
+rerun - SDSS imaging rerun []
 fibermag_u - Magnitude in 3 arcsec diameter fiber radius, u-band [mag]
 fibermag_g - Magnitude in 3 arcsec diameter fiber radius, g-band [mag]
 fibermag_r - Magnitude in 3 arcsec diameter fiber radius, r-band [mag]
@@ -24,25 +24,25 @@ fiber2mag_g - Magnitude in 2 arcsec diameter fiber radius, g-band [mag]
 fiber2mag_r - Magnitude in 2 arcsec diameter fiber radius, r-band [mag]
 fiber2mag_i - Magnitude in 2 arcsec diameter fiber radius, i-band [mag]
 fiber2mag_z - Magnitude in 2 arcsec diameter fiber radius, z-band [mag]
-calib_status_u - Calibration status in u-band
-calib_status_g - Calibration status in g-band
-calib_status_r - Calibration status in r-band
-calib_status_i - Calibration status in i-band
-calib_status_z - Calibration status in z-band
+calib_status_u - Calibration status in u-band []
+calib_status_g - Calibration status in g-band []
+calib_status_r - Calibration status in r-band []
+calib_status_i - Calibration status in i-band []
+calib_status_z - Calibration status in z-band []
 ra - J2000 Right Ascension [deg]
 dec - J2000 Declination [deg]
 epoch - Epoch of position [year]
 pmra - proper motion in RA direction [mas/yr]
 pmdec -  - proper motion in Dec direction [mas/yr]
-eboss_target1 - eBOSS target selection information, for eBOSS plates
-eboss_target2 - eBOSS target selection information, for TDSS, SPIDERS, ELG, etc. plates
-eboss_target_id - eBOSS unique target identifier for every spectroscopic target
-thing_id_targeting - thing_id value from the version of resolve from which the targeting was created
-objc_type - Type classification of the object (star, galaxy, cosmic ray, etc.)
-objc_flags - Photo Object Attribute Flags(?)
-objc_flags2 - Additional Photo Object Attribute Flags(?)
-flags - Target selection flags set by ebosstarget (?)
-flags2 - Additional target selection flags set by ebosstarget (?)
+eboss_target1 - eBOSS target selection information, for eBOSS plates []
+eboss_target2 - eBOSS target selection information, for TDSS, SPIDERS, ELG, etc. plates []
+eboss_target_id - eBOSS unique target identifier for every spectroscopic target []
+thing_id_targeting - thing_id value from the version of resolve from which the targeting was created []
+objc_type - Type classification of the object (star, galaxy, cosmic ray, etc.) []
+objc_flags - Photo Object Attribute Flags(?) []
+objc_flags2 - Additional Photo Object Attribute Flags(?) []
+flags - Target selection flags set by ebosstarget (?) []
+flags2 - Additional target selection flags set by ebosstarget (?) []
 psf_fwhm_u - Imaging FWHM in u-band [arcsec]
 psf_fwhm_g - Imaging FWHM in g-band [arcsec]
 psf_fwhm_r - Imaging FWHM in r-band [arcsec]
@@ -98,14 +98,14 @@ modelmag_ivar_g - Inverse variance of magnitude of best fitting model, g-band [n
 modelmag_ivar_r - Inverse variance of magnitude of best fitting model, r-band [nMgy^{-2}]
 modelmag_ivar_i - Inverse variance of magnitude of best fitting model, i-band [nMgy^{-2}]
 modelmag_ivar_z - Inverse variance of magnitude of best fitting model, z-band [nMgy^{-2}]
-resolve_status - Resolve status of object
+resolve_status - Resolve status of object []
 w1_mag - WISE AllSky magnitude of the object, W1-band [mag]
 w1_mag_err - Error on WISE AllSky magnitude of the object, W1-band [mag]
 w1_nanomaggies - WISE AllSky flux of the object, W1-band [nMgy]
 w1_nanomaggies_ivar - Inverse variance of WISE AllSky flux of the object, W1-band [nMgy^{-2}]
 w2_nanomaggies - WISE AllSky flux of the object, W2-band [nMgy]
 w2_nanomaggies_ivar - Inverse variance of WISE AllSky flux of the object, W2-band [nMgy^{-2}]
-has_wise_phot - True if WISE photometry is available for this object 
-objid_targeting - Object ID of target
-pk - primary key for entry in database table
+has_wise_phot - True if WISE photometry is available for this object []
+objid_targeting - Object ID of target []
+pk - primary key for entry in database table []
 
