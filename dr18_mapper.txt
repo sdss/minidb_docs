@@ -7,5 +7,5 @@ This table stores the names of the mappers associated with cartons in dr18_carto
 Columns
 -------
 
-pk - The primary key. A sequential identifier.
-label - The name of the mapper.
+pk - The primary key. A sequential identifier. []
+label - The name of the mapper. []
