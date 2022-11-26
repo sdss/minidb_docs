@@ -7,39 +7,39 @@ Summary
 Columns
 -------
 
-sdss_name - 
-ra - 
-dec - 
-plate - 
-mjd - 
-fiberid - 
-autoclass_pqn - 
-autoclass_dr14q - 
-is_qso_qn - 
-z_qn - 
-random_select - 
-z_10k - 
-z_conf_10k - 
-pipe_corr_10k - 
-is_qso_10k - 
-thing_id - 
-z_vi - 
-z_conf - 
-class_person - 
-z_dr12q - 
-is_qso_dr12q - 
-z_dr7q_sch - 
-is_qso_dr7q - 
-z_dr6q_hw - 
-z_dr7q_hw - 
-is_qso_final - 
-z - 
-source_z - 
-z_pipe - 
-zwarning - 
-objid - 
-z_pca - 
-zwarn_pca - 
+sdss_name - SDSS-DR16 designation (HHMMSS.ss+DDMMSS.s; J2000) []
+ra - Right ascension [degrees]
+dec - Declination [degrees]
+plate - Spectroscopic plate number
+mjd - Spectroscopic modified Julian date [day] 
+fiberid - Spectroscopic fiber number []
+autoclass_pqn - Object classification post-QuasarNet []
+autoclass_dr14q - Object classification based only on the DR14Q algorithm []
+is_qso_qn - Binary flag for QuasarNET quasar identification []
+z_qn - Redshift derived by QuasarNET {}
+random_select - Binary flag indicating objects selected for random visual inspection []
+z_10k - Redshift from visual inspectionn of random set []
+z_conf_10k - Confidence rating for visual inspection redshift of random set []
+pipe_corr_10k - Binary flag indicating if the automated pipeline classification and redshift were correct intheh random set []
+is_qso_10k - Binary flag for random set quasar identification []
+thing_id - SDSS identifier mainly for BOSS and eBOSS objects []
+z_vi - Redshift from visual inspection
+z_conf - Confidence rating for visual inspection redshift []
+class_person - Object classification from visual inspection []
+z_dr12q - Redshift taken from DR12Q visual inspection []
+is_qso_dr12q - Flag indicating if an object was a quasar in DR12Q []
+z_dr7q_sch - Redshift taken from DR7Q catalog []
+is_qso_dr7q - Flag indicating if an object was a quasar in DR7Q catalog []
+z_dr6q_hw - Redshift taken from DR6 catalog []
+z_dr7q_hw - Redshift taken from DR7 catalog []
+is_qso_final - Flag indicating quasars included in final catalog []
+z - Best available redshift []
+source_z - Source for best available redshift []
+z_pipe - Redshift from SDSS pipeline version v5_13_0 []
+zwarning - Quality flag on SDSS pipeline redshift estimate []
+objid - SDSS object identification number (sky version, run, rerun, camera column, field number, and ID) []
+z_pca - PCA redshift derived by the redvsblue algorithm []
+zwarn_pca - Warning flag for redvsblue redshift []
 deltachi2_pca - 
 z_halpha - 
 zwarn_halpha - 
