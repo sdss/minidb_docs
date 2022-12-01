@@ -1,204 +1,203 @@
 Summary
 -------
 
-
+This is a base table containing ALL the spectroscopic information, including a lot of duplicate and bad data. Use the SpecObj view instead, which has the data properly filtered for cleanliness. These tables contain both the BOSS and SDSS spectrograph data. NOTE: The RA and Dec in this table refer to the DR8 coordinates, which have errors in the region north of 41 deg in Dec. This change does not affect the matching to the photometric catalog.
 
 
 Columns
 -------
 
-specobjid - 
-bestobjid - 
-fluxobjid - 
-targetobjid - 
-plateid - 
-scienceprimary - 
-sdssprimary - 
-legacyprimary - 
-segueprimary - 
-segue1primary - 
-segue2primary - 
-bossprimary - 
-bossspecobjid - 
-firstrelease - 
-survey - 
-instrument - 
-programname - 
-chunk - 
-platerun - 
-mjd - 
-plate - 
-fiberid - 
-run1d - 
-run2d - 
-tile - 
-designid - 
-legacy_target1 - 
-legacy_target2 - 
-special_target1 - 
-special_target2 - 
-segue1_target1 - 
-segue1_target2 - 
-segue2_target1 - 
-segue2_target2 - 
-boss_target1 - 
-eboss_target0 - 
-eboss_target1 - 
-eboss_target2 - 
-eboss_target_id - 
-ancillary_target1 - 
-ancillary_target2 - 
-thing_id_targeting - 
-thing_id - 
-primtarget - 
-sectarget - 
-spectrographid - 
-sourcetype - 
-targettype - 
-ra - 
-dec - 
-cx - 
-cy - 
-cz - 
-xfocal - 
-yfocal - 
-lambdaeff - 
-bluefiber - 
-zoffset - 
-z - 
-zerr - 
-zwarning - 
-class - 
-subclass - 
-rchi2 - 
-dof - 
-rchi2diff - 
-z_noqso - 
-zerr_noqso - 
-zwarning_noqso - 
-class_noqso - 
-subclass_noqso - 
-rchi2diff_noqso - 
-z_person - 
-class_person - 
-comments_person - 
-tfile - 
-tcolumn_0 - 
-tcolumn_1 - 
-tcolumn_2 - 
-tcolumn_3 - 
-tcolumn_4 - 
-tcolumn_5 - 
-tcolumn_6 - 
-tcolumn_7 - 
-tcolumn_8 - 
-tcolumn_9 - 
-npoly - 
-theta_0 - 
-theta_1 - 
-theta_2 - 
-theta_3 - 
-theta_4 - 
-theta_5 - 
-theta_6 - 
-theta_7 - 
-theta_8 - 
-theta_9 - 
-veldisp - 
-veldisperr - 
-veldispz - 
-veldispzerr - 
-veldispchi2 - 
-veldispnpix - 
-veldispdof - 
-wavemin - 
-wavemax - 
-wcoverage - 
-snmedian_u - 
-snmedian_g - 
-snmedian_r - 
-snmedian_i - 
-snmedian_z - 
-snmedian - 
-chi68p - 
-fracnsigma_1 - 
-fracnsigma_2 - 
-fracnsigma_3 - 
-fracnsigma_4 - 
-fracnsigma_5 - 
-fracnsigma_6 - 
-fracnsigma_7 - 
-fracnsigma_8 - 
-fracnsigma_9 - 
-fracnsigma_10 - 
-fracnsighi_1 - 
-fracnsighi_2 - 
-fracnsighi_3 - 
-fracnsighi_4 - 
-fracnsighi_5 - 
-fracnsighi_6 - 
-fracnsighi_7 - 
-fracnsighi_8 - 
-fracnsighi_9 - 
-fracnsighi_10 - 
-fracnsiglo_1 - 
-fracnsiglo_2 - 
-fracnsiglo_3 - 
-fracnsiglo_4 - 
-fracnsiglo_5 - 
-fracnsiglo_6 - 
-fracnsiglo_7 - 
-fracnsiglo_8 - 
-fracnsiglo_9 - 
-fracnsiglo_10 - 
-spectroflux_u - 
-spectroflux_g - 
-spectroflux_r - 
-spectroflux_i - 
-spectroflux_z - 
-spectrosynflux_u - 
-spectrosynflux_g - 
-spectrosynflux_r - 
-spectrosynflux_i - 
-spectrosynflux_z - 
-spectrofluxivar_u - 
-spectrofluxivar_g - 
-spectrofluxivar_r - 
-spectrofluxivar_i - 
-spectrofluxivar_z - 
-spectrosynfluxivar_u - 
-spectrosynfluxivar_g - 
-spectrosynfluxivar_r - 
-spectrosynfluxivar_i - 
-spectrosynfluxivar_z - 
-spectroskyflux_u - 
-spectroskyflux_g - 
-spectroskyflux_r - 
-spectroskyflux_i - 
-spectroskyflux_z - 
-anyandmask - 
-anyormask - 
-platesn2 - 
-deredsn2 - 
-snturnoff - 
-sn1_g - 
-sn1_r - 
-sn1_i - 
-sn2_g - 
-sn2_r - 
-sn2_i - 
-elodiefilename - 
-elodieobject - 
-elodiesptype - 
-elodiebv - 
-elodieteff - 
-elodielogg - 
-elodiefeh - 
-elodiez - 
-elodiezerr - 
-elodiezmodelerr - 
-elodierchi2 - 
-elodiedof - 
-htmid - 
-loadversion - 
-
+specobjid - Unique database ID based on PLATE, MJD, FIBERID, RUN2D
+bestobjid - Object ID of photoObj match (position-based)
+fluxobjid - Object ID of photoObj match (flux-based)
+targetobjid - Object ID of original target
+plateid - Database ID of Plate
+scienceprimary - Best version of spectrum at this location (defines default view SpecObj)
+sdssprimary - Best version of spectrum at this location among SDSS plates (defines default view SpecObj)
+legacyprimary - Best version of spectrum at this location, among Legacy plates
+segueprimary - Best version of spectrum at this location, among SEGUE plates
+segue1primary - Best version of spectrum at this location, among SEGUE-1 plates
+segue2primary - Best version of spectrum at this location, among SEGUE-2 plates
+bossprimary - Best version of spectrum at this location, among BOSS plates
+bossspecobjid - Index of BOSS observation in spAll flat file
+firstrelease - Name of first release this object was associated with
+survey - Survey name
+instrument - Instrument used (SDSS or BOSS spectrograph)
+programname - Program name
+chunk - Chunk name
+platerun - Plate drill run name
+mjd - MJD of observation
+plate - Plate number
+fiberid - Fiber ID
+run1d - 1D Reduction version of spectrum
+run2d - 2D Reduction version of spectrum
+tile - Tile number
+designid - Design ID number
+legacy_target1 - for Legacy program, target selection information at plate design
+legacy_target2 - for Legacy program target selection information at plate design, secondary/qa/calibration
+special_target1 - for Special program target selection information at plate design
+special_target2 - for Special program target selection information at plate design, secondary/qa/calibration
+segue1_target1 - SEGUE-1 target selection information at plate design, primary science selection
+segue1_target2 - SEGUE-1 target selection information at plate design, secondary/qa/calib selection
+segue2_target1 - SEGUE-2 target selection information at plate design, primary science selection
+segue2_target2 - SEGUE-2 target selection information at plate design, secondary/qa/calib selection
+boss_target1 - BOSS target selection information at plate
+eboss_target0 - EBOSS target selection information, for SEQUELS plates
+eboss_target1 - EBOSS target selection information, for eBOSS plates
+eboss_target2 - EBOSS target selection information, for TDSS, SPIDERS, ELG, etc. plates
+eboss_target_id - EBOSS unique target identifier for every spectroscopic target,
+ancillary_target1 - BOSS ancillary science target selection information at plate design
+ancillary_target2 - BOSS ancillary target selection information at plate design
+thing_id_targeting - thing_id value from the version of resolve from which the targeting was created
+thing_id - Unique identifier from global resolve
+primtarget - target selection information at plate design, primary science selection (for backwards compatibility)
+sectarget - target selection information at plate design, secondary/qa/calib selection (for backwards compatibility)
+spectrographid - which spectrograph (1,2)
+sourcetype - For Legacy, SEGUE-2 and BOSS science targets, type of object targeted as (target bits contain full information and are recommended)
+targettype - Nature of target: SCIENCE, STANDARD, or SKY
+ra - DR8 Right ascension of fiber, J2000
+dec - DR8 Declination of fiber, J2000
+cx - x of Normal unit vector in J2000
+cy - y of Normal unit vector in J2000
+cz - z of Normal unit vector in J2000
+xfocal - X focal plane position (+RA direction)
+yfocal - Y focal plane position (+Dec direction)
+lambdaeff - Effective wavelength that hole was drilled for (accounting for atmopheric refraction)
+bluefiber - Set to 1 if this hole was designated a "blue fiber", 0 if designated a "red fiber" (high redshift LRGs are preferentially in "red fibers")
+zoffset - Washer thickness used (for backstopping BOSS quasar targets, so they are closer to 4000 Angstrom focal plan)
+z - Final Redshift
+zerr - Redshift error
+zwarning - Bitmask of warning values; 0 means all is well
+class - Spectroscopic class (GALAXY, QSO, or STAR)
+subclass - Spectroscopic subclass
+rchi2 - Reduced chi-squared of best fit
+dof - Degrees of freedom in best fit
+rchi2diff - Difference in reduced chi-squared between best and second best fit
+z_noqso - Best redshift when excluding QSO fit in BOSS spectra (right redshift to use for galaxy targets)
+zerr_noqso - Error in "z_noqso" redshift (BOSS spectra only)
+zwarning_noqso - Warnings in "z_noqso" redshift (BOSS spectra only)
+class_noqso - Classification in "z_noqso" redshift
+subclass_noqso - Sub-classification in "z_noqso" redshift
+rchi2diff_noqso - Reduced chi-squared difference from next best redshift, for "z_noqso" redshift
+z_person - Person-assigned redshift, if this object has been inspected
+class_person - Person-assigned classification, if this object has been inspected
+comments_person - Comments from person for inspected objects
+tfile - File name of best fit template source
+tcolumn_0 - Which column of the template file corresponds to template #0
+tcolumn_1 - Which column of the template file corresponds to template #1
+tcolumn_2 - Which column of the template file corresponds to template #2
+tcolumn_3 - Which column of the template file corresponds to template #3
+tcolumn_4 - Which column of the template file corresponds to template #4
+tcolumn_5 - Which column of the template file corresponds to template #5
+tcolumn_6 - Which column of the template file corresponds to template #6
+tcolumn_7 - Which column of the template file corresponds to template #7
+tcolumn_8 - Which column of the template file corresponds to template #8
+tcolumn_9 - Which column of the template file corresponds to template #9
+npoly - Number of polynomial terms used in the fit
+theta_0 - Coefficient for template #0 of fit
+theta_1 - Coefficient for template #1 of fit
+theta_2 - Coefficient for template #2 of fit
+theta_3 - Coefficient for template #3 of fit
+theta_4 - Coefficient for template #4 of fit
+theta_5 - Coefficient for template #5 of fit
+theta_6 - Coefficient for template #6 of fit
+theta_7 - Coefficient for template #7 of fit
+theta_8 - Coefficient for template #8 of fit
+theta_9 - Coefficient for template #9 of fit
+veldisp - Velocity dispersion
+veldisperr - Error in velocity dispersion
+veldispz - Redshift associated with best fit velocity dispersion
+veldispzerr - Error in redshift associated with best fit velocity dispersion
+veldispchi2 - Chi-squared associated with velocity dispersion fit
+veldispnpix - Number of pixels overlapping best template in velocity dispersion fit
+veldispdof - Number of degrees of freedom in velocity dispersion fit
+wavemin - Minimum observed (vacuum) wavelength
+wavemax - Maximum observed (vacuum) wavelength
+wcoverage - Coverage in wavelength, in units of log10 wavelength
+snmedian_u - Median signal-to-noise over all good pixels in u-band
+snmedian_g - Median signal-to-noise over all good pixels in g-band
+snmedian_r - Median signal-to-noise over all good pixels in r-band
+snmedian_i - Median signal-to-noise over all good pixels in i-band
+snmedian_z - Median signal-to-noise over all good pixels in z-band
+snmedian - Median signal-to-noise over all good pixels
+chi68p - 68-th percentile value of abs(chi) of the best-fit synthetic spectrum to the actual spectrum (around 1.0 for a good fit)
+fracnsigma_1 - Fraction of pixels deviant by more than 1 sigma relative to best-fit
+fracnsigma_2 - Fraction of pixels deviant by more than 2 sigma relative to best-fit
+fracnsigma_3 - Fraction of pixels deviant by more than 3 sigma relative to best-fit
+fracnsigma_4 - Fraction of pixels deviant by more than 4 sigma relative to best-fit
+fracnsigma_5 - Fraction of pixels deviant by more than 5 sigma relative to best-fit
+fracnsigma_6 - Fraction of pixels deviant by more than 6 sigma relative to best-fit
+fracnsigma_7 - Fraction of pixels deviant by more than 7 sigma relative to best-fit
+fracnsigma_8 - Fraction of pixels deviant by more than 8 sigma relative to best-fit
+fracnsigma_9 - Fraction of pixels deviant by more than 9 sigma relative to best-fit
+fracnsigma_10 - Fraction of pixels deviant by more than 10 sigma relative to best-fit
+fracnsighi_1 - Fraction of pixels high by more than 1 sigma relative to best-fit
+fracnsighi_2 - Fraction of pixels high by more than 2 sigma relative to best-fit
+fracnsighi_3 - Fraction of pixels high by more than 3 sigma relative to best-fit
+fracnsighi_4 - Fraction of pixels high by more than 4 sigma relative to best-fit
+fracnsighi_5 - Fraction of pixels high by more than 5 sigma relative to best-fit
+fracnsighi_6 - Fraction of pixels high by more than 6 sigma relative to best-fit
+fracnsighi_7 - Fraction of pixels high by more than 7 sigma relative to best-fit
+fracnsighi_8 - Fraction of pixels high by more than 8 sigma relative to best-fit
+fracnsighi_9 - Fraction of pixels high by more than 9 sigma relative to best-fit
+fracnsighi_10 - Fraction of pixels high by more than 10 sigma relative to best-fit
+fracnsiglo_1 - Fraction of pixels low by more than 1 sigma relative to best-fit
+fracnsiglo_2 - Fraction of pixels low by more than 2 sigma relative to best-fit
+fracnsiglo_3 - Fraction of pixels low by more than 3 sigma relative to best-fit
+fracnsiglo_4 - Fraction of pixels low by more than 4 sigma relative to best-fit
+fracnsiglo_5 - Fraction of pixels low by more than 5 sigma relative to best-fit
+fracnsiglo_6 - Fraction of pixels low by more than 6 sigma relative to best-fit
+fracnsiglo_7 - Fraction of pixels low by more than 7 sigma relative to best-fit
+fracnsiglo_8 - Fraction of pixels low by more than 8 sigma relative to best-fit
+fracnsiglo_9 - Fraction of pixels low by more than 9 sigma relative to best-fit
+fracnsiglo_10 - Fraction of pixels low by more than 10 sigma relative to best-fit
+spectroflux_u - Spectrum projected onto u filter
+spectroflux_g - Spectrum projected onto g filter
+spectroflux_r - Spectrum projected onto r filter
+spectroflux_i - Spectrum projected onto i filter
+spectroflux_z - Spectrum projected onto z filter
+spectrosynflux_u - Best-fit template spectrum projected onto u filter
+spectrosynflux_g - Best-fit template spectrum projected onto g filter
+spectrosynflux_r - Best-fit template spectrum projected onto r filter
+spectrosynflux_i - Best-fit template spectrum projected onto i filter
+spectrosynflux_z - Best-fit template spectrum projected onto z filter
+spectrofluxivar_u - Inverse variance of spectrum projected onto u filter
+spectrofluxivar_g - Inverse variance of spectrum projected onto g filter
+spectrofluxivar_r - Inverse variance of spectrum projected onto r filter
+spectrofluxivar_i - Inverse variance of spectrum projected onto i filter
+spectrofluxivar_z - Inverse variance of spectrum projected onto z filter
+spectrosynfluxivar_u - Inverse variance of best-fit template spectrum projected onto u filter
+spectrosynfluxivar_g - Inverse variance of best-fit template spectrum projected onto g filter
+spectrosynfluxivar_r - Inverse variance of best-fit template spectrum projected onto r filter
+spectrosynfluxivar_i - Inverse variance of best-fit template spectrum projected onto i filter
+spectrosynfluxivar_z - Inverse variance of best-fit template spectrum projected onto z filter
+spectroskyflux_u - Sky spectrum projected onto u filter
+spectroskyflux_g - Sky spectrum projected onto g filter
+spectroskyflux_r - Sky spectrum projected onto r filter
+spectroskyflux_i - Sky spectrum projected onto i filter
+spectroskyflux_z - Sky spectrum projected onto z filter
+anyandmask - For each bit, records whether any pixel in the spectrum has that bit set in its ANDMASK
+anyormask - For each bit, records whether any pixel in the spectrum has that bit set in its ORMASK
+platesn2 - Overall signal-to-noise-squared measure for plate (only set for SDSS spectrograph)
+deredsn2 - Dereddened signal-to-noise-squared measure for plate (only set for BOSS spectrograph)
+snturnoff - Signal to noise measure for MS turnoff stars on plate (-9999 if not appropriate)
+sn1_g - (S/N)^2 at g=20.20 for spectrograph #1
+sn1_r - (S/N)^2 at r=20.25 for spectrograph #1
+sn1_i - (S/N)^2 at i=19.90 for spectrograph #1
+sn2_g - (S/N)^2 at g=20.20 for spectrograph #2
+sn2_r - (S/N)^2 at r=20.25 for spectrograph #2
+sn2_i - (S/N)^2 at i=19.90 for spectrograph #2
+elodiefilename - File name for best-fit Elodie star
+elodieobject - Star name (mostly Henry Draper names)
+elodiesptype - Spectral type
+elodiebv - (B-V) color
+elodieteff - Effective temperature
+elodielogg - log10(gravity)
+elodiefeh - Metallicity ([Fe/H])
+elodiez - Redshift
+elodiezerr - Redshift error (negative for invalid fit)
+elodiezmodelerr - Standard deviation in redshift among the 12 best-fit stars
+elodierchi2 - Reduced chi^2
+elodiedof - Degrees of freedom for fit
+htmid - 20 deep Hierarchical Triangular Mesh ID
+loadversion - Load Version
