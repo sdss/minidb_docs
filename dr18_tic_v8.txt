@@ -7,134 +7,133 @@ Summary
 Columns
 -------
 
-id - 
-version - 
-hip - 
-tyc - 
-ucac - 
-twomass - 
-sdss - 
-allwise - 
-gaia - 
-apass - 
-kic - 
-objtype - 
-typesrc - 
-ra - 
-dec - 
-posflag - 
-pmra - 
-e_pmra - 
-pmdec - 
-e_pmdec - 
-pmflag - 
-plx - 
-e_plx - 
-parflag - 
-gallong - 
-gallat - 
-eclong - 
-eclat - 
-bmag - 
-e_bmag - 
-vmag - 
-e_vmag - 
-umag - 
-e_umag - 
-gmag - 
-e_gmag - 
-rmag - 
-e_rmag - 
-imag - 
-e_imag - 
-zmag - 
-e_zmag - 
-jmag - 
-e_jmag - 
-hmag - 
-e_hmag - 
-kmag - 
-e_kmag - 
-twomflag - 
-prox - 
-w1mag - 
-e_w1mag - 
-w2mag - 
-e_w2mag - 
-w3mag - 
-e_w3mag - 
-w4mag - 
-e_w4mag - 
-gaiamag - 
-e_gaiamag - 
-tmag - 
-e_tmag - 
-tessflag - 
-spflag - 
-teff - 
-e_teff - 
-logg - 
-e_logg - 
-mh - 
-e_mh - 
-rad - 
-e_rad - 
-mass - 
-e_mass - 
-rho - 
-e_rho - 
-lumclass - 
-lum - 
-e_lum - 
-d - 
-e_d - 
-ebv - 
-e_ebv - 
-numcont - 
-contratio - 
-disposition - 
-duplicate_id - 
-priority - 
-eneg_ebv - 
-epos_ebv - 
-ebvflag - 
-eneg_mass - 
-epos_mass - 
-eneg_rad - 
-epos_rad - 
-eneg_rho - 
-epos_rho - 
-eneg_logg - 
-epos_logg - 
-eneg_lum - 
-epos_lum - 
-eneg_dist - 
-epos_dist - 
-distflag - 
-eneg_teff - 
-epos_teff - 
-tefflag - 
-gaiabp - 
-e_gaiabp - 
-gaiarp - 
-e_gaiarp - 
-gaiaqflag - 
-starchareflag - 
-vmagflag - 
-bmagflag - 
-splits - 
-e_ra - 
-e_dec - 
-ra_orig - 
-dec_orig - 
-e_ra_orig - 
-e_dec_orig - 
-raddflag - 
-wdflag - 
-objid - 
-gaia_int - 
-twomass_psc - 
-twomass_psc_pts_key - 
-tycho2_tycid - 
-allwise_cntr - 
-
+id - TESS Input Catalog identifier
+version - Version Identifier for this entry
+hip - Hipparcos Identifier
+tyc - Tycho2 Identifier
+ucac - UCAC4 Identifier
+twomass - 2MASS Identifier
+sdss - SDSS DR9 Identifier
+allwise - ALLWISE Identifier
+gaia - GAIA Identifier
+apass - APASS Identifier
+kic - KIC Identifier
+objtype - Object Type
+typesrc - Source of the object
+ra - Right Ascension epoch 2000
+dec - Declination epoch 2000
+posflag - Source of the position
+pmra - Proper Motion in Right Ascension
+e_pmra - Uncertainty in PM Right Ascension
+pmdec - Proper Motion in Declination
+e_pmdec - Uncertainty in PM Declination
+pmflag - Source of the Proper Motion
+plx - Parallax
+e_plx - Error in the parallax
+parflag - Source of the parallax
+gallong - Galactic Longitude
+gallat - Galactic Latitude
+eclong - Ecliptic Longitude
+eclat - Ecliptic Latitude
+bmag - Johnson B
+e_bmag - Uncertainty in Johnson B
+vmag - Johnson V
+e_vmag - Uncertainty in Johnson V
+umag - Sloan u
+e_umag - Uncertainty in Sloan u
+gmag - Sloan g
+e_gmag - Uncertainty in Sloan g
+rmag - Sloan r
+e_rmag - Uncertainty in Sloan r
+imag - Sloan I
+e_imag - Uncertainty in Sloan I
+zmag - Sloan z
+e_zmag - Uncertainty in Sloan z
+jmag - 2MASS J
+e_jmag - Uncertainty in 2MASS J
+hmag - 2MASS H
+e_hmag - Uncertainty in 2MASS H
+kmag - 2MASS K
+e_kmag - Uncertainty in 2MASS K
+twomflag - Quality Flags for 2MASS
+prox - Distance to 2MASS nearest neighbor
+w1mag - WISE W1
+e_w1mag - Uncertainty in WISE W1
+w2mag - WISE W2
+e_w2mag - Uncertainty in WISE W2
+w3mag - WISE W3
+e_w3mag - Uncertainty in WISE W3
+w4mag - WISE W4
+e_w4mag - Uncertainty in WISE W4
+gaiamag - GAIA G Mag
+e_gaiamag - Uncertainty in GAIA G
+tmag - TESS Magnitude
+e_tmag - Uncertainty in TESS Magnitude
+tessflag - TESS Magnitude Flag
+spflag - Stellar Properties Flag
+teff - Effective Temperature
+e_teff - Uncertainty in Effective Temperature
+logg - log of the Surface Gravity
+e_logg - Uncertainty in Surface Gravity
+mh - Metallicity
+e_mh - Uncertainty in the Metallicity
+rad - Radius
+e_rad - Uncertainty in the Radius
+mass - Mass
+e_mass - Uncertainty in the Mass
+rho - Stellar Density
+e_rho - Uncertainty in the Stellar Density
+lumclass - Luminosity Class
+lum - Stellar Luminosity
+e_lum - Uncertainty in Luminosity
+d - Distance
+e_d - Uncertainty in the distance
+ebv - Applied Color Excess
+e_ebv - Uncertainty in Applied Color Excess
+numcont - Number of Contamination Sources
+contratio - Contamination Ratio
+disposition - Disposition type
+duplicate_id - Points to the duplicate object TIC ID
+priority - CTL priority
+eneg_ebv - eneg_EBV
+epos_ebv - epos_EBV
+ebvflag - EBVFlag
+eneg_mass - eneg_Mass
+epos_mass - epos_Mass
+eneg_rad - eneg_Rad
+epos_rad - epos_Rad
+eneg_rho - eneg_rho
+epos_rho - epos_rho
+eneg_logg - eneg_logg
+epos_logg - epos_logg
+eneg_lum - eneg_lum
+epos_lum - epos_lum
+eneg_dist - eneg_dist
+epos_dist - epos_dist
+distflag - distFlag
+eneg_teff - eneg_Teff
+epos_teff - epos_Teff
+tefflag - TeffFlag
+gaiabp - gaiabp
+e_gaiabp - e_gaiabp
+gaiarp - gaiarp
+e_gaiarp - e_gaiarp
+gaiaqflag - gaiaqflag
+starchareflag - starchareFlag
+vmagflag - VmagFlag
+bmagflag - BmagFlag
+splits - splists
+e_ra - e_RA
+e_dec - e_Dec
+ra_orig - RA_orig
+dec_orig - Dec_orig
+e_ra_orig - e_RA_orig
+e_dec_orig - e_Dec_orig
+raddflag - raddflag
+wdflag - wdflag
+objid -
+gaia_int - Gaia source ID (integer). Not originally in TIC v8.
+twomass_psc - 2MASS PSC identifier. Not originally in TIC v8.
+twomass_psc_pts_key - 2MASS PSC identifier. Not originally in TIC v8.
+tycho2_tycid - Tycho2 identifier (integer). Not originally in TIC v8.
+allwise_cntr - ALLWISE ID (integer). Not originally in TIC v8.
