@@ -11,7 +11,7 @@ Columns
 wd - WD names from this catalog -- WD J + J2000 ra (hh mm ss.ss) + dec (dd mm ss.s), equinox and epoch 2000 [] 
 dr2name - Unique Gaia source designation []
 source_id - Unique Gaia DR2 source identifier []
-source - 
+source - Internal identifier (do not use) []
 ra - Right ascension [deg]
 e_ra - Standard error of right ascenscion [mas]
 dec - Declination [deg]
