@@ -15,33 +15,33 @@ ramdeg - Mean Right Asc, ICRS, epoch=J2000 [degrees]
 demdeg - Mean Decl, ICRS, at epoch=J2000 [degrees]
 pmra - Proper motion in RA*cos(dec) [mas/yr]
 pmde - Proper motion in Dec [mas/yr]
-e_ramdeg - 
-e_demdeg - 
-e_pmra - 
-e_pmde - 
-epram - 
-epdem - 
-num - 
-q_ramdeg - 
-q_demdeg - 
-q_pmra - 
-q_pmde - 
-btmag - 
-e_btmag - 
-vtmag - 
-e_vtmag - 
-prox - 
-tyc - 
-hip - 
-ccdm - 
-radeg - 
-dedeg - 
-epra_1990 - 
-epde_1990 - 
-e_radeg - 
-e_dedeg - 
-posflg - 
-corr - 
+e_ramdeg - standard error of RA*cos(dec) at mean epoch [mas]
+e_demdeg - standard error of Declination at mean epoch [mas]
+e_pmra - standard error of proper motion in RA*cos(dec) [mas/yr]
+e_pmde - standard error of proper motion in Declination [mas/yr]
+epram - mean epoch of RA [yr]
+epdem - mean epoch of Dec [yr]
+num - Number of positions used []
+q_ramdeg - Goodness of fit for mean RA []
+q_demdeg - Goodness of fit for mean Dec [] 
+q_pmra - Goodness of fit for pmra []
+q_pmde - Goodness of fit for pmde []
+btmag - Tycho-2 BT magnitude [mag]
+e_btmag - Standard error of BT magnitude [mag]
+vtmag - Tycho-2 VT magnitude [mag]
+e_vtmag - Standard error of VT magnitude [mag]
+prox -  Distance to the nearest entry in the Tycho-2 main catalogue or supplement [0.1 arcsec]
+tyc - Tycho-1 star flag []
+hip - Hipparcos number []
+ccdm - CCDM component identifiers for double or multiple Hipparcos stars contributing to this Tycho-2 entry []
+radeg - Observed Tycho-2 Right Ascension, ICRS [degrees]
+dedeg - Observed Tycho-2 Declination, ICRS [degrees]
+epra_1990 - epoch-1990 of RAdeg [yr]
+epde_1990 - epoch-1990 of Dedeg [yr]
+e_radeg - Standard error of RA*cos(dec), of observed Tycho-2 RA [mas]
+e_dedeg - Standard error of observed Tycho-2 Dec [mas]
+posflg - Type of Tycho-2 solution []
+corr - correlation (RAdeg,DEdeg) []
 flag - 
 mflag - 
 designation - 
