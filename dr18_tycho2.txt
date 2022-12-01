@@ -42,8 +42,8 @@ e_radeg - Standard error of RA*cos(dec), of observed Tycho-2 RA [mas]
 e_dedeg - Standard error of observed Tycho-2 Dec [mas]
 posflg - Type of Tycho-2 solution []
 corr - correlation (RAdeg,DEdeg) []
-flag - 
-mflag - 
-designation - 
-tycid - 
+flag - flag indicating whether data from Hipparcos or Tycho-1 []
+mflag - magnitude flag []
+designation - Unique Tycho designation []
+tycid - Tycho ID []
 
