@@ -1,20 +1,20 @@
 Summary
 -------
 
-
+Tycho-2 catalog. For complete details, please see the original Tycho-2 documentation from Hog et al (2020) https://ui.adsabs.harvard.edu/abs/2000A%26A...355L..27H/abstract and https://www.cosmos.esa.int/web/hipparcos/tycho-2
 
 
 Columns
 -------
 
-tyc1 - 
-tyc2 - 
-tyc3 - 
-pflag - 
-ramdeg - 
-demdeg - 
-pmra - 
-pmde - 
+tyc1 - TYC1 from TYC or GSC (used to construct the Tycho identifier) []
+tyc2 - TYC2 from TYC or GSC (used to construct the Tycho identifier) []
+tyc3 - TYC3 from TYC (used to construct the Tycho identifier) []
+pflag - Mean position flag []
+ramdeg - Mean Right Asc, ICRS, epoch=J2000 [degrees]
+demdeg - Mean Decl, ICRS, at epoch=J2000 [degrees]
+pmra - Proper motion in RA*cos(dec) [mas/yr]
+pmde - Proper motion in Dec [mas/yr]
 e_ramdeg - 
 e_demdeg - 
 e_pmra - 
