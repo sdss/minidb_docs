@@ -1,67 +1,78 @@
 Summary
 -------
+Contains merged sources for every field in the SuperCOSMOS Science Archive (SSA).
+It consists of data from digitised sky survey plates taken with the UK Schmidt
+telescope (UKST), the ESO Schmidt, and the Palomar Schmidt.
+Each field within the SSA is covered by four plates in passbands B, R and
+I with R being covered twice at different times. This results in
+four-plate multi-colour, multi-epoch data which are merged into a single
+source catalogue for general science exploitation. This table contains the
+associated merged records created from the records in table Detection,
+along with a full astrometric solution (including proper motions) computed
+from the available position measures. The most useful subset of image
+morphological descriptors are also propagated into this table for ease of
+use.
 
-
-
+Derived from http://ssa.roe.ac.uk/www/SSA_TABLE_SourceSchema.html#Source
 
 Columns
 -------
 
-objid - 
-objidb - 
-objidr1 - 
-objidr2 - 
-objidi - 
-htmid - 
-epoch - 
-ra - 
-dec - 
-sigra - 
-sigdec - 
-cx - 
-cy - 
-cz - 
-muacosd - 
-mud - 
-sigmuacosd - 
-sigmud - 
-chi2 - 
-nplates - 
-classmagb - 
-classmagr1 - 
-classmagr2 - 
-classmagi - 
-gcormagb - 
-gcormagr1 - 
-gcormagr2 - 
-gcormagi - 
-scormagb - 
-scormagr1 - 
-scormagr2 - 
-scormagi - 
-meanclass - 
-classb - 
-classr1 - 
-classr2 - 
-classi - 
-ellipb - 
-ellipr1 - 
-ellipr2 - 
-ellipi - 
-qualb - 
-qualr1 - 
-qualr2 - 
-quali - 
-blendb - 
-blendr1 - 
-blendr2 - 
-blendi - 
-prfstatb - 
-prfstatr1 - 
-prfstatr2 - 
-prfstati - 
-l - 
-b - 
-d - 
-ebmv - 
+objid - Unique identifier of merged source []
+objidb - objID for B band detection merged into this object []
+objidr1 - objID for R1 band detection merged into this object []
+objidr2 - objID for R2 band detection merged into this object []
+objidi - objID for I band detection merged into this object []
+htmid - Hierarchical Triangular Mesh (20-deep) of centroid []
+epoch - Epoch of position (variance weighted mean epoch of available measures) [yr]
+ra - Mean RA, computed from detections merged in this catalogue [deg]
+dec - Mean Dec, computed from detections merged in this catalogue [deg]
+sigra - Uncertainty in RA (formal random error not inc. systematic errors) [deg]
+sigdec - Uncertainty in Dec (formal random error not inc. systematic errors) [deg]
+cx - Cartesian x of unit (ra,dec) vector on celestial sphere []
+cy - Cartesian y of unit (ra,dec) vector on celestial sphere []
+cz - Cartesian z of unit (ra,dec) vector on celestial sphere []
+muacosd - Proper motion in RA direction [mas/yr]
+mud - Proper motion in Dec direction [mas/yr]
+sigmuacosd - Error on proper motion in RA direction [mas/yr]
+sigmud - Error on proper motion in Dec direction [mas/yr]
+chi2 - Chi-squared value of proper motion solution []
+nplates - No. of plates used for this proper motion measurement []
+classmagb - B band magnitude selected by B image class [mag]
+classmagr1 - R1 band magnitude selected by R1 image class [mag]
+classmagr2 - R2 band magnitude selected by R2 image class [mag]
+classmagi - I band magnitude selected by I image class [mag]
+gcormagb - B band magnitude assuming object is galaxy [mag]
+gcormagr1 - R1 band magnitude assuming object is galaxy [mag]
+gcormagr2 - R2 band magnitude assuming object is galaxy [mag]
+gcormagi - I band magnitude assuming object is galaxy [mag]
+scormagb - B band magnitude assuming object is star [mag]
+scormagr1 - R1 band magnitude assuming object is star [mag]
+scormagr2 - R2 band magnitude assuming object is star [mag]
+scormagi - I band magnitude assuming object is star [mag]
+meanclass - Estimate of image class based on unit-weighted mean of individual classes []
+classb - Image classification from B band detection []
+classr1 - Image classification from R1 band detection []
+classr2 - Image classification from R2 band detection []
+classi - Image classification from I band detection []
+ellipb - Ellipticity of B band detection []
+ellipr1 - Ellipticity of R1 band detection []
+ellipr2 - Ellipticity of R2 band detection []
+ellipi - Ellipticity of I band detection []
+qualb - Bitwise quality flag from B band detection []
+qualr1 - Bitwise quality flag from R1 band detection []
+qualr2 - Bitwise quality flag from R2 band detection []
+quali - Bitwise quality flag from I band detection []
+blendb - Blend flag from B band detection []
+blendr1 - Blend flag from R1 band detection []
+blendr2 - Blend flag from R2 band detection []
+blendi - Blend flag from I band detection []
+prfstatb - Profile statistic from B band detection []
+prfstatr1 - Profile statistic from R1 band detection []
+prfstatr2 - Profile statistic from R2 band detection []
+prfstati - Profile statistic from I band detection []
+l - The Galactic longitude of the source [deg]
+b - The Galactic latitude of the source [deg]
+d - The great-circle distance of the source from the Galactic centre [deg]
+ebmv - The estimated foreground reddening at this position from Schlegel et al. (1998) [mag]
 
