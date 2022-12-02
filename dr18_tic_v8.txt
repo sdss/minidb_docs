@@ -1,138 +1,138 @@
 Summary
 -------
 
-The Eight version of the TESS Input Catalogue (<a href="https://outerspace.stsci.edu/display/TESS/TIC+v8+and+CTL+v8.xx+Data+Release+Notes"></a>). This catalogue is used in v0.5 target selection as a form of internal cross-match between the objects found in difference input catalogues.
+The Eighth version (v8.0) of the TESS Input Catalogue (<a href="https://outerspace.stsci.edu/display/TESS/TIC+v8+and+CTL+v8.xx+Data+Release+Notes"></a>). This catalogue is used in v0.5 target selection as a form of internal cross-match between the objects found in difference input catalogues.
 
 
 Columns
 -------
 
-id - TESS Input Catalog identifier
-version - Version Identifier for this entry
-hip - Hipparcos Identifier
-tyc - Tycho2 Identifier
-ucac - UCAC4 Identifier
-twomass - 2MASS Identifier
-sdss - SDSS DR9 Identifier
-allwise - ALLWISE Identifier
-gaia - GAIA Identifier
-apass - APASS Identifier
-kic - KIC Identifier
-objtype - Object Type
-typesrc - Source of the object
-ra - Right Ascension epoch 2000
-dec - Declination epoch 2000
-posflag - Source of the position
-pmra - Proper Motion in Right Ascension
-e_pmra - Uncertainty in PM Right Ascension
-pmdec - Proper Motion in Declination
-e_pmdec - Uncertainty in PM Declination
-pmflag - Source of the Proper Motion
-plx - Parallax
-e_plx - Error in the parallax
-parflag - Source of the parallax
-gallong - Galactic Longitude
-gallat - Galactic Latitude
-eclong - Ecliptic Longitude
-eclat - Ecliptic Latitude
-bmag - Johnson B
-e_bmag - Uncertainty in Johnson B
-vmag - Johnson V
-e_vmag - Uncertainty in Johnson V
-umag - Sloan u
-e_umag - Uncertainty in Sloan u
-gmag - Sloan g
-e_gmag - Uncertainty in Sloan g
-rmag - Sloan r
-e_rmag - Uncertainty in Sloan r
-imag - Sloan I
-e_imag - Uncertainty in Sloan I
-zmag - Sloan z
-e_zmag - Uncertainty in Sloan z
-jmag - 2MASS J
-e_jmag - Uncertainty in 2MASS J
-hmag - 2MASS H
-e_hmag - Uncertainty in 2MASS H
-kmag - 2MASS K
-e_kmag - Uncertainty in 2MASS K
-twomflag - Quality Flags for 2MASS
-prox - Distance to 2MASS nearest neighbor
-w1mag - WISE W1
-e_w1mag - Uncertainty in WISE W1
-w2mag - WISE W2
-e_w2mag - Uncertainty in WISE W2
-w3mag - WISE W3
-e_w3mag - Uncertainty in WISE W3
-w4mag - WISE W4
-e_w4mag - Uncertainty in WISE W4
-gaiamag - GAIA G Mag
-e_gaiamag - Uncertainty in GAIA G
-tmag - TESS Magnitude
-e_tmag - Uncertainty in TESS Magnitude
-tessflag - TESS Magnitude Flag
-spflag - Stellar Properties Flag
-teff - Effective Temperature
-e_teff - Uncertainty in Effective Temperature
-logg - log of the Surface Gravity
-e_logg - Uncertainty in Surface Gravity
-mh - Metallicity
-e_mh - Uncertainty in the Metallicity
-rad - Radius
-e_rad - Uncertainty in the Radius
-mass - Mass
-e_mass - Uncertainty in the Mass
-rho - Stellar Density
-e_rho - Uncertainty in the Stellar Density
-lumclass - Luminosity Class
-lum - Stellar Luminosity
-e_lum - Uncertainty in Luminosity
-d - Distance
-e_d - Uncertainty in the distance
-ebv - Applied Color Excess
-e_ebv - Uncertainty in Applied Color Excess
-numcont - Number of Contamination Sources
-contratio - Contamination Ratio
-disposition - Disposition type
-duplicate_id - Points to the duplicate object TIC ID
-priority - CTL priority
-eneg_ebv - eneg_EBV
-epos_ebv - epos_EBV
-ebvflag - EBVFlag
-eneg_mass - eneg_Mass
-epos_mass - epos_Mass
-eneg_rad - eneg_Rad
-epos_rad - epos_Rad
-eneg_rho - eneg_rho
-epos_rho - epos_rho
-eneg_logg - eneg_logg
-epos_logg - epos_logg
-eneg_lum - eneg_lum
-epos_lum - epos_lum
-eneg_dist - eneg_dist
-epos_dist - epos_dist
-distflag - distFlag
-eneg_teff - eneg_Teff
-epos_teff - epos_Teff
-tefflag - TeffFlag
-gaiabp - gaiabp
-e_gaiabp - e_gaiabp
-gaiarp - gaiarp
-e_gaiarp - e_gaiarp
-gaiaqflag - gaiaqflag
-starchareflag - starchareFlag
-vmagflag - VmagFlag
-bmagflag - BmagFlag
-splits - splists
-e_ra - e_RA
-e_dec - e_Dec
-ra_orig - RA_orig
-dec_orig - Dec_orig
-e_ra_orig - e_RA_orig
-e_dec_orig - e_Dec_orig
-raddflag - raddflag
-wdflag - wdflag
-objid -
-gaia_int - Gaia source ID (integer). Not originally in TIC v8.
+id - TESS Input Catalog identifier []
+version - Version Identifier for this entry (yyyymmdd) []
+hip - Hipparcos Identifier []
+tyc - Tycho2 Identifier []
+ucac - UCAC4 Identifier []
+twomass - 2MASS Identifier []
+sdss - SDSS DR9 Identifier []
+allwise - AllWISE Identifier []
+gaia - Gaia DR2 Identifier (source_id, string representation) [] 
+apass - APASS Identifier []
+kic - KIC Identifier []
+objtype - Object Type []
+typesrc - Source of the object []
+ra - Right Ascension epoch 2000 [degrees]
+dec - Declination epoch 2000 [degrees]
+posflag - Source of the position []
+pmra - Proper Motion in Right Ascension [mas/yr]
+e_pmra - Uncertainty in PM Right Ascension [mas/yr]
+pmdec - Proper Motion in Declination [mas/yr]
+e_pmdec - Uncertainty in PM Declination [mas/yr]
+pmflag - Source of the Proper Motion []
+plx - Parallax [mas]
+e_plx - Error in the parallax [mas]
+parflag - Source of the parallax []
+gallong - Galactic Longitude  [degrees]
+gallat - Galactic Latitude [degrees]
+eclong - Ecliptic Longitude [degrees]
+eclat - Ecliptic Latitude [degrees]
+bmag - Johnson B [mag]
+e_bmag - Uncertainty in Johnson B [mag]
+vmag - Johnson V [mag]
+e_vmag - Uncertainty in Johnson V [mag]
+umag - Sloan u [mag]
+e_umag - Uncertainty in Sloan u [mag]
+gmag - Sloan g [mag]
+e_gmag - Uncertainty in Sloan g [mag]
+rmag - Sloan r [mag]
+e_rmag - Uncertainty in Sloan r [mag]
+imag - Sloan i [mag]
+e_imag - Uncertainty in Sloan i [mag]
+zmag - Sloan z [mag]
+e_zmag - Uncertainty in Sloan z [mag]
+jmag - 2MASS J [mag]
+e_jmag - Uncertainty in 2MASS J [mag]
+hmag - 2MASS H [mag]
+e_hmag - Uncertainty in 2MASS H [mag]
+kmag - 2MASS K [mag]
+e_kmag - Uncertainty in 2MASS K [mag]
+twomflag - Quality Flags for 2MASS []
+prox - Distance to 2MASS nearest neighbor [arcsec]
+w1mag - WISE W1 [mag]
+e_w1mag - Uncertainty in WISE W1 [mag]
+w2mag - WISE W2 [mag]
+e_w2mag - Uncertainty in WISE W2 [mag]
+w3mag - WISE W3 [mag]
+e_w3mag - Uncertainty in WISE W3 [mag]
+w4mag - WISE W4 [mag]
+e_w4mag - Uncertainty in WISE W4 [mag]
+gaiamag - Gaia G Mag [mag]
+e_gaiamag - Uncertainty in Gaia G [mag]
+tmag - TESS Magnitude [mag]
+e_tmag - Uncertainty in TESS Magnitude [mag]
+tessflag - TESS Magnitude Flag []
+spflag - Stellar Properties Flag []
+teff - Effective Temperature [K]
+e_teff - Uncertainty in Effective Temperature [K]
+logg - log of the Surface Gravity [log(cgs)]
+e_logg - Uncertainty in Surface Gravity [log(cgs)]
+mh - Metallicity [dex]
+e_mh - Uncertainty in the Metallicity [dex]
+rad - Radius [solar]
+e_rad - Uncertainty in the Radius [solar]
+mass - Mass  [solar]
+e_mass - Uncertainty in the Mass [solar]
+rho - Stellar Density [solar]
+e_rho - Uncertainty in the Stellar Density [solar]
+lumclass - Luminosity Class []
+lum - Stellar Luminosity [solar]
+e_lum - Uncertainty in Luminosity [solar]
+d - Distance [pc]
+e_d - Uncertainty in the distance [pc]
+ebv - Applied Color Excess [mag]
+e_ebv - Uncertainty in Applied Color Excess [mag]
+numcont - Number of Contamination Sources []
+contratio - Contamination Ratio []
+disposition - Disposition type []
+duplicate_id - Points to the duplicate object TIC ID []
+priority - CTL priority []
+eneg_ebv - Negative error for EBV [mag]
+epos_ebv - Positive error for EBV [mag]
+ebvflag - Source of EBV []
+eneg_mass - Negative error for Mass  [solar]
+epos_mass - Positive error for Mass  [solar]
+eneg_rad - Negative error for Radius  [solar]
+epos_rad - Positive error for Radius  [solar]
+eneg_rho - Negative error for Density  [solar]
+epos_rho - Positive error for Density  [solar]
+eneg_logg - Negative error for Surface Gravity [log(cgs)]
+epos_logg - Positive error for Surface Gravity  [log(cgs)]
+eneg_lum - Negative error for Luminosity   [solar]
+epos_lum - Positive error for Luminosity  [solar]
+eneg_dist - Negative Error for Distance  [pc]
+epos_dist - Positive Error for Distance [pc]
+distflag - Source of distance []
+eneg_teff - Negative error for effective temperature [K]
+epos_teff - Positive error for effective temperature [K]
+tefflag - Source of effective Temperature []
+gaiabp - Gaia BP magnitude [mag]
+e_gaiabp - Error in Gaia BP magnitude  [mag]
+gaiarp - Gaia RP magnitude  [mag]
+e_gaiarp - Error in Gaia RP magnitude [mag]
+gaiaqflag - Quality of Gaia information []
+starchareflag - Error of asymmetric errors []
+vmagflag - Source of V magnitude []
+bmagflag - Source of B magnitude []
+splits - Identifies if star is in a specially curated list. (original TIC column is named splists). []
+e_ra - Error in RA  [mas]
+e_dec - Error in Dec [mas]
+ra_orig - RA from original catalog [degrees]
+dec_orig - Dec from original catalog [degrees]
+e_ra_orig - RA error as given in original catalog [mas]
+e_dec_orig - Dec error as given in original catalog [mas]
+raddflag - 1=dwarf by radius, 0=giant by radius []
+wdflag - 1=star in Gaia's photometric "White Dwarf region" []
+objid - Object identifier (integer) []
+gaia_int - Gaia DR2 source ID (integer). Not originally in TIC v8.
 twomass_psc - 2MASS PSC identifier. Not originally in TIC v8.
 twomass_psc_pts_key - 2MASS PSC identifier. Not originally in TIC v8.
 tycho2_tycid - Tycho2 identifier (integer). Not originally in TIC v8.
