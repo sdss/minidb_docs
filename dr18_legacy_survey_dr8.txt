@@ -1,6 +1,6 @@
 Summary
 -------
-Legacy Survey DR8 catalogue (See <a href="https://www.legacysurvey.org/dr8/">https://www.legacysurvey.org/dr8/</a>.
+Legacy Survey DR8 catalogue derived from 'sweep' catalogues (See <a href="https://www.legacysurvey.org/dr8/">https://www.legacysurvey.org/dr8/</a>).
 
 
 
@@ -17,16 +17,11 @@ ra - Right ascension at equinox J2000 [deg]
 dec - Declination at equinox J2000 [deg]
 ra_ivar - Inverse variance of RA (no cosine term!), excluding astrometric calibration errors [1/deg^2]
 dec_ivar - Inverse variance of DEC, excluding astrometric calibration errors [1/deg^2]
-dchisq_psf - 	
-Difference in χ² between successively more-complex model fits: PSF. The difference is versus no source. []
-dchisq_rex - 	
-Difference in χ² between successively more-complex model fits: REX. The difference is versus no source. []
-dchisq_dev - 	
-Difference in χ² between successively more-complex model fits: DEV. The difference is versus no source. []
-dchisq_exp - 	
-Difference in χ² between successively more-complex model fits: EXP. The difference is versus no source. []
-dchisq_comp - 	
-Difference in χ² between successively more-complex model fits: COMP. The difference is versus no source. []
+dchisq_psf - Difference in chi2 between successively more-complex model fits: PSF. The difference is versus no source. []
+dchisq_rex - Difference in chi2 between successively more-complex model fits: REX. The difference is versus no source. []
+dchisq_dev - Difference in chi2 between successively more-complex model fits: DEV. The difference is versus no source. []
+dchisq_exp - Difference in chi2 between successively more-complex model fits: EXP. The difference is versus no source. []
+dchisq_comp - Difference in chi2 between successively more-complex model fits: COMP. The difference is versus no source. []
 ebv - Galactic extinction E(B-V) reddening from SFD98, used to compute MW_TRANSMISSION [mag]
 flux_g - model flux in g [nanomaggies]
 flux_r - model flux in r [nanomaggies]
@@ -56,13 +51,13 @@ nobs_w1 - Number of images that contribute to the central pixel in W1: filter fo
 nobs_w2 - Number of images that contribute to the central pixel in W2: filter for this object (not profile-weighted) []
 nobs_w3 - Number of images that contribute to the central pixel in W3: filter for this object (not profile-weighted) []
 nobs_w4 - Number of images that contribute to the central pixel in W4: filter for this object (not profile-weighted) []
-rchisq_g - Profile-weighted χ² of model fit normalized by the number of pixels in g []
-rchisq_r - Profile-weighted χ² of model fit normalized by the number of pixels in r []
-rchisq_z - Profile-weighted χ² of model fit normalized by the number of pixels in z []
-rchisq_w1 - Profile-weighted χ² of model fit normalized by the number of pixels in W1 []
-rchisq_w2 - Profile-weighted χ² of model fit normalized by the number of pixels in W2 []
-rchisq_w3 - Profile-weighted χ² of model fit normalized by the number of pixels in W3 []
-rchisq_w4 - Profile-weighted χ² of model fit normalized by the number of pixels in W4 []
+rchisq_g - Profile-weighted chi2 of model fit normalized by the number of pixels in g []
+rchisq_r - Profile-weighted chi2 of model fit normalized by the number of pixels in r []
+rchisq_z - Profile-weighted chi2 of model fit normalized by the number of pixels in z []
+rchisq_w1 - Profile-weighted chi2 of model fit normalized by the number of pixels in W1 []
+rchisq_w2 - Profile-weighted chi2 of model fit normalized by the number of pixels in W2 []
+rchisq_w3 - Profile-weighted chi2 of model fit normalized by the number of pixels in W3 []
+rchisq_w4 - Profile-weighted chi2 of model fit normalized by the number of pixels in W4 []
 fracflux_g - Profile-weighted fraction of the flux from other sources divided by the total flux in g (typically in 0..1) []
 fracflux_r - Profile-weighted fraction of the flux from other sources divided by the total flux in r (typically in 0..1) []
 fracflux_z - Profile-weighted fraction of the flux from other sources divided by the total flux in z (typically in 0..1) []
@@ -137,7 +132,7 @@ pmra_ivar - Reference catalog inverse-variance on pmra [1/(mas/yr)^2]
 pmdec - Reference catalog proper motion in the Dec direction [mas/yr]
 pmdec_ivar - Reference catalog inverse-variance on pmdec [1/(mas/yr)^2]
 maskbits - Bitwise mask indicating that an object touches a pixel in the coadd/*/*/*maskbits* maps (see the DR8 bitmasks page) []
-ls_id - Added by SDSS-V: Derived unique object identifier. Computed as  objid + (brickid << 16) + (release << 40)  []
-tycho_ref - Added by SDSS-V: TychoII identifier (equal to ref_id when ref_cat = 'T2") []
-gaia_sourceid - Added by SDSS-V: Gaia DR2 source_id identifier (equal to ref_id when ref_cat = 'G2") []
+ls_id - Added by SDSS-V: Derived unique object identifier. Computed as follows: ls_id = objid + (brickid << 16) + (release << 40)  []
+tycho_ref - Added by SDSS-V: TychoII identifier (equal to ref_id when ref_cat = "T2") []
+gaia_sourceid - Added by SDSS-V: Gaia DR2 source_id identifier (equal to ref_id when ref_cat = "G2") []
 
