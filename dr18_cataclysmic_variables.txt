@@ -1,14 +1,13 @@
 Summary
 -------
 
-AAVSO cataclysmic variables from cataclysmic (explosive and novalike) variables (N, NA, NB, NC, NL, NR, SN, SNI, SNII, UG, UGSS, UGSU, UGZ, ZAND). VSX catalog downloaded in summer 2019 and then manually pruned.
+Gaia DR2 parameters for AAVSO cataclysmic variables from cataclysmic (explosive and novalike) variables (N, NA, NB, NC, NL, NR, SN, SNI, SNII, UG, UGSS, UGSU, UGZ, ZAND). VSX catalog downloaded in summer 2019 and then manually pruned.
 
 
 Columns
 -------
 
-ref_id - 
-
+ref_id - same as source_id []
 solution_id - ID that identifies the version of all the subsystems that were used in the generation of the data as well as the input data used []
 designation - Unique source designation across all Gaia data releases []
 source_id - Unique source identifier within a particular Gaia data release []
