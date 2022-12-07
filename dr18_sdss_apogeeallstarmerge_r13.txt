@@ -7,53 +7,53 @@ Summary
 Columns
 -------
 
-apogee_id - 
-nvisits - 
-nentries - 
-ra - 
-dec - 
-glon - 
-glat - 
-pmra - 
-pmdec - 
-pm_src - 
-j - 
-j_err - 
-h - 
-h_err - 
-k - 
-k_err - 
-ak - 
-vhelio_avg - 
-vhelio_err - 
-vscatter - 
-sig_rvvar - 
-baseline - 
-mean_fiber - 
-sig_fiber - 
-apstar_ids - 
-visits - 
-fields - 
-surveys - 
-telescopes - 
-targflags - 
-starflags - 
-aspcapflags - 
-teff - 
-teff_err - 
-logg - 
-logg_err - 
-feh - 
-feh_err - 
-startype - 
-vjitter - 
-dist - 
-dist_err - 
-dist_src - 
-mstar - 
-mstar_err - 
-rstar - 
-rstar_err - 
-mstar_src - 
+apogee_id - 2MASS style ID from APOGEE DR16
+nvisits - Number of visits into combined spectra, accross all allStar entries for the star
+nentries - Number of unique allStar entries for the star 
+ra - Right ascension (J2000)
+dec - Declination (J2000)
+glon - Galactic longitude
+glat - Galactic latitude
+pmra - proper motion in RA
+pmdec - proper motion in DEC
+pm_src - source of proper motion (e.g. gaia)
+j - 2MASS J mag [bad=99]
+j_err - Uncertainty in 2MASS J mag
+h - 2MASS H mag [bad=99]
+h_err - Uncertainty in 2MASS H mag 
+k - 2MASS Ks mag [bad=99]
+k_err - Uncertainty in 2MASS Ks mag
+ak - K-band extinction adopted for targetting
+vhelio_avg - Average radial velocity, weighted by S/N, rederived to reflect all entries
+vhelio_err - Uncertainty in VHELIO_AVG from the S/N-weighted individual RVs, rederived to reflect all entries
+vscatter - Scatter of individual visit RVs around average, rederived to reflect all entries
+sig_rvvar - Measure of the significance of the star's RV variability (see Troup, et. al 2016)
+baseline - Temporal baseline (in days) of the observations (JD_last-JD-first)
+mean_fiber - The mean fiberID of all of the star's visits
+sig_fiber - The standard deviation of the fiberID of all of the star's visits
+apstar_ids - List of APSTAR_ID from each of the star's allStar entries
+visits - List of VISIT_ID from eeach of the star's allVisit entries
+fields - List of FIELD flags from each of the star's allStar entries
+surveys - List of SURVEY flags from each of the star's allStar entries
+telescopes - List of TELESCOPE flags from each of the star's allStar entries
+targflags - Verbose/text form of TARGFLAG combined from all entries
+starflags - Verbose/text form of STARFLAG combined from all entries
+aspcapflags - Verbose/text form of ASPCAPFLAG combined from all entries 
+teff - Teff from ASPCAP analysis of combined spectra (from PARAM) averaged across entries
+teff_err - Teff uncertainty (from PARAM_COV)
+logg - log g from ASPCAP analysis of combined spectrum (from PARAM) averaged across entries
+logg_err - log g uncertainty (from PARAM_COV)
+feh - metallicity from ASPCAP analysis of combined spectrum (from PARAM) averaged across entries
+feh_err - feh uncertainty (from PARAM_COV)
+startype - Best guess of star's evolutionary state based on stellar parameters or external catalogs (RC=red clump, RG=red giant, SG = subgiant, MS=dwarf, PMS=pre-main sequence)
+vjitter - Atmospheric RV jitter (km/s) derived from log g using the relationship derived in Hekker, et. al 2008.  
+dist - Derived or given distance to the star (pc)
+dist_err - uncertainy of the distance (pc)
+dist_src - Source of the star's distance measurement (e.g. gaia=derived from gaia parallax)
+mstar - Derived or given stellar mass (Solar Mass)
+mstar_err - Uncertainty of the Derived stellar mass (Solar Mass)
+rstar - Derived stellar radius (Solar Radius)
+rstar_err - Uncertainty of the Derived stellar radius (Solar Radius)
+mstar_src - Source of the star's Mass (if not derived)
 designation - 
 
