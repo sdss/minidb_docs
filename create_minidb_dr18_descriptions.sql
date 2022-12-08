@@ -1277,193 +1277,196 @@ CREATE TABLE minidb.dr18_category (
 --
 
 CREATE TABLE minidb.dr18_catwise2020 (
-    source_name character(21),
-    source_id character(25) NOT NULL,
-    ra double precision,
-    "dec" double precision,
-    sigra real,
-    sigdec real,
-    sigradec real,
-    wx real,
-    wy real,
-    w1sky real,
-    w1sigsk real,
-    w1conf real,
-    w2sky real,
-    w2sigsk real,
-    w2conf real,
-    w1fitr real,
-    w2fitr real,
-    w1snr real,
-    w2snr real,
-    w1flux real,
-    w1sigflux real,
-    w2flux real,
-    w2sigflux real,
-    w1mpro real,
-    w1sigmpro real,
-    w1rchi2 real,
-    w2mpro real,
-    w2sigmpro real,
-    w2rchi2 real,
-    rchi2 real,
-    nb integer,
-    na integer,
-    w1sat real,
-    w2sat real,
-    w1mag real,
-    w1sigm real,
-    w1flg integer,
-    w1cov real,
-    w2mag real,
-    w2sigm real,
-    w2flg integer,
-    w2cov real,
-    w1mag_1 real,
-    w1sigm_1 real,
-    w1flg_1 integer,
-    w2mag_1 real,
-    w2sigm_1 real,
-    w2flg_1 integer,
-    w1mag_2 real,
-    w1sigm_2 real,
-    w1flg_2 integer,
-    w2mag_2 real,
-    w2sigm_2 real,
-    w2flg_2 integer,
-    w1mag_3 real,
-    w1sigm_3 real,
-    w1flg_3 integer,
-    w2mag_3 real,
-    w2sigm_3 real,
-    w2flg_3 integer,
-    w1mag_4 real,
-    w1sigm_4 real,
-    w1flg_4 integer,
-    w2mag_4 real,
-    w2sigm_4 real,
-    w2flg_4 integer,
-    w1mag_5 real,
-    w1sigm_5 real,
-    w1flg_5 integer,
-    w2mag_5 real,
-    w2sigm_5 real,
-    w2flg_5 integer,
-    w1mag_6 real,
-    w1sigm_6 real,
-    w1flg_6 integer,
-    w2mag_6 real,
-    w2sigm_6 real,
-    w2flg_6 integer,
-    w1mag_7 real,
-    w1sigm_7 real,
-    w1flg_7 integer,
-    w2mag_7 real,
-    w2sigm_7 real,
-    w2flg_7 integer,
-    w1mag_8 real,
-    w1sigm_8 real,
-    w1flg_8 integer,
-    w2mag_8 real,
-    w2sigm_8 real,
-    w2flg_8 integer,
-    w1nm integer,
-    w1m integer,
-    w1magp real,
-    w1sigp1 real,
-    w1sigp2 real,
-    w1k real,
-    w1ndf integer,
-    w1mlq real,
-    w1mjdmin double precision,
-    w1mjdmax double precision,
-    w1mjdmean double precision,
-    w2nm integer,
-    w2m integer,
-    w2magp real,
-    w2sigp1 real,
-    w2sigp2 real,
-    w2k real,
-    w2ndf integer,
-    w2mlq real,
-    w2mjdmin double precision,
-    w2mjdmax double precision,
-    w2mjdmean double precision,
-    rho12 integer,
-    q12 integer,
-    niters integer,
-    nsteps integer,
-    mdetid integer,
-    p1 real,
-    p2 real,
-    meanobsmjd double precision,
-    ra_pm double precision,
-    dec_pm double precision,
-    sigra_pm real,
-    sigdec_pm real,
-    sigradec_pm real,
-    pmra real,
-    pmdec real,
-    sigpmra real,
-    sigpmdec real,
-    w1snr_pm real,
-    w2snr_pm real,
-    w1flux_pm real,
-    w1sigflux_pm real,
-    w2flux_pm real,
-    w2sigflux_pm real,
-    w1mpro_pm real,
-    w1sigmpro_pm real,
-    w1rchi2_pm real,
-    w2mpro_pm real,
-    w2sigmpro_pm real,
-    w2rchi2_pm real,
-    rchi2_pm real,
-    pmcode character(7),
-    niters_pm integer,
-    nsteps_pm integer,
-    dist real,
-    dw1mag real,
-    rch2w1 real,
-    dw2mag real,
-    rch2w2 real,
-    elon_avg double precision,
-    elonsig real,
-    elat_avg double precision,
-    elatsig real,
-    delon real,
-    delonsig real,
-    delat real,
-    delatsig real,
-    delonsnr real,
-    delatsnr real,
-    chi2pmra real,
-    chi2pmdec real,
-    ka integer,
-    k1 integer,
-    k2 integer,
-    km integer,
-    par_pm real,
-    par_pmsig real,
-    par_stat real,
-    par_sigma real,
-    dist_x real,
-    cc_flags character(16),
-    w1cc_map integer,
-    w1cc_map_str character(20),
-    w2cc_map integer,
-    w2cc_map_str character(20),
-    n_aw integer,
-    ab_flags character(9),
-    w1ab_map integer,
-    w1ab_map_str character(13),
-    w2ab_map integer,
-    w2ab_map_str character(13),
-    glon double precision,
-    glat double precision,
-    elon double precision,
-    elat double precision,
-    unwise_objid character(20)
+----------------------------------------------------------------------
+--/H The CatWISE2020 Catalog (https://ui.adsabs.harvard.edu/abs/2021ApJS..253....8M/abstract) See https://irsa.ipac.caltech.edu/data/WISE/CatWISE/gator_docs/catwise_colDescriptions.html for more detailed column descriptions
+----------------------------------------------------------------------
+    source_name character(21), --/D source hexagesimal designation
+    source_id character(25) NOT NULL, --/D tile name + processing code + wphot index
+    ra double precision, --/U deg --/D right ascension (J2000); (note uncorrected systematic in CatWISE2020)
+    "dec" double precision, --/U deg --/D declination (J2000); (note uncorrected systematic in CatWISE2020)
+    sigra real, --/U arcsec --/D uncertainty in RA
+    sigdec real, --/U arcsec --/D uncertainty in DEC
+    sigradec real, --/U arcsec --/D cross-term of RA and Dec uncertainties
+    wx real, --/U pix --/D x pixel value
+    wy real, --/U pix --/D y pixel value
+    w1sky real, --/U 'dn' --/D frame sky background value, band 1
+    w1sigsk real, --/U 'dn' --/D frame sky background value uncertainty, band 1
+    w1conf real, --/U 'dn' --/D frame sky confusion based on the uncertainty images, band 1
+    w2sky real, --/U 'dn' --/D frame sky background value, band 2
+    w2sigsk real, --/U 'dn' --/D frame sky background value uncertainty, band 2
+    w2conf real, --/U 'dn' --/D frame sky confusion based on the uncertainty images, band 2
+    w1fitr real, --/U arcsec --/D fitting radius for W1; see note
+    w2fitr real, --/U arcsec --/D fitting radius for W2; see note
+    w1snr real, --/D instrumental profile-fit photometry S/N ratio, band 1
+    w2snr real, --/D instrumental profile-fit photometry S/N ratio, band 2
+    w1flux real, --/U 'dn' --/D profile-fit photometry raw flux, band 1
+    w1sigflux real, --/U 'dn' --/D profile-fit photometry raw flux uncertainty, band 1
+    w2flux real, --/U 'db' --/D profile-fit photometry raw flux, band 2
+    w2sigflux real, --/U 'dn' --/D profile-fit photometry raw flux uncertainty, band 2
+    w1mpro real, --/U mag --/D instrumental profile-fit photometry magnitude, band 1
+    w1sigmpro real, --/U mag --/D instrumental profile-fit photometry flux uncertainty in mag units, band 1
+    w1rchi2 real, --/D instrumental profile-fit photometry reduced chi^2, band 1
+    w2mpro real, --/U mag --/D instrumental profile-fit photometry magnitude, band 2
+    w2sigmpro real, --/U mag --/D instrumental profile-fit photometry flux uncertainty in mag units, band 2
+    w2rchi2 real, --/D instrumental profile-fit photometry reduced chi^2, band 2
+    rchi2 real, --/D instrumental profile-fit photometry reduced chi squared, total
+    nb integer, --/D number of blend components used in each fit
+    na integer, --/D number of actively deblended components
+    w1sat real, --/D fraction of pixels affected by saturation, band 1
+    w2sat real, --/D fraction of pixels affected by saturation, band 2
+    w1mag real, --/U mag --/D instrumental standard aperture (8.25") mag w/ aperture correction applied, band 1
+    w1sigm real, --/U mag --/D instrumental standard aperture mag uncertainty, band 1
+    w1flg integer, --/D instrumental standard aperture flag, band 1
+    w1cov real, --/D mean coverage depth, band 1
+    w2mag real, --/U mag --/D instrumental standard aperture (8.25") mag w/ aperture correction applied, band 2
+    w2sigm real, --/U mag --/D instrumental standard aperture mag uncertainty, band 2
+    w2flg integer, --/D instrumental standard aperture flag, band 2
+    w2cov real, --/D mean coverage depth, band 2
+    w1mag_1 real, --/U mag --/D aperture 1 (5.50") instrumental aperture mag, band 1
+    w1sigm_1 real, --/U mag --/D aperture 1 instrumental aperture mag uncertainty, band 1
+    w1flg_1 integer, --/D aperture 1 instrumental aperture flag, band 1
+    w2mag_1 real, --/U mag --/D aperture 1 (5.50") instrumental aperture mag, band 2
+    w2sigm_1 real, --/U mag --/D aperture 1 instrumental aperture mag uncertainty, band 2
+    w2flg_1 integer, --/D aperture 1 instrumental aperture flag, band 2
+    w1mag_2 real, --/U mag --/D aperture 2 (8.25") instrumental aperture mag, band 1
+    w1sigm_2 real, --/U mag --/D aperture 2 instrumental aperture mag uncertainty, band 1
+    w1flg_2 integer, --/D aperture 2 instrumental aperture flag, band 1
+    w2mag_2 real, --/U mag --/D aperture 2 (8.25") instrumental aperture mag, band 2
+    w2sigm_2 real, --/U mag --/D aperture 2 instrumental aperture mag uncertainty, band 2
+    w2flg_2 integer, --/D aperture 2 instrumental aperture flag, band 2
+    w1mag_3 real, --/U mag --/D aperture 3 (11.00") instrumental aperture mag, band 1
+    w1sigm_3 real, --/U mag --/D aperture 3 instrumental aperture mag uncertainty, band 1
+    w1flg_3 integer, --/D aperture 3 instrumental aperture flag, band 1
+    w2mag_3 real, --/U mag --/D aperture 3 (11.00") instrumental aperture mag, band 2
+    w2sigm_3 real, --/U mag --/D aperture 3 instrumental aperture mag uncertainty, band 2
+    w2flg_3 integer, --/D aperture 3 instrumental aperture flag, band 2
+    w1mag_4 real, --/U mag --/D aperture 4 (13.75") instrumental aperture mag, band 1
+    w1sigm_4 real, --/U mag --/D aperture 4 instrumental aperture mag uncertainty, band 1
+    w1flg_4 integer, --/D aperture 4 instrumental aperture flag, band 1
+    w2mag_4 real, --/U mag --/D aperture 4 (13.75") instrumental aperture mag, band 2
+    w2sigm_4 real, --/U mag --/D aperture 4 instrumental aperture mag uncertainty, band 2
+    w2flg_4 integer, --/D aperture 4 instrumental aperture flag, band 2
+    w1mag_5 real, --/U mag --/D aperture 5 (16.50") instrumental aperture mag, band 1
+    w1sigm_5 real, --/U mag --/D aperture 5 instrumental aperture mag uncertainty, band 1
+    w1flg_5 integer, --/D aperture 5 instrumental aperture flag, band 1
+    w2mag_5 real, --/U mag --/D aperture 5 (16.50") instrumental aperture mag, band 2
+    w2sigm_5 real, --/U mag --/D aperture 5 instrumental aperture mag uncertainty, band 2
+    w2flg_5 integer, --/D aperture 5 instrumental aperture flag, band 2
+    w1mag_6 real, --/U mag --/D aperture 6 (19.25") instrumental aperture mag, band 1
+    w1sigm_6 real, --/U mag --/D aperture 6 instrumental aperture mag uncertainty, band 1
+    w1flg_6 integer, --/D aperture 6 instrumental aperture flag, band 1
+    w2mag_6 real, --/U mag --/D aperture 6 (19.25") instrumental aperture mag, band 2
+    w2sigm_6 real, --/U mag --/D aperture 6 instrumental aperture mag uncertainty, band 2
+    w2flg_6 integer, --/D aperture 6 instrumental aperture flag, band 2
+    w1mag_7 real, --/U mag --/D aperture 7 (22.00") instrumental aperture mag, band 1
+    w1sigm_7 real, --/U mag --/D aperture 7 instrumental aperture mag uncertainty, band 1
+    w1flg_7 integer, --/D aperture 7 instrumental aperture flag, band 1
+    w2mag_7 real, --/U mag --/D aperture 7 (22.00") instrumental aperture mag, band 2
+    w2sigm_7 real, --/U mag --/D aperture 7 instrumental aperture mag uncertainty, band 2
+    w2flg_7 integer, --/D aperture 7 instrumental aperture flag, band 2
+    w1mag_8 real, --/U mag --/D aperture 8 (24.75") instrumental aperture mag, band 1
+    w1sigm_8 real, --/U mag --/D aperture 8 instrumental aperture mag uncertainty, band 1
+    w1flg_8 integer, --/D aperture 8 instrumental aperture flag, band 1
+    w2mag_8 real, --/U mag --/D aperture 8 (24.75") instrumental aperture mag, band 2
+    w2sigm_8 real, --/U mag --/D aperture 8 instrumental aperture mag uncertainty, band 2
+    w2flg_8 integer, --/D aperture 8 instrumental aperture flag, band 2
+    w1nm integer, --/D number of profile-fit flux measurements for source with SNR >= 3, band 1
+    w1m integer, --/D number of profile-fit flux measurements for source, band 1
+    w1magp real, --/U mag --/D profile-fit repeatability mag -- inverse-variance weighted mean mag, band 1
+    w1sigp1 real, --/U mag --/D standard deviation of population of profile-fit repeatability mag, band 1
+    w1sigp2 real, --/U mag --/D standard deviation of the mean of profile-fit repeatability mag, band 1
+    w1k real, --/D Stetson K variability index, band 1
+    w1ndf integer, --/D number degrees of freedom in variability chi^2, band 1
+    w1mlq real, --/D -ln(Q), where Q = 1 - P(chi^2), band 1
+    w1mjdmin double precision, --/U d --/D minimum modified Julian Date of frame extractions, band 1
+    w1mjdmax double precision, --/U d --/D maximum modified Julian Date of frame extractions, band 1
+    w1mjdmean double precision, --/U d --/D mean modified Julian Date of frame extractions, band 1
+    w2nm integer, --/D number of profile-fit flux measurements for source with SNR >= 3, band 2
+    w2m integer, --/D number of profile-fit flux measurements for source, band 2
+    w2magp real, --/U mag --/D profile-fit repeatability mag -- inverse-variance weighted mean mag, band 2
+    w2sigp1 real, --/U mag --/D standard deviation of population of profile-fit repeatability mag, band 2
+    w2sigp2 real, --/U mag --/D standard deviation of the mean of profile-fit repeatability mag, band 2
+    w2k real, --/D Stetson K variability index, band 2
+    w2ndf integer, --/D number degrees of freedom in variability chi^2, band 2
+    w2mlq real, --/D -ln(Q), where Q = 1 - P(chi^2), band 2
+    w2mjdmin double precision, --/U d --/D minimum modified Julian Date of frame extractions, band 2
+    w2mjdmax double precision, --/U d --/D maximum modified Julian Date of frame extractions, band 2
+    w2mjdmean double precision, --/U d --/D mean modified Julian Date of frame extractions, band 2
+    rho12 integer, --/U % --/D band 1 - band 2 correlation coefficient
+    q12 integer, --/U % --/D -log10(1 - P(rho12)), given no real correlation
+    niters integer, --/D number of chi-square minimization iterations
+    nsteps integer, --/D number of steps in all iterations
+    mdetid integer, --/D source ID in mdet list
+    p1 real, --/U arcsec --/D distance in ra from the mdet position to the wphot template-fit position
+    p2 real, --/U arcsec --/D distance in dec from the mdet position to the wphot template-fit position
+    meanobsmjd double precision, --/U d --/D mean observation epoch
+    ra_pm double precision, --/U deg --/D Right ascension from psf model incl. motion at epoch MJD=56700.0 (2014.118) for Preliminary Catalog and MJD=57170 (2015.405) for CatWISE2020
+    dec_pm double precision, --/U deg --/D Declination from psf model incl. motion at epoch MJD=56700.0 (2014.118) for Preliminary Catalog and MJD=57170 (2015.405) for CatWISE2020
+    sigra_pm real, --/U arcsec --/D One-sigma uncertainty in RA from psf model incl. motion
+    sigdec_pm real, --/U arcsec --/D One-sigma uncertainty in DEC from psf model incl. motion
+    sigradec_pm real, --/U arcsec --/D The co-sigma of the equatorial position uncertainties from psf model incl motion
+    pmra real, --/U arcsec/yr --/D Apparent motion in RA; (note uncorrected systematic in CatWISE2020)
+    pmdec real, --/U arcsec/yr --/D Apparent motion in DEC; (note uncorrected systematic in CatWISE2020)
+    sigpmra real, --/U arcsec/yr --/D Uncertainty in the RA motion estimate
+    sigpmdec real, --/U arcsec/yr --/D Uncertainty in the Dec motion estimate
+    w1snr_pm real, --/D S/N ratio of the W1 profile-fit photometry including motion
+    w2snr_pm real, --/D S/N ratio of the W2 profile-fit photometry including motion
+    w1flux_pm real, --/U 'dn' --/D Raw flux W1 profile-fit photometry including motion
+    w1sigflux_pm real, --/U 'dn' --/D Raw flux uncertainty W1 profile-fit photometry including motion
+    w2flux_pm real, --/U 'dn' --/D Raw flux W2 profile-fit photometry including motion
+    w2sigflux_pm real, --/U 'dn' --/D Raw flux uncertainty W2 profile-fit photometry including motion
+    w1mpro_pm real, --/U nag --/D W1 magnitude from profile-fit photometry including motion
+    w1sigmpro_pm real, --/U mag --/D W1 flux uncertainty in mag units from profile-fit photometry including motion
+    w1rchi2_pm real, --/D Reduced chi^2 of the W1 profile-fit photometry measurement including motion est
+    w2mpro_pm real, --/U mag --/D W2 magnitude from profile-fit photometry including motion
+    w2sigmpro_pm real, --/U mag --/D W2 flux uncertainty in mag units from profile-fit photometry including motion
+    w2rchi2_pm real, --/D Reduced chi^2 of the W2 profile-fit photometry measurement including motion est
+    rchi2_pm real, --/D Combined Reduced chi^2 in all bands for the psf photometry includes src motion
+    pmcode character(7), --/D Motion estimate quality code: the format is ABCCC, where A is the number of components in the passive blend group (including the primary) before any are removed or added, B is "Y" or "N" to indicate "Yes" or "No" that a secondary blend component replaced the primary, and CCC is the distance in hundredths of an arcsec between the PM position solution for the mean observation epoch and the stationary solution
+    niters_pm integer, --/D number of chi-square minimization iterations
+    nsteps_pm integer, --/D number of steps in all iterations
+    dist real, --/U arcsec --/D radial distance between source positions in ascending and descending scans
+    dw1mag real, --/U mag --/D difference in w1mpro between ascending and descending scans
+    rch2w1 real, --/D chi-square for dw1mag (1 degree of freedom)
+    dw2mag real, --/U mag --/D difference in w2mpro between ascending and descending scans
+    rch2w2 real, --/D chi-square for dw2mag (1 degree of freedom)
+    elon_avg double precision, --/U deg --/D average ecliptic longitude
+    elonsig real, --/U arcsec --/D uncertainty in elon_avg
+    elat_avg double precision, --/U deg --/D average ecliptic latitude
+    elatsig real, --/U arcsec --/D uncertainty in elat_avg
+    delon real, --/U arcsec --/D descending scan - ascending scan ecliptic longitude difference (notes)
+    delonsig real, --/U arcsec --/D one-sigma uncertainty in Delon
+    delat real, --/U arcsec --/D descending scan - ascending scan ecliptic longitude difference
+    delatsig real, --/U arcsec --/D one-sigma uncertainty in Delat
+    delonsnr real, --/D abs(Delon)/DelonSig
+    delatsnr real, --/D abs(Delat)/DelatSig
+    chi2pmra real, --/D chi-square for PMRA difference (1 degree of freedom)
+    chi2pmdec real, --/D chi-square for PMDec difference (1 degree of freedom)
+    ka integer, --/D astrometry usage code: 0 neither the ascending nor the descending scan provided a solution; 1 only the ascending scan provided a solution; 2 only the descending scan provided a solutio; 3 both scans provided solutions which were combined in the relevant way
+    k1 integer, --/D W1 photometry usage code: 0 neither the ascending nor the descending scan provided a solution; 1 only the ascending scan provided a solution; 2 only the descending scan provided a solutio; 3 both scans provided solutions which were combined in the relevant way
+    k2 integer, --/D W2 photometry usage code: 0 neither the ascending nor the descending scan provided a solution; 1 only the ascending scan provided a solution; 2 only the descending scan provided a solutio; 3 both scans provided solutions which were combined in the relevant way
+    km integer, --/D proper motion usage code: 0 neither the ascending nor the descending scan provided a solution; 1 only the ascending scan provided a solution; 2 only the descending scan provided a solutio; 3 both scans provided solutions which were combined in the relevant way
+    par_pm real, --/U arcsec --/D parallax from PM desc-asce elon (notes)
+    par_pmsig real, --/U arcsec --/D one-sigma uncertainty in par_pm
+    par_stat real, --/U arcsec --/D parallax estimate from stationary solution (notes)
+    par_sigma real, --/U arcsec --/D one-sigma uncertainty in par_stat
+    dist_x real, --/U arcsec --/D distance between CatWISE and AllWISE source
+    cc_flags character(16), --/D worst case 4 character cc_flag from AllWISE (See Table A1 in Eisenhardt et al. (2020))
+    w1cc_map integer, --/D worst case w1cc_map from AllWISE (See Table A1 in Eisenhardt et al. (2020))
+    w1cc_map_str character(20), --/D worst case w1cc_map_str from AllWISE (See Table A1 in Eisenhardt et al. (2020))
+    w2cc_map integer, --/D worst case w2cc_map from AllWISE (See Table A1 in Eisenhardt et al. (2020))
+    w2cc_map_str character(20), --/D worst case w2cc_map_str from AllWISE (See Table A1 in Eisenhardt et al. (2020))
+    n_aw integer, --/D number of sources within 2.75" in AllWISE
+    ab_flags character(9), --/D unWISE artifact bitmask contamination flags
+    w1ab_map integer, --/D unWISE artifact bitmask contamination map for W1
+    w1ab_map_str character(13), --/D unWISE artifact bitmask contamination string for W1
+    w2ab_map integer, --/D unWISE artifact bitmask contamination map for W2
+    w2ab_map_str character(13), --/D unWISE artifact bitmask contamination string for W1
+    glon double precision, --/U deg --/D Galactic longitude (only present in CatWISE 2020)
+    glat double precision, --/U deg --/D Galactic latitude (only present in CatWISE 2020)
+    elon double precision, --/U deg --/D Ecliptic longitude
+    elat double precision, --/U deg --/D Ecliptic latitude
+    unwise_objid character(20) --/D UnWISE Object ID (only present in CatWISE 2020)
 );
 
 
