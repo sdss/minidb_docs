@@ -1,7 +1,7 @@
 Summary
 -------
 
-This table contains the list of all spectra for a given data release, with associated parameters from the 2D and 1D pipelines for each. The table contains both the BOSS and SDSS spectrograph data. The database representation is derived from the flat file information described here: <a href="https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html">https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html</a>
+This table contains the list of all SDSS optical spectra for a given data release, with associated parameters from the 2D and 1D pipelines for each. The table contains both the BOSS and SDSS spectrograph data. The database representation is derived from the flat file information described here: <a href="https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html">https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html</a>
 
 
 Columns
