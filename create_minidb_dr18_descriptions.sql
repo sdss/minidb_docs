@@ -835,22 +835,6 @@ CREATE TABLE minidb.dr18_carton_to_target (
 
 
 --
--- Name: dr18_carton_txt; Type: TABLE; Schema: minidb; Owner: -
---
-
-CREATE TABLE minidb.dr18_carton_txt (
-----------------------------------------------------------------------
---/H This table defines a versioned set of cartons that were considered at a specific point in the SDSS-V survey. It contains instructions to robostrategy about how to handle targets from each of those cartons when robostrategy is planning the survey and assigning fibers to targets.
-----------------------------------------------------------------------
-    carton text, --/D The unique carton name
-    plan text, --/D A version code which identifies the specific run of the SDSS-V target_selection package that used to select targets associated with this particular iteration of this carton
-    category text, --/D The broad target category which this carton falls within - used by robostrategy when planning the survey and assigning fibers to targets
-    stage text, --/D This informs robostrategy which step of fiber assignment this carton should be considered within
-    active boolean --/D A boolean flag - robostrategy only considers cartons marked with active=True
-);
-
-
---
 -- Name: dr18_cataclysmic_variables; Type: TABLE; Schema: minidb; Owner: -
 --
 
