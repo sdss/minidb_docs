@@ -765,19 +765,6 @@ CREATE TABLE minidb.dr18_carton_to_target (
 
 
 --
--- Name: dr18_carton_txt; Type: TABLE; Schema: minidb; Owner: -
---
-
-CREATE TABLE minidb.dr18_carton_txt (
-    carton text,
-    plan text,
-    category text,
-    stage text,
-    active boolean
-);
-
-
---
 -- Name: dr18_cataclysmic_variables; Type: TABLE; Schema: minidb; Owner: -
 --
 
@@ -6916,4 +6903,3 @@ GRANT SELECT ON TABLE minidb.dr18_zari18pms TO sdss_user;
 --
 -- PostgreSQL database dump complete
 --
-
