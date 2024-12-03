@@ -1,0 +1,73 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+mipsgal - 
+glon - 
+glat - 
+radeg - 
+dedeg - 
+s24 - 
+e_s24 - 
+mag_24 - 
+e_mag_24 - 
+twomass_name - 
+sj - 
+e_sj - 
+sh - 
+e_sh - 
+sk - 
+e_sk - 
+glimpse - 
+s3_6 - 
+e_s3_6 - 
+s4_5 - 
+e_s4_5 - 
+s5_8 - 
+e_s5_8 - 
+s8_0 - 
+wise - 
+s3_4 - 
+e_s3_4 - 
+s4_6 - 
+e_s4_6 - 
+s12 - 
+e_s12 - 
+s22 - 
+e_s22 - 
+jmag - 
+e_jmag - 
+hmag - 
+e_hmag - 
+kmag - 
+e_kmag - 
+mag_3_6 - 
+e_mag_3_6 - 
+mag_4_5 - 
+e_mag_4_5 - 
+mag_5_8 - 
+e_mag_5_8 - 
+mag_8_0 - 
+e_mag_8_0 - 
+w1mag - 
+e_w1mag - 
+w2mag - 
+e_w2mag - 
+w3mag - 
+e_w3mag - 
+w4mag - 
+e_w4mag - 
+dnn - 
+ng - 
+n2m - 
+nw - 
+fwhm - 
+sky - 
+lim1 - 
+lim2 - 
+

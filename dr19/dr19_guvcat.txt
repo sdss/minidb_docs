@@ -1,0 +1,105 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+objid - 
+photoextractid - 
+mpstype - 
+avaspra - 
+avaspdec - 
+fexptime - 
+nexptime - 
+ra - 
+dec - 
+glon - 
+glat - 
+tilenum - 
+img - 
+subvisit - 
+fov_radius - 
+type - 
+band - 
+e_bv - 
+istherespectrum - 
+chkobj_type - 
+fuv_mag - 
+fuv_magerr - 
+nuv_mag - 
+nuv_magerr - 
+fuv_mag_auto - 
+fuv_magerr_auto - 
+nuv_mag_auto - 
+nuv_magerr_auto - 
+fuv_mag_aper_4 - 
+fuv_magerr_aper_4 - 
+nuv_mag_aper_4 - 
+nuv_magerr_aper_4 - 
+fuv_mag_aper_6 - 
+fuv_magerr_aper_6 - 
+nuv_mag_aper_6 - 
+nuv_magerr_aper_6 - 
+fuv_artifact - 
+nuv_artifact - 
+fuv_flags - 
+nuv_flags - 
+fuv_flux - 
+fuv_fluxerr - 
+nuv_flux - 
+nuv_fluxerr - 
+fuv_x_image - 
+fuv_y_image - 
+nuv_x_image - 
+nuv_y_image - 
+fuv_fwhm_image - 
+nuv_fwhm_image - 
+fuv_fwhm_world - 
+nuv_fwhm_world - 
+nuv_class_star - 
+fuv_class_star - 
+nuv_ellipticity - 
+fuv_ellipticity - 
+nuv_theta_j2000 - 
+nuv_errtheta_j2000 - 
+fuv_theta_j2000 - 
+fuv_errtheta_j2000 - 
+fuv_ncat_fwhm_image - 
+fuv_ncat_flux_radius_3 - 
+nuv_kron_radius - 
+nuv_a_world - 
+nuv_b_world - 
+fuv_kron_radius - 
+fuv_a_world - 
+fuv_b_world - 
+nuv_weight - 
+fuv_weight - 
+prob - 
+sep - 
+nuv_poserr - 
+fuv_poserr - 
+ib_poserr - 
+nuv_pperr - 
+fuv_pperr - 
+corv - 
+grank - 
+ngrank - 
+primgid - 
+groupgid - 
+grankdist - 
+ngrankdist - 
+primgiddist - 
+groupgiddist - 
+groupgidtot - 
+difffuv - 
+diffnuv - 
+difffuvdist - 
+diffnuvdist - 
+sepas - 
+sepasdist - 
+inlargeobj - 
+largeobjsize - 
+

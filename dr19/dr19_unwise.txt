@@ -1,0 +1,59 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+x_w1 - 
+x_w2 - 
+y_w1 - 
+y_w2 - 
+flux_w1 - 
+flux_w2 - 
+dx_w1 - 
+dx_w2 - 
+dy_w1 - 
+dy_w2 - 
+dflux_w1 - 
+dflux_w2 - 
+qf_w1 - 
+qf_w2 - 
+rchi2_w1 - 
+rchi2_w2 - 
+fracflux_w1 - 
+fracflux_w2 - 
+fluxlbs_w1 - 
+fluxlbs_w2 - 
+dfluxlbs_w1 - 
+dfluxlbs_w2 - 
+fwhm_w1 - 
+fwhm_w2 - 
+spread_model_w1 - 
+spread_model_w2 - 
+dspread_model_w1 - 
+dspread_model_w2 - 
+sky_w1 - 
+sky_w2 - 
+ra12_w1 - 
+ra12_w2 - 
+dec12_w1 - 
+dec12_w2 - 
+coadd_id - 
+unwise_detid_w1 - 
+unwise_detid_w2 - 
+nm_w1 - 
+nm_w2 - 
+primary12_w1 - 
+primary12_w2 - 
+flags_unwise_w1 - 
+flags_unwise_w2 - 
+flags_info_w1 - 
+flags_info_w2 - 
+ra - 
+dec - 
+primary_status - 
+unwise_objid - 
+

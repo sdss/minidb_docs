@@ -1,0 +1,89 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+designation - 
+tmass_designation - 
+tmass_cntr - 
+l - 
+b - 
+dl - 
+db - 
+ra - 
+dec - 
+dra - 
+ddec - 
+csf - 
+mag_j - 
+dj_m - 
+mag_h - 
+dh_m - 
+mag_ks - 
+dks_m - 
+mag3_6 - 
+d3_6m - 
+mag4_5 - 
+d4_5m - 
+mag5_8 - 
+d5_8m - 
+mag8_0 - 
+d8_0m - 
+f_j - 
+df_j - 
+f_h - 
+df_h - 
+f_ks - 
+df_ks - 
+f3_6 - 
+df3_6 - 
+f4_5 - 
+df4_5 - 
+f5_8 - 
+df5_8 - 
+f8_0 - 
+df8_0 - 
+rms_f3_6 - 
+rms_f4_5 - 
+rms_f5_8 - 
+rms_f8_0 - 
+sky_3_6 - 
+sky_4_5 - 
+sky_5_8 - 
+sky_8_0 - 
+sn_j - 
+sn_h - 
+sn_ks - 
+sn_3_6 - 
+sn_4_5 - 
+sn_5_8 - 
+sn_8_0 - 
+dens_3_6 - 
+dens_4_5 - 
+dens_5_8 - 
+dens_8_0 - 
+m3_6 - 
+m4_5 - 
+m5_8 - 
+m8_0 - 
+n3_6 - 
+n4_5 - 
+n5_8 - 
+n8_0 - 
+sqf_j - 
+sqf_h - 
+sqf_ks - 
+sqf_3_6 - 
+sqf_4_5 - 
+sqf_5_8 - 
+sqf_8_0 - 
+mf3_6 - 
+mf4_5 - 
+mf5_8 - 
+mf8_0 - 
+pk - 
+

@@ -1,0 +1,30 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+pix_32768 - 
+ra - 
+dec - 
+down_pix - 
+tile_32 - 
+gaia_sky - 
+sep_neighbour_gaia - 
+mag_neighbour_gaia - 
+ls8_sky - 
+sep_neighbour_ls8 - 
+mag_neighbour_ls8 - 
+tmass_sky - 
+sep_neighbour_tmass - 
+mag_neighbour_tmass - 
+tycho2_sky - 
+sep_neighbour_tycho2 - 
+mag_neighbour_tycho2 - 
+tmass_xsc_sky - 
+sep_neighbour_tmass_xsc - 
+mag_neighbour_tmass_xsc - 
+

@@ -1,0 +1,67 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+wd - 
+dr2name - 
+source_id - 
+source - 
+ra - 
+e_ra - 
+dec - 
+e_dec - 
+plx - 
+e_plx - 
+pmra - 
+e_pmra - 
+pmdec - 
+e_pmdec - 
+epsi - 
+amax - 
+fg_gaia - 
+e_fg_gaia - 
+g_gaia_mag - 
+fbp - 
+e_fbp - 
+bpmag - 
+frp - 
+e_frp - 
+rpmag - 
+e_br_rp - 
+glon - 
+glat - 
+density - 
+ag - 
+sdss - 
+umag - 
+e_umag - 
+gmag - 
+e_gmag - 
+rmag - 
+e_rmag - 
+imag - 
+e_imag - 
+zmag - 
+e_zmag - 
+pwd - 
+f_pwd - 
+teffh - 
+e_teffh - 
+loggh - 
+e_loggh - 
+massh - 
+e_massh - 
+chi2h - 
+teffhe - 
+e_teffhe - 
+logghe - 
+e_logghe - 
+masshe - 
+e_masshe - 
+chisqhe - 
+

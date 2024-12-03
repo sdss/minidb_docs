@@ -1,0 +1,35 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+cxoid - 
+xra - 
+xdec - 
+pri - 
+ocat - 
+oid - 
+ora - 
+odec - 
+omag - 
+omatchtype - 
+irid - 
+ra2m - 
+dec2m - 
+hmag - 
+irmatchtype - 
+lgal - 
+bgal - 
+logfx - 
+xband - 
+xsn - 
+xflags - 
+designation2m - 
+idg2 - 
+idps - 
+pk - 
+

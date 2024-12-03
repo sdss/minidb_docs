@@ -1,0 +1,50 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+tyc1 - 
+tyc2 - 
+tyc3 - 
+pflag - 
+ramdeg - 
+demdeg - 
+pmra - 
+pmde - 
+e_ramdeg - 
+e_demdeg - 
+e_pmra - 
+e_pmde - 
+epram - 
+epdem - 
+num - 
+q_ramdeg - 
+q_demdeg - 
+q_pmra - 
+q_pmde - 
+btmag - 
+e_btmag - 
+vtmag - 
+e_vtmag - 
+prox - 
+tyc - 
+hip - 
+ccdm - 
+radeg - 
+dedeg - 
+epra_1990 - 
+epde_1990 - 
+e_radeg - 
+e_dedeg - 
+posflg - 
+corr - 
+flag - 
+mflag - 
+designation - 
+tycid - 
+designation2 - 
+

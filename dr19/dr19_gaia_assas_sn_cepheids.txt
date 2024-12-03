@@ -1,0 +1,88 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+source - 
+ref - 
+star - 
+period - 
+amp_v - 
+mean_v - 
+a1_v - 
+source_id - 
+random_index - 
+ref_epoch - 
+ra - 
+ra_error - 
+dec - 
+dec_error - 
+parallax - 
+parallax_error - 
+parallax_over_error - 
+pmra - 
+pmra_error - 
+pmdec - 
+pmdec_error - 
+ra_dec_corr - 
+ra_parallax_corr - 
+ra_pmra_corr - 
+ra_pmdec_corr - 
+dec_parallax_corr - 
+dec_pmra_corr - 
+dec_pmdec_corr - 
+parallax_pmra_corr - 
+parallax_pmdec_corr - 
+pmra_pmdec_corr - 
+phot_g_n_obs - 
+phot_g_mean_flux - 
+phot_g_mean_flux_error - 
+phot_g_mean_flux_over_error - 
+phot_g_mean_mag - 
+phot_bp_n_obs - 
+phot_bp_mean_flux - 
+phot_bp_mean_flux_error - 
+phot_bp_mean_flux_over_error - 
+phot_bp_mean_mag - 
+phot_rp_n_obs - 
+phot_rp_mean_flux - 
+phot_rp_mean_flux_error - 
+phot_rp_mean_flux_over_error - 
+phot_rp_mean_mag - 
+phot_bp_rp_excess_factor - 
+phot_proc_mode - 
+bp_rp - 
+bp_g - 
+g_rp - 
+radial_velocity - 
+radial_velocity_error - 
+a_g_val - 
+a_g_percentile_lower - 
+a_g_percentile_upper - 
+e_bp_min_rp_val - 
+e_bp_min_rp_percentile_lower - 
+e_bp_min_rp_percentile_upper - 
+variability - 
+type - 
+twomass - 
+raj2000 - 
+dej2000 - 
+errhalfmaj - 
+errhalfmin - 
+errposang - 
+jmag - 
+hmag - 
+kmag - 
+e_jmag - 
+e_hmag - 
+e_kmag - 
+qfl - 
+rfl - 
+x - 
+measurejd - 
+angdist - 
+

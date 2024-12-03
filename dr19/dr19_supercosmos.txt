@@ -1,0 +1,67 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+objid - 
+objidb - 
+objidr1 - 
+objidr2 - 
+objidi - 
+htmid - 
+epoch - 
+ra - 
+dec - 
+sigra - 
+sigdec - 
+cx - 
+cy - 
+cz - 
+muacosd - 
+mud - 
+sigmuacosd - 
+sigmud - 
+chi2 - 
+nplates - 
+classmagb - 
+classmagr1 - 
+classmagr2 - 
+classmagi - 
+gcormagb - 
+gcormagr1 - 
+gcormagr2 - 
+gcormagi - 
+scormagb - 
+scormagr1 - 
+scormagr2 - 
+scormagi - 
+meanclass - 
+classb - 
+classr1 - 
+classr2 - 
+classi - 
+ellipb - 
+ellipr1 - 
+ellipr2 - 
+ellipi - 
+qualb - 
+qualr1 - 
+qualr2 - 
+quali - 
+blendb - 
+blendr1 - 
+blendr2 - 
+blendi - 
+prfstatb - 
+prfstatr1 - 
+prfstatr2 - 
+prfstati - 
+l - 
+b - 
+d - 
+ebmv - 
+

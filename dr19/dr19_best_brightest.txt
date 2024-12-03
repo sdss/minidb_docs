@@ -1,0 +1,46 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+designation - 
+ra_1 - 
+dec_1 - 
+glon - 
+glat - 
+w1mpro - 
+w2mpro - 
+w3mpro - 
+w4mpro - 
+pmra - 
+pmdec - 
+j_m_2mass - 
+h_m_2mass - 
+k_m_2mass - 
+ra_2 - 
+raerr - 
+dec_2 - 
+decerr - 
+nobs - 
+mobs - 
+vjmag - 
+bjmag - 
+gmag - 
+rmag - 
+imag - 
+evjmag - 
+ebjmag - 
+egmag - 
+ermag - 
+eimag - 
+name - 
+separation - 
+ebv - 
+version - 
+original_ext_source_id - 
+cntr - 
+

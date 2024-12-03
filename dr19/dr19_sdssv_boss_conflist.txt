@@ -1,0 +1,104 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+plate - 
+designid - 
+mjd - 
+run2d - 
+run1d - 
+racen - 
+deccen - 
+epoch - 
+cartid - 
+tai - 
+tai_beg - 
+tai_end - 
+airmass - 
+exptime - 
+mapname - 
+survey - 
+programname - 
+chunk - 
+platequality - 
+platesn2 - 
+deredsn2 - 
+qsurvey - 
+mjdlist - 
+tailist - 
+nexp - 
+nexp_b1 - 
+nexp_r1 - 
+expt_b1 - 
+expt_r1 - 
+sn2_g1 - 
+sn2_r1 - 
+sn2_i1 - 
+dered_sn2_g1 - 
+dered_sn2_r1 - 
+dered_sn2_i1 - 
+goffstd - 
+grmsstd - 
+roffstd - 
+rrmsstd - 
+ioffstd - 
+irmsstd - 
+groffstd - 
+grrmsstd - 
+rioffstd - 
+rirmsstd - 
+goffgal - 
+grmsgal - 
+roffgal - 
+rrmsgal - 
+ioffgal - 
+irmsgal - 
+groffgal - 
+grrmsgal - 
+rioffgal - 
+rirmsgal - 
+nguide - 
+seeing20 - 
+seeing50 - 
+seeing80 - 
+rmsoff20 - 
+rmsoff50 - 
+rmsoff80 - 
+airtemp - 
+xsigma - 
+xsigmin - 
+xsigmax - 
+wsigma - 
+wsigmin - 
+wsigmax - 
+xchi2 - 
+xchi2min - 
+xchi2max - 
+skychi2 - 
+schi2min - 
+schi2max - 
+fbadpix - 
+fbadpix1 - 
+fbadpix2 - 
+n_total - 
+n_galaxy - 
+n_qso - 
+n_star - 
+n_unknown - 
+n_sky - 
+n_std - 
+n_target_qso - 
+success_qso - 
+status2d - 
+statuscombine - 
+status1d - 
+public - 
+qualcomments - 
+moon_frac - 
+pkey - 
+

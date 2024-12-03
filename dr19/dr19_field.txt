@@ -1,0 +1,19 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+pk - 
+racen - 
+deccen - 
+version_pk - 
+cadence_pk - 
+observatory_pk - 
+position_angle - 
+slots_exposures - 
+field_id - 
+

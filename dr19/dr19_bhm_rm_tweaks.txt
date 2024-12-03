@@ -1,0 +1,28 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+rm_field_name - 
+plate - 
+fiberid - 
+mjd - 
+catalogid - 
+ra - 
+dec - 
+rm_suitability - 
+in_plate - 
+firstcarton - 
+mag_u - 
+mag_g - 
+mag_r - 
+mag_i - 
+mag_z - 
+gaia_g - 
+date_set - 
+pkey - 
+

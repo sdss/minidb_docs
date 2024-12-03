@@ -1,0 +1,47 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+ra - 
+dec - 
+gaia_sourceid - 
+unwise_objid - 
+plx - 
+plx_err - 
+pmra - 
+pmra_err - 
+pmdec - 
+pmdec_err - 
+plxsig - 
+pmsig - 
+ebv - 
+n_obs - 
+g - 
+bp - 
+rp - 
+w1 - 
+w2 - 
+bp_g - 
+bp_rp - 
+g_rp - 
+g_w1 - 
+gw_sep - 
+w1_w2 - 
+g_var - 
+bprp_ef - 
+aen - 
+gof - 
+cnt1 - 
+cnt2 - 
+cnt4 - 
+cnt8 - 
+cnt16 - 
+cnt32 - 
+phot_z - 
+prob_rf - 
+

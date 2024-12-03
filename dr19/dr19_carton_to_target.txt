@@ -1,0 +1,21 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+carton_to_target_pk - 
+lambda_eff - 
+carton_pk - 
+target_pk - 
+cadence_pk - 
+priority - 
+value - 
+instrument_pk - 
+delta_ra - 
+delta_dec - 
+inertial - 
+

@@ -1,0 +1,50 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+pk - 
+ero_version - 
+ero_detuid - 
+ero_flux - 
+ero_flux_err - 
+ero_ext - 
+ero_ext_err - 
+ero_ext_like - 
+ero_det_like - 
+ero_ra - 
+ero_dec - 
+ero_radec_err - 
+xmatch_method - 
+xmatch_version - 
+xmatch_dist - 
+xmatch_metric - 
+xmatch_flags - 
+target_class - 
+target_priority - 
+target_has_spec - 
+best_opt - 
+ls_id - 
+ps1_dr2_objid - 
+gaia_dr2_source_id - 
+unwise_dr1_objid - 
+des_dr1_coadd_object_id - 
+sdss_dr16_objid - 
+opt_ra - 
+opt_dec - 
+opt_pmra - 
+opt_pmdec - 
+opt_epoch - 
+opt_modelflux_g - 
+opt_modelflux_ivar_g - 
+opt_modelflux_r - 
+opt_modelflux_ivar_r - 
+opt_modelflux_i - 
+opt_modelflux_ivar_i - 
+opt_modelflux_z - 
+opt_modelflux_ivar_z - 
+

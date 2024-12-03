@@ -1,0 +1,17 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+pk - 
+configuration_id - 
+exposure_no - 
+comment - 
+start_time - 
+exposure_time - 
+exposure_flavor_pk - 
+

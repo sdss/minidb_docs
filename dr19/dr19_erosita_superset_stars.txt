@@ -1,0 +1,41 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+ero_version - 
+ero_detuid - 
+ero_flux - 
+ero_morph - 
+ero_det_like - 
+ero_ra - 
+ero_dec - 
+ero_radec_err - 
+xmatch_method - 
+xmatch_version - 
+xmatch_dist - 
+xmatch_metric - 
+xmatch_flags - 
+target_class - 
+target_priority - 
+target_has_spec - 
+opt_cat - 
+ls_id - 
+ps1_dr2_id - 
+gaia_dr2_id - 
+catwise2020_id - 
+skymapper_dr2_id - 
+supercosmos_id - 
+tycho2_id - 
+sdss_dr13_id - 
+opt_ra - 
+opt_dec - 
+opt_pmra - 
+opt_pmdec - 
+opt_epoch - 
+pkey - 
+

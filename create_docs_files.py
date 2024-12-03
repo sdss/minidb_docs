@@ -9,6 +9,7 @@
 from __future__ import annotations
 
 import os
+import pathlib
 import warnings
 
 from sdssdb.peewee.sdss5db import database
@@ -17,10 +18,14 @@ from sdssdb.peewee.sdss5db import database
 def create_docs_files():
 
     database.set_profile("tunnel_operations")
+    schema = "minidb_dr19"
 
-    tables = database.get_tables("minidb")
+    output_dir = pathlib.Path(__file__).parent / "dr19"
+    output_dir.mkdir(exist_ok=True)
+
+    tables = database.get_tables(schema)
     for table in tables:
-        fname = str(table) + ".txt"
+        fname = output_dir / (str(table) + ".txt")
         if os.path.exists(fname):
             warnings.warn(f"{fname} already exists")
             continue
@@ -35,7 +40,7 @@ def create_docs_files():
         f.write("-------\n")
         f.write("\n")
 
-        columns = database.get_columns(str(table), "minidb")
+        columns = database.get_columns(str(table), schema)
         for column in columns:
             f.write(str(column.name) + " - \n")
 

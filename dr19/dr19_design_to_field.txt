@@ -1,0 +1,15 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+pk - 
+design_id - 
+field_pk - 
+exposure - 
+field_exposure - 
+

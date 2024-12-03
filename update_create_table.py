@@ -26,7 +26,7 @@ def update_create_table(
     ----------
     summary_file
         The file containing the table summary. The format must be similar to
-        https://github.com/sdss/minidb_docs/blob/main/dr18_allwise.txt.
+        https://github.com/sdss/minidb_docs/blob/main/dr18/dr18_allwise.txt.
         Square bracket values at the end of a column description, if found,
         will be understood as units.
     create_table_file
