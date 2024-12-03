@@ -1,15 +1,14 @@
 Summary
 -------
 
-
+The table contains the cross-match between the dr18_catalog targets and the dr18_sdss_dr13_photoobj_primary table.
 
 
 Columns
 -------
 
-catalogid - 
-target_id - 
-version_id - 
-distance - 
-best - 
-
+catalogid - The catalogid identifier in the dr19_catalog table.
+target_id - The primary key identifier in the dr19_sdss_dr13_photoobj_primary table.
+version_id - The internal version for the cross-match.
+distance - The distance between the catalog and target coordinates if best=F.
+best - Whether this is considered the best match between the catalog entry and dr18_sdss_dr13_photoobj_primary.

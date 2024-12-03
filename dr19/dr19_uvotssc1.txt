@@ -1,93 +1,94 @@
 Summary
 -------
 
+Version 1.1 of the Swift UVOT Serendipitous Source Catalogue (UVOTSSC). For full details, please see Page et al. (2015) at https://pos.sissa.it/233/037 and the online documentation at https://archive.stsci.edu/prepds/uvotssc/
 
 
 
 Columns
 -------
 
-name - 
-oseq - 
-obsid - 
-nf - 
-srcid - 
-radeg - 
-dedeg - 
-e_radeg - 
-e_dedeg - 
-ruvw2 - 
-ruvm2 - 
-ruvw1 - 
-ru - 
-rb - 
-rv - 
-nd - 
-suvw2 - 
-suvm2 - 
-suvw1 - 
-su - 
-sb - 
-sv - 
-uvw2 - 
-uvm2 - 
-uvw1 - 
-umag - 
-bmag - 
-vmag - 
-uvw2_ab - 
-uvm2_ab - 
-uvw1_ab - 
-u_ab - 
-b_ab - 
-v_ab - 
-e_uvw2 - 
-e_uvm2 - 
-e_uvw1 - 
-e_umag - 
-e_bmag - 
-e_vmag - 
-f_uvw2 - 
-f_uvm2 - 
-f_uvw1 - 
-f_u - 
-f_b - 
-f_v - 
-e_f_uvw2 - 
-e_f_uvm2 - 
-e_f_uvw1 - 
-e_f_u - 
-e_f_b - 
-e_f_v - 
-auvw2 - 
-auvm2 - 
-auvw1 - 
-au - 
-ab - 
-av - 
-buvw2 - 
-buvm2 - 
-buvw1 - 
-bu - 
-bb - 
-bv - 
-pauvw2 - 
-pauvm2 - 
-pauvw1 - 
-pau - 
-pab - 
-pav - 
-xuvw2 - 
-xuvm2 - 
-xuvw1 - 
-xu - 
-xb - 
-xv - 
-fuvw2 - 
-fuvm2 - 
-fuvw1 - 
-fu - 
-fb - 
-fv - 
-id - 
+name - UVOTSSC1 name (JHHMMSS.s+DDMMSSa) []
+oseq - Reference number in the observation table []
+obsid - Unique Swift observation ID []
+nf - Number of filters included in this observation []
+srcid - Unique source number []
+radeg - Right ascension [degrees]
+dedeg - Declination [degrees]
+e_radeg - Right ascension error [arcsec]
+e_dedeg - Declination error [arcsec]
+ruvw2 - Distance to closest UVW2 source [arcsec]
+ruvm2 - Distance to closest UVM2 source [arcsec]
+ruvw1 - Distance to closest UVW1 source [arcsec]
+ru - Distance to closest U source [arcsec]
+rb - Distance to closest B source [arcsec]
+rv - Distance to closest V source [arcsec]
+nd - Number of individual observations []
+suvw2 - Significance (S/N) in UVW2 []
+suvm2 - Significance (S/N) in UVM2 []
+suvw1 - Significance (S/N) in UVW1 []
+su - Significance (S/N) in U []
+sb - Significance (S/N) in B []
+sv - Significance (S/N) in V []
+uvw2 - UVOT/UVW2 Vega magnitude [mag]
+uvm2 - UVOT/UVM2 Vega magnitude [mag]
+uvw1 - UVOT/UVW1 Vega magnitude [mag]
+umag - UVOT/U Vega magnitude [mag]
+bmag - UVOT/B Vega magnitude [mag]
+vmag - UVOT/V Vega magnitude [mag]
+uvw2_ab - UVOT/UVW2 AB magnitude [mag]
+uvm2_ab - UVOT/UVM2 AB magnitude [mag]
+uvw1_ab - UVOT/UVW1 AB magnitude [mag]
+u_ab - UVOT/U AB magnitude [mag]
+b_ab - UVOT/B AB magnitude [mag]
+v_ab - UVOT/V AB magnitude [mag]
+e_uvw2 - Error on UVW2 magnitude [mag]
+e_uvm2 - Error on UVM2 magnitude [mag]
+e_uvw1 - Error on UVW1 magnitude [mag]
+e_umag - Error on U magnitude [mag]
+e_bmag - Error on B magnitude [mag]
+e_vmag - Error on V magnitude [mag]
+f_uvw2 - UVOT/UVW2 Flux [cW/m2/nm]
+f_uvm2 - UVOT/UVM2 Flux [cW/m2/nm]
+f_uvw1 - UVOT/UVW1 Flux [cW/m2/nm]
+f_u - UVOT/U Flux [cW/m2/nm]
+f_b - UVOT/B Flux [cW/m2/nm]
+f_v - UVOT/V Flux [cW/m2/nm]
+e_f_uvw2 - Error on F.UVW2 [cW/m2/nm]
+e_f_uvm2 - Error on F.UVM2 [cW/m2/nm]
+e_f_uvw1 - Error on F.UVW1 [cW/m2/nm]
+e_f_u - Error on F.U [cW/m2/nm]
+e_f_b - Error on F.B [cW/m2/nm]
+e_f_v - Error on F.V [cW/m2/nm]
+auvw2 - Major axis in UVW2 [arcsec]
+auvm2 - Major axis in UVM2 [arcsec]
+auvw1 - Major axis in UVW1 [arcsec]
+au - Major axis in U [arcsec]
+ab - Major axis in B [arcsec]
+av - Major axis in V [arcsec]
+buvw2 - Minor axis in UVW2 [arcsec]
+buvm2 - Minor axis in UVM2 [arcsec]
+buvw1 - Minor axis in UVW1 [arcsec]
+bu - Minor axis in U [arcsec]
+bb - Minor axis in B [arcsec]
+bv - Minor axis in V [arcsec]
+pauvw2 - Position angle of major axis in UVW2 [degrees]
+pauvm2 - Position angle of major axis in UVM2 [degrees]
+pauvw1 - Position angle of major axis in UVW1 [degrees]
+pau - Position angle of major axis in U [degrees]
+pab - Position angle of major axis in B [degrees]
+pav - Position angle of major axis in V [degrees]
+xuvw2 - Extended flag in UVW2 []
+xuvm2 - Extended flag in UVM2 []
+xuvw1 - Extended flag in UVW1 []
+xu - Extended flag in U []
+xb - Extended flag in B []
+xv - Extended flag in V []
+fuvw2 - Quality flags in UVW2 []
+fuvm2 - Quality flags in UVM2 []
+fuvw1 - Quality flags in UVW1 []
+fu - Quality flags in U []
+fb - Quality flags in B []
+fv - Quality flags in V []
+id - Internal identifier []
 

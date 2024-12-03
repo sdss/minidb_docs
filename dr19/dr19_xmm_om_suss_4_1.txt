@@ -1,125 +1,126 @@
 Summary
 -------
 
+The 2018 release of the XMM OM Serendipitous Ultraviolet Source Survey (XMM-SUSS4.1) Catalog. For full details, please see https://heasarc.gsfc.nasa.gov/W3Browse/all/xmmomsuob.html and the original catalog paper (Page et al. 2012; https://academic.oup.com/mnras/article/426/2/903/976665)
 
 
 
 Columns
 -------
 
-iauname - 
-n_summary - 
-obsid - 
-srcnum - 
-uvw2_srcdist - 
-uvm2_srcdist - 
-uvw1_srcdist - 
-u_srcdist - 
-b_srcdist - 
-v_srcdist - 
-ra - 
-dec - 
-ra_hms - 
-dec_dms - 
-poserr - 
-lii - 
-bii - 
-n_obsid - 
-uvw2_signif - 
-uvm2_signif - 
-uvw1_signif - 
-u_signif - 
-b_signif - 
-v_signif - 
-uvw2_rate - 
-uvw2_rate_err - 
-uvm2_rate - 
-uvm2_rate_err - 
-uvw1_rate - 
-uvw1_rate_err - 
-u_rate - 
-u_rate_err - 
-b_rate - 
-b_rate_err - 
-v_rate - 
-v_rate_err - 
-uvw2_ab_flux - 
-uvw2_ab_flux_err - 
-uvm2_ab_flux - 
-uvm2_ab_flux_err - 
-uvw1_ab_flux - 
-uvw1_ab_flux_err - 
-u_ab_flux - 
-u_ab_flux_err - 
-b_ab_flux - 
-b_ab_flux_err - 
-v_ab_flux - 
-v_ab_flux_err - 
-uvw2_ab_mag - 
-uvw2_ab_mag_err - 
-uvm2_ab_mag - 
-uvm2_ab_mag_err - 
-uvw1_ab_mag - 
-uvw1_ab_mag_err - 
-u_ab_mag - 
-u_ab_mag_err - 
-b_ab_mag - 
-b_ab_mag_err - 
-v_ab_mag - 
-v_ab_mag_err - 
-uvw2_vega_mag - 
-uvw2_vega_mag_err - 
-uvm2_vega_mag - 
-uvm2_vega_mag_err - 
-uvw1_vega_mag - 
-uvw1_vega_mag_err - 
-u_vega_mag - 
-u_vega_mag_err - 
-b_vega_mag - 
-b_vega_mag_err - 
-v_vega_mag - 
-v_vega_mag_err - 
-uvw2_major_axis - 
-uvm2_major_axis - 
-uvw1_major_axis - 
-u_major_axis - 
-b_major_axis - 
-v_major_axis - 
-uvw2_minor_axis - 
-uvm2_minor_axis - 
-uvw1_minor_axis - 
-u_minor_axis - 
-b_minor_axis - 
-v_minor_axis - 
-uvw2_posang - 
-uvm2_posang - 
-uvw1_posang - 
-u_posang - 
-b_posang - 
-v_posang - 
-uvw2_quality_flag - 
-uvm2_quality_flag - 
-uvw1_quality_flag - 
-u_quality_flag - 
-b_quality_flag - 
-v_quality_flag - 
-uvw2_quality_flag_st - 
-uvm2_quality_flag_st - 
-uvw1_quality_flag_st - 
-u_quality_flag_st - 
-b_quality_flag_st - 
-v_quality_flag_st - 
-uvw2_extended_flag - 
-uvm2_extended_flag - 
-uvw1_extended_flag - 
-u_extended_flag - 
-b_extended_flag - 
-v_extended_flag - 
-uvw2_sky_image - 
-uvm2_sky_image - 
-uvw1_sky_image - 
-u_sky_image - 
-b_sky_image - 
-v_sky_image - 
-pk - 
+iauname - Coordinate-based name []
+n_summary - Reference number index for the XMM-Newton pointing in which the particular detection was mad
+obsid - The exclusive 10-digit identification number of the XMM pointing with the detection []
+srcnum - The unique reference number within each combined source list created by the pipeline []
+uvw2_srcdist - Distance between source and nearest detected neighbor in UVW2 [arcsec]
+uvm2_srcdist - Distance between source and nearest detected neighbor in UVM2 [arcsec]
+uvw1_srcdist - Distance between source and nearest detected neighbor in UVW1 [arcsec]
+u_srcdist - Distance between source and nearest detected neighbor in U [arcsec]
+b_srcdist - Distance between source and nearest detected neighbor in B [arcsec]
+v_srcdist - Distance between source and nearest detected neighbor in V [arcsec]
+ra - Right ascension [degrees]
+dec - Declination [degrees]
+ra_hms - Right ascension [sexagesimal]
+dec_dms - Declination [sexagesimal]
+poserr - Statistical error of the measured source position [arcsec]
+lii - Galactic longitude [degrees]
+bii - Galactic latitude [degrees]
+n_obsid - Number of times a source has been detected during separate observations []
+uvw2_signif - Significance of source detection in UVW2 []
+uvm2_signif - Significance of source detection in UVM2 []
+uvw1_signif - Significance of source detection in UVW1 []
+u_signif - Significance of source detection in U []
+b_signif - Significance of source detection in B []
+v_signif - Significance of source detection in V []
+uvw2_rate - Background-subtracted source count rate in UVW2 corrected for coincidence loss [counts/s]
+uvw2_rate_err - Uncertainty in the background-subtracted source count rate in UVW2 [counts/s]
+uvm2_rate - Background-subtracted source count rate in UVM2 corrected for coincidence loss [counts/s]
+uvm2_rate_err - Uncertainty in the background-subtracted source count rate in UVM2 [counts/s]
+uvw1_rate - Background-subtracted source count rate in UVW1 corrected for coincidence loss [counts/s]
+uvw1_rate_err - Uncertainty in the background-subtracted source count rate in UVW1 [counts/s]
+u_rate - Background-subtracted source count rate in U corrected for coincidence loss [counts/s]
+u_rate_err - Uncertainty in the background-subtracted source count rate in U [counts/s]
+b_rate - Background-subtracted source count rate in B corrected for coincidence loss [counts/s]
+b_rate_err - Uncertainty in the background-subtracted source count rate in B [counts/s]
+v_rate - Background-subtracted source count rate in V corrected for coincidence loss [counts/s]
+v_rate_err - Uncertainty in the background-subtracted source count rate in V [counts/s]
+uvw2_ab_flux - UVW2 AB flux [erg/s/cm^2/A]
+uvw2_ab_flux_err - Error in UVW2 AB flux [erg/s/cm^2/A]
+uvm2_ab_flux - UVM2 AB flux [erg/s/cm^2/A]
+uvm2_ab_flux_err - Error in UVM2 AB flux [erg/s/cm^2/A]
+uvw1_ab_flux - UVW1 AB flux [erg/s/cm^2/A]
+uvw1_ab_flux_err - Error in UVW1 AB flux [erg/s/cm^2/A]
+u_ab_flux - U AB flux [erg/s/cm^2/A]
+u_ab_flux_err - Error in U AB flux [erg/s/cm^2/A]
+b_ab_flux - B AB flux [erg/s/cm^2/A]
+b_ab_flux_err - Error in B AB flux [erg/s/cm^2/A]
+v_ab_flux - V AB flux [erg/s/cm^2/A]
+v_ab_flux_err - Error in V AB flux [erg/s/cm^2/A]
+uvw2_ab_mag - UVW2 AB magnitude [mag]
+uvw2_ab_mag_err - Error in UVW2 AB magnitude [mag]
+uvm2_ab_mag - UVM2 AB magnitude [mag]
+uvm2_ab_mag_err - Error in UVM2 AB magnitude [mag] 
+uvw1_ab_mag - UVW1 AB magnitude [mag]
+uvw1_ab_mag_err - Error in UVW1 AB magnitude [mag]
+u_ab_mag - U AB magnitude [mag]
+u_ab_mag_err - Error in U AB magnitude [mag]
+b_ab_mag - B AB magnitude [mag]
+b_ab_mag_err - Error in B AB magnitude [mag]
+v_ab_mag - V AB magnitude [mag]
+v_ab_mag_err - Error in V AB magnitude [mag]
+uvw2_vega_mag - UVW2 Vega magnitude [mag]
+uvw2_vega_mag_err - Error in UVW2 Vega magnitude [mag]
+uvm2_vega_mag - UVM2 Vega magnitude [mag]
+uvm2_vega_mag_err - Error in UVM2 Vega magnitude [mag]
+uvw1_vega_mag - UVW1 Vega magnitude [mag]
+uvw1_vega_mag_err - Error in UVW1 Vega magnitude [mag]
+u_vega_mag - U Vega magnitude [mag]
+u_vega_mag_err - Error in U Vega magnitude [mag]
+b_vega_mag - B Vega magnitude [mag]
+b_vega_mag_err - Error in B Vega magnitude [mag]
+v_vega_mag - V Vega magnitude [mag]
+v_vega_mag_err - Error in V Vega magnitude [mag]
+uvw2_major_axis - Length of major axis in UVW2 [arcsec]
+uvm2_major_axis - Length of major axis in UVM2 [arcsec]
+uvw1_major_axis - Length of major axis in UVW1 [arcsec]
+u_major_axis - Length of major axis in U [arcsec]
+b_major_axis - Length of major axis in B [arcsec]
+v_major_axis - Length of major axis in V [arcsec]
+uvw2_minor_axis - Length of minor axis in UVW2 [arcsec]
+uvm2_minor_axis - Length of minor axis in UVM2 [arcsec]
+uvw1_minor_axis - Length of minor axis in UVW1 [arcsec]
+u_minor_axis - Length of minor axis in U [arcsec]
+b_minor_axis - Length of minor axis in B [arcsec]
+v_minor_axis - Length of minor axis in V [arcsec]
+uvw2_posang - Angle on the sky subtended by the major axis of the source and J2000 north in UVW2 [degrees]
+uvm2_posang - Angle on the sky subtended by the major axis of the source and J2000 north in UVM2 [degrees]
+uvw1_posang - Angle on the sky subtended by the major axis of the source and J2000 north in UVW1 [degrees]
+u_posang - Angle on the sky subtended by the major axis of the source and J2000 north in U [degrees]
+b_posang - Angle on the sky subtended by the major axis of the source and J2000 north in B [degrees]
+v_posang - Angle on the sky subtended by the major axis of the source and J2000 north in V [degrees]
+uvw2_quality_flag - UVW2 quality flag []
+uvm2_quality_flag - UVM2 quality flag []
+uvw1_quality_flag - UVW1 quality flag []
+u_quality_flag - U quality flag []
+b_quality_flag - B quality flag []
+v_quality_flag - V quality flag []
+uvw2_quality_flag_st - Alternative UVW2 quality flag []
+uvm2_quality_flag_st - Alternative UVM2 quality flag []
+uvw1_quality_flag_st - Alternative UVW1 quality flag []
+u_quality_flag_st - Alternative U quality flag []
+b_quality_flag_st - Alternative B quality flag []
+v_quality_flag_st - Alternative V quality flag []
+uvw2_extended_flag - Spatially extended flag in UVW2 []
+uvm2_extended_flag - Spatially extended flag in UVM2 []
+uvw1_extended_flag - Spatially extended flag in UVW1 []
+u_extended_flag - Spatially extended flag in U []
+b_extended_flag - Spatially extended flag in B []
+v_extended_flag - Spatially extended flag in V []
+uvw2_sky_image - Flag for stakcked sky images in UVW2 []
+uvm2_sky_image - Flag for stakcked sky images in UVM2 []
+uvw1_sky_image - Flag for stakcked sky images in UVW1 []
+u_sky_image - Flag for stakcked sky images in U []
+b_sky_image - Flag for stakcked sky images in B []
+v_sky_image - Flag for stakcked sky images in V []
+pk - Primary key []
 

@@ -1,259 +1,282 @@
 Summary
 -------
+Parent sample for the RM project, used to select confirmed and candidate quasar targets for the BHM-RM Program in SDSS-V. For more details please see Yang and Shen, (2022, https://ui.adsabs.harvard.edu/abs/2022arXiv220608989Y/abstract).
+This table contains all photometric objects detected in the COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields., within a circular area of 10 degree^2 from the field center.
+Field center: Name     RA          DEC
+              XMM-LSS  02:22:50.00    -04:45:00.0
+              CDFS     03:30:35.60    -28:06:00.0
+              EDFS     04:04:57.84    -48:25:22.8
+              ELAIS-S1 00:37:48.00    -44:00:00.0
+              COSMOS   10:00:00.00    +02:12:00.0
+              SDSS-RM  14:14:49.00    +53:05:00.0
+              S-CVZ    06:00:00.00    -66:33:38.0
 
+The table includes information from the following survey data releases: 
+DES: Dark Energy Survey, Y6, Y6A1_COADD_OBJECT_SUMMARY
+PS1: Pan-STARRS, DR1, StackObjectThin
+NSC: NOAO Source Catalog, DR1, nsc_dr1.object
+SDSS: Sloan Digital Sky Survey, DR14, PhotoObjAll
+Gaia: DR2, gaia_dr2.gaia_source
+unWISE: DR1
+Near-infrared: LAS: UKIDSS Large Area Surveys (DR11),
+               UHS: UKIRT Hemisphere Survey (DR1),
+               VHS: VISTA Hemisphere Survey (DR6),
+               Viking: VISTA Kilo-Degree Infrared Galaxy Survey (DR5),
+               VIDEO: VISTA Deep Extragalactic Observations Survey (DR5),
+               VMC: VISTA Magellanic Cloud Survey (DR4)
 
-
+Values are set to -9.0 or -9 if null.
 
 Columns
 -------
 
-field_name - 
-ra - 
-dec - 
-distance - 
-pos_ref - 
-ebv - 
-des - 
-coadd_object_id - 
-ra_des - 
-dec_des - 
-extended_coadd - 
-separation_des - 
-ps1 - 
-objid_ps1 - 
-ra_ps1 - 
-dec_ps1 - 
-class_ps1 - 
-separation_ps1 - 
-nsc - 
-id_nsc - 
-ra_nsc - 
-dec_nsc - 
-class_star - 
-flags_nsc - 
-separation_nsc - 
-sdss - 
-objid_sdss - 
-ra_sdss - 
-dec_sdss - 
-type_sdss - 
-clean_sdss - 
-separation_sdss - 
-gaia - 
-source_id_gaia - 
-mg - 
-parallax - 
-parallax_error - 
-plxsig - 
-pmra - 
-pmra_error - 
-pmdec - 
-pmdec_error - 
-pmsig - 
-unwise - 
-objid_unwise - 
-ra_unwise - 
-dec_unwise - 
-separation_unwise - 
-near_ir - 
-survey_ir - 
-sourceid_ir - 
-ra_ir - 
-dec_ir - 
-separation_ir - 
-optical_survey - 
-mi - 
-cal_skewt_qso - 
-nband_optical_use - 
-use_unwise - 
-use_nir - 
-photo_combination - 
-log_qso - 
-log_star - 
-log_galaxy - 
-p_qso - 
-p_star - 
-p_galaxy - 
-class_skewt_qso - 
-skewt_qso - 
-p_qso_prior - 
-p_star_prior - 
-p_galaxy_prior - 
-class_skewt_qso_prior - 
-skewt_qso_prior - 
-photoz_qso - 
-photoz_qso_lower - 
-photoz_qso_upper - 
-prob_photoz_qso - 
-photoz_galaxy - 
-photoz_galaxy_lower - 
-photoz_galaxy_upper - 
-pqso_xdqso - 
-photoz_xdqso - 
-prob_rf_gaia_unwise - 
-photoz_gaia_unwise - 
-des_var_sn_max - 
-ps1_var_sn_max - 
-spec_q - 
-spec_strmask - 
-spec_bitmask - 
-specz - 
-specz_ref - 
-photo_q - 
-photo_strmask - 
-photo_bitmask - 
-photoz - 
-pqso_photo - 
-photoz_ref - 
-pk - 
-psfmag_des_g - 
-psfmag_des_r - 
-psfmag_des_i - 
-psfmag_des_z - 
-psfmag_des_y - 
-psfmagerr_des_g - 
-psfmagerr_des_r - 
-psfmagerr_des_i - 
-psfmagerr_des_z - 
-psfmagerr_des_y - 
-mag_auto_des_g - 
-mag_auto_des_r - 
-mag_auto_des_i - 
-mag_auto_des_z - 
-mag_auto_des_y - 
-magerr_auto_des_g - 
-magerr_auto_des_r - 
-magerr_auto_des_i - 
-magerr_auto_des_z - 
-magerr_auto_des_y - 
-imaflags_iso_g - 
-imaflags_iso_r - 
-imaflags_iso_i - 
-imaflags_iso_z - 
-imaflags_iso_y - 
-psfmag_ps1_g - 
-psfmag_ps1_r - 
-psfmag_ps1_i - 
-psfmag_ps1_z - 
-psfmag_ps1_y - 
-psfmagerr_ps1_g - 
-psfmagerr_ps1_r - 
-psfmagerr_ps1_i - 
-psfmagerr_ps1_z - 
-psfmagerr_ps1_y - 
-kronmag_ps1_g - 
-kronmag_ps1_r - 
-kronmag_ps1_i - 
-kronmag_ps1_z - 
-kronmag_ps1_y - 
-kronmagerr_ps1_g - 
-kronmagerr_ps1_r - 
-kronmagerr_ps1_i - 
-kronmagerr_ps1_z - 
-kronmagerr_ps1_y - 
-infoflag2_g - 
-infoflag2_r - 
-infoflag2_i - 
-infoflag2_z - 
-infoflag2_y - 
-mag_nsc_g - 
-mag_nsc_r - 
-mag_nsc_i - 
-mag_nsc_z - 
-mag_nsc_y - 
-magerr_nsc_g - 
-magerr_nsc_r - 
-magerr_nsc_i - 
-magerr_nsc_z - 
-magerr_nsc_y - 
-psfmag_sdss_u - 
-psfmag_sdss_g - 
-psfmag_sdss_r - 
-psfmag_sdss_i - 
-psfmag_sdss_z - 
-psfmagerr_sdss_u - 
-psfmagerr_sdss_g - 
-psfmagerr_sdss_r - 
-psfmagerr_sdss_i - 
-psfmagerr_sdss_z - 
-modelmag_sdss_u - 
-modelmag_sdss_g - 
-modelmag_sdss_r - 
-modelmag_sdss_i - 
-modelmag_sdss_z - 
-modelmagerr_sdss_u - 
-modelmagerr_sdss_g - 
-modelmagerr_sdss_r - 
-modelmagerr_sdss_i - 
-modelmagerr_sdss_z - 
-mag_gaia_g - 
-mag_gaia_bp - 
-mag_gaia_rp - 
-magerr_gaia_g - 
-magerr_gaia_bp - 
-magerr_gaia_rp - 
-mag_unwise_w1 - 
-mag_unwise_w2 - 
-magerr_unwise_w1 - 
-magerr_unwise_w2 - 
-flags_unwise_w1 - 
-flags_unwise_w2 - 
-mag_ir_y - 
-mag_ir_j - 
-mag_ir_h - 
-mag_ir_k - 
-magerr_ir_y - 
-magerr_ir_j - 
-magerr_ir_h - 
-magerr_ir_k - 
-des_var_nepoch_g - 
-des_var_nepoch_r - 
-des_var_nepoch_i - 
-des_var_nepoch_z - 
-des_var_nepoch_y - 
-des_var_status_g - 
-des_var_status_r - 
-des_var_status_i - 
-des_var_status_z - 
-des_var_status_y - 
-des_var_rms_g - 
-des_var_rms_r - 
-des_var_rms_i - 
-des_var_rms_z - 
-des_var_rms_y - 
-des_var_sigrms_g - 
-des_var_sigrms_r - 
-des_var_sigrms_i - 
-des_var_sigrms_z - 
-des_var_sigrms_y - 
-des_var_sn_g - 
-des_var_sn_r - 
-des_var_sn_i - 
-des_var_sn_z - 
-des_var_sn_y - 
-ps1_var_nepoch_g - 
-ps1_var_nepoch_r - 
-ps1_var_nepoch_i - 
-ps1_var_nepoch_z - 
-ps1_var_nepoch_y - 
-ps1_var_status_g - 
-ps1_var_status_r - 
-ps1_var_status_i - 
-ps1_var_status_z - 
-ps1_var_status_y - 
-ps1_var_rms_g - 
-ps1_var_rms_r - 
-ps1_var_rms_i - 
-ps1_var_rms_z - 
-ps1_var_rms_y - 
-ps1_var_sigrms_g - 
-ps1_var_sigrms_r - 
-ps1_var_sigrms_i - 
-ps1_var_sigrms_z - 
-ps1_var_sigrms_y - 
-ps1_var_sn_g - 
-ps1_var_sn_r - 
-ps1_var_sn_i - 
-ps1_var_sn_z - 
-ps1_var_sn_y - 
+field_name - One of COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, or ELAIS-S1
+ra - Fiducial Right Ascension (J2000) [deg]
+dec - Fiducial Declination (J2000) [deg]
+distance - Angular distance from the field center [deg]
+pos_ref - Fiducial coordinates reference, priority: Gaia > DES > PS1 > NSC
+ebv - Galactic E(B−V) reddening from Schlegel et al. (1998)
+des - A flag set to 1 if in DES photometric catalog
+coadd_object_id - DES coadd object ID
+ra_des - DES Right Ascension (J2000) [deg]
+dec_des - DES Declination (J2000) [deg]
+extended_coadd - DES type classifier: 0 (high-confidence stars), 1 (likely stars), 2 (mostly galaxies), and 3 (high-confidence galaxies)
+separation_des - Angular distance between DES position and the fiducial coordinates [arcsec]
+ps1 - A flag set to 1 if in PS1 photometric catalog
+objid_ps1 - PS1 unique object identifier
+ra_ps1 - PS1 right ascension from i filter stack detection [deg]
+dec_ps1 - PS1 declination from i filter stack detection [deg]
+class_ps1 - PS1 source classification = iPsfMag - iKronMag
+separation_ps1 -  Angular distance between PS1 position and the fiducial coordinates [arcsec]
+nsc - A flag set to 1 if in  photometric catalog
+id_nsc - NSC unique object identifier
+ra_nsc - Right Ascension (J2000) [deg]
+dec_nsc - Declination (J2000) [deg]
+class_star - NSC Star/Galaxy classifier
+flags_nsc - NSC SExtractor flag value
+separation_nsc -  Angular distance between NSC position and the fiducial coordinates [arcsec]
+sdss - A flag set to 1 if in SDSS photometric catalog
+objid_sdss - Unique SDSS identifier
+ra_sdss - Right Ascension (J2000) [deg]
+dec_sdss - Declination (J2000) [deg]
+type_sdss - SDSS type classifier (star 6, galaxy 3, etc.)
+clean_sdss - SDSS clean photometry flag (1=clean, 0=unclean)
+separation_sdss -  Angular distance between SDSS position and the fiducial coordinates [arcsec]
+gaia - A flag set to 1 if in Gaia DR2 photometric catalog
+source_id_gaia - Gaia DR2 unique source identifier
+mg -  Gaia g-band magnitude (phot_g_mean_mag in Gaia catalog, Vega) [mag]
+parallax - Parallax, Angle, [mas]
+parallax_error - Standard error of parallax, Angle, [mas]
+plxsig - Parallax significance defined as |PARALLAX/PARALLAX_ERROR|
+pmra - Proper motion in RA direction, Angular Velocity, [mas/year]
+pmra_error - Standard error of proper motion in RA direction, Angular Velocity, [mas/year]
+pmdec -  Proper motion in DEC direction, Angular Velocity, [mas/year]
+pmdec_error - Standard error of proper motion in DEC direction, Angular Velocity, [mas/year]
+pmsig - Proper motion significance defined as (pmra^2+pmdec^2)/sqrt(pmra^2*pmra_error^2 + pmdec^2*pmdec_error^2)
+unwise - A flag set to 1 if in unWISE photometric catalog
+objid_unwise - unWISE unique object id
+ra_unwise - unWISE Right Ascension (J2000) [deg]
+dec_unwise - unWISE Declination (J2000) [deg]
+separation_unwise -  Angular distance between unWISE position and the fiducial coordinates [arcsec]
+near_ir - A flag set to 1 if in NIR photometric catalog
+survey_ir - Near-IR survey name: LAS, UHS, VHS, Viking, VMC, VIDEO
+sourceid_ir - NIR source identifier
+ra_ir - NIR Right Ascension (J2000) [deg]
+dec_ir - NIR Declination (J2000) [deg]
+separation_ir - Angular distance between NIR position and the fiducial coordinates [arcsec]
+optical_survey - Optical survey used in Skewt-QSO, e.g., DES, PS1, Gaia, NSC
+mi - i-band PSF magnitude (galactic extinction not corrected) [mag]
+cal_skewt_qso - A flag indicates whether Skewt-QSO is calculated.(Set to 1 when Nband_Optical_use > 2.)
+nband_optical_use - Number of optical bands used in Skewt-QSQ.
+use_unwise - Set to 1 when unWISE photometry is used in Skewt-QSO calculation.
+use_nir - Set to 1 when NIR photometry is usedin Skewt-QSO calculation.
+photo_combination - The photometric data combinations used in Skewt-QSO, for example, "DECam-YJHK-unWISE" - DECam/PS1 includes grizy bands; unWISE incldes unWISE W1 and W2 bands; and Gaia includes Gaia bp, g, and rp bands
+log_qso - The (natural) logarithmic probability of a target fitting to QSO colors convolved with a QLF. Set to -323 if log_QSO<-323 (close to the lower limit of double-precision data).
+log_star - The logarithmic probability of a target fitting to star colors multiplied by star number counts based on a stellar simulation. Set to -323 if log_Star<-323.
+log_galaxy - The logarithmic probability of a target fitting to galaxy colors convolved with a GLF. Set to -323 if  log_Galaxy<-323.
+p_qso - QSO probability from Skewt-QSO. P_QSO = exp(log_qso)/(exp(log_qso) + exp(log_star) + exp(log_galaxy))
+p_star - Star probability from Skewt-QSO.
+p_galaxy - Galaxy probability from Skewt-QSO.
+class_skewt_qso - Classification based on the highest probability from Skewt-QSO, QSO/Star/Galaxy
+skewt_qso -  flag indicating whether the object is a QSO (same as class_skewt_qso, except additionally requiring log_QSO>-10). (P_QSO>P_Star & P_QSO>P_galaxy & log_QSO>-10)
+p_qso_prior - QSO probability with prior probabilities from additional info, such as separation (between optical survey and unWISE), morphology, variability, and/or proper motion.(Note: *_Prior are generally not populated in this version, except for the "S-CVZ" field, where we take into account the separation between optical surveys and unWISE.)
+p_star_prior -  Star probability with prior probabilities.
+p_galaxy_prior - Galaxy probability with prior probabilities.
+class_skewt_qso_prior - Classification based on Skewt-QSO with prior probabilities described above.
+skewt_qso_prior -  flag indicating whether the object is QSO based on Skewt-QSO with prior probabilities described above.
+photoz_qso - Photometric redshift of QSO from Skewt-QSO
+photoz_qso_lower - Lower limit of photoz_QSO
+photoz_qso_upper - Upper limit of photoz_QSO
+prob_photoz_qso - The total probability of z located between photoz_QSO_lower and photoz_QSO_upper (assuming it is QSO).
+photoz_galaxy - Photometric redshift of Galaxy from Skewt-QSO (fitting to galaxy colors).
+photoz_galaxy_lower -  Lower limit of photoz_Galaxy.
+photoz_galaxy_upper -  Upper limit of photoz_Galaxy.
+pqso_xdqso - QSO probability from the public XDQSO catalog
+photoz_xdqso -  Photometric redshift of QSO from the public XDQSO catalog
+prob_rf_gaia_unwise - AGN probability from the Gaia-unWISE AGN catalog
+photoz_gaia_unwise - Photometric redshift from the Gaia-unWISE AGN catalog
+des_var_sn_max -The signal-to-noise ratio of the measured intrinsic RMS in grizy bands (DES).
+ps1_var_sn_max - The maximum signal-to-noise ratio of the measured intrinsic RMS over 5 bands (PS1).
+spec_q - flag indicating if the object was spectroscopically confirmed as QSO from earlier surveys.
+spec_strmask - string format of spec_bitmask, e.g., '000001'.
+spec_bitmask - bitmask - bit 0: SDSS-DR14Q, bit 1: SDSS-DR7Q, bit 2: OzDES-DR1Q, bit 3: SDSS-RM_Q, bit 4: COSMOS_Q, bit 5: Milliquas_QA. (Note: Milliquas_QA=1 are objects spectroscopically classified as broad-line QSO/AGN in the Million Quasars (MILLIQUAS) catalog.)
+specz - spectroscopic redshift from multiple surveys. Priority: SDSS-RM_Q/COSMOS_Q > SDSS-DR14Q > SDSS-DR7Q > OzDES-DR1Q > Milliquas_QA
+specz_ref - Reference of specz.
+photo_q - flag indicating if the object was selected as QSO in public photometric quasar catalogs.
+photo_strmask -  string format of photo_bitmask
+photo_bitmask - bit mask, bit 0: XDQSO catalog, bit 1: Gaia-unWISE AGN catalog; bit 2: Milliquas_photo: photometric quasar candidates in the Milliquas catalog
+photoz - Photometric redshift from public photometric quasar catalogs. Priority: XDQSO > Gaia-unWISE > Milliquas_photo
+pqso_photo - QSO probability from public photometric quasar catalogs.
+photoz_ref - photoz reference.
+pk - primary key for the database table
+psfmag_des_g - DES PSF photometry [mag]
+psfmag_des_r - DES PSF photometry [mag]
+psfmag_des_i - DES PSF photometry [mag]
+psfmag_des_z - DES PSF photometry [mag]
+psfmag_des_y - DES PSF photometry [mag]
+psfmagerr_des_g - DES PSF photometry error [mag]
+psfmagerr_des_r - DES PSF photometry error [mag]
+psfmagerr_des_i - DES PSF photometry error [mag]
+psfmagerr_des_z - DES PSF photometry error [mag]
+psfmagerr_des_y - DES PSF photometry error [mag]
+mag_auto_des_g - DES auto photometry [mag]
+mag_auto_des_r - DES auto photometry [mag]
+mag_auto_des_i - DES auto photometry [mag]
+mag_auto_des_z - DES auto photometry [mag]
+mag_auto_des_y - DES auto photometry [mag]
+magerr_auto_des_g - DES auto photometry error [mag]
+magerr_auto_des_r - DES auto photometry error [mag]
+magerr_auto_des_i - DES auto photometry error [mag]
+magerr_auto_des_z - DES auto photometry error [mag]
+magerr_auto_des_y - DES auto photometry error [mag]
+imaflags_iso_g - DES flag identifying sources with missing/flagged pixels, considering all single epoch images
+imaflags_iso_r - DES flag identifying sources with missing/flagged pixels, considering all single epoch images
+imaflags_iso_i - DES flag identifying sources with missing/flagged pixels, considering all single epoch images
+imaflags_iso_z - DES flag identifying sources with missing/flagged pixels, considering all single epoch images
+imaflags_iso_y - DES flag identifying sources with missing/flagged pixels, considering all single epoch images
+psfmag_ps1_g - PS1 PSF magnitude [mag]
+psfmag_ps1_r - PS1 PSF magnitude [mag]
+psfmag_ps1_i - PS1 PSF magnitude [mag]
+psfmag_ps1_z - PS1 PSF magnitude [mag]
+psfmag_ps1_y - PS1 PSF magnitude [mag]
+psfmagerr_ps1_g - PS1 PSF magnitude error [mag]
+psfmagerr_ps1_r - PS1 PSF magnitude error [mag]
+psfmagerr_ps1_i - PS1 PSF magnitude error [mag]
+psfmagerr_ps1_z - PS1 PSF magnitude error [mag]
+psfmagerr_ps1_y - PS1 PSF magnitude error [mag]
+kronmag_ps1_g - PS1 Kron magnitude [mag]
+kronmag_ps1_r - PS1 Kron magnitude [mag]
+kronmag_ps1_i - PS1 Kron magnitude [mag]
+kronmag_ps1_z - PS1 Kron magnitude [mag]
+kronmag_ps1_y - PS1 Kron magnitude [mag]
+kronmagerr_ps1_g - PS1 Kron magnitude error [mag]
+kronmagerr_ps1_r - PS1 Kron magnitude error [mag]
+kronmagerr_ps1_i - PS1 Kron magnitude error [mag]
+kronmagerr_ps1_z - PS1 Kron magnitude error [mag]
+kronmagerr_ps1_y - PS1 Kron magnitude error [mag]
+infoflag2_g - PS1 flags, values listed in DetectionFlags2
+infoflag2_r - PS1 flags, values listed in DetectionFlags2
+infoflag2_i - PS1 flags, values listed in DetectionFlags2
+infoflag2_z - PS1 flags, values listed in DetectionFlags2
+infoflag2_y - PS1 flags, values listed in DetectionFlags2
+mag_nsc_g - Weighted-average magnitude [mag]
+mag_nsc_r - Weighted-average magnitude [mag]
+mag_nsc_i - Weighted-average magnitude [mag]
+mag_nsc_z - Weighted-average magnitude [mag]
+mag_nsc_y - Weighted-average magnitude [mag]
+magerr_nsc_g - Weighted-average NSC magnitude [mag]
+magerr_nsc_r - Weighted-average NSC magnitude [mag]
+magerr_nsc_i - Weighted-average NSC magnitude [mag]
+magerr_nsc_z - Weighted-average NSC magnitude [mag]
+magerr_nsc_y - Weighted-average NSC magnitude [mag]
+psfmag_sdss_u - SDSS PSF magnitude [mag]
+psfmag_sdss_g - SDSS PSF magnitude [mag]
+psfmag_sdss_r - SDSS PSF magnitude [mag]
+psfmag_sdss_i - SDSS PSF magnitude [mag]
+psfmag_sdss_z - SDSS PSF magnitude [mag]
+psfmagerr_sdss_u - SDSS PSF magnitude error [mag]
+psfmagerr_sdss_g - SDSS PSF magnitude error [mag]
+psfmagerr_sdss_r - SDSS PSF magnitude error [mag]
+psfmagerr_sdss_i - SDSS PSF magnitude error [mag]
+psfmagerr_sdss_z - SDSS PSF magnitude error [mag]
+modelmag_sdss_u - SDSS Model magnitude [mag]
+modelmag_sdss_g - SDSS Model magnitude [mag]
+modelmag_sdss_r - SDSS Model magnitude [mag]
+modelmag_sdss_i - SDSS Model magnitude [mag]
+modelmag_sdss_z - SDSS Model magnitude [mag]
+modelmagerr_sdss_u - SDSS Model magnitude error [mag]
+modelmagerr_sdss_g - SDSS Model magnitude error [mag]
+modelmagerr_sdss_r - SDSS Model magnitude error [mag]
+modelmagerr_sdss_i - SDSS Model magnitude error [mag]
+modelmagerr_sdss_z - SDSS Model magnitude error [mag]
+mag_gaia_g - Gaia DR2 G-band magnitude, Vega [mag]
+mag_gaia_bp - Gaia DR2 BP-band magnitude, Vega [mag]
+mag_gaia_rp - Gaia DR2 RP-band magnitude, Vega [mag]
+magerr_gaia_g - Gaia DR2 G-band magnitude error, Vega [mag]
+magerr_gaia_bp - Gaia DR2 BP-band magnitude error, Vega [mag]
+magerr_gaia_rp - Gaia DR2 RP-band magnitude error, Vega [mag]
+mag_unwise_w1 - unWISE (Vega) magnitude, [mag]
+mag_unwise_w2 - unWISE (Vega) magnitude, [mag]
+magerr_unwise_w1 - unWISE (Vega) magnitude error, [mag]
+magerr_unwise_w2 - unWISE (Vega) magnitude error, [mag]
+flags_unwise_w1 - unWISE Coadd Flags
+flags_unwise_w2 - unWISE Coadd Flags
+mag_ir_y - (Vega) magnitude in near-IR, [mag]
+mag_ir_j - (Vega) magnitude in near-IR, [mag]
+mag_ir_h - (Vega) magnitude in near-IR, [mag]
+mag_ir_k - (Vega) magnitude in near-IR, [mag]
+magerr_ir_y - magnitude error in near-IR [mag]
+magerr_ir_j - magnitude error in near-IR [mag]
+magerr_ir_h - magnitude error in near-IR [mag]
+magerr_ir_k - magnitude error in near-IR [mag]
+des_var_nepoch_g - Number of DES single-epoch photometric datapoints per band
+des_var_nepoch_r - Number of DES single-epoch photometric datapoints per band
+des_var_nepoch_i - Number of DES single-epoch photometric datapoints per band
+des_var_nepoch_z - Number of DES single-epoch photometric datapoints per band
+des_var_nepoch_y - Number of DES single-epoch photometric datapoints per band
+des_var_status_g - Status of intrinsic variability calculation from DES
+des_var_status_r - Status of intrinsic variability calculation from DES
+des_var_status_i - Status of intrinsic variability calculation from DES
+des_var_status_z - Status of intrinsic variability calculation from DES
+des_var_status_y - Status of intrinsic variability calculation from DES
+des_var_rms_g - Intrinsic RMS from DES [mag]
+des_var_rms_r - Intrinsic RMS from DES [mag]
+des_var_rms_i - Intrinsic RMS from DES [mag]
+des_var_rms_z - Intrinsic RMS from DES [mag]
+des_var_rms_y - Intrinsic RMS from DES [mag]
+des_var_sigrms_g - Error of intrinsic RMS from DES [mag]
+des_var_sigrms_r - Error of intrinsic RMS from DES [mag]
+des_var_sigrms_i - Error of intrinsic RMS from DES [mag]
+des_var_sigrms_z - Error of intrinsic RMS from DES [mag]
+des_var_sigrms_y - Error of intrinsic RMS from DES [mag]
+des_var_sn_g - The signal-to-noise ratio of the measured intrinsic RMS from DES
+des_var_sn_r - The signal-to-noise ratio of the measured intrinsic RMS from DES
+des_var_sn_i - The signal-to-noise ratio of the measured intrinsic RMS from DES
+des_var_sn_z - The signal-to-noise ratio of the measured intrinsic RMS from DES
+des_var_sn_y - The signal-to-noise ratio of the measured intrinsic RMS from DES
+ps1_var_nepoch_g - Number of PS1 single-epoch photometric data points
+ps1_var_nepoch_r - Number of PS1 single-epoch photometric data points
+ps1_var_nepoch_i - Number of PS1 single-epoch photometric data points
+ps1_var_nepoch_z - Number of PS1 single-epoch photometric data points
+ps1_var_nepoch_y - Number of PS1 single-epoch photometric data points
+ps1_var_status_g - Status of intrinsic variability calculation from PS1
+ps1_var_status_r - Status of intrinsic variability calculation from PS1
+ps1_var_status_i - Status of intrinsic variability calculation from PS1
+ps1_var_status_z - Status of intrinsic variability calculation from PS1
+ps1_var_status_y - Status of intrinsic variability calculation from PS1
+ps1_var_rms_g - Intrinsic RMS from PS1 [mag]
+ps1_var_rms_r - Intrinsic RMS from PS1 [mag]
+ps1_var_rms_i - Intrinsic RMS from PS1 [mag]
+ps1_var_rms_z - Intrinsic RMS from PS1 [mag]
+ps1_var_rms_y - Intrinsic RMS from PS1 [mag]
+ps1_var_sigrms_g - Error of intrinsic RMS from PS1 [mag]
+ps1_var_sigrms_r - Error of intrinsic RMS from PS1 [mag]
+ps1_var_sigrms_i - Error of intrinsic RMS from PS1 [mag]
+ps1_var_sigrms_z - Error of intrinsic RMS from PS1 [mag]
+ps1_var_sigrms_y - Error of intrinsic RMS from PS1 [mag]
+ps1_var_sn_g - The signal-to-noise ratio of the measured intrinsic RMS from PS1
+ps1_var_sn_r - The signal-to-noise ratio of the measured intrinsic RMS from PS1
+ps1_var_sn_i - The signal-to-noise ratio of the measured intrinsic RMS from PS1
+ps1_var_sn_z - The signal-to-noise ratio of the measured intrinsic RMS from PS1
+ps1_var_sn_y - The signal-to-noise ratio of the measured intrinsic RMS from PS1
 

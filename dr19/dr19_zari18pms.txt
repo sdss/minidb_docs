@@ -1,31 +1,32 @@
 Summary
 -------
-
+Pre-main sequence (PMS) catalogue from Zari+2018.
 
 
 
 Columns
 -------
 
-source - 
-glon - 
-glat - 
-plx - 
-e_plx - 
-pmglon - 
-e_pmglon - 
-pmglat - 
-e_pmglat - 
-pmlbcorr - 
-rv - 
-e_rv - 
-gmag - 
-bpmag - 
-rpmag - 
-bp_over_rp - 
-chi2al - 
-ngal - 
-ag - 
-bp_rp - 
-uwe - 
+source - Unique source identifier (Gaia DR2 source_id) []
+glon - Galactic longitude [deg]
+glat - Galactic latitude [deg]
+plx - Parallax [mas]
+e_plx - Standard error of parallax (parallax_error) [mas]
+pmglon - Proper motion in galactic longitude [mas/yr]
+e_pmglon - Standard error of proper motion in galactic longitude [mas/yr]
+pmglat - Proper motion in galactic latitude [mas/yr]
+e_pmglat - Standard error of proper motion in galactic latitude [mas/yr]
+pmlbcorr - Correlation between proper motion in galactic longitude and proper motion in galactic latitude []
+rv - radial velocity [km/s]
+e_rv - radial velocity error [km/s]
+gmag - G-band mean magnitude (phot_g_mean_mag) [mag]
+bpmag - BP-band mean magnitude (phot_bp_mean_mag) [mag]
+rpmag - RP-band mean magnitude (phot_g_mean_mag) [mag]
+bp_over_rp - BP/RP excess factor []
+chi2al - AL chi-square value (astrometric_chi2_al) []
+ngal - Number of good observation AL (astrometric_n_good_obs_al) []
+ag - Extinction in G-band (A_G) [mag]
+bp_rp - Colour excess in BP-RP [mag]
+uwe - Unit Weight Error, as defined in Lindegren et al., 2018A&A...616A...2L []
+                                    
 

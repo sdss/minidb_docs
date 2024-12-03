@@ -1,12 +1,10 @@
 Summary
 -------
-
-
-
+Table from Gaia DR2 containing the Renormalised Unit Weight Error (RUWE) associated to each source in gaia_source. See https://gea.esac.esa.int/archive/documentation/GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_ruwe.html for more detailed descriptions of the columns
 
 Columns
 -------
 
-source_id - 
-ruwe - 
+source_id - Gaia DR2 unique source identifier [] 
+ruwe - renormalised unit weight error []
 

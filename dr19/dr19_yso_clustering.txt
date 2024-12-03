@@ -1,28 +1,28 @@
 Summary
 -------
 
-
+YSO candidates from Kounkel et al. 2020. Please see details in the original paper: https://iopscience.iop.org/article/10.3847/1538-3881/abc0e6
 
 
 Columns
 -------
 
-source_id - 
-twomass - 
-ra - 
-dec - 
-parallax - 
-id - 
-g - 
-bp - 
-rp - 
-j - 
-h - 
-k - 
-age - 
-eage - 
-av - 
-eav - 
-dist - 
-edist - 
+source_id - Gaia DR2 source id []
+twomass - 2MASS ID []
+ra - Right ascention in J2000 reference frame [degrees]
+dec - Declination in J2000 reference frame [degrees]
+parallax - Parallax from Gaia DR2 [mas]
+id - Identification of a parent group from Kounkel et al. (2020) []
+g - Gaia (DR2) G band magnitude [mag]
+bp - Gaia (DR2) BP band magnitude [mag]
+rp - Gaia (DR2) RP band magnitude [mag]
+j - 2MASS J band magnitude [mag]
+h - 2MASS H band magnitude [mag]
+k - 2MASS K band magnitude [mag]
+age - Estimate of the age of the parent group from Kounkel et al. (2020) [log yr]
+eage - Uncertainty in age [log yr]
+av - Estimate of extinction of the parent group from Kounkel et al. (2020) [mag]
+eav - Uncertainty in av [mag]
+dist - Estimate of distance of the parent group from Kounkel et al. (2020) [pc]
+edist - Uncertainty in dist [pc]
 

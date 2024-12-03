@@ -1,12 +1,11 @@
 Summary
 -------
 
-
+This table stores the names of the mappers associated with cartons in dr19_carton.
 
 
 Columns
 -------
 
-pk - 
-label - 
-
+pk - The primary key. A sequential identifier. []
+label - The name of the mapper. []

@@ -1,33 +1,34 @@
 Summary
 -------
+The BHM-SPIDERS eFEDS veto catalogue.
 
-
-
-
+A minimalist catalogue of 6300 science targets in the SPIDERS eFEDS field that received SDSS-IV spectroscopy during the March2020 SPIDERS observing run (and hence are not in SDSS-SpecObj-DR16). Many of these spectra have very low SNR and so we will want to observe them again, but we will take account of this in the Carton code. This is a subset (in both rows and columns) of the spAll-v5_13_1.fits idlspec2d pipeline product. The original data model for that file is here: https://data.sdss.org/datamodel/files/BOSS_SPECTRO_REDUX/RUN2D/spAll.html
+      
 Columns
 -------
 
-programname - 
-chunk - 
-platesn2 - 
-plate - 
-tile - 
-mjd - 
-fiberid - 
-run2d - 
-run1d - 
-plug_ra - 
-plug_dec - 
-z_err - 
-rchi2 - 
-dof - 
-rchi2diff - 
-wavemin - 
-wavemax - 
-wcoverage - 
-zwarning - 
-sn_median_all - 
-anyandmask - 
-anyormask - 
-pk - 
+programname - program name within a given survey 
+chunk - Name of tiling chunk
+platesn2 - Overall (S/N)^2 measure for plate; minimum of all 4 cameras 
+plate -  Plate ID 
+tile - Tile ID
+mjd -  MJD of (last) observation [days]
+fiberid - Fiber ID (1-1000)
+run2d - idlspec 2D reduction version
+run1d - idlspec 1D reduction version
+plug_ra - Object RA (drilled fiber position at expected epoch of observation) [deg]
+plug_dec - Object Dec (drilled fiber position at expected epoch of observation) [deg]
+z_err - Redshift error based upon fit to chi^2 minimum; negative for invalid fit
+rchi2 - Reduced chi^2 for best fit
+dof - Degrees of freedom for best fit
+rchi2diff - Difference in reduced chi^2 of best solution to 2nd best solution
+wavemin - Minimum observed (vacuum) wavelength for this object [Angstroms]
+wavemax - Maximum observed (vacuum) wavelength for this object [Angstroms]
+wcoverage - Amount of wavelength coverage in log-10(Angstroms)
+zwarning - A flag bitmask set for bad data or redshift fits
+sn_median_all - Median S/N for all good pixels in all filters
+anyandmask - Mask bits which are set if any pixels for an object's ANDMASK have that bit set
+anyormask - Mask bits which are set if any pixels for an object's ORMASK have that bit set
+pk - primary key in the database table
+
 

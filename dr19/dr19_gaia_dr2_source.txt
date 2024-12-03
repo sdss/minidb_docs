@@ -1,104 +1,104 @@
 Summary
 -------
 
-
+Gaia DR2 Source Table. See https://gea.esac.esa.int/archive/documentation/GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html for complete details.
 
 
 Columns
 -------
 
-solution_id - 
-designation - 
-source_id - 
-random_index - 
-ref_epoch - 
-ra - 
-ra_error - 
-dec - 
-dec_error - 
-parallax - 
-parallax_error - 
-parallax_over_error - 
-pmra - 
-pmra_error - 
-pmdec - 
-pmdec_error - 
-ra_dec_corr - 
-ra_parallax_corr - 
-ra_pmra_corr - 
-ra_pmdec_corr - 
-dec_parallax_corr - 
-dec_pmra_corr - 
-dec_pmdec_corr - 
-parallax_pmra_corr - 
-parallax_pmdec_corr - 
-pmra_pmdec_corr - 
-astrometric_n_obs_al - 
-astrometric_n_obs_ac - 
-astrometric_n_good_obs_al - 
-astrometric_n_bad_obs_al - 
-astrometric_gof_al - 
-astrometric_chi2_al - 
-astrometric_excess_noise - 
-astrometric_excess_noise_sig - 
-astrometric_params_solved - 
-astrometric_primary_flag - 
-astrometric_weight_al - 
-astrometric_pseudo_colour - 
-astrometric_pseudo_colour_error - 
-mean_varpi_factor_al - 
-astrometric_matched_observations - 
-visibility_periods_used - 
-astrometric_sigma5d_max - 
-frame_rotator_object_type - 
-matched_observations - 
-duplicated_source - 
-phot_g_n_obs - 
-phot_g_mean_flux - 
-phot_g_mean_flux_error - 
-phot_g_mean_flux_over_error - 
-phot_g_mean_mag - 
-phot_bp_n_obs - 
-phot_bp_mean_flux - 
-phot_bp_mean_flux_error - 
-phot_bp_mean_flux_over_error - 
-phot_bp_mean_mag - 
-phot_rp_n_obs - 
-phot_rp_mean_flux - 
-phot_rp_mean_flux_error - 
-phot_rp_mean_flux_over_error - 
-phot_rp_mean_mag - 
-phot_bp_rp_excess_factor - 
-phot_proc_mode - 
-bp_rp - 
-bp_g - 
-g_rp - 
-radial_velocity - 
-radial_velocity_error - 
-rv_nb_transits - 
-rv_template_teff - 
-rv_template_logg - 
-rv_template_fe_h - 
-phot_variable_flag - 
-l - 
-b - 
-ecl_lon - 
-ecl_lat - 
-priam_flags - 
-teff_val - 
-teff_percentile_lower - 
-teff_percentile_upper - 
-a_g_val - 
-a_g_percentile_lower - 
-a_g_percentile_upper - 
-e_bp_min_rp_val - 
-e_bp_min_rp_percentile_lower - 
-e_bp_min_rp_percentile_upper - 
-flame_flags - 
-radius_val - 
-radius_percentile_lower - 
-radius_percentile_upper - 
-lum_val - 
-lum_percentile_lower - 
-lum_percentile_upper - 
+solution_id - ID that identifies the version of all the subsystems that were used in the generation of the data as well as the input data used []
+designation - Unique source designation across all Gaia data releases []
+source_id - Unique source identifier within a particular Gaia data release []
+random_index - Random index which can be used to select smaller subsets of the data []
+ref_epoch - Time [Julian Years]
+ra - Right Ascension [degrees]
+ra_error - Standard error of the right ascension [degrees]
+dec - Declination [degrees]
+dec_error - Standard error of the declination [degrees]
+parallax - Absolute stellar parallax of the source at the reference epoch [mas]
+parallax_error - Standard error of parallax [mas]
+parallax_over_error - Parallax divided by its error []
+pmra - Proper motion in right ascension direction [mas/yr]
+pmra_error - Standard error of proper motion in right ascension direction [mas/yr]
+pmdec - Proper motion in declination direction [mas/yr]
+pmdec_error - Standard error of proper motion in declination direction [mas/yr]
+ra_dec_corr - Correlation between right ascension and declination []
+ra_parallax_corr - Correlation between right ascension and parallax []
+ra_pmra_corr - Correlation between right ascension and proper motion in right ascension []
+ra_pmdec_corr - Correlation between right ascension and proper motion in declination []
+dec_parallax_corr - Correlation between declination and parallax []
+dec_pmra_corr - Correlation between declination and proper motion in right ascension []
+dec_pmdec_corr - Correlation between declination and proper motion in declination []
+parallax_pmra_corr - Correlation between parallax and proper motion in right ascension []
+parallax_pmdec_corr - Correlation between parallax and proper motion in declination []
+pmra_pmdec_corr - Correlation between proper motion in right ascension and proper motion in declination []
+astrometric_n_obs_al - Total number of observations AL []
+astrometric_n_obs_ac - Total number of observations AC []
+astrometric_n_good_obs_al - Number of good observations AL []
+astrometric_n_bad_obs_al - Number of bad observations AL []
+astrometric_gof_al - Goodness of fit statistic of model wrt along-scan observations []
+astrometric_chi2_al - AL chi-square value []
+astrometric_excess_noise - Excess noise of the source [mas]
+astrometric_excess_noise_sig - Significance of excess noise []
+astrometric_params_solved - Which parameters have been solved for []
+astrometric_primary_flag - Flag indicating if this source was used as a primary source (true) or secondary source (false) []
+astrometric_weight_al - Mean astrometric weight of the source [mas^-2] 
+astrometric_pseudo_colour - Astrometrically determined pseudocolour of the source [um^-1]
+astrometric_pseudo_colour_error - Standard error of the pseudocolour of the source [um^-1]
+mean_varpi_factor_al - Mean Parallax factor AL []
+astrometric_matched_observations - number of FOV transits matched to this source []
+visibility_periods_used - Number of visibility periods used in the astrometric solution []
+astrometric_sigma5d_max - Longest semi-major axis of the 5-d error ellipsoid [mas]
+frame_rotator_object_type - Type of the source mainly used for frame rotation []
+matched_observations - Total number of FOV transits matched to this source []
+duplicated_source - Source with duplicate sources []
+phot_g_n_obs - Number of observations contributing to G photometry []
+phot_g_mean_flux - G-band mean flux [e-/s]
+phot_g_mean_flux_error - Error on G-band mean flux [e-/s]
+phot_g_mean_flux_over_error - G-band mean flux divided by its error []
+phot_g_mean_mag - G-band mean magnitude [mag]
+phot_bp_n_obs - Number of observations contributing to BP photometry []
+phot_bp_mean_flux - Integrated BP mean flux [e-/s]
+phot_bp_mean_flux_error - Error on the integrated BP mean flux [e-/s]
+phot_bp_mean_flux_over_error - Integrated BP mean flux divided by its error []
+phot_bp_mean_mag - Integrated BP mean magnitude [mag]
+phot_rp_n_obs - Number of observations contributing to RP photometry []
+phot_rp_mean_flux - Integrated RP mean flux [e-/s]
+phot_rp_mean_flux_error - Error on the integrated RP mean flux [e-/s]
+phot_rp_mean_flux_over_error - Integrated RP mean flux divided by its error []
+phot_rp_mean_mag - Integrated RP mean magnitude [mag]
+phot_bp_rp_excess_factor - BP/RP excess factor []
+phot_proc_mode - Photometry processing mode []
+bp_rp - BP - RP color [mag]
+bp_g - BP - G color [mag]
+g_rp - G - RP color [mag]
+radial_velocity - Radial velocity [km/s]
+radial_velocity_error - Radial velocity error [km/s]
+rv_nb_transits - Number of transits used to compute radial velocity []
+rv_template_teff - Teff of the template used to compute radial velocity [K]
+rv_template_logg - logg of the template used to compute radial velocity [log cgs]
+rv_template_fe_h - Fe/H of the template used to compute radial velocity [dex]
+phot_variable_flag - Photometric variability flag []
+l - Galactic longitude [degrees]
+b - Galactic latitude [degrees]
+ecl_lon - Ecliptic longitude [degrees]
+ecl_lat - Ecliptic latitude [degrees]
+priam_flags - Flags for the Apsis-Priam results []
+teff_val - Stellar effective temperature [K]
+teff_percentile_lower - Teff_val lower uncertainty [K]
+teff_percentile_upper - Teff_val upper uncertainty [K]
+a_g_val - Line-of-sight extinction in the G band [mag]
+a_g_percentile_lower - A_g_val lower uncertainty [mag]
+a_g_percentile_upper - A_g_val upper uncertainty [mag]
+e_bp_min_rp_val - Line-of-sight reddening E(BP-RP) [mag]
+e_bp_min_rp_percentile_lower - e_bp_min_rp_val lower uncertainty [mag]
+e_bp_min_rp_percentile_upper - e_bp_min_rp_val upper uncertainty [mag]
+flame_flags - Flags for the Apsis-FLAME results []
+radius_val - Stellar radius [Solar Radius]
+radius_percentile_lower - Radius_val lower uncertainty [Solar Radius]
+radius_percentile_upper - Radius_val upper uncertainty [Solar Radius]
+lum_val - stellar luminosity [Solar Luminosity]
+lum_percentile_lower - lum_val lower uncertainty [Solar Luminosity]
+lum_percentile_upper - lum_val upper uncertainty [Solar Luminosity]
 

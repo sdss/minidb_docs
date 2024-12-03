@@ -1,17 +1,17 @@
 Summary
 -------
 
-
+Bayesian distances from Gaia DR2 parameters from Bailer-Jones et al. 2018. For complete details, see the original paper: https://iopscience.iop.org/article/10.3847/1538-3881/aacb21/pdf
 
 
 Columns
 -------
 
-source_id - 
-r_est - 
-r_lo - 
-r_hi - 
-r_len - 
-result_flag - 
-modality_flag - 
+source_id - Unique Gaia DR2 source identifier []
+r_est - Estimated distance [pc]
+r_lo - Lower bound on the confidence interval of the estimated distance [pc]
+r_hi - Upper bound on the confidence interval of the estimated distance [pc]
+r_len - Length scale used in the prior for the distance estimation [pc]
+result_flag - Result flag []
+modality_flag - Number of modes in the posterior []
 
