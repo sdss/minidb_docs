@@ -1,12 +1,12 @@
 Summary
 -------
 
-
+Table of observatories.
 
 
 Columns
 -------
 
-pk - 
-label - 
+pk - The primary key. A sequential identifier.
+label - The name of the observatory.
 
