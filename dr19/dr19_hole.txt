@@ -1,15 +1,15 @@
 Summary
 -------
 
-
+The holes in which the positioners sit for the FPS at each observatory.
 
 
 Columns
 -------
 
-pk - 
-row_num - 
-column_num - 
-holeid - 
-observatory_pk - 
+pk - The primary key. A sequential identifier.
+row_num - The row of the hole in which the positioner is sitting.
+column_num - The column of the hole in which the positioner is sitting.
+holeid - The identifier for the hole in which the positioner is sitting.
+observatory_pk - The primary key of the observatory in the dr19_observatory table.
 
