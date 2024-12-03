@@ -1,12 +1,12 @@
 Summary
 -------
 
-
+Table of possible positioner statuses
 
 
 Columns
 -------
 
-pk - 
-label - 
+pk - Unique identifier
+label - Status (OK or KO)
 
