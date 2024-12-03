@@ -1,109 +1,109 @@
 Summary
 -------
 
-
+The parameters for the metrics that descirbe a given Design Mode, where a Design Mode constrains the assignments on a design.
 
 
 Columns
 -------
 
-label - 
-boss_skies_min - 
-apogee_skies_min - 
-boss_stds_min - 
-apogee_stds_min - 
-boss_trace_diff_targets - 
-apogee_trace_diff_targets - 
-boss_skies_fov_k - 
-boss_skies_fov_perc - 
-boss_skies_fov_perc_dist - 
-apogee_skies_fov_k - 
-apogee_skies_fov_perc - 
-apogee_skies_fov_perc_dist - 
-boss_stds_fov_k - 
-boss_stds_fov_perc - 
-boss_stds_fov_perc_dist - 
-apogee_stds_fov_k - 
-apogee_stds_fov_perc - 
-apogee_stds_fov_perc_dist - 
-boss_stds_mags_min_g - 
-boss_stds_mags_min_r - 
-boss_stds_mags_min_i - 
-boss_stds_mags_min_z - 
-boss_stds_mags_min_bp - 
-boss_stds_mags_min_gaia_g - 
-boss_stds_mags_min_rp - 
-boss_stds_mags_min_j - 
-boss_stds_mags_min_h - 
-boss_stds_mags_min_k - 
-boss_stds_mags_max_g - 
-boss_stds_mags_max_r - 
-boss_stds_mags_max_i - 
-boss_stds_mags_max_z - 
-boss_stds_mags_max_bp - 
-boss_stds_mags_max_gaia_g - 
-boss_stds_mags_max_rp - 
-boss_stds_mags_max_j - 
-boss_stds_mags_max_h - 
-boss_stds_mags_max_k - 
-apogee_stds_mags_min_g - 
-apogee_stds_mags_min_r - 
-apogee_stds_mags_min_i - 
-apogee_stds_mags_min_z - 
-apogee_stds_mags_min_bp - 
-apogee_stds_mags_min_gaia_g - 
-apogee_stds_mags_min_rp - 
-apogee_stds_mags_min_j - 
-apogee_stds_mags_min_h - 
-apogee_stds_mags_min_k - 
-apogee_stds_mags_max_g - 
-apogee_stds_mags_max_r - 
-apogee_stds_mags_max_i - 
-apogee_stds_mags_max_z - 
-apogee_stds_mags_max_bp - 
-apogee_stds_mags_max_gaia_g - 
-apogee_stds_mags_max_rp - 
-apogee_stds_mags_max_j - 
-apogee_stds_mags_max_h - 
-apogee_stds_mags_max_k - 
-boss_bright_limit_targets_min_g - 
-boss_bright_limit_targets_min_r - 
-boss_bright_limit_targets_min_i - 
-boss_bright_limit_targets_min_z - 
-boss_bright_limit_targets_min_bp - 
-boss_bright_limit_targets_min_gaia_g - 
-boss_bright_limit_targets_min_rp - 
-boss_bright_limit_targets_min_j - 
-boss_bright_limit_targets_min_h - 
-boss_bright_limit_targets_min_k - 
-boss_bright_limit_targets_max_g - 
-boss_bright_limit_targets_max_r - 
-boss_bright_limit_targets_max_i - 
-boss_bright_limit_targets_max_z - 
-boss_bright_limit_targets_max_bp - 
-boss_bright_limit_targets_max_gaia_g - 
-boss_bright_limit_targets_max_rp - 
-boss_bright_limit_targets_max_j - 
-boss_bright_limit_targets_max_h - 
-boss_bright_limit_targets_max_k - 
-apogee_bright_limit_targets_min_g - 
-apogee_bright_limit_targets_min_r - 
-apogee_bright_limit_targets_min_i - 
-apogee_bright_limit_targets_min_z - 
-apogee_bright_limit_targets_min_bp - 
-apogee_bright_limit_targets_min_gaia_g - 
-apogee_bright_limit_targets_min_rp - 
-apogee_bright_limit_targets_min_j - 
-apogee_bright_limit_targets_min_h - 
-apogee_bright_limit_targets_min_k - 
-apogee_bright_limit_targets_max_g - 
-apogee_bright_limit_targets_max_r - 
-apogee_bright_limit_targets_max_i - 
-apogee_bright_limit_targets_max_z - 
-apogee_bright_limit_targets_max_bp - 
-apogee_bright_limit_targets_max_gaia_g - 
-apogee_bright_limit_targets_max_rp - 
-apogee_bright_limit_targets_max_j - 
-apogee_bright_limit_targets_max_h - 
-apogee_bright_limit_targets_max_k - 
+label - The primary key. A string label.
+boss_skies_min - Minimum number of Boss skies needed for design.
+apogee_skies_min - Minimum number of Apogee skies needed for design.
+boss_stds_min - Minimum number of Boss standards needed for design.
+apogee_stds_min - Minimum number of Apogee standards needed for design.
+boss_trace_diff_targets - Limit for magnitude difference between adjacent traces on Boss instrument.
+apogee_trace_diff_targets - Limit for magnitude difference between adjacent traces on Apogee instrument.
+boss_skies_fov_k - The kth neighbor to measure distance to for the Field of View metric for Boss skies.
+boss_skies_fov_perc - The percentile of the distances for the Field of View metric for Boss skies.
+boss_skies_fov_perc_dist - The maximum percentile distance for the Field of View metric for Boss skies.
+apogee_skies_fov_k - The kth neighbor to measure distance to for the Field of View metric for Apogee skies.
+apogee_skies_fov_perc - The percentile of the distances for the Field of View metric for Apogee skies.
+apogee_skies_fov_perc_dist - The maximum percentile distance for the Field of View metric for Apogee skies.
+boss_stds_fov_k - The kth neighbor to measure distance to for the Field of View metric for Boss standards.
+boss_stds_fov_perc - The percentile of the distances for the Field of View metric for Boss standards.
+boss_stds_fov_perc_dist -  The maximum percentile distance for the Field of View metric for Boss standards.
+apogee_stds_fov_k - The kth neighbor to measure distance to for the Field of View metric for Apogee standards.
+apogee_stds_fov_perc -  The percentile of the distances for the Field of View metric for Apogee standards.
+apogee_stds_fov_perc_dist - The maximum percentile distance for the Field of View metric for Apogee standards.
+boss_stds_mags_min_g - The minimum optical g magnitude for Boss standards.
+boss_stds_mags_min_r - The minimum optical r magnitude for Boss standards.
+boss_stds_mags_min_i - The minimum optical i magnitude for Boss standards.
+boss_stds_mags_min_z - The minimum optical z magnitude for Boss standards.
+boss_stds_mags_min_bp - The minimum Gaia BP magnitude for Boss standards.
+boss_stds_mags_min_gaia_g - The minimum Gaia G magnitude for Boss standards.
+boss_stds_mags_min_rp - The minimum Gaia RP magnitude for Boss standards.
+boss_stds_mags_min_j - The minimum IR J magnitude for Boss standards.
+boss_stds_mags_min_h - The minimum IR H magnitude for Boss standards.
+boss_stds_mags_min_k - The minimum IR K magnitude for Boss standards.
+boss_stds_mags_max_g - The maximum optical g magnitude for Boss standards.
+boss_stds_mags_max_r - The maximum optical r magnitude for Boss standards.
+boss_stds_mags_max_i - The maximum optical i magnitude for Boss standards.
+boss_stds_mags_max_z - The maximum optical z magnitude for Boss standards.
+boss_stds_mags_max_bp - The maximum Gaia BP magnitude for Boss standards.
+boss_stds_mags_max_gaia_g - The maximum Gaia G magnitude for Boss standards.
+boss_stds_mags_max_rp - The maximum Gaia RP magnitude for Boss standards.
+boss_stds_mags_max_j - The maximum IR J magnitude for Boss standards.
+boss_stds_mags_max_h - The maximum IR H magnitude for Boss standards.
+boss_stds_mags_max_k - The maximum IR K magnitude for Boss standards.
+apogee_stds_mags_min_g - The minimum optical g magnitude for Apogee standards.
+apogee_stds_mags_min_r - The minimum optical r magnitude for Apogee standards.
+apogee_stds_mags_min_i - The minimum optical i magnitude for Apogee standards.
+apogee_stds_mags_min_z - The minimum optical z magnitude for Apogee standards.
+apogee_stds_mags_min_bp - The minimum Gaia BP magnitude for Apogee standards.
+apogee_stds_mags_min_gaia_g - The minimum Gaia G magnitude for Apogee standards.
+apogee_stds_mags_min_rp - The minimum Gaia RP magnitude for Apogee standards.
+apogee_stds_mags_min_j - The minimum IR J magnitude for Apogee standards.
+apogee_stds_mags_min_h - The minimum IR H magnitude for Apogee standards.
+apogee_stds_mags_min_k - The minimum IR K magnitude for Apogee standards.
+apogee_stds_mags_max_g - The maximum optical g magnitude for Apogee standards.
+apogee_stds_mags_max_r - The maximum optical r magnitude for Apogee standards.
+apogee_stds_mags_max_i - The maximum optical i magnitude for Apogee standards.
+apogee_stds_mags_max_z - The maximum optical z magnitude for Apogee standards.
+apogee_stds_mags_max_bp - The maximum Gaia BP magnitude for Apogee standards.
+apogee_stds_mags_max_gaia_g - The maximum Gaia G magnitude for Apogee standards.
+apogee_stds_mags_max_rp - The maximum Gaia RP magnitude for Apogee standards.
+apogee_stds_mags_max_j - The maximum IR J magnitude for Apogee standards.
+apogee_stds_mags_max_h - The maximum IR H magnitude for Apogee standards.
+apogee_stds_mags_max_k - The maximum IR K magnitude for Apogee standards.
+boss_bright_limit_targets_min_g - The minimum optical g magnitude for Boss science targets.
+boss_bright_limit_targets_min_r - The minimum optical r magnitude for Boss science targets.
+boss_bright_limit_targets_min_i - The minimum optical i magnitude for Boss science targets.
+boss_bright_limit_targets_min_z - The minimum optical z magnitude for Boss science targets.
+boss_bright_limit_targets_min_bp - The minimum Gaia BP magnitude for Boss science targets.
+boss_bright_limit_targets_min_gaia_g - The minimum Gaia G magnitude for Boss science targets.
+boss_bright_limit_targets_min_rp - The minimum Gaia RP magnitude for Boss science targets.
+boss_bright_limit_targets_min_j - The minimum IR J magnitude for Boss science targets.
+boss_bright_limit_targets_min_h - The minimum IR H magnitude for Boss science targets.
+boss_bright_limit_targets_min_k - The minimum IR K magnitude for Boss science targets.
+boss_bright_limit_targets_max_g - The maximum optical g magnitude for Boss science targets.
+boss_bright_limit_targets_max_r - The maximum optical r magnitude for Boss science targets.
+boss_bright_limit_targets_max_i - The maximum optical i magnitude for Boss science targets.
+boss_bright_limit_targets_max_z - The maximum optical z magnitude for Boss science targets.
+boss_bright_limit_targets_max_bp - The maximum Gaia BP magnitude for Boss science targets.
+boss_bright_limit_targets_max_gaia_g - The maximum Gaia G magnitude for Boss science targets.
+boss_bright_limit_targets_max_rp - The maximum Gaia RP magnitude for Boss science targets.
+boss_bright_limit_targets_max_j - The maximum IR J magnitude for Boss science targets.
+boss_bright_limit_targets_max_h - The maximum IR H magnitude for Boss science targets.
+boss_bright_limit_targets_max_k - The maximum IR K magnitude for Boss science targets.
+apogee_bright_limit_targets_min_g - The minimum optical g magnitude for Apogee science targets.
+apogee_bright_limit_targets_min_r - The minimum optical r magnitude for Apogee science targets.
+apogee_bright_limit_targets_min_i - The minimum optical i magnitude for Apogee science targets.
+apogee_bright_limit_targets_min_z - The minimum optical z magnitude for Apogee science targets.
+apogee_bright_limit_targets_min_bp - The minimum Gaia BP magnitude for Apogee science targets.
+apogee_bright_limit_targets_min_gaia_g - The minimum Gaia G magnitude for Apogee science targets.
+apogee_bright_limit_targets_min_rp - The minimum Gaia RP magnitude for Apogee science targets.
+apogee_bright_limit_targets_min_j - The minimum IR J magnitude for Apogee science targets.
+apogee_bright_limit_targets_min_h - The minimum IR H magnitude for Apogee science targets.
+apogee_bright_limit_targets_min_k - The minimum IR K magnitude for Apogee science targets.
+apogee_bright_limit_targets_max_g - The maximum optical g magnitude for Apogee science targets.
+apogee_bright_limit_targets_max_r - The maximum optical r magnitude for Apogee science targets.
+apogee_bright_limit_targets_max_i - The maximum optical i magnitude for Apogee science targets.
+apogee_bright_limit_targets_max_z - The maximum optical z magnitude for Apogee science targets.
+apogee_bright_limit_targets_max_bp - The maximum Gaia BP magnitude for Apogee science targets.
+apogee_bright_limit_targets_max_gaia_g - The maximum Gaia G magnitude for Apogee science targets.
+apogee_bright_limit_targets_max_rp - The maximum Gaia RP magnitude for Apogee science targets.
+apogee_bright_limit_targets_max_j - The maximum IR J magnitude for Apogee science targets.
+apogee_bright_limit_targets_max_h - The maximum IR H magnitude for Apogee science targets.
+apogee_bright_limit_targets_max_k - The maximum IR K magnitude for Apogee science targets.
 
