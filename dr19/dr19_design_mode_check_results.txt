@@ -1,37 +1,37 @@
 Summary
 -------
 
-
+Summary if design passed individual Design Mode checks from dr19_design_mode.
 
 
 Columns
 -------
 
-pk - 
-design_id - 
-design_pass - 
-design_status - 
-boss_skies_min_pass - 
-boss_skies_min_value - 
-boss_skies_fov_pass - 
-boss_skies_fov_value - 
-apogee_skies_min_pass - 
-apogee_skies_min_value - 
-apogee_skies_fov_pass - 
-apogee_skies_fov_value - 
-boss_stds_min_pass - 
-boss_stds_min_value - 
-boss_stds_fov_pass - 
-boss_stds_fov_value - 
-apogee_stds_min_pass - 
-apogee_stds_min_value - 
-apogee_stds_fov_pass - 
-apogee_stds_fov_value - 
-boss_stds_mags_pass - 
-apogee_stds_mags_pass - 
-boss_bright_limit_targets_pass - 
-apogee_bright_limit_targets_pass - 
-boss_sky_neighbors_targets_pass - 
-apogee_sky_neighbors_targets_pass - 
-apogee_trace_diff_targets_pass - 
+pk - The primary key. A sequential identifier.
+design_id - The primary key of the design in the dr19_design table.
+design_pass - If minimum design checks were passed.
+design_status - Bitmask for design. 1 if revalidated design. 2 if replacement design.
+boss_skies_min_pass - If passed minimum Boss skies metric.
+boss_skies_min_value - How many Boss skies in the design.
+boss_skies_fov_pass - If passed Boss skies Field of View metric.
+boss_skies_fov_value - Boss skies Field of View metric value.
+apogee_skies_min_pass - If passed minimum Apogee skies metric.
+apogee_skies_min_value - How many Apogee skies in the design.
+apogee_skies_fov_pass - If passed Apogee skies Field of View metric.
+apogee_skies_fov_value - Apogee skies Field of View metric value.
+boss_stds_min_pass - If passed minimum Boss standards metric.
+boss_stds_min_value - How many Boss standards in the design.
+boss_stds_fov_pass - If passed Boss standards Field of View metric.
+boss_stds_fov_value - Boss standards Field of View metric value.
+apogee_stds_min_pass - If passed minimum Apogee standards metric.
+apogee_stds_min_value - How many Apogee standards in the design.
+apogee_stds_fov_pass - If passed Apogee standards Field of View metric.
+apogee_stds_fov_value - Apogee standards Field of View metric value.
+boss_stds_mags_pass - If all Boss standards within magnitude limits.
+apogee_stds_mags_pass - If all Apogee standards within magnitude limits.
+boss_bright_limit_targets_pass - If all Boss science targets within magnitude limits.
+apogee_bright_limit_targets_pass - If all Apogee science targets within magnitude limits.
+boss_sky_neighbors_targets_pass - If all Boss assignments pass bright neighobor check.
+apogee_sky_neighbors_targets_pass - If all Apogee assignments pass bright neighobor check.
+apogee_trace_diff_targets_pass - If all Apogee assignments pass magnitude difference between adjacent traces check.
 
