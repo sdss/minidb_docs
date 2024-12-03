@@ -1,16 +1,16 @@
 Summary
 -------
 
-
+This table stores the meta-data for the design, including its Design Mode and versioning information.
 
 
 Columns
 -------
 
-design_id - 
-design_mode_label - 
-mugatu_version - 
-run_on - 
-assignment_hash - 
-design_version_pk - 
+design_id - The primary key. A sequential identifier.
+design_mode_label - The primary key of the design_mode in the dr19_design_mode table.
+mugatu_version - Software version of mugatu used to validate and ingest design.
+run_on - Date that design was added to database.
+assignment_hash - Hash of the assignments in the design.
+design_version_pk - The primary key of the version in the dr19_version table.
 
