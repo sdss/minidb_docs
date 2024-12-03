@@ -1,19 +1,19 @@
 Summary
 -------
 
-
+The table includes the field information, where a field is a unique pointing of the telescope on the sky.
 
 
 Columns
 -------
 
-pk - 
-racen - 
-deccen - 
-version_pk - 
-cadence_pk - 
-observatory_pk - 
-position_angle - 
-slots_exposures - 
-field_id - 
+pk - The primary key. A sequential identifier.
+racen - The Right Ascension of the center of the field.
+deccen - The Declination of the center of the field.
+version_pk - The primary key of the version in the dr19_version table.
+cadence_pk - The primary key of the cadence in the dr19_cadence table.
+observatory_pk - The primary key of the observatory in the dr19_observatory table.
+position_angle - The position angle of the field E of N in degrees.
+slots_exposures - Exposures assigned to each LST and sky brightness slot []
+field_id - The idenifier of a field within a version of the survey plan.
 
