@@ -1,12 +1,12 @@
 Summary
 -------
 
-
+The table contains the various types of exposures; science, dark, flat, etc.
 
 
 Columns
 -------
 
-pk - 
-label - 
+pk - Unique identifier
+label - The type of exposure
 

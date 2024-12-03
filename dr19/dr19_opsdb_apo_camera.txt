@@ -1,12 +1,11 @@
 Summary
 -------
 
-
+The table contains the cameras at the observatory. The three APOGEE chips are treated as one camera, while the separate blue channel and red channel BOSS chips are treated separately.
 
 
 Columns
 -------
 
-pk - 
-label - 
-
+pk - Unique identifier
+label - The name of the camera.
