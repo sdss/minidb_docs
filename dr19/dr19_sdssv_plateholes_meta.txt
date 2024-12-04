@@ -1,73 +1,78 @@
 Summary
 -------
 
+The combination of the dr19_sdssv_plateholes and dr19_plateholes_meta
+tables are a database representation of the SDSS-V platelist data
+product (https://svn.sdss.org/public/data/sdss/platelist/trunk/).
+These tables were used within early iterations of FPS target_selection
+as a way to communicate information about which targets had been
+included in SDSS-V plates. This information was used to
+e.g. de-prioritise targets that were expected to have a good quality
+spectroscopic measurement by the end of the SDSS-V plate observations.
+The dr19_sdssv_plateholes_meta table contains meta-data for each
+SDSS-V plate (one record per plate), whereas the dr19_sdssv_plateholes
+table has one entry for each drilled hole in each SDSS-V plate.
+The dr19_sdssv_plateholes and dr19_plateholes_meta tables should be
+joined via the yanny_uid field.
 
-
+Mostly derived from: https://data.sdss.org/datamodel/files/PLATELIST_DIR/plates/PLATEID6XX/PLATEID6/plateHoles.html
 
 Columns
 -------
 
-plateid - 
-ha - 
-ha_observable_min - 
-ha_observable_max - 
+plateid - plate ID number
+ha - the hour angle for which each pointing is designed (negative = rising, positive = setting, given in degrees)
+ha_observable_min - the minimum observable hour angle to guarantee no hole offsets due to refraction greater than value given by MAX_OFF_FIBER_FOR_HA header keyword in plateDefaults file (negative = rising, positive = setting, given in degrees)
+ha_observable_max - the minimum observable hour angle to guarantee no hole offsets due to refraction greater than value given by MAX_OFF_FIBER_FOR_HA header keyword in plateDefaults file (negative = rising, positive = setting, given in degrees)
 programname - 
-temp - 
-design_platescale_alt - 
-design_platescale_az - 
-design_parallactic_angle - 
-guider_coeff_0 - 
-guider_coeff_1 - 
-guider_coeff_2 - 
-guider_coeff_3 - 
-guider_coeff_4 - 
-guider_coeff_5 - 
-guider_coeff_6 - 
-guider_coeff_7 - 
-guider_coeff_8 - 
-guider_coeff_9 - 
+temp - temperature of design (deg C)
+design_platescale_alt - effective plate scale of the design (in altitude direction, mm per deg)
+design_platescale_az - effective plate scale of the design (in azimuth direction, mm per deg)
+design_parallactic_angle - parallactic angle (deg E of N)
+guider_coeff_0 - placeholders for guider coefficients, unused (N from 0 to 9)
+guider_coeff_1 - placeholders for guider coefficients, unused (N from 0 to 9)
+guider_coeff_2 - placeholders for guider coefficients, unused (N from 0 to 9)
+guider_coeff_3 - placeholders for guider coefficients, unused (N from 0 to 9)
+guider_coeff_4 - placeholders for guider coefficients, unused (N from 0 to 9)
+guider_coeff_5 - placeholders for guider coefficients, unused (N from 0 to 9)
+guider_coeff_6 - placeholders for guider coefficients, unused (N from 0 to 9)
+guider_coeff_7 - placeholders for guider coefficients, unused (N from 0 to 9)
+guider_coeff_8 - placeholders for guider coefficients, unused (N from 0 to 9)
+guider_coeff_9 - placeholders for guider coefficients, unused (N from 0 to 9)
 locationid - 
-instruments - 
-npointings - 
-noffsets - 
-minstdinblockboss_shared - 
-maxskyinblockboss_shared - 
-gfibertype - 
-guidetype - 
-guidemag_min - 
-guidemag_max - 
-guide_lambda_eff - 
-nguidemax - 
-ferrulesizeboss_shared - 
-buffersizeboss_shared - 
-ferrulesizeapogee_shared - 
-buffersizeapogee_shared - 
-ferrulesizeguide - 
-buffersizeguide - 
-platedesignstandards - 
-standardtype - 
-platedesignskies - 
-skytype - 
-plugmapstyle - 
-bossmagtype - 
-pointing_name - 
-max_off_fiber_for_ha - 
-collectfactor - 
-designid - 
-platedesignversion - 
-platetype - 
-racen - 
-deccen - 
-ninputs - 
-plateinput1 - 
-plateinput2 - 
-plateinput3 - 
-plateinput4 - 
-plateinput5 - 
-plateinput6 - 
-plateinput7 - 
-priority - 
-relaxed_fiber_classes - 
+instruments - list of instrument names that are used in this type of plate (allowed: "SDSS", "BOSS", "MARVELS", "APOGEE")
+npointings - number of pointings that the plate is designed to make; each pointing will correspond to one or more exposures during observation; number must be less than or equal to 6
+noffsets - number of offsets to perform within each exposure
+minstdinblockboss_shared - for the given instrument, specify if we have a minimum number of standards we want to assign per fiber block (default 0)
+maxskyinblockboss_shared - for the given instrument, specify if we have a maximum number of skies we want to assign per fiber block (default 0)
+gfibertype - type of guide fibers to assume (old "gfiber" or new "gfiber2")
+guidetype - for each pointing, the source to search for guide fibers from (can be "SDSS" or "2MASS")
+guidemag_min - minimum and maximum g-band magnitudes for guide stars (default: [13, 15.5])
+guidemag_max - minimum and maximum g-band magnitudes for guide stars (default: [13, 15.5])
+guide_lambda_eff - The effective wavelength at which to guide, Angstroms
+nguidemax - maximum number of possible guide stars to track, otherwise tracks 10s of thousands at low b (default: infinite)
+ferrulesizeboss_shared - for specified instrument, diameter of ferrule in mm; must exist for all instruments, plus also for instrument=GUIDE
+buffersizeboss_shared - for specified instrument, buffer to include outside ferrule for checking for conflicts; must exist for all instruments, plus also for instrument=GUIDE
+ferrulesizeapogee_shared - for specified instrument, diameter of ferrule in mm; must exist for all instruments, plus also for instrument=GUIDE
+buffersizeapogee_shared - for specified instrument, diameter of ferrule in mm; must exist for all instruments, plus also for instrument=GUIDE
+ferrulesizeguide - for specified instrument, diameter of ferrule in mm; must exist for all instruments, plus also for instrument=GUIDE
+buffersizeguide - for specified instrument, buffer to include outside ferrule for checking for conflicts; must exist for all instruments, plus also for instrument=GUIDE
+platedesignstandards - specify what instruments we want plate design to find standards for; otherwise one of the plateInput files specified by the plateDefinition file should find them; (default: plate design doesn't find standards)
+standardtype - for each pointing, type of standard to find (can be "SDSS" or "2MASS", or "None" --- in fact, any value other than SDSS or 2MASS is equivalent to "None")
+platedesignskies - specify what instruments we want plate design to find skies for, if any
+skytype -  for each pointing, type of skies to find (can be "SDSS" or "2MASS")
+plugmapstyle - type of plugmap file to create (default "plplugmap")
+bossmagtype - type of magnitude used for fiber magnitudes for BOSS targets
+pointing_name - "name" for each of the pointings (in legacy plates where not given, default to "A B C D E F")
+max_off_fiber_for_ha - set HA limits (ha_observable_min, haobservable_max) to guarantee no offsets greater than this limit, in arcsec (platedesign v1_27 and above)
+collectfactor - oversampling factor for collecting skies and standards; to ensure pluggability, should be at least 5 (default: 5)
+designid - design identification number
+platedesignversion - version of plateDefault file to use (for backwards compatibility; if specified it must agree with the corresponding entry in the platePlans file
+platetype - type of plateDefault file to use
+racen - right ascension of pointing centers, J2000 deg
+deccen - declination of pointing centers, J2000 deg
+priority - order of priority for input files; lower numbers get checked first; if two files have the same priority, their targets are checked simultaneously (in order of the individual priority number for each object); (default is 1..nInputs).
+relaxed_fiber_classes - for APOGEE, do not break target classes up into bright/medium/faint.
 targettypes - 
 napogee_shared_standard - 
 napogee_shared_science - 
@@ -75,49 +80,57 @@ napogee_shared_sky -
 nboss_shared_standard - 
 nboss_shared_science - 
 nboss_shared_sky - 
-minskyinblockboss_shared - 
-minstandardinblockboss_shared - 
+minskyinblockboss_shared - for the given instrument, specify if we have a minimum number of skies we want to assign per fiber block (default 0)
+minstandardinblockboss_shared - for the given instrument, specify if we have a minimum number of standards we want to assign per fiber block (default 0)
 reddeningmed_u - 
 reddeningmed_g - 
 reddeningmed_r - 
 reddeningmed_i - 
 reddeningmed_z - 
 tileid - 
-theta - 
-platerun - 
-platedesign_version - 
-yanny_uid - 
-yanny_filename - 
-plateinput8 - 
-plateinput9 - 
-plateinput10 - 
-plateinput11 - 
-plateinput12 - 
-plateinput13 - 
-plateinput14 - 
-plateinput15 - 
-plateinput16 - 
-skyinput17 - 
-plateinput18 - 
-plateinput17 - 
-skyinput18 - 
-plateinput19 - 
-skyinput16 - 
-skyinput19 - 
-plateinput20 - 
-skyinput15 - 
-skyinput21 - 
-plateinput22 - 
-skyinput13 - 
-skyinput20 - 
-plateinput21 - 
-skyinput14 - 
-skyinput6 - 
+theta - position angle of design (always 0 in practice)
+platerun - name of platerun this file was part of
+platedesign_version - version of platedesign used to produce design file
+yanny_uid - internal integer identifier for the platelist file from which this inforation was extracted
+yanny_filename - filename from which this information was extracted
+ninputs - Number of input files to platedesign
+plateinput1 -   filename of input to platedesign
+plateinput2 -   filename of input to platedesign
+plateinput3 -   filename of input to platedesign
+plateinput4 -   filename of input to platedesign
+plateinput5 -   filename of input to platedesign
+plateinput6 -   filename of input to platedesign
+plateinput7 -   filename of input to platedesign
+plateinput8 -   filename of input to platedesign
+plateinput9 -   filename of input to platedesign
+plateinput10 -  filename of input to platedesign
+plateinput11 -  filename of input to platedesign
+plateinput12 -  filename of input to platedesign
+plateinput13 -  filename of input to platedesign
+plateinput14 -  filename of input to platedesign
+plateinput15 -  filename of input to platedesign
+plateinput16 -  filename of input to platedesign
+plateinput17 -  filename of input to platedesign
+plateinput18 -  filename of input to platedesign
+plateinput19 -  filename of input to platedesign
+plateinput20 -  filename of input to platedesign
+plateinput21 -  filename of input to platedesign
+plateinput22 -  filename of input to platedesign
+plateinput23 -  filename of input to platedesign
+plateinput24 -  filename of input to platedesign
+skyinput6 -     filename of input to platedesign
+skyinput8 -     filename of input to platedesign
+skyinput13 -    filename of input to platedesign
+skyinput14 -    filename of input to platedesign
+skyinput15 -    filename of input to platedesign
+skyinput16 -    filename of input to platedesign
+skyinput17 -    filename of input to platedesign
+skyinput18 -    filename of input to platedesign
+skyinput19 -    filename of input to platedesign
+skyinput20 -    filename of input to platedesign
+skyinput21 -    filename of input to platedesign
+skyinput22 -    filename of input to platedesign
+skyinput23 -    filename of input to platedesign
 defaultsurveymode - 
-skyinput23 - 
-plateinput24 - 
-skyinput22 - 
-plateinput23 - 
-skyinput8 - 
 isvalid - 
 
