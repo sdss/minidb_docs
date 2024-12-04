@@ -1,16 +1,15 @@
 Summary
 -------
 
-
+This catalogue contains photometric stellar parameters for 9+ million stars in common between the SkyMapper survey and Gaia DR2. See https://skymapper.anu.edu.au/_data/sm-gaia/ for details.
 
 
 Columns
 -------
 
-skymapper_object_id - 
-gaia_source_id - 
-teff - 
-e_teff - 
-feh - 
-e_feh - 
-
+skymapper_object_id - SkyMapper object_id []
+gaia_source_id - Gaia DR2 source_id []
+teff - Effective temperature [K]
+e_teff - Effective temperature uncertainty [K]
+feh - Metallicity [dex]
+e_feh - Metallicity uncertainty [dex]
