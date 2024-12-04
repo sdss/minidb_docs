@@ -1,13 +1,39 @@
 Summary
 -------
 
+A 'targeting_generation' describes a collection of versioned cartons,
+together with their robostrategy control parameters. This is a convenient
+way to describe the specific set of carton-versions that were used
+(and the way that they were treated) within any particular run of
+robostrategy.
 
+The dr19_targeting_generation table contains all targeting_generations
+that were considered for observations in the timespan covered by the
+DR19 data release. In addition, we include the 'v0.5.3' targeting_generation
+since this was the version released as part of DR18.
 
+During the initial plate operations phase of SDSS-V, we did not use
+the robostrategy code to assign fibers to targets. However, for
+completeness, the 'v0.plates' pseudo-targeting_generation has been
+reverse engineered in order to describe the set of carton-versions
+that were considered during that phase.
+
+The dr19_targeting_generation table can be joined
+to the dr19_carton table via the dr19_targeting_generation_to_carton
+table. To associate a targeting_generation with a robostrategy plan,
+join dr19_targeting_generation to dr19_targetdb_version via the
+dr19_targeting_generation_to_version table.
+
+Taken together, the dr19_targeting_generation,
+dr19_targeting_generation_to_carton and
+dr19_targeting_generation_to_version tables duplicate, in a database
+form, the robostrategy carton configuration information available
+via the rsconfig product (https://github.com/sdss/rsconfig).
 
 Columns
 -------
 
-pk - 
-label - 
-first_release - 
+pk - primary key for this table entry
+label - A human-readble name for the targeting_generation
+first_release - The first SDSS data release containing this targeting_generation
 
