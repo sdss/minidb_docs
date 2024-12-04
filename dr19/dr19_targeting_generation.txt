@@ -10,7 +10,7 @@ robostrategy.
 The dr19_targeting_generation table contains all targeting_generations
 that were considered for observations in the timespan covered by the
 DR19 data release. In addition, we include the 'v0.5.3' targeting_generation
-since this was the version released as part of DR18.
+since this was the version released as part of dr19.
 
 During the initial plate operations phase of SDSS-V, we did not use
 the robostrategy code to assign fibers to targets. However, for

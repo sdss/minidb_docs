@@ -9,12 +9,12 @@ Columns
 
 carton_to_target_pk - The primary key. A sequential identifier.
 lambda_eff - The effective wavelength at which the object will be observed [angstrom]
-carton_pk - The primary key of the carton in the dr18_carton table.
-target_pk - The primary key of the target in the dr18_target table.
-cadence_pk - The primary key of the cadence in the dr18_cadence table.
+carton_pk - The primary key of the carton in the dr19_carton table.
+target_pk - The primary key of the target in the dr19_target table.
+cadence_pk - The primary key of the cadence in the dr19_cadence table.
 priority - The target priority. Used for scheduling.
 value - An internal metric of the target value used for scheduling.
-instrument_pk - The primary key of the instrument in the dr18_instrument table.
+instrument_pk - The primary key of the instrument in the dr19_instrument table.
 delta_ra - The RA offset for fibre positioning, in arcsec.
 delta_dec - The Dec offset for fibre positioning, in arcsec.
 inertial - Whether this is an inertial target (no proper motion will be applied).

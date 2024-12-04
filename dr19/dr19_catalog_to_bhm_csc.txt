@@ -11,4 +11,4 @@ catalogid - The catalogid identifier in the dr19_catalog table.
 target_id - The primary key identifier in the dr19_bhm_csc table.
 version_id - The internal version for the cross-match.
 distance - The distance between the catalog and target coordinates if best=F.
-best - Whether this is considered the best match between the catalog entry and dr18_bhm_csc.
+best - Whether this is considered the best match between the catalog entry and dr19_bhm_csc.
