@@ -1,73 +1,72 @@
 Summary
 -------
 
-
+This table contains target from a 24µm catalog based point source catalog derived from the image data of the MIPSGAL 24µm Galactic Plane Survey and the corresponding data products.
 
 
 Columns
 -------
 
-mipsgal - 
-glon - 
-glat - 
-radeg - 
-dedeg - 
-s24 - 
-e_s24 - 
-mag_24 - 
-e_mag_24 - 
-twomass_name - 
-sj - 
-e_sj - 
-sh - 
-e_sh - 
-sk - 
-e_sk - 
-glimpse - 
-s3_6 - 
-e_s3_6 - 
-s4_5 - 
-e_s4_5 - 
-s5_8 - 
-e_s5_8 - 
-s8_0 - 
-wise - 
-s3_4 - 
-e_s3_4 - 
-s4_6 - 
-e_s4_6 - 
-s12 - 
-e_s12 - 
-s22 - 
-e_s22 - 
-jmag - 
-e_jmag - 
-hmag - 
-e_hmag - 
-kmag - 
-e_kmag - 
-mag_3_6 - 
-e_mag_3_6 - 
-mag_4_5 - 
-e_mag_4_5 - 
-mag_5_8 - 
-e_mag_5_8 - 
-mag_8_0 - 
-e_mag_8_0 - 
-w1mag - 
-e_w1mag - 
-w2mag - 
-e_w2mag - 
-w3mag - 
-e_w3mag - 
-w4mag - 
-e_w4mag - 
-dnn - 
-ng - 
-n2m - 
-nw - 
-fwhm - 
-sky - 
-lim1 - 
-lim2 - 
-
+mipsgal - MIPSGAL name []
+glon -  Galactic longitude [deg]
+glat -  Galactic latitude [deg]
+radeg - Right Ascension, in decimal degrees (J2000) [deg]
+dedeg - Declination, in decimal degrees (J2000) [deg]
+s24 - [0.3/9659] 24µm flux density [mJy]
+e_s24 - [0.08/951] 1σ uncertainty in S24 [mJy]
+mag_24 - [-0.3/11] 24µm magnitude (Vega) [mag]
+e_mag_24 - [0.02/0.33] 1σ uncertainty in [24] [mag]
+twomass_name - 2MASS name (HHMMSSss+DDMMSSs, Cat. II/246) []
+sj - [0.1/522464]? 2MASS J-band flux density [mJy]
+e_sj - ? 1σ uncertainty in SJ [mJy]
+sh - [0.2/756530]? 2MASS H-band flux density [mJy]
+e_sh - ? 1σ uncertainty in SH [mJy]
+sk - [0.4/643861]? 2MASS Ks-band flux density [mJy]
+e_sk - ? 1σ uncertainty in SK [mJy]
+glimpse - ? GLIMPSE name (GLLL.llll+BB.bbbb, Cat. II/293) []
+s3_6 - [0.1/13445]? Spitzer/IRAC 3.6µm flux density [mJy]
+e_s3_6 - ? 1σ uncertainty in S3.6 [mJy]
+s4_5 - [0.1/21328]? Spitzer/IRAC 4.5µm flux density [mJy]
+e_s4_5 - ? 1σ uncertainty in S4.5 [mJy]
+s5_8 - [0.5/30754]? Spitzer/IRAC 5.8µm flux density [mJy]
+e_s5_8 - ? 1σ uncertainty in S5.8 [mJy]
+s8_0 - [0.3/6019]? Spitzer/IRAC 8.0µm flux density [mJy]
+wise - ? WISE name (JHHMMSS.ss+DDMMSS.s, Cat. I/311) []
+s3_4 - [0.04/49559]? WISE/W1 (3.35µm) flux density [mJy]
+e_s3_4 - ? 1σ uncertainty in S3.4 [mJy]
+s4_6 - [0.03/50979]? WISE/W2 (4.6µm) flux density [mJy]
+e_s4_6 - ? 1σ uncertainty in S4.6 [mJy]
+s12 - [0.2/167766]? WISE/W3 (11.6µm) flux density [mJy]
+e_s12 - ? 1σ uncertainty in S12 [mJy]
+s22 - [1/41761]? WISE/W4 (22.1µm) flux density [mJy]
+e_s22 - ? 1σ uncertainty in S22 [mJy]
+jmag - [1.2/17.6]? 2MASS J-band magnitude (Vega) [mag]
+e_jmag - ? 1σ uncertainty in Jmag (Vega) [mag]
+hmag  - [0.2/16.5]? 2MASS H band magnitude (Vega) [mag]
+e_hmag - ? 1σ uncertainty in Hmag (Vega) [mag]
+kmag - [-0.05/15.4]? 2MASS Ks band magnitude (Vega) [mag]
+e_kmag - ? 1σ uncertainty in Kmag (Vega) [mag]
+mag_3_6 - [3/16]? Spitzer/IRAC 3.6µm magnitude (Vega) [mag]
+e_mag_3_6 - ? 1σ uncertainty in [3.6] [mag]
+mag_4_5 - [2/16]? Spitzer/IRAC 4.5µm magnitude (Vega) [mag]
+e_mag_4_5 - ? 1σ uncertainty in [4.5] [mag]
+mag_5_8 - [1/14]? Spitzer/IRAC 5.8µm magnitude (Vega) [mag]
+e_mag_5_8 - ? 1σ uncertainty in [5.8] [mag]
+mag_8_0  - [2/14]? Spitzer/IRAC 8.0µm magnitude (Vega) [mag]
+e_mag_8_0 - ? 1σ uncertainty in [8.0] [mag]
+w1mag  - [1.9/17.1]? WISE/W1 (3.35um) magnitude (Vega) [mag]
+e_w1mag - ? 1σ uncertainty in W1mag (Vega) [mag]
+w2mag  - [1.3/17]? WISE/W2 (4.6µm) magnitude (Vega) [mag]
+e_w2mag - ? 1σ uncertainty in W2mag (Vega) [mag]
+w3mag - [-2/13]? WISE/W3 (11.6um) magnitude (Vega) [mag]
+e_w3mag - ? 1σ uncertainty in W3mag (Vega) [mag]
+w4mag - [-1.8/9.6]? WISE/W4 (22.1um) magnitude (Vega) [mag]
+e_w4mag - ? 1σ uncertainty in W4mag (Vega) [mag]
+dnn - [0.3/221] Nearest neighbor distance [arcsec]
+ng - [0/9]? Number of GLIMPSE sources within 6.35" aperture []
+n2m - [0/8] Number of 2MASS sources within 6.35" aperture []
+nw - [0/3] Number of WISE sources within 6.35" aperture []
+fwhm - [-1.3/15.1] Empirically measured Full Width at Half Maximum of the MIPSGAL source [arcsec]
+sky -  [4.9/1926] Background flux density measured in the sky annulus [MJy]
+lim1 - [1.2/5799]? 90% differential completeness limit (in mJy) [mJy]
+lim2 - [0.25/9.5]? 90% differential completeness limit, VEGAMAG (magnitude at which 90% of the sources are successfully recovered) [mag]
