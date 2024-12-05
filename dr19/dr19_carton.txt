@@ -9,8 +9,8 @@ Columns
 
 carton_pk - The primary key. A sequential identifier.
 carton - The name of the carton.
-mapper_pk - The primary key of the mapper leading this carton. See dr18_mapper.
-category_pk - The primary key of the category in the dr18_category table.
+mapper_pk - The primary key of the mapper leading this carton. See dr19_mapper.
+category_pk - The primary key of the category in the dr19_category table.
 version_pk - The primary key of the version in the dr19_version table.
 program - The program name.
 target_selection_plan - The target selection plan version for which this carton was run.

@@ -1,17 +1,17 @@
 Summary
 -------
 
-This table stores the targets associated with DR18 target selection cartons. Note that the targets in this table are unique, but a target can be associated with multiple cartons. That many-to-many relationship is encoded in the dr18_carton_to_target table.
+This table stores the targets associated with dr19 target selection cartons. Note that the targets in this table are unique, but a target can be associated with multiple cartons. That many-to-many relationship is encoded in the dr19_carton_to_target table.
 
 
 Columns
 -------
 
 target_pk - The primary key. A sequential identifier. []
-ra - The right ascension of the target in ICRS coordinates at epoch. From dr18_catalog. [degree]
-dec - The declination of the target in ICRS coordinates at epoch. From dr18_catalog. [degree]
-pmra - The proper motion in right ascenscion of the target, as a true angle. From dr18_catalog. [mas/yr]
-pmdec - The proper motion in declination of the target. From dr18_catalog. [mas/yr]
-parallax - The parallax of the target. From dr18_catalog. [arcsec]
+ra - The right ascension of the target in ICRS coordinates at epoch. From dr19_catalog. [degree]
+dec - The declination of the target in ICRS coordinates at epoch. From dr19_catalog. [degree]
+pmra - The proper motion in right ascenscion of the target, as a true angle. From dr19_catalog. [mas/yr]
+pmdec - The proper motion in declination of the target. From dr19_catalog. [mas/yr]
+parallax - The parallax of the target. From dr19_catalog. [arcsec]
 epoch - The epoch of the coordinates, as a Julian epoch. [years]
-catalogid - The catalogid of the entry in dr18_catalog associated with this target. []
+catalogid - The catalogid of the entry in dr19_catalog associated with this target. []

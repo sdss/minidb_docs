@@ -22,15 +22,15 @@ Columns
 
 ero_version - Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
 ero_detuid -  The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
-ero_flux -  X-ray flux, usually in the main eROSITA detection band (0.2-2.3keV). Units erg/cm2/s.
+ero_flux -  X-ray flux, usually in the main eROSITA detection band (0.2-2.3keV) [erg/cm2/s]
 ero_morph -  X-ray morphological classification ("POINTLIKE" or "EXTENDED") 
 ero_det_like -  X-ray detection likelihood 
-ero_ra - Best determination of X-ray position (deg, J2000)
-ero_dec -  Best determination of X-ray position (deg, J2000)
-ero_radec_err -  Best estimate of X-ray position uncertainty (arcsec)
+ero_ra - Best determination of X-ray position (J2000) [deg]
+ero_dec -  Best determination of X-ray position (J2000) [deg]
+ero_radec_err -  Best estimate of X-ray position uncertainty [arcsec]
 xmatch_method - The X-ray-to-optical/IR cross-match method that was used in this case e.g. 'XPS-ML/NWAY', 'CLUSTERS_EFEDS_MULTIPLE' etc 
 xmatch_version - The cross-match software version and OIR catalog used e.g. 'LSdr8-JWMS_v2.1LSdr8-JWMS_v2.1', 'LSdr8-AG_v1,JC_16032020', 'eromapper_2020-10-12', 'CW20ps1dr2-v011220' etc 
-xmatch_dist -  Distance between X-ray position and optical counterpart (arcsec) 
+xmatch_dist -  Distance between X-ray position and optical counterpart [arcsec] 
 xmatch_metric -  Metric giving quality of cross-match. Meaning is dependent on xmatch_method, e.g. p_any for NWAY 
 xmatch_flags -  Flags indicating cross-match properties (e.g. status flags), xmatch_method dependent 
 target_class - Best guess of source classification at time of xmatch e.g. 'GALAXY','STAR','QSO','UNKNOWN',.... 
@@ -45,10 +45,10 @@ skymapper_dr2_id -  Identifier of counterpart (if any) in dr19_skymapper_dr2 ('o
 supercosmos_id -  Identifier of counterpart (if any) in dr19_supercosmos ('objid' field) 
 tycho2_id -  Identifier of counterpart (if any) in dr19_tycho2 ('designation' field) 
 sdss_dr13_id -  Identifier of counterpart (if any) in dr19_sdss_dr13_photoobj ('objid' field) 
-opt_ra - Sky coordinate of optical/IR counterpart (deg, Equatorial), included for validity checks only 
-opt_dec - Sky coordinate of optical/IR counterpart (deg, Equatorial), included for validity checks only 
-opt_pmra - Proper motion of optical/IR counterpart (mas/yr), included for validity checks only 
-opt_pmdec - Proper motion of optical/IR counterpart (mas/yr), included for validity checks only 
-opt_epoch - Epoch of opt_ra,opt_dec (decimal year)
+opt_ra - Sky coordinate of optical/IR counterpart, included for validity checks only [deg]
+opt_dec - Sky coordinate of optical/IR counterpart, included for validity checks only [deg]
+opt_pmra - Proper motion of optical/IR counterpart, included for validity checks only [mas/yr] 
+opt_pmdec - Proper motion of optical/IR counterpart, included for validity checks only [mas/yr]
+opt_epoch - Epoch of opt_ra,opt_dec [decimal year]
 pkey - primary key of table entry
 

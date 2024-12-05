@@ -21,18 +21,18 @@ Columns
 pk - primary key of table entry
 ero_version - Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
 ero_detuid -  The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
-ero_flux -  X-ray flux, usually in the main eROSITA detection band (0.2-2.3keV). Units erg/cm2/s
-ero_flux_err - Uncertainty on X-ray flux (erg/cm2/s)
-ero_ext -  X-ray extent parameter (arcsec)
-ero_ext_err -  Uncertainty on X-ray extent parameter (arcsec)
+ero_flux -  X-ray flux, usually in the main eROSITA detection band (0.2-2.3keV). [erg/cm2/s]
+ero_flux_err - Uncertainty on X-ray flux [erg/cm2/s]
+ero_ext -  X-ray extent parameter [arcsec]
+ero_ext_err -  Uncertainty on X-ray extent parameter [arcsec]
 ero_ext_like -  Likelihood of X-ray source being extended 
 ero_det_like -  X-ray detection likelihood 
-ero_ra - Best determination of X-ray position (deg, J2000)
-ero_dec -  Best determination of X-ray position (deg, J2000)
-ero_radec_err -  Best estimate of X-ray position uncertainty (arcsec)
+ero_ra - Best determination of X-ray position, J2000 [deg]
+ero_dec -  Best determination of X-ray position, J2000 [deg]
+ero_radec_err -  Best estimate of X-ray position uncertainty [arcsec]
 xmatch_method - The X-ray-to-optical/IR cross-match method that was used in this case e.g. 'XPS-ML/NWAY', 'CLUSTERS_EFEDS_MULTIPLE' etc 
 xmatch_version - The cross-match software version and OIR catalog used e.g. 'LSdr8-JWMS_v2.1LSdr8-JWMS_v2.1', 'LSdr8-AG_v1,JC_16032020', 'eromapper_2020-10-12', 'CW20ps1dr2-v011220' etc 
-xmatch_dist -  Distance between X-ray position and optical counterpart (arcsec) 
+xmatch_dist -  Distance between X-ray position and optical counterpart [arcsec]
 xmatch_metric -  Metric giving quality of cross-match. Meaning is dependent on xmatch_method, e.g. p_any for NWAY 
 xmatch_flags -  Flags indicating cross-match properties (e.g. status flags), xmatch_method dependent 
 target_class - Best guess of source classification at time of xmatch e.g. 'GALAXY','STAR','QSO','UNKNOWN',.... 
@@ -42,20 +42,19 @@ best_opt - Describes which OIR survey provided the optical counterpart for this 
 ls_id - Identifier of counterpart (if any) in dr19_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40) 
 ps1_dr2_objid - Identifier of counterpart (if any) in dr19_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier 
 gaia_dr2_source_id - Identifier of counterpart (if any) in dr19_gaia_dr2_source ('source_id' field) 
-unwise_dr1_objid -  Identifier of counterpart (if any) in dr19_unwise ('unwise_objid' field) 
+unwise_dr1_objid -  Identifier of counterpart (if any) in dr19_unwise (not used)
 des_dr1_coadd_object_id -  Identifier of counterpart (if any) in DES/dr1 coadd catalogg (not used)
 sdss_dr16_objid -  Identifier of counterpart (if any) in SDSS dr16 photobj table (not used) 
-opt_ra - Sky coordinate of optical/IR counterpart (deg, Equatorial), included for validity checks only 
-opt_dec - Sky coordinate of optical/IR counterpart (deg, Equatorial), included for validity checks only 
-opt_pmra - Proper motion of optical/IR counterpart (mas/yr), included for validity checks only 
-opt_pmdec - Proper motion of optical/IR counterpart (mas/yr), included for validity checks only 
-opt_epoch - Epoch of opt_ra,opt_dec (decimal year)
-opt_modelflux_g - optical magnitude of counterpart, included for validity checks only 
-opt_modelflux_ivar_g - uncertainty on optical magnitude of counterpart, included for validity checks only 
-opt_modelflux_r - optical magnitude of counterpart, included for validity checks only 
-opt_modelflux_ivar_r - uncertainty on optical magnitude of counterpart, included for validity checks only 
-opt_modelflux_i - optical magnitude of counterpart, included for validity checks only 
-opt_modelflux_ivar_i - uncertainty on optical magnitude of counterpart, included for validity checks only 
-opt_modelflux_z - optical magnitude of counterpart, included for validity checks only 
-opt_modelflux_ivar_z - uncertainty on optical magnitude of counterpart, included for validity checks only 
-
+opt_ra - Sky coordinate of optical/IR counterpart, included for validity checks only [deg]
+opt_dec - Sky coordinate of optical/IR counterpart, included for validity checks only [deg]
+opt_pmra - Proper motion of optical/IR counterpart, included for validity checks only  [mas/yr]
+opt_pmdec - Proper motion of optical/IR counterpart, included for validity checks only [mas/yr]
+opt_epoch - Epoch of opt_ra,opt_dec [decimal year]
+opt_modelflux_g - optical magnitude of counterpart, included for validity checks only [nanomaggy] 
+opt_modelflux_ivar_g - uncertainty on optical magnitude of counterpart, included for validity checks only [1/nanomaggy^2]
+opt_modelflux_r - optical magnitude of counterpart, included for validity checks only  [nanomaggy]
+opt_modelflux_ivar_r - uncertainty on optical magnitude of counterpart, included for validity checks only [1/nanomaggy^2]
+opt_modelflux_i - optical magnitude of counterpart, included for validity checks only  [nanomaggy]
+opt_modelflux_ivar_i - uncertainty on optical magnitude of counterpart, included for validity checks only [1/nanomaggy^2]
+opt_modelflux_z - optical magnitude of counterpart, included for validity checks only  [nanomaggy]
+opt_modelflux_ivar_z - uncertainty on optical magnitude of counterpart, included for validity checks only [1/nanomaggy^2]
