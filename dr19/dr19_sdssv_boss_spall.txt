@@ -1,146 +1,155 @@
 Summary
 -------
 
+The dr19_sdssv_boss_spall table is a database representation of an
+early version of the SDSS-V BOSS spAll data product.  The
+dr19_sdssv_boss_spall table was used within early iterations of FPS
+target_selection as a way to communicate information about which
+targets had been observed in SDSS-V plates. This information was used
+to e.g. de-prioritise targets that were expected to have a good quality
+spectroscopic measurement before the start of SDSS-V FPS operations.
 
+Caution. The dr19_sdssv_boss_spall table should only be used in order to
+recreate the target_selection selection function.
 
+Column descriptions are mainly derived from: https://data.sdss.org/datamodel/files/BOSS_SPECTRO_REDUX/RUN2D/spAll.html
 
 Columns
 -------
 
-programname - 
-chunk - 
-survey - 
-platequality - 
-platesn2 - 
-deredsn2 - 
-primtarget - 
-sectarget - 
-lambda_eff - 
-bluefiber - 
-zoffset - 
-xfocal - 
-yfocal - 
-specprimary - 
-specboss - 
-boss_specobj_id - 
-nspecobs - 
-calibflux_u - 
-calibflux_g - 
-calibflux_r - 
-calibflux_i - 
-calinflux_z - 
-calibflux_ivar_u - 
-calibflux_ivar_g - 
-calibflux_ivar_r - 
-calibflux_ivar_i - 
-calinflux_ivar_z - 
-gaia_bp - 
-gaia_rp - 
-gaia_g - 
-firstcarton - 
-mag_u - 
-mag_g - 
-mag_r - 
-mag_i - 
-mag_z - 
-plate - 
-designid - 
-nexp - 
-exptime - 
-airmass - 
-healpix - 
-healpixgrp - 
-healpix_dir - 
-mjd_final - 
-mjd_list - 
-tai_list - 
-catalogid - 
-sdssv_boss_target0 - 
-field - 
-tile - 
-mjd - 
-fiberid - 
-run2d - 
-run1d - 
-objtype - 
-plug_ra - 
-plug_dec - 
-class - 
-subclass - 
-z - 
-z_err - 
-rchi2 - 
-dof - 
-rchi2diff - 
-tfile - 
-npoly - 
-vdisp - 
-vdisp_err - 
-vdispz - 
-vdispz_err - 
-vdispchi2 - 
-vdispnpix - 
-vdispdof - 
-wavemin - 
-wavemax - 
-wcoverage - 
-zwarning - 
-sn_median_u - 
-sn_median_g - 
-sn_median_r - 
-sn_median_i - 
-sn_median_z - 
-sn_median_all - 
-chi68p - 
-spectroflux_u - 
-spectroflux_g - 
-spectroflux_r - 
-spectroflux_i - 
-spectroflux_z - 
-spectroflux_ivar_u - 
-spectroflux_ivar_g - 
-spectroflux_ivar_r - 
-spectroflux_ivar_i - 
-spectroflux_ivar_z - 
-spectrosynflux_u - 
-spectrosynflux_g - 
-spectrosynflux_r - 
-spectrosynflux_i - 
-spectrosynflux_z - 
-spectrosynflux_ivar_u - 
-spectrosynflux_ivar_g - 
-spectrosynflux_ivar_r - 
-spectrosynflux_ivar_i - 
-spectrosynflux_ivar_z - 
-spectroskyflux_u - 
-spectroskyflux_g - 
-spectroskyflux_r - 
-spectroskyflux_i - 
-spectroskyflux_z - 
-anyandmask - 
-anyormask - 
-spec1_g - 
-spec1_r - 
-spec1_i - 
-elodie_filename - 
-elodie_object - 
-elodie_sptype - 
-elodie_bv - 
-elodie_teff - 
-elodie_logg - 
-elodie_feh - 
-elodie_z - 
-elodie_z_err - 
-elodie_z_modelerr - 
-elodie_rchi2 - 
-elodie_dof - 
-z_noqso - 
-z_err_noqso - 
-znum_noqso - 
-zwarning_noqso - 
-class_noqso - 
-subclass_noqso - 
-rchi2diff_noqso - 
-specobjid - 
-pkey - 
-
+programname - Program name within a given survey
+chunk - Name of tiling chunk [from platelist product] 
+survey - Survey that plate is a part of
+platequality - Characterization of plate quality 
+platesn2 - Overall (S/N)^2 measure for plate; minimum of all 4 cameras 
+deredsn2 -  Dereddened (extinction corrected) (S/N)^2 measure for plate; minimum of all 4 cameras 
+primtarget - n/a ignore
+sectarget - n/a ignore
+lambda_eff - Wavelength to optimize hole location for [Angstrom]
+bluefiber - 1 if assigned target a blue fiber; 0 otherwise
+zoffset - Backstopping offset distance
+xfocal - Hole/robot x-axis position in focal plane
+yfocal - Hole/robot y-axis position in focal plane
+specprimary - Objects observed multiple times will have this set to 1 for one observation only. This is usually the 'best' observation, as defined by critera listed in fieldmerge.py.
+specboss - Best version of spectrum at this location
+boss_specobj_id - ID of spectrum location on sky
+nspecobs - Number of spectral observations
+calibflux_u - Broad-band flux in SDSS-u from PSFmag [nanomaggy]
+calibflux_g - Broad-band flux in SDSS-g from PSFmag [nanomaggy]
+calibflux_r - Broad-band flux in SDSS-r from PSFmag [nanomaggy]
+calibflux_i - Broad-band flux in SDSS-i from PSFmag [nanomaggy]
+calibflux_z - Broad-band flux in SDSS-z from PSFmag [nanomaggy]
+calibflux_ivar_u - Inverse var flux SDSS-u from PSFmag
+calibflux_ivar_g - Inverse var flux SDSS-g from PSFmag
+calibflux_ivar_r - Inverse var flux SDSS-r from PSFmag
+calibflux_ivar_i - Inverse var flux SDSS-i from PSFmag
+calibflux_ivar_z - Inverse var flux SDSS-z from PSFmag
+gaia_bp - Gaia BP magnitude [mag, Vega]
+gaia_rp -  Gaia RP magnitude [mag, Vega]
+gaia_g -  Gaia G magnitude [mag, Vega]
+firstcarton - Primary SDSS Carton for target
+mag_u - u-band optical magnitude [mag, AB]
+mag_g - g-band optical magnitude [mag, AB]
+mag_r - r-band optical magnitude [mag, AB]
+mag_i - i-band optical magnitude [mag, AB]
+mag_z - z-band optical magnitude [mag, AB]
+plate - Plate ID number
+designid - Design ID number
+nexp - Number of Included Exposures
+exptime - Total Exposure time of Coadded Spectra [s]
+airmass - Airmass at time of observation
+healpix - healpix pixel number of the RACAT and DECCAT coordinates, computed with healpix nside=128
+healpixgrp - Rounded-down integer value of healpix / 1000
+healpix_dir - Relative directory for spectra grouped by healpixel
+mjd_final - Mean MJD of the Coadded Spectra
+mjd_list - List of MJD of each included exposures
+tai_list - List Tai for each exposure (at midpoint)
+catalogid - SDSS-V CatalogID used in naming
+sdssv_boss_target0 - bitmask for SDSS-V plate-era BOSS targeting
+field - SDSS FieldID (plateID for plate era data)
+tile - n/a ignore
+mjd - Modified Julian date of combined Spectra
+fiberid - Index of the fiber which observed the target 
+run2d - Spectro-2D reduction name
+run1d - Spectro-1D reduction name
+objtype - Why this object was targeted.  Note that if this field says QSO, it could be the case that this object would have been targeted as a GALAXY or any number of other categories as well. The PRIMTARGET and SECTARGET flags in the plug-map structure (in the spField file) gives this full information.
+plug_ra - Object RA (drilled fiber position) [J2000] [degrees]
+plug_dec - Object DEC (drilled fiber position) [J2000] [degrees]
+class - Spectro classification: GALAXY, QSO, STAR
+subclass - Spectro sub-classification
+z - Redshift; incorrect for nonzero ZWARNING flag
+z_err - z error from chi^2 min; negative is invalid fit
+rchi2 - Reduced chi^2 for best fit
+dof - Degrees of freedom for best fit
+rchi2diff - Diff in reduced chi^2 of 2 best solutions
+tfile - Template file in $IDLSPEC2D_DIR/templates
+npoly - # of polynomial terms with TFILE
+vdisp - Velocity dispersion, only computed for galaxies [km/s]
+vdisp_err - Error in VDISP; negative for invalid fit [km/s]
+vdispz - Redshift for best-fit velocity dispersion
+vdispz_err - Error in VDISPZ
+vdispchi2 - Chi^2 for best-fit velocity dispersion
+vdispnpix - Num of pixels overlapping VDISP fit templates
+vdispdof - Degrees of freedom for best-fit velocity dispersion, equal to VDISPNPIX minus the number of templates minus the number of polynomial terms minus 1 (the last 1 is for the velocity dispersion)
+wavemin - Minimum observed (vacuum) wavelength for target [AA]
+wavemax - Maximum observed (vacuum) wavelength for target [AA]
+wcoverage - Amount of wavelength coverage in log-10(Angs) [log10(AA)]
+zwarning - A flag for bad z fits in place of CLASS=UNKNOWN
+sn_median_u - Median S/N for all good pixels in SDSS-u
+sn_median_g - Median S/N for all good pixels in SDSS-g
+sn_median_r - Median S/N for all good pixels in SDSS-r
+sn_median_i - Median S/N for all good pixels in SDSS-i
+sn_median_z - Median S/N for all good pixels in SDSS-z
+sn_median_all - Median S/N for all good pixels in all filters
+chi68p - 68% of abs(chi) of synthetic to actual spectrum
+spectroflux_u - Spectrum projected onto SDSS-u filter [nanomaggy]
+spectroflux_g - Spectrum projected onto SDSS-g filter [nanomaggy]
+spectroflux_r - Spectrum projected onto SDSS-r filter [nanomaggy]
+spectroflux_i - Spectrum projected onto SDSS-i filter [nanomaggy]
+spectroflux_z - Spectrum projected onto SDSS-z filter [nanomaggy]
+spectroflux_ivar_u - Inverse variance of SPECTROFLUX_u [nanomaggy]
+spectroflux_ivar_g - Inverse variance of SPECTROFLUX_g [nanomaggy]
+spectroflux_ivar_r - Inverse variance of SPECTROFLUX_r [nanomaggy]
+spectroflux_ivar_i - Inverse variance of SPECTROFLUX_i [nanomaggy]
+spectroflux_ivar_z - Inverse variance of SPECTROFLUX_z [nanomaggy]
+spectrosynflux_u - Best-fit template projected onto SDSS-u [nanomaggy]
+spectrosynflux_g - Best-fit template projected onto SDSS-g [nanomaggy]
+spectrosynflux_r - Best-fit template projected onto SDSS-r [nanomaggy]
+spectrosynflux_i - Best-fit template projected onto SDSS-i [nanomaggy]
+spectrosynflux_z - Best-fit template projected onto SDSS-z [nanomaggy]
+spectrosynflux_ivar_u - Inverse variance of SPECTROSYNFLUX_u [nanomaggy]
+spectrosynflux_ivar_g - Inverse variance of SPECTROSYNFLUX_g [nanomaggy]
+spectrosynflux_ivar_r - Inverse variance of SPECTROSYNFLUX_r [nanomaggy]
+spectrosynflux_ivar_i - Inverse variance of SPECTROSYNFLUX_i [nanomaggy]
+spectrosynflux_ivar_z - Inverse variance of SPECTROSYNFLUX_z [nanomaggy]
+spectroskyflux_u - Sky spectrum projected onto SDSS-u filter [nanomaggy]
+spectroskyflux_g - Sky spectrum projected onto SDSS-g filter [nanomaggy]
+spectroskyflux_r - Sky spectrum projected onto SDSS-r filter [nanomaggy]
+spectroskyflux_i - Sky spectrum projected onto SDSS-i filter [nanomaggy]
+spectroskyflux_z - Sky spectrum projected onto SDSS-z filter [nanomaggy]
+anyandmask - For each bit, records whether any pixel in the spectrum has that bit set in its ANDMASK
+anyormask - For each bit, records whether any pixel in the spectrum has that bit set in its ORMASK
+spec1_g -(S/N)^2 at g=20.20 for spectrograph #1 (same value for 500 fibers)
+spec1_r -(S/N)^2 at r=20.25 for spectrograph #1 (same value for 500 fibers)
+spec1_i -(S/N)^2 at i=19.90 for spectrograph #1 (same value for 500 fibers)
+elodie_filename - File name for best-fit Elodie star
+elodie_object - Star name (mostly Henry Draper names)
+elodie_sptype - Spectral type
+elodie_bv - (B-V) color
+elodie_teff - Effective temperature
+elodie_logg - Log10(gravity)
+elodie_feh - [Fe/H]
+elodie_z - redshift
+elodie_z_err -  redshift error; negative for invalid fit
+elodie_z_modelerr - The standard deviation in redshift amongst the 12 best-fit stars
+elodie_rchi2 - Reduced chi^2
+elodie_dof - Degrees of freedom for fit
+z_noqso - Redshift of the best-fit non-QSO model (recommended for CMASS and LOZ)
+z_err_noqso - Formal one-sigma error on Z_NOQSO (recommended for CMASS and LOZ)
+znum_noqso - Best fit z/class index excluding QSO; 1-indexed (recommended for CMASS and LOZ)
+zwarning_noqso - Redshift warning flag for Z_NOQSO (recommended for CMASS and LOZ)
+class_noqso - Spectro class of best-fit non-QSO model (recommended for CMASS and LOZ)
+subclass_noqso - Spectro sub-class of best-fit non-QSO model (recommended for CMASS and LOZ)
+rchi2diff_noqso - Reduced chi^2 diff to next-best non-QSO model (recommended for CMASS and LOZ)
+specobjid - Unique ID based on Field, MJD, SDSSID, RUN2D, COADD type
+pkey - primary key for table entry
