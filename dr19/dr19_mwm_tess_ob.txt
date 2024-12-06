@@ -1,16 +1,16 @@
 Summary
 -------
 
-
+This table contains targets requested for the manual carton mwm_tess_ob.
 
 
 Columns
 -------
 
-gaia_dr2_id - 
-ra - 
-dec - 
-h_mag - 
-instrument - 
-cadence - 
+gaia_dr2_id - Gaia DR2 unique source identifier [] 
+ra - Right Ascension (J2000) [degrees]
+dec - Declination (J2000) [degrees]
+h_mag - 2MASS H-band mangitude [mag]
+instrument - Instrument requested for this target (only APOGEE for this carton) []
+cadence - Cadence requested for this carton []
 
