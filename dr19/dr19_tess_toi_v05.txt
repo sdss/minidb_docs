@@ -12,7 +12,7 @@ target_type - Type of target. Options: 2min = 2 minute cadence, exo_TOI = TOI, a
 toi - TESS Object of Interest ID []
 tess_disposition - TESS Team Dispositon Options: EB = Eclipsing Binary, KP = Known Planet, PC = Planet Candidate, O = Other, or blank []
 tfopwg_disposition - TESS Follow-up Observing Program (TFOP) Working Group Disposition Options: APC = Ambiguous Planet Candidate, CP = Confirmed Planet, FA = False Alarm, FP = False Positive, KP = Known Planet, PC = Planet Candidate or blank []
-ctoi - Community Tareget of Interest ID
+ctoi - Community Tareget of Interest ID []
 user_disposition - Initial Community User Disposition []
 num_sectors - The total number of sectors that this object was observed on as of the catalog date []
 pkey - Primary Key []
