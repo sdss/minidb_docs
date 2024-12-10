@@ -1,17 +1,15 @@
 Summary
 -------
 
-
+This table includes associations between sdss_id identifiers and the best matched catalogid for each catalogue cross-match. The table contains one row per sdss_id with columns for each catalogid version. dr19_sdss_id_flat is a pivoted/flattened version of this table.
 
 
 Columns
 -------
 
-catalogid21 - 
-catalogid25 - 
-catalogid31 - 
-ra_sdss_id - 
-dec_sdss_id - 
-sdss_id - 
-last_updated - 
-
+catalogid21 - The catalogid for the best matched object in the v0.1 cross-match (pk=21).
+catalogid25 - The catalogid for the best matched object in the v0.5 cross-match (pk=25).
+ra_sdss_id - The right ascension of the target in ICRS J2015.5 coordinates.
+dec_sdss_id - The declination of the target in ICRS J2015.5 coordinates.
+sdss_id - The SDSS identifier for a unique object.
+last_updated - When the association was last updated.
