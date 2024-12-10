@@ -1,32 +1,31 @@
 Summary
 -------
 
-
+Summary file of MaNGA Stellar Libary.
 
 
 Columns
 -------
 
-drpver - 
-mprocver - 
-mangaid - 
-minmjd - 
-maxmjd - 
-nvisits - 
-nplates - 
-ra - 
-dec - 
-epoch - 
-psfmag_1 - 
-psfmag_2 - 
-psfmag_3 - 
-psfmag_4 - 
-psfmag_5 - 
-mngtarg2 - 
-input_logg - 
-input_teff - 
-input_fe_h - 
-input_alpha_m - 
-input_source - 
-photocat - 
-
+drpver - Version of mangadrp. []
+mprocver - Version of mastarproc. []
+mangaid - MaNGA-ID for the target. []
+minmjd - Minimum Modified Julian Date of Observations. []
+maxmjd - Maximum Modified Julian Date of Observations. []
+nvisits - Number of visits for this star (including good and bad observations). []
+nplates - Number of plates this star is on. []
+ra - Right Ascension for this object at the time given by the EPOCH column (Equinox J2000). [deg]
+dec - Declination for this object at the time given by the EPOCH column (Equinox J2000). [deg]
+epoch - Epoch of the astrometry (which is approximate for some catalogs). []
+psfmag_1 - PSF magnitude in the first band with the filter correspondence depending on PHOTOCAT. [mag]
+psfmag_2 - PSF magnitude in the second band with the filter correspondence depending on PHOTOCAT. [mag]
+psfmag_3 - PSF magnitude in the third band with the filter correspondence depending on PHOTOCAT. [mag]
+psfmag_4 - PSF magnitude in the fourth band with the filter correspondence depending on PHOTOCAT. [mag]
+psfmag_5 - PSF magnitude in the fifth band with the filter correspondence depending on PHOTOCAT. [mag]
+mngtarg2 - MANGA_TARGET2 targeting bitmask. []
+input_logg - Surface gravity in the input catalog (with some adjustment made). [log(cm/s^2)]
+input_teff - Effective temperature in the input catalog (with some adjustment made). [K]
+input_fe_h - [Fe/H] in the input catalog (with some adjustment made). []
+input_alpha_m - [alpha/M] in the input catalog (with some adjustment made). []
+input_source - Source catalog for stellar parameters. []
+photocat - Source of astrometry and photometry. []
