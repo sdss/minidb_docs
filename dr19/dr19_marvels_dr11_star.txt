@@ -1,0 +1,55 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+starname - 
+twomass_name - 
+plate - 
+gsc_name - 
+tyc_name - 
+hip_name - 
+ra_final - 
+dec_final - 
+gsc_b - 
+gsc_v - 
+twomass_j - 
+twomass_h - 
+twomass_k - 
+sp1 - 
+sp2 - 
+rpm_log_g - 
+teff - 
+log_g - 
+feh - 
+gsc_b_e - 
+gsc_v_e - 
+twomass_j_e - 
+twomass_h_e - 
+twomass_k_e - 
+teff_e - 
+log_g_e - 
+feh_e - 
+epoch_0 - 
+ra_0 - 
+dec_0 - 
+ra_twomass - 
+dec_twomass - 
+gsc_pm_ra - 
+gsc_pm_dec - 
+gsc_pm_ra_e - 
+gsc_pm_dec_e - 
+tyc_b - 
+tyc_b_e - 
+tyc_v - 
+tyc_v_e - 
+hip_plx - 
+hip_plx_e - 
+hip_sptype - 
+twomass_designation - 
+tycho2_designation - 
+

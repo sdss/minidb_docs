@@ -1,0 +1,32 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+drpver - 
+mprocver - 
+mangaid - 
+minmjd - 
+maxmjd - 
+nvisits - 
+nplates - 
+ra - 
+dec - 
+epoch - 
+psfmag_1 - 
+psfmag_2 - 
+psfmag_3 - 
+psfmag_4 - 
+psfmag_5 - 
+mngtarg2 - 
+input_logg - 
+input_teff - 
+input_fe_h - 
+input_alpha_m - 
+input_source - 
+photocat - 
+

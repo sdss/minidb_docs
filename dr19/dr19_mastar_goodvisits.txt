@@ -1,0 +1,47 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+drpver - 
+mprocver - 
+mangaid - 
+plate - 
+ifudesign - 
+mjd - 
+ifura - 
+ifudec - 
+ra - 
+dec - 
+epoch - 
+psfmag_1 - 
+psfmag_2 - 
+psfmag_3 - 
+psfmag_4 - 
+psfmag_5 - 
+mngtarg2 - 
+exptime - 
+nexp_visit - 
+nvelgood - 
+heliov - 
+verr - 
+v_errcode - 
+heliov_visit - 
+verr_visit - 
+v_errcode_visit - 
+velvarflag - 
+dv_maxsig - 
+mjdqual - 
+bprperr_sp - 
+nexp_used - 
+s2n - 
+s2n10 - 
+badpixfrac - 
+coord_source - 
+photocat - 
+pk - 
+

@@ -1,0 +1,20 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+sdss_id - 
+catalogid - 
+version_id - 
+ra_sdss_id - 
+dec_sdss_id - 
+n_associated - 
+ra_catalogid - 
+dec_catalogid - 
+pk - 
+rank - 
+

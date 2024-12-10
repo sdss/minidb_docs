@@ -15,7 +15,7 @@ import warnings
 from sdssdb.peewee.sdss5db import database
 
 
-def create_docs_files():
+def create_docs_files(overwrite: bool = False):
 
     database.set_profile("tunnel_operations")
     schema = "minidb_dr19"
@@ -24,11 +24,47 @@ def create_docs_files():
     output_dir.mkdir(exist_ok=True)
 
     tables = database.get_tables(schema)
-    for table in tables:
-        fname = output_dir / (str(table) + ".txt")
+    legacy_tables = [
+        "catalogdb.sdss_id_flat",
+        "catalogdb.sdss_id_stacked",
+        "catalogdb.sdss_id_to_catalog",
+        "catalogdb.catalog_to_mangatarget",
+        "catalogdb.mangatarget",
+        "catalogdb.catalog_to_mastar_goodstars",
+        "catalogdb.mastar_goodstars",
+        "catalogdb.mastar_goodvisits",
+        "catalogdb.catalog_to_allstar_dr17_synspec_rev1",
+        "catalogdb.allstar_dr17_synspec_rev1",
+        "catalogdb.catalog_to_marvels_dr11_star",
+        "catalogdb.marvels_dr11_star",
+        "catalogdb.catalog_to_marvels_dr12_star",
+        "catalogdb.marvels_dr12_star",
+        "catalogdb.catalog_to_sdss_dr16_specobj",
+        "catalogdb.sdss_dr16_specobj",
+        "catalogdb.catalog_to_sdss_dr17_specobj",
+        "catalogdb.sdss_dr17_specobj",
+        "catalogdb.mangadapall",
+        "catalogdb.mangadrpall",
+    ]
+    for fqtn in tables + legacy_tables:
+        if "." in fqtn:
+            this_schema, table = fqtn.split(".")
+        else:
+            table = fqtn
+            this_schema = schema
+
+        # Small hack for legacy tables not yet in the minidb_dr19 schema but that
+        # will get the dr19_ prefix.
+        fname = output_dir / f"{table}.txt"
+        if not table.startswith("dr19_"):
+            fname = output_dir / f"dr19_{table}.txt"
+
         if os.path.exists(fname):
-            warnings.warn(f"{fname} already exists")
-            continue
+            if not overwrite:
+                warnings.warn(f"{fname} already exists", UserWarning)
+                continue
+            else:
+                os.remove(fname)
 
         f = open(fname, "w")
 
@@ -40,7 +76,7 @@ def create_docs_files():
         f.write("-------\n")
         f.write("\n")
 
-        columns = database.get_columns(str(table), schema)
+        columns = database.get_columns(str(table), this_schema)
         for column in columns:
             f.write(str(column.name) + " - \n")
 
@@ -49,4 +85,4 @@ def create_docs_files():
 
 
 if __name__ == "__main__":
-    create_docs_files()
+    create_docs_files(overwrite=False)
