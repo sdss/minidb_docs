@@ -1,7 +1,7 @@
 Summary
 -------
 
-
+List of versions associated with target selection cartons and robostategy runs.
 
 
 Columns
@@ -12,4 +12,3 @@ plan - Labeled human readable version []
 tag - Tag of target selection version used, https://github.com/sdss/target_selection/releases []
 target_selection - Flag, associated with target selection [boolean]
 robostrategy - Flag, associated with robostrategy run [boolean]
-
