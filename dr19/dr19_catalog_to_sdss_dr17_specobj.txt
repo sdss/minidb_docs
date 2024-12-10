@@ -1,17 +1,16 @@
 Summary
 -------
 
-
+The table contains the cross-match between the dr19_catalog targets and the dr19_sdss_dr17_specobj table.
 
 
 Columns
 -------
 
-catalogid - 
-target_id - 
-version_id - 
-distance - 
-best - 
-plan_id - 
-added_by_phase - 
-
+catalogid - The catalogid identifier in the dr19_catalog table.
+target_id - The primary key identifier in the dr19_sdss_dr17_specobj table.
+version_id - The internal version for the cross-match.
+distance - The distance between the catalog and target coordinates if best=F.
+best - Whether this is considered the best match between the catalog entry and dr19_sdss_dr17_specobj.
+plan_id - Identifier of the cross-matching plan used to generate this file.
+added_by_phase - The phase of the cross-match in which this target was added.
