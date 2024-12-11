@@ -7,147 +7,147 @@ Summary
 Columns
 -------
 
-file - 
-apogee_id - 
-target_id - 
-apstar_id - 
-aspcap_id - 
-telescope - 
-location_id - 
-field - 
-alt_id - 
-ra - 
-dec - 
-glon - 
-glat - 
-j - 
-j_err - 
-h - 
-h_err - 
-k - 
-k_err - 
-src_h - 
-wash_m - 
-wash_m_err - 
-wash_t2 - 
-wash_t2_err - 
-ddo51 - 
-ddo51_err - 
-irac_3_6 - 
-irac_3_6_err - 
-irac_4_5 - 
-irac_4_5_err - 
-irac_5_8 - 
-irac_5_8_err - 
-irac_8_0 - 
-irac_8_0_err - 
-wise_4_5 - 
-wise_4_5_err - 
-targ_4_5 - 
-targ_4_5_err - 
-wash_ddo51_giant_flag - 
-wash_ddo51_star_flag - 
-targ_pmra - 
-targ_pmdec - 
-targ_pm_src - 
-ak_targ - 
-ak_targ_method - 
-ak_wise - 
-sfd_ebv - 
-apogee_target1 - 
-apogee_target2 - 
-apogee2_target1 - 
-apogee2_target2 - 
-apogee2_target3 - 
-apogee2_target4 - 
-targflags - 
-survey - 
-programname - 
-nvisits - 
-snr - 
-snrev - 
-starflag - 
-starflags - 
-andflag - 
-andflags - 
-vhelio_avg - 
-vscatter - 
-verr - 
-rv_teff - 
-rv_logg - 
-rv_feh - 
-rv_alpha - 
-rv_carb - 
+file - apStar file name
+apogee_id - TMASS-STYLE object name
+target_id - target id 
+apstar_id - Unique ASPCAP identifier: apogee.[ns].[sc].RESULTS_VERS.LOC.STAR
+aspcap_id - Unique apStar identifier: apogee.[ns].[sc].APSTAR_VERS.LOC.STAR, where [ns] is for APOGEE North/South, [sc] is for survey/commissioning
+telescope - String representation of of telescope used for observation (apo25m, lco25m, apo1m)
+location_id - Field Location ID
+field - Field name
+alt_id - Alternate object name, if any
+ra - Right ascension (J2000) [degrees]
+dec - Declination (J2000) [degrees]
+glon - Galactic longitude [degrees]
+glat - Galactic latitude [degrees]
+j - 2MASS J (bad=99) [mag]
+j_err - Uncertainty in 2MASS J [mag]
+h - 2MASS H (bad=99) [mag]
+h_err - Uncertainty in 2MASS H [mag]
+k - 2MASS Ks (bad=99) [mag]
+k_err - Uncertainty in 2MASS Ks [mag]
+src_h - Source of H-Band photometry for targeting
+wash_m - Washington M mag
+wash_m_err - Washington M mag error
+wash_t2 - Washington T2 mag
+wash_t2_err - Washington T2 mag error
+ddo51 - DDO 51 mag
+ddo51_err - DDO 51 mag error
+irac_3_6 - IRAC 3.6micron mag
+irac_3_6_err - IRAC 3.6micron mag error
+irac_4_5 - IRAC 4.5micron mag
+irac_4_5_err - IRAC 4.5micron mag error
+irac_5_8 - IRAC 5.8 micron mag
+irac_5_8_err - IRAC 5.8 micron mag error
+irac_8_0 - IRAC 8.0 micron mag
+irac_8_0_err - IRAC 8.0 micron mag error
+wise_4_5 - WISE 4.5 micron mag
+wise_4_5_err - WISE 4.5 micron mag error
+targ_4_5 - 4.5 micron mag adopted for dereddening for targeting
+targ_4_5_err - 4.5 micron mag adopted for dereddening for targeting, error
+wash_ddo51_giant_flag - Flagged as a giant for targeting purposes based on Washington/DDO 51 photometry
+wash_ddo51_star_flag - Flagged as a starfor targeting purposes based on Washington/DDO 51 photometry
+targ_pmra - RA proper motion used for targeting
+targ_pmdec - DEC proper motion used for targeting
+targ_pm_src - Source of proper motion used for targeting
+ak_targ - K-band extinction adopted for targetting
+ak_targ_method - Method used to get targetting extinction
+ak_wise - WISE all-sky K-band extinction
+sfd_ebv - SFD reddening
+apogee_target1 - Bitwise OR of first APOGEE-1 target flag of all visits, see bitmask definitions.
+apogee_target2 - Bitwise OR of second APOGEE-1 target flag of all visits, see bitmask definitions
+apogee2_target1 - Bitwise OR of first APOGEE-2 target flag of all visits, see bitmask definitions.
+apogee2_target2 - Bitwise OR of second APOGEE-2 target flag of all visits, see bitmask definitions
+apogee2_target3 - Bitwise OR of third APOGEE-2 target flag of all visits, see bitmask definitions
+apogee2_target4 - Bitwise OR of fourth APOGEE-2 target flag of all visits, see bitmask definitions
+targflags - Verbose/text form of APOGEE-1 target flags
+survey - Survey-associated with object: apogee, apo1m, apogee-marvels, apogee2, apogee2-manga, manga-apogee2
+programname - Program name associated with object, when available
+nvisits - Number of visits into combined spectrum
+snr - S/N estimate
+snrev - Revised S/N estimate (avoiding persistence issues)
+starflag - Flag for star condition taken from bitwise OR of individual visits, see bitmask definitions
+starflags - Verbose/text form of STARFLAG
+andflag - Flag for star condition taken from bitwise AND of individual visits, see bitmask definitions
+andflags - Verbose/text form of ANDFLAG
+vhelio_avg - Average solar system barycentric radial velocity, weighted by S/N, using RVs determined from cross-correlation of individual spectra with combined spectrum [km/s]
+vscatter - Scatter of individual visit RVs around average [km/s]
+verr - Uncertainty in VHELIO_AVG from the S/N-weighted individual RVs [km/s]
+rv_teff - Teff of best-fit synthetic spectrum from RV fit (NOT ASPCAP!) [K]
+rv_logg - log g of best-fit synthetic spectrum from RV fit (NOT ASPCAP!) [log (cgs)]
+rv_feh - [Fe/H] of best-fit synthetic spectrum from RV fit (NOT ASPCAP!)
+rv_alpha - [alpha/M] of best-fit synthetic spectrum from RV fit (NOT ASPCAP!)
+rv_carb - [C/M] of best-fit synthetic spectrum from RV fit (NOT ASPCAP!)
 rv_chi2 - 
-rv_ccfwhm - 
-rv_autofwhm - 
-rv_flag - 
-n_components - 
-meanfib - 
-sigfib - 
-min_h - 
-max_h - 
-min_jk - 
-max_jk - 
-gaiaedr3_source_id - 
-gaiaedr3_parallax - 
-gaiaedr3_parallax_error - 
-gaiaedr3_pmra - 
-gaiaedr3_pmra_error - 
-gaiaedr3_pmdec - 
-gaiaedr3_pmdec_error - 
-gaiaedr3_phot_g_mean_mag - 
-gaiaedr3_phot_bp_mean_mag - 
-gaiaedr3_phot_rp_mean_mag - 
-gaiaedr3_dr2_radial_velocity - 
-gaiaedr3_dr2_radial_velocity_error - 
-gaiaedr3_r_med_geo - 
-gaiaedr3_r_lo_geo - 
-gaiaedr3_r_hi_geo - 
-gaiaedr3_r_med_photogeo - 
-gaiaedr3_r_lo_photogeo - 
-gaiaedr3_r_hi_photogeo - 
-aspcap_grid - 
-fparam_grid - 
-chi2_grid - 
-fparam - 
-fparam_cov - 
-aspcap_chi2 - 
-param - 
-param_cov - 
-paramflag - 
-aspcapflag - 
-aspcapflags - 
-frac_badpix - 
-frac_lowsnr - 
-frac_sigsky - 
-felem - 
-felem_err - 
-x_h - 
-x_h_err - 
-x_m - 
-x_m_err - 
-elem_chi2 - 
+rv_ccfwhm - FWHM of cross-correlation peak from combined vs best-match synthetic spectrum [km/s]
+rv_autofwhm - FWHM of auto-correlation of best-match synthetic spectrum [km/s]
+rv_flag - bitmask for RV determination
+n_components - Number of components identified from RV cross-correlations
+meanfib - Mean fiber number of the set of observations
+sigfib - Dispersion in fiber number
+min_h - Bright H limit for target selection for this object
+max_h - Faint H limit for target selection for this object
+min_jk - Blue (J-K) limit for target selection for this object
+max_jk - Red (J-K) limit for target selection for this object
+gaiaedr3_source_id - GAIA source ID from GAIA EDR3
+gaiaedr3_parallax - GAIA parallax from GAIA EDR3 [mas]
+gaiaedr3_parallax_error - GAIA parallax uncertainty GAIA EDR3 [mas]
+gaiaedr3_pmra - GAIA proper motion in RA from GAIA EDR3 [mas/yr]
+gaiaedr3_pmra_error - GAIA uncertainty in proper motion in RA from GAIA EDR3 [mas/yr]
+gaiaedr3_pmdec - GAIA proper motion in DEC from GAIA EDR3 [mas/yr]
+gaiaedr3_pmdec_error - GAIA uncdertainty in proper motion in DEC from GAIA EDR3 [mas/yr]
+gaiaedr3_phot_g_mean_mag - GAIA g mag from GAIA EDR3
+gaiaedr3_phot_bp_mean_mag - GAIA Bp mag from GAIA EDR3
+gaiaedr3_phot_rp_mean_mag - GAIA Rp mag from GAIA EDR3
+gaiaedr3_dr2_radial_velocity - GAIA radial velocity from GAIA EDR3 [km/s]
+gaiaedr3_dr2_radial_velocity_error - GAIA uncertainty in radial velocity from GAIA EDR3 [km/s]
+gaiaedr3_r_med_geo - GAIA Bailer-Jones GEO distance estimate r_est from GAIA EDR3 [pc]
+gaiaedr3_r_lo_geo - GAIA Bailer-Jones 16th GEO percentile distance r_lo from GAIA EDR3 [pc]
+gaiaedr3_r_hi_geo - GAIA Bailer-Jones 84th GEO percentile distance r_hi from GAIA EDR3 [pc]
+gaiaedr3_r_med_photogeo - GAIA Bailer-Jones PHOTOGEO distance estimate r_est from GAIA EDR3 [pc]
+gaiaedr3_r_lo_photogeo - GAIA Bailer-Jones 16th percentile PHOTOGEO distance r_lo from GAIA EDR3 [pc]
+gaiaedr3_r_hi_photogeo - GAIA Bailer-Jones 84th percentile PHOTOGEO distance r_hi from GAIA EDR3 [pc]
+aspcap_grid - ASPCAP grid of best-fitting spectrum
+fparam_grid - Raw FERRE parameters for each grid for which fit was performed (see GRIDS tag in HDU3 for grid names
+chi2_grid - CHI2 for each grid for which fit was performed (see GRIDS tag in HDU3 for grid names
+fparam - Output parameter array from ASPCAP stellar parameters fit, in order given in PARAM_SYMBOL array in HDU3: Teff, logg, vmicro, [M/H], [C/M], [N/M], [alpha/M], vsini/vmacro
+fparam_cov - Covariance of fitted parameters from FERRE
+aspcap_chi2 - Chi^2 from ASPCAP fit
+param - Empirically calibrated parameter array, using ASPCAP stellar parameters fit + calibrations, in order given in PARAM_SYMBOL array in HDU3: Teff, logg, vmicro, [M/H], [C/M], [N/M], [alpha/M], vsini/vmacro
+param_cov - Covariance of calibrated parameters, but with only diagonal elements from "external" uncertainty estimation
+paramflag - Individual parameter flag for ASPCAP analysis, see bitmask definitions
+aspcapflag - Flag for ASPCAP analysis, see bitmask definitions
+aspcapflags - Verbose/text form ASPCAPFLAG
+frac_badpix - Fraction of bad pixels in spectrum
+frac_lowsnr - Fraction of low S/N pixels in spectrum
+frac_sigsky - Fraction of SIG_SKYLINE pixels in spectrum
+felem - Output individual element array from ASPCAP stellar abundances fit, in order given in ELEM_SYMBOL array in HDU3
+felem_err - Uncertainty from FERRE in individual element abundances
+x_h - Empirically calibrated individual element array, using ASPCAP stellar abundances fit + calibrations, all expressed in logarithmic abundance relative to H ([X/H]), in order given in ELEM_SYMBOL array in HDU3
+x_h_err - Empirical uncertainties in [X/H], derived from repeat observations of stars
+x_m - Empirically calibrated individual element array, using ASPCAP stellar abundances fit + calibrations, all expressed in logarithmic abundance relative to M ([X/M]) in order given in ELEM_SYMBOL array in HDU3
+x_m_err - Empirical uncertainties in [X/M], derived from repeat observations of stars
+elem_chi2 - Chi^2 from ASPCAP fit of individual abundances
 elemfrac - 
-elemflag - 
-extratarg - 
-memberflag - 
-member - 
-x_h_spec - 
-x_m_spec - 
-teff - 
-teff_err - 
-logg - 
-logg_err - 
-m_h - 
-m_h_err - 
-alpha_m - 
-alpha_m_err - 
-vmicro - 
-vmacro - 
-vsini - 
-teff_spec - 
-logg_spec - 
+elemflag - Flags for analysis of individual abundances, see bitmask definitions
+extratarg - Bitmask which identifies main survey targets and other classes, see bitmask definitions.
+memberflag - memberflag missing missing missing 
+member - member missing missing missing 
+x_h_spec - x_h_spec missing missing missing 
+x_m_spec - x_m_spec missing missing missing 
+teff - Teff from ASPCAP analysis of combined spectrum (from PARAM) [K]
+teff_err - Teff uncertainty (from PARAM_COV) [K]
+logg - log g from ASPCAP analysis of combined spectrum (from PARAM) [log (cgs)]
+logg_err - log g uncertainty (from PARAM_COV) [log (cgs)]
+m_h - [Z/H] from ASPCAP analysis of combined spectrum (from PARAM) [dex]
+m_h_err - [Z/H] uncertainty (from PARAM_COV) [dex]
+alpha_m - [alpha/M] from ASPCAP analysis of combined spectrum (from PARAM) [dex]
+alpha_m_err - [alpha/M] uncertainty (from PARAM_COV) [dex]
+vmicro - microturbulent velocity (fit for dwarfs, f(log g) for giants) [(cgs)]
+vmacro - macroturbulent velocity (f(log Teff, [M/H]) for giants) [(cgs)]
+vsini - rotational+macroturbulent velocity (fit for dwarfs) [(cgs)]
+teff_spec - ASPCAP spectroscopic Teff (duplicated from FPARAM[0] for convenience) [K]
+logg_spec - ASPCAP spectroscopic surface gravity (duplicated from FPARAM[1] for convenience) [log (cgs)]
 c_fe - 
 c_fe_spec - 
 c_fe_err - 
@@ -204,42 +204,99 @@ tiii_fe -
 tiii_fe_spec - 
 tiii_fe_err - 
 tiii_fe_flag - 
-v_fe - 
+v_fe - c_fe - [C/Fe] from ASPCAP analysis of combined spectrum (from X_M)
+c_fe_spec - 
+c_fe_err - [C/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+c_fe_flag - [C/Fe] flag
+ci_fe - [Ci/Fe] from ASPCAP analysis of combined spectrum (from X_M)
+ci_fe_spec - 
+ci_fe_err - [Ci/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+ci_fe_flag - [Ci/Fe] flag
+n_fe - [N/Fe] from ASPCAP analysis of combined spectrum (from X_M)
+n_fe_spec - 
+n_fe_err - [N/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+n_fe_flag - [N/Fe] flag
+o_fe - [O/Fe] from ASPCAP analysis of combined spectrum (from X_M)
+o_fe_spec - 
+o_fe_err - [O/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+o_fe_flag - [O/Fe] flag
+na_fe - [Na/Fe] from ASPCAP analysis of combined spectrum (from X_M)
+na_fe_spec - 
+na_fe_err - [Na/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+na_fe_flag - [Na/Fe] flag
+mg_fe - [Mg/Fe] from ASPCAP analysis of combined spectrum (from X_M)
+mg_fe_spec - 
+mg_fe_err - [Mg/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+mg_fe_flag - [Mg/Fe] flag
+al_fe - [Al/Fe] from ASPCAP analysis of combined spectrum (from X_M)
+al_fe_spec - 
+al_fe_err - [Al/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+al_fe_flag - [Al/Fe] flag
+si_fe - [Si/Fe] from ASPCAP analysis of combined spectrum (from X_M)
+si_fe_spec - 
+si_fe_err - [Si/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+si_fe_flag - [Si/Fe] flag
+p_fe - [P/Fe] from ASPCAP analysis of combined spectrum (from X_M)
+p_fe_spec - 
+p_fe_err - [P/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+p_fe_flag - [P/Fe] flag
+s_fe - [S/Fe] from ASPCAP analysis of combined spectrum (from X_M)
+s_fe_spec - 
+s_fe_err - [S/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+s_fe_flag - [S/Fe] flag
+k_fe - [K/Fe] from ASPCAP analysis of combined spectrum (from X_M)
+k_fe_spec - 
+k_fe_err - [K/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+k_fe_flag - [K/Fe] flag
+ca_fe - [Ca/Fe] from ASPCAP analysis of combined spectrum (from X_M)
+ca_fe_spec - 
+ca_fe_err - [Ca/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+ca_fe_flag - [Ca/Fe] flag
+ti_fe - [Ti/Fe] from ASPCAP analysis of combined spectrum (from X_M)
+ti_fe_spec - 
+ti_fe_err - [Ti/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+ti_fe_flag - [Ti/Fe] flag
+tiii_fe - [TiII/Fe] from ASPCAP analysis of combined spectrum (from X_M)
+tiii_fe_spec - 
+tiii_fe_err - [TiII/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+tiii_fe_flag - [TiII/Fe] flag
+v_fe - [V/Fe] from ASPCAP analysis of combined spectrum (from X_M)
 v_fe_spec - 
-v_fe_err - 
-v_fe_flag - 
-cr_fe - 
+v_fe_err - [V/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+v_fe_flag - [V/Fe] flag
+cr_fe - [Cr/Fe] from ASPCAP analysis of combined spectrum (from X_M)
 cr_fe_spec - 
-cr_fe_err - 
-cr_fe_flag - 
-mn_fe - 
+cr_fe_err - [Cr/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+cr_fe_flag - [Cr/Fe] flag
+mn_fe - [Mn/Fe] from ASPCAP analysis of combined spectrum (from X_M)
 mn_fe_spec - 
-mn_fe_err - 
-mn_fe_flag - 
-fe_h - 
+mn_fe_err - [Mn/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+mn_fe_flag - [Mn/Fe] flag
+fe_h - [Fe/H] from ASPCAP analysis of combined spectrum (from X_M)
 fe_h_spec - 
-fe_h_err - 
-fe_h_flag - 
-co_fe - 
+fe_h_err - [Fe/H] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+fe_h_flag - [Fe/H] flag
+co_fe - [Co/Fe] from ASPCAP analysis of combined spectrum (from X_M)
 co_fe_spec - 
-co_fe_err - 
-co_fe_flag - 
-ni_fe - 
+co_fe_err - [Co/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+co_fe_flag - [Co/Fe] flag
+ni_fe - [Ni/Fe] from ASPCAP analysis of combined spectrum (from X_M)
 ni_fe_spec - 
-ni_fe_err - 
-ni_fe_flag - 
-cu_fe - 
+ni_fe_err - [Ni/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+ni_fe_flag - [Ni/Fe] flag
+cu_fe - [Cu/Fe] from ASPCAP analysis of combined spectrum (from X_M)
 cu_fe_spec - 
-cu_fe_err - 
-cu_fe_flag - 
-ce_fe - 
+cu_fe_err - [Cu/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+cu_fe_flag - [Cu/Fe] flag
+ce_fe - [Ce/Fe] from ASPCAP analysis of combined spectrum (from X_M)
 ce_fe_spec - 
-ce_fe_err - 
-ce_fe_flag - 
-yb_fe - 
+ce_fe_err - [Ce/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+ce_fe_flag - [Ce/Fe] flag
+yb_fe - [Yb/Fe] from ASPCAP analysis of combined spectrum (from X_M)
 yb_fe_spec - 
-yb_fe_err - 
-yb_fe_flag - 
-visit_pk - 
-twomass_designation - 
+yb_fe_err - [Yb/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M)
+yb_fe_flag - [Yb/Fe] flag
+visit_pk - Index of visits (used in combined spectrum) in allVisit file
+twomass_designation - Unique idetni from 2MASS
+
 
