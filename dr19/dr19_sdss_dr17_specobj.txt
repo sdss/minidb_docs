@@ -201,3 +201,5 @@ class_person - Visual-inspection classification (0=not inspected or unknown, 1=s
 comments_person - Visual-inspection comments []
 htmid - 20 deep Hierarchical Triangular Mesh ID []
 loadversion - Load Version []
+bestobjid_bigint - integer representation of bestobjid []
+fluxobjid_bigint - integer representation of fluxobjid []
