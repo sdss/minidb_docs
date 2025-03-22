@@ -1,0 +1,27 @@
+Summary
+-------
+
+This table enables small modifications to be made to the set of reverberation mapping (RM) targets selected for observation in SDSS-V. The dr19_bhm_rm_tweaks table allows identification of i) confirmed QSOs which were observed in plate mode that should be preferentially targeted in forward-looking FPS mode observations, and ii) reject candidates which the plate-mode observations have revealed to be unsuitable for continued RM studies.
+
+Columns
+-------
+
+rm_field_name - Human readable name of the field (e.g. 'XMM-LSS', 'COSMOS', 'SDSS-RM')
+plate - PLATEID of the SDSS-V spectrum from which the visual inspection information was derived
+fiberid - FIBERID of the SDSS-V spectrum from which the visual inspection information was derived
+mjd - MJD of the SDSS-V spectrum from which the visual inspection information was derived
+catalogid - SDSS-V catalogid from version '0.1.0' of the crossmatch
+ra - PLUG_RA of the SDSS-V spectrum from which the visual inspection information was derived
+dec - PLUG_DEC of the SDSS-V spectrum from which the visual inspection information was derived
+rm_suitability - Flag indicating if this target is well suited to continued RM observation. Known values are: -1 - unconfirmed (but might still be a good QSO target, e.g. due to unplugged fiber, or unverified visual inspection); 0 - target is probably unsuitable for RM, do not observe in the future; 1 - target is probably suitable for RM
+in_plate - flag indicating if this target was included in a plate design during SDSS-V plate observations
+firstcarton - 'firstcarton' that selected this target for observation in the SDSS-V plate-mode operations phase
+mag_u - optical magnitude of the target (u-band) [mag]
+mag_g -  optical magnitude of the target (g-band) [mag]
+mag_r -  optical magnitude of the target (r-band) [mag]
+mag_i -  optical magnitude of the target (i-band) [mag]
+mag_z -  optical magnitude of the target (z-band) [mag]
+gaia_g -  optical magnitude of the target (Gaia G-band) [mag]
+date_set - Human readable date string, e.g. '25-Nov-2020' that indicates roughly when this entry was added
+pkey - primary key of the table entry
+
