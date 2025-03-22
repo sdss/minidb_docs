@@ -1,0 +1,15 @@
+Summary
+-------
+
+Connects a design to a given field within a version of the survey. Sets the placement of the design in the overall exposure sequence for that field.
+
+
+Columns
+-------
+
+pk - The primary key. A sequential identifier.
+design_id - The primary key of the design in the dr19_design table.
+field_pk - The primary key of the field in the dr19_field table.
+exposure - The 0-indexed exposure number in the lunation sequence for the field.
+field_exposure - The 0-indexed overall exposure number in the sequence for the field.
+
