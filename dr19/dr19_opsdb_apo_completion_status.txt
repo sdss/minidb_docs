@@ -1,0 +1,12 @@
+Summary
+-------
+
+The table complains completion statuses referenced in design_to_status
+
+
+Columns
+-------
+
+pk - Unique identifier
+label - Description of status ('not started', 'started', 'done')
+

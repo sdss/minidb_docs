@@ -1,0 +1,46 @@
+Summary
+-------
+
+Summary file of all visits of stars included in MaNGA Stellar Libary.
+
+
+Columns
+-------
+
+drpver - Version of mangadrp. []
+mprocver - Version of mastarproc. []
+mangaid - MaNGA-ID for the object. []
+plate - Plate ID. []
+ifudesign - IFUDESIGN for the fiber bundle. []
+mjd - Modified Julian Date for this visit. []
+ifura - Right Ascension of the center of the IFU. [deg]
+ifudec - Declination of the center of the IFU. [deg]
+ra - Right Ascension for this object at the time given by the EPOCH column (Equinox J2000). [deg]
+dec - Declination for this object at the time given by the EPOCH column (Equinox J2000). [deg]
+epoch - Epoch of the astrometry (which is approximate for some catalogs). []
+psfmag_1 - PSF magnitude in the first band with the filter correspondence depending on PHOTOCAT. [mag]
+psfmag_2 - PSF magnitude in the second band with the filter correspondence depending on PHOTOCAT. [mag]
+psfmag_3 - PSF magnitude in the third band with the filter correspondence depending on PHOTOCAT. [mag]
+psfmag_4 - PSF magnitude in the fourth band with the filter correspondence depending on PHOTOCAT. [mag]
+psfmag_5 - PSF magnitude in the fifth band with the filter correspondence depending on PHOTOCAT. [mag]
+mngtarg2 - MANGA_TARGET2 targeting bitmask. []
+exptime - Median exposure time for all exposures on this visit. [sec]
+nexp_visit - Total number of exposures during this visit. This column was named 'NEXP' in DR15/16. []
+nvelgood - Number of exposures (from all visits of this PLATE-IFUDESIGN) with good velocity measurements. []
+heliov - Median heliocentric velocity of all exposures on all visits that yield good velocity measurements. This is used to shift the spectra to the rest frame. [km/s]
+verr - 1-sigma uncertainty of the heliocentric velocity [km/s]
+v_errcode - Error code for HELIOV. Zero is good, nonzero is bad. []
+heliov_visit - Median heliocentric velocity of good exposures from only this visit, rather than from all visits. [km/s]
+verr_visit - 1-sigma uncertainty of HELIOV_VISIT. [km/s]
+v_errcode_visit - Error code for HELIOV_VISIT. Zero is good, nonzero is bad. []
+velvarflag - Flag indicating the significant variation of the heliocentric velocity from visit to visit. A value of 1 means the variation is beyond 3-sigma between at least two of the visits. A value of 0 means all variations between pairs of visits are less than 3-sigma. []
+dv_maxsig - Maximum significance in velocity variation between pairs of visits. []
+mjdqual - Spectral quality bitmask (MASTAR_QUAL). []
+bprperr_sp - Uncertainty in the synthetic Bp-Rp color derived from the spectra. []
+nexp_used - Number of exposures used in constructing the visit spectrum. []
+s2n - Median signal-to-noise ratio per pixel of this visit spectrum. []
+s2n10 - Top 10-th percentile signal-to-noise ratio per pixel of this visit spectrum. []
+badpixfrac - Fraction of bad pixels (those with inverse variance being zero.) []
+coord_source - Source of astrometry. []
+photocat - Source of photometry. []
+pk - Primary key. Sequential identifier for this table. []

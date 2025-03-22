@@ -1,0 +1,14 @@
+Summary
+-------
+
+The table contains signal-to-noise estimates for each 'camera', for each exposure. APOGEE is treated as one camera, while R1/2 and B1/2 are treated separately.
+
+
+Columns
+-------
+
+pk - Unique identifier
+exposure_pk - Unique identifier in the exposure table
+camera_pk - Unique identifier in the camera table
+sn2 - Signal-to-noise squared estimate from on-mountain quick reduction pipelines
+comment - An optional comment
