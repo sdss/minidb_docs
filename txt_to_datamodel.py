@@ -94,7 +94,7 @@ class Doc:
                 elif row == "short":
                     value = "MOS Target table: %s" % table
                 elif row == "description":
-                    if 'header' in summary: value = ": %(header)s" % summary
+                    if 'header' in summary: value = "%(header)s" % summary
                 elif row == "environments":
                     value = ["MOS_TARGET"]
                 elif row == "surveys":
@@ -191,10 +191,8 @@ class Doc:
         for file in glob.glob(self.release + "_*.txt"):
             self.file_txt_to_datamodel(file = file)
 
-"""
 doc = Doc()
 doc.all_txt_to_datamodel()
-"""
 
 """
 doc = Doc()

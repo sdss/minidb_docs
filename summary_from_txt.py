@@ -71,11 +71,8 @@ def summary_from_txt(summary_file = None, table_name = None):
 
             column_name, column_description, column_units = match_col.groups()
             column_description = column_description.strip()
-            
             if column_description == "":
                 column_description = None
-            elif column_description.startswith(": "):
-                column_description = column_description.lstrip(": ")
                                 
             data['columns'][column_name] = {
                 'description': column_description,
