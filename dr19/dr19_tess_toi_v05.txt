@@ -1,0 +1,19 @@
+Summary
+-------
+
+This catalog contains targets that recieved the 2 minute cadence during the TESS Mission, are TESS Objects of Interest (TOI) or Community TESS Objects of Interest (CTOI). The contents of this catalog were derived from the MIT TESS website (https://tess.mit.edu/public/target_lists/target_lists.html) and the ExoFOP website https://exofop.ipac.caltech.edu/tess/index.php. These targets were updated on 2020-11-24.
+
+
+Columns
+-------
+
+ticid - TESS Input Catalog (TIC) ID []
+target_type - Type of target. Options: 2min = 2 minute cadence, exo_TOI = TOI, and exo_CTOI = CTOI []
+toi - TESS Object of Interest ID []
+tess_disposition - TESS Team Dispositon Options: EB = Eclipsing Binary, KP = Known Planet, PC = Planet Candidate, O = Other, or blank []
+tfopwg_disposition - TESS Follow-up Observing Program (TFOP) Working Group Disposition Options: APC = Ambiguous Planet Candidate, CP = Confirmed Planet, FA = False Alarm, FP = False Positive, KP = Known Planet, PC = Planet Candidate or blank []
+ctoi - Community Tareget of Interest ID []
+user_disposition - Initial Community User Disposition []
+num_sectors - The total number of sectors that this object was observed on as of the catalog date []
+pkey - Primary Key []
+
