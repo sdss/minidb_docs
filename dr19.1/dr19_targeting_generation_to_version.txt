@@ -1,0 +1,12 @@
+Summary
+-------
+
+A 'targeting_generation' describes a collection of versioned cartons, together with their robostrategy control parameters. This is a convenient way to describe the specific set of carton-versions that were used (and the way that they were treated) within any particular run of robostrategy.  The dr19_targeting_generation_to_version table describes a one-to-many relationship, connecting each robostrategy run to one targeting_generation. In general, a single target_generation can be used my more than one robostrategy run.  Taken together, the dr19_targeting_generation, dr19_targeting_generation_to_carton and dr19_targeting_generation_to_version tables duplicate, in a database form, the robostrategy carton configuration information available via the rsconfig product (https://github.com/sdss/rsconfig).  
+
+Columns
+-------
+
+generation_pk - primary key of an entry in the dr19_targeting_generation table
+version_pk -  primary key of an entry in the dr19_targetdb_version table, which lists the robostrategy run version ('plan' and 'tag')
+pk - primary key for this table entry
+
