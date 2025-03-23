@@ -1,0 +1,23 @@
+Summary
+-------
+
+This table stores magnitude information for a target. Optical magnitudes that are not selected from SDSS photometry have been converted to the SDSS system.  Entries in this revised_magnitude table only exist if there was an issue with the values in the original magnitude table. Therefore: if a carton_to_target_pk exists in this table, the values in this table should be used instead.
+
+Columns
+-------
+
+revised_magnitude_pk - The primary key. A sequential identifier.
+carton_to_target_pk - The primary key of the target in the dr19_carton_to_target table.
+g - The optical g magnitude, AB. [mag]
+r - The optical r magnitude, AB. [mag]
+i - The optical i magnitude, AB. [mag]
+z - The optical z magnitude, AB. [mag]
+gaia_g - The Gaia G magnitude, Vega. [mag]
+bp - The Gaia BP magnitude, Vega. [mag]
+rp - The Gaia RP magnitude, Vega. [mag]
+h - The IR H magnitude, Vega. [mag]
+j -  The IR J magnitude, Vega. [mag]
+k -  The IR K magnitude, Vega. [mag]
+optical_prov - The providence/origin of the optical magnitudes.
+
+
