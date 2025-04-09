@@ -18,7 +18,7 @@ from update_create_table import update_create_table
 
 def run_all():
 
-    files = glob.glob("dr19_*.txt")
+    files = glob.glob("dr19/dr19_*.txt")
 
     output_dir = pathlib.Path(__file__).parent / "dr19"
     output_dir.mkdir(exist_ok=True)
@@ -33,7 +33,7 @@ def run_all():
 
     for fn in files:
         name = os.path.basename(fn)
-        table = "minidb." + name.split(".")[0]
+        table = "minidb_dr19." + name.split(".")[0]
 
         try:
             print(fn)
