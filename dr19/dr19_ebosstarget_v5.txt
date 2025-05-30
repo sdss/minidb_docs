@@ -1,8 +1,8 @@
 Summary
 -------
 
- A catalog of targets, selected from SDSS+WISE imaging that were considered for observation in the 
- SDSS-IV/eBOSS project, including spectrophotometric starts and candidate QSOs.
+ A catalog of targets, selected from SDSS+WISE imaging that were considered for observation in the SDSS-IV/eBOSS project, including spectrophotometric starts and candidate QSOs.
+
  This catalogue is a data product of the ebosstarget target selection software, version "v5_0".
 
 
@@ -108,4 +108,3 @@ w2_nanomaggies_ivar - Inverse variance of WISE AllSky flux of the object, W2-ban
 has_wise_phot - True if WISE photometry is available for this object []
 objid_targeting - Object ID of target []
 pk - primary key for entry in database table []
-

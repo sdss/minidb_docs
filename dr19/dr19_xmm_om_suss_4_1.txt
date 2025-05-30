@@ -1,7 +1,9 @@
 Summary
 -------
 
-The 2018 release of the XMM OM Serendipitous Ultraviolet Source Survey (XMM-SUSS4.1) Catalog. For full details, please see https://heasarc.gsfc.nasa.gov/W3Browse/all/xmmomsuob.html and the original catalog paper (Page et al. 2012; https://academic.oup.com/mnras/article/426/2/903/976665)
+The 2018 release of the XMM OM Serendipitous Ultraviolet Source Survey (XMM-SUSS4.1) Catalog.
+
+For full details, please see https://heasarc.gsfc.nasa.gov/W3Browse/all/xmmomsuob.html and the original catalog paper (Page et al. 2012; https://academic.oup.com/mnras/article/426/2/903/976665)
 
 
 
@@ -59,7 +61,7 @@ v_ab_flux_err - Error in V AB flux [erg/s/cm^2/A]
 uvw2_ab_mag - UVW2 AB magnitude [mag]
 uvw2_ab_mag_err - Error in UVW2 AB magnitude [mag]
 uvm2_ab_mag - UVM2 AB magnitude [mag]
-uvm2_ab_mag_err - Error in UVM2 AB magnitude [mag] 
+uvm2_ab_mag_err - Error in UVM2 AB magnitude [mag]
 uvw1_ab_mag - UVW1 AB magnitude [mag]
 uvw1_ab_mag_err - Error in UVW1 AB magnitude [mag]
 u_ab_mag - U AB magnitude [mag]
@@ -123,4 +125,3 @@ u_sky_image - Flag for stakcked sky images in U []
 b_sky_image - Flag for stakcked sky images in B []
 v_sky_image - Flag for stakcked sky images in V []
 pk - Primary key []
-

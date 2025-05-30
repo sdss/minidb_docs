@@ -1,7 +1,7 @@
 Summary
 -------
 
-Summary file of MaNGA Stellar Libary.
+Summary file of MaNGA Stellar Library.
 
 
 Columns

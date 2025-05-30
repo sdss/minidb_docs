@@ -1,7 +1,7 @@
 Summary
 -------
 
-The table stores the results of the cross-match used for dr19 targeting. All entries in this table are expected to be unique physical objects drawn from one or more parent catalogues. The dr19_catalog_to_ tables provide the relationship between dr19_catalog objects and their parent catalogue counterparts.
+The results of the cross-match used for dr19 targeting. Entries in this table are expected to be unique physical objects drawn from one or more parent catalogues. The dr19_catalog_to_ tables provide the relationships to their parent catalogue counterparts.
 
 
 Columns

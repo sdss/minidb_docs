@@ -1,8 +1,7 @@
 Summary
 -------
+
 Pre-main sequence (PMS) catalogue from Zari+2018.
-
-
 
 Columns
 -------
@@ -28,5 +27,3 @@ ngal - Number of good observation AL (astrometric_n_good_obs_al) []
 ag - Extinction in G-band (A_G) [mag]
 bp_rp - Colour excess in BP-RP [mag]
 uwe - Unit Weight Error, as defined in Lindegren et al., 2018A&A...616A...2L []
-                                    
-

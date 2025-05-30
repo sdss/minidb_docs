@@ -1,17 +1,9 @@
 Summary
 -------
-Contains merged sources for every field in the SuperCOSMOS Science Archive (SSA).
-It consists of data from digitised sky survey plates taken with the UK Schmidt
-telescope (UKST), the ESO Schmidt, and the Palomar Schmidt.
-Each field within the SSA is covered by four plates in passbands B, R and
-I with R being covered twice at different times. This results in
-four-plate multi-colour, multi-epoch data which are merged into a single
-source catalogue for general science exploitation. This table contains the
-associated merged records created from the records in table Detection,
-along with a full astrometric solution (including proper motions) computed
-from the available position measures. The most useful subset of image
-morphological descriptors are also propagated into this table for ease of
-use.
+
+Contains merged sources for every field in the SuperCOSMOS Science Archive (SSA). It consists of data from digitised sky survey plates taken with the UK Schmidt telescope (UKST), the ESO Schmidt, and the Palomar Schmidt.
+
+Each field within the SSA is covered by four plates in passbands B, R and I with R being covered twice at different times. This results in four-plate multi-colour, multi-epoch data which are merged into a single source catalogue for general science exploitation. This table contains the associated merged records created from the records in table Detection, along with a full astrometric solution (including proper motions) computed from the available position measures. The most useful subset of image morphological descriptors are also propagated into this table for ease of use.
 
 Derived from http://ssa.roe.ac.uk/www/SSA_TABLE_SourceSchema.html#Source
 
@@ -75,4 +67,3 @@ l - The Galactic longitude of the source [deg]
 b - The Galactic latitude of the source [deg]
 d - The great-circle distance of the source from the Galactic centre [deg]
 ebmv - The estimated foreground reddening at this position from Schlegel et al. (1998) [mag]
-

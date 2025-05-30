@@ -594,7 +594,7 @@ ALTER TABLE minidb_dr19.dr19_allwise OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_assignment (
 ----------------------------------------------------------------------
---/H This table stores the assignment of a given target in a carton to a fiber of a given instrument. A collection of assignments are included within a design, which is one configuartion of the robots for an exposure.
+--/H This table stores the assignment of a given target in a carton to a fiber of a given instrument. A collection of assignments are included within a design, which is one configuration of the robots for an exposure.
 ----------------------------------------------------------------------
     pk integer NOT NULL, --/D The primary key. A sequential identifier.
     carton_to_target_pk bigint, --/D The primary key of the carton_to_target in the dr19_carton_to_target table.
@@ -612,7 +612,7 @@ ALTER TABLE minidb_dr19.dr19_assignment OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_best_brightest (
 ----------------------------------------------------------------------
---/H Catalog from Kevin Schlaufman for the selection of bright metal-poor stars from the method of Schlaufman and Casey (2014): https://ui.adsabs.harvard.edu/abs/2014ApJ...797...13S/abstract. WISE values from WHICH CATALOG, 2MASS values from 2MASS point source catalog.
+--/H Catalog for the selection of bright metal-poor stars from the method of Schlaufman and Casey (2014): https://ui.adsabs.harvard.edu/abs/2014ApJ...797...13S/abstract. WISE values from WHICH CATALOG, 2MASS values from 2MASS point source catalog.
 ----------------------------------------------------------------------
     designation character varying(19), --/D 2MASS Designation 
     ra_1 double precision, --/U degrees --/D right ascension from the AllWISE catalog 
@@ -661,10 +661,11 @@ ALTER TABLE minidb_dr19.dr19_best_brightest OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_bhm_csc (
 ----------------------------------------------------------------------
---/H Chandra Source Catalogue version 2.0 (CSC2) sources that have been
---/T matched (separately) to the PanSTARRS-1 and 2MASS catalogs.  This <br>
---/T version of the CSC2 catalog informed early (plate era) SDSS-V <br>
---/T observations but was then replaced by updated versions.
+--/H Chandra Source Catalogue version 2.0 (CSC2) sources.
+--/T Chandra Source Catalogue version 2.0 (CSC2) sources that have been matched
+--/T (separately) to the PanSTARRS-1 and 2MASS catalogs.  This version of the CSC2
+--/T catalog informed early (plate era) SDSS-V observations but was then replaced by
+--/T updated versions.
 ----------------------------------------------------------------------
     pk bigint NOT NULL, --/D primary key of this table entry
     csc_version text, --/D Always equal to 'CSC2stub1'
@@ -688,17 +689,15 @@ ALTER TABLE minidb_dr19.dr19_bhm_csc OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_bhm_csc_v2 (
 ----------------------------------------------------------------------
---/H CSC2 X-ray sources that have been matched
---/T separately to PanSTARRS-1, Gaia DR2, and 2MASS catalogs, using the programs NWAY <br>
---/T (Johannes Buchner; see: Salvato 2018, MN, 473, 4937) and Xmatch (Arnold Rots;
---/T see: <br>
+--/H CSC2 X-ray sources.
+--/T This catalogue contains CSC2 X-ray sources that have been matched separately to
+--/T PanSTARRS-1, Gaia DR2, and 2MASS catalogs, using the programs NWAY (Johannes
+--/T Buchner; see: Salvato 2018, MN, 473, 4937) and Xmatch (Arnold Rots; see:
 --/T https://cxc.cfa.harvard.edu/csc/csc_crossmatches.html). Both are based on the
---/T Bayesian spatial <br>
---/T cross-matching algorithm developed by Budavari & Szalay (2008, ApJ 679, 301),
---/T but Xmatch <br>
---/T has the added capability of taking source extent and/or PSF into account. <br>
---/T Created March 2021 by Paul Green, Dong-Woo Kim, Arnold Rots and the CXC CatSci
---/T group.
+--/T Bayesian spatial cross-matching algorithm developed by Budavari & Szalay (2008,
+--/T ApJ 679, 301), but Xmatch has the added capability of taking source extent
+--/T and/or PSF into account. Created March 2021 by Paul Green, Dong-Woo Kim, Arnold
+--/T Rots and the CXC CatSci group.
 ----------------------------------------------------------------------
     cxoid text, --/D CSC2 Chandra ID
     xra double precision, --/U deg --/D RA of X-ray source from CSC2 
@@ -780,13 +779,13 @@ ALTER TABLE minidb_dr19.dr19_bhm_efeds_veto OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_bhm_rm_tweaks (
 ----------------------------------------------------------------------
---/H This table enables small modifications to be made to the set of
---/T reverberation mapping (RM) targets selected for observation in SDSS-V. <br>
---/T The dr19_bhm_rm_tweaks table allows identification of i) confirmed <br>
---/T QSOs which were observed in plate mode that should be preferentially <br>
---/T targeted in forward-looking FPS mode observations, and ii) reject candidates <br>
---/T which the plate-mode observations have revealed to be unsuitable for <br>
---/T continued RM studies.
+--/H Reverberation mapping (RM) targets for SDSS-V.
+--/T This table enables small modifications to be made to the set of reverberation
+--/T mapping (RM) targets selected for observation in SDSS-V. The dr19_bhm_rm_tweaks
+--/T table allows identification of confirmed QSOs which were observed in plate mode
+--/T that should be preferentially targeted in forward-looking FPS mode observations,
+--/T and reject candidates which the plate-mode observations have revealed to be
+--/T unsuitable for continued RM studies.
 ----------------------------------------------------------------------
     rm_field_name character(12), --/D Human readable name of the field (e.g. 'XMM-LSS', 'COSMOS', 'SDSS-RM')
     plate integer, --/D PLATEID of the SDSS-V spectrum from which the visual inspection information was derived
@@ -817,7 +816,10 @@ ALTER TABLE minidb_dr19.dr19_bhm_rm_tweaks OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_bhm_rm_v0 (
 ----------------------------------------------------------------------
---/H Parent sample for the RM project, used to select confirmed and candidate quasar targets for the BHM-RM Program in SDSS-V. For more details please see Yang and Shen, (2022, https://ui.adsabs.harvard.edu/abs/2022arXiv220608989Y/abstract).
+--/H Parent sample for the RM project.
+--/T Used to select confirmed and candidate quasar targets for the BHM-RM Program in
+--/T SDSS-V. For more details please see Yang and Shen, (2022,
+--/T https://ui.adsabs.harvard.edu/abs/2022arXiv220608989Y/abstract). <br>
 --/T This table contains all photometric objects detected in the COSMOS, SDSS-RM,
 --/T XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields., within a circular area of 10
 --/T degree^2 from the field center. <br>
@@ -1107,7 +1109,10 @@ ALTER TABLE minidb_dr19.dr19_bhm_rm_v0 OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_bhm_rm_v0_2 (
 ----------------------------------------------------------------------
---/H Parent sample for the RM project, used to select confirmed and candidate quasar targets for the BHM-RM Program in SDSS-V. For more details please see Yang and Shen, (2022, https://ui.adsabs.harvard.edu/abs/2022arXiv220608989Y/abstract).
+--/H Parent sample for the RM project.
+--/T Used to select confirmed and candidate quasar targets for the BHM-RM Program in
+--/T SDSS-V. For more details please see Yang and Shen, (2022,
+--/T https://ui.adsabs.harvard.edu/abs/2022arXiv220608989Y/abstract). <br>
 --/T This table contains all photometric objects detected in the COSMOS, SDSS-RM,
 --/T XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields., within a circular area of 10
 --/T degree^2 from the field center. <br>
@@ -1398,19 +1403,17 @@ ALTER TABLE minidb_dr19.dr19_bhm_rm_v0_2 OWNER TO postgres;
 CREATE TABLE minidb_dr19.dr19_bhm_spiders_agn_superset (
 ----------------------------------------------------------------------
 --/H One of several tables describing optical/IR counterparts to eROSITA
---/T X-ray sources identified via various methods.  These tables contain a <br>
---/T superset of potential targets from which the SDSS-V spectroscopic <br>
---/T targets were drawn.  The dr19_bhm_spiders_agn_superset table includes <br>
---/T is expected to be dominated by Active Galactic Nuclei (AGN) <br>
---/T but should also include a significant minority of galaxies, stars and <br>
---/T other Galactic sources. <br>
---/T Each row corresponds to one possible match between an X-ray source and <br>
---/T a potential optical/IR counterpart.  The X-ray columns (ero_*) record <br>
---/T the eROSITA information known at the time of target selection and may <br>
---/T differ from publicly available eROSITA catalogs. The <br>
---/T dr19_bhm_spiders_*_superset tables are derived from <br>
---/T eROSITA observations of the eROSITA Final <br>
---/T Equatorial Depth performance verification field ('eFEDS').
+--/T X-ray sources identified via various methods. <br>
+--/T These tables contain a superset of potential targets from which the SDSS-V
+--/T spectroscopic targets were drawn.  The dr19_bhm_spiders_agn_superset table
+--/T includes is expected to be dominated by Active Galactic Nuclei (AGN) but should
+--/T also include a significant minority of galaxies, stars and other Galactic
+--/T sources. Each row corresponds to one possible match between an X-ray source and
+--/T a potential optical/IR counterpart.  The X-ray columns (ero_*) record the
+--/T eROSITA information known at the time of target selection and may differ from
+--/T publicly available eROSITA catalogs. The dr19_bhm_spiders_*_superset tables are
+--/T derived from eROSITA observations of the eROSITA Final Equatorial Depth
+--/T performance verification field ('eFEDS').
 ----------------------------------------------------------------------
     pk bigint NOT NULL, --/D primary key of table entry
     ero_version text, --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc
@@ -1464,17 +1467,16 @@ ALTER TABLE minidb_dr19.dr19_bhm_spiders_agn_superset OWNER TO postgres;
 CREATE TABLE minidb_dr19.dr19_bhm_spiders_clusters_superset (
 ----------------------------------------------------------------------
 --/H One of several tables describing optical/IR counterparts to eROSITA
---/T X-ray sources identified via various methods.  These tables contain a <br>
---/T superset of potential targets from which the SDSS-V spectroscopic <br>
---/T targets were drawn.  The dr19_bhm_spiders_clusters_superset table includes <br>
---/T counterparts selected via algorithms optimised to find clusters of galaxies. <br>
---/T Each row corresponds to one possible match between an X-ray source and <br>
---/T a potential optical/IR counterpart.  The X-ray columns (ero_*) record <br>
---/T the eROSITA information known at the time of target selection and may <br>
---/T differ from publicly available eROSITA catalogs. The <br>
---/T dr19_bhm_spiders_*_superset tables are derived from <br>
---/T eROSITA observations of the eROSITA Final <br>
---/T Equatorial Depth performance verification field ('eFEDS').
+--/T X-ray sources identified via various methods. <br>
+--/T These tables contain a superset of potential targets from which the SDSS-V
+--/T spectroscopic targets were drawn.  The dr19_bhm_spiders_clusters_superset table
+--/T includes counterparts selected via algorithms optimised to find clusters of
+--/T galaxies. Each row corresponds to one possible match between an X-ray source and
+--/T a potential optical/IR counterpart.  The X-ray columns (ero_*) record the
+--/T eROSITA information known at the time of target selection and may differ from
+--/T publicly available eROSITA catalogs. The dr19_bhm_spiders_*_superset tables are
+--/T derived from eROSITA observations of the eROSITA Final Equatorial Depth
+--/T performance verification field ('eFEDS').
 ----------------------------------------------------------------------
     pk bigint NOT NULL, --/D primary key of table entry
     ero_version text, --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc
@@ -1604,7 +1606,7 @@ ALTER TABLE minidb_dr19.dr19_carton_csv OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_carton_to_target (
 ----------------------------------------------------------------------
---/H The table stores the targets assigned to a given carton along with information about the instrument that will observe that target, and offseting data.
+--/H The table stores the targets assigned to a given carton along with information about the instrument that will observe that target, and offsetting data.
 ----------------------------------------------------------------------
     carton_to_target_pk bigint NOT NULL, --/D The primary key. A sequential identifier.
     lambda_eff real, --/U angstrom --/D The effective wavelength at which the object will be observed 
@@ -1628,7 +1630,7 @@ ALTER TABLE minidb_dr19.dr19_carton_to_target OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_cataclysmic_variables (
 ----------------------------------------------------------------------
---/H Gaia DR2 parameters for AAVSO cataclysmic variables from cataclysmic (explosive and novalike) variables (N, NA, NB, NC, NL, NR, SN, SNI, SNII, UG, UGSS, UGSU, UGZ, ZAND). VSX catalog downloaded in summer 2019 and then manually pruned.
+--/H Gaia DR2 parameters for AAVSO cataclysmic variables from cataclysmic (explosive and nova-like) variables (N, NA, NB, NC, NL, NR, SN, SNI, SNII, UG, UGSS, UGSU, UGZ, ZAND). VSX catalog downloaded in summer 2019 and then manually pruned.
 ----------------------------------------------------------------------
     ref_id bigint NOT NULL, --/D same as source_id 
     solution_id bigint, --/D ID that identifies the version of all the subsystems that were used in the generation of the data as well as the input data used 
@@ -1736,7 +1738,7 @@ ALTER TABLE minidb_dr19.dr19_cataclysmic_variables OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_catalog (
 ----------------------------------------------------------------------
---/H The table stores the results of the cross-match used for dr19 targeting. All entries in this table are expected to be unique physical objects drawn from one or more parent catalogues. The dr19_catalog_to_ tables provide the relationship between dr19_catalog objects and their parent catalogue counterparts.
+--/H The results of the cross-match used for dr19 targeting. Entries in this table are expected to be unique physical objects drawn from one or more parent catalogues. The dr19_catalog_to_ tables provide the relationships to their parent catalogue counterparts.
 ----------------------------------------------------------------------
     catalogid bigint NOT NULL, --/D The SDSS identifier for a unique object in this cross-match run.
     iauname text, --/D The IAU-style name. Not used.
@@ -1832,7 +1834,7 @@ ALTER TABLE minidb_dr19.dr19_catalog_to_bhm_efeds_veto OWNER TO postgres;
 CREATE TABLE minidb_dr19.dr19_catalog_to_bhm_rm_v0 (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_rm_v0 table.
---/T Note. This table is identical to dr19_catalog_to_bhm_rm_v0_2.
+--/T Note: this table is identical to dr19_catalog_to_bhm_rm_v0_2.
 ----------------------------------------------------------------------
     catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
     target_id bigint NOT NULL, --/D The primary key identifier in the dr19_rm_v0 table.
@@ -2324,7 +2326,7 @@ ALTER TABLE minidb_dr19.dr19_category OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_catwise2020 (
 ----------------------------------------------------------------------
---/H The CatWISE2020 Catalog (https://ui.adsabs.harvard.edu/abs/2021ApJS..253....8M/abstract) See https://irsa.ipac.caltech.edu/data/WISE/CatWISE/gator_docs/catwise_colDescriptions.html for more detailed column descriptions
+--/H The CatWISE2020 Catalog (https://ui.adsabs.harvard.edu/abs/2021ApJS..253....8M/abstract) See https://irsa.ipac.caltech.edu/data/WISE/CatWISE/gator_docs/catwise_colDescriptions.html for more detailed column descriptions.
 ----------------------------------------------------------------------
     source_name character(21), --/D source hexagesimal designation 
     source_id character(25) NOT NULL, --/D tile name + processing code + wphot index 
@@ -2543,7 +2545,7 @@ ALTER TABLE minidb_dr19.dr19_design OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_design_mode (
 ----------------------------------------------------------------------
---/H The parameters for the metrics that descirbe a given Design Mode, where a Design Mode constrains the assignments on a design.
+--/H The parameters for the metrics that describe a given Design Mode, where a Design Mode constrains the assignments on a design.
 ----------------------------------------------------------------------
     label text NOT NULL, --/D The primary key. A string label.
     boss_skies_min integer, --/D Minimum number of Boss skies needed for design.
@@ -2713,8 +2715,7 @@ ALTER TABLE minidb_dr19.dr19_design_to_field OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_ebosstarget_v5 (
 ----------------------------------------------------------------------
---/H A catalog of targets, selected from SDSS+WISE imaging that were considered for observation in the
---/T  SDSS-IV/eBOSS project, including spectrophotometric starts and candidate QSOs. <br>
+--/H A catalog of targets, selected from SDSS+WISE imaging that were considered for observation in the SDSS-IV/eBOSS project, including spectrophotometric starts and candidate QSOs.
 --/T  This catalogue is a data product of the ebosstarget target selection software,
 --/T version "v5_0".
 ----------------------------------------------------------------------
@@ -2829,20 +2830,19 @@ ALTER TABLE minidb_dr19.dr19_ebosstarget_v5 OWNER TO postgres;
 CREATE TABLE minidb_dr19.dr19_erosita_superset_agn (
 ----------------------------------------------------------------------
 --/H One of several tables describing optical/IR counterparts to eROSITA
---/T X-ray sources identified via various methods.  These tables contain a <br>
---/T superset of potential targets from which the SDSS-V spectroscopic <br>
---/T targets were drawn.  The dr19_erosita_superset_agn table includes <br>
---/T counterparts to point-like X-ray sources. The sample is expected to be <br>
---/T dominated by Active Galactic Nuclei (AGN) but should also include a <br>
---/T significant minority of galaxies, stars and other Galactic sources. <br>
---/T Each row corresponds to one possible match between an X-ray source and <br>
---/T a potential optical/IR counterpart.  The X-ray columns (ero_*) record <br>
---/T the eROSITA information known at the time of target selection and may <br>
---/T differ from publicly available eROSITA catalogs. The <br>
---/T dr19_erosita_superset_* tables are derived from a combination of <br>
---/T eROSITA's first 6-month survey of of the West Galactic hemisphere <br>
---/T ('eRASS1'), and from the eROSITA observations of the eROSITA Final <br>
---/T Equatorial Depth performance verification field ('eFEDS').
+--/T X-ray sources identified via various methods. <br>
+--/T These tables contain a superset of potential targets from which the SDSS-V
+--/T spectroscopic targets were drawn.  The dr19_erosita_superset_agn table includes
+--/T counterparts to point-like X-ray sources. The sample is expected to be dominated
+--/T by Active Galactic Nuclei (AGN) but should also include a significant minority
+--/T of galaxies, stars and other Galactic sources. Each row corresponds to one
+--/T possible match between an X-ray source and a potential optical/IR counterpart.
+--/T The X-ray columns (ero_*) record the eROSITA information known at the time of
+--/T target selection and may differ from publicly available eROSITA catalogs. The
+--/T dr19_erosita_superset_* tables are derived from a combination of eROSITA's first
+--/T 6-month survey of of the West Galactic hemisphere ('eRASS1'), and from the
+--/T eROSITA observations of the eROSITA Final Equatorial Depth performance
+--/T verification field ('eFEDS').
 ----------------------------------------------------------------------
     ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc
     ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc
@@ -2887,19 +2887,18 @@ ALTER TABLE minidb_dr19.dr19_erosita_superset_agn OWNER TO postgres;
 CREATE TABLE minidb_dr19.dr19_erosita_superset_clusters (
 ----------------------------------------------------------------------
 --/H One of several tables describing optical/IR counterparts to eROSITA
---/T X-ray sources identified via various methods.  These tables contain a <br>
---/T superset of potential targets from which the SDSS-V spectroscopic <br>
---/T targets were drawn.  The dr19_erosita_superset_clusters table includes <br>
---/T counterparts to both extended and point-like X-ray sources, selected <br>
---/T via algorithms optimised to find clusters of galaxies.  Each row <br>
---/T corresponds to one possible match between an X-ray source and a <br>
---/T potential optical/IR counterpart.  The X-ray columns (ero_*) record <br>
---/T the eROSITA information known at the time of target selection and may <br>
---/T differ from publicly available eROSITA catalogs. The <br>
---/T dr19_erosita_superset_* tables are derived from a combination of <br>
---/T eROSITA's first 6-month survey of of the West Galactic hemisphere <br>
---/T ('eRASS1'), and from the eROSITA observations of the eROSITA Final <br>
---/T Equatorial Depth performance verification field ('eFEDS').
+--/T X-ray sources identified via various methods. <br>
+--/T These tables contain a superset of potential targets from which the SDSS-V
+--/T spectroscopic targets were drawn. The dr19_erosita_superset_clusters table
+--/T includes counterparts to both extended and point-like X-ray sources, selected
+--/T via algorithms optimised to find clusters of galaxies.  Each row corresponds to
+--/T one possible match between an X-ray source and a potential optical/IR
+--/T counterpart.  The X-ray columns (ero_*) record the eROSITA information known at
+--/T the time of target selection and may differ from publicly available eROSITA
+--/T catalogs. The dr19_erosita_superset_* tables are derived from a combination of
+--/T eROSITA's first 6-month survey of of the West Galactic hemisphere ('eRASS1'),
+--/T and from the eROSITA observations of the eROSITA Final Equatorial Depth
+--/T performance verification field ('eFEDS').
 ----------------------------------------------------------------------
     ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc
     ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc
@@ -2944,19 +2943,17 @@ ALTER TABLE minidb_dr19.dr19_erosita_superset_clusters OWNER TO postgres;
 CREATE TABLE minidb_dr19.dr19_erosita_superset_compactobjects (
 ----------------------------------------------------------------------
 --/H One of several tables describing optical/IR counterparts to eROSITA
---/T X-ray sources identified via various methods.  These tables contain a <br>
---/T superset of potential targets from which the SDSS-V spectroscopic <br>
---/T targets were drawn.  The dr19_erosita_superset_agn table includes <br>
---/T counterparts to point-like X-ray sources, chosen via algorithms <br>
---/T optimised to select compact objects.  Each row corresponds to one <br>
---/T possible match between an X-ray source and a potential optical/IR <br>
---/T counterpart.  The X-ray columns (ero_*) record the eROSITA information <br>
---/T known at the time of target selection and may differ from publicly <br>
---/T available eROSITA catalogs. The dr19_erosita_superset_* tables are <br>
---/T derived from a combination of eROSITA's first 6-month survey of of the <br>
---/T West Galactic hemisphere ('eRASS1'), and from the eROSITA observations <br>
---/T of the eROSITA Final Equatorial Depth performance verification field <br>
---/T ('eFEDS').
+--/T X-ray sources identified via various methods. <br>
+--/T These tables contain a superset of potential targets from which the SDSS-V
+--/T spectroscopic targets were drawn. The dr19_erosita_superset_agn table includes
+--/T counterparts to point-like X-ray sources, chosen via algorithms optimised to
+--/T select compact objects. Each row corresponds to one possible match between an
+--/T X-ray source and a potential optical/IR counterpart. The X-ray columns (ero_*)
+--/T record the eROSITA information known at the time of target selection and may
+--/T differ from publicly available eROSITA catalogs. The dr19_erosita_superset_*
+--/T tables are derived from a combination of eROSITA's first 6-month survey of of
+--/T the West Galactic hemisphere ('eRASS1'), and from the eROSITA observations of
+--/T the eROSITA Final Equatorial Depth performance verification field ('eFEDS').
 ----------------------------------------------------------------------
     ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc
     ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc
@@ -3001,19 +2998,18 @@ ALTER TABLE minidb_dr19.dr19_erosita_superset_compactobjects OWNER TO postgres;
 CREATE TABLE minidb_dr19.dr19_erosita_superset_stars (
 ----------------------------------------------------------------------
 --/H One of several tables describing optical/IR counterparts to eROSITA
---/T X-ray sources identified via various methods.  These tables contain a <br>
---/T superset of potential targets from which the SDSS-V spectroscopic <br>
---/T targets were drawn.  The dr19_erosita_superset_stars table includes <br>
---/T counterparts to point-like X-ray sources, chosen via an algorithm <br>
---/T optimised to select coronally active stars.  Each row corresponds to <br>
---/T one possible match between an X-ray source and a potential optical/IR <br>
---/T counterpart.  The X-ray columns (ero_*) record the eROSITA information <br>
---/T known at the time of target selection and may differ from publicly <br>
---/T available eROSITA catalogs. The dr19_erosita_superset_* tables are <br>
---/T derived from a combination of eROSITA's first 6-month survey of of the <br>
---/T West Galactic hemisphere ('eRASS1'), and from the eROSITA observations <br>
---/T of the eROSITA Final Equatorial Depth performance verification field <br>
---/T ('eFEDS').
+--/T X-ray sources identified via various methods. <br>
+--/T These tables contain a superset of potential targets from which the SDSS-V
+--/T spectroscopic targets were drawn. The dr19_erosita_superset_stars table includes
+--/T counterparts to point-like X-ray sources, chosen via an algorithm optimised to
+--/T select coronally active stars. Each row corresponds to one possible match
+--/T between an X-ray source and a potential optical/IR counterpart. The X-ray
+--/T columns (ero_*) record the eROSITA information known at the time of target
+--/T selection and may differ from publicly available eROSITA catalogs. The
+--/T dr19_erosita_superset_* tables are derived from a combination of eROSITA's first
+--/T 6-month survey of of the West Galactic hemisphere ('eRASS1'), and from the
+--/T eROSITA observations of the eROSITA Final Equatorial Depth performance
+--/T verification field ('eFEDS').
 ----------------------------------------------------------------------
     ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc
     ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc
@@ -3079,17 +3075,15 @@ ALTER TABLE minidb_dr19.dr19_field OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_gaia_assas_sn_cepheids (
 ----------------------------------------------------------------------
---/H Well-defined and characterized all-sky sample of
---/T classical Cepheids in the Milky Way, obtained by combining two <br>
---/T time-domain all-sky surveys: Gaia DR2 (Gaia Col. 2018; see I/345) <br>
---/T and All-Sky Automated Survey for Supernovae (ASAS-SN; <br>
---/T Shappee+ 2014AAS...22323603S) and presented in Inno+2021. <br>
---/T Inno+21 use parallax and variability information from Gaia <br>
---/T to select ~30000 bright (G<17) Cepheid candidates with M_K_{<}-1. <br>
---/T They analyze their ASAS-SN V-band light curves, determining periods <br>
---/T and classifying the light curves using their Fourier parameters. <br>
---/T This results in ~1900 likely Galactic Cepheids, Inno+21 estimate <br>
---/T to be >~90% complete and pure within their adopted selection criteria.
+--/H Well-defined and characterized all-sky sample of classical Cepheids in the Milky Way presented in Inno+2021.
+--/T The sample is obtained by combining two time-domain all-sky surveys: Gaia DR2
+--/T (Gaia Col. 2018; see I/345) and All-Sky Automated Survey for Supernovae (ASAS-
+--/T SN; Shappee+ 2014AAS...22323603S). Inno+21 use parallax and variability
+--/T information from Gaia  to select ~30000 bright (G<17) Cepheid candidates with
+--/T M_K_{<}-1. They analyze their ASAS-SN V-band light curves, determining periods
+--/T and classifying the light curves using their Fourier parameters. This results in
+--/T ~1900 likely Galactic Cepheids, Inno+21 estimate to be >~90% complete and pure
+--/T within their adopted selection criteria.
 ----------------------------------------------------------------------
     source text, --/D Source of photometric data 
     ref text, --/D Reference of the catalog from which period and mode are adopted (I20 = Inno+21) 
@@ -3180,7 +3174,10 @@ ALTER TABLE minidb_dr19.dr19_gaia_assas_sn_cepheids OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_gaia_dr2_ruwe (
 ----------------------------------------------------------------------
---/H Table from Gaia DR2 containing the Renormalised Unit Weight Error (RUWE) associated to each source in gaia_source. See https://gea.esac.esa.int/archive/documentation/GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_ruwe.html for more detailed descriptions of the columns
+--/H Table from Gaia DR2 containing the Renormalised Unit Weight Error (RUWE) associated to each source in gaia_source.
+--/T See https://gea.esac.esa.int/archive/documentation/GDR2/Gaia_archive/chap_datamo
+--/T del/sec_dm_main_tables/ssec_dm_ruwe.html for more detailed descriptions of the
+--/T columns
 ----------------------------------------------------------------------
     source_id bigint NOT NULL, --/D Gaia DR2 unique source identifier 
     ruwe real --/D renormalised unit weight error 
@@ -3195,7 +3192,9 @@ ALTER TABLE minidb_dr19.dr19_gaia_dr2_ruwe OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_gaia_dr2_source (
 ----------------------------------------------------------------------
---/H Gaia DR2 Source Table. See https://gea.esac.esa.int/archive/documentation/GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html for complete details.
+--/H Gaia DR2 Source Table.
+--/T See https://gea.esac.esa.int/archive/documentation/GDR2/Gaia_archive/chap_datamo
+--/T del/sec_dm_main_tables/ssec_dm_gaia_source.html for complete details.
 ----------------------------------------------------------------------
     solution_id bigint, --/D ID that identifies the version of all the subsystems that were used in the generation of the data as well as the input data used 
     designation text, --/D Unique source designation across all Gaia data releases 
@@ -3302,7 +3301,9 @@ ALTER TABLE minidb_dr19.dr19_gaia_dr2_source OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_gaia_dr2_wd (
 ----------------------------------------------------------------------
---/H White dwarf catalog of high-probablity WDs from Gentile Fusillo (2019) based on Gaia DR2. Please see https://academic.oup.com/mnras/article/482/4/4570/5162857 for more information on the columns.
+--/H White dwarf catalog of high-probablity WDs from Gentile Fusillo (2019) based on Gaia DR2.
+--/T See https://academic.oup.com/mnras/article/482/4/4570/5162857 for more
+--/T information on the columns.
 ----------------------------------------------------------------------
     wd text, --/D WD names from this catalog -- WD J + J2000 ra (hh mm ss.ss) + dec (dd mm ss.s), equinox and epoch 2000 
     dr2name text, --/D Unique Gaia source designation 
@@ -3372,7 +3373,9 @@ ALTER TABLE minidb_dr19.dr19_gaia_dr2_wd OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_gaia_unwise_agn (
 ----------------------------------------------------------------------
---/H AGN identified using information from WISE and Gaia DR2 from the catalog of Shu et al. 2019. See complete information on the columns in https://academic.oup.com/mnras/article/489/4/4741/5561523
+--/H AGN identified using information from WISE and Gaia DR2 from the catalog of Shu et al. 2019.
+--/T See complete information on the columns in
+--/T https://academic.oup.com/mnras/article/489/4/4741/5561523
 ----------------------------------------------------------------------
     ra double precision, --/U degrees --/D Right ascension from Gaia DR2 
     "dec" double precision, --/U degrees --/D Declination from Gaia DR2 
@@ -3422,7 +3425,9 @@ ALTER TABLE minidb_dr19.dr19_gaia_unwise_agn OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_gaiadr2_tmass_best_neighbour (
 ----------------------------------------------------------------------
---/H The Gaia DR2 vs. 2MASS PSC crossmatch provided by the Gaia collaboration. Please see https://gea.esac.esa.int/archive/documentation/GDR2/Catalogue_consolidation/chap_cu9val_cu9val/ssec_cu9xma/sssec_cu9xma_extcat.html for complete details.
+--/H The Gaia DR2 vs. 2MASS PSC crossmatch provided by the Gaia collaboration.
+--/T See https://gea.esac.esa.int/archive/documentation/GDR2/Catalogue_consolidation/
+--/T chap_cu9val_cu9val/ssec_cu9xma/sssec_cu9xma_extcat.html for complete details.
 ----------------------------------------------------------------------
     tmass_oid bigint, --/D Additional numeric unique source identifier of 2MASS, increasing with declination 
     number_of_neighbours integer, --/D Number of sources in the 2MASS Catalogue which match the Gaia source within position errors 
@@ -3444,7 +3449,9 @@ ALTER TABLE minidb_dr19.dr19_gaiadr2_tmass_best_neighbour OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_geometric_distances_gaia_dr2 (
 ----------------------------------------------------------------------
---/H Bayesian distances from Gaia DR2 parameters from Bailer-Jones et al. 2018. For complete details, see the original paper: https://iopscience.iop.org/article/10.3847/1538-3881/aacb21/pdf
+--/H Bayesian distances from Gaia DR2 parameters from Bailer-Jones et al. 2018.
+--/T For complete details, see the original paper:
+--/T https://iopscience.iop.org/article/10.3847/1538-3881/aacb21/pdf
 ----------------------------------------------------------------------
     source_id bigint NOT NULL, --/D Unique Gaia DR2 source identifier 
     r_est real, --/U pc --/D Estimated distance 
@@ -3464,7 +3471,9 @@ ALTER TABLE minidb_dr19.dr19_geometric_distances_gaia_dr2 OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_glimpse (
 ----------------------------------------------------------------------
---/H GLIMPSE catalog (I, II and 3-D). See full documentation at https://irsa.ipac.caltech.edu/data/SPITZER/GLIMPSE/doc/glimpse1_dataprod_v2.0.pdf
+--/H GLIMPSE catalog (I, II and 3-D).
+--/T See full documentation at https://irsa.ipac.caltech.edu/data/SPITZER/GLIMPSE/doc
+--/T /glimpse1_dataprod_v2.0.pdf
 ----------------------------------------------------------------------
     designation text, --/D position-based designation in Galactic coordinates 
     tmass_designation character varying(18), --/D 2MASS designation from PSC 
@@ -3556,7 +3565,9 @@ ALTER TABLE minidb_dr19.dr19_glimpse OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_guvcat (
 ----------------------------------------------------------------------
---/H GALEX unique source catalog from Bianchi et al. 2017 (https://iopscience.iop.org/article/10.3847/1538-4365/aa7053/pdf). For more details on the column descriptions see https://archive.stsci.edu/hlsp/guvcat/guvcat-column-description
+--/H GALEX unique source catalog from Bianchi et al. 2017 (https://iopscience.iop.org/article/10.3847/1538-4365/aa7053/pdf).
+--/T For more details on the column descriptions see
+--/T https://archive.stsci.edu/hlsp/guvcat/guvcat-column-description
 ----------------------------------------------------------------------
     objid bigint NOT NULL, --/D GALEX identifier for the source 
     photoextractid bigint, --/D Pointer to GALEX photoExtract Table (identifier of original observation) 
@@ -3709,7 +3720,9 @@ ALTER TABLE minidb_dr19.dr19_legacy_catalog_catalogid OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_legacy_survey_dr8 (
 ----------------------------------------------------------------------
---/H Legacy Survey DR8 catalogue derived from 'sweep' catalogues (See <a href="https://www.legacysurvey.org/dr8/">https://www.legacysurvey.org/dr8/</a>).
+--/H Legacy Survey DR8 catalogue derived from 'sweep' catalogues.
+--/T For more information see <a
+--/T href="https://www.legacysurvey.org/dr8/">https://www.legacysurvey.org/dr8/</a>.
 ----------------------------------------------------------------------
     release integer, --/D Unique integer denoting the camera and filter set used (RELEASE documentation: https://www.legacysurvey.org/release/) 
     brickid bigint, --/D A unique Brick ID (in the range 1-662174) 
@@ -5182,7 +5195,7 @@ ALTER TABLE minidb_dr19.dr19_marvels_dr12_star OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_mastar_goodstars (
 ----------------------------------------------------------------------
---/H Summary file of MaNGA Stellar Libary.
+--/H Summary file of MaNGA Stellar Library.
 ----------------------------------------------------------------------
     drpver character varying(8), --/D Version of mangadrp. 
     mprocver character varying(8), --/D Version of mastarproc. 
@@ -5217,7 +5230,7 @@ ALTER TABLE minidb_dr19.dr19_mastar_goodstars OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_mastar_goodvisits (
 ----------------------------------------------------------------------
---/H Summary file of all visits of stars included in MaNGA Stellar Libary.
+--/H Summary file of all visits of stars included in MaNGA Stellar Library.
 ----------------------------------------------------------------------
     drpver character varying(8), --/D Version of mangadrp. 
     mprocver character varying(8), --/D Version of mastarproc. 
@@ -5516,7 +5529,19 @@ ALTER TABLE minidb_dr19.dr19_opsdb_apo_exposure_flavor OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_panstarrs1 (
 ----------------------------------------------------------------------
---/H A copy of the PanSTARRS1-dr2 catalogue provided by E. Magnier. Based on the internal IPP database representation mainyaned by IfA, U. Hawaii. Column names may differ from publically available catalogues hosted at MAST (mapping provided in column descriptions). The SDSS-V copy of this database is derived from a combination of the PS1-dr2 StackObjectThin and ObjectThin tables (https://outerspace.stsci.edu/display/PANSTARRS/PS1+Database+object+and+detection+tables). The catalogue contains PSF, Kron, and Aper measurements based on stacked and forced warp photometry, and expressed as fluxes, including measurements are made of low-significance detections. The average exposure (chip) measurements are expressed in magnitudes since photometry is not measured at this stage for sources with S/N < 5, so there should not be any negative fluxes. Magnitudes are on the AB system, fluxes are in Janskys. Conversion to AB mags is via: mag = 8.9 - 2.5*log10(flux).
+--/H A copy of the PanSTARRS1-dr2 catalogue provided by E. Magnier.
+--/T Based on the internal IPP database representation maintained by IfA, U. Hawaii.
+--/T Column names may differ from publically available catalogues hosted at MAST
+--/T (mapping provided in column descriptions). The SDSS-V copy of this database is
+--/T derived from a combination of the PS1-dr2 StackObjectThin and ObjectThin tables 
+--/T (https://outerspace.stsci.edu/display/PANSTARRS/PS1+Database+object+and+detectio
+--/T n+tables). The catalogue contains PSF, Kron, and Aper measurements based on
+--/T stacked and forced warp photometry, and expressed as fluxes, including
+--/T measurements are made of low-significance detections. The average exposure
+--/T (chip) measurements are expressed in magnitudes since photometry is not measured
+--/T at this stage for sources with S/N < 5, so there should not be any negative
+--/T fluxes. Magnitudes are on the AB system, fluxes are in Janskys. Conversion to AB
+--/T mags is via: mag = 8.9 - 2.5*log10(flux).
 ----------------------------------------------------------------------
     ra double precision, --/U deg --/D mean RA, (J2000, tied to Gaia DR1) 
     "dec" double precision, --/U deg --/D mean Dec, (J2000, tied to Gaia DR1) 
@@ -5765,7 +5790,9 @@ ALTER TABLE minidb_dr19.dr19_revised_magnitude OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_sagitta (
 ----------------------------------------------------------------------
---/H Catalog of pre-main-sequence stars derived from Gaia DR2 and 2MASS from McBride et al. (2021), their Table 4. For complete details, please see the original paper: https://iopscience.iop.org/article/10.3847/1538-3881/ac2432
+--/H Catalog of pre-main-sequence stars derived from Gaia DR2 and 2MASS from McBride et al. (2021), their Table 4.
+--/T For complete details, see the original paper:
+--/T https://iopscience.iop.org/article/10.3847/1538-3881/ac2432
 ----------------------------------------------------------------------
     source_id bigint NOT NULL, --/D Gaia DR2 unique identifier 
     ra double precision, --/U degrees --/D Right ascension 
@@ -5786,7 +5813,7 @@ ALTER TABLE minidb_dr19.dr19_sagitta OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_sdss_apogeeallstarmerge_r13 (
 ----------------------------------------------------------------------
---/H List of APOGEE DR16 stars for RV followup
+--/H List of APOGEE DR16 stars for RV followup.
 ----------------------------------------------------------------------
     apogee_id text NOT NULL, --/D 2MASS style ID from APOGEE DR16 
     nvisits smallint, --/D Number of visits into combined spectra, accross all allStar entries for the star 
@@ -5864,7 +5891,9 @@ ALTER TABLE minidb_dr19.dr19_sdss_dr13_photoobj_primary OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_sdss_dr16_qso (
 ----------------------------------------------------------------------
---/H SDSS Data Release 16 Quasar Catalog (Lyke et al. 2020). For complete details, please see the original paper: https://ui.adsabs.harvard.edu/abs/2020ApJS..250....8L/abstract
+--/H SDSS Data Release 16 Quasar Catalog (Lyke et al. 2020).
+--/T For complete details, please see the original paper:
+--/T https://ui.adsabs.harvard.edu/abs/2020ApJS..250....8L/abstract. <br>
 --/T Description derived from SDSS datamodel:
 --/T https://data.sdss.org/datamodel/files/BOSS_QSO/DR16Q/DR16Q_v4.html
 ----------------------------------------------------------------------
@@ -6083,7 +6112,13 @@ ALTER TABLE minidb_dr19.dr19_sdss_dr16_qso OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_sdss_dr16_specobj (
 ----------------------------------------------------------------------
---/H This table contains the list of all SDSS optical spectra for a given data release, with associated parameters from the 2D and 1D pipelines for each. The table contains both the BOSS and SDSS spectrograph data. The database representation is derived from the flat file information described here: <a href="https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html">https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html</a> Note: the order of the columns in this documentation may not match the order of the columns in the database table.
+--/H This table contains the list of all SDSS optical spectra for a given data release, with associated parameters from the 2D and 1D pipelines for each.
+--/T The table contains both the BOSS and SDSS spectrograph data. The database
+--/T representation is derived from the flat file information described here: <a href
+--/T ="https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html">https://data
+--/T .sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html</a> Note: the order of the
+--/T columns in this documentation may not match the order of the columns in the
+--/T database table.
 ----------------------------------------------------------------------
     specobjid numeric(20,0) NOT NULL, --/D Unique database ID based on PLATE, MJD, FIBERID, RUN2D (same as SkyServer version) 
     bestobjid bigint, --/D Unique database ID of (recommended) position-based photometric match based on RUN, RERUN, CAMCOl, FIELD, ID (same as SkyServer version) 
@@ -6290,7 +6325,13 @@ ALTER TABLE minidb_dr19.dr19_sdss_dr16_specobj OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_sdss_dr17_specobj (
 ----------------------------------------------------------------------
---/H This table contains the list of all SDSS optical spectra for a given data release, with associated parameters from the 2D and 1D pipelines for each. The table contains both the BOSS and SDSS spectrograph data. The database representation is derived from the flat file information described here: <a href="https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html">https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html</a> Note: the order of the columns in this documentation may not match the order of the columns in the database table.
+--/H This table contains the list of all SDSS optical spectra for a given data release, with associated parameters from the 2D and 1D pipelines for each.
+--/T The table contains both the BOSS and SDSS spectrograph data. The database
+--/T representation is derived from the flat file information described here: <a href
+--/T ="https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html">https://data
+--/T .sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html</a> Note: the order of the
+--/T columns in this documentation may not match the order of the columns in the
+--/T database table.
 ----------------------------------------------------------------------
     specobjid numeric(20,0) NOT NULL, --/D Unique database ID based on PLATE, MJD, FIBERID, RUN2D (same as SkyServer version) 
     bestobjid bigint, --/D Unique database ID of (recommended) position-based photometric match based on RUN, RERUN, CAMCOl, FIELD, ID (same as SkyServer version) 
@@ -6499,7 +6540,10 @@ ALTER TABLE minidb_dr19.dr19_sdss_dr17_specobj OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_sdss_id_flat (
 ----------------------------------------------------------------------
---/H This table includes associations between sdss_id identifiers and the best matched catalogid for each catalogue cross-match. Unlike dr19_sdss_id_stacked, this table contains multiple rows per sdss_id, one for each cross-match association. When multiple sdss_ids are associated with the same catalogid, the one with the lowest rank (rank=1) should be preferred.
+--/H This table includes associations between sdss_id identifiers and the best matched catalogid for each catalogue cross-match.
+--/T Unlike dr19_sdss_id_stacked, this table contains multiple rows per sdss_id, one
+--/T for each cross-match association. When multiple sdss_ids are associated with the
+--/T same catalogid, the one with the lowest rank (rank=1) should be preferred. <br>
 --/T Note: The sdss_id match was extended internally for a more recent crossmatch not
 --/T yet part of the publicly released data. As such, the ra/dec_sdss_id columns may
 --/T differ from the catalogid coordinates.
@@ -6525,7 +6569,11 @@ ALTER TABLE minidb_dr19.dr19_sdss_id_flat OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_sdss_id_stacked (
 ----------------------------------------------------------------------
---/H This table includes associations between sdss_id identifiers and the matched catalogids for each catalogue cross-match. The table contains one row per sdss_id with columns for each catalogid version. However, catalogids may be associated with multiple sdss_id. dr19_sdss_id_flat is a pivoted/flattened version of this table and contains information about the preferred sdss_id for a catalogid.
+--/H This table includes associations between sdss_id identifiers and the matched catalogids for each catalogue cross-match.
+--/T The table contains one row per sdss_id with columns for each catalogid version.
+--/T However, catalogids may be associated with multiple sdss_id. dr19_sdss_id_flat
+--/T is a pivoted/flattened version of this table and contains information about the
+--/T preferred sdss_id for a catalogid. <br>
 --/T Note: The sdss_id match was extended internally for a more recent crossmatch not
 --/T yet part of the publicly released data. As such, the ra/dec_sdss_id columns may
 --/T differ from the catalogid coordinates.
@@ -6546,7 +6594,10 @@ ALTER TABLE minidb_dr19.dr19_sdss_id_stacked OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_sdss_id_to_catalog (
 ----------------------------------------------------------------------
---/H This table contains the best matched associations between SDSS identifiers (sdss_id, catalogid) and the unique identifiers in the parent catalogues used for SDSS cross-matches. The format of the parent catalogue columns is <table_name>__<column_name>, where <column_name> is the primary key/unique identifier column to which to join in the dr19_<table_name> table.
+--/H This table contains the best matched associations between SDSS identifiers (sdss_id, catalogid) and the unique identifiers in the parent catalogues used for SDSS cross-matches.
+--/T The format of the parent catalogue columns is <table_name>__<column_name>, where
+--/T <column_name> is the primary key/unique identifier column to which to join in
+--/T the dr19_<table_name> table.
 ----------------------------------------------------------------------
     pk bigint NOT NULL, --/D The primary key. A sequential identifier for this table.
     sdss_id bigint, --/D The SDSS identifier for a unique object.
@@ -6634,14 +6685,13 @@ ALTER TABLE minidb_dr19.dr19_sdss_id_to_catalog_full OWNER TO postgres;
 CREATE TABLE minidb_dr19.dr19_sdssv_boss_conflist (
 ----------------------------------------------------------------------
 --/H The dr19_sdssv_boss_conflist table is a database representation of an
---/T early version of the SDSS-V BOSS fieldlist data product.  The <br>
---/T dr19_sdssv_boss_conflist table was used within early iterations of FPS <br>
---/T target_selection as a way to communicate information about which <br>
---/T SDSS-V plates had been observed by the time of target selection. <br>
---/T This information was used <br>
---/T to e.g. de-prioritise targets that were expected to have a good quality <br>
+--/T early version of the SDSS-V BOSS fieldlist data product. <br>
+--/T The dr19_sdssv_boss_conflist table was used within early iterations of FPS
+--/T target_selection as a way to communicate information about which SDSS-V plates
+--/T had been observed by the time of target selection. This information was used to
+--/T e.g. de-prioritise targets that were expected to have a good quality
 --/T spectroscopic measurement before the start of SDSS-V FPS operations. <br>
---/T Caution. The dr19_sdssv_boss_conflist table should only be used in order to <br>
+--/T Caution. The dr19_sdssv_boss_conflist table should only be used in order to
 --/T recreate the target_selection selection function. <br>
 --/T Column descriptions are mainly derived from:
 --/T https://data.sdss.org/datamodel/files/BOSS_SPECTRO_REDUX/RUN2D/platelist.html
@@ -6751,14 +6801,13 @@ ALTER TABLE minidb_dr19.dr19_sdssv_boss_conflist OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_sdssv_boss_spall (
 ----------------------------------------------------------------------
---/H The dr19_sdssv_boss_spall table is a database representation of an
---/T early version of the SDSS-V BOSS spAll data product.  The <br>
---/T dr19_sdssv_boss_spall table was used within early iterations of FPS <br>
---/T target_selection as a way to communicate information about which <br>
---/T targets had been observed in SDSS-V plates. This information was used <br>
---/T to e.g. de-prioritise targets that were expected to have a good quality <br>
---/T spectroscopic measurement before the start of SDSS-V FPS operations. <br>
---/T Caution. The dr19_sdssv_boss_spall table should only be used in order to <br>
+--/H The dr19_sdssv_boss_spall table is a database representation of an early version of the SDSS-V BOSS spAll data product.
+--/T The dr19_sdssv_boss_spall table was used within early iterations of FPS
+--/T target_selection as a way to communicate information about which targets had
+--/T been observed in SDSS-V plates. This information was used to e.g. de-prioritise
+--/T targets that were expected to have a good quality spectroscopic measurement
+--/T before the start of SDSS-V FPS operations. <br>
+--/T Caution. The dr19_sdssv_boss_spall table should only be used in order to
 --/T recreate the target_selection selection function. <br>
 --/T Column descriptions are mainly derived from:
 --/T https://data.sdss.org/datamodel/files/BOSS_SPECTRO_REDUX/RUN2D/spAll.html
@@ -6910,19 +6959,16 @@ ALTER TABLE minidb_dr19.dr19_sdssv_boss_spall OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_sdssv_plateholes (
 ----------------------------------------------------------------------
---/H The combination of the dr19_sdssv_plateholes and dr19_sdssv_plateholes_meta
---/T tables are a database representation of the SDSS-V platelist data <br>
---/T product (https://svn.sdss.org/public/data/sdss/platelist/trunk/). <br>
---/T These tables were used within early iterations of FPS target_selection <br>
---/T as a way to communicate information about which targets had been <br>
---/T included in SDSS-V plates. This information was used to <br>
---/T e.g. de-prioritise targets that were expected to have a good quality <br>
---/T spectroscopic measurement by the end of the SDSS-V plate observations. <br>
---/T The dr19_sdssv_plateholes_meta table contains meta-data for each <br>
---/T SDSS-V plate (one record per plate), whereas the dr19_sdssv_plateholes <br>
---/T table has one entry for each drilled hole in each SDSS-V plate. <br>
---/T The dr19_sdssv_plateholes and dr19_sdssv_plateholes_meta tables should be joined
---/T via the yanny_uid field. <br>
+--/H The combination of the dr19_sdssv_plateholes and dr19_sdssv_plateholes_meta tables are a database representation of the SDSS-V platelist data product (https://svn.sdss.org/public/data/sdss/platelist/trunk/).
+--/T These tables were used within early iterations of FPS target_selection as a way
+--/T to communicate information about which targets had been included in SDSS-V
+--/T plates. This information was used to e.g. de-prioritise targets that were
+--/T expected to have a good quality spectroscopic measurement by the end of the
+--/T SDSS-V plate observations. <br>
+--/T The dr19_sdssv_plateholes_meta table contains meta-data for each SDSS-V plate
+--/T (one record per plate), whereas the dr19_sdssv_plateholes table has one entry
+--/T for each drilled hole in each SDSS-V plate. The dr19_sdssv_plateholes and
+--/T dr19_sdssv_plateholes_meta tables should be joined via the yanny_uid field. <br>
 --/T Mostly derived from: https://data.sdss.org/datamodel/files/PLATELIST_DIR/designs
 --/T /DESIGNID6XX/DESIGNID6/plateDesign.html
 ----------------------------------------------------------------------
@@ -7089,16 +7135,15 @@ CREATE TABLE minidb_dr19.dr19_sdssv_plateholes_meta (
 --/H The combination of the dr19_sdssv_plateholes and dr19_sdssv_plateholes_meta
 --/T tables are a database representation of the SDSS-V platelist data <br>
 --/T product (https://svn.sdss.org/public/data/sdss/platelist/trunk/). <br>
---/T These tables were used within early iterations of FPS target_selection <br>
---/T as a way to communicate information about which targets had been <br>
---/T included in SDSS-V plates. This information was used to <br>
---/T e.g. de-prioritise targets that were expected to have a good quality <br>
---/T spectroscopic measurement by the end of the SDSS-V plate observations. <br>
---/T The dr19_sdssv_plateholes_meta table contains meta-data for each <br>
---/T SDSS-V plate (one record per plate), whereas the dr19_sdssv_plateholes <br>
---/T table has one entry for each drilled hole in each SDSS-V plate. <br>
---/T The dr19_sdssv_plateholes and dr19_sdssv_plateholes_meta tables should be <br>
---/T joined via the yanny_uid field. <br>
+--/T These tables were used within early iterations of FPS target_selection as a way
+--/T to communicate information about which targets had been included in SDSS-V
+--/T plates. This information was used to e.g. de-prioritise targets that were
+--/T expected to have a good quality spectroscopic measurement by the end of the
+--/T SDSS-V plate observations. <br>
+--/T The dr19_sdssv_plateholes_meta table contains meta-data for each SDSS-V plate
+--/T (one record per plate), whereas the dr19_sdssv_plateholes table has one entry
+--/T for each drilled hole in each SDSS-V plate. The dr19_sdssv_plateholes and
+--/T dr19_sdssv_plateholes_meta tables should be joined via the yanny_uid field. <br>
 --/T Mostly derived from: https://data.sdss.org/datamodel/files/PLATELIST_DIR/plates/
 --/T PLATEID6XX/PLATEID6/plateHoles.html
 ----------------------------------------------------------------------
@@ -7226,7 +7271,15 @@ ALTER TABLE minidb_dr19.dr19_sdssv_plateholes_meta OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_skies_v1 (
 ----------------------------------------------------------------------
---/H This table stores the positions used as blank sky regions for DR19 targetting. The sky regions are selected by dividing the sky in tiles of HEALpix nside 32. Each tile is then subdivided in candidate regions of HEALpix nside 32768 and the pixels that meet the isolation requirements are considered valid skies. This process is repeated for a number of all-sky catalogues. See <a href="https://sdss.org/dr19/targeting/fps/sky/"> for further details of the process by which suitable sky locations are selected in SDSS-V/FPS. This version of the skies catalog was used for v0.1 target selection. The skies_v2 catalog was used for v0.5 and subsequent target selections.
+--/H This table stores the positions used as blank sky regions for DR19 targetting.
+--/T The sky regions are selected by dividing the sky in tiles of HEALpix nside 32.
+--/T Each tile is then subdivided in candidate regions of HEALpix nside 32768 and the
+--/T pixels that meet the isolation requirements are considered valid skies. This
+--/T process is repeated for a number of all-sky catalogues. See <a
+--/T href="https://sdss.org/dr19/targeting/fps/sky/"> for further details of the
+--/T process by which suitable sky locations are selected in SDSS-V/FPS. This version
+--/T of the skies catalog was used for v0.1 target selection. The skies_v2 catalog
+--/T was used for v0.5 and subsequent target selections.
 ----------------------------------------------------------------------
     pix_32768 bigint NOT NULL, --/D The HEALpix pixel (nside=32768, nested indexing, Equatorial coords) of the sky region. 
     ra double precision, --/U degrees --/D The RA of the centre of the sky pixel. 
@@ -7259,7 +7312,13 @@ ALTER TABLE minidb_dr19.dr19_skies_v1 OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_skies_v2 (
 ----------------------------------------------------------------------
---/H This table stores the positions used as blank sky regions for dr19 targetting. The sky regions are selected by dividing the sky in tiles of HEALpix nside 32. Each tile is then subdivided in candidate regions of HEALpix nside 32768 and the pixels that meet the isolation requirements are considered valid skies. This process is repeated for a number of all-sky catalogues. See <a href="https://sdss.org/dr19/targeting/fps/sky/"> for further details of the process by which suitable sky locations are selected in SDSS-V/FPS.
+--/H This table stores the positions used as blank sky regions for dr19 targetting.
+--/T The sky regions are selected by dividing the sky in tiles of HEALpix nside 32.
+--/T Each tile is then subdivided in candidate regions of HEALpix nside 32768 and the
+--/T pixels that meet the isolation requirements are considered valid skies. This
+--/T process is repeated for a number of all-sky catalogues. See <a
+--/T href="https://sdss.org/dr19/targeting/fps/sky/"> for further details of the
+--/T process by which suitable sky locations are selected in SDSS-V/FPS.
 ----------------------------------------------------------------------
     pix_32768 bigint NOT NULL, --/D The HEALpix pixel (nside=32768, nested indexing, Equatorial coords) of the sky region. 
     ra double precision, --/U degrees --/D The RA of the centre of the sky pixel. 
@@ -7300,7 +7359,9 @@ ALTER TABLE minidb_dr19.dr19_skies_v2 OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_skymapper_dr2 (
 ----------------------------------------------------------------------
---/H Skymapper Data Release 2 photometry. For detailed descriptions, please see the SkyMapper documentation: https://skymapper.anu.edu.au/table-browser/
+--/H Skymapper Data Release 2 photometry.
+--/T For detailed descriptions, please see the SkyMapper documentation:
+--/T https://skymapper.anu.edu.au/table-browser/
 ----------------------------------------------------------------------
     object_id bigint NOT NULL, --/D Global unique SkyMapper object ID in the master table 
     raj2000 double precision, --/U degrees --/D Mean ICRS Right Ascension of the object 
@@ -7413,7 +7474,8 @@ ALTER TABLE minidb_dr19.dr19_skymapper_dr2 OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_skymapper_gaia (
 ----------------------------------------------------------------------
---/H This catalogue contains photometric stellar parameters for 9+ million stars in common between the SkyMapper survey and Gaia DR2. See https://skymapper.anu.edu.au/_data/sm-gaia/ for details.
+--/H This catalogue contains photometric stellar parameters for 9+ million stars in common between the SkyMapper survey and Gaia DR2.
+--/T See https://skymapper.anu.edu.au/_data/sm-gaia/ for details.
 ----------------------------------------------------------------------
     skymapper_object_id bigint NOT NULL, --/D SkyMapper object_id 
     gaia_source_id bigint, --/D Gaia DR2 source_id 
@@ -7432,18 +7494,15 @@ ALTER TABLE minidb_dr19.dr19_skymapper_gaia OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_supercosmos (
 ----------------------------------------------------------------------
---/H Contains merged sources for every field in the SuperCOSMOS Science Archive (SSA).
---/T It consists of data from digitised sky survey plates taken with the UK Schmidt <br>
---/T telescope (UKST), the ESO Schmidt, and the Palomar Schmidt. <br>
---/T Each field within the SSA is covered by four plates in passbands B, R and <br>
---/T I with R being covered twice at different times. This results in <br>
---/T four-plate multi-colour, multi-epoch data which are merged into a single <br>
---/T source catalogue for general science exploitation. This table contains the <br>
---/T associated merged records created from the records in table Detection, <br>
---/T along with a full astrometric solution (including proper motions) computed <br>
---/T from the available position measures. The most useful subset of image <br>
---/T morphological descriptors are also propagated into this table for ease of <br>
---/T use. <br>
+--/H Contains merged sources for every field in the SuperCOSMOS Science Archive (SSA). It consists of data from digitised sky survey plates taken with the UK Schmidt telescope (UKST), the ESO Schmidt, and the Palomar Schmidt.
+--/T Each field within the SSA is covered by four plates in passbands B, R and I with
+--/T R being covered twice at different times. This results in four-plate multi-
+--/T colour, multi-epoch data which are merged into a single source catalogue for
+--/T general science exploitation. This table contains the associated merged records
+--/T created from the records in table Detection, along with a full astrometric
+--/T solution (including proper motions) computed from the available position
+--/T measures. The most useful subset of image morphological descriptors are also
+--/T propagated into this table for ease of use. <br>
 --/T Derived from http://ssa.roe.ac.uk/www/SSA_TABLE_SourceSchema.html#Source
 ----------------------------------------------------------------------
     objid bigint NOT NULL, --/D Unique identifier of merged source 
@@ -7564,30 +7623,28 @@ ALTER TABLE minidb_dr19.dr19_targetdb_version OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_targeting_generation (
 ----------------------------------------------------------------------
---/H A 'targeting_generation' describes a collection of versioned cartons,
---/T together with their robostrategy control parameters. This is a convenient <br>
---/T way to describe the specific set of carton-versions that were used <br>
---/T (and the way that they were treated) within any particular run of <br>
---/T robostrategy. <br>
---/T The dr19_targeting_generation table contains all targeting_generations <br>
---/T that were considered for observations in the timespan covered by the <br>
---/T DR19 data release. In addition, we include the 'v0.5.3' targeting_generation <br>
---/T since this was the version released as part of dr19. <br>
---/T During the initial plate operations phase of SDSS-V, we did not use <br>
---/T the robostrategy code to assign fibers to targets. However, for <br>
---/T completeness, the 'v0.plates' pseudo-targeting_generation has been <br>
---/T reverse engineered in order to describe the set of carton-versions <br>
---/T that were considered during that phase. <br>
---/T The dr19_targeting_generation table can be joined <br>
---/T to the dr19_carton table via the dr19_targeting_generation_to_carton <br>
---/T table. To associate a targeting_generation with a robostrategy plan, <br>
---/T join dr19_targeting_generation to dr19_targetdb_version via the <br>
---/T dr19_targeting_generation_to_version table. <br>
---/T Taken together, the dr19_targeting_generation, <br>
---/T dr19_targeting_generation_to_carton and <br>
---/T dr19_targeting_generation_to_version tables duplicate, in a database <br>
---/T form, the robostrategy carton configuration information available <br>
---/T via the rsconfig product (https://github.com/sdss/rsconfig).
+--/H List of SDSS-V targeting generations.
+--/T A 'targeting_generation' describes a collection of versioned cartons, together
+--/T with their robostrategy control parameters. This is a convenient way to describe
+--/T the specific set of carton-versions that were used (and the way that they were
+--/T treated) within any particular run of robostrategy. <br>
+--/T The dr19_targeting_generation table contains all targeting_generations that were
+--/T considered for observations in the timespan covered by the DR19 data release. In
+--/T addition, we include the 'v0.5.3' targeting_generation since this was the
+--/T version released as part of dr19. <br>
+--/T During the initial plate operations phase of SDSS-V, we did not use the
+--/T robostrategy code to assign fibers to targets. However, for completeness, the
+--/T 'v0.plates' pseudo-targeting_generation has been reverse engineered in order to
+--/T describe the set of carton-versions that were considered during that phase. <br>
+--/T The dr19_targeting_generation table can be joined to the dr19_carton table via
+--/T the dr19_targeting_generation_to_carton table. To associate a
+--/T targeting_generation with a robostrategy plan, join dr19_targeting_generation to
+--/T dr19_targetdb_version via the dr19_targeting_generation_to_version table. <br>
+--/T Taken together, the dr19_targeting_generation,
+--/T dr19_targeting_generation_to_carton and dr19_targeting_generation_to_version
+--/T tables duplicate, in a database form, the robostrategy carton configuration
+--/T information available via the rsconfig product
+--/T (https://github.com/sdss/rsconfig).
 ----------------------------------------------------------------------
     pk integer NOT NULL, --/D primary key for this table entry
     label text, --/D A human-readble name for the targeting_generation
@@ -7603,21 +7660,20 @@ ALTER TABLE minidb_dr19.dr19_targeting_generation OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_targeting_generation_to_carton (
 ----------------------------------------------------------------------
---/H A 'targeting_generation' describes a collection of versioned cartons,
---/T together with their robostrategy control parameters. This is a convenient <br>
---/T way to describe the specific set of carton-versions that were used <br>
---/T (and the way that they were treated) within any particular run of <br>
---/T robostrategy. <br>
---/T The dr19_targeting_generation_to_carton table describes a many-to-many <br>
---/T relationship, connecting each targeting_generation to a set of entries <br>
---/T in the dr19_carton table, as well as recording how those <br>
---/T carton-versions were treated in the robostrategy code (i.e. the <br>
---/T rs_stage and rs_active parameters). <br>
---/T Taken together, the dr19_targeting_generation, <br>
---/T dr19_targeting_generation_to_carton and <br>
---/T dr19_targeting_generation_to_version tables duplicate, in a database <br>
---/T form, the robostrategy carton configuration information available <br>
---/T via the rsconfig product (https://github.com/sdss/rsconfig).
+--/H Mapping of SDSS-V targeting generations to cartons.
+--/T A 'targeting_generation' describes a collection of versioned cartons, together
+--/T with their robostrategy control parameters. This is a convenient way to describe
+--/T the specific set of carton-versions that were used (and the way that they were
+--/T treated) within any particular run of robostrategy. <br>
+--/T The dr19_targeting_generation_to_carton table describes a many-to-many
+--/T relationship, connecting each targeting_generation to a set of entries in the
+--/T dr19_carton table, as well as recording how those carton-versions were treated
+--/T in the robostrategy code (i.e. the rs_stage and rs_active parameters). <br>
+--/T Taken together, the dr19_targeting_generation,
+--/T dr19_targeting_generation_to_carton and dr19_targeting_generation_to_version
+--/T tables duplicate, in a database form, the robostrategy carton configuration
+--/T information available via the rsconfig product
+--/T (https://github.com/sdss/rsconfig).
 ----------------------------------------------------------------------
     pk integer NOT NULL, --/D primary key for this table entry
     generation_pk integer, --/D primary key of an entry in the dr19_targeting_generation table
@@ -7635,20 +7691,20 @@ ALTER TABLE minidb_dr19.dr19_targeting_generation_to_carton OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_targeting_generation_to_version (
 ----------------------------------------------------------------------
---/H A 'targeting_generation' describes a collection of versioned cartons,
---/T together with their robostrategy control parameters. This is a convenient <br>
---/T way to describe the specific set of carton-versions that were used <br>
---/T (and the way that they were treated) within any particular run of <br>
---/T robostrategy. <br>
---/T The dr19_targeting_generation_to_version table describes a one-to-many <br>
---/T relationship, connecting each robostrategy run to one targeting_generation. <br>
---/T In general, a single target_generation can be used my more than one robostrategy
+--/H Mapping of targeting generations to robostrategy runs.
+--/T A 'targeting_generation' describes a collection of versioned cartons, together
+--/T with their robostrategy control parameters. This is a convenient way to describe
+--/T the specific set of carton-versions that were used (and the way that they were
+--/T treated) within any particular run of robostrategy. <br>
+--/T The dr19_targeting_generation_to_version table describes a one-to-many
+--/T relationship, connecting each robostrategy run to one targeting_generation. In
+--/T general, a single target_generation can be used my more than one robostrategy
 --/T run. <br>
---/T Taken together, the dr19_targeting_generation, <br>
---/T dr19_targeting_generation_to_carton and <br>
---/T dr19_targeting_generation_to_version tables duplicate, in a database <br>
---/T form, the robostrategy carton configuration information available <br>
---/T via the rsconfig product (https://github.com/sdss/rsconfig).
+--/T Taken together, the dr19_targeting_generation,
+--/T dr19_targeting_generation_to_carton and dr19_targeting_generation_to_version
+--/T tables duplicate, in a database form, the robostrategy carton configuration
+--/T information available via the rsconfig product
+--/T (https://github.com/sdss/rsconfig).
 ----------------------------------------------------------------------
     generation_pk integer, --/D primary key of an entry in the dr19_targeting_generation table
     version_pk integer, --/D primary key of an entry in the dr19_targetdb_version table, which lists the robostrategy run version ('plan' and 'tag')
@@ -7664,7 +7720,11 @@ ALTER TABLE minidb_dr19.dr19_targeting_generation_to_version OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_tess_toi (
 ----------------------------------------------------------------------
---/H This catalog contains targets that recieved the 2 minute cadence during the TESS Mission, are TESS Objects of Interest (TOI) or Community TESS Objects of Interest (CTOI). The contents of this catalog were derived from the MIT TESS website (https://tess.mit.edu/public/target_lists/target_lists.html) and the ExoFOP website https://exofop.ipac.caltech.edu/tess/index.php. These targets were updated on 2020-04-02.
+--/H This catalog contains targets that recieved the 2 minute cadence during the TESS Mission, are TESS Objects of Interest (TOI) or Community TESS Objects of Interest (CTOI).
+--/T The contents of this catalog were derived from the MIT TESS website
+--/T (https://tess.mit.edu/public/target_lists/target_lists.html) and the ExoFOP
+--/T website https://exofop.ipac.caltech.edu/tess/index.php. These targets were
+--/T updated on 2020-04-02.
 ----------------------------------------------------------------------
     ticid bigint, --/D TESS Input Catalog (TIC) ID 
     target_type character varying(8), --/D Type of target. Options: 2min = 2 minute cadence, exo_TOI = TOI, and exo_CTOI = CTOI 
@@ -7686,7 +7746,11 @@ ALTER TABLE minidb_dr19.dr19_tess_toi OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_tess_toi_v05 (
 ----------------------------------------------------------------------
---/H This catalog contains targets that recieved the 2 minute cadence during the TESS Mission, are TESS Objects of Interest (TOI) or Community TESS Objects of Interest (CTOI). The contents of this catalog were derived from the MIT TESS website (https://tess.mit.edu/public/target_lists/target_lists.html) and the ExoFOP website https://exofop.ipac.caltech.edu/tess/index.php. These targets were updated on 2020-11-24.
+--/H This catalog contains targets that received the 2 minute cadence during the TESS Mission, are TESS Objects of Interest (TOI) or Community TESS Objects of Interest (CTOI).
+--/T The contents of this catalog were derived from the MIT TESS website
+--/T (https://tess.mit.edu/public/target_lists/target_lists.html) and the ExoFOP
+--/T website https://exofop.ipac.caltech.edu/tess/index.php. These targets were
+--/T updated on 2020-11-24.
 ----------------------------------------------------------------------
     ticid bigint, --/D TESS Input Catalog (TIC) ID 
     target_type character(8), --/D Type of target. Options: 2min = 2 minute cadence, exo_TOI = TOI, and exo_CTOI = CTOI 
@@ -7708,7 +7772,9 @@ ALTER TABLE minidb_dr19.dr19_tess_toi_v05 OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_tic_v8 (
 ----------------------------------------------------------------------
---/H The Eighth version (v8.0) of the TESS Input Catalogue (<a href="https://outerspace.stsci.edu/display/TESS/TIC+v8+and+CTL+v8.xx+Data+Release+Notes"></a>). This catalogue is used in v0.5 target selection as a form of internal cross-match between the objects found in difference input catalogues.
+--/H The Eighth version (v8.0) of the TESS Input Catalogue (<a href="https://outerspace.stsci.edu/display/TESS/TIC+v8+and+CTL+v8.xx+Data+Release+Notes"></a>).
+--/T This catalogue is used in v0.5 target selection as a form of internal cross-
+--/T match between the objects found in difference input catalogues.
 ----------------------------------------------------------------------
     id bigint NOT NULL, --/D TESS Input Catalog identifier 
     version character varying(8), --/D Version Identifier for this entry (yyyymmdd) 
@@ -7851,7 +7917,9 @@ ALTER TABLE minidb_dr19.dr19_tic_v8 OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_twomass_psc (
 ----------------------------------------------------------------------
---/H 2MASS point source catalog. For full details, please see https://www.ipac.caltech.edu/2mass/releases/allsky/doc/sec2_2a.html
+--/H 2MASS point source catalog.
+--/T For full details, please see
+--/T https://www.ipac.caltech.edu/2mass/releases/allsky/doc/sec2_2a.html
 ----------------------------------------------------------------------
     ra double precision, --/U degrees --/D Right ascenscion 
     decl double precision, --/U degrees --/D Declination 
@@ -7924,7 +7992,10 @@ ALTER TABLE minidb_dr19.dr19_twomass_psc OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_tycho2 (
 ----------------------------------------------------------------------
---/H Tycho-2 catalog. For complete details, please see the original Tycho-2 documentation from Hog et al (2020) https://ui.adsabs.harvard.edu/abs/2000A%26A...355L..27H/abstract and https://www.cosmos.esa.int/web/hipparcos/tycho-2
+--/H Tycho-2 catalog.
+--/T For complete details, please see the original Tycho-2 documentation from Hog et
+--/T al (2020) https://ui.adsabs.harvard.edu/abs/2000A%26A...355L..27H/abstract and
+--/T https://www.cosmos.esa.int/web/hipparcos/tycho-2
 ----------------------------------------------------------------------
     tyc1 integer, --/D TYC1 from TYC or GSC (used to construct the Tycho identifier) 
     tyc2 integer, --/D TYC2 from TYC or GSC (used to construct the Tycho identifier) 
@@ -7977,7 +8048,9 @@ ALTER TABLE minidb_dr19.dr19_tycho2 OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_unwise (
 ----------------------------------------------------------------------
---/H The unWISE catalog, containing the positions and fluxes of approximately two billion objects observed by the Wide-field Infrared Survey Explorer (WISE). See Schlafly et al. (2019). The original catalogs are hosted at https://catalog.unwise.me/catalogs.html
+--/H The unWISE catalog, containing the positions and fluxes of approximately two billion objects observed by the Wide-field Infrared Survey Explorer (WISE).
+--/T For more details, see Schlafly et al. (2019). The original catalogs are hosted
+--/T at https://catalog.unwise.me/catalogs.html
 ----------------------------------------------------------------------
     x_w1 double precision, --/U pixels --/D x coordinate from the W1 measurement of the source 
     x_w2 double precision, --/U pixels --/D x coordinate from the W2 measurement of the source 
@@ -8039,7 +8112,9 @@ ALTER TABLE minidb_dr19.dr19_unwise OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_uvotssc1 (
 ----------------------------------------------------------------------
---/H Version 1.1 of the Swift UVOT Serendipitous Source Catalogue (UVOTSSC). For full details, please see Page et al. (2015) at https://pos.sissa.it/233/037 and the online documentation at https://archive.stsci.edu/prepds/uvotssc/
+--/H Version 1.1 of the Swift UVOT Serendipitous Source Catalogue (UVOTSSC).
+--/T For full details, please see Page et al. (2015) at https://pos.sissa.it/233/037
+--/T and the online documentation at https://archive.stsci.edu/prepds/uvotssc/
 ----------------------------------------------------------------------
     name character varying(17), --/D UVOTSSC1 name (JHHMMSS.s+DDMMSSa) 
     oseq bigint, --/D Reference number in the observation table 
@@ -8135,7 +8210,11 @@ ALTER TABLE minidb_dr19.dr19_uvotssc1 OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_xmm_om_suss_4_1 (
 ----------------------------------------------------------------------
---/H The 2018 release of the XMM OM Serendipitous Ultraviolet Source Survey (XMM-SUSS4.1) Catalog. For full details, please see https://heasarc.gsfc.nasa.gov/W3Browse/all/xmmomsuob.html and the original catalog paper (Page et al. 2012; https://academic.oup.com/mnras/article/426/2/903/976665)
+--/H The 2018 release of the XMM OM Serendipitous Ultraviolet Source Survey (XMM-SUSS4.1) Catalog.
+--/T For full details, please see
+--/T https://heasarc.gsfc.nasa.gov/W3Browse/all/xmmomsuob.html and the original
+--/T catalog paper (Page et al. 2012;
+--/T https://academic.oup.com/mnras/article/426/2/903/976665)
 ----------------------------------------------------------------------
     iauname character varying(22), --/D Coordinate-based name 
     n_summary integer, --/D Reference number index for the XMM-Newton pointing in which the particular detection was mad
@@ -8263,7 +8342,9 @@ ALTER TABLE minidb_dr19.dr19_xmm_om_suss_4_1 OWNER TO postgres;
 
 CREATE TABLE minidb_dr19.dr19_yso_clustering (
 ----------------------------------------------------------------------
---/H YSO candidates from Kounkel et al. 2020. Please see details in the original paper: https://iopscience.iop.org/article/10.3847/1538-3881/abc0e6
+--/H YSO candidates from Kounkel et al. 2020.
+--/T Please see details in the original paper:
+--/T https://iopscience.iop.org/article/10.3847/1538-3881/abc0e6
 ----------------------------------------------------------------------
     source_id bigint NOT NULL, --/D Gaia DR2 source id 
     twomass text, --/D 2MASS ID 

@@ -1,7 +1,7 @@
 Summary
 -------
-Constraints for a single epoch within a cadence.
 
+Constraints for a single epoch within a cadence.
 
 
 Columns
@@ -18,4 +18,3 @@ delta_min - Minimum allowed time since previous epoch [days]
 nexp - Number of exposures in this epoch []
 max_length - Maximum allowed length of epoch, i.e. time between first and last exposure []
 obsmode_pk - Reference to the observing parameters (airmass, moon seperation, etc.) []
-

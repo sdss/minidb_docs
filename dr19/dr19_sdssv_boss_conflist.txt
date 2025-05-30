@@ -2,16 +2,11 @@ Summary
 -------
 
 The dr19_sdssv_boss_conflist table is a database representation of an
-early version of the SDSS-V BOSS fieldlist data product.  The
-dr19_sdssv_boss_conflist table was used within early iterations of FPS
-target_selection as a way to communicate information about which
-SDSS-V plates had been observed by the time of target selection.
-This information was used
-to e.g. de-prioritise targets that were expected to have a good quality
-spectroscopic measurement before the start of SDSS-V FPS operations.
+early version of the SDSS-V BOSS fieldlist data product.
 
-Caution. The dr19_sdssv_boss_conflist table should only be used in order to
-recreate the target_selection selection function.
+The dr19_sdssv_boss_conflist table was used within early iterations of FPS target_selection as a way to communicate information about which SDSS-V plates had been observed by the time of target selection. This information was used to e.g. de-prioritise targets that were expected to have a good quality spectroscopic measurement before the start of SDSS-V FPS operations.
+
+Caution. The dr19_sdssv_boss_conflist table should only be used in order to recreate the target_selection selection function.
 
 Column descriptions are mainly derived from: https://data.sdss.org/datamodel/files/BOSS_SPECTRO_REDUX/RUN2D/platelist.html
 
@@ -21,62 +16,62 @@ Columns
 -------
 plate -  Plate ID number
 designid - Design ID number
-mjd - Modified Julian date of combined Spectra 
-run2d - Spectro-2D reduction name 
-run1d - Spectro-1D reduction name 
-racen - RA of the telescope pointing [deg] 
-deccen - DEC of the telescope pointing [deg] 
-epoch - Epoch of the RACEN/DECCEN 
-cartid - The currently loaded cartridge/instrument 
-tai - Mean MJD(TAI) seconds of integration [s] 
-tai_beg - MJD(TAI) seconds at start of integration [s] 
-tai_end - MJD(TAI) seconds at end of integration [s] 
-airmass - Mean Airmass 
-exptime - Total Exposure time [s] 
-mapname - ID of plate mapping file 
-survey - Survey that plate is part of 
-programname - Program name within a given survey 
-chunk -  Name of tiling chunk [from platelist product] 
-platequality - Characterization of plate quality  
+mjd - Modified Julian date of combined Spectra
+run2d - Spectro-2D reduction name
+run1d - Spectro-1D reduction name
+racen - RA of the telescope pointing [deg]
+deccen - DEC of the telescope pointing [deg]
+epoch - Epoch of the RACEN/DECCEN
+cartid - The currently loaded cartridge/instrument
+tai - Mean MJD(TAI) seconds of integration [s]
+tai_beg - MJD(TAI) seconds at start of integration [s]
+tai_end - MJD(TAI) seconds at end of integration [s]
+airmass - Mean Airmass
+exptime - Total Exposure time [s]
+mapname - ID of plate mapping file
+survey - Survey that plate is part of
+programname - Program name within a given survey
+chunk -  Name of tiling chunk [from platelist product]
+platequality - Characterization of plate quality
 platesn2 -  Overall (S/N)^2 measure for plate
-deredsn2 - Overall Dereddened (S/N)^2 for plate 
-qsurvey - 1 for an survey quality plate, 0 otherwise 
-mjdlist - List of MJD for each included exposure 
-tailist -  List of TAI for each included exposure 
-nexp - Number of Included Exposures 
-nexp_b1 - Number of Included Exposures from b1 
-nexp_r1 - Number of Included Exposures from r1 
-expt_b1 - Total Exposure Time of b1 [s] 
-expt_r1 - Total Exposure Time of r1 [s] 
-sn2_g1 - Fit (S/N)^2 at g=20.20 for spectrograph #1 
-sn2_r1 - Fit (S/N)^2 at r=20.25 for spectrograph #1 
-sn2_i1 - Fit (S/N)^2 at i=19.90 for spectrograph #1 
+deredsn2 - Overall Dereddened (S/N)^2 for plate
+qsurvey - 1 for an survey quality plate, 0 otherwise
+mjdlist - List of MJD for each included exposure
+tailist -  List of TAI for each included exposure
+nexp - Number of Included Exposures
+nexp_b1 - Number of Included Exposures from b1
+nexp_r1 - Number of Included Exposures from r1
+expt_b1 - Total Exposure Time of b1 [s]
+expt_r1 - Total Exposure Time of r1 [s]
+sn2_g1 - Fit (S/N)^2 at g=20.20 for spectrograph #1
+sn2_r1 - Fit (S/N)^2 at r=20.25 for spectrograph #1
+sn2_i1 - Fit (S/N)^2 at i=19.90 for spectrograph #1
 dered_sn2_g1 - Extinction corrected (S/N)^2 for sp1 g-band
 dered_sn2_r1 - Extinction corrected (S/N)^2 for sp1 r-band
 dered_sn2_i1 - Extinction corrected (S/N)^2 for sp1 i-band
-goffstd - Mean g mag difference (spectro-photo) for STDs 
-grmsstd - Stddev g mag diff (spectro-photo) for STDs 
-roffstd - Mean r mag difference (spectro-photo) for STDs 
-rrmsstd - Stddev r mag diff (spectro-photo) for STDs 
-ioffstd - Mean i mag difference (spectro-photo) for STDs 
-irmsstd - Stddev i mag diff (spectro-photo) for STDs 
-groffstd - Spectrophoto offset for G-R in standards 
-grrmsstd - Spectrophoto RMS for G-R in standards 
-rioffstd - Spectrophoto offset for R-I in standards 
-rirmsstd - Spectrophoto RMS for R-I in standards 
-goffgal - Mean g mag diff (spectro-photo) for galaxies 
-grmsgal - Stddev g mag diff (spectro-photo) for galaxies 
-roffgal - Mean r mag diff (spectro-photo) for galaxies 
-rrmsgal - Stddev r mag diff (spectro-photo) for galaxies 
-ioffgal - Mean i mag diff (spectro-photo) for galaxies 
-irmsgal - Stddev i mag diff (spectro-photo) for galaxies 
-groffgal - Spectrophoto offset for G-R in galaxies 
-grrmsgal - Spectrophoto RMS for G-R in galaxies 
-rioffgal - Spectrophoto offset for R-I in galaxies 
-rirmsgal - Spectrophoto RMS for R-I in galaxies 
-nguide - Number of guider frames during the exposures 
-seeing20 - Mean 20% seeing during exposures [arcsec] 
-seeing50 - Mean 50% seeing during exposures [arcsec] 
+goffstd - Mean g mag difference (spectro-photo) for STDs
+grmsstd - Stddev g mag diff (spectro-photo) for STDs
+roffstd - Mean r mag difference (spectro-photo) for STDs
+rrmsstd - Stddev r mag diff (spectro-photo) for STDs
+ioffstd - Mean i mag difference (spectro-photo) for STDs
+irmsstd - Stddev i mag diff (spectro-photo) for STDs
+groffstd - Spectrophoto offset for G-R in standards
+grrmsstd - Spectrophoto RMS for G-R in standards
+rioffstd - Spectrophoto offset for R-I in standards
+rirmsstd - Spectrophoto RMS for R-I in standards
+goffgal - Mean g mag diff (spectro-photo) for galaxies
+grmsgal - Stddev g mag diff (spectro-photo) for galaxies
+roffgal - Mean r mag diff (spectro-photo) for galaxies
+rrmsgal - Stddev r mag diff (spectro-photo) for galaxies
+ioffgal - Mean i mag diff (spectro-photo) for galaxies
+irmsgal - Stddev i mag diff (spectro-photo) for galaxies
+groffgal - Spectrophoto offset for G-R in galaxies
+grrmsgal - Spectrophoto RMS for G-R in galaxies
+rioffgal - Spectrophoto offset for R-I in galaxies
+rirmsgal - Spectrophoto RMS for R-I in galaxies
+nguide - Number of guider frames during the exposures
+seeing20 - Mean 20% seeing during exposures [arcsec]
+seeing50 - Mean 50% seeing during exposures [arcsec]
 seeing80 - Mean 80% seeing during exposures [arcsec]
 rmsoff20 - 20% of RMS offset of guide fibers [arcsec]
 rmsoff50 - 50% of RMS offset of guide fibers [arcsec]
@@ -113,4 +108,3 @@ public - Is this Plate Public
 qualcomments - Comments on Plate Quality
 moon_frac - Mean Moon phase of the Coadded Spectra
 pkey -primary key for table entry
-

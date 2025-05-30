@@ -1,7 +1,7 @@
 Summary
 -------
 
-List of APOGEE DR16 stars for RV followup
+List of APOGEE DR16 stars for RV followup.
 
 
 Columns
@@ -20,7 +20,7 @@ pm_src - source of proper motion (e.g. gaia) []
 j - 2MASS J mag [bad=99] [mag]
 j_err - Uncertainty in 2MASS J mag [mag]
 h - 2MASS H mag [bad=99] [mag]
-h_err - Uncertainty in 2MASS H mag [mag] 
+h_err - Uncertainty in 2MASS H mag [mag]
 k - 2MASS Ks mag [bad=99] [mag]
 k_err - Uncertainty in 2MASS Ks mag [mag]
 ak - K-band extinction adopted for targetting [mag]
@@ -46,7 +46,7 @@ logg_err - log g uncertainty (from PARAM_COV) [dex]
 feh - metallicity from ASPCAP analysis of combined spectrum (from PARAM) averaged across entries [dex]
 feh_err - feh uncertainty (from PARAM_COV) [dex]
 startype - Best guess of star's evolutionary state based on stellar parameters or external catalogs (RC=red clump, RG=red giant, SG = subgiant, MS=dwarf, PMS=pre-main sequence) []
-vjitter - Atmospheric RV jitter derived from log g using the relationship derived in Hekker, et. al 2008. [km/s]  
+vjitter - Atmospheric RV jitter derived from log g using the relationship derived in Hekker, et. al 2008. [km/s]
 dist - Derived or given distance to the star [pc]
 dist_err - uncertainy of the distance [pc]
 dist_src - Source of the star's distance measurement (e.g. gaia=derived from gaia parallax) []

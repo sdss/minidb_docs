@@ -1,6 +1,8 @@
 Summary
 -------
-GALEX unique source catalog from Bianchi et al. 2017 (https://iopscience.iop.org/article/10.3847/1538-4365/aa7053/pdf). For more details on the column descriptions see https://archive.stsci.edu/hlsp/guvcat/guvcat-column-description
+GALEX unique source catalog from Bianchi et al. 2017 (https://iopscience.iop.org/article/10.3847/1538-4365/aa7053/pdf).
+
+For more details on the column descriptions see https://archive.stsci.edu/hlsp/guvcat/guvcat-column-description
 
 Columns
 -------
@@ -100,4 +102,3 @@ sepas - Separation between primary and secondary [arcsec]
 sepasdist - Separation between primary and secondary, but based on distance criterion [arcsec]
 inlargeobj - Is source in the footprint of an extended object? []
 largeobjsize - Size of the extended object []
-

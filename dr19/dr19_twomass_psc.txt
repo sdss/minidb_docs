@@ -1,7 +1,9 @@
 Summary
 -------
 
-2MASS point source catalog. For full details, please see https://www.ipac.caltech.edu/2mass/releases/allsky/doc/sec2_2a.html
+2MASS point source catalog.
+
+For full details, please see https://www.ipac.caltech.edu/2mass/releases/allsky/doc/sec2_2a.html
 
 
 Columns
@@ -67,4 +69,3 @@ scan_key - Unique identification number of the record in the Scan Information Ta
 coadd_key - Unique identification number of the record in the Atlas Image Information Table []
 coadd - Sequence number of the Atlas Image in which the position of this source falls []
 designation - Sexagesimal, equatorial position-based source []
-

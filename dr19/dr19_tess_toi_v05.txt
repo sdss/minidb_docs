@@ -1,7 +1,9 @@
 Summary
 -------
 
-This catalog contains targets that recieved the 2 minute cadence during the TESS Mission, are TESS Objects of Interest (TOI) or Community TESS Objects of Interest (CTOI). The contents of this catalog were derived from the MIT TESS website (https://tess.mit.edu/public/target_lists/target_lists.html) and the ExoFOP website https://exofop.ipac.caltech.edu/tess/index.php. These targets were updated on 2020-11-24.
+This catalog contains targets that received the 2 minute cadence during the TESS Mission, are TESS Objects of Interest (TOI) or Community TESS Objects of Interest (CTOI).
+
+The contents of this catalog were derived from the MIT TESS website (https://tess.mit.edu/public/target_lists/target_lists.html) and the ExoFOP website https://exofop.ipac.caltech.edu/tess/index.php. These targets were updated on 2020-11-24.
 
 
 Columns
@@ -16,4 +18,3 @@ ctoi - Community Tareget of Interest ID []
 user_disposition - Initial Community User Disposition []
 num_sectors - The total number of sectors that this object was observed on as of the catalog date []
 pkey - Primary Key []
-

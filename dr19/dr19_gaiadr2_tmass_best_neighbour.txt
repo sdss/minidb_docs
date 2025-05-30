@@ -1,7 +1,9 @@
 Summary
 -------
 
-The Gaia DR2 vs. 2MASS PSC crossmatch provided by the Gaia collaboration. Please see https://gea.esac.esa.int/archive/documentation/GDR2/Catalogue_consolidation/chap_cu9val_cu9val/ssec_cu9xma/sssec_cu9xma_extcat.html for complete details.
+The Gaia DR2 vs. 2MASS PSC crossmatch provided by the Gaia collaboration.
+
+See https://gea.esac.esa.int/archive/documentation/GDR2/Catalogue_consolidation/chap_cu9val_cu9val/ssec_cu9xma/sssec_cu9xma_extcat.html for complete details.
 
 
 Columns
@@ -16,4 +18,3 @@ original_ext_source_id - The unique source identifier in the original 2MASS cata
 angular_distance - Angular distance between the two sources [arcsec]
 gaia_astrometric_params - Number of Gaia astrometric params used []
 tmass_pts_key - key for crossmatch []
-

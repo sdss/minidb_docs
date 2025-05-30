@@ -13,6 +13,7 @@ import re
 import textwrap
 
 import click
+from rich import print as rprint
 
 
 def update_create_table(
@@ -65,8 +66,8 @@ def update_create_table(
     header = header.strip()
     if header == "":
         raise ValueError("No description provided.")
-    elif len(header) > 80:
-        print(f"[WARNING]: header is {len(header)} characters.")
+    elif len(header) > 256:
+        rprint(f"[bold yellow][WARNING]: header is {len(header)} characters.[/]")
 
     description_list = [item for item in description_list if item.strip() != ""]
 
@@ -81,6 +82,14 @@ def update_create_table(
     if len(description_lines) > 0:
         for line in description_lines:
             description += "--/T " + line + "\n"
+
+    description_len = len(description) - 70
+    if description_len > 7200:
+        rprint(
+            f"[bold yellow][WARNING]: Description for {table_name!r} is "
+            f"{description_len} characters.[/]"
+        )
+
     description += "-" * 70 + "\n"
 
     orig = open(create_table_file, "r").read()
@@ -114,6 +123,11 @@ def update_create_table(
             column_sub += f" --/U {column_units}"
 
         if column_description:
+            if len(column_description) > 2000:
+                rprint(
+                    f"[bold yellow][WARNING]: Column {table_name}.{column_name!r} "
+                    f"description is {len(column_description)} characters.[/]"
+                )
             column_sub += f" --/D {column_description}"
 
         subd = re.sub(

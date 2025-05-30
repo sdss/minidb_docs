@@ -1,18 +1,11 @@
 Summary
 -------
 
-The combination of the dr19_sdssv_plateholes and dr19_sdssv_plateholes_meta
-tables are a database representation of the SDSS-V platelist data
-product (https://svn.sdss.org/public/data/sdss/platelist/trunk/).
-These tables were used within early iterations of FPS target_selection
-as a way to communicate information about which targets had been
-included in SDSS-V plates. This information was used to
-e.g. de-prioritise targets that were expected to have a good quality
-spectroscopic measurement by the end of the SDSS-V plate observations.
-The dr19_sdssv_plateholes_meta table contains meta-data for each
-SDSS-V plate (one record per plate), whereas the dr19_sdssv_plateholes
-table has one entry for each drilled hole in each SDSS-V plate.
-The dr19_sdssv_plateholes and dr19_sdssv_plateholes_meta tables should be joined via the yanny_uid field.
+The combination of the dr19_sdssv_plateholes and dr19_sdssv_plateholes_meta tables are a database representation of the SDSS-V platelist data product (https://svn.sdss.org/public/data/sdss/platelist/trunk/).
+
+These tables were used within early iterations of FPS target_selection as a way to communicate information about which targets had been included in SDSS-V plates. This information was used to e.g. de-prioritise targets that were expected to have a good quality spectroscopic measurement by the end of the SDSS-V plate observations.
+
+The dr19_sdssv_plateholes_meta table contains meta-data for each SDSS-V plate (one record per plate), whereas the dr19_sdssv_plateholes table has one entry for each drilled hole in each SDSS-V plate. The dr19_sdssv_plateholes and dr19_sdssv_plateholes_meta tables should be joined via the yanny_uid field.
 
 Mostly derived from: https://data.sdss.org/datamodel/files/PLATELIST_DIR/designs/DESIGNID6XX/DESIGNID6/plateDesign.html
 
@@ -162,10 +155,9 @@ tmass_id - 2MASS identification, if available
 sdssv_apogee_target0 - bitmask for SDSS-V plate-era APOGEE targeting
 sdssv_boss_target0 - bitmask for SDSS-V plate-era BOSS targeting
 gri_gaia_transform - n/a ignore
-firstcarton - name of the SDSS-V carton which was the primary reason this target was assigned a fiber 
+firstcarton - name of the SDSS-V carton which was the primary reason this target was assigned a fiber
 xfocal - final X position in the focal plane of the hole, in mm; for position angle of zero (which we always use), +X is +RA
 yfocal - final Y position in the focal plane of the hole, in mm; for position angle of zero (which we always use), +Y is +Dec
 yanny_uid - internal integer identifier for the platelist file from which this inforation was extracted
 yanny_filename - filename from which this information was extracted
 pkey - primary key for this table entry
-

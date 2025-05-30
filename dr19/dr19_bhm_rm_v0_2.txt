@@ -1,7 +1,12 @@
 Summary
 -------
-Parent sample for the RM project, used to select confirmed and candidate quasar targets for the BHM-RM Program in SDSS-V. For more details please see Yang and Shen, (2022, https://ui.adsabs.harvard.edu/abs/2022arXiv220608989Y/abstract).
+
+Parent sample for the RM project.
+
+Used to select confirmed and candidate quasar targets for the BHM-RM Program in SDSS-V. For more details please see Yang and Shen, (2022, https://ui.adsabs.harvard.edu/abs/2022arXiv220608989Y/abstract).
+
 This table contains all photometric objects detected in the COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields., within a circular area of 10 degree^2 from the field center.
+
 Field center: Name     RA          DEC
               XMM-LSS  02:22:50.00    -04:45:00.0
               CDFS     03:30:35.60    -28:06:00.0
@@ -11,7 +16,7 @@ Field center: Name     RA          DEC
               SDSS-RM  14:14:49.00    +53:05:00.0
               S-CVZ    06:00:00.00    -66:33:38.0
 
-The table includes information from the following survey data releases: 
+The table includes information from the following survey data releases:
 DES: Dark Energy Survey, Y6, Y6A1_COADD_OBJECT_SUMMARY
 PS1: Pan-STARRS, DR1, StackObjectThin
 NSC: NOAO Source Catalog, DR1, nsc_dr1.object
@@ -282,4 +287,3 @@ ps1_var_sn_r - The signal-to-noise ratio of the measured intrinsic RMS from PS1
 ps1_var_sn_i - The signal-to-noise ratio of the measured intrinsic RMS from PS1
 ps1_var_sn_z - The signal-to-noise ratio of the measured intrinsic RMS from PS1
 ps1_var_sn_y - The signal-to-noise ratio of the measured intrinsic RMS from PS1
-

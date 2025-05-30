@@ -1,7 +1,7 @@
 Summary
 -------
 
-Summary file of all visits of stars included in MaNGA Stellar Libary.
+Summary file of all visits of stars included in MaNGA Stellar Library.
 
 
 Columns

@@ -1,6 +1,8 @@
 Summary
 -------
-Legacy Survey DR8 catalogue derived from 'sweep' catalogues (See <a href="https://www.legacysurvey.org/dr8/">https://www.legacysurvey.org/dr8/</a>).
+Legacy Survey DR8 catalogue derived from 'sweep' catalogues.
+
+For more information see <a href="https://www.legacysurvey.org/dr8/">https://www.legacysurvey.org/dr8/</a>.
 
 
 
@@ -85,7 +87,7 @@ psfsize_z - Weighted average PSF FWHM in the z band [arcsec]
 psfdepth_g - For a 5σ point source detection limit in g, 5/sqrt(PSFDEPTH_G) gives flux in nanomaggies and -2.5(log10(5/sqrt(PSFDEPTH_G))-9) give corresponding magnitude [1/nanomaggies^2]
 psfdepth_r - For a 5σ point source detection limit in g, 5/sqrt(PSFDEPTH_R) gives flux in nanomaggies and -2.5(log10(5/sqrt(PSFDEPTH_R))-9) give corresponding magnitude [1/nanomaggies^2]
 psfdepth_z - For a 5σ point source detection limit in g, 5/sqrt(PSFDEPTH_Z) gives flux in nanomaggies and -2.5(log10(5/sqrt(PSFDEPTH_Z))-9) give corresponding magnitude [1/nanomaggies^2]
-galdepth_g - As for PSFDEPTH_G but for a galaxy (0.45" exp, round) detection sensitivity [1/nanomaggies^2] 
+galdepth_g - As for PSFDEPTH_G but for a galaxy (0.45" exp, round) detection sensitivity [1/nanomaggies^2]
 galdepth_r - As for PSFDEPTH_R but for a galaxy (0.45" exp, round) detection sensitivity [1/nanomaggies^2]
 galdepth_z - As for PSFDEPTH_Z but for a galaxy (0.45" exp, round) detection sensitivity [1/nanomaggies^2]
 psfdepth_w1 - As for PSFDEPTH_G (and also on the AB system) but for WISE W1 [1/nanomaggies^2]
@@ -135,4 +137,3 @@ maskbits - Bitwise mask indicating that an object touches a pixel in the coadd/*
 ls_id - Added by SDSS-V: Derived unique object identifier. Computed as follows: ls_id = objid + (brickid << 16) + (release << 40)  []
 tycho_ref - Added by SDSS-V: TychoII identifier (equal to ref_id when ref_cat = "T2") []
 gaia_sourceid - Added by SDSS-V: Gaia DR2 source_id identifier (equal to ref_id when ref_cat = "G2") []
-

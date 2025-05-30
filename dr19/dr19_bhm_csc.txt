@@ -1,10 +1,9 @@
 Summary
 -------
 
-Chandra Source Catalogue version 2.0 (CSC2) sources that have been
-matched (separately) to the PanSTARRS-1 and 2MASS catalogs.  This
-version of the CSC2 catalog informed early (plate era) SDSS-V
-observations but was then replaced by updated versions.
+Chandra Source Catalogue version 2.0 (CSC2) sources.
+
+Chandra Source Catalogue version 2.0 (CSC2) sources that have been matched (separately) to the PanSTARRS-1 and 2MASS catalogs.  This version of the CSC2 catalog informed early (plate era) SDSS-V observations but was then replaced by updated versions.
 
 Columns
 -------
@@ -20,4 +19,3 @@ mag_i - optical magnitude (i-band) from Pan-STARRS1 catalog, if available [mag]
 mag_z - optical magnitude (z-band) from Pan-STARRS1 catalog, if available [mag]
 mag_h - H-band NIR magnitude from 2MASS catalog, if available [mag]
 spectrograph - Which spectrograph this target should be observed with (BOSS or APOGEE)
-

@@ -13,6 +13,8 @@ import os
 import pathlib
 import shutil
 
+from rich import print as rprint
+
 from update_create_table import update_create_table
 
 
@@ -39,7 +41,7 @@ def run_all():
             print(fn)
             updated_text = update_create_table(fn, create_table_orig_updated, table)
         except Exception as err:
-            print(f"[WARNING] - {fn}: {err}")
+            rprint(f"[bold yellow][WARNING] - {fn}: {err}[/]")
             continue
 
         with open(create_table_orig_updated, "w") as f:

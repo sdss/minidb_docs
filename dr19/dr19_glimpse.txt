@@ -1,7 +1,9 @@
 Summary
 -------
 
-GLIMPSE catalog (I, II and 3-D). See full documentation at https://irsa.ipac.caltech.edu/data/SPITZER/GLIMPSE/doc/glimpse1_dataprod_v2.0.pdf
+GLIMPSE catalog (I, II and 3-D).
+
+See full documentation at https://irsa.ipac.caltech.edu/data/SPITZER/GLIMPSE/doc/glimpse1_dataprod_v2.0.pdf
 
 
 Columns

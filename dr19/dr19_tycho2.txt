@@ -1,7 +1,9 @@
 Summary
 -------
 
-Tycho-2 catalog. For complete details, please see the original Tycho-2 documentation from Hog et al (2020) https://ui.adsabs.harvard.edu/abs/2000A%26A...355L..27H/abstract and https://www.cosmos.esa.int/web/hipparcos/tycho-2
+Tycho-2 catalog.
+
+For complete details, please see the original Tycho-2 documentation from Hog et al (2020) https://ui.adsabs.harvard.edu/abs/2000A%26A...355L..27H/abstract and https://www.cosmos.esa.int/web/hipparcos/tycho-2
 
 
 Columns
@@ -23,7 +25,7 @@ epram - mean epoch of RA [yr]
 epdem - mean epoch of Dec [yr]
 num - Number of positions used []
 q_ramdeg - Goodness of fit for mean RA []
-q_demdeg - Goodness of fit for mean Dec [] 
+q_demdeg - Goodness of fit for mean Dec []
 q_pmra - Goodness of fit for pmra []
 q_pmde - Goodness of fit for pmde []
 btmag - Tycho-2 BT magnitude [mag]
@@ -46,4 +48,3 @@ flag - flag indicating whether data from Hipparcos or Tycho-1 []
 mflag - magnitude flag []
 designation - Unique Tycho designation []
 tycid - Tycho ID []
-

@@ -1,7 +1,7 @@
 Summary
 -------
 
-The parameters for the metrics that descirbe a given Design Mode, where a Design Mode constrains the assignments on a design.
+The parameters for the metrics that describe a given Design Mode, where a Design Mode constrains the assignments on a design.
 
 
 Columns
@@ -106,4 +106,3 @@ apogee_bright_limit_targets_max_rp - The maximum Gaia RP magnitude for Apogee sc
 apogee_bright_limit_targets_max_j - The maximum IR J magnitude for Apogee science targets.
 apogee_bright_limit_targets_max_h - The maximum IR H magnitude for Apogee science targets.
 apogee_bright_limit_targets_max_k - The maximum IR K magnitude for Apogee science targets.
-

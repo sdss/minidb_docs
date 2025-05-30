@@ -1,7 +1,9 @@
 Summary
 -------
 
-Catalog of pre-main-sequence stars derived from Gaia DR2 and 2MASS from McBride et al. (2021), their Table 4. For complete details, please see the original paper: https://iopscience.iop.org/article/10.3847/1538-3881/ac2432
+Catalog of pre-main-sequence stars derived from Gaia DR2 and 2MASS from McBride et al. (2021), their Table 4.
+
+For complete details, see the original paper: https://iopscience.iop.org/article/10.3847/1538-3881/ac2432
 
 
 
@@ -16,4 +18,3 @@ yso - Pre-main-sequence probability []
 yso_std - Error on pre-main-sequence probability []
 age - Age [log yrs]
 age_std - Error on age [log yrs]
-

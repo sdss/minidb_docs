@@ -1,7 +1,7 @@
 Summary
 -------
 
-The table stores the targets assigned to a given carton along with information about the instrument that will observe that target, and offseting data.
+The table stores the targets assigned to a given carton along with information about the instrument that will observe that target, and offsetting data.
 
 
 Columns

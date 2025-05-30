@@ -1,7 +1,9 @@
 Summary
 -------
 
-Gaia DR2 Source Table. See https://gea.esac.esa.int/archive/documentation/GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html for complete details.
+Gaia DR2 Source Table.
+
+See https://gea.esac.esa.int/archive/documentation/GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html for complete details.
 
 
 Columns
@@ -43,7 +45,7 @@ astrometric_excess_noise - Excess noise of the source [mas]
 astrometric_excess_noise_sig - Significance of excess noise []
 astrometric_params_solved - Which parameters have been solved for []
 astrometric_primary_flag - Flag indicating if this source was used as a primary source (true) or secondary source (false) []
-astrometric_weight_al - Mean astrometric weight of the source [mas^-2] 
+astrometric_weight_al - Mean astrometric weight of the source [mas^-2]
 astrometric_pseudo_colour - Astrometrically determined pseudocolour of the source [um^-1]
 astrometric_pseudo_colour_error - Standard error of the pseudocolour of the source [um^-1]
 mean_varpi_factor_al - Mean Parallax factor AL []
@@ -101,4 +103,3 @@ radius_percentile_upper - Radius_val upper uncertainty [Solar Radius]
 lum_val - stellar luminosity [Solar Luminosity]
 lum_percentile_lower - lum_val lower uncertainty [Solar Luminosity]
 lum_percentile_upper - lum_val upper uncertainty [Solar Luminosity]
-

@@ -1,13 +1,9 @@
 Summary
 -------
 
-This table enables small modifications to be made to the set of
-reverberation mapping (RM) targets selected for observation in SDSS-V.
-The dr19_bhm_rm_tweaks table allows identification of i) confirmed
-QSOs which were observed in plate mode that should be preferentially
-targeted in forward-looking FPS mode observations, and ii) reject candidates
-which the plate-mode observations have revealed to be unsuitable for
-continued RM studies.
+Reverberation mapping (RM) targets for SDSS-V.
+
+This table enables small modifications to be made to the set of reverberation mapping (RM) targets selected for observation in SDSS-V. The dr19_bhm_rm_tweaks table allows identification of confirmed QSOs which were observed in plate mode that should be preferentially targeted in forward-looking FPS mode observations, and reject candidates which the plate-mode observations have revealed to be unsuitable for continued RM studies.
 
 Columns
 -------
@@ -30,4 +26,3 @@ mag_z -  optical magnitude of the target (z-band) [mag]
 gaia_g -  optical magnitude of the target (Gaia G-band) [mag]
 date_set - Human readable date string, e.g. '25-Nov-2020' that indicates roughly when this entry was added
 pkey - primary key of the table entry
-

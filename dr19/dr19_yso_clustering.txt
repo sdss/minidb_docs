@@ -1,7 +1,9 @@
 Summary
 -------
 
-YSO candidates from Kounkel et al. 2020. Please see details in the original paper: https://iopscience.iop.org/article/10.3847/1538-3881/abc0e6
+YSO candidates from Kounkel et al. 2020.
+
+Please see details in the original paper: https://iopscience.iop.org/article/10.3847/1538-3881/abc0e6
 
 
 Columns
@@ -25,4 +27,3 @@ av - Estimate of extinction of the parent group from Kounkel et al. (2020) [mag]
 eav - Uncertainty in av [mag]
 dist - Estimate of distance of the parent group from Kounkel et al. (2020) [pc]
 edist - Uncertainty in dist [pc]
-

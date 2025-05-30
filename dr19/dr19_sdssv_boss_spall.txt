@@ -1,16 +1,11 @@
 Summary
 -------
 
-The dr19_sdssv_boss_spall table is a database representation of an
-early version of the SDSS-V BOSS spAll data product.  The
-dr19_sdssv_boss_spall table was used within early iterations of FPS
-target_selection as a way to communicate information about which
-targets had been observed in SDSS-V plates. This information was used
-to e.g. de-prioritise targets that were expected to have a good quality
-spectroscopic measurement before the start of SDSS-V FPS operations.
+The dr19_sdssv_boss_spall table is a database representation of an early version of the SDSS-V BOSS spAll data product.
 
-Caution. The dr19_sdssv_boss_spall table should only be used in order to
-recreate the target_selection selection function.
+The dr19_sdssv_boss_spall table was used within early iterations of FPS target_selection as a way to communicate information about which targets had been observed in SDSS-V plates. This information was used to e.g. de-prioritise targets that were expected to have a good quality spectroscopic measurement before the start of SDSS-V FPS operations.
+
+Caution. The dr19_sdssv_boss_spall table should only be used in order to recreate the target_selection selection function.
 
 Column descriptions are mainly derived from: https://data.sdss.org/datamodel/files/BOSS_SPECTRO_REDUX/RUN2D/spAll.html
 
@@ -18,11 +13,11 @@ Columns
 -------
 
 programname - Program name within a given survey
-chunk - Name of tiling chunk [from platelist product] 
+chunk - Name of tiling chunk [from platelist product]
 survey - Survey that plate is a part of
-platequality - Characterization of plate quality 
-platesn2 - Overall (S/N)^2 measure for plate; minimum of all 4 cameras 
-deredsn2 -  Dereddened (extinction corrected) (S/N)^2 measure for plate; minimum of all 4 cameras 
+platequality - Characterization of plate quality
+platesn2 - Overall (S/N)^2 measure for plate; minimum of all 4 cameras
+deredsn2 -  Dereddened (extinction corrected) (S/N)^2 measure for plate; minimum of all 4 cameras
 primtarget - n/a ignore
 sectarget - n/a ignore
 lambda_eff - Wavelength to optimize hole location for [Angstrom]
@@ -69,7 +64,7 @@ sdssv_boss_target0 - bitmask for SDSS-V plate-era BOSS targeting
 field - SDSS FieldID (plateID for plate era data)
 tile - n/a ignore
 mjd - Modified Julian date of combined Spectra
-fiberid - Index of the fiber which observed the target 
+fiberid - Index of the fiber which observed the target
 run2d - Spectro-2D reduction name
 run1d - Spectro-1D reduction name
 objtype - Why this object was targeted.  Note that if this field says QSO, it could be the case that this object would have been targeted as a GALAXY or any number of other categories as well. The PRIMTARGET and SECTARGET flags in the plug-map structure (in the spField file) gives this full information.

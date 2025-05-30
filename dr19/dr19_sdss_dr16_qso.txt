@@ -1,7 +1,10 @@
 Summary
 -------
 
-SDSS Data Release 16 Quasar Catalog (Lyke et al. 2020). For complete details, please see the original paper: https://ui.adsabs.harvard.edu/abs/2020ApJS..250....8L/abstract
+SDSS Data Release 16 Quasar Catalog (Lyke et al. 2020).
+
+For complete details, please see the original paper: https://ui.adsabs.harvard.edu/abs/2020ApJS..250....8L/abstract.
+
 Description derived from SDSS datamodel: https://data.sdss.org/datamodel/files/BOSS_QSO/DR16Q/DR16Q_v4.html
 
 Columns
@@ -191,4 +194,3 @@ gaia_rp_mag -  Mean magnitude in RP-band (Vega) [mag]
 gaia_rp_flux_snr -  Mean flux over standard deviation in RP-band []
 sdss2gaia_sep -  SDSS-Gaia separation [arcsec]
 pk - Added for convenience - serial integer primary key []
-

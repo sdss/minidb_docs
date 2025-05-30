@@ -1,7 +1,9 @@
 Summary
 -------
 
-Skymapper Data Release 2 photometry. For detailed descriptions, please see the SkyMapper documentation: https://skymapper.anu.edu.au/table-browser/
+Skymapper Data Release 2 photometry.
+
+For detailed descriptions, please see the SkyMapper documentation: https://skymapper.anu.edu.au/table-browser/
 
 
 Columns
@@ -63,7 +65,7 @@ u_petro - Mean u-band Petrosian magnitude [mag]
 e_u_petro - Error in u-band Petrosian magnitude [mag]
 v_psf - Mean v-band PSF magnitude [mag]
 e_v_psf - Error in v-band PSF magnitude [mag]
-v_rchi2var - Reduced chi-squared for a constant-magnitude model of the v-band PSF magnitude, including clipped sources [] 
+v_rchi2var - Reduced chi-squared for a constant-magnitude model of the v-band PSF magnitude, including clipped sources []
 v_petro - Mean v-band Petrosian magnitude [mag]
 e_v_petro - Error in v-band Petrosian magnitude [mag]
 g_psf - Mean g-band PSF magnitude [mag]
@@ -107,4 +109,3 @@ gaia_dr2_id1 - Unique identifier (source_id) of closest Gaia DR2 source []
 gaia_dr2_dist1 - Distance on sky to closest Gaia DR2 source [arcsec]
 gaia_dr2_id2 - Unique identifier (source_id) of second-closest Gaia DR2 source []
 gaia_dr2_dist2 - Distance on sky to second-closest Gaia DR2 source [arcsec]
-

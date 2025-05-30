@@ -1,6 +1,6 @@
 Summary
 -------
-The CatWISE2020 Catalog (https://ui.adsabs.harvard.edu/abs/2021ApJS..253....8M/abstract) See https://irsa.ipac.caltech.edu/data/WISE/CatWISE/gator_docs/catwise_colDescriptions.html for more detailed column descriptions
+The CatWISE2020 Catalog (https://ui.adsabs.harvard.edu/abs/2021ApJS..253....8M/abstract) See https://irsa.ipac.caltech.edu/data/WISE/CatWISE/gator_docs/catwise_colDescriptions.html for more detailed column descriptions.
 
 
 Columns
