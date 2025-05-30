@@ -37,15 +37,15 @@ CREATE TABLE minidb_dr19.dr19_allstar_dr17_synspec_rev1 (
 ----------------------------------------------------------------------
 --/H The APOGEE All-Star DR17 synspec catalogue.
 ----------------------------------------------------------------------
-    file text, --/D apStar file name
-    apogee_id text, --/D TMASS-STYLE object name
-    target_id text, --/D target id
-    apstar_id text NOT NULL, --/U ns].[sc --/D Unique ASPCAP identifier: apogee.
-    aspcap_id text, --/U ns].[sc].APSTAR_VERS.LOC.STAR, where [ns] is for APOGEE North/South, [sc --/D Unique apStar identifier: apogee.
-    telescope text, --/D String representation of of telescope used for observation (apo25m, lco25m, apo1m)
-    location_id integer, --/D Field Location ID
-    field text, --/D Field name
-    alt_id text, --/D Alternate object name, if any
+    file text, --/D apStar file name 
+    apogee_id text, --/D TMASS-STYLE object name 
+    target_id text, --/D target id 
+    apstar_id text NOT NULL, --/D Unique ASPCAP identifier: apogee.[ns].[sc].RESULTS_VERS.LOC.STAR 
+    aspcap_id text, --/D Unique apStar identifier: apogee.[ns].[sc].APSTAR_VERS.LOC.STAR, where [ns] is for APOGEE North/South, [sc] is for survey/commissioning 
+    telescope text, --/D String representation of of telescope used for observation (apo25m, lco25m, apo1m) 
+    location_id integer, --/D Field Location ID 
+    field text, --/D Field name 
+    alt_id text, --/D Alternate object name, if any 
     ra double precision, --/U degrees --/D Right ascension (J2000) 
     "dec" double precision, --/U degrees --/D Declination (J2000) 
     glon double precision, --/U degrees --/D Galactic longitude 
@@ -56,79 +56,79 @@ CREATE TABLE minidb_dr19.dr19_allstar_dr17_synspec_rev1 (
     h_err real, --/U mag --/D Uncertainty in 2MASS H 
     k real, --/U mag --/D 2MASS Ks (bad=99) 
     k_err real, --/U mag --/D Uncertainty in 2MASS Ks 
-    src_h text, --/D Source of H-Band photometry for targeting
-    wash_m real, --/D Washington M mag
-    wash_m_err real, --/D Washington M mag error
-    wash_t2 real, --/D Washington T2 mag
-    wash_t2_err real, --/D Washington T2 mag error
-    ddo51 real, --/D DDO 51 mag
-    ddo51_err real, --/D DDO 51 mag error
-    irac_3_6 real, --/D IRAC 3.6micron mag
-    irac_3_6_err real, --/D IRAC 3.6micron mag error
-    irac_4_5 real, --/D IRAC 4.5micron mag
-    irac_4_5_err real, --/D IRAC 4.5micron mag error
-    irac_5_8 real, --/D IRAC 5.8 micron mag
-    irac_5_8_err real, --/D IRAC 5.8 micron mag error
-    irac_8_0 real, --/D IRAC 8.0 micron mag
-    irac_8_0_err real, --/D IRAC 8.0 micron mag error
-    wise_4_5 real, --/D WISE 4.5 micron mag
-    wise_4_5_err real, --/D WISE 4.5 micron mag error
-    targ_4_5 real, --/D 4.5 micron mag adopted for dereddening for targeting
-    targ_4_5_err real, --/D 4.5 micron mag adopted for dereddening for targeting, error
-    wash_ddo51_giant_flag integer, --/D Flagged as a giant for targeting purposes based on Washington/DDO 51 photometry
-    wash_ddo51_star_flag integer, --/D Flagged as a starfor targeting purposes based on Washington/DDO 51 photometry
-    targ_pmra real, --/D RA proper motion used for targeting
-    targ_pmdec real, --/D DEC proper motion used for targeting
-    targ_pm_src text, --/D Source of proper motion used for targeting
-    ak_targ real, --/D K-band extinction adopted for targetting
-    ak_targ_method text, --/D Method used to get targetting extinction
-    ak_wise real, --/D WISE all-sky K-band extinction
-    sfd_ebv real, --/D SFD reddening
-    apogee_target1 integer, --/D Bitwise OR of first APOGEE-1 target flag of all visits, see bitmask definitions.
-    apogee_target2 integer, --/D Bitwise OR of second APOGEE-1 target flag of all visits, see bitmask definitions
-    apogee2_target1 integer, --/D Bitwise OR of first APOGEE-2 target flag of all visits, see bitmask definitions.
-    apogee2_target2 integer, --/D Bitwise OR of second APOGEE-2 target flag of all visits, see bitmask definitions
-    apogee2_target3 integer, --/D Bitwise OR of third APOGEE-2 target flag of all visits, see bitmask definitions
-    apogee2_target4 integer, --/D Bitwise OR of fourth APOGEE-2 target flag of all visits, see bitmask definitions
-    targflags text, --/D Verbose/text form of APOGEE-1 target flags
-    survey text, --/D Survey-associated with object: apogee, apo1m, apogee-marvels, apogee2, apogee2-manga, manga-apogee2
-    programname text, --/D Program name associated with object, when available
-    nvisits integer, --/D Number of visits into combined spectrum
-    snr real, --/D S/N estimate
-    snrev real, --/D Revised S/N estimate (avoiding persistence issues)
-    starflag bigint, --/D Flag for star condition taken from bitwise OR of individual visits, see bitmask definitions
-    starflags text, --/D Verbose/text form of STARFLAG
-    andflag bigint, --/D Flag for star condition taken from bitwise AND of individual visits, see bitmask definitions
-    andflags text, --/D Verbose/text form of ANDFLAG
+    src_h text, --/D Source of H-Band photometry for targeting 
+    wash_m real, --/D Washington M mag 
+    wash_m_err real, --/D Washington M mag error 
+    wash_t2 real, --/D Washington T2 mag 
+    wash_t2_err real, --/D Washington T2 mag error 
+    ddo51 real, --/D DDO 51 mag 
+    ddo51_err real, --/D DDO 51 mag error 
+    irac_3_6 real, --/D IRAC 3.6micron mag 
+    irac_3_6_err real, --/D IRAC 3.6micron mag error 
+    irac_4_5 real, --/D IRAC 4.5micron mag 
+    irac_4_5_err real, --/D IRAC 4.5micron mag error 
+    irac_5_8 real, --/D IRAC 5.8 micron mag 
+    irac_5_8_err real, --/D IRAC 5.8 micron mag error 
+    irac_8_0 real, --/D IRAC 8.0 micron mag 
+    irac_8_0_err real, --/D IRAC 8.0 micron mag error 
+    wise_4_5 real, --/D WISE 4.5 micron mag 
+    wise_4_5_err real, --/D WISE 4.5 micron mag error 
+    targ_4_5 real, --/D 4.5 micron mag adopted for dereddening for targeting 
+    targ_4_5_err real, --/D 4.5 micron mag adopted for dereddening for targeting, error 
+    wash_ddo51_giant_flag integer, --/D Flagged as a giant for targeting purposes based on Washington/DDO 51 photometry 
+    wash_ddo51_star_flag integer, --/D Flagged as a starfor targeting purposes based on Washington/DDO 51 photometry 
+    targ_pmra real, --/D RA proper motion used for targeting 
+    targ_pmdec real, --/D DEC proper motion used for targeting 
+    targ_pm_src text, --/D Source of proper motion used for targeting 
+    ak_targ real, --/D K-band extinction adopted for targetting 
+    ak_targ_method text, --/D Method used to get targetting extinction 
+    ak_wise real, --/D WISE all-sky K-band extinction 
+    sfd_ebv real, --/D SFD reddening 
+    apogee_target1 integer, --/D Bitwise OR of first APOGEE-1 target flag of all visits, see bitmask definitions. 
+    apogee_target2 integer, --/D Bitwise OR of second APOGEE-1 target flag of all visits, see bitmask definitions 
+    apogee2_target1 integer, --/D Bitwise OR of first APOGEE-2 target flag of all visits, see bitmask definitions. 
+    apogee2_target2 integer, --/D Bitwise OR of second APOGEE-2 target flag of all visits, see bitmask definitions 
+    apogee2_target3 integer, --/D Bitwise OR of third APOGEE-2 target flag of all visits, see bitmask definitions 
+    apogee2_target4 integer, --/D Bitwise OR of fourth APOGEE-2 target flag of all visits, see bitmask definitions 
+    targflags text, --/D Verbose/text form of APOGEE-1 target flags 
+    survey text, --/D Survey-associated with object: apogee, apo1m, apogee-marvels, apogee2, apogee2-manga, manga-apogee2 
+    programname text, --/D Program name associated with object, when available 
+    nvisits integer, --/D Number of visits into combined spectrum 
+    snr real, --/D S/N estimate 
+    snrev real, --/D Revised S/N estimate (avoiding persistence issues) 
+    starflag bigint, --/D Flag for star condition taken from bitwise OR of individual visits, see bitmask definitions 
+    starflags text, --/D Verbose/text form of STARFLAG 
+    andflag bigint, --/D Flag for star condition taken from bitwise AND of individual visits, see bitmask definitions 
+    andflags text, --/D Verbose/text form of ANDFLAG 
     vhelio_avg real, --/U km/s --/D Average solar system barycentric radial velocity, weighted by S/N, using RVs determined from cross-correlation of individual spectra with combined spectrum 
     vscatter real, --/U km/s --/D Scatter of individual visit RVs around average 
     verr real, --/U km/s --/D Uncertainty in VHELIO_AVG from the S/N-weighted individual RVs 
     rv_teff real, --/U K --/D Teff of best-fit synthetic spectrum from RV fit (NOT ASPCAP!) 
     rv_logg real, --/U log (cgs) --/D log g of best-fit synthetic spectrum from RV fit (NOT ASPCAP!) 
-    rv_feh real, --/U Fe/H
-    rv_alpha real, --/U alpha/M
-    rv_carb real, --/U C/M
+    rv_feh real, --/D [Fe/H] of best-fit synthetic spectrum from RV fit (NOT ASPCAP!) 
+    rv_alpha real, --/D [alpha/M] of best-fit synthetic spectrum from RV fit (NOT ASPCAP!) 
+    rv_carb real, --/D [C/M] of best-fit synthetic spectrum from RV fit (NOT ASPCAP!) 
     rv_chi2 real,
     rv_ccfwhm real, --/U km/s --/D FWHM of cross-correlation peak from combined vs best-match synthetic spectrum 
     rv_autofwhm real, --/U km/s --/D FWHM of auto-correlation of best-match synthetic spectrum 
-    rv_flag integer, --/D bitmask for RV determination
-    n_components integer, --/D Number of components identified from RV cross-correlations
-    meanfib real, --/D Mean fiber number of the set of observations
-    sigfib real, --/D Dispersion in fiber number
-    min_h real, --/D Bright H limit for target selection for this object
-    max_h real, --/D Faint H limit for target selection for this object
-    min_jk real, --/D Blue (J-K) limit for target selection for this object
-    max_jk real, --/D Red (J-K) limit for target selection for this object
-    gaiaedr3_source_id bigint, --/D GAIA source ID from GAIA EDR3
+    rv_flag integer, --/D bitmask for RV determination 
+    n_components integer, --/D Number of components identified from RV cross-correlations 
+    meanfib real, --/D Mean fiber number of the set of observations 
+    sigfib real, --/D Dispersion in fiber number 
+    min_h real, --/D Bright H limit for target selection for this object 
+    max_h real, --/D Faint H limit for target selection for this object 
+    min_jk real, --/D Blue (J-K) limit for target selection for this object 
+    max_jk real, --/D Red (J-K) limit for target selection for this object 
+    gaiaedr3_source_id bigint, --/D GAIA source ID from GAIA EDR3 
     gaiaedr3_parallax real, --/U mas --/D GAIA parallax from GAIA EDR3 
     gaiaedr3_parallax_error real, --/U mas --/D GAIA parallax uncertainty GAIA EDR3 
     gaiaedr3_pmra real, --/U mas/yr --/D GAIA proper motion in RA from GAIA EDR3 
     gaiaedr3_pmra_error real, --/U mas/yr --/D GAIA uncertainty in proper motion in RA from GAIA EDR3 
     gaiaedr3_pmdec real, --/U mas/yr --/D GAIA proper motion in DEC from GAIA EDR3 
     gaiaedr3_pmdec_error real, --/U mas/yr --/D GAIA uncdertainty in proper motion in DEC from GAIA EDR3 
-    gaiaedr3_phot_g_mean_mag real, --/D GAIA g mag from GAIA EDR3
-    gaiaedr3_phot_bp_mean_mag real, --/D GAIA Bp mag from GAIA EDR3
-    gaiaedr3_phot_rp_mean_mag real, --/D GAIA Rp mag from GAIA EDR3
+    gaiaedr3_phot_g_mean_mag real, --/D GAIA g mag from GAIA EDR3 
+    gaiaedr3_phot_bp_mean_mag real, --/D GAIA Bp mag from GAIA EDR3 
+    gaiaedr3_phot_rp_mean_mag real, --/D GAIA Rp mag from GAIA EDR3 
     gaiaedr3_dr2_radial_velocity real, --/U km/s --/D GAIA radial velocity from GAIA EDR3 
     gaiaedr3_dr2_radial_velocity_error real, --/U km/s --/D GAIA uncertainty in radial velocity from GAIA EDR3 
     gaiaedr3_r_med_geo real, --/U pc --/D GAIA Bailer-Jones GEO distance estimate r_est from GAIA EDR3 
@@ -137,141 +137,141 @@ CREATE TABLE minidb_dr19.dr19_allstar_dr17_synspec_rev1 (
     gaiaedr3_r_med_photogeo real, --/U pc --/D GAIA Bailer-Jones PHOTOGEO distance estimate r_est from GAIA EDR3 
     gaiaedr3_r_lo_photogeo real, --/U pc --/D GAIA Bailer-Jones 16th percentile PHOTOGEO distance r_lo from GAIA EDR3 
     gaiaedr3_r_hi_photogeo real, --/U pc --/D GAIA Bailer-Jones 84th percentile PHOTOGEO distance r_hi from GAIA EDR3 
-    aspcap_grid text, --/D ASPCAP grid of best-fitting spectrum
-    fparam_grid text, --/D Raw FERRE parameters for each grid for which fit was performed (see GRIDS tag in HDU3 for grid names
-    chi2_grid text, --/D CHI2 for each grid for which fit was performed (see GRIDS tag in HDU3 for grid names
-    fparam text, --/U M/H], [C/M], [N/M], [alpha/M --/D Output parameter array from ASPCAP stellar parameters fit, in order given in PARAM_SYMBOL array in HDU3: Teff, logg, vmicro, 
-    fparam_cov text, --/D Covariance of fitted parameters from FERRE
-    aspcap_chi2 real, --/D Chi^2 from ASPCAP fit
-    param text, --/U M/H], [C/M], [N/M], [alpha/M --/D Empirically calibrated parameter array, using ASPCAP stellar parameters fit + calibrations, in order given in PARAM_SYMBOL array in HDU3: Teff, logg, vmicro, 
-    param_cov text, --/D Covariance of calibrated parameters, but with only diagonal elements from "external" uncertainty estimation
-    paramflag text, --/D Individual parameter flag for ASPCAP analysis, see bitmask definitions
-    aspcapflag bigint, --/D Flag for ASPCAP analysis, see bitmask definitions
-    aspcapflags text, --/D Verbose/text form ASPCAPFLAG
-    frac_badpix real, --/D Fraction of bad pixels in spectrum
-    frac_lowsnr real, --/D Fraction of low S/N pixels in spectrum
-    frac_sigsky real, --/D Fraction of SIG_SKYLINE pixels in spectrum
-    felem text, --/D Output individual element array from ASPCAP stellar abundances fit, in order given in ELEM_SYMBOL array in HDU3
-    felem_err text, --/D Uncertainty from FERRE in individual element abundances
-    x_h text, --/U X/H --/D Empirically calibrated individual element array, using ASPCAP stellar abundances fit + calibrations, all expressed in logarithmic abundance relative to H (
-    x_h_err text, --/U X/H --/D Empirical uncertainties in 
-    x_m text, --/U X/M --/D Empirically calibrated individual element array, using ASPCAP stellar abundances fit + calibrations, all expressed in logarithmic abundance relative to M (
-    x_m_err text, --/U X/M --/D Empirical uncertainties in 
-    elem_chi2 text, --/D Chi^2 from ASPCAP fit of individual abundances
+    aspcap_grid text, --/D ASPCAP grid of best-fitting spectrum 
+    fparam_grid text, --/D Raw FERRE parameters for each grid for which fit was performed (see GRIDS tag in HDU3 for grid names 
+    chi2_grid text, --/D CHI2 for each grid for which fit was performed (see GRIDS tag in HDU3 for grid names 
+    fparam text, --/D Output parameter array from ASPCAP stellar parameters fit, in order given in PARAM_SYMBOL array in HDU3: Teff, logg, vmicro, [M/H], [C/M], [N/M], [alpha/M], vsini/vmacro 
+    fparam_cov text, --/D Covariance of fitted parameters from FERRE 
+    aspcap_chi2 real, --/D Chi^2 from ASPCAP fit 
+    param text, --/D Empirically calibrated parameter array, using ASPCAP stellar parameters fit + calibrations, in order given in PARAM_SYMBOL array in HDU3: Teff, logg, vmicro, [M/H], [C/M], [N/M], [alpha/M], vsini/vmacro 
+    param_cov text, --/D Covariance of calibrated parameters, but with only diagonal elements from "external" uncertainty estimation 
+    paramflag text, --/D Individual parameter flag for ASPCAP analysis, see bitmask definitions 
+    aspcapflag bigint, --/D Flag for ASPCAP analysis, see bitmask definitions 
+    aspcapflags text, --/D Verbose/text form ASPCAPFLAG 
+    frac_badpix real, --/D Fraction of bad pixels in spectrum 
+    frac_lowsnr real, --/D Fraction of low S/N pixels in spectrum 
+    frac_sigsky real, --/D Fraction of SIG_SKYLINE pixels in spectrum 
+    felem text, --/D Output individual element array from ASPCAP stellar abundances fit, in order given in ELEM_SYMBOL array in HDU3 
+    felem_err text, --/D Uncertainty from FERRE in individual element abundances 
+    x_h text, --/D Empirically calibrated individual element array, using ASPCAP stellar abundances fit + calibrations, all expressed in logarithmic abundance relative to H ([X/H]), in order given in ELEM_SYMBOL array in HDU3 
+    x_h_err text, --/D Empirical uncertainties in [X/H], derived from repeat observations of stars 
+    x_m text, --/D Empirically calibrated individual element array, using ASPCAP stellar abundances fit + calibrations, all expressed in logarithmic abundance relative to M ([X/M]) in order given in ELEM_SYMBOL array in HDU3 
+    x_m_err text, --/D Empirical uncertainties in [X/M], derived from repeat observations of stars 
+    elem_chi2 text, --/D Chi^2 from ASPCAP fit of individual abundances 
     elemfrac text,
-    elemflag text, --/D Flags for analysis of individual abundances, see bitmask definitions
-    extratarg integer, --/D Bitmask which identifies main survey targets and other classes, see bitmask definitions.
-    memberflag bigint, --/D memberflag missing missing missing
-    member text, --/D member missing missing missing
-    x_h_spec text, --/D x_h_spec missing missing missing
-    x_m_spec text, --/D x_m_spec missing missing missing
+    elemflag text, --/D Flags for analysis of individual abundances, see bitmask definitions 
+    extratarg integer, --/D Bitmask which identifies main survey targets and other classes, see bitmask definitions. 
+    memberflag bigint, --/D memberflag missing missing missing 
+    member text, --/D member missing missing missing 
+    x_h_spec text, --/D x_h_spec missing missing missing 
+    x_m_spec text, --/D x_m_spec missing missing missing 
     teff real, --/U K --/D Teff from ASPCAP analysis of combined spectrum (from PARAM) 
     teff_err real, --/U K --/D Teff uncertainty (from PARAM_COV) 
     logg real, --/U log (cgs) --/D log g from ASPCAP analysis of combined spectrum (from PARAM) 
     logg_err real, --/U log (cgs) --/D log g uncertainty (from PARAM_COV) 
-    m_h real, --/U Z/H] from ASPCAP analysis of combined spectrum (from PARAM) [dex
-    m_h_err real, --/U Z/H] uncertainty (from PARAM_COV) [dex
-    alpha_m real, --/U alpha/M] from ASPCAP analysis of combined spectrum (from PARAM) [dex
-    alpha_m_err real, --/U alpha/M] uncertainty (from PARAM_COV) [dex
+    m_h real, --/U dex --/D [Z/H] from ASPCAP analysis of combined spectrum (from PARAM) 
+    m_h_err real, --/U dex --/D [Z/H] uncertainty (from PARAM_COV) 
+    alpha_m real, --/U dex --/D [alpha/M] from ASPCAP analysis of combined spectrum (from PARAM) 
+    alpha_m_err real, --/U dex --/D [alpha/M] uncertainty (from PARAM_COV) 
     vmicro real, --/U (cgs) --/D microturbulent velocity (fit for dwarfs, f(log g) for giants) 
-    vmacro real, --/U M/H]) for giants) [(cgs) --/D macroturbulent velocity (f(log Teff, 
+    vmacro real, --/U (cgs) --/D macroturbulent velocity (f(log Teff, [M/H]) for giants) 
     vsini real, --/U (cgs) --/D rotational+macroturbulent velocity (fit for dwarfs) 
-    teff_spec real, --/U 0] for convenience) [K --/D ASPCAP spectroscopic Teff (duplicated from FPARAM
-    logg_spec real, --/U 1] for convenience) [log (cgs) --/D ASPCAP spectroscopic surface gravity (duplicated from FPARAM
+    teff_spec real, --/U K --/D ASPCAP spectroscopic Teff (duplicated from FPARAM[0] for convenience) 
+    logg_spec real, --/U log (cgs) --/D ASPCAP spectroscopic surface gravity (duplicated from FPARAM[1] for convenience) 
     c_fe real,
     c_fe_spec real,
-    c_fe_err real, --/U C/Fe
-    c_fe_flag integer, --/U C/Fe
-    ci_fe real, --/U Ci/Fe
+    c_fe_err real, --/D [C/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    c_fe_flag integer, --/D [C/Fe] flag 
+    ci_fe real, --/D [Ci/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     ci_fe_spec real,
-    ci_fe_err real, --/U Ci/Fe
-    ci_fe_flag integer, --/U Ci/Fe
-    n_fe real, --/U N/Fe
+    ci_fe_err real, --/D [Ci/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    ci_fe_flag integer, --/D [Ci/Fe] flag 
+    n_fe real, --/D [N/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     n_fe_spec real,
-    n_fe_err real, --/U N/Fe
-    n_fe_flag integer, --/U N/Fe
-    o_fe real, --/U O/Fe
+    n_fe_err real, --/D [N/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    n_fe_flag integer, --/D [N/Fe] flag 
+    o_fe real, --/D [O/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     o_fe_spec real,
-    o_fe_err real, --/U O/Fe
-    o_fe_flag integer, --/U O/Fe
-    na_fe real, --/U Na/Fe
+    o_fe_err real, --/D [O/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    o_fe_flag integer, --/D [O/Fe] flag 
+    na_fe real, --/D [Na/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     na_fe_spec real,
-    na_fe_err real, --/U Na/Fe
-    na_fe_flag integer, --/U Na/Fe
-    mg_fe real, --/U Mg/Fe
+    na_fe_err real, --/D [Na/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    na_fe_flag integer, --/D [Na/Fe] flag 
+    mg_fe real, --/D [Mg/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     mg_fe_spec real,
-    mg_fe_err real, --/U Mg/Fe
-    mg_fe_flag integer, --/U Mg/Fe
-    al_fe real, --/U Al/Fe
+    mg_fe_err real, --/D [Mg/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    mg_fe_flag integer, --/D [Mg/Fe] flag 
+    al_fe real, --/D [Al/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     al_fe_spec real,
-    al_fe_err real, --/U Al/Fe
-    al_fe_flag integer, --/U Al/Fe
-    si_fe real, --/U Si/Fe
+    al_fe_err real, --/D [Al/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    al_fe_flag integer, --/D [Al/Fe] flag 
+    si_fe real, --/D [Si/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     si_fe_spec real,
-    si_fe_err real, --/U Si/Fe
-    si_fe_flag integer, --/U Si/Fe
-    p_fe real, --/U P/Fe
+    si_fe_err real, --/D [Si/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    si_fe_flag integer, --/D [Si/Fe] flag 
+    p_fe real, --/D [P/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     p_fe_spec real,
-    p_fe_err real, --/U P/Fe
-    p_fe_flag integer, --/U P/Fe
-    s_fe real, --/U S/Fe
+    p_fe_err real, --/D [P/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    p_fe_flag integer, --/D [P/Fe] flag 
+    s_fe real, --/D [S/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     s_fe_spec real,
-    s_fe_err real, --/U S/Fe
-    s_fe_flag integer, --/U S/Fe
-    k_fe real, --/U K/Fe
+    s_fe_err real, --/D [S/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    s_fe_flag integer, --/D [S/Fe] flag 
+    k_fe real, --/D [K/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     k_fe_spec real,
-    k_fe_err real, --/U K/Fe
-    k_fe_flag integer, --/U K/Fe
-    ca_fe real, --/U Ca/Fe
+    k_fe_err real, --/D [K/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    k_fe_flag integer, --/D [K/Fe] flag 
+    ca_fe real, --/D [Ca/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     ca_fe_spec real,
-    ca_fe_err real, --/U Ca/Fe
-    ca_fe_flag integer, --/U Ca/Fe
-    ti_fe real, --/U Ti/Fe
+    ca_fe_err real, --/D [Ca/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    ca_fe_flag integer, --/D [Ca/Fe] flag 
+    ti_fe real, --/D [Ti/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     ti_fe_spec real,
-    ti_fe_err real, --/U Ti/Fe
-    ti_fe_flag integer, --/U Ti/Fe
-    tiii_fe real, --/U TiII/Fe
+    ti_fe_err real, --/D [Ti/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    ti_fe_flag integer, --/D [Ti/Fe] flag 
+    tiii_fe real, --/D [TiII/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     tiii_fe_spec real,
-    tiii_fe_err real, --/U TiII/Fe
-    tiii_fe_flag integer, --/U TiII/Fe
-    v_fe real, --/U C/Fe --/D c_fe -  --/U V/Fe
+    tiii_fe_err real, --/D [TiII/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    tiii_fe_flag integer, --/D [TiII/Fe] flag 
+    v_fe real, --/D c_fe - [C/Fe] from ASPCAP analysis of combined spectrum (from X_M)  --/D [V/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     v_fe_spec real,
-    v_fe_err real, --/U V/Fe
-    v_fe_flag integer, --/U V/Fe
-    cr_fe real, --/U Cr/Fe
+    v_fe_err real, --/D [V/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    v_fe_flag integer, --/D [V/Fe] flag 
+    cr_fe real, --/D [Cr/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     cr_fe_spec real,
-    cr_fe_err real, --/U Cr/Fe
-    cr_fe_flag integer, --/U Cr/Fe
-    mn_fe real, --/U Mn/Fe
+    cr_fe_err real, --/D [Cr/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    cr_fe_flag integer, --/D [Cr/Fe] flag 
+    mn_fe real, --/D [Mn/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     mn_fe_spec real,
-    mn_fe_err real, --/U Mn/Fe
-    mn_fe_flag integer, --/U Mn/Fe
-    fe_h real, --/U Fe/H
+    mn_fe_err real, --/D [Mn/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    mn_fe_flag integer, --/D [Mn/Fe] flag 
+    fe_h real, --/D [Fe/H] from ASPCAP analysis of combined spectrum (from X_M) 
     fe_h_spec real,
-    fe_h_err real, --/U Fe/H
-    fe_h_flag integer, --/U Fe/H
-    co_fe real, --/U Co/Fe
+    fe_h_err real, --/D [Fe/H] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    fe_h_flag integer, --/D [Fe/H] flag 
+    co_fe real, --/D [Co/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     co_fe_spec real,
-    co_fe_err real, --/U Co/Fe
-    co_fe_flag integer, --/U Co/Fe
-    ni_fe real, --/U Ni/Fe
+    co_fe_err real, --/D [Co/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    co_fe_flag integer, --/D [Co/Fe] flag 
+    ni_fe real, --/D [Ni/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     ni_fe_spec real,
-    ni_fe_err real, --/U Ni/Fe
-    ni_fe_flag integer, --/U Ni/Fe
-    cu_fe real, --/U Cu/Fe
+    ni_fe_err real, --/D [Ni/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    ni_fe_flag integer, --/D [Ni/Fe] flag 
+    cu_fe real, --/D [Cu/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     cu_fe_spec real,
-    cu_fe_err real, --/U Cu/Fe
-    cu_fe_flag integer, --/U Cu/Fe
-    ce_fe real, --/U Ce/Fe
+    cu_fe_err real, --/D [Cu/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    cu_fe_flag integer, --/D [Cu/Fe] flag 
+    ce_fe real, --/D [Ce/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     ce_fe_spec real,
-    ce_fe_err real, --/U Ce/Fe
-    ce_fe_flag integer, --/U Ce/Fe
-    yb_fe real, --/U Yb/Fe
+    ce_fe_err real, --/D [Ce/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    ce_fe_flag integer, --/D [Ce/Fe] flag 
+    yb_fe real, --/D [Yb/Fe] from ASPCAP analysis of combined spectrum (from X_M) 
     yb_fe_spec real,
-    yb_fe_err real, --/U Yb/Fe
-    yb_fe_flag integer, --/U Yb/Fe
-    visit_pk text, --/D Index of visits (used in combined spectrum) in allVisit file
-    twomass_designation text --/D Unique idetni from 2MASS
+    yb_fe_err real, --/D [Yb/Fe] uncertainty from ASPCAP analysis of combined spectrum (from X_M) 
+    yb_fe_flag integer, --/D [Yb/Fe] flag 
+    visit_pk text, --/D Index of visits (used in combined spectrum) in allVisit file 
+    twomass_designation text --/D Unique idetni from 2MASS 
 );
 
 
@@ -394,9 +394,9 @@ CREATE TABLE minidb_dr19.dr19_allwise (
     w1flg integer, --/D W1 "standard" aperture measurement quality flag 
     w1mcor numeric(4,3), --/U mag --/D W1 aperture curve-of-growth correction 
     w2mag numeric(5,3), --/U mag --/D W2 "standard" aperture magnitude 
-    w2sigm numeric(4,3), --/D Uncertainty in the W2 "standard" aperture magnitude
-    w2flg integer, --/D W2 "standard" aperture measurement quality flag
-    w2mcor numeric(4,3), --/D W2 aperture curve-of-growth correction
+    w2sigm numeric(4,3), --/D Uncertainty in the W2 "standard" aperture magnitude 
+    w2flg integer, --/D W2 "standard" aperture measurement quality flag 
+    w2mcor numeric(4,3), --/D W2 aperture curve-of-growth correction 
     w3mag numeric(5,3), --/U mag --/D W3 "standard" aperture magnitude 
     w3sigm numeric(4,3), --/U mag --/D Uncertainty in the W3 "standard" aperture magnitude 
     w3flg integer, --/D W3 "standard" aperture measurement quality flag 
@@ -553,19 +553,19 @@ CREATE TABLE minidb_dr19.dr19_allwise (
     w2rsemi numeric(7,2), --/U arcsec --/D Semi-major axis of the elliptical aperture used to measure source in W2 
     w2ba numeric(3,2), --/D Axis ratio (b/a) of the elliptical aperture used to measure source in W2 
     w2pa numeric(5,2), --/U degrees --/D Position angle of the elliptical aperture major axis used to measure source in W2 
-    w2gmag numeric(5,3), --/D W2 magnitude of source measured in the elliptical aperture described by w2rsemi, w2ba, and w2pa
+    w2gmag numeric(5,3), --/D W2 magnitude of source measured in the elliptical aperture described by w2rsemi, w2ba, and w2pa 
     w2gerr numeric(4,3), --/U mag --/D Uncertainty in the W2 magnitude of source measured in elliptical aperture 
     w2gflg integer, --/D W2 elliptical aperture measurement quality flag 
     w3rsemi numeric(7,2), --/U arcsec --/D Semi-major axis of the elliptical aperture used to measure source in W3 
     w3ba numeric(3,2), --/D Axis ratio (b/a) of the elliptical aperture used to measure source in W3 
     w3pa numeric(5,2), --/U degrees --/D Position angle of the elliptical aperture major axis used to measure source in W3 
-    w3gmag numeric(5,3), --/D W3 magnitude of source measured in the elliptical aperture described by w3rsemi, w3ba, and w3pa
+    w3gmag numeric(5,3), --/D W3 magnitude of source measured in the elliptical aperture described by w3rsemi, w3ba, and w3pa 
     w3gerr numeric(4,3), --/U mag --/D Uncertainty in the W3 magnitude of source measured in elliptical aperture 
     w3gflg integer, --/D W3 elliptical aperture measurement quality flag 
     w4rsemi numeric(7,2), --/U arcsec --/D Semi-major axis of the elliptical aperture used to measure source in W4 
     w4ba numeric(3,2), --/D Axis ratio (b/a) of the elliptical aperture used to measure source in W4 
     w4pa numeric(5,2), --/U degrees --/D Position angle of the elliptical aperture major axis used to measure source in W4 
-    w4gmag numeric(5,3), --/D W4 magnitude of source measured in the elliptical aperture described by w4rsemi, w4ba, and w4pa
+    w4gmag numeric(5,3), --/D W4 magnitude of source measured in the elliptical aperture described by w4rsemi, w4ba, and w4pa 
     w4gerr numeric(4,3), --/U mag --/D Uncertainty in the W4 magnitude of source measured in elliptical aperture 
     w4gflg integer, --/D W4 elliptical aperture measurement quality flag 
     tmass_key integer, --/D Unique identifier of the closest source in the 2MASS Point Source Catalog 
@@ -596,11 +596,11 @@ CREATE TABLE minidb_dr19.dr19_assignment (
 ----------------------------------------------------------------------
 --/H This table stores the assignment of a given target in a carton to a fiber of a given instrument. A collection of assignments are included within a design, which is one configuration of the robots for an exposure.
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D The primary key. A sequential identifier.
-    carton_to_target_pk bigint, --/D The primary key of the carton_to_target in the dr19_carton_to_target table.
-    hole_pk integer, --/D The primary key of the hole in the dr19_hole table.
-    instrument_pk integer, --/D The primary key of the instrument in the dr19_instrument table.
-    design_id integer --/D The primary key of the design in the dr19_design table.
+    pk integer NOT NULL, --/D The primary key. A sequential identifier. 
+    carton_to_target_pk bigint, --/D The primary key of the carton_to_target in the dr19_carton_to_target table. 
+    hole_pk integer, --/D The primary key of the hole in the dr19_hole table. 
+    instrument_pk integer, --/D The primary key of the instrument in the dr19_instrument table. 
+    design_id integer --/D The primary key of the design in the dr19_design table. 
 );
 
 
@@ -667,9 +667,9 @@ CREATE TABLE minidb_dr19.dr19_bhm_csc (
 --/T catalog informed early (plate era) SDSS-V observations but was then replaced by
 --/T updated versions.
 ----------------------------------------------------------------------
-    pk bigint NOT NULL, --/D primary key of this table entry
-    csc_version text, --/D Always equal to 'CSC2stub1'
-    cxo_name text, --/D unique identifier for the CSC X-ray source
+    pk bigint NOT NULL, --/D primary key of this table entry 
+    csc_version text, --/D Always equal to 'CSC2stub1' 
+    cxo_name text, --/D unique identifier for the CSC X-ray source 
     oir_ra double precision, --/U deg --/D despite the name, this is the X-ray coordinate of the target 
     oir_dec double precision, --/U deg --/D despite the name, this is the X-ray coordinate of the target 
     mag_g real, --/U mag --/D optical magnitude (g-band) from Pan-STARRS1 catalog, if available 
@@ -677,7 +677,7 @@ CREATE TABLE minidb_dr19.dr19_bhm_csc (
     mag_i real, --/U mag --/D optical magnitude (i-band) from Pan-STARRS1 catalog, if available 
     mag_z real, --/U mag --/D optical magnitude (z-band) from Pan-STARRS1 catalog, if available 
     mag_h real, --/U mag --/D H-band NIR magnitude from 2MASS catalog, if available 
-    spectrograph text --/D Which spectrograph this target should be observed with (BOSS or APOGEE)
+    spectrograph text --/D Which spectrograph this target should be observed with (BOSS or APOGEE) 
 );
 
 
@@ -699,31 +699,31 @@ CREATE TABLE minidb_dr19.dr19_bhm_csc_v2 (
 --/T and/or PSF into account. Created March 2021 by Paul Green, Dong-Woo Kim, Arnold
 --/T Rots and the CXC CatSci group.
 ----------------------------------------------------------------------
-    cxoid text, --/D CSC2 Chandra ID
+    cxoid text, --/D CSC2 Chandra ID 
     xra double precision, --/U deg --/D RA of X-ray source from CSC2 
     xdec double precision, --/U deg --/D Dec of X-ray source from CSC2 
-    pri smallint, --/D Priority (based on X-ray S/N)
-    ocat text, --/D optical catalog code (P for PS1, G for Gaia)
-    oid bigint, --/D object ID from optical catalog
+    pri smallint, --/D Priority (based on X-ray S/N) 
+    ocat text, --/D optical catalog code (P for PS1, G for Gaia) 
+    oid bigint, --/D object ID from optical catalog 
     ora double precision, --/U deg --/D right ascension (2000) from optical catalog 
     odec double precision, --/U deg --/D declination (2000) from optical catalog 
     omag real, --/U mag --/D optical magnitude from optical catalog 
-    omatchtype smallint, --/D X-ray/optical match type (1-4 definite/likely/multiple opt, multiple X)
-    irid text, --/D object ID from 2MASS
+    omatchtype smallint, --/D X-ray/optical match type (1-4 definite/likely/multiple opt, multiple X) 
+    irid text, --/D object ID from 2MASS 
     ra2m double precision, --/U deg --/D right ascension (2000) from 2MASS 
     dec2m double precision, --/U deg --/D declination (2000) from 2MASS 
     hmag real, --/U mag --/D H mag from 2MASS 
-    irmatchtype smallint, --/D X-ray/IR match type (1-4 definite/likely/multiple opt, multiple X)
+    irmatchtype smallint, --/D X-ray/IR match type (1-4 definite/likely/multiple opt, multiple X) 
     lgal double precision, --/U deg --/D Galactic longitude (from X-ray position) 
     bgal double precision, --/U deg --/D Galactic latitude (from X-ray position) 
     logfx real, --/D log10 of X-ray cgs flux in xband 
-    xband text, --/D X-ray bandpass for logfx, priority b,m,s,h,w
-    xsn double precision, --/D X-ray S/N
-    xflags integer, --/D concatenated X-ray source flags: extended,confused,piledup,variable,streak,saturated
-    designation2m text, --/D 2MASS identifier (designation) derived from irid
-    idg2 bigint, --/D Gaia DR2 source_id (derived from ocat, oid)
-    idps bigint, --/D Pan-STARRS1 Object identifier (derived here from ocat+oid) - equivalent to ObjID in MAST database (https://outerspace.stsci.edu/display/PANSTARRS/PS1+Object+Identifiers), and to our panstarrs1.extid_hi_lo
-    pk bigint NOT NULL --/D primary key of the database table
+    xband text, --/D X-ray bandpass for logfx, priority b,m,s,h,w 
+    xsn double precision, --/D X-ray S/N 
+    xflags integer, --/D concatenated X-ray source flags: extended,confused,piledup,variable,streak,saturated 
+    designation2m text, --/D 2MASS identifier (designation) derived from irid 
+    idg2 bigint, --/D Gaia DR2 source_id (derived from ocat, oid) 
+    idps bigint, --/D Pan-STARRS1 Object identifier (derived here from ocat+oid) - equivalent to ObjID in MAST database (https://outerspace.stsci.edu/display/PANSTARRS/PS1+Object+Identifiers), and to our panstarrs1.extid_hi_lo 
+    pk bigint NOT NULL --/D primary key of the database table 
 );
 
 
@@ -745,29 +745,29 @@ CREATE TABLE minidb_dr19.dr19_bhm_efeds_veto (
 --/T file is here:
 --/T https://data.sdss.org/datamodel/files/BOSS_SPECTRO_REDUX/RUN2D/spAll.html
 ----------------------------------------------------------------------
-    programname character varying(5), --/D program name within a given survey
-    chunk character varying(7), --/D Name of tiling chunk
-    platesn2 real, --/D Overall (S/N)^2 measure for plate; minimum of all 4 cameras
-    plate integer, --/D Plate ID
-    tile integer, --/D Tile ID
+    programname character varying(5), --/D program name within a given survey  
+    chunk character varying(7), --/D Name of tiling chunk 
+    platesn2 real, --/D Overall (S/N)^2 measure for plate; minimum of all 4 cameras  
+    plate integer, --/D Plate ID  
+    tile integer, --/D Tile ID 
     mjd integer, --/U days --/D MJD of (last) observation 
-    fiberid integer, --/D Fiber ID (1-1000)
-    run2d character varying(7), --/D idlspec 2D reduction version
-    run1d character varying(7), --/D idlspec 1D reduction version
+    fiberid integer, --/D Fiber ID (1-1000) 
+    run2d character varying(7), --/D idlspec 2D reduction version 
+    run1d character varying(7), --/D idlspec 1D reduction version 
     plug_ra double precision, --/U deg --/D Object RA (drilled fiber position at expected epoch of observation) 
     plug_dec double precision, --/U deg --/D Object Dec (drilled fiber position at expected epoch of observation) 
-    z_err real, --/D Redshift error based upon fit to chi^2 minimum; negative for invalid fit
-    rchi2 real, --/D Reduced chi^2 for best fit
-    dof integer, --/D Degrees of freedom for best fit
-    rchi2diff real, --/D Difference in reduced chi^2 of best solution to 2nd best solution
+    z_err real, --/D Redshift error based upon fit to chi^2 minimum; negative for invalid fit 
+    rchi2 real, --/D Reduced chi^2 for best fit 
+    dof integer, --/D Degrees of freedom for best fit 
+    rchi2diff real, --/D Difference in reduced chi^2 of best solution to 2nd best solution 
     wavemin real, --/U Angstroms --/D Minimum observed (vacuum) wavelength for this object 
     wavemax real, --/U Angstroms --/D Maximum observed (vacuum) wavelength for this object 
-    wcoverage real, --/D Amount of wavelength coverage in log-10(Angstroms)
-    zwarning integer, --/D A flag bitmask set for bad data or redshift fits
-    sn_median_all real, --/D Median S/N for all good pixels in all filters
-    anyandmask integer, --/D Mask bits which are set if any pixels for an object's ANDMASK have that bit set
-    anyormask integer, --/D Mask bits which are set if any pixels for an object's ORMASK have that bit set
-    pk bigint NOT NULL --/D primary key in the database table
+    wcoverage real, --/D Amount of wavelength coverage in log-10(Angstroms) 
+    zwarning integer, --/D A flag bitmask set for bad data or redshift fits 
+    sn_median_all real, --/D Median S/N for all good pixels in all filters 
+    anyandmask integer, --/D Mask bits which are set if any pixels for an object's ANDMASK have that bit set 
+    anyormask integer, --/D Mask bits which are set if any pixels for an object's ORMASK have that bit set 
+    pk bigint NOT NULL --/D primary key in the database table 
 );
 
 
@@ -787,24 +787,24 @@ CREATE TABLE minidb_dr19.dr19_bhm_rm_tweaks (
 --/T and reject candidates which the plate-mode observations have revealed to be
 --/T unsuitable for continued RM studies.
 ----------------------------------------------------------------------
-    rm_field_name character(12), --/D Human readable name of the field (e.g. 'XMM-LSS', 'COSMOS', 'SDSS-RM')
-    plate integer, --/D PLATEID of the SDSS-V spectrum from which the visual inspection information was derived
-    fiberid integer, --/D FIBERID of the SDSS-V spectrum from which the visual inspection information was derived
-    mjd integer, --/D MJD of the SDSS-V spectrum from which the visual inspection information was derived
-    catalogid bigint, --/D SDSS-V catalogid from version '0.1.0' of the crossmatch
-    ra double precision, --/D PLUG_RA of the SDSS-V spectrum from which the visual inspection information was derived
-    "dec" double precision, --/D PLUG_DEC of the SDSS-V spectrum from which the visual inspection information was derived
-    rm_suitability integer, --/D Flag indicating if this target is well suited to continued RM observation. Known values are: -1 - unconfirmed (but might still be a good QSO target, e.g. due to unplugged fiber, or unverified visual inspection); 0 - target is probably unsuitable for RM, do not observe in the future; 1 - target is probably suitable for RM
-    in_plate boolean, --/D flag indicating if this target was included in a plate design during SDSS-V plate observations
-    firstcarton character(17), --/D 'firstcarton' that selected this target for observation in the SDSS-V plate-mode operations phase
+    rm_field_name character(12), --/D Human readable name of the field (e.g. 'XMM-LSS', 'COSMOS', 'SDSS-RM') 
+    plate integer, --/D PLATEID of the SDSS-V spectrum from which the visual inspection information was derived 
+    fiberid integer, --/D FIBERID of the SDSS-V spectrum from which the visual inspection information was derived 
+    mjd integer, --/D MJD of the SDSS-V spectrum from which the visual inspection information was derived 
+    catalogid bigint, --/D SDSS-V catalogid from version '0.1.0' of the crossmatch 
+    ra double precision, --/D PLUG_RA of the SDSS-V spectrum from which the visual inspection information was derived 
+    "dec" double precision, --/D PLUG_DEC of the SDSS-V spectrum from which the visual inspection information was derived 
+    rm_suitability integer, --/D Flag indicating if this target is well suited to continued RM observation. Known values are: -1 - unconfirmed (but might still be a good QSO target, e.g. due to unplugged fiber, or unverified visual inspection); 0 - target is probably unsuitable for RM, do not observe in the future; 1 - target is probably suitable for RM 
+    in_plate boolean, --/D flag indicating if this target was included in a plate design during SDSS-V plate observations 
+    firstcarton character(17), --/D 'firstcarton' that selected this target for observation in the SDSS-V plate-mode operations phase 
     mag_u real, --/U mag --/D optical magnitude of the target (u-band) 
     mag_g real, --/U mag --/D optical magnitude of the target (g-band) 
     mag_r real, --/U mag --/D optical magnitude of the target (r-band) 
     mag_i real, --/U mag --/D optical magnitude of the target (i-band) 
     mag_z real, --/U mag --/D optical magnitude of the target (z-band) 
     gaia_g real, --/U mag --/D optical magnitude of the target (Gaia G-band) 
-    date_set character(11), --/D Human readable date string, e.g. '25-Nov-2020' that indicates roughly when this entry was added
-    pkey bigint NOT NULL --/D primary key of the table entry
+    date_set character(11), --/D Human readable date string, e.g. '25-Nov-2020' that indicates roughly when this entry was added 
+    pkey bigint NOT NULL --/D primary key of the table entry 
 );
 
 
@@ -849,105 +849,105 @@ CREATE TABLE minidb_dr19.dr19_bhm_rm_v0 (
 --/T Note that contents of the spec_q column are incorrect in this version of the
 --/T table.
 ----------------------------------------------------------------------
-    field_name character varying(8), --/D One of COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, or ELAIS-S1
+    field_name character varying(8), --/D One of COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, or ELAIS-S1 
     ra double precision, --/U deg --/D Fiducial Right Ascension (J2000) 
     "dec" double precision, --/U deg --/D Fiducial Declination (J2000) 
     distance double precision, --/U deg --/D Angular distance from the field center 
-    pos_ref character varying(4), --/D Fiducial coordinates reference, priority: Gaia > DES > PS1 > NSC
-    ebv double precision, --/D Galactic E(B−V) reddening from Schlegel et al. (1998)
-    des integer, --/D A flag set to 1 if in DES photometric catalog
-    coadd_object_id bigint, --/D DES coadd object ID
+    pos_ref character varying(4), --/D Fiducial coordinates reference, priority: Gaia > DES > PS1 > NSC 
+    ebv double precision, --/D Galactic E(B−V) reddening from Schlegel et al. (1998) 
+    des integer, --/D A flag set to 1 if in DES photometric catalog 
+    coadd_object_id bigint, --/D DES coadd object ID 
     ra_des double precision, --/U deg --/D DES Right Ascension (J2000) 
     dec_des double precision, --/U deg --/D DES Declination (J2000) 
-    extended_coadd integer, --/D DES type classifier: 0 (high-confidence stars), 1 (likely stars), 2 (mostly galaxies), and 3 (high-confidence galaxies)
+    extended_coadd integer, --/D DES type classifier: 0 (high-confidence stars), 1 (likely stars), 2 (mostly galaxies), and 3 (high-confidence galaxies) 
     separation_des double precision, --/U arcsec --/D Angular distance between DES position and the fiducial coordinates 
-    ps1 integer, --/D A flag set to 1 if in PS1 photometric catalog
-    objid_ps1 bigint, --/D PS1 unique object identifier
+    ps1 integer, --/D A flag set to 1 if in PS1 photometric catalog 
+    objid_ps1 bigint, --/D PS1 unique object identifier 
     ra_ps1 double precision, --/U deg --/D PS1 right ascension from i filter stack detection 
     dec_ps1 double precision, --/U deg --/D PS1 declination from i filter stack detection 
-    class_ps1 double precision, --/D PS1 source classification = iPsfMag - iKronMag
+    class_ps1 double precision, --/D PS1 source classification = iPsfMag - iKronMag 
     separation_ps1 double precision, --/U arcsec --/D Angular distance between PS1 position and the fiducial coordinates 
-    nsc integer, --/D A flag set to 1 if in  photometric catalog
-    id_nsc bigint, --/D NSC unique object identifier
+    nsc integer, --/D A flag set to 1 if in  photometric catalog 
+    id_nsc bigint, --/D NSC unique object identifier 
     ra_nsc double precision, --/U deg --/D Right Ascension (J2000) 
     dec_nsc double precision, --/U deg --/D Declination (J2000) 
-    class_star double precision, --/D NSC Star/Galaxy classifier
-    flags_nsc integer, --/D NSC SExtractor flag value
+    class_star double precision, --/D NSC Star/Galaxy classifier 
+    flags_nsc integer, --/D NSC SExtractor flag value 
     separation_nsc double precision, --/U arcsec --/D Angular distance between NSC position and the fiducial coordinates 
-    sdss integer, --/D A flag set to 1 if in SDSS photometric catalog
-    objid_sdss bigint, --/D Unique SDSS identifier
+    sdss integer, --/D A flag set to 1 if in SDSS photometric catalog 
+    objid_sdss bigint, --/D Unique SDSS identifier 
     ra_sdss double precision, --/U deg --/D Right Ascension (J2000) 
     dec_sdss double precision, --/U deg --/D Declination (J2000) 
-    type_sdss integer, --/D SDSS type classifier (star 6, galaxy 3, etc.)
-    clean_sdss integer, --/D SDSS clean photometry flag (1=clean, 0=unclean)
+    type_sdss integer, --/D SDSS type classifier (star 6, galaxy 3, etc.) 
+    clean_sdss integer, --/D SDSS clean photometry flag (1=clean, 0=unclean) 
     separation_sdss double precision, --/U arcsec --/D Angular distance between SDSS position and the fiducial coordinates 
-    gaia integer, --/D A flag set to 1 if in Gaia DR2 photometric catalog
-    source_id_gaia bigint, --/D Gaia DR2 unique source identifier
+    gaia integer, --/D A flag set to 1 if in Gaia DR2 photometric catalog 
+    source_id_gaia bigint, --/D Gaia DR2 unique source identifier 
     mg double precision, --/U mag --/D Gaia g-band magnitude (phot_g_mean_mag in Gaia catalog, Vega) 
     parallax double precision, --/U mas --/D Parallax, Angle, 
     parallax_error double precision, --/U mas --/D Standard error of parallax, Angle, 
-    plxsig double precision, --/D Parallax significance defined as (PARALLAX/PARALLAX_ERROR)
+    plxsig double precision, --/D Parallax significance defined as (PARALLAX/PARALLAX_ERROR) 
     pmra double precision, --/U mas/year --/D Proper motion in RA direction, Angular Velocity, 
     pmra_error double precision, --/U mas/year --/D Standard error of proper motion in RA direction, Angular Velocity, 
     pmdec double precision, --/U mas/year --/D Proper motion in DEC direction, Angular Velocity, 
     pmdec_error double precision, --/U mas/year --/D Standard error of proper motion in DEC direction, Angular Velocity, 
-    pmsig double precision, --/D Proper motion significance defined as (pmra^2+pmdec^2)/sqrt(pmra^2*pmra_error^2 + pmdec^2*pmdec_error^2)
-    unwise integer, --/D A flag set to 1 if in unWISE photometric catalog
-    objid_unwise character varying(16), --/D unWISE unique object id
+    pmsig double precision, --/D Proper motion significance defined as (pmra^2+pmdec^2)/sqrt(pmra^2*pmra_error^2 + pmdec^2*pmdec_error^2) 
+    unwise integer, --/D A flag set to 1 if in unWISE photometric catalog 
+    objid_unwise character varying(16), --/D unWISE unique object id 
     ra_unwise double precision, --/U deg --/D unWISE Right Ascension (J2000) 
     dec_unwise double precision, --/U deg --/D unWISE Declination (J2000) 
     separation_unwise double precision, --/U arcsec --/D Angular distance between unWISE position and the fiducial coordinates 
-    near_ir integer, --/D A flag set to 1 if in NIR photometric catalog
-    survey_ir character varying(6), --/D Near-IR survey name: LAS, UHS, VHS, Viking, VMC, VIDEO
-    sourceid_ir bigint, --/D NIR source identifier
+    near_ir integer, --/D A flag set to 1 if in NIR photometric catalog 
+    survey_ir character varying(6), --/D Near-IR survey name: LAS, UHS, VHS, Viking, VMC, VIDEO 
+    sourceid_ir bigint, --/D NIR source identifier 
     ra_ir double precision, --/U deg --/D NIR Right Ascension (J2000) 
     dec_ir double precision, --/U deg --/D NIR Declination (J2000) 
     separation_ir double precision, --/U arcsec --/D Angular distance between NIR position and the fiducial coordinates 
-    optical_survey character varying(4), --/D Optical survey used in Skewt-QSO, e.g., DES, PS1, Gaia, NSC
+    optical_survey character varying(4), --/D Optical survey used in Skewt-QSO, e.g., DES, PS1, Gaia, NSC 
     mi double precision, --/U mag --/D i-band PSF magnitude (galactic extinction not corrected) 
-    cal_skewt_qso integer, --/D A flag indicates whether Skewt-QSO is calculated.(Set to 1 when Nband_Optical_use > 2.)
-    nband_optical_use integer, --/D Number of optical bands used in Skewt-QSQ.
-    use_unwise integer, --/D Set to 1 when unWISE photometry is used in Skewt-QSO calculation.
-    use_nir integer, --/D Set to 1 when NIR photometry is usedin Skewt-QSO calculation.
-    photo_combination character varying(17), --/D The photometric data combinations used in Skewt-QSO, for example, "DECam-YJHK-unWISE" - DECam/PS1 includes grizy bands; unWISE incldes unWISE W1 and W2 bands; and Gaia includes Gaia bp, g, and rp bands
-    log_qso double precision, --/D The (natural) logarithmic probability of a target fitting to QSO colors convolved with a QLF. Set to -323 if log_QSO<-323 (close to the lower limit of double-precision data).
-    log_star double precision, --/D The logarithmic probability of a target fitting to star colors multiplied by star number counts based on a stellar simulation. Set to -323 if log_Star<-323.
-    log_galaxy double precision, --/D The logarithmic probability of a target fitting to galaxy colors convolved with a GLF. Set to -323 if  log_Galaxy<-323.
-    p_qso double precision, --/D QSO probability from Skewt-QSO. P_QSO = exp(log_qso)/(exp(log_qso) + exp(log_star) + exp(log_galaxy))
-    p_star real, --/D Star probability from Skewt-QSO.
-    p_galaxy double precision, --/D Galaxy probability from Skewt-QSO.
-    class_skewt_qso character varying(6), --/D Classification based on the highest probability from Skewt-QSO, QSO/Star/Galaxy
-    skewt_qso integer, --/D flag indicating whether the object is a QSO (same as class_skewt_qso, except additionally requiring log_QSO>-10). (P_QSO>P_Star & P_QSO>P_galaxy & log_QSO>-10)
-    p_qso_prior double precision, --/D QSO probability with prior probabilities from additional info, such as separation (between optical survey and unWISE), morphology, variability, and/or proper motion.(Note: *_Prior are generally not populated in this version, except for the "S-CVZ" field, where we take into account the separation between optical surveys and unWISE.)
-    p_star_prior real, --/D Star probability with prior probabilities.
-    p_galaxy_prior double precision, --/D Galaxy probability with prior probabilities.
-    class_skewt_qso_prior character varying(6), --/D Classification based on Skewt-QSO with prior probabilities described above.
-    skewt_qso_prior integer, --/D flag indicating whether the object is QSO based on Skewt-QSO with prior probabilities described above.
-    photoz_qso double precision, --/D Photometric redshift of QSO from Skewt-QSO
-    photoz_qso_lower double precision, --/D Lower limit of photoz_QSO
-    photoz_qso_upper double precision, --/D Upper limit of photoz_QSO
-    prob_photoz_qso double precision, --/D The total probability of z located between photoz_QSO_lower and photoz_QSO_upper (assuming it is QSO).
-    photoz_galaxy double precision, --/D Photometric redshift of Galaxy from Skewt-QSO (fitting to galaxy colors).
-    photoz_galaxy_lower double precision, --/D Lower limit of photoz_Galaxy.
-    photoz_galaxy_upper double precision, --/D Upper limit of photoz_Galaxy.
-    pqso_xdqso double precision, --/D QSO probability from the public XDQSO catalog
-    photoz_xdqso double precision, --/D Photometric redshift of QSO from the public XDQSO catalog
-    prob_rf_gaia_unwise double precision, --/D AGN probability from the Gaia-unWISE AGN catalog
-    photoz_gaia_unwise double precision, --/D Photometric redshift from the Gaia-unWISE AGN catalog
-    des_var_sn_max double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS in grizy bands (DES).
-    ps1_var_sn_max double precision, --/D The maximum signal-to-noise ratio of the measured intrinsic RMS over 5 bands (PS1).
-    spec_q integer, --/D flag indicating if the object was spectroscopically confirmed as QSO from earlier surveys (-9=False, 1=True). Note that contents of this column are incorrect in this version of the table.
-    spec_strmask character varying(6), --/D string format of spec_bitmask, e.g., '000001'.
-    spec_bitmask bigint, --/D bitmask - bit 0: SDSS-DR14Q, bit 1: SDSS-DR7Q, bit 2: OzDES-DR1Q, bit 3: SDSS-RM_Q, bit 4: COSMOS_Q, bit 5: Milliquas_QA. (Note: Milliquas_QA=1 are objects spectroscopically classified as broad-line QSO/AGN in the Million Quasars (MILLIQUAS) catalog.)
-    specz double precision, --/D spectroscopic redshift from multiple surveys. Priority: SDSS-RM_Q/COSMOS_Q > SDSS-DR14Q > SDSS-DR7Q > OzDES-DR1Q > Milliquas_QA
-    specz_ref character varying(16), --/D Reference of specz.
-    photo_q integer, --/D flag indicating if the object was selected as QSO in public photometric quasar catalogs.
-    photo_strmask character varying(3), --/D string format of photo_bitmask
-    photo_bitmask bigint, --/D bit mask, bit 0: XDQSO catalog, bit 1: Gaia-unWISE AGN catalog; bit 2: Milliquas_photo: photometric quasar candidates in the Milliquas catalog
-    photoz double precision, --/D Photometric redshift from public photometric quasar catalogs. Priority: XDQSO > Gaia-unWISE > Milliquas_photo
-    pqso_photo double precision, --/D QSO probability from public photometric quasar catalogs.
-    photoz_ref character varying(16), --/D photoz reference.
-    pk bigint NOT NULL, --/D primary key for the database table
+    cal_skewt_qso integer, --/D A flag indicates whether Skewt-QSO is calculated.(Set to 1 when Nband_Optical_use > 2.) 
+    nband_optical_use integer, --/D Number of optical bands used in Skewt-QSQ. 
+    use_unwise integer, --/D Set to 1 when unWISE photometry is used in Skewt-QSO calculation. 
+    use_nir integer, --/D Set to 1 when NIR photometry is usedin Skewt-QSO calculation. 
+    photo_combination character varying(17), --/D The photometric data combinations used in Skewt-QSO, for example, "DECam-YJHK-unWISE" - DECam/PS1 includes grizy bands; unWISE incldes unWISE W1 and W2 bands; and Gaia includes Gaia bp, g, and rp bands 
+    log_qso double precision, --/D The (natural) logarithmic probability of a target fitting to QSO colors convolved with a QLF. Set to -323 if log_QSO<-323 (close to the lower limit of double-precision data). 
+    log_star double precision, --/D The logarithmic probability of a target fitting to star colors multiplied by star number counts based on a stellar simulation. Set to -323 if log_Star<-323. 
+    log_galaxy double precision, --/D The logarithmic probability of a target fitting to galaxy colors convolved with a GLF. Set to -323 if  log_Galaxy<-323. 
+    p_qso double precision, --/D QSO probability from Skewt-QSO. P_QSO = exp(log_qso)/(exp(log_qso) + exp(log_star) + exp(log_galaxy)) 
+    p_star real, --/D Star probability from Skewt-QSO. 
+    p_galaxy double precision, --/D Galaxy probability from Skewt-QSO. 
+    class_skewt_qso character varying(6), --/D Classification based on the highest probability from Skewt-QSO, QSO/Star/Galaxy 
+    skewt_qso integer, --/D flag indicating whether the object is a QSO (same as class_skewt_qso, except additionally requiring log_QSO>-10). (P_QSO>P_Star & P_QSO>P_galaxy & log_QSO>-10) 
+    p_qso_prior double precision, --/D QSO probability with prior probabilities from additional info, such as separation (between optical survey and unWISE), morphology, variability, and/or proper motion.(Note: *_Prior are generally not populated in this version, except for the "S-CVZ" field, where we take into account the separation between optical surveys and unWISE.) 
+    p_star_prior real, --/D Star probability with prior probabilities. 
+    p_galaxy_prior double precision, --/D Galaxy probability with prior probabilities. 
+    class_skewt_qso_prior character varying(6), --/D Classification based on Skewt-QSO with prior probabilities described above. 
+    skewt_qso_prior integer, --/D flag indicating whether the object is QSO based on Skewt-QSO with prior probabilities described above. 
+    photoz_qso double precision, --/D Photometric redshift of QSO from Skewt-QSO 
+    photoz_qso_lower double precision, --/D Lower limit of photoz_QSO 
+    photoz_qso_upper double precision, --/D Upper limit of photoz_QSO 
+    prob_photoz_qso double precision, --/D The total probability of z located between photoz_QSO_lower and photoz_QSO_upper (assuming it is QSO). 
+    photoz_galaxy double precision, --/D Photometric redshift of Galaxy from Skewt-QSO (fitting to galaxy colors). 
+    photoz_galaxy_lower double precision, --/D Lower limit of photoz_Galaxy. 
+    photoz_galaxy_upper double precision, --/D Upper limit of photoz_Galaxy. 
+    pqso_xdqso double precision, --/D QSO probability from the public XDQSO catalog 
+    photoz_xdqso double precision, --/D Photometric redshift of QSO from the public XDQSO catalog 
+    prob_rf_gaia_unwise double precision, --/D AGN probability from the Gaia-unWISE AGN catalog 
+    photoz_gaia_unwise double precision, --/D Photometric redshift from the Gaia-unWISE AGN catalog 
+    des_var_sn_max double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS in grizy bands (DES). 
+    ps1_var_sn_max double precision, --/D The maximum signal-to-noise ratio of the measured intrinsic RMS over 5 bands (PS1). 
+    spec_q integer, --/D flag indicating if the object was spectroscopically confirmed as QSO from earlier surveys (-9=False, 1=True). Note that contents of this column are incorrect in this version of the table. 
+    spec_strmask character varying(6), --/D string format of spec_bitmask, e.g., '000001'. 
+    spec_bitmask bigint, --/D bitmask - bit 0: SDSS-DR14Q, bit 1: SDSS-DR7Q, bit 2: OzDES-DR1Q, bit 3: SDSS-RM_Q, bit 4: COSMOS_Q, bit 5: Milliquas_QA. (Note: Milliquas_QA=1 are objects spectroscopically classified as broad-line QSO/AGN in the Million Quasars (MILLIQUAS) catalog.) 
+    specz double precision, --/D spectroscopic redshift from multiple surveys. Priority: SDSS-RM_Q/COSMOS_Q > SDSS-DR14Q > SDSS-DR7Q > OzDES-DR1Q > Milliquas_QA 
+    specz_ref character varying(16), --/D Reference of specz. 
+    photo_q integer, --/D flag indicating if the object was selected as QSO in public photometric quasar catalogs. 
+    photo_strmask character varying(3), --/D string format of photo_bitmask 
+    photo_bitmask bigint, --/D bit mask, bit 0: XDQSO catalog, bit 1: Gaia-unWISE AGN catalog; bit 2: Milliquas_photo: photometric quasar candidates in the Milliquas catalog 
+    photoz double precision, --/D Photometric redshift from public photometric quasar catalogs. Priority: XDQSO > Gaia-unWISE > Milliquas_photo 
+    pqso_photo double precision, --/D QSO probability from public photometric quasar catalogs. 
+    photoz_ref character varying(16), --/D photoz reference. 
+    pk bigint NOT NULL, --/D primary key for the database table 
     psfmag_des_g double precision, --/U mag --/D DES PSF photometry 
     psfmag_des_r double precision, --/U mag --/D DES PSF photometry 
     psfmag_des_i double precision, --/U mag --/D DES PSF photometry 
@@ -968,11 +968,11 @@ CREATE TABLE minidb_dr19.dr19_bhm_rm_v0 (
     magerr_auto_des_i double precision, --/U mag --/D DES auto photometry error 
     magerr_auto_des_z double precision, --/U mag --/D DES auto photometry error 
     magerr_auto_des_y double precision, --/U mag --/D DES auto photometry error 
-    imaflags_iso_g integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images
-    imaflags_iso_r integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images
-    imaflags_iso_i integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images
-    imaflags_iso_z integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images
-    imaflags_iso_y integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images
+    imaflags_iso_g integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images 
+    imaflags_iso_r integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images 
+    imaflags_iso_i integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images 
+    imaflags_iso_z integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images 
+    imaflags_iso_y integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images 
     psfmag_ps1_g double precision, --/U mag --/D PS1 PSF magnitude 
     psfmag_ps1_r double precision, --/U mag --/D PS1 PSF magnitude 
     psfmag_ps1_i double precision, --/U mag --/D PS1 PSF magnitude 
@@ -993,11 +993,11 @@ CREATE TABLE minidb_dr19.dr19_bhm_rm_v0 (
     kronmagerr_ps1_i double precision, --/U mag --/D PS1 Kron magnitude error 
     kronmagerr_ps1_z double precision, --/U mag --/D PS1 Kron magnitude error 
     kronmagerr_ps1_y double precision, --/U mag --/D PS1 Kron magnitude error 
-    infoflag2_g integer, --/D PS1 flags, values listed in DetectionFlags2
-    infoflag2_r integer, --/D PS1 flags, values listed in DetectionFlags2
-    infoflag2_i integer, --/D PS1 flags, values listed in DetectionFlags2
-    infoflag2_z integer, --/D PS1 flags, values listed in DetectionFlags2
-    infoflag2_y integer, --/D PS1 flags, values listed in DetectionFlags2
+    infoflag2_g integer, --/D PS1 flags, values listed in DetectionFlags2 
+    infoflag2_r integer, --/D PS1 flags, values listed in DetectionFlags2 
+    infoflag2_i integer, --/D PS1 flags, values listed in DetectionFlags2 
+    infoflag2_z integer, --/D PS1 flags, values listed in DetectionFlags2 
+    infoflag2_y integer, --/D PS1 flags, values listed in DetectionFlags2 
     mag_nsc_g double precision, --/U mag --/D Weighted-average magnitude 
     mag_nsc_r double precision, --/U mag --/D Weighted-average magnitude 
     mag_nsc_i double precision, --/U mag --/D Weighted-average magnitude 
@@ -1038,8 +1038,8 @@ CREATE TABLE minidb_dr19.dr19_bhm_rm_v0 (
     mag_unwise_w2 double precision, --/U mag --/D unWISE (Vega) magnitude, 
     magerr_unwise_w1 double precision, --/U mag --/D unWISE (Vega) magnitude error, 
     magerr_unwise_w2 double precision, --/U mag --/D unWISE (Vega) magnitude error, 
-    flags_unwise_w1 integer, --/D unWISE Coadd Flags
-    flags_unwise_w2 integer, --/D unWISE Coadd Flags
+    flags_unwise_w1 integer, --/D unWISE Coadd Flags 
+    flags_unwise_w2 integer, --/D unWISE Coadd Flags 
     mag_ir_y double precision, --/U mag --/D (Vega) magnitude in near-IR, 
     mag_ir_j double precision, --/U mag --/D (Vega) magnitude in near-IR, 
     mag_ir_h double precision, --/U mag --/D (Vega) magnitude in near-IR, 
@@ -1048,16 +1048,16 @@ CREATE TABLE minidb_dr19.dr19_bhm_rm_v0 (
     magerr_ir_j double precision, --/U mag --/D magnitude error in near-IR 
     magerr_ir_h double precision, --/U mag --/D magnitude error in near-IR 
     magerr_ir_k double precision, --/U mag --/D magnitude error in near-IR 
-    des_var_nepoch_g integer, --/D Number of DES single-epoch photometric datapoints per band
-    des_var_nepoch_r integer, --/D Number of DES single-epoch photometric datapoints per band
-    des_var_nepoch_i integer, --/D Number of DES single-epoch photometric datapoints per band
-    des_var_nepoch_z integer, --/D Number of DES single-epoch photometric datapoints per band
-    des_var_nepoch_y integer, --/D Number of DES single-epoch photometric datapoints per band
-    des_var_status_g integer, --/D Status of intrinsic variability calculation from DES
-    des_var_status_r integer, --/D Status of intrinsic variability calculation from DES
-    des_var_status_i integer, --/D Status of intrinsic variability calculation from DES
-    des_var_status_z integer, --/D Status of intrinsic variability calculation from DES
-    des_var_status_y integer, --/D Status of intrinsic variability calculation from DES
+    des_var_nepoch_g integer, --/D Number of DES single-epoch photometric datapoints per band 
+    des_var_nepoch_r integer, --/D Number of DES single-epoch photometric datapoints per band 
+    des_var_nepoch_i integer, --/D Number of DES single-epoch photometric datapoints per band 
+    des_var_nepoch_z integer, --/D Number of DES single-epoch photometric datapoints per band 
+    des_var_nepoch_y integer, --/D Number of DES single-epoch photometric datapoints per band 
+    des_var_status_g integer, --/D Status of intrinsic variability calculation from DES 
+    des_var_status_r integer, --/D Status of intrinsic variability calculation from DES 
+    des_var_status_i integer, --/D Status of intrinsic variability calculation from DES 
+    des_var_status_z integer, --/D Status of intrinsic variability calculation from DES 
+    des_var_status_y integer, --/D Status of intrinsic variability calculation from DES 
     des_var_rms_g double precision, --/U mag --/D Intrinsic RMS from DES 
     des_var_rms_r double precision, --/U mag --/D Intrinsic RMS from DES 
     des_var_rms_i double precision, --/U mag --/D Intrinsic RMS from DES 
@@ -1068,21 +1068,21 @@ CREATE TABLE minidb_dr19.dr19_bhm_rm_v0 (
     des_var_sigrms_i double precision, --/U mag --/D Error of intrinsic RMS from DES 
     des_var_sigrms_z double precision, --/U mag --/D Error of intrinsic RMS from DES 
     des_var_sigrms_y double precision, --/U mag --/D Error of intrinsic RMS from DES 
-    des_var_sn_g double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES
-    des_var_sn_r double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES
-    des_var_sn_i double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES
-    des_var_sn_z double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES
-    des_var_sn_y double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES
-    ps1_var_nepoch_g integer, --/D Number of PS1 single-epoch photometric data points
-    ps1_var_nepoch_r integer, --/D Number of PS1 single-epoch photometric data points
-    ps1_var_nepoch_i integer, --/D Number of PS1 single-epoch photometric data points
-    ps1_var_nepoch_z integer, --/D Number of PS1 single-epoch photometric data points
-    ps1_var_nepoch_y integer, --/D Number of PS1 single-epoch photometric data points
-    ps1_var_status_g integer, --/D Status of intrinsic variability calculation from PS1
-    ps1_var_status_r integer, --/D Status of intrinsic variability calculation from PS1
-    ps1_var_status_i integer, --/D Status of intrinsic variability calculation from PS1
-    ps1_var_status_z integer, --/D Status of intrinsic variability calculation from PS1
-    ps1_var_status_y integer, --/D Status of intrinsic variability calculation from PS1
+    des_var_sn_g double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES 
+    des_var_sn_r double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES 
+    des_var_sn_i double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES 
+    des_var_sn_z double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES 
+    des_var_sn_y double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES 
+    ps1_var_nepoch_g integer, --/D Number of PS1 single-epoch photometric data points 
+    ps1_var_nepoch_r integer, --/D Number of PS1 single-epoch photometric data points 
+    ps1_var_nepoch_i integer, --/D Number of PS1 single-epoch photometric data points 
+    ps1_var_nepoch_z integer, --/D Number of PS1 single-epoch photometric data points 
+    ps1_var_nepoch_y integer, --/D Number of PS1 single-epoch photometric data points 
+    ps1_var_status_g integer, --/D Status of intrinsic variability calculation from PS1 
+    ps1_var_status_r integer, --/D Status of intrinsic variability calculation from PS1 
+    ps1_var_status_i integer, --/D Status of intrinsic variability calculation from PS1 
+    ps1_var_status_z integer, --/D Status of intrinsic variability calculation from PS1 
+    ps1_var_status_y integer, --/D Status of intrinsic variability calculation from PS1 
     ps1_var_rms_g double precision, --/U mag --/D Intrinsic RMS from PS1 
     ps1_var_rms_r double precision, --/U mag --/D Intrinsic RMS from PS1 
     ps1_var_rms_i double precision, --/U mag --/D Intrinsic RMS from PS1 
@@ -1093,11 +1093,11 @@ CREATE TABLE minidb_dr19.dr19_bhm_rm_v0 (
     ps1_var_sigrms_i double precision, --/U mag --/D Error of intrinsic RMS from PS1 
     ps1_var_sigrms_z double precision, --/U mag --/D Error of intrinsic RMS from PS1 
     ps1_var_sigrms_y double precision, --/U mag --/D Error of intrinsic RMS from PS1 
-    ps1_var_sn_g double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1
-    ps1_var_sn_r double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1
-    ps1_var_sn_i double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1
-    ps1_var_sn_z double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1
-    ps1_var_sn_y double precision --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1
+    ps1_var_sn_g double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1 
+    ps1_var_sn_r double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1 
+    ps1_var_sn_i double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1 
+    ps1_var_sn_z double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1 
+    ps1_var_sn_y double precision --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1 
 );
 
 
@@ -1142,105 +1142,105 @@ CREATE TABLE minidb_dr19.dr19_bhm_rm_v0_2 (
 --/T Changes (wrt v0) include correct error in spec_q column, and add specz from
 --/T OzDES DR2
 ----------------------------------------------------------------------
-    field_name character varying(8), --/D One of COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, or ELAIS-S1
+    field_name character varying(8), --/D One of COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, or ELAIS-S1 
     ra double precision, --/U deg --/D Fiducial Right Ascension (J2000) 
     "dec" double precision, --/U deg --/D Fiducial Declination (J2000) 
     distance double precision, --/U deg --/D Angular distance from the field center 
-    pos_ref character varying(4), --/D Fiducial coordinates reference, priority: Gaia > DES > PS1 > NSC
-    ebv double precision, --/D Galactic E(B−V) reddening from Schlegel et al. (1998)
-    des integer, --/D A flag set to 1 if in DES photometric catalog
-    coadd_object_id bigint, --/D DES coadd object ID
+    pos_ref character varying(4), --/D Fiducial coordinates reference, priority: Gaia > DES > PS1 > NSC 
+    ebv double precision, --/D Galactic E(B−V) reddening from Schlegel et al. (1998) 
+    des integer, --/D A flag set to 1 if in DES photometric catalog 
+    coadd_object_id bigint, --/D DES coadd object ID 
     ra_des double precision, --/U deg --/D DES Right Ascension (J2000) 
     dec_des double precision, --/U deg --/D DES Declination (J2000) 
-    extended_coadd integer, --/D DES type classifier: 0 (high-confidence stars), 1 (likely stars), 2 (mostly galaxies), and 3 (high-confidence galaxies)
+    extended_coadd integer, --/D DES type classifier: 0 (high-confidence stars), 1 (likely stars), 2 (mostly galaxies), and 3 (high-confidence galaxies) 
     separation_des double precision, --/U arcsec --/D Angular distance between DES position and the fiducial coordinates 
-    ps1 integer, --/D A flag set to 1 if in PS1 photometric catalog
-    objid_ps1 bigint, --/D PS1 unique object identifier
+    ps1 integer, --/D A flag set to 1 if in PS1 photometric catalog 
+    objid_ps1 bigint, --/D PS1 unique object identifier 
     ra_ps1 double precision, --/U deg --/D PS1 right ascension from i filter stack detection 
     dec_ps1 double precision, --/U deg --/D PS1 declination from i filter stack detection 
-    class_ps1 double precision, --/D PS1 source classification = iPsfMag - iKronMag
+    class_ps1 double precision, --/D PS1 source classification = iPsfMag - iKronMag 
     separation_ps1 double precision, --/U arcsec --/D Angular distance between PS1 position and the fiducial coordinates 
-    nsc integer, --/D A flag set to 1 if in  photometric catalog
-    id_nsc bigint, --/D NSC unique object identifier
+    nsc integer, --/D A flag set to 1 if in  photometric catalog 
+    id_nsc bigint, --/D NSC unique object identifier 
     ra_nsc double precision, --/U deg --/D Right Ascension (J2000) 
     dec_nsc double precision, --/U deg --/D Declination (J2000) 
-    class_star double precision, --/D NSC Star/Galaxy classifier
-    flags_nsc integer, --/D NSC SExtractor flag value
+    class_star double precision, --/D NSC Star/Galaxy classifier 
+    flags_nsc integer, --/D NSC SExtractor flag value 
     separation_nsc double precision, --/U arcsec --/D Angular distance between NSC position and the fiducial coordinates 
-    sdss integer, --/D A flag set to 1 if in SDSS photometric catalog
-    objid_sdss bigint, --/D Unique SDSS identifier
+    sdss integer, --/D A flag set to 1 if in SDSS photometric catalog 
+    objid_sdss bigint, --/D Unique SDSS identifier 
     ra_sdss double precision, --/U deg --/D Right Ascension (J2000) 
     dec_sdss double precision, --/U deg --/D Declination (J2000) 
-    type_sdss integer, --/D SDSS type classifier (star 6, galaxy 3, etc.)
-    clean_sdss integer, --/D SDSS clean photometry flag (1=clean, 0=unclean)
+    type_sdss integer, --/D SDSS type classifier (star 6, galaxy 3, etc.) 
+    clean_sdss integer, --/D SDSS clean photometry flag (1=clean, 0=unclean) 
     separation_sdss double precision, --/U arcsec --/D Angular distance between SDSS position and the fiducial coordinates 
-    gaia integer, --/D A flag set to 1 if in Gaia DR2 photometric catalog
-    source_id_gaia bigint, --/D Gaia DR2 unique source identifier
+    gaia integer, --/D A flag set to 1 if in Gaia DR2 photometric catalog 
+    source_id_gaia bigint, --/D Gaia DR2 unique source identifier 
     mg double precision, --/U mag --/D Gaia g-band magnitude (phot_g_mean_mag in Gaia catalog, Vega) 
     parallax double precision, --/U mas --/D Parallax, Angle, 
     parallax_error double precision, --/U mas --/D Standard error of parallax, Angle, 
-    plxsig double precision, --/D Parallax significance defined as (PARALLAX/PARALLAX_ERROR)
+    plxsig double precision, --/D Parallax significance defined as (PARALLAX/PARALLAX_ERROR) 
     pmra double precision, --/U mas/year --/D Proper motion in RA direction, Angular Velocity, 
     pmra_error double precision, --/U mas/year --/D Standard error of proper motion in RA direction, Angular Velocity, 
     pmdec double precision, --/U mas/year --/D Proper motion in DEC direction, Angular Velocity, 
     pmdec_error double precision, --/U mas/year --/D Standard error of proper motion in DEC direction, Angular Velocity, 
-    pmsig double precision, --/D Proper motion significance defined as (pmra^2+pmdec^2)/sqrt(pmra^2*pmra_error^2 + pmdec^2*pmdec_error^2)
-    unwise integer, --/D A flag set to 1 if in unWISE photometric catalog
-    objid_unwise character varying(16), --/D unWISE unique object id
+    pmsig double precision, --/D Proper motion significance defined as (pmra^2+pmdec^2)/sqrt(pmra^2*pmra_error^2 + pmdec^2*pmdec_error^2) 
+    unwise integer, --/D A flag set to 1 if in unWISE photometric catalog 
+    objid_unwise character varying(16), --/D unWISE unique object id 
     ra_unwise double precision, --/U deg --/D unWISE Right Ascension (J2000) 
     dec_unwise double precision, --/U deg --/D unWISE Declination (J2000) 
     separation_unwise double precision, --/U arcsec --/D Angular distance between unWISE position and the fiducial coordinates 
-    near_ir integer, --/D A flag set to 1 if in NIR photometric catalog
-    survey_ir character varying(6), --/D Near-IR survey name: LAS, UHS, VHS, Viking, VMC, VIDEO
-    sourceid_ir bigint, --/D NIR source identifier
+    near_ir integer, --/D A flag set to 1 if in NIR photometric catalog 
+    survey_ir character varying(6), --/D Near-IR survey name: LAS, UHS, VHS, Viking, VMC, VIDEO 
+    sourceid_ir bigint, --/D NIR source identifier 
     ra_ir double precision, --/U deg --/D NIR Right Ascension (J2000) 
     dec_ir double precision, --/U deg --/D NIR Declination (J2000) 
     separation_ir double precision, --/U arcsec --/D Angular distance between NIR position and the fiducial coordinates 
-    optical_survey character varying(4), --/D Optical survey used in Skewt-QSO, e.g., DES, PS1, Gaia, NSC
+    optical_survey character varying(4), --/D Optical survey used in Skewt-QSO, e.g., DES, PS1, Gaia, NSC 
     mi double precision, --/U mag --/D i-band PSF magnitude (galactic extinction not corrected) 
-    cal_skewt_qso integer, --/D A flag indicates whether Skewt-QSO is calculated.(Set to 1 when Nband_Optical_use > 2.)
-    nband_optical_use integer, --/D Number of optical bands used in Skewt-QSQ.
-    use_unwise integer, --/D Set to 1 when unWISE photometry is used in Skewt-QSO calculation.
-    use_nir integer, --/D Set to 1 when NIR photometry is usedin Skewt-QSO calculation.
-    photo_combination character varying(17), --/D The photometric data combinations used in Skewt-QSO, for example, "DECam-YJHK-unWISE" - DECam/PS1 includes grizy bands; unWISE incldes unWISE W1 and W2 bands; and Gaia includes Gaia bp, g, and rp bands
-    log_qso double precision, --/D The (natural) logarithmic probability of a target fitting to QSO colors convolved with a QLF. Set to -323 if log_QSO<-323 (close to the lower limit of double-precision data).
-    log_star double precision, --/D The logarithmic probability of a target fitting to star colors multiplied by star number counts based on a stellar simulation. Set to -323 if log_Star<-323.
-    log_galaxy double precision, --/D The logarithmic probability of a target fitting to galaxy colors convolved with a GLF. Set to -323 if  log_Galaxy<-323.
-    p_qso double precision, --/D QSO probability from Skewt-QSO. P_QSO = exp(log_qso)/(exp(log_qso) + exp(log_star) + exp(log_galaxy))
-    p_star real, --/D Star probability from Skewt-QSO.
-    p_galaxy double precision, --/D Galaxy probability from Skewt-QSO.
-    class_skewt_qso character varying(6), --/D Classification based on the highest probability from Skewt-QSO, QSO/Star/Galaxy
-    skewt_qso integer, --/D flag indicating whether the object is a QSO (same as class_skewt_qso, except additionally requiring log_QSO>-10). (P_QSO>P_Star & P_QSO>P_galaxy & log_QSO>-10)
-    p_qso_prior double precision, --/D QSO probability with prior probabilities from additional info, such as separation (between optical survey and unWISE), morphology, variability, and/or proper motion.(Note: *_Prior are generally not populated in this version, except for the "S-CVZ" field, where we take into account the separation between optical surveys and unWISE.)
-    p_star_prior real, --/D Star probability with prior probabilities.
-    p_galaxy_prior double precision, --/D Galaxy probability with prior probabilities.
-    class_skewt_qso_prior character varying(6), --/D Classification based on Skewt-QSO with prior probabilities described above.
-    skewt_qso_prior integer, --/D flag indicating whether the object is QSO based on Skewt-QSO with prior probabilities described above.
-    photoz_qso double precision, --/D Photometric redshift of QSO from Skewt-QSO
-    photoz_qso_lower double precision, --/D Lower limit of photoz_QSO
-    photoz_qso_upper double precision, --/D Upper limit of photoz_QSO
-    prob_photoz_qso double precision, --/D The total probability of z located between photoz_QSO_lower and photoz_QSO_upper (assuming it is QSO).
-    photoz_galaxy double precision, --/D Photometric redshift of Galaxy from Skewt-QSO (fitting to galaxy colors).
-    photoz_galaxy_lower double precision, --/D Lower limit of photoz_Galaxy.
-    photoz_galaxy_upper double precision, --/D Upper limit of photoz_Galaxy.
-    pqso_xdqso double precision, --/D QSO probability from the public XDQSO catalog
-    photoz_xdqso double precision, --/D Photometric redshift of QSO from the public XDQSO catalog
-    prob_rf_gaia_unwise double precision, --/D AGN probability from the Gaia-unWISE AGN catalog
-    photoz_gaia_unwise double precision, --/D Photometric redshift from the Gaia-unWISE AGN catalog
-    des_var_sn_max double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS in grizy bands (DES).
-    ps1_var_sn_max double precision, --/D The maximum signal-to-noise ratio of the measured intrinsic RMS over 5 bands (PS1).
-    spec_q integer, --/D flag indicating if the object was spectroscopically confirmed as QSO from earlier surveys (-9=False, 1=True)
-    spec_strmask character varying(6), --/D string format of spec_bitmask, e.g., '000001'.
-    spec_bitmask bigint, --/D bitmask - bit 0: SDSS-DR14Q, bit 1: SDSS-DR7Q, bit 2: OzDES-DR1Q, bit 3: SDSS-RM_Q, bit 4: COSMOS_Q, bit 5: Milliquas_QA. (Note: Milliquas_QA=1 are objects spectroscopically classified as broad-line QSO/AGN in the Million Quasars (MILLIQUAS) catalog.)
-    specz double precision, --/D spectroscopic redshift from multiple surveys. Priority: SDSS-RM_Q/COSMOS_Q > SDSS-DR14Q > SDSS-DR7Q > OzDES-DR1Q > Milliquas_QA
-    specz_ref character varying(16), --/D Reference of specz.
-    photo_q integer, --/D flag indicating if the object was selected as QSO in public photometric quasar catalogs.
-    photo_strmask character varying(3), --/D string format of photo_bitmask
-    photo_bitmask bigint, --/D bit mask, bit 0: XDQSO catalog, bit 1: Gaia-unWISE AGN catalog; bit 2: Milliquas_photo: photometric quasar candidates in the Milliquas catalog
-    photoz double precision, --/D Photometric redshift from public photometric quasar catalogs. Priority: XDQSO > Gaia-unWISE > Milliquas_photo
-    pqso_photo double precision, --/D QSO probability from public photometric quasar catalogs.
-    photoz_ref character varying(16), --/D photoz reference.
-    pk bigint NOT NULL, --/D primary key for the database table
+    cal_skewt_qso integer, --/D A flag indicates whether Skewt-QSO is calculated.(Set to 1 when Nband_Optical_use > 2.) 
+    nband_optical_use integer, --/D Number of optical bands used in Skewt-QSQ. 
+    use_unwise integer, --/D Set to 1 when unWISE photometry is used in Skewt-QSO calculation. 
+    use_nir integer, --/D Set to 1 when NIR photometry is usedin Skewt-QSO calculation. 
+    photo_combination character varying(17), --/D The photometric data combinations used in Skewt-QSO, for example, "DECam-YJHK-unWISE" - DECam/PS1 includes grizy bands; unWISE incldes unWISE W1 and W2 bands; and Gaia includes Gaia bp, g, and rp bands 
+    log_qso double precision, --/D The (natural) logarithmic probability of a target fitting to QSO colors convolved with a QLF. Set to -323 if log_QSO<-323 (close to the lower limit of double-precision data). 
+    log_star double precision, --/D The logarithmic probability of a target fitting to star colors multiplied by star number counts based on a stellar simulation. Set to -323 if log_Star<-323. 
+    log_galaxy double precision, --/D The logarithmic probability of a target fitting to galaxy colors convolved with a GLF. Set to -323 if  log_Galaxy<-323. 
+    p_qso double precision, --/D QSO probability from Skewt-QSO. P_QSO = exp(log_qso)/(exp(log_qso) + exp(log_star) + exp(log_galaxy)) 
+    p_star real, --/D Star probability from Skewt-QSO. 
+    p_galaxy double precision, --/D Galaxy probability from Skewt-QSO. 
+    class_skewt_qso character varying(6), --/D Classification based on the highest probability from Skewt-QSO, QSO/Star/Galaxy 
+    skewt_qso integer, --/D flag indicating whether the object is a QSO (same as class_skewt_qso, except additionally requiring log_QSO>-10). (P_QSO>P_Star & P_QSO>P_galaxy & log_QSO>-10) 
+    p_qso_prior double precision, --/D QSO probability with prior probabilities from additional info, such as separation (between optical survey and unWISE), morphology, variability, and/or proper motion.(Note: *_Prior are generally not populated in this version, except for the "S-CVZ" field, where we take into account the separation between optical surveys and unWISE.) 
+    p_star_prior real, --/D Star probability with prior probabilities. 
+    p_galaxy_prior double precision, --/D Galaxy probability with prior probabilities. 
+    class_skewt_qso_prior character varying(6), --/D Classification based on Skewt-QSO with prior probabilities described above. 
+    skewt_qso_prior integer, --/D flag indicating whether the object is QSO based on Skewt-QSO with prior probabilities described above. 
+    photoz_qso double precision, --/D Photometric redshift of QSO from Skewt-QSO 
+    photoz_qso_lower double precision, --/D Lower limit of photoz_QSO 
+    photoz_qso_upper double precision, --/D Upper limit of photoz_QSO 
+    prob_photoz_qso double precision, --/D The total probability of z located between photoz_QSO_lower and photoz_QSO_upper (assuming it is QSO). 
+    photoz_galaxy double precision, --/D Photometric redshift of Galaxy from Skewt-QSO (fitting to galaxy colors). 
+    photoz_galaxy_lower double precision, --/D Lower limit of photoz_Galaxy. 
+    photoz_galaxy_upper double precision, --/D Upper limit of photoz_Galaxy. 
+    pqso_xdqso double precision, --/D QSO probability from the public XDQSO catalog 
+    photoz_xdqso double precision, --/D Photometric redshift of QSO from the public XDQSO catalog 
+    prob_rf_gaia_unwise double precision, --/D AGN probability from the Gaia-unWISE AGN catalog 
+    photoz_gaia_unwise double precision, --/D Photometric redshift from the Gaia-unWISE AGN catalog 
+    des_var_sn_max double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS in grizy bands (DES). 
+    ps1_var_sn_max double precision, --/D The maximum signal-to-noise ratio of the measured intrinsic RMS over 5 bands (PS1). 
+    spec_q integer, --/D flag indicating if the object was spectroscopically confirmed as QSO from earlier surveys (-9=False, 1=True) 
+    spec_strmask character varying(6), --/D string format of spec_bitmask, e.g., '000001'. 
+    spec_bitmask bigint, --/D bitmask - bit 0: SDSS-DR14Q, bit 1: SDSS-DR7Q, bit 2: OzDES-DR1Q, bit 3: SDSS-RM_Q, bit 4: COSMOS_Q, bit 5: Milliquas_QA. (Note: Milliquas_QA=1 are objects spectroscopically classified as broad-line QSO/AGN in the Million Quasars (MILLIQUAS) catalog.) 
+    specz double precision, --/D spectroscopic redshift from multiple surveys. Priority: SDSS-RM_Q/COSMOS_Q > SDSS-DR14Q > SDSS-DR7Q > OzDES-DR1Q > Milliquas_QA 
+    specz_ref character varying(16), --/D Reference of specz. 
+    photo_q integer, --/D flag indicating if the object was selected as QSO in public photometric quasar catalogs. 
+    photo_strmask character varying(3), --/D string format of photo_bitmask 
+    photo_bitmask bigint, --/D bit mask, bit 0: XDQSO catalog, bit 1: Gaia-unWISE AGN catalog; bit 2: Milliquas_photo: photometric quasar candidates in the Milliquas catalog 
+    photoz double precision, --/D Photometric redshift from public photometric quasar catalogs. Priority: XDQSO > Gaia-unWISE > Milliquas_photo 
+    pqso_photo double precision, --/D QSO probability from public photometric quasar catalogs. 
+    photoz_ref character varying(16), --/D photoz reference. 
+    pk bigint NOT NULL, --/D primary key for the database table 
     psfmag_des_g double precision, --/U mag --/D DES PSF photometry 
     psfmag_des_r double precision, --/U mag --/D DES PSF photometry 
     psfmag_des_i double precision, --/U mag --/D DES PSF photometry 
@@ -1261,11 +1261,11 @@ CREATE TABLE minidb_dr19.dr19_bhm_rm_v0_2 (
     magerr_auto_des_i double precision, --/U mag --/D DES auto photometry error 
     magerr_auto_des_z double precision, --/U mag --/D DES auto photometry error 
     magerr_auto_des_y double precision, --/U mag --/D DES auto photometry error 
-    imaflags_iso_g integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images
-    imaflags_iso_r integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images
-    imaflags_iso_i integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images
-    imaflags_iso_z integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images
-    imaflags_iso_y integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images
+    imaflags_iso_g integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images 
+    imaflags_iso_r integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images 
+    imaflags_iso_i integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images 
+    imaflags_iso_z integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images 
+    imaflags_iso_y integer, --/D DES flag identifying sources with missing/flagged pixels, considering all single epoch images 
     psfmag_ps1_g double precision, --/U mag --/D PS1 PSF magnitude 
     psfmag_ps1_r double precision, --/U mag --/D PS1 PSF magnitude 
     psfmag_ps1_i double precision, --/U mag --/D PS1 PSF magnitude 
@@ -1286,11 +1286,11 @@ CREATE TABLE minidb_dr19.dr19_bhm_rm_v0_2 (
     kronmagerr_ps1_i double precision, --/U mag --/D PS1 Kron magnitude error 
     kronmagerr_ps1_z double precision, --/U mag --/D PS1 Kron magnitude error 
     kronmagerr_ps1_y double precision, --/U mag --/D PS1 Kron magnitude error 
-    infoflag2_g integer, --/D PS1 flags, values listed in DetectionFlags2
-    infoflag2_r integer, --/D PS1 flags, values listed in DetectionFlags2
-    infoflag2_i integer, --/D PS1 flags, values listed in DetectionFlags2
-    infoflag2_z integer, --/D PS1 flags, values listed in DetectionFlags2
-    infoflag2_y integer, --/D PS1 flags, values listed in DetectionFlags2
+    infoflag2_g integer, --/D PS1 flags, values listed in DetectionFlags2 
+    infoflag2_r integer, --/D PS1 flags, values listed in DetectionFlags2 
+    infoflag2_i integer, --/D PS1 flags, values listed in DetectionFlags2 
+    infoflag2_z integer, --/D PS1 flags, values listed in DetectionFlags2 
+    infoflag2_y integer, --/D PS1 flags, values listed in DetectionFlags2 
     mag_nsc_g double precision, --/U mag --/D Weighted-average magnitude 
     mag_nsc_r double precision, --/U mag --/D Weighted-average magnitude 
     mag_nsc_i double precision, --/U mag --/D Weighted-average magnitude 
@@ -1331,8 +1331,8 @@ CREATE TABLE minidb_dr19.dr19_bhm_rm_v0_2 (
     mag_unwise_w2 double precision, --/U mag --/D unWISE (Vega) magnitude, 
     magerr_unwise_w1 double precision, --/U mag --/D unWISE (Vega) magnitude error, 
     magerr_unwise_w2 double precision, --/U mag --/D unWISE (Vega) magnitude error, 
-    flags_unwise_w1 integer, --/D unWISE Coadd Flags
-    flags_unwise_w2 integer, --/D unWISE Coadd Flags
+    flags_unwise_w1 integer, --/D unWISE Coadd Flags 
+    flags_unwise_w2 integer, --/D unWISE Coadd Flags 
     mag_ir_y double precision, --/U mag --/D (Vega) magnitude in near-IR, 
     mag_ir_j double precision, --/U mag --/D (Vega) magnitude in near-IR, 
     mag_ir_h double precision, --/U mag --/D (Vega) magnitude in near-IR, 
@@ -1341,16 +1341,16 @@ CREATE TABLE minidb_dr19.dr19_bhm_rm_v0_2 (
     magerr_ir_j double precision, --/U mag --/D magnitude error in near-IR 
     magerr_ir_h double precision, --/U mag --/D magnitude error in near-IR 
     magerr_ir_k double precision, --/U mag --/D magnitude error in near-IR 
-    des_var_nepoch_g integer, --/D Number of DES single-epoch photometric datapoints per band
-    des_var_nepoch_r integer, --/D Number of DES single-epoch photometric datapoints per band
-    des_var_nepoch_i integer, --/D Number of DES single-epoch photometric datapoints per band
-    des_var_nepoch_z integer, --/D Number of DES single-epoch photometric datapoints per band
-    des_var_nepoch_y integer, --/D Number of DES single-epoch photometric datapoints per band
-    des_var_status_g integer, --/D Status of intrinsic variability calculation from DES
-    des_var_status_r integer, --/D Status of intrinsic variability calculation from DES
-    des_var_status_i integer, --/D Status of intrinsic variability calculation from DES
-    des_var_status_z integer, --/D Status of intrinsic variability calculation from DES
-    des_var_status_y integer, --/D Status of intrinsic variability calculation from DES
+    des_var_nepoch_g integer, --/D Number of DES single-epoch photometric datapoints per band 
+    des_var_nepoch_r integer, --/D Number of DES single-epoch photometric datapoints per band 
+    des_var_nepoch_i integer, --/D Number of DES single-epoch photometric datapoints per band 
+    des_var_nepoch_z integer, --/D Number of DES single-epoch photometric datapoints per band 
+    des_var_nepoch_y integer, --/D Number of DES single-epoch photometric datapoints per band 
+    des_var_status_g integer, --/D Status of intrinsic variability calculation from DES 
+    des_var_status_r integer, --/D Status of intrinsic variability calculation from DES 
+    des_var_status_i integer, --/D Status of intrinsic variability calculation from DES 
+    des_var_status_z integer, --/D Status of intrinsic variability calculation from DES 
+    des_var_status_y integer, --/D Status of intrinsic variability calculation from DES 
     des_var_rms_g double precision, --/U mag --/D Intrinsic RMS from DES 
     des_var_rms_r double precision, --/U mag --/D Intrinsic RMS from DES 
     des_var_rms_i double precision, --/U mag --/D Intrinsic RMS from DES 
@@ -1361,21 +1361,21 @@ CREATE TABLE minidb_dr19.dr19_bhm_rm_v0_2 (
     des_var_sigrms_i double precision, --/U mag --/D Error of intrinsic RMS from DES 
     des_var_sigrms_z double precision, --/U mag --/D Error of intrinsic RMS from DES 
     des_var_sigrms_y double precision, --/U mag --/D Error of intrinsic RMS from DES 
-    des_var_sn_g double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES
-    des_var_sn_r double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES
-    des_var_sn_i double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES
-    des_var_sn_z double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES
-    des_var_sn_y double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES
-    ps1_var_nepoch_g integer, --/D Number of PS1 single-epoch photometric data points
-    ps1_var_nepoch_r integer, --/D Number of PS1 single-epoch photometric data points
-    ps1_var_nepoch_i integer, --/D Number of PS1 single-epoch photometric data points
-    ps1_var_nepoch_z integer, --/D Number of PS1 single-epoch photometric data points
-    ps1_var_nepoch_y integer, --/D Number of PS1 single-epoch photometric data points
-    ps1_var_status_g integer, --/D Status of intrinsic variability calculation from PS1
-    ps1_var_status_r integer, --/D Status of intrinsic variability calculation from PS1
-    ps1_var_status_i integer, --/D Status of intrinsic variability calculation from PS1
-    ps1_var_status_z integer, --/D Status of intrinsic variability calculation from PS1
-    ps1_var_status_y integer, --/D Status of intrinsic variability calculation from PS1
+    des_var_sn_g double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES 
+    des_var_sn_r double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES 
+    des_var_sn_i double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES 
+    des_var_sn_z double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES 
+    des_var_sn_y double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from DES 
+    ps1_var_nepoch_g integer, --/D Number of PS1 single-epoch photometric data points 
+    ps1_var_nepoch_r integer, --/D Number of PS1 single-epoch photometric data points 
+    ps1_var_nepoch_i integer, --/D Number of PS1 single-epoch photometric data points 
+    ps1_var_nepoch_z integer, --/D Number of PS1 single-epoch photometric data points 
+    ps1_var_nepoch_y integer, --/D Number of PS1 single-epoch photometric data points 
+    ps1_var_status_g integer, --/D Status of intrinsic variability calculation from PS1 
+    ps1_var_status_r integer, --/D Status of intrinsic variability calculation from PS1 
+    ps1_var_status_i integer, --/D Status of intrinsic variability calculation from PS1 
+    ps1_var_status_z integer, --/D Status of intrinsic variability calculation from PS1 
+    ps1_var_status_y integer, --/D Status of intrinsic variability calculation from PS1 
     ps1_var_rms_g double precision, --/U mag --/D Intrinsic RMS from PS1 
     ps1_var_rms_r double precision, --/U mag --/D Intrinsic RMS from PS1 
     ps1_var_rms_i double precision, --/U mag --/D Intrinsic RMS from PS1 
@@ -1386,11 +1386,11 @@ CREATE TABLE minidb_dr19.dr19_bhm_rm_v0_2 (
     ps1_var_sigrms_i double precision, --/U mag --/D Error of intrinsic RMS from PS1 
     ps1_var_sigrms_z double precision, --/U mag --/D Error of intrinsic RMS from PS1 
     ps1_var_sigrms_y double precision, --/U mag --/D Error of intrinsic RMS from PS1 
-    ps1_var_sn_g double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1
-    ps1_var_sn_r double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1
-    ps1_var_sn_i double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1
-    ps1_var_sn_z double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1
-    ps1_var_sn_y double precision --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1
+    ps1_var_sn_g double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1 
+    ps1_var_sn_r double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1 
+    ps1_var_sn_i double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1 
+    ps1_var_sn_z double precision, --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1 
+    ps1_var_sn_y double precision --/D The signal-to-noise ratio of the measured intrinsic RMS from PS1 
 );
 
 
@@ -1415,33 +1415,33 @@ CREATE TABLE minidb_dr19.dr19_bhm_spiders_agn_superset (
 --/T derived from eROSITA observations of the eROSITA Final Equatorial Depth
 --/T performance verification field ('eFEDS').
 ----------------------------------------------------------------------
-    pk bigint NOT NULL, --/D primary key of table entry
-    ero_version text, --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc
-    ero_detuid text, --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc
+    pk bigint NOT NULL, --/D primary key of table entry 
+    ero_version text, --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
+    ero_detuid text, --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
     ero_flux real, --/U erg/cm2/s --/D X-ray flux, usually in the main eROSITA detection band (0.2-2.3keV). 
     ero_flux_err real, --/U erg/cm2/s --/D Uncertainty on X-ray flux 
     ero_ext real, --/U arcsec --/D X-ray extent parameter 
     ero_ext_err real, --/U arcsec --/D Uncertainty on X-ray extent parameter 
-    ero_ext_like real, --/D Likelihood of X-ray source being extended
-    ero_det_like real, --/D X-ray detection likelihood
+    ero_ext_like real, --/D Likelihood of X-ray source being extended 
+    ero_det_like real, --/D X-ray detection likelihood 
     ero_ra double precision, --/U deg --/D Best determination of X-ray position, J2000 
     ero_dec double precision, --/U deg --/D Best determination of X-ray position, J2000 
     ero_radec_err real, --/U arcsec --/D Best estimate of X-ray position uncertainty 
-    xmatch_method text, --/D The X-ray-to-optical/IR cross-match method that was used in this case e.g. 'XPS-ML/NWAY', 'CLUSTERS_EFEDS_MULTIPLE' etc
-    xmatch_version text, --/D The cross-match software version and OIR catalog used e.g. 'LSdr8-JWMS_v2.1LSdr8-JWMS_v2.1', 'LSdr8-AG_v1,JC_16032020', 'eromapper_2020-10-12', 'CW20ps1dr2-v011220' etc
+    xmatch_method text, --/D The X-ray-to-optical/IR cross-match method that was used in this case e.g. 'XPS-ML/NWAY', 'CLUSTERS_EFEDS_MULTIPLE' etc 
+    xmatch_version text, --/D The cross-match software version and OIR catalog used e.g. 'LSdr8-JWMS_v2.1LSdr8-JWMS_v2.1', 'LSdr8-AG_v1,JC_16032020', 'eromapper_2020-10-12', 'CW20ps1dr2-v011220' etc 
     xmatch_dist real, --/U arcsec --/D Distance between X-ray position and optical counterpart 
-    xmatch_metric real, --/D Metric giving quality of cross-match. Meaning is dependent on xmatch_method, e.g. p_any for NWAY
-    xmatch_flags bigint, --/D Flags indicating cross-match properties (e.g. status flags), xmatch_method dependent
-    target_class text, --/D Best guess of source classification at time of xmatch e.g. 'GALAXY','STAR','QSO','UNKNOWN',....
-    target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority
-    target_has_spec integer, --/D Flags used to indicate if target has good quality archival spectroscopy available
-    best_opt text, --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns
-    ls_id bigint, --/D Identifier of counterpart (if any) in dr19_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40)
-    ps1_dr2_objid bigint, --/D Identifier of counterpart (if any) in dr19_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier
-    gaia_dr2_source_id bigint, --/D Identifier of counterpart (if any) in dr19_gaia_dr2_source ('source_id' field)
-    unwise_dr1_objid text, --/D Identifier of counterpart (if any) in dr19_unwise (not used)
-    des_dr1_coadd_object_id bigint, --/D Identifier of counterpart (if any) in DES/dr1 coadd catalogg (not used)
-    sdss_dr16_objid bigint, --/D Identifier of counterpart (if any) in SDSS dr16 photobj table (not used)
+    xmatch_metric real, --/D Metric giving quality of cross-match. Meaning is dependent on xmatch_method, e.g. p_any for NWAY 
+    xmatch_flags bigint, --/D Flags indicating cross-match properties (e.g. status flags), xmatch_method dependent 
+    target_class text, --/D Best guess of source classification at time of xmatch e.g. 'GALAXY','STAR','QSO','UNKNOWN',.... 
+    target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority 
+    target_has_spec integer, --/D Flags used to indicate if target has good quality archival spectroscopy available 
+    best_opt text, --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns 
+    ls_id bigint, --/D Identifier of counterpart (if any) in dr19_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40) 
+    ps1_dr2_objid bigint, --/D Identifier of counterpart (if any) in dr19_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier 
+    gaia_dr2_source_id bigint, --/D Identifier of counterpart (if any) in dr19_gaia_dr2_source ('source_id' field) 
+    unwise_dr1_objid text, --/D Identifier of counterpart (if any) in dr19_unwise (not used) 
+    des_dr1_coadd_object_id bigint, --/D Identifier of counterpart (if any) in DES/dr1 coadd catalogg (not used) 
+    sdss_dr16_objid bigint, --/D Identifier of counterpart (if any) in SDSS dr16 photobj table (not used) 
     opt_ra double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_dec double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_pmra real, --/U mas/yr --/D Proper motion of optical/IR counterpart, included for validity checks only  
@@ -1478,33 +1478,33 @@ CREATE TABLE minidb_dr19.dr19_bhm_spiders_clusters_superset (
 --/T derived from eROSITA observations of the eROSITA Final Equatorial Depth
 --/T performance verification field ('eFEDS').
 ----------------------------------------------------------------------
-    pk bigint NOT NULL, --/D primary key of table entry
-    ero_version text, --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc
-    ero_detuid text, --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc
+    pk bigint NOT NULL, --/D primary key of table entry 
+    ero_version text, --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
+    ero_detuid text, --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
     ero_flux real, --/U erg/cm2/s --/D X-ray flux, usually in the main eROSITA detection band (0.2-2.3keV). 
     ero_flux_err real, --/U erg/cm2/s --/D Uncertainty on X-ray flux 
     ero_ext real, --/U arcsec --/D X-ray extent parameter 
     ero_ext_err real, --/U arcsec --/D Uncertainty on X-ray extent parameter 
-    ero_ext_like real, --/D Likelihood of X-ray source being extended
-    ero_det_like real, --/D X-ray detection likelihood
+    ero_ext_like real, --/D Likelihood of X-ray source being extended 
+    ero_det_like real, --/D X-ray detection likelihood 
     ero_ra double precision, --/U deg --/D Best determination of X-ray position, J2000 
     ero_dec double precision, --/U deg --/D Best determination of X-ray position, J2000 
     ero_radec_err real, --/U arcsec --/D Best estimate of X-ray position uncertainty 
-    xmatch_method text, --/D The X-ray-to-optical/IR cross-match method that was used in this case e.g. 'XPS-ML/NWAY', 'CLUSTERS_EFEDS_MULTIPLE' etc
-    xmatch_version text, --/D The cross-match software version and OIR catalog used e.g. 'LSdr8-JWMS_v2.1LSdr8-JWMS_v2.1', 'LSdr8-AG_v1,JC_16032020', 'eromapper_2020-10-12', 'CW20ps1dr2-v011220' etc
+    xmatch_method text, --/D The X-ray-to-optical/IR cross-match method that was used in this case e.g. 'XPS-ML/NWAY', 'CLUSTERS_EFEDS_MULTIPLE' etc 
+    xmatch_version text, --/D The cross-match software version and OIR catalog used e.g. 'LSdr8-JWMS_v2.1LSdr8-JWMS_v2.1', 'LSdr8-AG_v1,JC_16032020', 'eromapper_2020-10-12', 'CW20ps1dr2-v011220' etc 
     xmatch_dist real, --/U arcsec --/D Distance between X-ray position and optical counterpart 
-    xmatch_metric real, --/D Metric giving quality of cross-match. Meaning is dependent on xmatch_method, e.g. p_any for NWAY
-    xmatch_flags bigint, --/D Flags indicating cross-match properties (e.g. status flags), xmatch_method dependent
-    target_class text, --/D Best guess of source classification at time of xmatch e.g. 'GALAXY','STAR','QSO','UNKNOWN',....
-    target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority
-    target_has_spec integer, --/D Flags used to indicate if target has good quality archival spectroscopy available
-    best_opt text, --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns
-    ls_id bigint, --/D Identifier of counterpart (if any) in dr19_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40)
-    ps1_dr2_objid bigint, --/D Identifier of counterpart (if any) in dr19_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier
-    gaia_dr2_source_id bigint, --/D Identifier of counterpart (if any) in dr19_gaia_dr2_source ('source_id' field)
-    unwise_dr1_objid text, --/D Identifier of counterpart (if any) in dr19_unwise (not used)
-    des_dr1_coadd_object_id bigint, --/D Identifier of counterpart (if any) in DES/dr1 coadd catalogg (not used)
-    sdss_dr16_objid bigint, --/D Identifier of counterpart (if any) in SDSS dr16 photobj table (not used)
+    xmatch_metric real, --/D Metric giving quality of cross-match. Meaning is dependent on xmatch_method, e.g. p_any for NWAY 
+    xmatch_flags bigint, --/D Flags indicating cross-match properties (e.g. status flags), xmatch_method dependent 
+    target_class text, --/D Best guess of source classification at time of xmatch e.g. 'GALAXY','STAR','QSO','UNKNOWN',.... 
+    target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority 
+    target_has_spec integer, --/D Flags used to indicate if target has good quality archival spectroscopy available 
+    best_opt text, --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns 
+    ls_id bigint, --/D Identifier of counterpart (if any) in dr19_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40) 
+    ps1_dr2_objid bigint, --/D Identifier of counterpart (if any) in dr19_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier 
+    gaia_dr2_source_id bigint, --/D Identifier of counterpart (if any) in dr19_gaia_dr2_source ('source_id' field) 
+    unwise_dr1_objid text, --/D Identifier of counterpart (if any) in dr19_unwise (not used) 
+    des_dr1_coadd_object_id bigint, --/D Identifier of counterpart (if any) in DES/dr1 coadd catalogg (not used) 
+    sdss_dr16_objid bigint, --/D Identifier of counterpart (if any) in SDSS dr16 photobj table (not used) 
     opt_ra double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_dec double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_pmra real, --/U mas/yr --/D Proper motion of optical/IR counterpart, included for validity checks only  
@@ -1534,7 +1534,7 @@ CREATE TABLE minidb_dr19.dr19_cadence (
     label text, --/D Descriptive name for the cadence with a version 
     nepochs integer, --/D Number of epochs in the cadence 
     pk bigint NOT NULL, --/D Primary key 
-    label_root text, --/D Descriptive name, typically {bright/dark}_{nepochs}x{nexps}
+    label_root text, --/D Descriptive name, typically {bright/dark}_{nepochs}x{nexps} 
     label_version text, --/D Version; cadences are added in versioned batches 
     max_skybrightness real, --/D The maximum skybrightness for all epochs in this cadence 
     nexp_total integer --/D The total number of exposures planned for this cadence 
@@ -1575,13 +1575,13 @@ CREATE TABLE minidb_dr19.dr19_carton (
 ----------------------------------------------------------------------
 --/H The table contains the list of cartons along with the target selection plan that generated them.
 ----------------------------------------------------------------------
-    carton text, --/D The name of the carton.
-    carton_pk integer NOT NULL, --/D The primary key. A sequential identifier.
-    mapper_pk integer, --/D The primary key of the mapper leading this carton. See dr19_mapper.
-    category_pk integer, --/D The primary key of the category in the dr19_category table.
-    version_pk integer, --/D The primary key of the version in the dr19_version table.
-    program text, --/D The program name.
-    target_selection_plan text --/D The target selection plan version for which this carton was run.
+    carton text, --/D The name of the carton. 
+    carton_pk integer NOT NULL, --/D The primary key. A sequential identifier. 
+    mapper_pk integer, --/D The primary key of the mapper leading this carton. See dr19_mapper. 
+    category_pk integer, --/D The primary key of the category in the dr19_category table. 
+    version_pk integer, --/D The primary key of the version in the dr19_version table. 
+    program text, --/D The program name. 
+    target_selection_plan text --/D The target selection plan version for which this carton was run. 
 );
 
 
@@ -1608,17 +1608,17 @@ CREATE TABLE minidb_dr19.dr19_carton_to_target (
 ----------------------------------------------------------------------
 --/H The table stores the targets assigned to a given carton along with information about the instrument that will observe that target, and offsetting data.
 ----------------------------------------------------------------------
-    carton_to_target_pk bigint NOT NULL, --/D The primary key. A sequential identifier.
+    carton_to_target_pk bigint NOT NULL, --/D The primary key. A sequential identifier. 
     lambda_eff real, --/U angstrom --/D The effective wavelength at which the object will be observed 
-    carton_pk integer, --/D The primary key of the carton in the dr19_carton table.
-    target_pk bigint, --/D The primary key of the target in the dr19_target table.
-    cadence_pk integer, --/D The primary key of the cadence in the dr19_cadence table.
-    priority integer, --/D The target priority. Used for scheduling.
-    value real, --/D An internal metric of the target value used for scheduling.
-    instrument_pk integer, --/D The primary key of the instrument in the dr19_instrument table.
-    delta_ra double precision, --/D The RA offset for fibre positioning, in arcsec.
-    delta_dec double precision, --/D The Dec offset for fibre positioning, in arcsec.
-    inertial boolean --/D Whether this is an inertial target (no proper motion will be applied).
+    carton_pk integer, --/D The primary key of the carton in the dr19_carton table. 
+    target_pk bigint, --/D The primary key of the target in the dr19_target table. 
+    cadence_pk integer, --/D The primary key of the cadence in the dr19_cadence table. 
+    priority integer, --/D The target priority. Used for scheduling. 
+    value real, --/D An internal metric of the target value used for scheduling. 
+    instrument_pk integer, --/D The primary key of the instrument in the dr19_instrument table. 
+    delta_ra double precision, --/D The RA offset for fibre positioning, in arcsec. 
+    delta_dec double precision, --/D The Dec offset for fibre positioning, in arcsec. 
+    inertial boolean --/D Whether this is an inertial target (no proper motion will be applied). 
 );
 
 
@@ -1740,15 +1740,15 @@ CREATE TABLE minidb_dr19.dr19_catalog (
 ----------------------------------------------------------------------
 --/H The results of the cross-match used for dr19 targeting. Entries in this table are expected to be unique physical objects drawn from one or more parent catalogues. The dr19_catalog_to_ tables provide the relationships to their parent catalogue counterparts.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The SDSS identifier for a unique object in this cross-match run.
-    iauname text, --/D The IAU-style name. Not used.
+    catalogid bigint NOT NULL, --/D The SDSS identifier for a unique object in this cross-match run. 
+    iauname text, --/D The IAU-style name. Not used. 
     ra double precision, --/U degrees --/D The right ascension of the target in ICRS coordinates for J2015.5. Taken from the lead parent catalogue 
     "dec" double precision, --/U degrees --/D The declination of the target in ICRS coordinates for J2015.5. Taken from the lead parent catalogue 
     pmra real, --/U mas/yr --/D The proper motion of the target in right ascension. Taken from the lead parent catalogue. This is a true angle (i.e., the cos(dec) factor has been applied) 
     pmdec real, --/U mas/yr --/D The proper motion of the target in declination. Taken from the lead parent catalogue 
     parallax real, --/U arcsec --/D The parallax of the target. Taken from the lead parent catalogue 
-    lead text, --/D The name of the parent catalogue from which this target was selected and whose data was used to determine its astrometric position.
-    version_id integer --/D The internal version for the cross-match.
+    lead text, --/D The name of the parent catalogue from which this target was selected and whose data was used to determine its astrometric position. 
+    version_id integer --/D The internal version for the cross-match. 
 );
 
 
@@ -1762,12 +1762,12 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_allstar_dr17_synspec_rev1 (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_allstar_dr17_synspec_rev1 table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id text NOT NULL, --/D The primary key identifier in the dr19_allstar_dr17_synspec_rev1 table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean, --/D Whether this is considered the best match between the catalog entry and dr19_allstar_dr17_synspec_rev1.
-    plan_id text --/D Identifier of the cross-matching plan used to generate this file.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id text NOT NULL, --/D The primary key identifier in the dr19_allstar_dr17_synspec_rev1 table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean, --/D Whether this is considered the best match between the catalog entry and dr19_allstar_dr17_synspec_rev1. 
+    plan_id text --/D Identifier of the cross-matching plan used to generate this file. 
 );
 
 
@@ -1781,11 +1781,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_allwise (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_allwise table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_allwise table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_allwise.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_allwise table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_allwise. 
 );
 
 
@@ -1799,11 +1799,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_bhm_csc (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_bhm_csc table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_bhm_csc table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_bhm_csc.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_bhm_csc table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_bhm_csc. 
 );
 
 
@@ -1817,11 +1817,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_bhm_efeds_veto (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_bhm_efeds_veto table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_bhm_efeds_veto table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_bhm_efeds_veto.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_bhm_efeds_veto table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_bhm_efeds_veto. 
 );
 
 
@@ -1836,11 +1836,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_bhm_rm_v0 (
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_rm_v0 table.
 --/T Note: this table is identical to dr19_catalog_to_bhm_rm_v0_2.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_rm_v0 table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_rm_v0 table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
     distance double precision, --/U deg --/D The distance between the catalog and target coordinates if best=F. 
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_rm_v0.
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_rm_v0. 
 );
 
 
@@ -1855,11 +1855,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_bhm_rm_v0_2 (
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_rm_v0_2 table.
 --/T Note. This table is identical to dr19_catalog_to_bhm_rm_v0.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_rm_v0_2 table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_rm_v0_2 table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
     distance double precision, --/U deg --/D The distance between the catalog and target coordinates if best=F. 
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_rm_v0_2.
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_rm_v0_2. 
 );
 
 
@@ -1873,11 +1873,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_catwise2020 (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_catwise2020 table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id character varying(25) NOT NULL, --/D The primary key identifier in the dr19_catwise2020 table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_catwise2020.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id character varying(25) NOT NULL, --/D The primary key identifier in the dr19_catwise2020 table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_catwise2020. 
 );
 
 
@@ -1891,11 +1891,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_gaia_dr2_source (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_gaia_dr2_source table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_gaia_dr2_source table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_gaia_dr2_source.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_gaia_dr2_source table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_gaia_dr2_source. 
 );
 
 
@@ -1909,11 +1909,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_glimpse (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_glimpse table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_glimpse table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_glimpse.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_glimpse table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_glimpse. 
 );
 
 
@@ -1927,11 +1927,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_guvcat (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_guvcat table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_guvcat table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_guvcat.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_guvcat table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_guvcat. 
 );
 
 
@@ -1945,11 +1945,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_legacy_survey_dr8 (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_legacy_survey_dr8 table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_legacy_survey_dr8 table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_legacy_survey_dr8.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_legacy_survey_dr8 table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_legacy_survey_dr8. 
 );
 
 
@@ -1963,13 +1963,13 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_mangatarget (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_mangatarget table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id character varying(255) NOT NULL, --/D The primary key identifier in the dr19_mangatarget table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean, --/D Whether this is considered the best match between the catalog entry and dr19_mangatarget.
-    plan_id text, --/D Identifier of the cross-matching plan used to generate this file.
-    added_by_phase smallint --/D The phase of the cross-match in which this target was added.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id character varying(255) NOT NULL, --/D The primary key identifier in the dr19_mangatarget table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean, --/D Whether this is considered the best match between the catalog entry and dr19_mangatarget. 
+    plan_id text, --/D Identifier of the cross-matching plan used to generate this file. 
+    added_by_phase smallint --/D The phase of the cross-match in which this target was added. 
 );
 
 
@@ -1983,13 +1983,13 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_marvels_dr11_star (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_marvels_dr11_star table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id character varying(255) NOT NULL, --/D The primary key identifier in the dr19_marvels_dr11_star table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean, --/D Whether this is considered the best match between the catalog entry and dr19_marvels_dr11_star.
-    plan_id text, --/D Identifier of the cross-matching plan used to generate this file.
-    added_by_phase smallint --/D The phase of the cross-match in which this target was added.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id character varying(255) NOT NULL, --/D The primary key identifier in the dr19_marvels_dr11_star table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean, --/D Whether this is considered the best match between the catalog entry and dr19_marvels_dr11_star. 
+    plan_id text, --/D Identifier of the cross-matching plan used to generate this file. 
+    added_by_phase smallint --/D The phase of the cross-match in which this target was added. 
 );
 
 
@@ -2003,13 +2003,13 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_marvels_dr12_star (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_marvels_dr12_star table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_marvels_dr12_star table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean, --/D Whether this is considered the best match between the catalog entry and dr19_marvels_dr12_star.
-    plan_id text, --/D Identifier of the cross-matching plan used to generate this file.
-    added_by_phase smallint --/D The phase of the cross-match in which this target was added.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_marvels_dr12_star table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean, --/D Whether this is considered the best match between the catalog entry and dr19_marvels_dr12_star. 
+    plan_id text, --/D Identifier of the cross-matching plan used to generate this file. 
+    added_by_phase smallint --/D The phase of the cross-match in which this target was added. 
 );
 
 
@@ -2023,13 +2023,13 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_mastar_goodstars (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_mastar_goodstars table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id character varying(255) NOT NULL, --/D The primary key identifier in the dr19_mastar_goodstars table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean, --/D Whether this is considered the best match between the catalog entry and dr19_mastar_goodstars.
-    plan_id text, --/D Identifier of the cross-matching plan used to generate this file.
-    added_by_phase smallint --/D The phase of the cross-match in which this target was added.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id character varying(255) NOT NULL, --/D The primary key identifier in the dr19_mastar_goodstars table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean, --/D Whether this is considered the best match between the catalog entry and dr19_mastar_goodstars. 
+    plan_id text, --/D Identifier of the cross-matching plan used to generate this file. 
+    added_by_phase smallint --/D The phase of the cross-match in which this target was added. 
 );
 
 
@@ -2043,11 +2043,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_panstarrs1 (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_panstarrs1 table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_panstarrs1 table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_panstarrs1.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_panstarrs1 table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_panstarrs1. 
 );
 
 
@@ -2061,11 +2061,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_sdss_dr13_photoobj_primary (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_sdss_dr13_photoobj_primary table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_sdss_dr13_photoobj_primary table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_sdss_dr13_photoobj_primary.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_sdss_dr13_photoobj_primary table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_sdss_dr13_photoobj_primary. 
 );
 
 
@@ -2079,11 +2079,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_sdss_dr16_specobj (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_sdss_dr16_specobj table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id numeric(20,0) NOT NULL, --/D The primary key identifier in the dr19_sdss_dr16_specobj table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_sdss_dr16_specobj.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id numeric(20,0) NOT NULL, --/D The primary key identifier in the dr19_sdss_dr16_specobj table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_sdss_dr16_specobj. 
 );
 
 
@@ -2097,13 +2097,13 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_sdss_dr17_specobj (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_sdss_dr17_specobj table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id numeric(20,0) NOT NULL, --/D The primary key identifier in the dr19_sdss_dr17_specobj table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean, --/D Whether this is considered the best match between the catalog entry and dr19_sdss_dr17_specobj.
-    plan_id text, --/D Identifier of the cross-matching plan used to generate this file.
-    added_by_phase smallint --/D The phase of the cross-match in which this target was added.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id numeric(20,0) NOT NULL, --/D The primary key identifier in the dr19_sdss_dr17_specobj table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean, --/D Whether this is considered the best match between the catalog entry and dr19_sdss_dr17_specobj. 
+    plan_id text, --/D Identifier of the cross-matching plan used to generate this file. 
+    added_by_phase smallint --/D The phase of the cross-match in which this target was added. 
 );
 
 
@@ -2117,11 +2117,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_skies_v1 (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_skies_v1 table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_skies_v1 table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_skies_v1.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_skies_v1 table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_skies_v1. 
 );
 
 
@@ -2135,11 +2135,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_skies_v2 (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_skies_v1 table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_skies_v2 table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_skies_v2.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_skies_v2 table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_skies_v2. 
 );
 
 
@@ -2153,11 +2153,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_skymapper_dr2 (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_skymapper_dr2 table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_skymapper_dr2 table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_skymapper_dr2.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_skymapper_dr2 table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_skymapper_dr2. 
 );
 
 
@@ -2171,11 +2171,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_supercosmos (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_supercosmos table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_supercosmos table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_supercosmos.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_supercosmos table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_supercosmos. 
 );
 
 
@@ -2189,11 +2189,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_tic_v8 (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_tic_v8 table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_tic_v8 table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_tic_v8.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_tic_v8 table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_tic_v8. 
 );
 
 
@@ -2207,11 +2207,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_twomass_psc (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_twomass_psc table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id integer NOT NULL, --/D The primary key identifier in the dr19_twomass_psc table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_twomass_psc.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id integer NOT NULL, --/D The primary key identifier in the dr19_twomass_psc table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_twomass_psc. 
 );
 
 
@@ -2225,11 +2225,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_tycho2 (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_tycho2 table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id text NOT NULL, --/D The primary key identifier in the dr19_tycho2 table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_tycho2.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id text NOT NULL, --/D The primary key identifier in the dr19_tycho2 table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_tycho2. 
 );
 
 
@@ -2243,11 +2243,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_unwise (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_unwise table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id text NOT NULL, --/D The primary key identifier in the dr19_unwise table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_unwise.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id text NOT NULL, --/D The primary key identifier in the dr19_unwise table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_unwise. 
 );
 
 
@@ -2261,11 +2261,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_uvotssc1 (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_uvotssc1 table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_uvotssc1 table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_uvotssc1.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_uvotssc1 table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_uvotssc1. 
 );
 
 
@@ -2279,11 +2279,11 @@ CREATE TABLE minidb_dr19.dr19_catalog_to_xmm_om_suss_4_1 (
 ----------------------------------------------------------------------
 --/H The table contains the cross-match between the dr19_catalog targets and the dr19_xmm_om_suss_4_1 table.
 ----------------------------------------------------------------------
-    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table.
-    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_xmm_om_suss_4_1 table.
-    version_id smallint NOT NULL, --/D The internal version for the cross-match.
-    distance double precision, --/D The distance between the catalog and target coordinates if best=F.
-    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_xmm_om_suss_4_1.
+    catalogid bigint NOT NULL, --/D The catalogid identifier in the dr19_catalog table. 
+    target_id bigint NOT NULL, --/D The primary key identifier in the dr19_xmm_om_suss_4_1 table. 
+    version_id smallint NOT NULL, --/D The internal version for the cross-match. 
+    distance double precision, --/D The distance between the catalog and target coordinates if best=F. 
+    best boolean --/D Whether this is considered the best match between the catalog entry and dr19_xmm_om_suss_4_1. 
 );
 
 
@@ -2297,9 +2297,9 @@ CREATE TABLE minidb_dr19.dr19_catalogdb_version (
 ----------------------------------------------------------------------
 --/H Table containing crossmatch versions
 ----------------------------------------------------------------------
-    id integer NOT NULL, --/D Unique identifier
-    plan text, --/D Cross match version
-    tag text --/D Tag of target selection software used https://github.com/sdss/target_selection/tags
+    id integer NOT NULL, --/D Unique identifier 
+    plan text, --/D Cross match version 
+    tag text --/D Tag of target selection software used https://github.com/sdss/target_selection/tags 
 );
 
 
@@ -2313,8 +2313,8 @@ CREATE TABLE minidb_dr19.dr19_category (
 ----------------------------------------------------------------------
 --/H This table indicates the category of a carton (science, standards, etc.)
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D The primary key. A sequential identifier.
-    label text --/D The name of the category.
+    pk integer NOT NULL, --/D The primary key. A sequential identifier. 
+    label text --/D The name of the category. 
 );
 
 
@@ -2528,12 +2528,12 @@ CREATE TABLE minidb_dr19.dr19_design (
 ----------------------------------------------------------------------
 --/H This table stores the meta-data for the design, including its Design Mode and versioning information.
 ----------------------------------------------------------------------
-    design_id integer NOT NULL, --/D The primary key. A sequential identifier.
-    design_mode_label text, --/D The primary key of the design_mode in the dr19_design_mode table.
-    mugatu_version text, --/D Software version of mugatu used to validate and ingest design.
-    run_on date, --/D Date that design was added to database.
-    assignment_hash uuid, --/D Hash of the assignments in the design.
-    design_version_pk integer --/D The primary key of the version in the dr19_version table.
+    design_id integer NOT NULL, --/D The primary key. A sequential identifier. 
+    design_mode_label text, --/D The primary key of the design_mode in the dr19_design_mode table. 
+    mugatu_version text, --/D Software version of mugatu used to validate and ingest design. 
+    run_on date, --/D Date that design was added to database. 
+    assignment_hash uuid, --/D Hash of the assignments in the design. 
+    design_version_pk integer --/D The primary key of the version in the dr19_version table. 
 );
 
 
@@ -2547,105 +2547,105 @@ CREATE TABLE minidb_dr19.dr19_design_mode (
 ----------------------------------------------------------------------
 --/H The parameters for the metrics that describe a given Design Mode, where a Design Mode constrains the assignments on a design.
 ----------------------------------------------------------------------
-    label text NOT NULL, --/D The primary key. A string label.
-    boss_skies_min integer, --/D Minimum number of Boss skies needed for design.
-    apogee_skies_min integer, --/D Minimum number of Apogee skies needed for design.
-    boss_stds_min integer, --/D Minimum number of Boss standards needed for design.
-    apogee_stds_min integer, --/D Minimum number of Apogee standards needed for design.
-    boss_trace_diff_targets double precision, --/D Limit for magnitude difference between adjacent traces on Boss instrument.
-    apogee_trace_diff_targets double precision, --/D Limit for magnitude difference between adjacent traces on Apogee instrument.
-    boss_skies_fov_k double precision, --/D The kth neighbor to measure distance to for the Field of View metric for Boss skies.
-    boss_skies_fov_perc double precision, --/D The percentile of the distances for the Field of View metric for Boss skies.
-    boss_skies_fov_perc_dist double precision, --/D The maximum percentile distance for the Field of View metric for Boss skies.
-    apogee_skies_fov_k double precision, --/D The kth neighbor to measure distance to for the Field of View metric for Apogee skies.
-    apogee_skies_fov_perc double precision, --/D The percentile of the distances for the Field of View metric for Apogee skies.
-    apogee_skies_fov_perc_dist double precision, --/D The maximum percentile distance for the Field of View metric for Apogee skies.
-    boss_stds_fov_k double precision, --/D The kth neighbor to measure distance to for the Field of View metric for Boss standards.
-    boss_stds_fov_perc double precision, --/D The percentile of the distances for the Field of View metric for Boss standards.
-    boss_stds_fov_perc_dist double precision, --/D The maximum percentile distance for the Field of View metric for Boss standards.
-    apogee_stds_fov_k double precision, --/D The kth neighbor to measure distance to for the Field of View metric for Apogee standards.
-    apogee_stds_fov_perc double precision, --/D The percentile of the distances for the Field of View metric for Apogee standards.
-    apogee_stds_fov_perc_dist double precision, --/D The maximum percentile distance for the Field of View metric for Apogee standards.
-    boss_stds_mags_min_g double precision, --/D The minimum optical g magnitude for Boss standards.
-    boss_stds_mags_min_r double precision, --/D The minimum optical r magnitude for Boss standards.
-    boss_stds_mags_min_i double precision, --/D The minimum optical i magnitude for Boss standards.
-    boss_stds_mags_min_z double precision, --/D The minimum optical z magnitude for Boss standards.
-    boss_stds_mags_min_bp double precision, --/D The minimum Gaia BP magnitude for Boss standards.
-    boss_stds_mags_min_gaia_g double precision, --/D The minimum Gaia G magnitude for Boss standards.
-    boss_stds_mags_min_rp double precision, --/D The minimum Gaia RP magnitude for Boss standards.
-    boss_stds_mags_min_j double precision, --/D The minimum IR J magnitude for Boss standards.
-    boss_stds_mags_min_h double precision, --/D The minimum IR H magnitude for Boss standards.
-    boss_stds_mags_min_k double precision, --/D The minimum IR K magnitude for Boss standards.
-    boss_stds_mags_max_g double precision, --/D The maximum optical g magnitude for Boss standards.
-    boss_stds_mags_max_r double precision, --/D The maximum optical r magnitude for Boss standards.
-    boss_stds_mags_max_i double precision, --/D The maximum optical i magnitude for Boss standards.
-    boss_stds_mags_max_z double precision, --/D The maximum optical z magnitude for Boss standards.
-    boss_stds_mags_max_bp double precision, --/D The maximum Gaia BP magnitude for Boss standards.
-    boss_stds_mags_max_gaia_g double precision, --/D The maximum Gaia G magnitude for Boss standards.
-    boss_stds_mags_max_rp double precision, --/D The maximum Gaia RP magnitude for Boss standards.
-    boss_stds_mags_max_j double precision, --/D The maximum IR J magnitude for Boss standards.
-    boss_stds_mags_max_h double precision, --/D The maximum IR H magnitude for Boss standards.
-    boss_stds_mags_max_k double precision, --/D The maximum IR K magnitude for Boss standards.
-    apogee_stds_mags_min_g double precision, --/D The minimum optical g magnitude for Apogee standards.
-    apogee_stds_mags_min_r double precision, --/D The minimum optical r magnitude for Apogee standards.
-    apogee_stds_mags_min_i double precision, --/D The minimum optical i magnitude for Apogee standards.
-    apogee_stds_mags_min_z double precision, --/D The minimum optical z magnitude for Apogee standards.
-    apogee_stds_mags_min_bp double precision, --/D The minimum Gaia BP magnitude for Apogee standards.
-    apogee_stds_mags_min_gaia_g double precision, --/D The minimum Gaia G magnitude for Apogee standards.
-    apogee_stds_mags_min_rp double precision, --/D The minimum Gaia RP magnitude for Apogee standards.
-    apogee_stds_mags_min_j double precision, --/D The minimum IR J magnitude for Apogee standards.
-    apogee_stds_mags_min_h double precision, --/D The minimum IR H magnitude for Apogee standards.
-    apogee_stds_mags_min_k double precision, --/D The minimum IR K magnitude for Apogee standards.
-    apogee_stds_mags_max_g double precision, --/D The maximum optical g magnitude for Apogee standards.
-    apogee_stds_mags_max_r double precision, --/D The maximum optical r magnitude for Apogee standards.
-    apogee_stds_mags_max_i double precision, --/D The maximum optical i magnitude for Apogee standards.
-    apogee_stds_mags_max_z double precision, --/D The maximum optical z magnitude for Apogee standards.
-    apogee_stds_mags_max_bp double precision, --/D The maximum Gaia BP magnitude for Apogee standards.
-    apogee_stds_mags_max_gaia_g double precision, --/D The maximum Gaia G magnitude for Apogee standards.
-    apogee_stds_mags_max_rp double precision, --/D The maximum Gaia RP magnitude for Apogee standards.
-    apogee_stds_mags_max_j double precision, --/D The maximum IR J magnitude for Apogee standards.
-    apogee_stds_mags_max_h double precision, --/D The maximum IR H magnitude for Apogee standards.
-    apogee_stds_mags_max_k double precision, --/D The maximum IR K magnitude for Apogee standards.
-    boss_bright_limit_targets_min_g double precision, --/D The minimum optical g magnitude for Boss science targets.
-    boss_bright_limit_targets_min_r double precision, --/D The minimum optical r magnitude for Boss science targets.
-    boss_bright_limit_targets_min_i double precision, --/D The minimum optical i magnitude for Boss science targets.
-    boss_bright_limit_targets_min_z double precision, --/D The minimum optical z magnitude for Boss science targets.
-    boss_bright_limit_targets_min_bp double precision, --/D The minimum Gaia BP magnitude for Boss science targets.
-    boss_bright_limit_targets_min_gaia_g double precision, --/D The minimum Gaia G magnitude for Boss science targets.
-    boss_bright_limit_targets_min_rp double precision, --/D The minimum Gaia RP magnitude for Boss science targets.
-    boss_bright_limit_targets_min_j double precision, --/D The minimum IR J magnitude for Boss science targets.
-    boss_bright_limit_targets_min_h double precision, --/D The minimum IR H magnitude for Boss science targets.
-    boss_bright_limit_targets_min_k double precision, --/D The minimum IR K magnitude for Boss science targets.
-    boss_bright_limit_targets_max_g double precision, --/D The maximum optical g magnitude for Boss science targets.
-    boss_bright_limit_targets_max_r double precision, --/D The maximum optical r magnitude for Boss science targets.
-    boss_bright_limit_targets_max_i double precision, --/D The maximum optical i magnitude for Boss science targets.
-    boss_bright_limit_targets_max_z double precision, --/D The maximum optical z magnitude for Boss science targets.
-    boss_bright_limit_targets_max_bp double precision, --/D The maximum Gaia BP magnitude for Boss science targets.
-    boss_bright_limit_targets_max_gaia_g double precision, --/D The maximum Gaia G magnitude for Boss science targets.
-    boss_bright_limit_targets_max_rp double precision, --/D The maximum Gaia RP magnitude for Boss science targets.
-    boss_bright_limit_targets_max_j double precision, --/D The maximum IR J magnitude for Boss science targets.
-    boss_bright_limit_targets_max_h double precision, --/D The maximum IR H magnitude for Boss science targets.
-    boss_bright_limit_targets_max_k double precision, --/D The maximum IR K magnitude for Boss science targets.
-    apogee_bright_limit_targets_min_g double precision, --/D The minimum optical g magnitude for Apogee science targets.
-    apogee_bright_limit_targets_min_r double precision, --/D The minimum optical r magnitude for Apogee science targets.
-    apogee_bright_limit_targets_min_i double precision, --/D The minimum optical i magnitude for Apogee science targets.
-    apogee_bright_limit_targets_min_z double precision, --/D The minimum optical z magnitude for Apogee science targets.
-    apogee_bright_limit_targets_min_bp double precision, --/D The minimum Gaia BP magnitude for Apogee science targets.
-    apogee_bright_limit_targets_min_gaia_g double precision, --/D The minimum Gaia G magnitude for Apogee science targets.
-    apogee_bright_limit_targets_min_rp double precision, --/D The minimum Gaia RP magnitude for Apogee science targets.
-    apogee_bright_limit_targets_min_j double precision, --/D The minimum IR J magnitude for Apogee science targets.
-    apogee_bright_limit_targets_min_h double precision, --/D The minimum IR H magnitude for Apogee science targets.
-    apogee_bright_limit_targets_min_k double precision, --/D The minimum IR K magnitude for Apogee science targets.
-    apogee_bright_limit_targets_max_g double precision, --/D The maximum optical g magnitude for Apogee science targets.
-    apogee_bright_limit_targets_max_r double precision, --/D The maximum optical r magnitude for Apogee science targets.
-    apogee_bright_limit_targets_max_i double precision, --/D The maximum optical i magnitude for Apogee science targets.
-    apogee_bright_limit_targets_max_z double precision, --/D The maximum optical z magnitude for Apogee science targets.
-    apogee_bright_limit_targets_max_bp double precision, --/D The maximum Gaia BP magnitude for Apogee science targets.
-    apogee_bright_limit_targets_max_gaia_g double precision, --/D The maximum Gaia G magnitude for Apogee science targets.
-    apogee_bright_limit_targets_max_rp double precision, --/D The maximum Gaia RP magnitude for Apogee science targets.
-    apogee_bright_limit_targets_max_j double precision, --/D The maximum IR J magnitude for Apogee science targets.
-    apogee_bright_limit_targets_max_h double precision, --/D The maximum IR H magnitude for Apogee science targets.
-    apogee_bright_limit_targets_max_k double precision --/D The maximum IR K magnitude for Apogee science targets.
+    label text NOT NULL, --/D The primary key. A string label. 
+    boss_skies_min integer, --/D Minimum number of Boss skies needed for design. 
+    apogee_skies_min integer, --/D Minimum number of Apogee skies needed for design. 
+    boss_stds_min integer, --/D Minimum number of Boss standards needed for design. 
+    apogee_stds_min integer, --/D Minimum number of Apogee standards needed for design. 
+    boss_trace_diff_targets double precision, --/D Limit for magnitude difference between adjacent traces on Boss instrument. 
+    apogee_trace_diff_targets double precision, --/D Limit for magnitude difference between adjacent traces on Apogee instrument. 
+    boss_skies_fov_k double precision, --/D The kth neighbor to measure distance to for the Field of View metric for Boss skies. 
+    boss_skies_fov_perc double precision, --/D The percentile of the distances for the Field of View metric for Boss skies. 
+    boss_skies_fov_perc_dist double precision, --/D The maximum percentile distance for the Field of View metric for Boss skies. 
+    apogee_skies_fov_k double precision, --/D The kth neighbor to measure distance to for the Field of View metric for Apogee skies. 
+    apogee_skies_fov_perc double precision, --/D The percentile of the distances for the Field of View metric for Apogee skies. 
+    apogee_skies_fov_perc_dist double precision, --/D The maximum percentile distance for the Field of View metric for Apogee skies. 
+    boss_stds_fov_k double precision, --/D The kth neighbor to measure distance to for the Field of View metric for Boss standards. 
+    boss_stds_fov_perc double precision, --/D The percentile of the distances for the Field of View metric for Boss standards. 
+    boss_stds_fov_perc_dist double precision, --/D The maximum percentile distance for the Field of View metric for Boss standards. 
+    apogee_stds_fov_k double precision, --/D The kth neighbor to measure distance to for the Field of View metric for Apogee standards. 
+    apogee_stds_fov_perc double precision, --/D The percentile of the distances for the Field of View metric for Apogee standards. 
+    apogee_stds_fov_perc_dist double precision, --/D The maximum percentile distance for the Field of View metric for Apogee standards. 
+    boss_stds_mags_min_g double precision, --/D The minimum optical g magnitude for Boss standards. 
+    boss_stds_mags_min_r double precision, --/D The minimum optical r magnitude for Boss standards. 
+    boss_stds_mags_min_i double precision, --/D The minimum optical i magnitude for Boss standards. 
+    boss_stds_mags_min_z double precision, --/D The minimum optical z magnitude for Boss standards. 
+    boss_stds_mags_min_bp double precision, --/D The minimum Gaia BP magnitude for Boss standards. 
+    boss_stds_mags_min_gaia_g double precision, --/D The minimum Gaia G magnitude for Boss standards. 
+    boss_stds_mags_min_rp double precision, --/D The minimum Gaia RP magnitude for Boss standards. 
+    boss_stds_mags_min_j double precision, --/D The minimum IR J magnitude for Boss standards. 
+    boss_stds_mags_min_h double precision, --/D The minimum IR H magnitude for Boss standards. 
+    boss_stds_mags_min_k double precision, --/D The minimum IR K magnitude for Boss standards. 
+    boss_stds_mags_max_g double precision, --/D The maximum optical g magnitude for Boss standards. 
+    boss_stds_mags_max_r double precision, --/D The maximum optical r magnitude for Boss standards. 
+    boss_stds_mags_max_i double precision, --/D The maximum optical i magnitude for Boss standards. 
+    boss_stds_mags_max_z double precision, --/D The maximum optical z magnitude for Boss standards. 
+    boss_stds_mags_max_bp double precision, --/D The maximum Gaia BP magnitude for Boss standards. 
+    boss_stds_mags_max_gaia_g double precision, --/D The maximum Gaia G magnitude for Boss standards. 
+    boss_stds_mags_max_rp double precision, --/D The maximum Gaia RP magnitude for Boss standards. 
+    boss_stds_mags_max_j double precision, --/D The maximum IR J magnitude for Boss standards. 
+    boss_stds_mags_max_h double precision, --/D The maximum IR H magnitude for Boss standards. 
+    boss_stds_mags_max_k double precision, --/D The maximum IR K magnitude for Boss standards. 
+    apogee_stds_mags_min_g double precision, --/D The minimum optical g magnitude for Apogee standards. 
+    apogee_stds_mags_min_r double precision, --/D The minimum optical r magnitude for Apogee standards. 
+    apogee_stds_mags_min_i double precision, --/D The minimum optical i magnitude for Apogee standards. 
+    apogee_stds_mags_min_z double precision, --/D The minimum optical z magnitude for Apogee standards. 
+    apogee_stds_mags_min_bp double precision, --/D The minimum Gaia BP magnitude for Apogee standards. 
+    apogee_stds_mags_min_gaia_g double precision, --/D The minimum Gaia G magnitude for Apogee standards. 
+    apogee_stds_mags_min_rp double precision, --/D The minimum Gaia RP magnitude for Apogee standards. 
+    apogee_stds_mags_min_j double precision, --/D The minimum IR J magnitude for Apogee standards. 
+    apogee_stds_mags_min_h double precision, --/D The minimum IR H magnitude for Apogee standards. 
+    apogee_stds_mags_min_k double precision, --/D The minimum IR K magnitude for Apogee standards. 
+    apogee_stds_mags_max_g double precision, --/D The maximum optical g magnitude for Apogee standards. 
+    apogee_stds_mags_max_r double precision, --/D The maximum optical r magnitude for Apogee standards. 
+    apogee_stds_mags_max_i double precision, --/D The maximum optical i magnitude for Apogee standards. 
+    apogee_stds_mags_max_z double precision, --/D The maximum optical z magnitude for Apogee standards. 
+    apogee_stds_mags_max_bp double precision, --/D The maximum Gaia BP magnitude for Apogee standards. 
+    apogee_stds_mags_max_gaia_g double precision, --/D The maximum Gaia G magnitude for Apogee standards. 
+    apogee_stds_mags_max_rp double precision, --/D The maximum Gaia RP magnitude for Apogee standards. 
+    apogee_stds_mags_max_j double precision, --/D The maximum IR J magnitude for Apogee standards. 
+    apogee_stds_mags_max_h double precision, --/D The maximum IR H magnitude for Apogee standards. 
+    apogee_stds_mags_max_k double precision, --/D The maximum IR K magnitude for Apogee standards. 
+    boss_bright_limit_targets_min_g double precision, --/D The minimum optical g magnitude for Boss science targets. 
+    boss_bright_limit_targets_min_r double precision, --/D The minimum optical r magnitude for Boss science targets. 
+    boss_bright_limit_targets_min_i double precision, --/D The minimum optical i magnitude for Boss science targets. 
+    boss_bright_limit_targets_min_z double precision, --/D The minimum optical z magnitude for Boss science targets. 
+    boss_bright_limit_targets_min_bp double precision, --/D The minimum Gaia BP magnitude for Boss science targets. 
+    boss_bright_limit_targets_min_gaia_g double precision, --/D The minimum Gaia G magnitude for Boss science targets. 
+    boss_bright_limit_targets_min_rp double precision, --/D The minimum Gaia RP magnitude for Boss science targets. 
+    boss_bright_limit_targets_min_j double precision, --/D The minimum IR J magnitude for Boss science targets. 
+    boss_bright_limit_targets_min_h double precision, --/D The minimum IR H magnitude for Boss science targets. 
+    boss_bright_limit_targets_min_k double precision, --/D The minimum IR K magnitude for Boss science targets. 
+    boss_bright_limit_targets_max_g double precision, --/D The maximum optical g magnitude for Boss science targets. 
+    boss_bright_limit_targets_max_r double precision, --/D The maximum optical r magnitude for Boss science targets. 
+    boss_bright_limit_targets_max_i double precision, --/D The maximum optical i magnitude for Boss science targets. 
+    boss_bright_limit_targets_max_z double precision, --/D The maximum optical z magnitude for Boss science targets. 
+    boss_bright_limit_targets_max_bp double precision, --/D The maximum Gaia BP magnitude for Boss science targets. 
+    boss_bright_limit_targets_max_gaia_g double precision, --/D The maximum Gaia G magnitude for Boss science targets. 
+    boss_bright_limit_targets_max_rp double precision, --/D The maximum Gaia RP magnitude for Boss science targets. 
+    boss_bright_limit_targets_max_j double precision, --/D The maximum IR J magnitude for Boss science targets. 
+    boss_bright_limit_targets_max_h double precision, --/D The maximum IR H magnitude for Boss science targets. 
+    boss_bright_limit_targets_max_k double precision, --/D The maximum IR K magnitude for Boss science targets. 
+    apogee_bright_limit_targets_min_g double precision, --/D The minimum optical g magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_min_r double precision, --/D The minimum optical r magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_min_i double precision, --/D The minimum optical i magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_min_z double precision, --/D The minimum optical z magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_min_bp double precision, --/D The minimum Gaia BP magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_min_gaia_g double precision, --/D The minimum Gaia G magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_min_rp double precision, --/D The minimum Gaia RP magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_min_j double precision, --/D The minimum IR J magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_min_h double precision, --/D The minimum IR H magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_min_k double precision, --/D The minimum IR K magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_max_g double precision, --/D The maximum optical g magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_max_r double precision, --/D The maximum optical r magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_max_i double precision, --/D The maximum optical i magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_max_z double precision, --/D The maximum optical z magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_max_bp double precision, --/D The maximum Gaia BP magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_max_gaia_g double precision, --/D The maximum Gaia G magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_max_rp double precision, --/D The maximum Gaia RP magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_max_j double precision, --/D The maximum IR J magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_max_h double precision, --/D The maximum IR H magnitude for Apogee science targets. 
+    apogee_bright_limit_targets_max_k double precision --/D The maximum IR K magnitude for Apogee science targets. 
 );
 
 
@@ -2659,33 +2659,33 @@ CREATE TABLE minidb_dr19.dr19_design_mode_check_results (
 ----------------------------------------------------------------------
 --/H Summary if design passed individual Design Mode checks from dr19_design_mode.
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D The primary key. A sequential identifier.
-    design_id integer, --/D The primary key of the design in the dr19_design table.
-    design_pass boolean, --/D If minimum design checks were passed.
-    design_status integer, --/D Bitmask for design. 1 if revalidated design. 2 if replacement design.
-    boss_skies_min_pass boolean, --/D If passed minimum Boss skies metric.
-    boss_skies_min_value integer, --/D How many Boss skies in the design.
-    boss_skies_fov_pass boolean, --/D If passed Boss skies Field of View metric.
-    boss_skies_fov_value double precision, --/D Boss skies Field of View metric value.
-    apogee_skies_min_pass boolean, --/D If passed minimum Apogee skies metric.
-    apogee_skies_min_value integer, --/D How many Apogee skies in the design.
-    apogee_skies_fov_pass boolean, --/D If passed Apogee skies Field of View metric.
-    apogee_skies_fov_value double precision, --/D Apogee skies Field of View metric value.
-    boss_stds_min_pass boolean, --/D If passed minimum Boss standards metric.
-    boss_stds_min_value integer, --/D How many Boss standards in the design.
-    boss_stds_fov_pass boolean, --/D If passed Boss standards Field of View metric.
-    boss_stds_fov_value double precision, --/D Boss standards Field of View metric value.
-    apogee_stds_min_pass boolean, --/D If passed minimum Apogee standards metric.
-    apogee_stds_min_value integer, --/D How many Apogee standards in the design.
-    apogee_stds_fov_pass boolean, --/D If passed Apogee standards Field of View metric.
-    apogee_stds_fov_value double precision, --/D Apogee standards Field of View metric value.
-    boss_stds_mags_pass boolean, --/D If all Boss standards within magnitude limits.
-    apogee_stds_mags_pass boolean, --/D If all Apogee standards within magnitude limits.
-    boss_bright_limit_targets_pass boolean, --/D If all Boss science targets within magnitude limits.
-    apogee_bright_limit_targets_pass boolean, --/D If all Apogee science targets within magnitude limits.
-    boss_sky_neighbors_targets_pass boolean, --/D If all Boss assignments pass bright neighobor check.
-    apogee_sky_neighbors_targets_pass boolean, --/D If all Apogee assignments pass bright neighobor check.
-    apogee_trace_diff_targets_pass boolean --/D If all Apogee assignments pass magnitude difference between adjacent traces check.
+    pk integer NOT NULL, --/D The primary key. A sequential identifier. 
+    design_id integer, --/D The primary key of the design in the dr19_design table. 
+    design_pass boolean, --/D If minimum design checks were passed. 
+    design_status integer, --/D Bitmask for design. 1 if revalidated design. 2 if replacement design. 
+    boss_skies_min_pass boolean, --/D If passed minimum Boss skies metric. 
+    boss_skies_min_value integer, --/D How many Boss skies in the design. 
+    boss_skies_fov_pass boolean, --/D If passed Boss skies Field of View metric. 
+    boss_skies_fov_value double precision, --/D Boss skies Field of View metric value. 
+    apogee_skies_min_pass boolean, --/D If passed minimum Apogee skies metric. 
+    apogee_skies_min_value integer, --/D How many Apogee skies in the design. 
+    apogee_skies_fov_pass boolean, --/D If passed Apogee skies Field of View metric. 
+    apogee_skies_fov_value double precision, --/D Apogee skies Field of View metric value. 
+    boss_stds_min_pass boolean, --/D If passed minimum Boss standards metric. 
+    boss_stds_min_value integer, --/D How many Boss standards in the design. 
+    boss_stds_fov_pass boolean, --/D If passed Boss standards Field of View metric. 
+    boss_stds_fov_value double precision, --/D Boss standards Field of View metric value. 
+    apogee_stds_min_pass boolean, --/D If passed minimum Apogee standards metric. 
+    apogee_stds_min_value integer, --/D How many Apogee standards in the design. 
+    apogee_stds_fov_pass boolean, --/D If passed Apogee standards Field of View metric. 
+    apogee_stds_fov_value double precision, --/D Apogee standards Field of View metric value. 
+    boss_stds_mags_pass boolean, --/D If all Boss standards within magnitude limits. 
+    apogee_stds_mags_pass boolean, --/D If all Apogee standards within magnitude limits. 
+    boss_bright_limit_targets_pass boolean, --/D If all Boss science targets within magnitude limits. 
+    apogee_bright_limit_targets_pass boolean, --/D If all Apogee science targets within magnitude limits. 
+    boss_sky_neighbors_targets_pass boolean, --/D If all Boss assignments pass bright neighobor check. 
+    apogee_sky_neighbors_targets_pass boolean, --/D If all Apogee assignments pass bright neighobor check. 
+    apogee_trace_diff_targets_pass boolean --/D If all Apogee assignments pass magnitude difference between adjacent traces check. 
 );
 
 
@@ -2699,11 +2699,11 @@ CREATE TABLE minidb_dr19.dr19_design_to_field (
 ----------------------------------------------------------------------
 --/H Connects a design to a given field within a version of the survey. Sets the placement of the design in the overall exposure sequence for that field.
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D The primary key. A sequential identifier.
-    design_id integer, --/D The primary key of the design in the dr19_design table.
-    field_pk integer, --/D The primary key of the field in the dr19_field table.
-    exposure bigint, --/D The 0-indexed exposure number in the lunation sequence for the field.
-    field_exposure bigint --/D The 0-indexed overall exposure number in the sequence for the field.
+    pk integer NOT NULL, --/D The primary key. A sequential identifier. 
+    design_id integer, --/D The primary key of the design in the dr19_design table. 
+    field_pk integer, --/D The primary key of the field in the dr19_field table. 
+    exposure bigint, --/D The 0-indexed exposure number in the lunation sequence for the field. 
+    field_exposure bigint --/D The 0-indexed overall exposure number in the sequence for the field. 
 );
 
 
@@ -2844,37 +2844,37 @@ CREATE TABLE minidb_dr19.dr19_erosita_superset_agn (
 --/T eROSITA observations of the eROSITA Final Equatorial Depth performance
 --/T verification field ('eFEDS').
 ----------------------------------------------------------------------
-    ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc
-    ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc
+    ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
+    ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
     ero_flux real, --/U erg/cm2/s --/D X-ray flux, usually in the main eROSITA detection band (0.2-2.3keV) 
-    ero_morph character(9), --/D X-ray morphological classification ("POINTLIKE" or "EXTENDED")
-    ero_det_like real, --/D X-ray detection likelihood
+    ero_morph character(9), --/D X-ray morphological classification ("POINTLIKE" or "EXTENDED") 
+    ero_det_like real, --/D X-ray detection likelihood 
     ero_ra double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_dec double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_radec_err real, --/U arcsec --/D Best estimate of X-ray position uncertainty 
-    xmatch_method character(24), --/D The X-ray-to-optical/IR cross-match method that was used in this case e.g. 'XPS-ML/NWAY', 'CLUSTERS_EFEDS_MULTIPLE' etc
-    xmatch_version character(24), --/D The cross-match software version and OIR catalog used e.g. 'LSdr8-JWMS_v2.1LSdr8-JWMS_v2.1', 'LSdr8-AG_v1,JC_16032020', 'eromapper_2020-10-12', 'CW20ps1dr2-v011220' etc
+    xmatch_method character(24), --/D The X-ray-to-optical/IR cross-match method that was used in this case e.g. 'XPS-ML/NWAY', 'CLUSTERS_EFEDS_MULTIPLE' etc 
+    xmatch_version character(24), --/D The cross-match software version and OIR catalog used e.g. 'LSdr8-JWMS_v2.1LSdr8-JWMS_v2.1', 'LSdr8-AG_v1,JC_16032020', 'eromapper_2020-10-12', 'CW20ps1dr2-v011220' etc 
     xmatch_dist real, --/U arcsec --/D Distance between X-ray position and optical counterpart 
-    xmatch_metric real, --/D Metric giving quality of cross-match. Meaning is dependent on xmatch_method, e.g. p_any for NWAY
-    xmatch_flags bigint, --/D Flags indicating cross-match properties (e.g. status flags), xmatch_method dependent
-    target_class character(12), --/D Best guess of source classification at time of xmatch e.g. 'GALAXY','STAR','QSO','UNKNOWN',....
-    target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority
-    target_has_spec bigint, --/D Flags used to indicate if target has good quality archival spectroscopy available
-    opt_cat character(12), --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns
-    ls_id bigint, --/D Identifier of counterpart (if any) in dr19_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40)
-    ps1_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier
-    gaia_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_gaia_dr2_source ('source_id' field)
-    catwise2020_id character(25), --/D Identifier of counterpart (if any) in dr19_catwise2020 ('source_id' field)
-    skymapper_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_skymapper_dr2 ('object_id' field)
-    supercosmos_id bigint, --/D Identifier of counterpart (if any) in dr19_supercosmos ('objid' field)
-    tycho2_id character(12), --/D Identifier of counterpart (if any) in dr19_tycho2 ('designation' field)
-    sdss_dr13_id bigint, --/D Identifier of counterpart (if any) in dr19_sdss_dr13_photoobj ('objid' field)
+    xmatch_metric real, --/D Metric giving quality of cross-match. Meaning is dependent on xmatch_method, e.g. p_any for NWAY 
+    xmatch_flags bigint, --/D Flags indicating cross-match properties (e.g. status flags), xmatch_method dependent 
+    target_class character(12), --/D Best guess of source classification at time of xmatch e.g. 'GALAXY','STAR','QSO','UNKNOWN',.... 
+    target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority 
+    target_has_spec bigint, --/D Flags used to indicate if target has good quality archival spectroscopy available 
+    opt_cat character(12), --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns 
+    ls_id bigint, --/D Identifier of counterpart (if any) in dr19_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40) 
+    ps1_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier 
+    gaia_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_gaia_dr2_source ('source_id' field) 
+    catwise2020_id character(25), --/D Identifier of counterpart (if any) in dr19_catwise2020 ('source_id' field) 
+    skymapper_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_skymapper_dr2 ('object_id' field) 
+    supercosmos_id bigint, --/D Identifier of counterpart (if any) in dr19_supercosmos ('objid' field) 
+    tycho2_id character(12), --/D Identifier of counterpart (if any) in dr19_tycho2 ('designation' field) 
+    sdss_dr13_id bigint, --/D Identifier of counterpart (if any) in dr19_sdss_dr13_photoobj ('objid' field) 
     opt_ra double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_dec double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_pmra real, --/U mas/yr --/D Proper motion of optical/IR counterpart, included for validity checks only 
     opt_pmdec real, --/U mas/yr --/D Proper motion of optical/IR counterpart, included for validity checks only 
     opt_epoch real, --/U decimal year --/D Epoch of opt_ra,opt_dec 
-    pkey bigint NOT NULL --/D primary key of table entry
+    pkey bigint NOT NULL --/D primary key of table entry 
 );
 
 
@@ -2900,37 +2900,37 @@ CREATE TABLE minidb_dr19.dr19_erosita_superset_clusters (
 --/T and from the eROSITA observations of the eROSITA Final Equatorial Depth
 --/T performance verification field ('eFEDS').
 ----------------------------------------------------------------------
-    ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc
-    ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc
+    ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
+    ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
     ero_flux real, --/U erg/cm2/s --/D X-ray flux, usually in the main eROSITA detection band (0.2-2.3keV) 
-    ero_morph character(9), --/D X-ray morphological classification ("POINTLIKE" or "EXTENDED")
-    ero_det_like real, --/D X-ray detection likelihood
+    ero_morph character(9), --/D X-ray morphological classification ("POINTLIKE" or "EXTENDED") 
+    ero_det_like real, --/D X-ray detection likelihood 
     ero_ra double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_dec double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_radec_err real, --/U arcsec --/D Best estimate of X-ray position uncertainty 
-    xmatch_method character(24), --/D The X-ray-to-optical/IR cross-match method that was used in this case e.g. 'XPS-ML/NWAY', 'CLUSTERS_EFEDS_MULTIPLE' etc
-    xmatch_version character(24), --/D The cross-match software version and OIR catalog used e.g. 'LSdr8-JWMS_v2.1LSdr8-JWMS_v2.1', 'LSdr8-AG_v1,JC_16032020', 'eromapper_2020-10-12', 'CW20ps1dr2-v011220' etc
+    xmatch_method character(24), --/D The X-ray-to-optical/IR cross-match method that was used in this case e.g. 'XPS-ML/NWAY', 'CLUSTERS_EFEDS_MULTIPLE' etc 
+    xmatch_version character(24), --/D The cross-match software version and OIR catalog used e.g. 'LSdr8-JWMS_v2.1LSdr8-JWMS_v2.1', 'LSdr8-AG_v1,JC_16032020', 'eromapper_2020-10-12', 'CW20ps1dr2-v011220' etc 
     xmatch_dist real, --/U arcsec --/D Distance between X-ray position and optical counterpart 
-    xmatch_metric real, --/D Metric giving quality of cross-match. Meaning is dependent on xmatch_method, e.g. p_any for NWAY
-    xmatch_flags bigint, --/D Flags indicating cross-match properties (e.g. status flags), xmatch_method dependent
-    target_class character(12), --/D Best guess of source classification at time of xmatch e.g. 'GALAXY','STAR','QSO','UNKNOWN',....
-    target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority
-    target_has_spec bigint, --/D Flags used to indicate if target has good quality archival spectroscopy available
-    opt_cat character(12), --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns
-    ls_id bigint, --/D Identifier of counterpart (if any) in dr19_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40)
-    ps1_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier
-    gaia_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_gaia_dr2_source ('source_id' field)
-    catwise2020_id character(25), --/D Identifier of counterpart (if any) in dr19_catwise2020 ('source_id' field)
-    skymapper_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_skymapper_dr2 ('object_id' field)
-    supercosmos_id bigint, --/D Identifier of counterpart (if any) in dr19_supercosmos ('objid' field)
-    tycho2_id character(12), --/D Identifier of counterpart (if any) in dr19_tycho2 ('designation' field)
-    sdss_dr13_id bigint, --/D Identifier of counterpart (if any) in dr19_sdss_dr13_photoobj ('objid' field)
+    xmatch_metric real, --/D Metric giving quality of cross-match. Meaning is dependent on xmatch_method, e.g. p_any for NWAY 
+    xmatch_flags bigint, --/D Flags indicating cross-match properties (e.g. status flags), xmatch_method dependent 
+    target_class character(12), --/D Best guess of source classification at time of xmatch e.g. 'GALAXY','STAR','QSO','UNKNOWN',.... 
+    target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority 
+    target_has_spec bigint, --/D Flags used to indicate if target has good quality archival spectroscopy available 
+    opt_cat character(12), --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns 
+    ls_id bigint, --/D Identifier of counterpart (if any) in dr19_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40) 
+    ps1_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier 
+    gaia_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_gaia_dr2_source ('source_id' field) 
+    catwise2020_id character(25), --/D Identifier of counterpart (if any) in dr19_catwise2020 ('source_id' field) 
+    skymapper_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_skymapper_dr2 ('object_id' field) 
+    supercosmos_id bigint, --/D Identifier of counterpart (if any) in dr19_supercosmos ('objid' field) 
+    tycho2_id character(12), --/D Identifier of counterpart (if any) in dr19_tycho2 ('designation' field) 
+    sdss_dr13_id bigint, --/D Identifier of counterpart (if any) in dr19_sdss_dr13_photoobj ('objid' field) 
     opt_ra double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_dec double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_pmra real, --/U mas/yr --/D Proper motion of optical/IR counterpart, included for validity checks only 
     opt_pmdec real, --/U mas/yr --/D Proper motion of optical/IR counterpart, included for validity checks only 
     opt_epoch real, --/U decimal year --/D Epoch of opt_ra,opt_dec 
-    pkey bigint NOT NULL --/D primary key of table entry
+    pkey bigint NOT NULL --/D primary key of table entry 
 );
 
 
@@ -2955,37 +2955,37 @@ CREATE TABLE minidb_dr19.dr19_erosita_superset_compactobjects (
 --/T the West Galactic hemisphere ('eRASS1'), and from the eROSITA observations of
 --/T the eROSITA Final Equatorial Depth performance verification field ('eFEDS').
 ----------------------------------------------------------------------
-    ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc
-    ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc
+    ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
+    ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
     ero_flux real, --/U erg/cm2/s --/D X-ray flux, usually in the main eROSITA detection band (0.2-2.3keV) 
-    ero_morph character(9), --/D X-ray morphological classification ("POINTLIKE" or "EXTENDED")
-    ero_det_like real, --/D X-ray detection likelihood
+    ero_morph character(9), --/D X-ray morphological classification ("POINTLIKE" or "EXTENDED") 
+    ero_det_like real, --/D X-ray detection likelihood 
     ero_ra double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_dec double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_radec_err real, --/U arcsec --/D Best estimate of X-ray position uncertainty 
-    xmatch_method character(24), --/D The X-ray-to-optical/IR cross-match method that was used in this case e.g. 'XPS-ML/NWAY', 'CLUSTERS_EFEDS_MULTIPLE' etc
-    xmatch_version character(24), --/D The cross-match software version and OIR catalog used e.g. 'LSdr8-JWMS_v2.1LSdr8-JWMS_v2.1', 'LSdr8-AG_v1,JC_16032020', 'eromapper_2020-10-12', 'CW20ps1dr2-v011220' etc
+    xmatch_method character(24), --/D The X-ray-to-optical/IR cross-match method that was used in this case e.g. 'XPS-ML/NWAY', 'CLUSTERS_EFEDS_MULTIPLE' etc 
+    xmatch_version character(24), --/D The cross-match software version and OIR catalog used e.g. 'LSdr8-JWMS_v2.1LSdr8-JWMS_v2.1', 'LSdr8-AG_v1,JC_16032020', 'eromapper_2020-10-12', 'CW20ps1dr2-v011220' etc 
     xmatch_dist real, --/U arcsec --/D Distance between X-ray position and optical counterpart 
-    xmatch_metric real, --/D Metric giving quality of cross-match. Meaning is dependent on xmatch_method, e.g. p_any for NWAY
-    xmatch_flags bigint, --/D Flags indicating cross-match properties (e.g. status flags), xmatch_method dependent
-    target_class character(12), --/D Best guess of source classification at time of xmatch e.g. 'GALAXY','STAR','QSO','UNKNOWN',....
-    target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority
-    target_has_spec bigint, --/D Flags used to indicate if target has good quality archival spectroscopy available
-    opt_cat character(12), --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns
-    ls_id bigint, --/D Identifier of counterpart (if any) in dr19_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40)
-    ps1_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier
-    gaia_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_gaia_dr2_source ('source_id' field)
-    catwise2020_id character(25), --/D Identifier of counterpart (if any) in dr19_catwise2020 ('source_id' field)
-    skymapper_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_skymapper_dr2 ('object_id' field)
-    supercosmos_id bigint, --/D Identifier of counterpart (if any) in dr19_supercosmos ('objid' field)
-    tycho2_id character(12), --/D Identifier of counterpart (if any) in dr19_tycho2 ('designation' field)
-    sdss_dr13_id bigint, --/D Identifier of counterpart (if any) in dr19_sdss_dr13_photoobj ('objid' field)
+    xmatch_metric real, --/D Metric giving quality of cross-match. Meaning is dependent on xmatch_method, e.g. p_any for NWAY 
+    xmatch_flags bigint, --/D Flags indicating cross-match properties (e.g. status flags), xmatch_method dependent 
+    target_class character(12), --/D Best guess of source classification at time of xmatch e.g. 'GALAXY','STAR','QSO','UNKNOWN',.... 
+    target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority 
+    target_has_spec bigint, --/D Flags used to indicate if target has good quality archival spectroscopy available 
+    opt_cat character(12), --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns 
+    ls_id bigint, --/D Identifier of counterpart (if any) in dr19_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40) 
+    ps1_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier 
+    gaia_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_gaia_dr2_source ('source_id' field) 
+    catwise2020_id character(25), --/D Identifier of counterpart (if any) in dr19_catwise2020 ('source_id' field) 
+    skymapper_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_skymapper_dr2 ('object_id' field) 
+    supercosmos_id bigint, --/D Identifier of counterpart (if any) in dr19_supercosmos ('objid' field) 
+    tycho2_id character(12), --/D Identifier of counterpart (if any) in dr19_tycho2 ('designation' field) 
+    sdss_dr13_id bigint, --/D Identifier of counterpart (if any) in dr19_sdss_dr13_photoobj ('objid' field) 
     opt_ra double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_dec double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_pmra real, --/U mas/yr --/D Proper motion of optical/IR counterpart, included for validity checks only 
     opt_pmdec real, --/U mas/yr --/D Proper motion of optical/IR counterpart, included for validity checks only 
     opt_epoch real, --/U decimal year --/D Epoch of opt_ra,opt_dec 
-    pkey bigint NOT NULL --/D primary key of table entry
+    pkey bigint NOT NULL --/D primary key of table entry 
 );
 
 
@@ -3011,37 +3011,37 @@ CREATE TABLE minidb_dr19.dr19_erosita_superset_stars (
 --/T eROSITA observations of the eROSITA Final Equatorial Depth performance
 --/T verification field ('eFEDS').
 ----------------------------------------------------------------------
-    ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc
-    ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc
+    ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
+    ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
     ero_flux real, --/U erg/cm2/s --/D X-ray flux, usually in the main eROSITA detection band (0.2-2.3keV) 
-    ero_morph character(9), --/D X-ray morphological classification ("POINTLIKE" or "EXTENDED")
-    ero_det_like real, --/D X-ray detection likelihood
+    ero_morph character(9), --/D X-ray morphological classification ("POINTLIKE" or "EXTENDED") 
+    ero_det_like real, --/D X-ray detection likelihood 
     ero_ra double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_dec double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_radec_err real, --/U arcsec --/D Best estimate of X-ray position uncertainty 
-    xmatch_method character(24), --/D The X-ray-to-optical/IR cross-match method that was used in this case e.g. 'XPS-ML/NWAY', 'CLUSTERS_EFEDS_MULTIPLE' etc
-    xmatch_version character(24), --/D The cross-match software version and OIR catalog used e.g. 'LSdr8-JWMS_v2.1LSdr8-JWMS_v2.1', 'LSdr8-AG_v1,JC_16032020', 'eromapper_2020-10-12', 'CW20ps1dr2-v011220' etc
+    xmatch_method character(24), --/D The X-ray-to-optical/IR cross-match method that was used in this case e.g. 'XPS-ML/NWAY', 'CLUSTERS_EFEDS_MULTIPLE' etc 
+    xmatch_version character(24), --/D The cross-match software version and OIR catalog used e.g. 'LSdr8-JWMS_v2.1LSdr8-JWMS_v2.1', 'LSdr8-AG_v1,JC_16032020', 'eromapper_2020-10-12', 'CW20ps1dr2-v011220' etc 
     xmatch_dist real, --/U arcsec --/D Distance between X-ray position and optical counterpart 
-    xmatch_metric real, --/D Metric giving quality of cross-match. Meaning is dependent on xmatch_method, e.g. p_any for NWAY
-    xmatch_flags bigint, --/D Flags indicating cross-match properties (e.g. status flags), xmatch_method dependent
-    target_class character(12), --/D Best guess of source classification at time of xmatch e.g. 'GALAXY','STAR','QSO','UNKNOWN',....
-    target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority
-    target_has_spec bigint, --/D Flags used to indicate if target has good quality archival spectroscopy available
-    opt_cat character(12), --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns
-    ls_id bigint, --/D Identifier of counterpart (if any) in dr19_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40)
-    ps1_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier
-    gaia_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_gaia_dr2_source ('source_id' field)
-    catwise2020_id character(25), --/D Identifier of counterpart (if any) in dr19_catwise2020 ('source_id' field)
-    skymapper_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_skymapper_dr2 ('object_id' field)
-    supercosmos_id bigint, --/D Identifier of counterpart (if any) in dr19_supercosmos ('objid' field)
-    tycho2_id character(12), --/D Identifier of counterpart (if any) in dr19_tycho2 ('designation' field)
-    sdss_dr13_id bigint, --/D Identifier of counterpart (if any) in dr19_sdss_dr13_photoobj ('objid' field)
+    xmatch_metric real, --/D Metric giving quality of cross-match. Meaning is dependent on xmatch_method, e.g. p_any for NWAY 
+    xmatch_flags bigint, --/D Flags indicating cross-match properties (e.g. status flags), xmatch_method dependent 
+    target_class character(12), --/D Best guess of source classification at time of xmatch e.g. 'GALAXY','STAR','QSO','UNKNOWN',.... 
+    target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority 
+    target_has_spec bigint, --/D Flags used to indicate if target has good quality archival spectroscopy available 
+    opt_cat character(12), --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns 
+    ls_id bigint, --/D Identifier of counterpart (if any) in dr19_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40) 
+    ps1_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier 
+    gaia_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_gaia_dr2_source ('source_id' field) 
+    catwise2020_id character(25), --/D Identifier of counterpart (if any) in dr19_catwise2020 ('source_id' field) 
+    skymapper_dr2_id bigint, --/D Identifier of counterpart (if any) in dr19_skymapper_dr2 ('object_id' field) 
+    supercosmos_id bigint, --/D Identifier of counterpart (if any) in dr19_supercosmos ('objid' field) 
+    tycho2_id character(12), --/D Identifier of counterpart (if any) in dr19_tycho2 ('designation' field) 
+    sdss_dr13_id bigint, --/D Identifier of counterpart (if any) in dr19_sdss_dr13_photoobj ('objid' field) 
     opt_ra double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_dec double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_pmra real, --/U mas/yr --/D Proper motion of optical/IR counterpart, included for validity checks only 
     opt_pmdec real, --/U mas/yr --/D Proper motion of optical/IR counterpart, included for validity checks only 
     opt_epoch real, --/U decimal year --/D Epoch of opt_ra,opt_dec 
-    pkey bigint NOT NULL --/D primary key of table entry
+    pkey bigint NOT NULL --/D primary key of table entry 
 );
 
 
@@ -3055,15 +3055,15 @@ CREATE TABLE minidb_dr19.dr19_field (
 ----------------------------------------------------------------------
 --/H The table includes the field information, where a field is a unique pointing of the telescope on the sky.
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D The primary key. A sequential identifier.
-    racen double precision, --/D The Right Ascension of the center of the field.
-    deccen double precision, --/D The Declination of the center of the field.
-    version_pk integer, --/D The primary key of the version in the dr19_version table.
-    cadence_pk integer, --/D The primary key of the cadence in the dr19_cadence table.
-    observatory_pk integer, --/D The primary key of the observatory in the dr19_observatory table.
-    position_angle real, --/D The position angle of the field E of N in degrees.
+    pk integer NOT NULL, --/D The primary key. A sequential identifier. 
+    racen double precision, --/D The Right Ascension of the center of the field. 
+    deccen double precision, --/D The Declination of the center of the field. 
+    version_pk integer, --/D The primary key of the version in the dr19_version table. 
+    cadence_pk integer, --/D The primary key of the cadence in the dr19_cadence table. 
+    observatory_pk integer, --/D The primary key of the observatory in the dr19_observatory table. 
+    position_angle real, --/D The position angle of the field E of N in degrees. 
     slots_exposures text, --/D Exposures assigned to each LST and sky brightness slot 
-    field_id integer --/D The idenifier of a field within a version of the survey plan.
+    field_id integer --/D The idenifier of a field within a version of the survey plan. 
 );
 
 
@@ -3147,8 +3147,8 @@ CREATE TABLE minidb_dr19.dr19_gaia_assas_sn_cepheids (
     variability double precision, --/U 2 --/D Proxy for rms variability in the Gaia G band, defined as in Eq. 2 in Inno+21 
     type text, --/D Pulsation mode. F is Fundamental, 1O is First Overtone 
     twomass text, --/D Two Mass source identifier 
-    raj2000 double precision, --/D Right ascension (J2000)
-    dej2000 double precision, --/D Declination (J2000)
+    raj2000 double precision, --/D Right ascension (J2000) 
+    dej2000 double precision, --/D Declination (J2000) 
     errhalfmaj real, --/U arcsec --/D Semi-major axis length of the one sigma position uncertainty ellipse 
     errhalfmin real, --/U arcsec --/D Semi-minor axis length of the one sigma position uncertainty ellipse 
     errposang real, --/U deg --/D Position angle on the sky of the semi-major axis of the position uncertainty ellipse (East of North) 
@@ -3330,7 +3330,7 @@ CREATE TABLE minidb_dr19.dr19_gaia_dr2_wd (
     frp real, --/U e-/s --/D Integrated G_RP mean flux 
     e_frp real, --/U e-/s --/D Error on integrated G_RP mean flux 
     rpmag real, --/U mag --/D Integrated G_RP mean magnitude 
-    e_br_rp real, --/D G_BP/G_RP execess factor
+    e_br_rp real, --/D G_BP/G_RP execess factor 
     glon double precision, --/U deg --/D Galactic longitude 
     glat double precision, --/U deg --/D Galactic latitude 
     density real, --/U sq.deg^-1 --/D Number of Gaia sources around this object 
@@ -3431,7 +3431,7 @@ CREATE TABLE minidb_dr19.dr19_gaiadr2_tmass_best_neighbour (
 ----------------------------------------------------------------------
     tmass_oid bigint, --/D Additional numeric unique source identifier of 2MASS, increasing with declination 
     number_of_neighbours integer, --/D Number of sources in the 2MASS Catalogue which match the Gaia source within position errors 
-    number_of_mates integer, --/D Number of other Gaia sources that have as best-neighbour the same 2MASS source.
+    number_of_mates integer, --/D Number of other Gaia sources that have as best-neighbour the same 2MASS source. 
     best_neighbour_multiplicity integer, --/D Number of neighbours with same probability as best neighbour 
     source_id bigint NOT NULL, --/D Unique Gaia DR2 source identifier 
     original_ext_source_id character(17), --/D The unique source identifier in the original 2MASS catalogue 
@@ -3677,11 +3677,11 @@ CREATE TABLE minidb_dr19.dr19_hole (
 ----------------------------------------------------------------------
 --/H The holes in which the positioners sit for the FPS at each observatory.
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D The primary key. A sequential identifier.
-    row_num integer, --/D The row of the hole in which the positioner is sitting.
-    column_num integer, --/D The column of the hole in which the positioner is sitting.
-    holeid text, --/D The identifier for the hole in which the positioner is sitting.
-    observatory_pk integer --/D The primary key of the observatory in the dr19_observatory table.
+    pk integer NOT NULL, --/D The primary key. A sequential identifier. 
+    row_num integer, --/D The row of the hole in which the positioner is sitting. 
+    column_num integer, --/D The column of the hole in which the positioner is sitting. 
+    holeid text, --/D The identifier for the hole in which the positioner is sitting. 
+    observatory_pk integer --/D The primary key of the observatory in the dr19_observatory table. 
 );
 
 
@@ -3695,8 +3695,8 @@ CREATE TABLE minidb_dr19.dr19_instrument (
 ----------------------------------------------------------------------
 --/H This table stores the instruments used by SDSS-V.
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D The primary key. A sequential identifier.
-    label text, --/D The name of the instrument.
+    pk integer NOT NULL, --/D The primary key. A sequential identifier. 
+    label text, --/D The name of the instrument. 
     default_lambda_eff real --/U angstrom --/D The default wavelength for which fibre positioning will be optimised 
 );
 
@@ -3864,7 +3864,7 @@ CREATE TABLE minidb_dr19.dr19_magnitude (
 ----------------------------------------------------------------------
 --/H This table stores magnitude information for a target. Optical magnitudes that are not selected from SDSS photometry have been converted to the SDSS system.
 ----------------------------------------------------------------------
-    carton_to_target_pk bigint, --/D The primary key of the target in the dr19_carton_to_target table.
+    carton_to_target_pk bigint, --/D The primary key of the target in the dr19_carton_to_target table. 
     magnitude_pk bigint NOT NULL,
     g real, --/U mag --/D The optical g magnitude, AB. 
     r real, --/U mag --/D The optical r magnitude, AB. 
@@ -3876,7 +3876,7 @@ CREATE TABLE minidb_dr19.dr19_magnitude (
     j real, --/U mag --/D The IR J magnitude, Vega. 
     k real, --/U mag --/D The IR K magnitude, Vega. 
     gaia_g real, --/U mag --/D The Gaia G magnitude, Vega. 
-    optical_prov text --/D The providence/origin of the optical magnitudes.
+    optical_prov text --/D The providence/origin of the optical magnitudes. 
 );
 
 
@@ -3960,7 +3960,7 @@ CREATE TABLE minidb_dr19.dr19_mangadapall (
     stellar_vel_lo_clip real, --/U km/s --/D Stellar velocity at 2.5% growth after iteratively clipping 3-sigma outliers. 
     stellar_vel_hi_clip real, --/U km/s --/D Stellar velocity at 97.5% growth after iteratively clipping 3-sigma outliers. 
     stellar_sigma_1re real, --/U km/s --/D Flux-weighted mean stellar velocity dispersion of all spaxels within 1 R_{e}. 
-    stellar_rchi2_1re real, --/D Median reduced chi^{2} of the stellar-continuum fit within 1 R_{e}. 
+    stellar_rchi2_1re real, --/D Median reduced chi^{2} of the stellar-continuum fit within 1 R_{e}. [ 
     ha_z real, --/D Flux-weighted mean redshift of the Ha line within a 2.5 arcsec aperture at the galaxy center. 
     ha_gvel_lo real, --/U km/s --/D Gaussian-fitted velocity of the H-alpha line at 2.5% growth of all valid spaxels. 
     ha_gvel_hi real, --/U km/s --/D Gaussian-fitted velocity of the H-alpha line at 97.5% growth of all valid spaxels. 
@@ -4690,8 +4690,8 @@ CREATE TABLE minidb_dr19.dr19_mangadapall (
     specindex_1re_d4000 real, --/D Median spectral index within 1 effective radius. Measurements specifically for D4000. 
     specindex_1re_dn4000 real, --/D Median spectral index within 1 effective radius. Measurements specifically for Dn4000. 
     specindex_1re_tiocvd real, --/D Median spectral index within 1 effective radius. Measurements specifically for TiOCvD. 
-    sfr_1re real, --/U 2012, ARAA, 50, 531], citing Murphy et al. [2011, ApJ, 737, 67] and Hao et al. [2011, ApJ, 741, 124]; Kroupa IMF), where L_{Ha} = 4-Ç EML_FLUX_1RE (LDIST_Z)^{2} and ''no'' attentuation correction has been applied. [h^{-2} M_{sun}/yr --/D Simple estimate of the star-formation rate within 1 effective radius based on the Gaussian-fitted Ha flux; log(SFR) = log L_{Ha} - 41.27 (Kennicutt &amp; Evans 
-    sfr_tot real, --/U 2012, ARAA, 50, 531], citing Murphy et al. [2011, ApJ, 737, 67] and Hao et al. [2011, ApJ, 741, 124]; Kroupa IMF), where L_{Ha} = 4-Ç EML_FLUX_TOT (LDIST_Z)^{2} and ''no'' attentuation correction has been applied. [h^{-2} M_{sun}/yr --/D Simple estimate of the star-formation rate within the IFU field-of-view based on the Gaussian-fitted Ha flux; log(SFR) = log L_{Ha} - 41.27 (Kennicutt &amp; Evans 
+    sfr_1re real, --/U h^{-2} M_{sun}/yr --/D Simple estimate of the star-formation rate within 1 effective radius based on the Gaussian-fitted Ha flux; log(SFR) = log L_{Ha} - 41.27 (Kennicutt &amp; Evans [2012, ARAA, 50, 531], citing Murphy et al. [2011, ApJ, 737, 67] and Hao et al. [2011, ApJ, 741, 124]; Kroupa IMF), where L_{Ha} = 4-Ç EML_FLUX_1RE (LDIST_Z)^{2} and ''no'' attentuation correction has been applied. 
+    sfr_tot real, --/U h^{-2} M_{sun}/yr --/D Simple estimate of the star-formation rate within the IFU field-of-view based on the Gaussian-fitted Ha flux; log(SFR) = log L_{Ha} - 41.27 (Kennicutt &amp; Evans [2012, ARAA, 50, 531], citing Murphy et al. [2011, ApJ, 737, 67] and Hao et al. [2011, ApJ, 741, 124]; Kroupa IMF), where L_{Ha} = 4-Ç EML_FLUX_TOT (LDIST_Z)^{2} and ''no'' attentuation correction has been applied. 
     htmid bigint, --/D 20-level deep Hierarchical Triangular Mesh ID 
     pk bigint NOT NULL --/D Primary key, a sequential unique identifier 
 );
@@ -5215,8 +5215,8 @@ CREATE TABLE minidb_dr19.dr19_mastar_goodstars (
     mngtarg2 integer, --/D MANGA_TARGET2 targeting bitmask. 
     input_logg real, --/U log(cm/s^2) --/D Surface gravity in the input catalog (with some adjustment made). 
     input_teff real, --/U K --/D Effective temperature in the input catalog (with some adjustment made). 
-    input_fe_h real, --/U Fe/H] in the input catalog (with some adjustment made). [
-    input_alpha_m real, --/U alpha/M] in the input catalog (with some adjustment made). [
+    input_fe_h real, --/D [Fe/H] in the input catalog (with some adjustment made). 
+    input_alpha_m real, --/D [alpha/M] in the input catalog (with some adjustment made). 
     input_source character varying(16), --/D Source catalog for stellar parameters. 
     photocat character varying(10) --/D Source of astrometry and photometry. 
 );
@@ -5290,7 +5290,7 @@ CREATE TABLE minidb_dr19.dr19_mipsgal (
     s24 double precision, --/U mJy --/D 24µm flux density 
     e_s24 double precision, --/U mJy --/D 1σ uncertainty in S24 
     mag_24 double precision, --/U mag --/D 24µm magnitude (Vega) 
-    e_mag_24 double precision, --/U 24] [mag --/D 1σ uncertainty in 
+    e_mag_24 double precision, --/U mag --/D 1σ uncertainty in [24] 
     twomass_name character varying(17), --/D 2MASS name (HHMMSSss+DDMMSSs, Cat. II/246) 
     sj double precision, --/U mJy --/D 2MASS J-band flux density 
     e_sj double precision, --/U mJy --/D 1σ uncertainty in SJ 
@@ -5322,13 +5322,13 @@ CREATE TABLE minidb_dr19.dr19_mipsgal (
     kmag double precision, --/U mag --/D 2MASS Ks band magnitude (Vega) 
     e_kmag double precision, --/U mag --/D 1σ uncertainty in Kmag (Vega) 
     mag_3_6 double precision, --/U mag --/D Spitzer/IRAC 3.6µm magnitude (Vega) 
-    e_mag_3_6 double precision, --/U 3.6] [mag --/D 1σ uncertainty in 
+    e_mag_3_6 double precision, --/U mag --/D 1σ uncertainty in [3.6] 
     mag_4_5 double precision, --/U mag --/D Spitzer/IRAC 4.5µm magnitude (Vega) 
-    e_mag_4_5 double precision, --/U 4.5] [mag --/D 1σ uncertainty in 
+    e_mag_4_5 double precision, --/U mag --/D 1σ uncertainty in [4.5] 
     mag_5_8 double precision, --/U mag --/D Spitzer/IRAC 5.8µm magnitude (Vega) 
-    e_mag_5_8 double precision, --/U 5.8] [mag --/D 1σ uncertainty in 
+    e_mag_5_8 double precision, --/U mag --/D 1σ uncertainty in [5.8] 
     mag_8_0 double precision, --/U mag --/D Spitzer/IRAC 8.0µm magnitude (Vega) 
-    e_mag_8_0 double precision, --/U 8.0] [mag --/D 1σ uncertainty in 
+    e_mag_8_0 double precision, --/U mag --/D 1σ uncertainty in [8.0] 
     w1mag double precision, --/U mag --/D WISE/W1 (3.35um) magnitude (Vega) 
     e_w1mag double precision, --/U mag --/D 1σ uncertainty in W1mag (Vega) 
     w2mag double precision, --/U mag --/D WISE/W2 (4.6µm) magnitude (Vega) 
@@ -5377,8 +5377,8 @@ CREATE TABLE minidb_dr19.dr19_observatory (
 ----------------------------------------------------------------------
 --/H Table of observatories.
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D The primary key. A sequential identifier.
-    label text --/D The name of the observatory.
+    pk integer NOT NULL, --/D The primary key. A sequential identifier. 
+    label text --/D The name of the observatory. 
 );
 
 
@@ -5396,8 +5396,8 @@ CREATE TABLE minidb_dr19.dr19_obsmode (
     min_moon_sep real, --/U deg --/D Minimum distance a target must be from the Moon 
     min_deltav_ks91 real, --/U mag --/D Minimum estimated background flux from the Moon, using the method of Krisciunas, K., & Schaefer 1991 
     min_twilight_ang real, --/U deg --/D Minimum twilight angle (angle of the Sun below the horizon) for a target to be observed 
-    max_airmass_apo real, --/D Max airmass at which a target can be observed at APO
-    max_airmass_lco real --/D Max airmass at which a target can be observed at LCO
+    max_airmass_apo real, --/D Max airmass at which a target can be observed at APO 
+    max_airmass_lco real --/D Max airmass at which a target can be observed at LCO 
 );
 
 
@@ -5411,8 +5411,8 @@ CREATE TABLE minidb_dr19.dr19_opsdb_apo_camera (
 ----------------------------------------------------------------------
 --/H The table contains the cameras at the observatory. The three APOGEE chips are treated as one camera, while the separate blue channel and red channel BOSS chips are treated separately.
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D Unique identifier
-    label text --/D The name of the camera.
+    pk integer NOT NULL, --/D Unique identifier 
+    label text --/D The name of the camera. 
 );
 
 
@@ -5426,11 +5426,11 @@ CREATE TABLE minidb_dr19.dr19_opsdb_apo_camera_frame (
 ----------------------------------------------------------------------
 --/H The table contains signal-to-noise estimates for each 'camera', for each exposure. APOGEE is treated as one camera, while R1/2 and B1/2 are treated separately.
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D Unique identifier
-    exposure_pk integer, --/D Unique identifier in the exposure table
-    camera_pk smallint, --/D Unique identifier in the camera table
-    sn2 real, --/D Signal-to-noise squared estimate from on-mountain quick reduction pipelines
-    comment text --/D An optional comment
+    pk integer NOT NULL, --/D Unique identifier 
+    exposure_pk integer, --/D Unique identifier in the exposure table 
+    camera_pk smallint, --/D Unique identifier in the camera table 
+    sn2 real, --/D Signal-to-noise squared estimate from on-mountain quick reduction pipelines 
+    comment text --/D An optional comment 
 );
 
 
@@ -5444,8 +5444,8 @@ CREATE TABLE minidb_dr19.dr19_opsdb_apo_completion_status (
 ----------------------------------------------------------------------
 --/H The table complains completion statuses referenced in design_to_status
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D Unique identifier
-    label text --/D Description of status ('not started', 'started', 'done')
+    pk integer NOT NULL, --/D Unique identifier 
+    label text --/D Description of status ('not started', 'started', 'done') 
 );
 
 
@@ -5459,12 +5459,12 @@ CREATE TABLE minidb_dr19.dr19_opsdb_apo_configuration (
 ----------------------------------------------------------------------
 --/H This table contains basic information about a configuration of robots loaded at the telescope.
 ----------------------------------------------------------------------
-    configuration_id integer NOT NULL, --/D Unique identifier
-    design_id integer, --/D Unique identifier of the design loaded
-    comment text, --/D An optional comment
-    temperature text, --/D The ambient temperature when the design was loaded
-    epoch double precision, --/D The Julian Date (JD) when the design was loaded
-    calibration_version text --/D The version of fps_calibration used, https://github.com/sdss/fps_calibrations/tags
+    configuration_id integer NOT NULL, --/D Unique identifier 
+    design_id integer, --/D Unique identifier of the design loaded 
+    comment text, --/D An optional comment 
+    temperature text, --/D The ambient temperature when the design was loaded 
+    epoch double precision, --/D The Julian Date (JD) when the design was loaded 
+    calibration_version text --/D The version of fps_calibration used, https://github.com/sdss/fps_calibrations/tags 
 );
 
 
@@ -5478,11 +5478,11 @@ CREATE TABLE minidb_dr19.dr19_opsdb_apo_design_to_status (
 ----------------------------------------------------------------------
 --/H The table contains design completion information by joining design and design_status
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D Unique identifier
-    design_id integer, --/D Unique identifier in the design table
-    completion_status_pk smallint, --/D Unique identifier in the design status table
+    pk integer NOT NULL, --/D Unique identifier 
+    design_id integer, --/D Unique identifier in the design table 
+    completion_status_pk smallint, --/D Unique identifier in the design status table 
     mjd real, --/U days --/D Decimal Modified Julian Date (MJD) on which the design was completed 
-    manual boolean --/D A flag indicated whether the design was manually marked complete (True) or met normal pipeline criteria (False)
+    manual boolean --/D A flag indicated whether the design was manually marked complete (True) or met normal pipeline criteria (False) 
 );
 
 
@@ -5516,8 +5516,8 @@ CREATE TABLE minidb_dr19.dr19_opsdb_apo_exposure_flavor (
 ----------------------------------------------------------------------
 --/H The table contains the various types of exposures; science, dark, flat, etc.
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D Unique identifier
-    label text --/D The type of exposure
+    pk integer NOT NULL, --/D Unique identifier 
+    label text --/D The type of exposure 
 );
 
 
@@ -5549,192 +5549,192 @@ CREATE TABLE minidb_dr19.dr19_panstarrs1 (
     ddec real, --/U arcsec --/D error on DEC 
     tmean real, --/U days --/D Mean epoch (MJD) 
     trange real, --/U days --/D Time range -- may include 2MASS values 
-    chisqpos real, --/D chi-square of a fixed position astrometry solution (equiv to ObjectThin.posMeanChisq)
-    stargal real, --/D Measure of extendedness. Computed as the median across all chip measurements of extNsigma, where extNsigma = (PSF mag - Kron mag) expressed as a number of sigmas, so it somewhat adjusts for the spread at low signal-to-noise.
-    nmeas integer, --/D total number of measurements in databases (including non-PS1 data)
-    nwarp_ok integer, --/D number of warps with psf_qf > 0 (any unmasked pixels)
-    flags integer, --/D ObjectInfoFlags
-    objid integer, --/D internal Pan-STARRS IPP object ID : unique within database spatial partition (see catID)
-    catid integer, --/D database spatial partition ID - (equiv. to StackObjectThin.dvoRegionID)
-    extid_hi integer, --/D upper 32 bits of PSPS object ID (objID in MAST PSPS database)
-    extid_lo integer, --/D lower 32 bits of PSPS object ID (objID in MAST PSPS database)
+    chisqpos real, --/D chi-square of a fixed position astrometry solution (equiv to ObjectThin.posMeanChisq) 
+    stargal real, --/D Measure of extendedness. Computed as the median across all chip measurements of extNsigma, where extNsigma = (PSF mag - Kron mag) expressed as a number of sigmas, so it somewhat adjusts for the spread at low signal-to-noise. 
+    nmeas integer, --/D total number of measurements in databases (including non-PS1 data) 
+    nwarp_ok integer, --/D number of warps with psf_qf > 0 (any unmasked pixels) 
+    flags integer, --/D ObjectInfoFlags 
+    objid integer, --/D internal Pan-STARRS IPP object ID : unique within database spatial partition (see catID) 
+    catid integer, --/D database spatial partition ID - (equiv. to StackObjectThin.dvoRegionID) 
+    extid_hi integer, --/D upper 32 bits of PSPS object ID (objID in MAST PSPS database) 
+    extid_lo integer, --/D lower 32 bits of PSPS object ID (objID in MAST PSPS database) 
     g_chp_psf real, --/U mag --/D mean g-band chip PSF magnitude 
     g_chp_psf_err real, --/U mag --/D error on mean g-band chip PSF magnitude 
-    g_chp_psf_nphot integer, --/D number of measurements used for g_chp_psf (excluding outliers)
+    g_chp_psf_nphot integer, --/D number of measurements used for g_chp_psf (excluding outliers) 
     g_chp_aper real, --/U mag --/D mean g-band chip seeing-adapted aperture magnitude 
     g_chp_aper_err real, --/U mag --/D error on mean g-band chip seeing-adapted aperture magnitude 
-    g_chp_aper_nphot integer, --/D number of measurements used for above (excluding outliers)
+    g_chp_aper_nphot integer, --/D number of measurements used for above (excluding outliers) 
     g_chp_kron real, --/U mag --/D mean g-band chip Kron magnitude 
     g_chp_kron_err real, --/U mag --/D error on mean g-band chip Kron magnitude 
-    g_chp_kron_nphot integer, --/D number of measurements used for g_chp_kron (excluding outliers)
+    g_chp_kron_nphot integer, --/D number of measurements used for g_chp_kron (excluding outliers) 
     g_stk_psf_flux real, --/U Jy --/D best g-band stack PSF flux 
     g_stk_psf_fluxerr real, --/U Jy --/D error on best g-band stack PSF flux 
-    g_stk_psf_nphot integer, --/D number of measurements used for g_stk_psf_flux (excluding outliers)
+    g_stk_psf_nphot integer, --/D number of measurements used for g_stk_psf_flux (excluding outliers) 
     g_stk_aper_flux real, --/U Jy --/D g-band stack seeing-adapted aperture flux 
     g_stk_aper_fluxerr real, --/U Jy --/D error on g-band stack seeing-adapted aperture flux 
-    g_stk_aper_nphot integer, --/D number of measurements used for g_stk_aper_flux (excluding outliers)
+    g_stk_aper_nphot integer, --/D number of measurements used for g_stk_aper_flux (excluding outliers) 
     g_stk_kron_flux real, --/U Jy --/D g-band stack Kron flux from same stack as 'best' PSF above 
     g_stk_kron_fluxerr real, --/U Jy --/D error on g-band stack Kron flux from same stack as 'best' PSF above 
-    g_stk_kron_nphot integer, --/D number of measurements used for g_stk_kron_flux (excluding outliers)
+    g_stk_kron_nphot integer, --/D number of measurements used for g_stk_kron_flux (excluding outliers) 
     g_wrp_psf_flux real, --/U Jy --/D mean g-band forced-warp PSF flux 
     g_wrp_psf_fluxerr real, --/U Jy --/D error on mean g-band forced-warp PSF flux 
-    g_wrp_psf_nphot integer, --/D number of measurements used for g_wrp_psf_flux (excluding outliers)
+    g_wrp_psf_nphot integer, --/D number of measurements used for g_wrp_psf_flux (excluding outliers) 
     g_wrp_aper_flux real, --/U Jy --/D mean g-band forced-warp seeing-adapted aperture flux 
     g_wrp_aper_fluxerr real, --/U Jy --/D error on mean g-band forced-warp seeing-adapted aperture flux 
-    g_wrp_aper_nphot integer, --/D number of measurements used for g_wrp_aper_flux (excluding outliers)
+    g_wrp_aper_nphot integer, --/D number of measurements used for g_wrp_aper_flux (excluding outliers) 
     g_wrp_kron_flux real, --/U Jy --/D mean g-band forced-warp Kron flux 
     g_wrp_kron_fluxerr real, --/U Jy --/D error on mean g-band forced-warp Kron flux 
-    g_wrp_kron_nphot integer, --/D number of measurements used for g_wrp_kron_flux (excluding outliers)
-    g_flags integer, --/D per-filter info flags (equiv. to StackObjectThin.ginfoFlag4)
-    g_ncode integer, --/D number of chip detections in this filter (equiv. to StackObjectThin.ng)
-    g_nwarp integer, --/D number of warp measurements in this filter (including primary & secondary skycells)
-    g_nwarp_good integer, --/D number of warp measurements with psfqfperf > 0.85 in this filter (including primary & secondary skycells)
-    g_nstack integer, --/D number of stack measurements (primary and secondary)
-    g_nstack_det integer, --/D number of stack detections (S/N > 5, primary and secondary)
-    g_psfqf real, --/D g-band PSF coverage factor
-    g_psfqfperf real, --/D g-band PSF weighted fraction of pixels totally unmasked
+    g_wrp_kron_nphot integer, --/D number of measurements used for g_wrp_kron_flux (excluding outliers) 
+    g_flags integer, --/D per-filter info flags (equiv. to StackObjectThin.ginfoFlag4) 
+    g_ncode integer, --/D number of chip detections in this filter (equiv. to StackObjectThin.ng) 
+    g_nwarp integer, --/D number of warp measurements in this filter (including primary & secondary skycells) 
+    g_nwarp_good integer, --/D number of warp measurements with psfqfperf > 0.85 in this filter (including primary & secondary skycells) 
+    g_nstack integer, --/D number of stack measurements (primary and secondary) 
+    g_nstack_det integer, --/D number of stack detections (S/N > 5, primary and secondary) 
+    g_psfqf real, --/D g-band PSF coverage factor 
+    g_psfqfperf real, --/D g-band PSF weighted fraction of pixels totally unmasked 
     r_chp_psf real, --/U mag --/D mean r-band chip PSF magnitude 
     r_chp_psf_err real, --/U mag --/D error on mean r-band chip PSF magnitude 
-    r_chp_psf_nphot integer, --/D number of measurements used for r_chp_psf (excluding outliers)
+    r_chp_psf_nphot integer, --/D number of measurements used for r_chp_psf (excluding outliers) 
     r_chp_aper real, --/U mag --/D mean r-band chip seeing-adapted aperture magnitude 
     r_chp_aper_err real, --/U mag --/D error on mean r-band chip seeing-adapted aperture magnitude 
-    r_chp_aper_nphot integer, --/D number of measurements used for above (excluding outliers)
+    r_chp_aper_nphot integer, --/D number of measurements used for above (excluding outliers) 
     r_chp_kron real, --/U mag --/D mean r-band chip Kron magnitude 
     r_chp_kron_err real, --/U mag --/D error on mean r-band chip Kron magnitude 
-    r_chp_kron_nphot integer, --/D number of measurements used for r_chp_kron (excluding outliers)
+    r_chp_kron_nphot integer, --/D number of measurements used for r_chp_kron (excluding outliers) 
     r_stk_psf_flux real, --/U Jy --/D best r-band stack PSF flux 
     r_stk_psf_fluxerr real, --/U Jy --/D error on best r-band stack PSF flux 
-    r_stk_psf_nphot integer, --/D number of measurements used for r_stk_psf_flux (excluding outliers)
+    r_stk_psf_nphot integer, --/D number of measurements used for r_stk_psf_flux (excluding outliers) 
     r_stk_aper_flux real, --/U Jy --/D r-band stack seeing-adapted aperture flux 
     r_stk_aper_fluxerr real, --/U Jy --/D error on r-band stack seeing-adapted aperture flux 
-    r_stk_aper_nphot integer, --/D number of measurements used for r_stk_aper_flux (excluding outliers)
+    r_stk_aper_nphot integer, --/D number of measurements used for r_stk_aper_flux (excluding outliers) 
     r_stk_kron_flux real, --/U Jy --/D r-band stack Kron flux from same stack as 'best' PSF above 
     r_stk_kron_fluxerr real, --/U Jy --/D error on r-band stack Kron flux from same stack as 'best' PSF above 
-    r_stk_kron_nphot integer, --/D number of measurements used for r_stk_kron_flux (excluding outliers)
+    r_stk_kron_nphot integer, --/D number of measurements used for r_stk_kron_flux (excluding outliers) 
     r_wrp_psf_flux real, --/U Jy --/D mean r-band forced-warp PSF flux 
     r_wrp_psf_fluxerr real, --/U Jy --/D error on mean r-band forced-warp PSF flux 
-    r_wrp_psf_nphot integer, --/D number of measurements used for r_wrp_psf_flux (excluding outliers)
+    r_wrp_psf_nphot integer, --/D number of measurements used for r_wrp_psf_flux (excluding outliers) 
     r_wrp_aper_flux real, --/U Jy --/D mean r-band forced-warp seeing-adapted aperture flux 
     r_wrp_aper_fluxerr real, --/U Jy --/D error on mean r-band forced-warp seeing-adapted aperture flux 
-    r_wrp_aper_nphot integer, --/D number of measurements used for r_wrp_aper_flux (excluding outliers)
+    r_wrp_aper_nphot integer, --/D number of measurements used for r_wrp_aper_flux (excluding outliers) 
     r_wrp_kron_flux real, --/U Jy --/D mean r-band forced-warp Kron flux 
     r_wrp_kron_fluxerr real, --/U Jy --/D error on mean r-band forced-warp Kron flux 
-    r_wrp_kron_nphot integer, --/D number of measurements used for r_wrp_kron_flux (excluding outliers)
-    r_flags integer, --/D per-filter info flags (equiv. to StackObjectThin.rinfoFlag4)
-    r_ncode integer, --/D number of chip detections in this filter (equiv. to StackObjectThin.nr)
-    r_nwarp integer, --/D number of warp measurements in this filter (including primary & secondary skycells)
-    r_nwarp_good integer, --/D number of warp measurements with psfqfperf > 0.85 in this filter (including primary & secondary skycells)
-    r_nstack integer, --/D number of stack measurements (primary and secondary)
-    r_nstack_det integer, --/D number of stack detections (S/N > 5, primary and secondary)
-    r_psfqf real, --/D r-band PSF coverage factor
-    r_psfqfperf real, --/D r-band PSF weighted fraction of pixels totally unmasked
+    r_wrp_kron_nphot integer, --/D number of measurements used for r_wrp_kron_flux (excluding outliers) 
+    r_flags integer, --/D per-filter info flags (equiv. to StackObjectThin.rinfoFlag4) 
+    r_ncode integer, --/D number of chip detections in this filter (equiv. to StackObjectThin.nr) 
+    r_nwarp integer, --/D number of warp measurements in this filter (including primary & secondary skycells) 
+    r_nwarp_good integer, --/D number of warp measurements with psfqfperf > 0.85 in this filter (including primary & secondary skycells) 
+    r_nstack integer, --/D number of stack measurements (primary and secondary) 
+    r_nstack_det integer, --/D number of stack detections (S/N > 5, primary and secondary) 
+    r_psfqf real, --/D r-band PSF coverage factor 
+    r_psfqfperf real, --/D r-band PSF weighted fraction of pixels totally unmasked 
     i_chp_psf real, --/U mag --/D mean i-band chip PSF magnitude 
     i_chp_psf_err real, --/U mag --/D error on mean i-band chip PSF magnitude 
-    i_chp_psf_nphot integer, --/D number of measurements used for i_chp_psf (excluding outliers)
+    i_chp_psf_nphot integer, --/D number of measurements used for i_chp_psf (excluding outliers) 
     i_chp_aper real, --/U mag --/D mean i-band chip seeing-adapted aperture magnitude 
     i_chp_aper_err real, --/U mag --/D error on mean i-band chip seeing-adapted aperture magnitude 
-    i_chp_aper_nphot integer, --/D number of measurements used for above (excluding outliers)
+    i_chp_aper_nphot integer, --/D number of measurements used for above (excluding outliers) 
     i_chp_kron real, --/U mag --/D mean i-band chip Kron magnitude 
     i_chp_kron_err real, --/U mag --/D error on mean i-band chip Kron magnitude 
-    i_chp_kron_nphot integer, --/D number of measurements used for i_chp_kron (excluding outliers)
+    i_chp_kron_nphot integer, --/D number of measurements used for i_chp_kron (excluding outliers) 
     i_stk_psf_flux real, --/U Jy --/D best i-band stack PSF flux 
     i_stk_psf_fluxerr real, --/U Jy --/D error on best i-band stack PSF flux 
-    i_stk_psf_nphot integer, --/D number of measurements used for i_stk_psf_flux (excluding outliers)
+    i_stk_psf_nphot integer, --/D number of measurements used for i_stk_psf_flux (excluding outliers) 
     i_stk_aper_flux real, --/U Jy --/D i-band stack seeing-adapted aperture flux 
     i_stk_aper_fluxerr real, --/U Jy --/D error on i-band stack seeing-adapted aperture flux 
-    i_stk_aper_nphot integer, --/D number of measurements used for i_stk_aper_flux (excluding outliers)
+    i_stk_aper_nphot integer, --/D number of measurements used for i_stk_aper_flux (excluding outliers) 
     i_stk_kron_flux real, --/U Jy --/D i-band stack Kron flux from same stack as 'best' PSF above 
     i_stk_kron_fluxerr real, --/U Jy --/D error on i-band stack Kron flux from same stack as 'best' PSF above 
-    i_stk_kron_nphot integer, --/D number of measurements used for i_stk_kron_flux (excluding outliers)
+    i_stk_kron_nphot integer, --/D number of measurements used for i_stk_kron_flux (excluding outliers) 
     i_wrp_psf_flux real, --/U Jy --/D mean i-band forced-warp PSF flux 
     i_wrp_psf_fluxerr real, --/U Jy --/D error on mean i-band forced-warp PSF flux 
-    i_wrp_psf_nphot integer, --/D number of measurements used for i_wrp_psf_flux (excluding outliers)
+    i_wrp_psf_nphot integer, --/D number of measurements used for i_wrp_psf_flux (excluding outliers) 
     i_wrp_aper_flux real, --/U Jy --/D mean i-band forced-warp seeing-adapted aperture flux 
     i_wrp_aper_fluxerr real, --/U Jy --/D error on mean i-band forced-warp seeing-adapted aperture flux 
-    i_wrp_aper_nphot integer, --/D number of measurements used for i_wrp_aper_flux (excluding outliers)
+    i_wrp_aper_nphot integer, --/D number of measurements used for i_wrp_aper_flux (excluding outliers) 
     i_wrp_kron_flux real, --/U Jy --/D mean i-band forced-warp Kron flux 
     i_wrp_kron_fluxerr real, --/U Jy --/D error on mean i-band forced-warp Kron flux 
-    i_wrp_kron_nphot integer, --/D number of measurements used for i_wrp_kron_flux (excluding outliers)
-    i_flags integer, --/D per-filter info flags (equiv. to StackObjectThin.iinfoFlag4)
-    i_ncode integer, --/D number of chip detections in this filter (equiv. to StackObjectThin.ni)
-    i_nwarp integer, --/D number of warp measurements in this filter (including primary & secondary skycells)
-    i_nwarp_good integer, --/D number of warp measurements with psfqfperf > 0.85 in this filter (including primary & secondary skycells)
-    i_nstack integer, --/D number of stack measurements (primary and secondary)
-    i_nstack_det integer, --/D number of stack detections (S/N > 5, primary and secondary)
-    i_psfqf real, --/D i-band PSF coverage factor
-    i_psfqfperf real, --/D i-band PSF weighted fraction of pixels totally unmasked
+    i_wrp_kron_nphot integer, --/D number of measurements used for i_wrp_kron_flux (excluding outliers) 
+    i_flags integer, --/D per-filter info flags (equiv. to StackObjectThin.iinfoFlag4) 
+    i_ncode integer, --/D number of chip detections in this filter (equiv. to StackObjectThin.ni) 
+    i_nwarp integer, --/D number of warp measurements in this filter (including primary & secondary skycells) 
+    i_nwarp_good integer, --/D number of warp measurements with psfqfperf > 0.85 in this filter (including primary & secondary skycells) 
+    i_nstack integer, --/D number of stack measurements (primary and secondary) 
+    i_nstack_det integer, --/D number of stack detections (S/N > 5, primary and secondary) 
+    i_psfqf real, --/D i-band PSF coverage factor 
+    i_psfqfperf real, --/D i-band PSF weighted fraction of pixels totally unmasked 
     z_chp_psf real, --/U mag --/D mean z-band chip PSF magnitude 
     z_chp_psf_err real, --/U mag --/D error on mean z-band chip PSF magnitude 
-    z_chp_psf_nphot integer, --/D number of measurements used for z_chp_psf (excluding outliers)
+    z_chp_psf_nphot integer, --/D number of measurements used for z_chp_psf (excluding outliers) 
     z_chp_aper real, --/U mag --/D mean z-band chip seeing-adapted aperture magnitude 
     z_chp_aper_err real, --/U mag --/D error on mean z-band chip seeing-adapted aperture magnitude 
-    z_chp_aper_nphot integer, --/D number of measurements used for above (excluding outliers)
+    z_chp_aper_nphot integer, --/D number of measurements used for above (excluding outliers) 
     z_chp_kron real, --/U mag --/D mean z-band chip Kron magnitude 
     z_chp_kron_err real, --/U mag --/D error on mean z-band chip Kron magnitude 
-    z_chp_kron_nphot integer, --/D number of measurements used for z_chp_kron (excluding outliers)
+    z_chp_kron_nphot integer, --/D number of measurements used for z_chp_kron (excluding outliers) 
     z_stk_psf_flux real, --/U Jy --/D best z-band stack PSF flux 
     z_stk_psf_fluxerr real, --/U Jy --/D error on best z-band stack PSF flux 
-    z_stk_psf_nphot integer, --/D number of measurements used for z_stk_psf_flux (excluding outliers)
+    z_stk_psf_nphot integer, --/D number of measurements used for z_stk_psf_flux (excluding outliers) 
     z_stk_aper_flux real, --/U Jy --/D z-band stack seeing-adapted aperture flux 
     z_stk_aper_fluxerr real, --/U Jy --/D error on z-band stack seeing-adapted aperture flux 
-    z_stk_aper_nphot integer, --/D number of measurements used for z_stk_aper_flux (excluding outliers)
+    z_stk_aper_nphot integer, --/D number of measurements used for z_stk_aper_flux (excluding outliers) 
     z_stk_kron_flux real, --/U Jy --/D z-band stack Kron flux from same stack as 'best' PSF above 
     z_stk_kron_fluxerr real, --/U Jy --/D error on z-band stack Kron flux from same stack as 'best' PSF above 
-    z_stk_kron_nphot integer, --/D number of measurements used for z_stk_kron_flux (excluding outliers)
+    z_stk_kron_nphot integer, --/D number of measurements used for z_stk_kron_flux (excluding outliers) 
     z_wrp_psf_flux real, --/U Jy --/D mean z-band forced-warp PSF flux 
     z_wrp_psf_fluxerr real, --/U Jy --/D error on mean z-band forced-warp PSF flux 
-    z_wrp_psf_nphot integer, --/D number of measurements used for z_wrp_psf_flux (excluding outliers)
+    z_wrp_psf_nphot integer, --/D number of measurements used for z_wrp_psf_flux (excluding outliers) 
     z_wrp_aper_flux real, --/U Jy --/D mean z-band forced-warp seeing-adapted aperture flux 
     z_wrp_aper_fluxerr real, --/U Jy --/D error on mean z-band forced-warp seeing-adapted aperture flux 
-    z_wrp_aper_nphot integer, --/D number of measurements used for z_wrp_aper_flux (excluding outliers)
+    z_wrp_aper_nphot integer, --/D number of measurements used for z_wrp_aper_flux (excluding outliers) 
     z_wrp_kron_flux real, --/U Jy --/D mean z-band forced-warp Kron flux 
     z_wrp_kron_fluxerr real, --/U Jy --/D error on mean z-band forced-warp Kron flux 
-    z_wrp_kron_nphot integer, --/D number of measurements used for z_wrp_kron_flux (excluding outliers)
-    z_flags integer, --/D per-filter info flags (equiv. to StackObjectThin.zinfoFlag4)
-    z_ncode integer, --/D number of chip detections in this filter (equiv. to StackObjectThin.nz)
-    z_nwarp integer, --/D number of warp measurements in this filter (including primary & secondary skycells)
-    z_nwarp_good integer, --/D number of warp measurements with psfqfperf > 0.85 in this filter (including primary & secondary skycells)
-    z_nstack integer, --/D number of stack measurements (primary and secondary)
-    z_nstack_det integer, --/D number of stack detections (S/N > 5, primary and secondary)
-    z_psfqf real, --/D z-band PSF coverage factor
-    z_psfqfperf real, --/D z-band PSF weighted fraction of pixels totally unmasked
+    z_wrp_kron_nphot integer, --/D number of measurements used for z_wrp_kron_flux (excluding outliers) 
+    z_flags integer, --/D per-filter info flags (equiv. to StackObjectThin.zinfoFlag4) 
+    z_ncode integer, --/D number of chip detections in this filter (equiv. to StackObjectThin.nz) 
+    z_nwarp integer, --/D number of warp measurements in this filter (including primary & secondary skycells) 
+    z_nwarp_good integer, --/D number of warp measurements with psfqfperf > 0.85 in this filter (including primary & secondary skycells) 
+    z_nstack integer, --/D number of stack measurements (primary and secondary) 
+    z_nstack_det integer, --/D number of stack detections (S/N > 5, primary and secondary) 
+    z_psfqf real, --/D z-band PSF coverage factor 
+    z_psfqfperf real, --/D z-band PSF weighted fraction of pixels totally unmasked 
     y_chp_psf real, --/U mag --/D mean y-band chip PSF magnitude 
     y_chp_psf_err real, --/U mag --/D error on mean y-band chip PSF magnitude 
-    y_chp_psf_nphot integer, --/D number of measurements used for y_chp_psf (excluding outliers)
+    y_chp_psf_nphot integer, --/D number of measurements used for y_chp_psf (excluding outliers) 
     y_chp_aper real, --/U mag --/D mean y-band chip seeing-adapted aperture magnitude 
     y_chp_aper_err real, --/U mag --/D error on mean y-band chip seeing-adapted aperture magnitude 
-    y_chp_aper_nphot integer, --/D number of measurements used for above (excluding outliers)
+    y_chp_aper_nphot integer, --/D number of measurements used for above (excluding outliers) 
     y_chp_kron real, --/U mag --/D mean y-band chip Kron magnitude 
     y_chp_kron_err real, --/U mag --/D error on mean y-band chip Kron magnitude 
-    y_chp_kron_nphot integer, --/D number of measurements used for y_chp_kron (excluding outliers)
+    y_chp_kron_nphot integer, --/D number of measurements used for y_chp_kron (excluding outliers) 
     y_stk_psf_flux real, --/U Jy --/D best y-band stack PSF flux 
     y_stk_psf_fluxerr real, --/U Jy --/D error on best y-band stack PSF flux 
-    y_stk_psf_nphot integer, --/D number of measurements used for y_stk_psf_flux (excluding outliers)
+    y_stk_psf_nphot integer, --/D number of measurements used for y_stk_psf_flux (excluding outliers) 
     y_stk_aper_flux real, --/U Jy --/D y-band stack seeing-adapted aperture flux 
     y_stk_aper_fluxerr real, --/U Jy --/D error on y-band stack seeing-adapted aperture flux 
-    y_stk_aper_nphot integer, --/D number of measurements used for y_stk_aper_flux (excluding outliers)
+    y_stk_aper_nphot integer, --/D number of measurements used for y_stk_aper_flux (excluding outliers) 
     y_stk_kron_flux real, --/U Jy --/D y-band stack Kron flux from same stack as 'best' PSF above 
     y_stk_kron_fluxerr real, --/U Jy --/D error on y-band stack Kron flux from same stack as 'best' PSF above 
-    y_stk_kron_nphot integer, --/D number of measurements used for y_stk_kron_flux (excluding outliers)
+    y_stk_kron_nphot integer, --/D number of measurements used for y_stk_kron_flux (excluding outliers) 
     y_wrp_psf_flux real, --/U Jy --/D mean y-band forced-warp PSF flux 
     y_wrp_psf_fluxerr real, --/U Jy --/D error on mean y-band forced-warp PSF flux 
-    y_wrp_psf_nphot integer, --/D number of measurements used for y_wrp_psf_flux (excluding outliers)
+    y_wrp_psf_nphot integer, --/D number of measurements used for y_wrp_psf_flux (excluding outliers) 
     y_wrp_aper_flux real, --/U Jy --/D mean y-band forced-warp seeing-adapted aperture flux 
     y_wrp_aper_fluxerr real, --/U Jy --/D error on mean y-band forced-warp seeing-adapted aperture flux 
-    y_wrp_aper_nphot integer, --/D number of measurements used for y_wrp_aper_flux (excluding outliers)
+    y_wrp_aper_nphot integer, --/D number of measurements used for y_wrp_aper_flux (excluding outliers) 
     y_wrp_kron_flux real, --/U Jy --/D mean y-band forced-warp Kron flux 
     y_wrp_kron_fluxerr real, --/U Jy --/D error on mean y-band forced-warp Kron flux 
-    y_wrp_kron_nphot integer, --/D number of measurements used for y_wrp_kron_flux (excluding outliers)
-    y_flags integer, --/D per-filter info flags (equiv. to StackObjectThin.yinfoFlag4)
-    y_ncode integer, --/D number of chip detections in this filter (equiv. to StackObjectThin.ny)
-    y_nwarp integer, --/D number of warp measurements in this filter (including primary & secondary skycells)
-    y_nwarp_good integer, --/D number of warp measurements with psfqfperf > 0.85 in this filter (including primary & secondary skycells)
-    y_nstack integer, --/D number of stack measurements (primary and secondary)
-    y_nstack_det integer, --/D number of stack detections (S/N > 5, primary and secondary)
-    y_psfqf real, --/D y-band PSF coverage factor
-    y_psfqfperf real, --/D y-band PSF weighted fraction of pixels totally unmasked
-    catid_objid bigint NOT NULL, --/D computed as (catid << 32) & objid. Equivalent to StackObjectThin.ippObjID
-    extid_hi_lo bigint --/D computed as (extid_hi << 32) & extid_lo. Equivalent to StackObjectThin.ObjID
+    y_wrp_kron_nphot integer, --/D number of measurements used for y_wrp_kron_flux (excluding outliers) 
+    y_flags integer, --/D per-filter info flags (equiv. to StackObjectThin.yinfoFlag4) 
+    y_ncode integer, --/D number of chip detections in this filter (equiv. to StackObjectThin.ny) 
+    y_nwarp integer, --/D number of warp measurements in this filter (including primary & secondary skycells) 
+    y_nwarp_good integer, --/D number of warp measurements with psfqfperf > 0.85 in this filter (including primary & secondary skycells) 
+    y_nstack integer, --/D number of stack measurements (primary and secondary) 
+    y_nstack_det integer, --/D number of stack detections (S/N > 5, primary and secondary) 
+    y_psfqf real, --/D y-band PSF coverage factor 
+    y_psfqfperf real, --/D y-band PSF weighted fraction of pixels totally unmasked 
+    catid_objid bigint NOT NULL, --/D computed as (catid << 32) & objid. Equivalent to StackObjectThin.ippObjID 
+    extid_hi_lo bigint --/D computed as (extid_hi << 32) & extid_lo. Equivalent to StackObjectThin.ObjID 
 );
 
 
@@ -5748,8 +5748,8 @@ CREATE TABLE minidb_dr19.dr19_positioner_status (
 ----------------------------------------------------------------------
 --/H Table of possible positioner statuses
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D Unique identifier
-    label text --/D Status (OK or KO)
+    pk integer NOT NULL, --/D Unique identifier 
+    label text --/D Status (OK or KO) 
 );
 
 
@@ -5766,8 +5766,8 @@ CREATE TABLE minidb_dr19.dr19_revised_magnitude (
 --/T the values in the original magnitude table. Therefore: if a carton_to_target_pk
 --/T exists in this table, the values in this table should be used instead.
 ----------------------------------------------------------------------
-    carton_to_target_pk bigint, --/D The primary key of the target in the dr19_carton_to_target table.
-    revised_magnitude_pk bigint NOT NULL, --/D The primary key. A sequential identifier. --/D The primary key. A sequential identifier.
+    carton_to_target_pk bigint, --/D The primary key of the target in the dr19_carton_to_target table. 
+    revised_magnitude_pk bigint NOT NULL, --/D The primary key. A sequential identifier.  --/D The primary key. A sequential identifier. 
     g double precision, --/U mag --/D The optical g magnitude, AB. 
     r double precision, --/U mag --/D The optical r magnitude, AB. 
     i double precision, --/U mag --/D The optical i magnitude, AB. 
@@ -5778,7 +5778,7 @@ CREATE TABLE minidb_dr19.dr19_revised_magnitude (
     j real, --/U mag --/D The IR J magnitude, Vega. 
     k real, --/U mag --/D The IR K magnitude, Vega. 
     gaia_g real, --/U mag --/D The Gaia G magnitude, Vega. 
-    optical_prov text --/D The providence/origin of the optical magnitudes.
+    optical_prov text --/D The providence/origin of the optical magnitudes. 
 );
 
 
@@ -5825,11 +5825,11 @@ CREATE TABLE minidb_dr19.dr19_sdss_apogeeallstarmerge_r13 (
     pmra double precision, --/U mas/yr --/D proper motion in RA 
     pmdec double precision, --/U mas/yr --/D proper motion in DEC 
     pm_src text, --/D source of proper motion (e.g. gaia) 
-    j real, --/U bad=99] [mag --/D 2MASS J mag 
+    j real, --/U mag --/D 2MASS J mag [bad=99] 
     j_err real, --/U mag --/D Uncertainty in 2MASS J mag 
-    h real, --/U bad=99] [mag --/D 2MASS H mag 
+    h real, --/U mag --/D 2MASS H mag [bad=99] 
     h_err real, --/U mag --/D Uncertainty in 2MASS H mag 
-    k real, --/U bad=99] [mag --/D 2MASS Ks mag 
+    k real, --/U mag --/D 2MASS Ks mag [bad=99] 
     k_err real, --/U mag --/D Uncertainty in 2MASS Ks mag 
     ak real, --/U mag --/D K-band extinction adopted for targetting 
     vhelio_avg real, --/U km/s --/D Average radial velocity, weighted by S/N, rederived to reflect all entries 
@@ -5858,7 +5858,7 @@ CREATE TABLE minidb_dr19.dr19_sdss_apogeeallstarmerge_r13 (
     dist real, --/U pc --/D Derived or given distance to the star 
     dist_err real, --/U pc --/D uncertainy of the distance 
     dist_src text, --/D Source of the star's distance measurement (e.g. gaia=derived from gaia parallax) 
-    mstar real, --/D Derived or given stellar mass (Solar Mass)
+    mstar real, --/D Derived or given stellar mass (Solar Mass) 
     mstar_err real, --/U Solar Mass --/D Uncertainty of the Derived stellar mass 
     rstar real, --/U Solar Radius --/D Derived stellar radius 
     rstar_err real, --/U Solar Radius --/D Uncertainty of the Derived stellar radius 
@@ -6196,16 +6196,16 @@ CREATE TABLE minidb_dr19.dr19_sdss_dr16_specobj (
     class_person character varying(32), --/D Visual-inspection classification (0=not inspected or unknown, 1=star, 2=narrow emission-line galaxy, 3=QSO, 4=galaxy) 
     comments_person character varying(200), --/D Visual-inspection comments 
     tfile character varying(32), --/D File that best fit template comes from in idlspec1d product 
-    tcolumn_0 smallint, --/D Which column of the template file corresponds to template #0
-    tcolumn_1 smallint, --/D Which column of the template file corresponds to template #1
-    tcolumn_2 smallint, --/D Which column of the template file corresponds to template #2
-    tcolumn_3 smallint, --/D Which column of the template file corresponds to template #3
-    tcolumn_4 smallint, --/D Which column of the template file corresponds to template #4
-    tcolumn_5 smallint, --/D Which column of the template file corresponds to template #5
-    tcolumn_6 smallint, --/D Which column of the template file corresponds to template #6
-    tcolumn_7 smallint, --/D Which column of the template file corresponds to template #7
-    tcolumn_8 smallint, --/D Which column of the template file corresponds to template #8
-    tcolumn_9 smallint, --/D Which column of the template file corresponds to template #9
+    tcolumn_0 smallint, --/D Which column of the template file corresponds to template #0 
+    tcolumn_1 smallint, --/D Which column of the template file corresponds to template #1 
+    tcolumn_2 smallint, --/D Which column of the template file corresponds to template #2 
+    tcolumn_3 smallint, --/D Which column of the template file corresponds to template #3 
+    tcolumn_4 smallint, --/D Which column of the template file corresponds to template #4 
+    tcolumn_5 smallint, --/D Which column of the template file corresponds to template #5 
+    tcolumn_6 smallint, --/D Which column of the template file corresponds to template #6 
+    tcolumn_7 smallint, --/D Which column of the template file corresponds to template #7 
+    tcolumn_8 smallint, --/D Which column of the template file corresponds to template #8 
+    tcolumn_9 smallint, --/D Which column of the template file corresponds to template #9 
     npoly real, --/D Number of polynomial terms in fit 
     theta_0 real, --/D Template coefficients of best fit (polynomial term #0) 
     theta_1 real, --/D Template coefficients of best fit (polynomial term #1) 
@@ -6234,36 +6234,36 @@ CREATE TABLE minidb_dr19.dr19_sdss_dr16_specobj (
     snmedian_z real, --/D Median signal-to-noise per pixel within the z bandpass 
     snmedian real, --/D Median signal-to-noise per pixel across full spectrum (aka SN_MEDIAN_ALL) 
     chi68p real, --/D 68-th percentile value of abs(chi) of the best-fit synthetic spectrum to the actual spectrum (around 1.0 for a good fit) 
-    fracnsigma_1 real, --/D Fraction of pixels deviant by more than 1 sigma relative to best-fit
-    fracnsigma_2 real, --/D Fraction of pixels deviant by more than 2 sigma relative to best-fit
-    fracnsigma_3 real, --/D Fraction of pixels deviant by more than 3 sigma relative to best-fit
-    fracnsigma_4 real, --/D Fraction of pixels deviant by more than 4 sigma relative to best-fit
-    fracnsigma_5 real, --/D Fraction of pixels deviant by more than 5 sigma relative to best-fit
-    fracnsigma_6 real, --/D Fraction of pixels deviant by more than 6 sigma relative to best-fit
-    fracnsigma_7 real, --/D Fraction of pixels deviant by more than 7 sigma relative to best-fit
-    fracnsigma_8 real, --/D Fraction of pixels deviant by more than 8 sigma relative to best-fit
-    fracnsigma_9 real, --/D Fraction of pixels deviant by more than 9 sigma relative to best-fit
-    fracnsigma_10 real, --/D Fraction of pixels deviant by more than 10 sigma relative to best-fit
-    fracnsighi_1 real, --/D Fraction of pixels high by more than 1 sigma relative to best-fit
-    fracnsighi_2 real, --/D Fraction of pixels high by more than 2 sigma relative to best-fit
-    fracnsighi_3 real, --/D Fraction of pixels high by more than 3 sigma relative to best-fit
-    fracnsighi_4 real, --/D Fraction of pixels high by more than 4 sigma relative to best-fit
-    fracnsighi_5 real, --/D Fraction of pixels high by more than 5 sigma relative to best-fit
-    fracnsighi_6 real, --/D Fraction of pixels high by more than 6 sigma relative to best-fit
-    fracnsighi_7 real, --/D Fraction of pixels high by more than 7 sigma relative to best-fit
-    fracnsighi_8 real, --/D Fraction of pixels high by more than 8 sigma relative to best-fit
-    fracnsighi_9 real, --/D Fraction of pixels high by more than 9 sigma relative to best-fit
-    fracnsighi_10 real, --/D Fraction of pixels high by more than 10 sigma relative to best-fit
-    fracnsiglo_1 real, --/D Fraction of pixels low by more than 1 sigma relative to best-fit
-    fracnsiglo_2 real, --/D Fraction of pixels low by more than 2 sigma relative to best-fit
-    fracnsiglo_3 real, --/D Fraction of pixels low by more than 3 sigma relative to best-fit
-    fracnsiglo_4 real, --/D Fraction of pixels low by more than 4 sigma relative to best-fit
-    fracnsiglo_5 real, --/D Fraction of pixels low by more than 5 sigma relative to best-fit
-    fracnsiglo_6 real, --/D Fraction of pixels low by more than 6 sigma relative to best-fit
-    fracnsiglo_7 real, --/D Fraction of pixels low by more than 7 sigma relative to best-fit
-    fracnsiglo_8 real, --/D Fraction of pixels low by more than 8 sigma relative to best-fit
-    fracnsiglo_9 real, --/D Fraction of pixels low by more than 9 sigma relative to best-fit
-    fracnsiglo_10 real, --/D Fraction of pixels low by more than 10 sigma relative to best-fit
+    fracnsigma_1 real, --/D Fraction of pixels deviant by more than 1 sigma relative to best-fit 
+    fracnsigma_2 real, --/D Fraction of pixels deviant by more than 2 sigma relative to best-fit 
+    fracnsigma_3 real, --/D Fraction of pixels deviant by more than 3 sigma relative to best-fit 
+    fracnsigma_4 real, --/D Fraction of pixels deviant by more than 4 sigma relative to best-fit 
+    fracnsigma_5 real, --/D Fraction of pixels deviant by more than 5 sigma relative to best-fit 
+    fracnsigma_6 real, --/D Fraction of pixels deviant by more than 6 sigma relative to best-fit 
+    fracnsigma_7 real, --/D Fraction of pixels deviant by more than 7 sigma relative to best-fit 
+    fracnsigma_8 real, --/D Fraction of pixels deviant by more than 8 sigma relative to best-fit 
+    fracnsigma_9 real, --/D Fraction of pixels deviant by more than 9 sigma relative to best-fit 
+    fracnsigma_10 real, --/D Fraction of pixels deviant by more than 10 sigma relative to best-fit 
+    fracnsighi_1 real, --/D Fraction of pixels high by more than 1 sigma relative to best-fit 
+    fracnsighi_2 real, --/D Fraction of pixels high by more than 2 sigma relative to best-fit 
+    fracnsighi_3 real, --/D Fraction of pixels high by more than 3 sigma relative to best-fit 
+    fracnsighi_4 real, --/D Fraction of pixels high by more than 4 sigma relative to best-fit 
+    fracnsighi_5 real, --/D Fraction of pixels high by more than 5 sigma relative to best-fit 
+    fracnsighi_6 real, --/D Fraction of pixels high by more than 6 sigma relative to best-fit 
+    fracnsighi_7 real, --/D Fraction of pixels high by more than 7 sigma relative to best-fit 
+    fracnsighi_8 real, --/D Fraction of pixels high by more than 8 sigma relative to best-fit 
+    fracnsighi_9 real, --/D Fraction of pixels high by more than 9 sigma relative to best-fit 
+    fracnsighi_10 real, --/D Fraction of pixels high by more than 10 sigma relative to best-fit 
+    fracnsiglo_1 real, --/D Fraction of pixels low by more than 1 sigma relative to best-fit 
+    fracnsiglo_2 real, --/D Fraction of pixels low by more than 2 sigma relative to best-fit 
+    fracnsiglo_3 real, --/D Fraction of pixels low by more than 3 sigma relative to best-fit 
+    fracnsiglo_4 real, --/D Fraction of pixels low by more than 4 sigma relative to best-fit 
+    fracnsiglo_5 real, --/D Fraction of pixels low by more than 5 sigma relative to best-fit 
+    fracnsiglo_6 real, --/D Fraction of pixels low by more than 6 sigma relative to best-fit 
+    fracnsiglo_7 real, --/D Fraction of pixels low by more than 7 sigma relative to best-fit 
+    fracnsiglo_8 real, --/D Fraction of pixels low by more than 8 sigma relative to best-fit 
+    fracnsiglo_9 real, --/D Fraction of pixels low by more than 9 sigma relative to best-fit 
+    fracnsiglo_10 real, --/D Fraction of pixels low by more than 10 sigma relative to best-fit 
     spectroflux_u real, --/U nanomaggies --/D Spectral flux within u filter bandpass 
     spectroflux_g real, --/U nanomaggies --/D Spectral flux within g filter bandpass 
     spectroflux_r real, --/U nanomaggies --/D Spectral flux within r filter bandpass 
@@ -6409,16 +6409,16 @@ CREATE TABLE minidb_dr19.dr19_sdss_dr17_specobj (
     class_person character varying(32), --/D Visual-inspection classification (0=not inspected or unknown, 1=star, 2=narrow emission-line galaxy, 3=QSO, 4=galaxy) 
     comments_person character varying(200), --/D Visual-inspection comments 
     tfile character varying(32), --/D File that best fit template comes from in idlspec1d product 
-    tcolumn_0 smallint, --/D Which column of the template file corresponds to template #0
-    tcolumn_1 smallint, --/D Which column of the template file corresponds to template #1
-    tcolumn_2 smallint, --/D Which column of the template file corresponds to template #2
-    tcolumn_3 smallint, --/D Which column of the template file corresponds to template #3
-    tcolumn_4 smallint, --/D Which column of the template file corresponds to template #4
-    tcolumn_5 smallint, --/D Which column of the template file corresponds to template #5
-    tcolumn_6 smallint, --/D Which column of the template file corresponds to template #6
-    tcolumn_7 smallint, --/D Which column of the template file corresponds to template #7
-    tcolumn_8 smallint, --/D Which column of the template file corresponds to template #8
-    tcolumn_9 smallint, --/D Which column of the template file corresponds to template #9
+    tcolumn_0 smallint, --/D Which column of the template file corresponds to template #0 
+    tcolumn_1 smallint, --/D Which column of the template file corresponds to template #1 
+    tcolumn_2 smallint, --/D Which column of the template file corresponds to template #2 
+    tcolumn_3 smallint, --/D Which column of the template file corresponds to template #3 
+    tcolumn_4 smallint, --/D Which column of the template file corresponds to template #4 
+    tcolumn_5 smallint, --/D Which column of the template file corresponds to template #5 
+    tcolumn_6 smallint, --/D Which column of the template file corresponds to template #6 
+    tcolumn_7 smallint, --/D Which column of the template file corresponds to template #7 
+    tcolumn_8 smallint, --/D Which column of the template file corresponds to template #8 
+    tcolumn_9 smallint, --/D Which column of the template file corresponds to template #9 
     npoly real, --/D Number of polynomial terms in fit 
     theta_0 real, --/D Template coefficients of best fit (polynomial term #0) 
     theta_1 real, --/D Template coefficients of best fit (polynomial term #1) 
@@ -6447,36 +6447,36 @@ CREATE TABLE minidb_dr19.dr19_sdss_dr17_specobj (
     snmedian_z real, --/D Median signal-to-noise per pixel within the z bandpass 
     snmedian real, --/D Median signal-to-noise per pixel across full spectrum (aka SN_MEDIAN_ALL) 
     chi68p real, --/D 68-th percentile value of abs(chi) of the best-fit synthetic spectrum to the actual spectrum (around 1.0 for a good fit) 
-    fracnsigma_1 real, --/D Fraction of pixels deviant by more than 1 sigma relative to best-fit
-    fracnsigma_2 real, --/D Fraction of pixels deviant by more than 2 sigma relative to best-fit
-    fracnsigma_3 real, --/D Fraction of pixels deviant by more than 3 sigma relative to best-fit
-    fracnsigma_4 real, --/D Fraction of pixels deviant by more than 4 sigma relative to best-fit
-    fracnsigma_5 real, --/D Fraction of pixels deviant by more than 5 sigma relative to best-fit
-    fracnsigma_6 real, --/D Fraction of pixels deviant by more than 6 sigma relative to best-fit
-    fracnsigma_7 real, --/D Fraction of pixels deviant by more than 7 sigma relative to best-fit
-    fracnsigma_8 real, --/D Fraction of pixels deviant by more than 8 sigma relative to best-fit
-    fracnsigma_9 real, --/D Fraction of pixels deviant by more than 9 sigma relative to best-fit
-    fracnsigma_10 real, --/D Fraction of pixels deviant by more than 10 sigma relative to best-fit
-    fracnsighi_1 real, --/D Fraction of pixels high by more than 1 sigma relative to best-fit
-    fracnsighi_2 real, --/D Fraction of pixels high by more than 2 sigma relative to best-fit
-    fracnsighi_3 real, --/D Fraction of pixels high by more than 3 sigma relative to best-fit
-    fracnsighi_4 real, --/D Fraction of pixels high by more than 4 sigma relative to best-fit
-    fracnsighi_5 real, --/D Fraction of pixels high by more than 5 sigma relative to best-fit
-    fracnsighi_6 real, --/D Fraction of pixels high by more than 6 sigma relative to best-fit
-    fracnsighi_7 real, --/D Fraction of pixels high by more than 7 sigma relative to best-fit
-    fracnsighi_8 real, --/D Fraction of pixels high by more than 8 sigma relative to best-fit
-    fracnsighi_9 real, --/D Fraction of pixels high by more than 9 sigma relative to best-fit
-    fracnsighi_10 real, --/D Fraction of pixels high by more than 10 sigma relative to best-fit
-    fracnsiglo_1 real, --/D Fraction of pixels low by more than 1 sigma relative to best-fit
-    fracnsiglo_2 real, --/D Fraction of pixels low by more than 2 sigma relative to best-fit
-    fracnsiglo_3 real, --/D Fraction of pixels low by more than 3 sigma relative to best-fit
-    fracnsiglo_4 real, --/D Fraction of pixels low by more than 4 sigma relative to best-fit
-    fracnsiglo_5 real, --/D Fraction of pixels low by more than 5 sigma relative to best-fit
-    fracnsiglo_6 real, --/D Fraction of pixels low by more than 6 sigma relative to best-fit
-    fracnsiglo_7 real, --/D Fraction of pixels low by more than 7 sigma relative to best-fit
-    fracnsiglo_8 real, --/D Fraction of pixels low by more than 8 sigma relative to best-fit
-    fracnsiglo_9 real, --/D Fraction of pixels low by more than 9 sigma relative to best-fit
-    fracnsiglo_10 real, --/D Fraction of pixels low by more than 10 sigma relative to best-fit
+    fracnsigma_1 real, --/D Fraction of pixels deviant by more than 1 sigma relative to best-fit 
+    fracnsigma_2 real, --/D Fraction of pixels deviant by more than 2 sigma relative to best-fit 
+    fracnsigma_3 real, --/D Fraction of pixels deviant by more than 3 sigma relative to best-fit 
+    fracnsigma_4 real, --/D Fraction of pixels deviant by more than 4 sigma relative to best-fit 
+    fracnsigma_5 real, --/D Fraction of pixels deviant by more than 5 sigma relative to best-fit 
+    fracnsigma_6 real, --/D Fraction of pixels deviant by more than 6 sigma relative to best-fit 
+    fracnsigma_7 real, --/D Fraction of pixels deviant by more than 7 sigma relative to best-fit 
+    fracnsigma_8 real, --/D Fraction of pixels deviant by more than 8 sigma relative to best-fit 
+    fracnsigma_9 real, --/D Fraction of pixels deviant by more than 9 sigma relative to best-fit 
+    fracnsigma_10 real, --/D Fraction of pixels deviant by more than 10 sigma relative to best-fit 
+    fracnsighi_1 real, --/D Fraction of pixels high by more than 1 sigma relative to best-fit 
+    fracnsighi_2 real, --/D Fraction of pixels high by more than 2 sigma relative to best-fit 
+    fracnsighi_3 real, --/D Fraction of pixels high by more than 3 sigma relative to best-fit 
+    fracnsighi_4 real, --/D Fraction of pixels high by more than 4 sigma relative to best-fit 
+    fracnsighi_5 real, --/D Fraction of pixels high by more than 5 sigma relative to best-fit 
+    fracnsighi_6 real, --/D Fraction of pixels high by more than 6 sigma relative to best-fit 
+    fracnsighi_7 real, --/D Fraction of pixels high by more than 7 sigma relative to best-fit 
+    fracnsighi_8 real, --/D Fraction of pixels high by more than 8 sigma relative to best-fit 
+    fracnsighi_9 real, --/D Fraction of pixels high by more than 9 sigma relative to best-fit 
+    fracnsighi_10 real, --/D Fraction of pixels high by more than 10 sigma relative to best-fit 
+    fracnsiglo_1 real, --/D Fraction of pixels low by more than 1 sigma relative to best-fit 
+    fracnsiglo_2 real, --/D Fraction of pixels low by more than 2 sigma relative to best-fit 
+    fracnsiglo_3 real, --/D Fraction of pixels low by more than 3 sigma relative to best-fit 
+    fracnsiglo_4 real, --/D Fraction of pixels low by more than 4 sigma relative to best-fit 
+    fracnsiglo_5 real, --/D Fraction of pixels low by more than 5 sigma relative to best-fit 
+    fracnsiglo_6 real, --/D Fraction of pixels low by more than 6 sigma relative to best-fit 
+    fracnsiglo_7 real, --/D Fraction of pixels low by more than 7 sigma relative to best-fit 
+    fracnsiglo_8 real, --/D Fraction of pixels low by more than 8 sigma relative to best-fit 
+    fracnsiglo_9 real, --/D Fraction of pixels low by more than 9 sigma relative to best-fit 
+    fracnsiglo_10 real, --/D Fraction of pixels low by more than 10 sigma relative to best-fit 
     spectroflux_u real, --/U nanomaggies --/D Spectral flux within u filter bandpass 
     spectroflux_g real, --/U nanomaggies --/D Spectral flux within g filter bandpass 
     spectroflux_r real, --/U nanomaggies --/D Spectral flux within r filter bandpass 
@@ -6548,16 +6548,16 @@ CREATE TABLE minidb_dr19.dr19_sdss_id_flat (
 --/T yet part of the publicly released data. As such, the ra/dec_sdss_id columns may
 --/T differ from the catalogid coordinates.
 ----------------------------------------------------------------------
-    sdss_id bigint, --/D The SDSS identifier for a unique object.
-    catalogid bigint, --/D The associated catalogid for this target.
-    version_id smallint, --/D The version of the cross-match associated with the catalogid.
-    ra_sdss_id double precision, --/D The right ascension of the target in ICRS J2015.5 coordinates (taken from the highest version catalogid in dr19_sdss_id_stacked).
-    dec_sdss_id double precision, --/D The declination of the target in ICRS J2015.5 coordinates (taken from the highest version catalogid in dr19_sdss_id_stacked).
-    n_associated smallint, --/D The number of sdss_ids associated with this catalogid.
-    ra_catalogid double precision, --/D The right ascension of this row's catalogid from the dr19_catalog table.
-    dec_catalogid double precision, --/D The declination of this row's catalogid from the dr19_catalog table.
-    pk bigint NOT NULL, --/D The primary key. A sequential identifier for this table.
-    rank integer --/D The rank of the sdss_id to catalogid association. When multiple sdss_ids are associated with the same catalogid, the one with the lowest rank (rank=1) should be preferred.
+    sdss_id bigint, --/D The SDSS identifier for a unique object. 
+    catalogid bigint, --/D The associated catalogid for this target. 
+    version_id smallint, --/D The version of the cross-match associated with the catalogid. 
+    ra_sdss_id double precision, --/D The right ascension of the target in ICRS J2015.5 coordinates (taken from the highest version catalogid in dr19_sdss_id_stacked). 
+    dec_sdss_id double precision, --/D The declination of the target in ICRS J2015.5 coordinates (taken from the highest version catalogid in dr19_sdss_id_stacked). 
+    n_associated smallint, --/D The number of sdss_ids associated with this catalogid. 
+    ra_catalogid double precision, --/D The right ascension of this row's catalogid from the dr19_catalog table. 
+    dec_catalogid double precision, --/D The declination of this row's catalogid from the dr19_catalog table. 
+    pk bigint NOT NULL, --/D The primary key. A sequential identifier for this table. 
+    rank integer --/D The rank of the sdss_id to catalogid association. When multiple sdss_ids are associated with the same catalogid, the one with the lowest rank (rank=1) should be preferred. 
 );
 
 
@@ -6578,11 +6578,11 @@ CREATE TABLE minidb_dr19.dr19_sdss_id_stacked (
 --/T yet part of the publicly released data. As such, the ra/dec_sdss_id columns may
 --/T differ from the catalogid coordinates.
 ----------------------------------------------------------------------
-    catalogid21 bigint, --/D The catalogid for the best matched object in the v0.1 cross-match (pk=21).
-    catalogid25 bigint, --/D The catalogid for the best matched object in the v0.5 cross-match (pk=25).
-    ra_sdss_id double precision, --/D The right ascension of the target in ICRS J2015.5 coordinates (taken from the highest version catalogid).
-    dec_sdss_id double precision, --/D The declination of the target in ICRS J2015.5 coordinates (taken from the highest version catalogid).
-    sdss_id bigint NOT NULL --/D The SDSS identifier for a unique object.
+    catalogid21 bigint, --/D The catalogid for the best matched object in the v0.1 cross-match (pk=21). 
+    catalogid25 bigint, --/D The catalogid for the best matched object in the v0.5 cross-match (pk=25). 
+    ra_sdss_id double precision, --/D The right ascension of the target in ICRS J2015.5 coordinates (taken from the highest version catalogid). 
+    dec_sdss_id double precision, --/D The declination of the target in ICRS J2015.5 coordinates (taken from the highest version catalogid). 
+    sdss_id bigint NOT NULL --/D The SDSS identifier for a unique object. 
 );
 
 
@@ -6599,38 +6599,38 @@ CREATE TABLE minidb_dr19.dr19_sdss_id_to_catalog (
 --/T <column_name> is the primary key/unique identifier column to which to join in
 --/T the dr19_<table_name> table.
 ----------------------------------------------------------------------
-    pk bigint NOT NULL, --/D The primary key. A sequential identifier for this table.
-    sdss_id bigint, --/D The SDSS identifier for a unique object.
-    catalogid bigint, --/D The associated catalogid for this target. An sdss_id may be associated with multiple catalogids (see dr19_sdss_id_flat).
-    version_id integer, --/D The version of the cross-match associated with the catalogid.
-    lead text, --/D The parent catalog, in the cross-match sequence, that first added this target.
-    allstar_dr17_synspec_rev1__apstar_id text, --/D The associated primary key (apstar_id) in the allstar_dr17_synspec_rev1 table.
-    allwise__cntr bigint, --/D The associated primary key (cntr) in the allwise table.
-    bhm_rm_v0__pk bigint, --/D The associated primary key (pk) in the bhm_rm_v0 table.
-    bhm_rm_v0_2__pk bigint, --/D The associated primary key (pk) in the bhm_rm_v0_2 table.
-    catwise__source_id character varying(25), --/D The associated primary key (source_id) in the catwise table.
-    catwise2020__source_id character(25), --/D The associated primary key (source_id) in the catwise2020 table.
-    gaia_dr2_source__source_id bigint, --/D The associated primary key (source_id) in the gaia_dr2_source table.
-    gaia_dr3_source__source_id bigint, --/D The associated primary key (source_id) in the gaia_dr3_source table.
-    glimpse__pk bigint, --/D The associated primary key (pk) in the glimpse table.
-    guvcat__objid bigint, --/D The associated primary key (objid) in the guvcat table.
-    legacy_survey_dr10__ls_id bigint, --/D The associated primary key (ls_id) in the legacy_survey_dr10 table.
-    legacy_survey_dr8__ls_id bigint, --/D The associated primary key (ls_id) in the legacy_survey_dr8 table.
-    mangatarget__mangaid character varying(20), --/D The associated primary key (mangaid) in the mangatarget table.
-    marvels_dr11_star__starname character varying, --/D The associated primary key (starname) in the marvels_dr11_star table.
-    marvels_dr12_star__pk bigint, --/D The associated primary key (pk) in the marvels_dr12_star table.
-    mastar_goodstars__mangaid character varying(25), --/D The associated primary key (mangaid) in the mastar_goodstars table.
-    panstarrs1__catid_objid bigint, --/D The associated primary key (catid_objid) in the panstarrs1 table.
-    ps1_g18__objid bigint, --/D The associated primary key (objid) in the ps1_g18 table.
-    sdss_dr13_photoobj__objid bigint, --/D The associated primary key (objid) in the sdss_dr13_photoobj table.
-    sdss_dr17_specobj__specobjid character varying, --/D The associated primary key (specobjid) in the sdss_dr17_specobj table.
-    skymapper_dr1_1__object_id bigint, --/D The associated primary key (object_id) in the skymapper_dr1_1 table.
-    skymapper_dr2__object_id bigint, --/D The associated primary key (object_id) in the skymapper_dr2 table.
-    supercosmos__objid bigint, --/D The associated primary key (objid) in the supercosmos table.
-    tic_v8__id bigint, --/D The associated primary key (id) in the tic_v8 table.
-    twomass_psc__pts_key integer, --/D The associated primary key (pts_key) in the twomass_psc table.
-    tycho2__designation text, --/D The associated primary key (designation) in the tycho2 table.
-    unwise__unwise_objid text --/D The associated primary key (unwise_objid) in the unwise table.
+    pk bigint NOT NULL, --/D The primary key. A sequential identifier for this table. 
+    sdss_id bigint, --/D The SDSS identifier for a unique object. 
+    catalogid bigint, --/D The associated catalogid for this target. An sdss_id may be associated with multiple catalogids (see dr19_sdss_id_flat). 
+    version_id integer, --/D The version of the cross-match associated with the catalogid. 
+    lead text, --/D The parent catalog, in the cross-match sequence, that first added this target. 
+    allstar_dr17_synspec_rev1__apstar_id text, --/D The associated primary key (apstar_id) in the allstar_dr17_synspec_rev1 table. 
+    allwise__cntr bigint, --/D The associated primary key (cntr) in the allwise table. 
+    bhm_rm_v0__pk bigint, --/D The associated primary key (pk) in the bhm_rm_v0 table. 
+    bhm_rm_v0_2__pk bigint, --/D The associated primary key (pk) in the bhm_rm_v0_2 table. 
+    catwise__source_id character varying(25), --/D The associated primary key (source_id) in the catwise table. 
+    catwise2020__source_id character(25), --/D The associated primary key (source_id) in the catwise2020 table. 
+    gaia_dr2_source__source_id bigint, --/D The associated primary key (source_id) in the gaia_dr2_source table. 
+    gaia_dr3_source__source_id bigint, --/D The associated primary key (source_id) in the gaia_dr3_source table. 
+    glimpse__pk bigint, --/D The associated primary key (pk) in the glimpse table. 
+    guvcat__objid bigint, --/D The associated primary key (objid) in the guvcat table. 
+    legacy_survey_dr10__ls_id bigint, --/D The associated primary key (ls_id) in the legacy_survey_dr10 table. 
+    legacy_survey_dr8__ls_id bigint, --/D The associated primary key (ls_id) in the legacy_survey_dr8 table. 
+    mangatarget__mangaid character varying(20), --/D The associated primary key (mangaid) in the mangatarget table. 
+    marvels_dr11_star__starname character varying, --/D The associated primary key (starname) in the marvels_dr11_star table. 
+    marvels_dr12_star__pk bigint, --/D The associated primary key (pk) in the marvels_dr12_star table. 
+    mastar_goodstars__mangaid character varying(25), --/D The associated primary key (mangaid) in the mastar_goodstars table. 
+    panstarrs1__catid_objid bigint, --/D The associated primary key (catid_objid) in the panstarrs1 table. 
+    ps1_g18__objid bigint, --/D The associated primary key (objid) in the ps1_g18 table. 
+    sdss_dr13_photoobj__objid bigint, --/D The associated primary key (objid) in the sdss_dr13_photoobj table. 
+    sdss_dr17_specobj__specobjid character varying, --/D The associated primary key (specobjid) in the sdss_dr17_specobj table. 
+    skymapper_dr1_1__object_id bigint, --/D The associated primary key (object_id) in the skymapper_dr1_1 table. 
+    skymapper_dr2__object_id bigint, --/D The associated primary key (object_id) in the skymapper_dr2 table. 
+    supercosmos__objid bigint, --/D The associated primary key (objid) in the supercosmos table. 
+    tic_v8__id bigint, --/D The associated primary key (id) in the tic_v8 table. 
+    twomass_psc__pts_key integer, --/D The associated primary key (pts_key) in the twomass_psc table. 
+    tycho2__designation text, --/D The associated primary key (designation) in the tycho2 table. 
+    unwise__unwise_objid text --/D The associated primary key (unwise_objid) in the unwise table. 
 );
 
 
@@ -6696,62 +6696,62 @@ CREATE TABLE minidb_dr19.dr19_sdssv_boss_conflist (
 --/T Column descriptions are mainly derived from:
 --/T https://data.sdss.org/datamodel/files/BOSS_SPECTRO_REDUX/RUN2D/platelist.html
 ----------------------------------------------------------------------
-    plate integer, --/D Plate ID number
-    designid integer, --/D Design ID number
-    mjd integer, --/D Modified Julian date of combined Spectra
-    run2d text, --/D Spectro-2D reduction name
-    run1d text, --/D Spectro-1D reduction name
+    plate integer, --/D Plate ID number 
+    designid integer, --/D Design ID number 
+    mjd integer, --/D Modified Julian date of combined Spectra 
+    run2d text, --/D Spectro-2D reduction name 
+    run1d text, --/D Spectro-1D reduction name 
     racen real, --/U deg --/D RA of the telescope pointing 
     deccen real, --/U deg --/D DEC of the telescope pointing 
-    epoch real, --/D Epoch of the RACEN/DECCEN
-    cartid integer, --/D The currently loaded cartridge/instrument
+    epoch real, --/D Epoch of the RACEN/DECCEN 
+    cartid integer, --/D The currently loaded cartridge/instrument 
     tai double precision, --/U s --/D Mean MJD(TAI) seconds of integration 
     tai_beg double precision, --/U s --/D MJD(TAI) seconds at start of integration 
     tai_end double precision, --/U s --/D MJD(TAI) seconds at end of integration 
-    airmass real, --/D Mean Airmass
+    airmass real, --/D Mean Airmass 
     exptime real, --/U s --/D Total Exposure time 
-    mapname text, --/D ID of plate mapping file
-    survey text, --/D Survey that plate is part of
-    programname text, --/D Program name within a given survey
+    mapname text, --/D ID of plate mapping file 
+    survey text, --/D Survey that plate is part of 
+    programname text, --/D Program name within a given survey 
     chunk text, --/U from platelist product --/D Name of tiling chunk 
-    platequality text, --/D Characterization of plate quality
-    platesn2 real, --/D Overall (S/N)^2 measure for plate
-    deredsn2 real, --/D Overall Dereddened (S/N)^2 for plate
-    qsurvey integer, --/D 1 for an survey quality plate, 0 otherwise
-    mjdlist text, --/D List of MJD for each included exposure
-    tailist text, --/D List of TAI for each included exposure
-    nexp integer, --/D Number of Included Exposures
-    nexp_b1 integer, --/D Number of Included Exposures from b1
-    nexp_r1 integer, --/D Number of Included Exposures from r1
+    platequality text, --/D Characterization of plate quality 
+    platesn2 real, --/D Overall (S/N)^2 measure for plate 
+    deredsn2 real, --/D Overall Dereddened (S/N)^2 for plate 
+    qsurvey integer, --/D 1 for an survey quality plate, 0 otherwise 
+    mjdlist text, --/D List of MJD for each included exposure 
+    tailist text, --/D List of TAI for each included exposure 
+    nexp integer, --/D Number of Included Exposures 
+    nexp_b1 integer, --/D Number of Included Exposures from b1 
+    nexp_r1 integer, --/D Number of Included Exposures from r1 
     expt_b1 real, --/U s --/D Total Exposure Time of b1 
     expt_r1 real, --/U s --/D Total Exposure Time of r1 
-    sn2_g1 real, --/D Fit (S/N)^2 at g=20.20 for spectrograph #1
-    sn2_r1 real, --/D Fit (S/N)^2 at r=20.25 for spectrograph #1
-    sn2_i1 real, --/D Fit (S/N)^2 at i=19.90 for spectrograph #1
-    dered_sn2_g1 real, --/D Extinction corrected (S/N)^2 for sp1 g-band
-    dered_sn2_r1 real, --/D Extinction corrected (S/N)^2 for sp1 r-band
-    dered_sn2_i1 real, --/D Extinction corrected (S/N)^2 for sp1 i-band
-    goffstd real, --/D Mean g mag difference (spectro-photo) for STDs
-    grmsstd real, --/D Stddev g mag diff (spectro-photo) for STDs
-    roffstd real, --/D Mean r mag difference (spectro-photo) for STDs
-    rrmsstd real, --/D Stddev r mag diff (spectro-photo) for STDs
-    ioffstd real, --/D Mean i mag difference (spectro-photo) for STDs
-    irmsstd real, --/D Stddev i mag diff (spectro-photo) for STDs
-    groffstd real, --/D Spectrophoto offset for G-R in standards
-    grrmsstd real, --/D Spectrophoto RMS for G-R in standards
-    rioffstd real, --/D Spectrophoto offset for R-I in standards
-    rirmsstd real, --/D Spectrophoto RMS for R-I in standards
-    goffgal real, --/D Mean g mag diff (spectro-photo) for galaxies
-    grmsgal real, --/D Stddev g mag diff (spectro-photo) for galaxies
-    roffgal real, --/D Mean r mag diff (spectro-photo) for galaxies
-    rrmsgal real, --/D Stddev r mag diff (spectro-photo) for galaxies
-    ioffgal real, --/D Mean i mag diff (spectro-photo) for galaxies
-    irmsgal real, --/D Stddev i mag diff (spectro-photo) for galaxies
-    groffgal real, --/D Spectrophoto offset for G-R in galaxies
-    grrmsgal real, --/D Spectrophoto RMS for G-R in galaxies
-    rioffgal real, --/D Spectrophoto offset for R-I in galaxies
-    rirmsgal real, --/D Spectrophoto RMS for R-I in galaxies
-    nguide integer, --/D Number of guider frames during the exposures
+    sn2_g1 real, --/D Fit (S/N)^2 at g=20.20 for spectrograph #1 
+    sn2_r1 real, --/D Fit (S/N)^2 at r=20.25 for spectrograph #1 
+    sn2_i1 real, --/D Fit (S/N)^2 at i=19.90 for spectrograph #1 
+    dered_sn2_g1 real, --/D Extinction corrected (S/N)^2 for sp1 g-band 
+    dered_sn2_r1 real, --/D Extinction corrected (S/N)^2 for sp1 r-band 
+    dered_sn2_i1 real, --/D Extinction corrected (S/N)^2 for sp1 i-band 
+    goffstd real, --/D Mean g mag difference (spectro-photo) for STDs 
+    grmsstd real, --/D Stddev g mag diff (spectro-photo) for STDs 
+    roffstd real, --/D Mean r mag difference (spectro-photo) for STDs 
+    rrmsstd real, --/D Stddev r mag diff (spectro-photo) for STDs 
+    ioffstd real, --/D Mean i mag difference (spectro-photo) for STDs 
+    irmsstd real, --/D Stddev i mag diff (spectro-photo) for STDs 
+    groffstd real, --/D Spectrophoto offset for G-R in standards 
+    grrmsstd real, --/D Spectrophoto RMS for G-R in standards 
+    rioffstd real, --/D Spectrophoto offset for R-I in standards 
+    rirmsstd real, --/D Spectrophoto RMS for R-I in standards 
+    goffgal real, --/D Mean g mag diff (spectro-photo) for galaxies 
+    grmsgal real, --/D Stddev g mag diff (spectro-photo) for galaxies 
+    roffgal real, --/D Mean r mag diff (spectro-photo) for galaxies 
+    rrmsgal real, --/D Stddev r mag diff (spectro-photo) for galaxies 
+    ioffgal real, --/D Mean i mag diff (spectro-photo) for galaxies 
+    irmsgal real, --/D Stddev i mag diff (spectro-photo) for galaxies 
+    groffgal real, --/D Spectrophoto offset for G-R in galaxies 
+    grrmsgal real, --/D Spectrophoto RMS for G-R in galaxies 
+    rioffgal real, --/D Spectrophoto offset for R-I in galaxies 
+    rirmsgal real, --/D Spectrophoto RMS for R-I in galaxies 
+    nguide integer, --/D Number of guider frames during the exposures 
     seeing20 real, --/U arcsec --/D Mean 20% seeing during exposures 
     seeing50 real, --/U arcsec --/D Mean 50% seeing during exposures 
     seeing80 real, --/U arcsec --/D Mean 80% seeing during exposures 
@@ -6759,37 +6759,37 @@ CREATE TABLE minidb_dr19.dr19_sdssv_boss_conflist (
     rmsoff50 real, --/U arcsec --/D 50% of RMS offset of guide fibers 
     rmsoff80 real, --/U arcsec --/D 80% of RMS offset of guide fibers 
     airtemp real, --/U dec --/D Air temperature in the dome 
-    xsigma real, --/D Mean of median trace extraction profile width
-    xsigmin real, --/D Min of median trace extraction profile width
-    xsigmax real, --/D Max of median trace extraction profile width
-    wsigma real, --/D Mean of median Arc Lines wavelength (Y) width
-    wsigmin real, --/D Min of median Arc Lines wavelength (Y) width
-    wsigmax real, --/D Max of median Arc Lines wavelength (Y) width
-    xchi2 real, --/D Mean of XCHI2 (reduced chi^2 of row-by-row)
-    xchi2min real, --/D Minimum of XCHI2 (reduced chi^2 of row-by-row)
-    xchi2max real, --/D Maximum of XCHI2 (reduced chi^2 of row-by-row)
-    skychi2 real, --/D Average chi^2 from sky subtraction
-    schi2min real, --/D Minimum skyChi2 over all exposures
-    schi2max real, --/D Maximum skyChi2 over all exposures
-    fbadpix real, --/D Fraction of bad pixels
-    fbadpix1 real, --/D Fraction of bad pixels from spectrograph #1
-    fbadpix2 real, --/D Fraction of bad pixels from spectrograph #2
-    n_total integer, --/D Number of Sources
-    n_galaxy integer, --/D Number of Galaxies
-    n_qso integer, --/D Number of QSOs
-    n_star integer, --/D Number of Stars
-    n_unknown integer, --/D Number of Unknown Sources
-    n_sky integer, --/D Number of Skys
-    n_std integer, --/D Number of Standards
-    n_target_qso integer, --/D Number of QSO Targeted
-    success_qso real, --/D Success rate of QSOs
-    status2d text, --/D Status of 2d extraction
-    statuscombine text, --/D Status of 1d combine
-    status1d text, --/D Status of 1d analysis
-    public text, --/D Is this Plate Public
-    qualcomments text, --/D Comments on Plate Quality
-    moon_frac real, --/D Mean Moon phase of the Coadded Spectra
-    pkey bigint NOT NULL --/D primary key for table entry
+    xsigma real, --/D Mean of median trace extraction profile width 
+    xsigmin real, --/D Min of median trace extraction profile width 
+    xsigmax real, --/D Max of median trace extraction profile width 
+    wsigma real, --/D Mean of median Arc Lines wavelength (Y) width 
+    wsigmin real, --/D Min of median Arc Lines wavelength (Y) width 
+    wsigmax real, --/D Max of median Arc Lines wavelength (Y) width 
+    xchi2 real, --/D Mean of XCHI2 (reduced chi^2 of row-by-row) 
+    xchi2min real, --/D Minimum of XCHI2 (reduced chi^2 of row-by-row) 
+    xchi2max real, --/D Maximum of XCHI2 (reduced chi^2 of row-by-row) 
+    skychi2 real, --/D Average chi^2 from sky subtraction 
+    schi2min real, --/D Minimum skyChi2 over all exposures 
+    schi2max real, --/D Maximum skyChi2 over all exposures 
+    fbadpix real, --/D Fraction of bad pixels 
+    fbadpix1 real, --/D Fraction of bad pixels from spectrograph #1 
+    fbadpix2 real, --/D Fraction of bad pixels from spectrograph #2 
+    n_total integer, --/D Number of Sources 
+    n_galaxy integer, --/D Number of Galaxies 
+    n_qso integer, --/D Number of QSOs 
+    n_star integer, --/D Number of Stars 
+    n_unknown integer, --/D Number of Unknown Sources 
+    n_sky integer, --/D Number of Skys 
+    n_std integer, --/D Number of Standards 
+    n_target_qso integer, --/D Number of QSO Targeted 
+    success_qso real, --/D Success rate of QSOs 
+    status2d text, --/D Status of 2d extraction 
+    statuscombine text, --/D Status of 1d combine 
+    status1d text, --/D Status of 1d analysis 
+    public text, --/D Is this Plate Public 
+    qualcomments text, --/D Comments on Plate Quality 
+    moon_frac real, --/D Mean Moon phase of the Coadded Spectra 
+    pkey bigint NOT NULL --/D primary key for table entry 
 );
 
 
@@ -6812,91 +6812,91 @@ CREATE TABLE minidb_dr19.dr19_sdssv_boss_spall (
 --/T Column descriptions are mainly derived from:
 --/T https://data.sdss.org/datamodel/files/BOSS_SPECTRO_REDUX/RUN2D/spAll.html
 ----------------------------------------------------------------------
-    programname text, --/D Program name within a given survey
+    programname text, --/D Program name within a given survey 
     chunk text, --/U from platelist product --/D Name of tiling chunk 
-    survey text, --/D Survey that plate is a part of
-    platequality text, --/D Characterization of plate quality
-    platesn2 real, --/D Overall (S/N)^2 measure for plate; minimum of all 4 cameras
-    deredsn2 real, --/D Dereddened (extinction corrected) (S/N)^2 measure for plate; minimum of all 4 cameras
-    primtarget integer, --/D n/a ignore
-    sectarget integer, --/D n/a ignore
+    survey text, --/D Survey that plate is a part of 
+    platequality text, --/D Characterization of plate quality 
+    platesn2 real, --/D Overall (S/N)^2 measure for plate; minimum of all 4 cameras 
+    deredsn2 real, --/D Dereddened (extinction corrected) (S/N)^2 measure for plate; minimum of all 4 cameras 
+    primtarget integer, --/D n/a ignore 
+    sectarget integer, --/D n/a ignore 
     lambda_eff real, --/U Angstrom --/D Wavelength to optimize hole location for 
-    bluefiber integer, --/D 1 if assigned target a blue fiber; 0 otherwise
-    zoffset real, --/D Backstopping offset distance
-    xfocal real, --/D Hole/robot x-axis position in focal plane
-    yfocal real, --/D Hole/robot y-axis position in focal plane
-    specprimary smallint, --/D Objects observed multiple times will have this set to 1 for one observation only. This is usually the 'best' observation, as defined by critera listed in fieldmerge.py.
-    specboss smallint, --/D Best version of spectrum at this location
-    boss_specobj_id integer, --/D ID of spectrum location on sky
-    nspecobs smallint, --/D Number of spectral observations
+    bluefiber integer, --/D 1 if assigned target a blue fiber; 0 otherwise 
+    zoffset real, --/D Backstopping offset distance 
+    xfocal real, --/D Hole/robot x-axis position in focal plane 
+    yfocal real, --/D Hole/robot y-axis position in focal plane 
+    specprimary smallint, --/D Objects observed multiple times will have this set to 1 for one observation only. This is usually the 'best' observation, as defined by critera listed in fieldmerge.py. 
+    specboss smallint, --/D Best version of spectrum at this location 
+    boss_specobj_id integer, --/D ID of spectrum location on sky 
+    nspecobs smallint, --/D Number of spectral observations 
     calibflux_u real, --/U nanomaggy --/D Broad-band flux in SDSS-u from PSFmag 
     calibflux_g real, --/U nanomaggy --/D Broad-band flux in SDSS-g from PSFmag 
     calibflux_r real, --/U nanomaggy --/D Broad-band flux in SDSS-r from PSFmag 
     calibflux_i real, --/U nanomaggy --/D Broad-band flux in SDSS-i from PSFmag 
     calibflux_z real, --/U nanomaggy --/D Broad-band flux in SDSS-z from PSFmag 
-    calibflux_ivar_u real, --/D Inverse var flux SDSS-u from PSFmag
-    calibflux_ivar_g real, --/D Inverse var flux SDSS-g from PSFmag
-    calibflux_ivar_r real, --/D Inverse var flux SDSS-r from PSFmag
-    calibflux_ivar_i real, --/D Inverse var flux SDSS-i from PSFmag
-    calibflux_ivar_z real, --/D Inverse var flux SDSS-z from PSFmag
+    calibflux_ivar_u real, --/D Inverse var flux SDSS-u from PSFmag 
+    calibflux_ivar_g real, --/D Inverse var flux SDSS-g from PSFmag 
+    calibflux_ivar_r real, --/D Inverse var flux SDSS-r from PSFmag 
+    calibflux_ivar_i real, --/D Inverse var flux SDSS-i from PSFmag 
+    calibflux_ivar_z real, --/D Inverse var flux SDSS-z from PSFmag 
     gaia_bp real, --/U mag, Vega --/D Gaia BP magnitude 
     gaia_rp real, --/U mag, Vega --/D Gaia RP magnitude 
     gaia_g real, --/U mag, Vega --/D Gaia G magnitude 
-    firstcarton text, --/D Primary SDSS Carton for target
+    firstcarton text, --/D Primary SDSS Carton for target 
     mag_u real, --/U mag, AB --/D u-band optical magnitude 
     mag_g real, --/U mag, AB --/D g-band optical magnitude 
     mag_r real, --/U mag, AB --/D r-band optical magnitude 
     mag_i real, --/U mag, AB --/D i-band optical magnitude 
     mag_z real, --/U mag, AB --/D z-band optical magnitude 
-    plate smallint, --/D Plate ID number
-    designid smallint, --/D Design ID number
-    nexp smallint, --/D Number of Included Exposures
+    plate smallint, --/D Plate ID number 
+    designid smallint, --/D Design ID number 
+    nexp smallint, --/D Number of Included Exposures 
     exptime smallint, --/U s --/D Total Exposure time of Coadded Spectra 
-    airmass real, --/D Airmass at time of observation
-    healpix integer, --/D healpix pixel number of the RACAT and DECCAT coordinates, computed with healpix nside=128
-    healpixgrp smallint, --/D Rounded-down integer value of healpix / 1000
-    healpix_dir text, --/D Relative directory for spectra grouped by healpixel
-    mjd_final real, --/D Mean MJD of the Coadded Spectra
-    mjd_list text, --/D List of MJD of each included exposures
-    tai_list text, --/D List Tai for each exposure (at midpoint)
-    catalogid bigint, --/D SDSS-V CatalogID used in naming
-    sdssv_boss_target0 bigint, --/D bitmask for SDSS-V plate-era BOSS targeting
-    field integer, --/D SDSS FieldID (plateID for plate era data)
-    tile integer, --/D n/a ignore
-    mjd integer, --/D Modified Julian date of combined Spectra
-    fiberid integer, --/D Index of the fiber which observed the target
-    run2d text, --/D Spectro-2D reduction name
-    run1d text, --/D Spectro-1D reduction name
-    objtype text, --/D Why this object was targeted.  Note that if this field says QSO, it could be the case that this object would have been targeted as a GALAXY or any number of other categories as well. The PRIMTARGET and SECTARGET flags in the plug-map structure (in the spField file) gives this full information.
-    plug_ra double precision, --/U J2000] [degrees --/D Object RA (drilled fiber position) 
-    plug_dec double precision, --/U J2000] [degrees --/D Object DEC (drilled fiber position) 
-    class text, --/D Spectro classification: GALAXY, QSO, STAR
-    subclass text, --/D Spectro sub-classification
-    z real, --/D Redshift; incorrect for nonzero ZWARNING flag
-    z_err real, --/D z error from chi^2 min; negative is invalid fit
-    rchi2 real, --/D Reduced chi^2 for best fit
-    dof integer, --/D Degrees of freedom for best fit
-    rchi2diff real, --/D Diff in reduced chi^2 of 2 best solutions
-    tfile text, --/D Template file in $IDLSPEC2D_DIR/templates
-    npoly integer, --/D # of polynomial terms with TFILE
+    airmass real, --/D Airmass at time of observation 
+    healpix integer, --/D healpix pixel number of the RACAT and DECCAT coordinates, computed with healpix nside=128 
+    healpixgrp smallint, --/D Rounded-down integer value of healpix / 1000 
+    healpix_dir text, --/D Relative directory for spectra grouped by healpixel 
+    mjd_final real, --/D Mean MJD of the Coadded Spectra 
+    mjd_list text, --/D List of MJD of each included exposures 
+    tai_list text, --/D List Tai for each exposure (at midpoint) 
+    catalogid bigint, --/D SDSS-V CatalogID used in naming 
+    sdssv_boss_target0 bigint, --/D bitmask for SDSS-V plate-era BOSS targeting 
+    field integer, --/D SDSS FieldID (plateID for plate era data) 
+    tile integer, --/D n/a ignore 
+    mjd integer, --/D Modified Julian date of combined Spectra 
+    fiberid integer, --/D Index of the fiber which observed the target 
+    run2d text, --/D Spectro-2D reduction name 
+    run1d text, --/D Spectro-1D reduction name 
+    objtype text, --/D Why this object was targeted.  Note that if this field says QSO, it could be the case that this object would have been targeted as a GALAXY or any number of other categories as well. The PRIMTARGET and SECTARGET flags in the plug-map structure (in the spField file) gives this full information. 
+    plug_ra double precision, --/U degrees --/D Object RA (drilled fiber position) [J2000] 
+    plug_dec double precision, --/U degrees --/D Object DEC (drilled fiber position) [J2000] 
+    class text, --/D Spectro classification: GALAXY, QSO, STAR 
+    subclass text, --/D Spectro sub-classification 
+    z real, --/D Redshift; incorrect for nonzero ZWARNING flag 
+    z_err real, --/D z error from chi^2 min; negative is invalid fit 
+    rchi2 real, --/D Reduced chi^2 for best fit 
+    dof integer, --/D Degrees of freedom for best fit 
+    rchi2diff real, --/D Diff in reduced chi^2 of 2 best solutions 
+    tfile text, --/D Template file in $IDLSPEC2D_DIR/templates 
+    npoly integer, --/D # of polynomial terms with TFILE 
     vdisp real, --/U km/s --/D Velocity dispersion, only computed for galaxies 
     vdisp_err real, --/U km/s --/D Error in VDISP; negative for invalid fit 
-    vdispz real, --/D Redshift for best-fit velocity dispersion
-    vdispz_err real, --/D Error in VDISPZ
-    vdispchi2 real, --/D Chi^2 for best-fit velocity dispersion
-    vdispnpix real, --/D Num of pixels overlapping VDISP fit templates
-    vdispdof integer, --/D Degrees of freedom for best-fit velocity dispersion, equal to VDISPNPIX minus the number of templates minus the number of polynomial terms minus 1 (the last 1 is for the velocity dispersion)
+    vdispz real, --/D Redshift for best-fit velocity dispersion 
+    vdispz_err real, --/D Error in VDISPZ 
+    vdispchi2 real, --/D Chi^2 for best-fit velocity dispersion 
+    vdispnpix real, --/D Num of pixels overlapping VDISP fit templates 
+    vdispdof integer, --/D Degrees of freedom for best-fit velocity dispersion, equal to VDISPNPIX minus the number of templates minus the number of polynomial terms minus 1 (the last 1 is for the velocity dispersion) 
     wavemin real, --/U AA --/D Minimum observed (vacuum) wavelength for target 
     wavemax real, --/U AA --/D Maximum observed (vacuum) wavelength for target 
     wcoverage real, --/U log10(AA) --/D Amount of wavelength coverage in log-10(Angs) 
-    zwarning integer, --/D A flag for bad z fits in place of CLASS=UNKNOWN
-    sn_median_u real, --/D Median S/N for all good pixels in SDSS-u
-    sn_median_g real, --/D Median S/N for all good pixels in SDSS-g
-    sn_median_r real, --/D Median S/N for all good pixels in SDSS-r
-    sn_median_i real, --/D Median S/N for all good pixels in SDSS-i
-    sn_median_z real, --/D Median S/N for all good pixels in SDSS-z
-    sn_median_all real, --/D Median S/N for all good pixels in all filters
-    chi68p real, --/D 68% of abs(chi) of synthetic to actual spectrum
+    zwarning integer, --/D A flag for bad z fits in place of CLASS=UNKNOWN 
+    sn_median_u real, --/D Median S/N for all good pixels in SDSS-u 
+    sn_median_g real, --/D Median S/N for all good pixels in SDSS-g 
+    sn_median_r real, --/D Median S/N for all good pixels in SDSS-r 
+    sn_median_i real, --/D Median S/N for all good pixels in SDSS-i 
+    sn_median_z real, --/D Median S/N for all good pixels in SDSS-z 
+    sn_median_all real, --/D Median S/N for all good pixels in all filters 
+    chi68p real, --/D 68% of abs(chi) of synthetic to actual spectrum 
     spectroflux_u real, --/U nanomaggy --/D Spectrum projected onto SDSS-u filter 
     spectroflux_g real, --/U nanomaggy --/D Spectrum projected onto SDSS-g filter 
     spectroflux_r real, --/U nanomaggy --/D Spectrum projected onto SDSS-r filter 
@@ -6922,32 +6922,32 @@ CREATE TABLE minidb_dr19.dr19_sdssv_boss_spall (
     spectroskyflux_r real, --/U nanomaggy --/D Sky spectrum projected onto SDSS-r filter 
     spectroskyflux_i real, --/U nanomaggy --/D Sky spectrum projected onto SDSS-i filter 
     spectroskyflux_z real, --/U nanomaggy --/D Sky spectrum projected onto SDSS-z filter 
-    anyandmask integer, --/D For each bit, records whether any pixel in the spectrum has that bit set in its ANDMASK
-    anyormask integer, --/D For each bit, records whether any pixel in the spectrum has that bit set in its ORMASK
-    spec1_g real, --/D (S/N)^2 at g=20.20 for spectrograph #1 (same value for 500 fibers)
-    spec1_r real, --/D (S/N)^2 at r=20.25 for spectrograph #1 (same value for 500 fibers)
-    spec1_i real, --/D (S/N)^2 at i=19.90 for spectrograph #1 (same value for 500 fibers)
-    elodie_filename text, --/D File name for best-fit Elodie star
-    elodie_object text, --/D Star name (mostly Henry Draper names)
-    elodie_sptype text, --/D Spectral type
-    elodie_bv real, --/D (B-V) color
-    elodie_teff real, --/D Effective temperature
-    elodie_logg real, --/D Log10(gravity)
+    anyandmask integer, --/D For each bit, records whether any pixel in the spectrum has that bit set in its ANDMASK 
+    anyormask integer, --/D For each bit, records whether any pixel in the spectrum has that bit set in its ORMASK 
+    spec1_g real, --/D (S/N)^2 at g=20.20 for spectrograph #1 (same value for 500 fibers) 
+    spec1_r real, --/D (S/N)^2 at r=20.25 for spectrograph #1 (same value for 500 fibers) 
+    spec1_i real, --/D (S/N)^2 at i=19.90 for spectrograph #1 (same value for 500 fibers) 
+    elodie_filename text, --/D File name for best-fit Elodie star 
+    elodie_object text, --/D Star name (mostly Henry Draper names) 
+    elodie_sptype text, --/D Spectral type 
+    elodie_bv real, --/D (B-V) color 
+    elodie_teff real, --/D Effective temperature 
+    elodie_logg real, --/D Log10(gravity) 
     elodie_feh real, --/U Fe/H
-    elodie_z real, --/D redshift
-    elodie_z_err real, --/D redshift error; negative for invalid fit
-    elodie_z_modelerr real, --/D The standard deviation in redshift amongst the 12 best-fit stars
-    elodie_rchi2 real, --/D Reduced chi^2
-    elodie_dof integer, --/D Degrees of freedom for fit
-    z_noqso real, --/D Redshift of the best-fit non-QSO model (recommended for CMASS and LOZ)
-    z_err_noqso real, --/D Formal one-sigma error on Z_NOQSO (recommended for CMASS and LOZ)
-    znum_noqso integer, --/D Best fit z/class index excluding QSO; 1-indexed (recommended for CMASS and LOZ)
-    zwarning_noqso integer, --/D Redshift warning flag for Z_NOQSO (recommended for CMASS and LOZ)
-    class_noqso text, --/D Spectro class of best-fit non-QSO model (recommended for CMASS and LOZ)
-    subclass_noqso text, --/D Spectro sub-class of best-fit non-QSO model (recommended for CMASS and LOZ)
-    rchi2diff_noqso real, --/D Reduced chi^2 diff to next-best non-QSO model (recommended for CMASS and LOZ)
-    specobjid bigint, --/D Unique ID based on Field, MJD, SDSSID, RUN2D, COADD type
-    pkey bigint NOT NULL --/D primary key for table entry
+    elodie_z real, --/D redshift 
+    elodie_z_err real, --/D redshift error; negative for invalid fit 
+    elodie_z_modelerr real, --/D The standard deviation in redshift amongst the 12 best-fit stars 
+    elodie_rchi2 real, --/D Reduced chi^2 
+    elodie_dof integer, --/D Degrees of freedom for fit 
+    z_noqso real, --/D Redshift of the best-fit non-QSO model (recommended for CMASS and LOZ) 
+    z_err_noqso real, --/D Formal one-sigma error on Z_NOQSO (recommended for CMASS and LOZ) 
+    znum_noqso integer, --/D Best fit z/class index excluding QSO; 1-indexed (recommended for CMASS and LOZ) 
+    zwarning_noqso integer, --/D Redshift warning flag for Z_NOQSO (recommended for CMASS and LOZ) 
+    class_noqso text, --/D Spectro class of best-fit non-QSO model (recommended for CMASS and LOZ) 
+    subclass_noqso text, --/D Spectro sub-class of best-fit non-QSO model (recommended for CMASS and LOZ) 
+    rchi2diff_noqso real, --/D Reduced chi^2 diff to next-best non-QSO model (recommended for CMASS and LOZ) 
+    specobjid bigint, --/D Unique ID based on Field, MJD, SDSSID, RUN2D, COADD type 
+    pkey bigint NOT NULL --/D primary key for table entry 
 );
 
 
@@ -6972,155 +6972,155 @@ CREATE TABLE minidb_dr19.dr19_sdssv_plateholes (
 --/T Mostly derived from: https://data.sdss.org/datamodel/files/PLATELIST_DIR/designs
 --/T /DESIGNID6XX/DESIGNID6/plateDesign.html
 ----------------------------------------------------------------------
-    holetype text, --/D type of hole to be drilled; one of SDSS, BOSS, MARVELS, APOGEE, GUIDE, CENTER, TRAP, or ALIGNMENT; this really refers to the instrument to be used, so for example SEGUE targets should be either SDSS or BOSS
-    targettype text, --/D type of target; one of SCIENCE, STANDARD, or SKY (if holetype is BOSS, SDSS, MARVELS or APOGEE); NA if not holetype is not one of the instruments (GUIDE, CENTER, TRAP, ALIGNMENT)
-    sourcetype text, --/D indicate the nature of the source, one of STAR, QSO, GALAXY, or NA (if targettype is NA)
-    target_ra double precision, --/D right ascension, in J2000 deg
-    target_dec double precision, --/D declination, in J2000 deg
-    iplateinput integer, --/D integer indicating which plateInput file from the list in the plateDefinition file this came from (1-indexed); -1 or 0 if the hole wasn't from a plateInput file.
-    pointing integer, --/D which pointing (1-indexed) this target is associated with; note this means which pointing among the ones that this plate is designed for, so if this a single pointing plate but uses the B-side MARVELS fibers, this will be "1", not "2"
-    offset_integer integer, --/D which offset this target is associated with; 0 means it is not associated with an offset, it is associated with the primary pointing
-    fiberid integer, --/D what fiber on the appropriate instrument (as listed in holetype) is assigned to this target (-9999 for none)
-    block integer, --/D which fiber block that fiber is associated with (-9999 for none)
-    iguide integer, --/D for guide holes, which guide fiber it is assigned to (from 1 to 11) (-9999 for non guide holes)
-    xf_default real, --/D X position of hole in focal plane, given a default set of observing parameters (hour angle of zero, temperature of 5 deg C), in units of mm; for position angle of zero (which we always use), +X is +RA
-    yf_default real, --/D Y position of hole in focal plane, given a default set of observing parameters (hour angle of zero, temperature of 5 deg C), in units of mm; for position angle of zero (which we always use), +Y is +Dec
-    lambda_eff real, --/D wavelength to optimize hole location for, in Angstroms (platedesign will default to 5400 if not set)
-    zoffset real, --/D backstopping offset distance, in microns (platedesign will default to 0 if not set)
-    bluefiber integer, --/D 1 if the BOSS instrument is meant to assign this target a "blue" fiber; 0 otherwise
-    chunk integer, --/D BOSS chunk number (0 if not appropriate)
-    ifinal integer, --/D 0-indexed position in BOSS final tiling file (-1 if not appropriate)
-    origfile text, --/D for BOSS targets, name of file that target originated within (for BOSS targets, one of the bosstarget files, for ancillary targets, a file within the directory.
-    fileindx integer, --/D for BOSS targets, 0-indexed position within ORIGFILE (-1 if not appropriate)
-    diameter real, --/D diameter of hole to be drilled, in mm
-    buffer real, --/D buffer to leave around hole edge for conflicts in mm
-    priority integer, --/D priority number assigned by the plateInput file; lower numbers indicate higher priority
-    assigned integer, --/D 1 if this was a target assigned to a fiber, 0 otherwise; clearly for all targets this will be 1 for plateDesign files, but this will not be the case for plateInput-output files, which also have this same format.
-    conflicted integer, --/D 1 if this was a target not assigned because of a collision, 0 otherwise; clearly for all targets this will be 0 for plateDesign files, but this will not be the case for plateInput-output files, which also have this same format.
-    ranout integer, --/D 1 if this was a target not assigned because we ran out of fibers, 0 otherwise; clearly for all targets this will be 0 for plateDesign files, but this will not be the case for plateInput-output files, which also have this same format.
-    outside integer, --/D 1 if this was a target not assigned because it was too fare from the plate center, 0 otherwise; clearly for all targets this will be 0 for plateDesign files, but this will not be the case for plateInput-output files, which also have this same format.
-    mangaid text, --/D MaNGA identifier
-    ifudesign integer, --/D intended IFU identified for this object
-    ifudesignsize integer, --/D number of fibers in intended IFU identified for this object
-    bundle_size integer, --/D obsolete; used for number of fibers in bundle for MaNGA prototype cartridge, December 2012
-    fiber_size real, --/D obsolete; used for fiber size (in arcsec) for MaNGA prototype cartridge, December 2012
-    tmass_j real, --/D 2MASS Point Source Catalog J-band magnitude; Vega-relative; not Galactic extinction corrected; if available
-    tmass_h real, --/D 2MASS Point Source Catalog H-band magnitude; Vega-relative; not Galactic extinction corrected, if available
-    tmass_k real, --/D 2MASS Point Source Catalog K-band magnitude; Vega-relative; not Galactic extinction corrected, if available
-    gsc_vmag real, --/D V mag from GSC if available
-    tyc_bmag real, --/D B mag from Tycho2 if available
-    tyc_vmag real, --/D V mag from Tycho2 if available
-    mfd_mag_u real, --/D MARVELS magnitudes for stars in the PRE_SELECTION plates; VT, BT, V, J, H, K
-    mfd_mag_g real, --/D MARVELS magnitudes for stars in the PRE_SELECTION plates; VT, BT, V, J, H, K
-    mfd_mag_r real, --/D MARVELS magnitudes for stars in the PRE_SELECTION plates; VT, BT, V, J, H, K
-    mfd_mag_i real, --/D MARVELS magnitudes for stars in the PRE_SELECTION plates; VT, BT, V, J, H, K
-    mfd_mag_z real, --/D MARVELS magnitudes for stars in the PRE_SELECTION plates; VT, BT, V, J, H, K
-    usnob_mag_u real, --/D USNO-B magnitudes if available
-    usnob_mag_g real, --/D USNO-B magnitudes if available
-    usnob_mag_r real, --/D USNO-B magnitudes if available
-    usnob_mag_i real, --/D USNO-B magnitudes if available
-    usnob_mag_z real, --/D USNO-B magnitudes if available
-    source_id bigint, --/D Gaia source_id, if available
-    phot_g_mean_mag real, --/D Gaia G mag if available
-    sp_param_source text, --/D source for stellar parameters for MARVELS stars
-    marvels_target1 integer, --/D bitmask for MARVELS targeting flags (see the MARVELS target flag descriptions.
-    marvels_target2 integer, --/D bitmask for MARVELS targeting flags (see the MARVELS target flag descriptions.
-    boss_target1 bigint, --/D bitmask for BOSS targeting flags (see the BOSS target flag descriptions.
-    boss_target2 bigint, --/D Always set to zero (placeholder for BOSS target flags never used).
-    ancillary_target1 bigint, --/D bitmask for BOSS ancillary targeting flags (see the BOSS target flag descriptions.
-    ancillary_target2 bigint, --/D bitmask for BOSS ancillary targeting flags (see the BOSS target flag descriptions.
-    segue2_target1 integer, --/D bitmask for SEGUE-2 targeting flags (see the SEGUE-2 target flag descriptions.
-    segue2_target2 integer, --/D bitmask for SEGUE-2 targeting flags (see the SEGUE-2 target flag descriptions.
-    segueb_target1 integer, --/D bitmask for SEGUE-bright targeting flags (see the SEGUE-bright target flag descriptions.
-    segueb_target2 integer, --/D bitmask for SEGUE-bright targeting flags (see the SEGUE-bright target flag descriptions.
-    apogee_target1 integer, --/D bitmask for APOGEE targeting flags (see the APOGEE target flag descriptions.
-    apogee_target2 integer, --/D bitmask for APOGEE targeting flags (see the APOGEE target flag descriptions.
-    manga_target1 integer, --/D bitmask for MaNGA targeting flags. Used for galaxy targets.
-    manga_target2 integer, --/D bitmask for MaNGA targeting flags. Used for stars and sky positions.
-    manga_target3 integer, --/D bitmask for MaNGA targeting flags. Used for ancillary targets.
-    eboss_target0 bigint, --/D bitmask for SEQUels targeting
-    eboss_target1 bigint, --/D bitmask for eBOSS targeting
-    eboss_target2 bigint, --/D bitmask for eBOSS targeting
-    eboss_target_id bigint, --/D n/a ignore
-    thing_id_targeting integer, --/D n/a ignore
-    objid_targeting bigint, --/D n/a ignore
-    apogee2_target1 integer, --/D bitmask for APOGEE2 targeting flags (see the APOGEE2 target flag descriptions.
-    apogee2_target2 integer, --/D bitmask for APOGEE2 targeting flags (see the APOGEE2 target flag descriptions.
-    apogee2_target3 integer, --/D bitmask for APOGEE2 targeting flags (see the APOGEE2 target flag descriptions.
-    run integer, --/D SDSS imaging run, for SDSS imaging based targets
-    rerun text, --/D SDSS imaging rerun, for SDSS imaging based targets
-    camcol integer, --/D SDSS imaging camcol, for SDSS imaging based targets
-    field integer, --/D SDSS imaging field, for SDSS imaging based targets
-    id integer, --/D SDSS imaging id, for SDSS imaging based targets
-    psfflux_u real, --/D PSF flux in nanomaggies, for SDSS imaging based targets
-    psfflux_g real, --/D PSF flux in nanomaggies, for SDSS imaging based targets
-    psfflux_r real, --/D PSF flux in nanomaggies, for SDSS imaging based targets
-    psfflux_i real, --/D PSF flux in nanomaggies, for SDSS imaging based targets
-    psfflux_z real, --/D PSF flux in nanomaggies, for SDSS imaging based targets
-    psfflux_ivar_u real, --/D inverse variance of PSF flux in nanomaggies, for SDSS imaging based targets
-    psfflux_ivar_g real, --/D inverse variance of PSF flux in nanomaggies, for SDSS imaging based targets
-    psfflux_ivar_r real, --/D inverse variance of PSF flux in nanomaggies, for SDSS imaging based targets
-    psfflux_ivar_i real, --/D inverse variance of PSF flux in nanomaggies, for SDSS imaging based targets
-    psfflux_ivar_z real, --/D inverse variance of PSF flux in nanomaggies, for SDSS imaging based targets
-    fiberflux_u real, --/D 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiberflux_g real, --/D 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiberflux_r real, --/D 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiberflux_i real, --/D 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiberflux_z real, --/D 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiberflux_ivar_u real, --/D inverse variance of 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiberflux_ivar_g real, --/D inverse variance of 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiberflux_ivar_r real, --/D inverse variance of 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiberflux_ivar_i real, --/D inverse variance of 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiberflux_ivar_z real, --/D inverse variance of 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiber2flux_u real, --/D 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiber2flux_g real, --/D 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiber2flux_r real, --/D 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiber2flux_i real, --/D 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiber2flux_z real, --/D 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiber2flux_ivar_u real, --/D inverse variance of 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiber2flux_ivar_g real, --/D inverse variance of 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiber2flux_ivar_r real, --/D inverse variance of 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiber2flux_ivar_i real, --/D inverse variance of 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    fiber2flux_ivar_z real, --/D inverse variance of 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets
-    psfmag_u real, --/D PSF magnitude, for SDSS imaging based targets
-    psfmag_g real, --/D PSF magnitude, for SDSS imaging based targets
-    psfmag_r real, --/D PSF magnitude, for SDSS imaging based targets
-    psfmag_i real, --/D PSF magnitude, for SDSS imaging based targets
-    psfmag_z real, --/D PSF magnitude, for SDSS imaging based targets
-    fibermag_u real, --/D 3 arcsec fiber magnitude, for SDSS imaging based targets
-    fibermag_g real, --/D 3 arcsec fiber magnitude, for SDSS imaging based targets
-    fibermag_r real, --/D 3 arcsec fiber magnitude, for SDSS imaging based targets
-    fibermag_i real, --/D 3 arcsec fiber magnitude, for SDSS imaging based targets
-    fibermag_z real, --/D 3 arcsec fiber magnitude, for SDSS imaging based targets
-    fiber2mag_u real, --/D 2 arcsec fiber magnitude, for SDSS imaging based targets
-    fiber2mag_g real, --/D 2 arcsec fiber magnitude, for SDSS imaging based targets
-    fiber2mag_r real, --/D 2 arcsec fiber magnitude, for SDSS imaging based targets
-    fiber2mag_i real, --/D 2 arcsec fiber magnitude, for SDSS imaging based targets
-    fiber2mag_z real, --/D 2 arcsec fiber magnitude, for SDSS imaging based targets
-    mag_u real, --/D magnitude to use for the SOS software as the best known fiber magnitude for the object
-    mag_g real, --/D magnitude to use for the SOS software as the best known fiber magnitude for the object
-    mag_r real, --/D magnitude to use for the SOS software as the best known fiber magnitude for the object
-    mag_i real, --/D magnitude to use for the SOS software as the best known fiber magnitude for the object
-    mag_z real, --/D magnitude to use for the SOS software as the best known fiber magnitude for the object
-    epoch real, --/D epoch for which RA and DEC are most appropriate in years AD (default 2011)
-    pmra real, --/D proper motion in RA direction in milliarcsec/yr
-    pmdec real, --/D proper motion in Dec direction in milliarcsec/yr
-    targetids text, --/D free-form, white-space separated list of identifiers
-    ifuid integer, --/D n/a ignore
-    catalogid bigint, --/D SDSS-V catalogid associated with this target
-    gaia_bp real, --/D Gaia BP magnitude (Vega), if available
-    gaia_rp real, --/D Gaia RP magnitude (Vega), if available
-    gaia_g real, --/D Gaia G magnitude (Vega), if available
-    tmass_id text, --/D 2MASS identification, if available
-    sdssv_apogee_target0 integer, --/D bitmask for SDSS-V plate-era APOGEE targeting
-    sdssv_boss_target0 bigint, --/D bitmask for SDSS-V plate-era BOSS targeting
-    gri_gaia_transform integer, --/D n/a ignore
-    firstcarton text, --/D name of the SDSS-V carton which was the primary reason this target was assigned a fiber
-    xfocal double precision, --/D final X position in the focal plane of the hole, in mm; for position angle of zero (which we always use), +X is +RA
-    yfocal double precision, --/D final Y position in the focal plane of the hole, in mm; for position angle of zero (which we always use), +Y is +Dec
-    yanny_uid integer, --/D internal integer identifier for the platelist file from which this inforation was extracted
-    yanny_filename text, --/D filename from which this information was extracted
-    pkey bigint NOT NULL --/D primary key for this table entry
+    holetype text, --/D type of hole to be drilled; one of SDSS, BOSS, MARVELS, APOGEE, GUIDE, CENTER, TRAP, or ALIGNMENT; this really refers to the instrument to be used, so for example SEGUE targets should be either SDSS or BOSS 
+    targettype text, --/D type of target; one of SCIENCE, STANDARD, or SKY (if holetype is BOSS, SDSS, MARVELS or APOGEE); NA if not holetype is not one of the instruments (GUIDE, CENTER, TRAP, ALIGNMENT) 
+    sourcetype text, --/D indicate the nature of the source, one of STAR, QSO, GALAXY, or NA (if targettype is NA) 
+    target_ra double precision, --/D right ascension, in J2000 deg 
+    target_dec double precision, --/D declination, in J2000 deg 
+    iplateinput integer, --/D integer indicating which plateInput file from the list in the plateDefinition file this came from (1-indexed); -1 or 0 if the hole wasn't from a plateInput file. 
+    pointing integer, --/D which pointing (1-indexed) this target is associated with; note this means which pointing among the ones that this plate is designed for, so if this a single pointing plate but uses the B-side MARVELS fibers, this will be "1", not "2" 
+    offset_integer integer, --/D which offset this target is associated with; 0 means it is not associated with an offset, it is associated with the primary pointing 
+    fiberid integer, --/D what fiber on the appropriate instrument (as listed in holetype) is assigned to this target (-9999 for none) 
+    block integer, --/D which fiber block that fiber is associated with (-9999 for none) 
+    iguide integer, --/D for guide holes, which guide fiber it is assigned to (from 1 to 11) (-9999 for non guide holes) 
+    xf_default real, --/D X position of hole in focal plane, given a default set of observing parameters (hour angle of zero, temperature of 5 deg C), in units of mm; for position angle of zero (which we always use), +X is +RA 
+    yf_default real, --/D Y position of hole in focal plane, given a default set of observing parameters (hour angle of zero, temperature of 5 deg C), in units of mm; for position angle of zero (which we always use), +Y is +Dec 
+    lambda_eff real, --/D wavelength to optimize hole location for, in Angstroms (platedesign will default to 5400 if not set) 
+    zoffset real, --/D backstopping offset distance, in microns (platedesign will default to 0 if not set) 
+    bluefiber integer, --/D 1 if the BOSS instrument is meant to assign this target a "blue" fiber; 0 otherwise 
+    chunk integer, --/D BOSS chunk number (0 if not appropriate) 
+    ifinal integer, --/D 0-indexed position in BOSS final tiling file (-1 if not appropriate) 
+    origfile text, --/D for BOSS targets, name of file that target originated within (for BOSS targets, one of the bosstarget files, for ancillary targets, a file within the directory. 
+    fileindx integer, --/D for BOSS targets, 0-indexed position within ORIGFILE (-1 if not appropriate) 
+    diameter real, --/D diameter of hole to be drilled, in mm 
+    buffer real, --/D buffer to leave around hole edge for conflicts in mm 
+    priority integer, --/D priority number assigned by the plateInput file; lower numbers indicate higher priority 
+    assigned integer, --/D 1 if this was a target assigned to a fiber, 0 otherwise; clearly for all targets this will be 1 for plateDesign files, but this will not be the case for plateInput-output files, which also have this same format. 
+    conflicted integer, --/D 1 if this was a target not assigned because of a collision, 0 otherwise; clearly for all targets this will be 0 for plateDesign files, but this will not be the case for plateInput-output files, which also have this same format. 
+    ranout integer, --/D 1 if this was a target not assigned because we ran out of fibers, 0 otherwise; clearly for all targets this will be 0 for plateDesign files, but this will not be the case for plateInput-output files, which also have this same format. 
+    outside integer, --/D 1 if this was a target not assigned because it was too fare from the plate center, 0 otherwise; clearly for all targets this will be 0 for plateDesign files, but this will not be the case for plateInput-output files, which also have this same format. 
+    mangaid text, --/D MaNGA identifier 
+    ifudesign integer, --/D intended IFU identified for this object 
+    ifudesignsize integer, --/D number of fibers in intended IFU identified for this object 
+    bundle_size integer, --/D obsolete; used for number of fibers in bundle for MaNGA prototype cartridge, December 2012 
+    fiber_size real, --/D obsolete; used for fiber size (in arcsec) for MaNGA prototype cartridge, December 2012 
+    tmass_j real, --/D 2MASS Point Source Catalog J-band magnitude; Vega-relative; not Galactic extinction corrected; if available 
+    tmass_h real, --/D 2MASS Point Source Catalog H-band magnitude; Vega-relative; not Galactic extinction corrected, if available 
+    tmass_k real, --/D 2MASS Point Source Catalog K-band magnitude; Vega-relative; not Galactic extinction corrected, if available 
+    gsc_vmag real, --/D V mag from GSC if available 
+    tyc_bmag real, --/D B mag from Tycho2 if available 
+    tyc_vmag real, --/D V mag from Tycho2 if available 
+    mfd_mag_u real, --/D MARVELS magnitudes for stars in the PRE_SELECTION plates; VT, BT, V, J, H, K 
+    mfd_mag_g real, --/D MARVELS magnitudes for stars in the PRE_SELECTION plates; VT, BT, V, J, H, K 
+    mfd_mag_r real, --/D MARVELS magnitudes for stars in the PRE_SELECTION plates; VT, BT, V, J, H, K 
+    mfd_mag_i real, --/D MARVELS magnitudes for stars in the PRE_SELECTION plates; VT, BT, V, J, H, K 
+    mfd_mag_z real, --/D MARVELS magnitudes for stars in the PRE_SELECTION plates; VT, BT, V, J, H, K 
+    usnob_mag_u real, --/D USNO-B magnitudes if available 
+    usnob_mag_g real, --/D USNO-B magnitudes if available 
+    usnob_mag_r real, --/D USNO-B magnitudes if available 
+    usnob_mag_i real, --/D USNO-B magnitudes if available 
+    usnob_mag_z real, --/D USNO-B magnitudes if available 
+    source_id bigint, --/D Gaia source_id, if available 
+    phot_g_mean_mag real, --/D Gaia G mag if available 
+    sp_param_source text, --/D source for stellar parameters for MARVELS stars 
+    marvels_target1 integer, --/D bitmask for MARVELS targeting flags (see the MARVELS target flag descriptions. 
+    marvels_target2 integer, --/D bitmask for MARVELS targeting flags (see the MARVELS target flag descriptions. 
+    boss_target1 bigint, --/D bitmask for BOSS targeting flags (see the BOSS target flag descriptions. 
+    boss_target2 bigint, --/D Always set to zero (placeholder for BOSS target flags never used). 
+    ancillary_target1 bigint, --/D bitmask for BOSS ancillary targeting flags (see the BOSS target flag descriptions. 
+    ancillary_target2 bigint, --/D bitmask for BOSS ancillary targeting flags (see the BOSS target flag descriptions. 
+    segue2_target1 integer, --/D bitmask for SEGUE-2 targeting flags (see the SEGUE-2 target flag descriptions. 
+    segue2_target2 integer, --/D bitmask for SEGUE-2 targeting flags (see the SEGUE-2 target flag descriptions. 
+    segueb_target1 integer, --/D bitmask for SEGUE-bright targeting flags (see the SEGUE-bright target flag descriptions. 
+    segueb_target2 integer, --/D bitmask for SEGUE-bright targeting flags (see the SEGUE-bright target flag descriptions. 
+    apogee_target1 integer, --/D bitmask for APOGEE targeting flags (see the APOGEE target flag descriptions. 
+    apogee_target2 integer, --/D bitmask for APOGEE targeting flags (see the APOGEE target flag descriptions. 
+    manga_target1 integer, --/D bitmask for MaNGA targeting flags. Used for galaxy targets. 
+    manga_target2 integer, --/D bitmask for MaNGA targeting flags. Used for stars and sky positions. 
+    manga_target3 integer, --/D bitmask for MaNGA targeting flags. Used for ancillary targets. 
+    eboss_target0 bigint, --/D bitmask for SEQUels targeting 
+    eboss_target1 bigint, --/D bitmask for eBOSS targeting 
+    eboss_target2 bigint, --/D bitmask for eBOSS targeting 
+    eboss_target_id bigint, --/D n/a ignore 
+    thing_id_targeting integer, --/D n/a ignore 
+    objid_targeting bigint, --/D n/a ignore 
+    apogee2_target1 integer, --/D bitmask for APOGEE2 targeting flags (see the APOGEE2 target flag descriptions. 
+    apogee2_target2 integer, --/D bitmask for APOGEE2 targeting flags (see the APOGEE2 target flag descriptions. 
+    apogee2_target3 integer, --/D bitmask for APOGEE2 targeting flags (see the APOGEE2 target flag descriptions. 
+    run integer, --/D SDSS imaging run, for SDSS imaging based targets 
+    rerun text, --/D SDSS imaging rerun, for SDSS imaging based targets 
+    camcol integer, --/D SDSS imaging camcol, for SDSS imaging based targets 
+    field integer, --/D SDSS imaging field, for SDSS imaging based targets 
+    id integer, --/D SDSS imaging id, for SDSS imaging based targets 
+    psfflux_u real, --/D PSF flux in nanomaggies, for SDSS imaging based targets 
+    psfflux_g real, --/D PSF flux in nanomaggies, for SDSS imaging based targets 
+    psfflux_r real, --/D PSF flux in nanomaggies, for SDSS imaging based targets 
+    psfflux_i real, --/D PSF flux in nanomaggies, for SDSS imaging based targets 
+    psfflux_z real, --/D PSF flux in nanomaggies, for SDSS imaging based targets 
+    psfflux_ivar_u real, --/D inverse variance of PSF flux in nanomaggies, for SDSS imaging based targets 
+    psfflux_ivar_g real, --/D inverse variance of PSF flux in nanomaggies, for SDSS imaging based targets 
+    psfflux_ivar_r real, --/D inverse variance of PSF flux in nanomaggies, for SDSS imaging based targets 
+    psfflux_ivar_i real, --/D inverse variance of PSF flux in nanomaggies, for SDSS imaging based targets 
+    psfflux_ivar_z real, --/D inverse variance of PSF flux in nanomaggies, for SDSS imaging based targets 
+    fiberflux_u real, --/D 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiberflux_g real, --/D 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiberflux_r real, --/D 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiberflux_i real, --/D 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiberflux_z real, --/D 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiberflux_ivar_u real, --/D inverse variance of 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiberflux_ivar_g real, --/D inverse variance of 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiberflux_ivar_r real, --/D inverse variance of 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiberflux_ivar_i real, --/D inverse variance of 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiberflux_ivar_z real, --/D inverse variance of 3 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiber2flux_u real, --/D 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiber2flux_g real, --/D 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiber2flux_r real, --/D 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiber2flux_i real, --/D 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiber2flux_z real, --/D 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiber2flux_ivar_u real, --/D inverse variance of 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiber2flux_ivar_g real, --/D inverse variance of 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiber2flux_ivar_r real, --/D inverse variance of 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiber2flux_ivar_i real, --/D inverse variance of 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    fiber2flux_ivar_z real, --/D inverse variance of 2 arcsec fiber flux in nanomaggies, for SDSS imaging based targets 
+    psfmag_u real, --/D PSF magnitude, for SDSS imaging based targets 
+    psfmag_g real, --/D PSF magnitude, for SDSS imaging based targets 
+    psfmag_r real, --/D PSF magnitude, for SDSS imaging based targets 
+    psfmag_i real, --/D PSF magnitude, for SDSS imaging based targets 
+    psfmag_z real, --/D PSF magnitude, for SDSS imaging based targets 
+    fibermag_u real, --/D 3 arcsec fiber magnitude, for SDSS imaging based targets 
+    fibermag_g real, --/D 3 arcsec fiber magnitude, for SDSS imaging based targets 
+    fibermag_r real, --/D 3 arcsec fiber magnitude, for SDSS imaging based targets 
+    fibermag_i real, --/D 3 arcsec fiber magnitude, for SDSS imaging based targets 
+    fibermag_z real, --/D 3 arcsec fiber magnitude, for SDSS imaging based targets 
+    fiber2mag_u real, --/D 2 arcsec fiber magnitude, for SDSS imaging based targets 
+    fiber2mag_g real, --/D 2 arcsec fiber magnitude, for SDSS imaging based targets 
+    fiber2mag_r real, --/D 2 arcsec fiber magnitude, for SDSS imaging based targets 
+    fiber2mag_i real, --/D 2 arcsec fiber magnitude, for SDSS imaging based targets 
+    fiber2mag_z real, --/D 2 arcsec fiber magnitude, for SDSS imaging based targets 
+    mag_u real, --/D magnitude to use for the SOS software as the best known fiber magnitude for the object 
+    mag_g real, --/D magnitude to use for the SOS software as the best known fiber magnitude for the object 
+    mag_r real, --/D magnitude to use for the SOS software as the best known fiber magnitude for the object 
+    mag_i real, --/D magnitude to use for the SOS software as the best known fiber magnitude for the object 
+    mag_z real, --/D magnitude to use for the SOS software as the best known fiber magnitude for the object 
+    epoch real, --/D epoch for which RA and DEC are most appropriate in years AD (default 2011) 
+    pmra real, --/D proper motion in RA direction in milliarcsec/yr 
+    pmdec real, --/D proper motion in Dec direction in milliarcsec/yr 
+    targetids text, --/D free-form, white-space separated list of identifiers 
+    ifuid integer, --/D n/a ignore 
+    catalogid bigint, --/D SDSS-V catalogid associated with this target 
+    gaia_bp real, --/D Gaia BP magnitude (Vega), if available 
+    gaia_rp real, --/D Gaia RP magnitude (Vega), if available 
+    gaia_g real, --/D Gaia G magnitude (Vega), if available 
+    tmass_id text, --/D 2MASS identification, if available 
+    sdssv_apogee_target0 integer, --/D bitmask for SDSS-V plate-era APOGEE targeting 
+    sdssv_boss_target0 bigint, --/D bitmask for SDSS-V plate-era BOSS targeting 
+    gri_gaia_transform integer, --/D n/a ignore 
+    firstcarton text, --/D name of the SDSS-V carton which was the primary reason this target was assigned a fiber 
+    xfocal double precision, --/D final X position in the focal plane of the hole, in mm; for position angle of zero (which we always use), +X is +RA 
+    yfocal double precision, --/D final Y position in the focal plane of the hole, in mm; for position angle of zero (which we always use), +Y is +Dec 
+    yanny_uid integer, --/D internal integer identifier for the platelist file from which this inforation was extracted 
+    yanny_filename text, --/D filename from which this information was extracted 
+    pkey bigint NOT NULL --/D primary key for this table entry 
 );
 
 
@@ -7147,119 +7147,119 @@ CREATE TABLE minidb_dr19.dr19_sdssv_plateholes_meta (
 --/T Mostly derived from: https://data.sdss.org/datamodel/files/PLATELIST_DIR/plates/
 --/T PLATEID6XX/PLATEID6/plateHoles.html
 ----------------------------------------------------------------------
-    plateid integer, --/D plate ID number
-    ha real, --/D the hour angle for which each pointing is designed (negative = rising, positive = setting, given in degrees)
-    ha_observable_min real, --/D the minimum observable hour angle to guarantee no hole offsets due to refraction greater than value given by MAX_OFF_FIBER_FOR_HA header keyword in plateDefaults file (negative = rising, positive = setting, given in degrees)
-    ha_observable_max real, --/D the minimum observable hour angle to guarantee no hole offsets due to refraction greater than value given by MAX_OFF_FIBER_FOR_HA header keyword in plateDefaults file (negative = rising, positive = setting, given in degrees)
-    programname text, --/D The scientific program to which this plate belongs
-    temp real, --/D temperature of design (deg C)
-    design_platescale_alt real, --/D effective plate scale of the design (in altitude direction, mm per deg)
-    design_platescale_az real, --/D effective plate scale of the design (in azimuth direction, mm per deg)
-    design_parallactic_angle real, --/D parallactic angle (deg E of N)
-    guider_coeff_0 real, --/D placeholders for guider coefficients, unused (N from 0 to 9)
-    guider_coeff_1 real, --/D placeholders for guider coefficients, unused (N from 0 to 9)
-    guider_coeff_2 real, --/D placeholders for guider coefficients, unused (N from 0 to 9)
-    guider_coeff_3 real, --/D placeholders for guider coefficients, unused (N from 0 to 9)
-    guider_coeff_4 real, --/D placeholders for guider coefficients, unused (N from 0 to 9)
-    guider_coeff_5 real, --/D placeholders for guider coefficients, unused (N from 0 to 9)
-    guider_coeff_6 real, --/D placeholders for guider coefficients, unused (N from 0 to 9)
-    guider_coeff_7 real, --/D placeholders for guider coefficients, unused (N from 0 to 9)
-    guider_coeff_8 real, --/D placeholders for guider coefficients, unused (N from 0 to 9)
-    guider_coeff_9 real, --/D placeholders for guider coefficients, unused (N from 0 to 9)
-    locationid integer, --/D An internal identifier for each unique location on the sky for which SDSS-V plates were designed
-    instruments text, --/D list of instrument names that are used in this type of plate (allowed: "SDSS", "BOSS", "MARVELS", "APOGEE")
-    npointings integer, --/D number of pointings that the plate is designed to make; each pointing will correspond to one or more exposures during observation; number must be less than or equal to 6
-    noffsets integer, --/D number of offsets to perform within each exposure
-    minstdinblockboss_shared text, --/D for the given instrument, specify if we have a minimum number of standards we want to assign per fiber block (default 0)
-    maxskyinblockboss_shared integer, --/D for the given instrument, specify if we have a maximum number of skies we want to assign per fiber block (default 0)
-    gfibertype text, --/D type of guide fibers to assume (old "gfiber" or new "gfiber2")
-    guidetype text, --/D for each pointing, the source to search for guide fibers from (can be "SDSS" or "2MASS")
-    guidemag_min real, --/U 13, 15.5 --/D minimum and maximum g-band magnitudes for guide stars (default: 
-    guidemag_max real, --/U 13, 15.5 --/D minimum and maximum g-band magnitudes for guide stars (default: 
-    guide_lambda_eff real, --/D The effective wavelength at which to guide, Angstroms
-    nguidemax integer, --/D maximum number of possible guide stars to track, otherwise tracks 10s of thousands at low b (default: infinite)
-    ferrulesizeboss_shared real, --/D for specified instrument, diameter of ferrule in mm; must exist for all instruments, plus also for instrument=GUIDE
-    buffersizeboss_shared real, --/D for specified instrument, buffer to include outside ferrule for checking for conflicts; must exist for all instruments, plus also for instrument=GUIDE
-    ferrulesizeapogee_shared real, --/D for specified instrument, diameter of ferrule in mm; must exist for all instruments, plus also for instrument=GUIDE
-    buffersizeapogee_shared real, --/D for specified instrument, diameter of ferrule in mm; must exist for all instruments, plus also for instrument=GUIDE
-    ferrulesizeguide real, --/D for specified instrument, diameter of ferrule in mm; must exist for all instruments, plus also for instrument=GUIDE
-    buffersizeguide real, --/D for specified instrument, buffer to include outside ferrule for checking for conflicts; must exist for all instruments, plus also for instrument=GUIDE
-    platedesignstandards text, --/D specify what instruments we want plate design to find standards for; otherwise one of the plateInput files specified by the plateDefinition file should find them; (default: plate design doesn't find standards)
-    standardtype text, --/D for each pointing, type of standard to find (can be "SDSS" or "2MASS", or "None" --- in fact, any value other than SDSS or 2MASS is equivalent to "None")
-    platedesignskies text, --/D specify what instruments we want plate design to find skies for, if any
-    skytype text, --/D for each pointing, type of skies to find (can be "SDSS" or "2MASS")
-    plugmapstyle text, --/D type of plugmap file to create (default "plplugmap")
-    bossmagtype text, --/D type of magnitude used for fiber magnitudes for BOSS targets
-    pointing_name text, --/D "name" for each of the pointings (in legacy plates where not given, default to "A B C D E F")
-    max_off_fiber_for_ha real, --/D set HA limits (ha_observable_min, haobservable_max) to guarantee no offsets greater than this limit, in arcsec (platedesign v1_27 and above)
-    collectfactor integer, --/D oversampling factor for collecting skies and standards; to ensure pluggability, should be at least 5 (default: 5)
-    designid integer, --/D design identification number
-    platedesignversion text, --/D version of plateDefault file to use (for backwards compatibility; if specified it must agree with the corresponding entry in the platePlans file
-    platetype text, --/D type of plateDefault file to use (always "APOGEE-BOSS")
-    racen real, --/D right ascension of pointing center, J2000 deg
-    deccen real, --/D declination of pointing center, J2000 deg
-    ninputs integer, --/D Number of input files to platedesign
-    plateinput1 text, --/D filename of input to platedesign
-    plateinput2 text, --/D filename of input to platedesign
-    plateinput3 text, --/D filename of input to platedesign
-    plateinput4 text, --/D filename of input to platedesign
-    plateinput5 text, --/D filename of input to platedesign
-    plateinput6 text, --/D filename of input to platedesign
-    plateinput7 text, --/D filename of input to platedesign
-    priority text, --/D order of priority for input files; lower numbers get checked first; if two files have the same priority, their targets are checked simultaneously (in order of the individual priority number for each object); (default is 1..nInputs).
-    relaxed_fiber_classes integer, --/D for APOGEE, do not break target classes up into bright/medium/faint.
-    targettypes text, --/D Which targettypes to include in plate design (e.g. "standard science sky")
-    napogee_shared_standard integer, --/D The number of APOGEE standard star targets in this plate
-    napogee_shared_science integer, --/D The number of APOGEE science targets in this plate
-    napogee_shared_sky integer, --/D - The number of APOGEE sky targets in this plate
-    nboss_shared_standard integer, --/D The number of BOSS standard star targets in this plate
-    nboss_shared_science integer, --/D The number of BOSS science targets in this plate
-    nboss_shared_sky integer, --/D The number of BOSS sky targets in this plate
-    minskyinblockboss_shared integer, --/D for the given instrument, specify if we have a minimum number of skies we want to assign per fiber block (default 0)
-    minstandardinblockboss_shared text, --/D for the given instrument, specify if we have a minimum number of standards we want to assign per fiber block (default 0)
+    plateid integer, --/D plate ID number 
+    ha real, --/D the hour angle for which each pointing is designed (negative = rising, positive = setting, given in degrees) 
+    ha_observable_min real, --/D the minimum observable hour angle to guarantee no hole offsets due to refraction greater than value given by MAX_OFF_FIBER_FOR_HA header keyword in plateDefaults file (negative = rising, positive = setting, given in degrees) 
+    ha_observable_max real, --/D the minimum observable hour angle to guarantee no hole offsets due to refraction greater than value given by MAX_OFF_FIBER_FOR_HA header keyword in plateDefaults file (negative = rising, positive = setting, given in degrees) 
+    programname text, --/D The scientific program to which this plate belongs 
+    temp real, --/D temperature of design (deg C) 
+    design_platescale_alt real, --/D effective plate scale of the design (in altitude direction, mm per deg) 
+    design_platescale_az real, --/D effective plate scale of the design (in azimuth direction, mm per deg) 
+    design_parallactic_angle real, --/D parallactic angle (deg E of N) 
+    guider_coeff_0 real, --/D placeholders for guider coefficients, unused (N from 0 to 9) 
+    guider_coeff_1 real, --/D placeholders for guider coefficients, unused (N from 0 to 9) 
+    guider_coeff_2 real, --/D placeholders for guider coefficients, unused (N from 0 to 9) 
+    guider_coeff_3 real, --/D placeholders for guider coefficients, unused (N from 0 to 9) 
+    guider_coeff_4 real, --/D placeholders for guider coefficients, unused (N from 0 to 9) 
+    guider_coeff_5 real, --/D placeholders for guider coefficients, unused (N from 0 to 9) 
+    guider_coeff_6 real, --/D placeholders for guider coefficients, unused (N from 0 to 9) 
+    guider_coeff_7 real, --/D placeholders for guider coefficients, unused (N from 0 to 9) 
+    guider_coeff_8 real, --/D placeholders for guider coefficients, unused (N from 0 to 9) 
+    guider_coeff_9 real, --/D placeholders for guider coefficients, unused (N from 0 to 9) 
+    locationid integer, --/D An internal identifier for each unique location on the sky for which SDSS-V plates were designed 
+    instruments text, --/D list of instrument names that are used in this type of plate (allowed: "SDSS", "BOSS", "MARVELS", "APOGEE") 
+    npointings integer, --/D number of pointings that the plate is designed to make; each pointing will correspond to one or more exposures during observation; number must be less than or equal to 6 
+    noffsets integer, --/D number of offsets to perform within each exposure 
+    minstdinblockboss_shared text, --/D for the given instrument, specify if we have a minimum number of standards we want to assign per fiber block (default 0) 
+    maxskyinblockboss_shared integer, --/D for the given instrument, specify if we have a maximum number of skies we want to assign per fiber block (default 0) 
+    gfibertype text, --/D type of guide fibers to assume (old "gfiber" or new "gfiber2") 
+    guidetype text, --/D for each pointing, the source to search for guide fibers from (can be "SDSS" or "2MASS") 
+    guidemag_min real, --/D minimum and maximum g-band magnitudes for guide stars (default: [13, 15.5]) 
+    guidemag_max real, --/D minimum and maximum g-band magnitudes for guide stars (default: [13, 15.5]) 
+    guide_lambda_eff real, --/D The effective wavelength at which to guide, Angstroms 
+    nguidemax integer, --/D maximum number of possible guide stars to track, otherwise tracks 10s of thousands at low b (default: infinite) 
+    ferrulesizeboss_shared real, --/D for specified instrument, diameter of ferrule in mm; must exist for all instruments, plus also for instrument=GUIDE 
+    buffersizeboss_shared real, --/D for specified instrument, buffer to include outside ferrule for checking for conflicts; must exist for all instruments, plus also for instrument=GUIDE 
+    ferrulesizeapogee_shared real, --/D for specified instrument, diameter of ferrule in mm; must exist for all instruments, plus also for instrument=GUIDE 
+    buffersizeapogee_shared real, --/D for specified instrument, diameter of ferrule in mm; must exist for all instruments, plus also for instrument=GUIDE 
+    ferrulesizeguide real, --/D for specified instrument, diameter of ferrule in mm; must exist for all instruments, plus also for instrument=GUIDE 
+    buffersizeguide real, --/D for specified instrument, buffer to include outside ferrule for checking for conflicts; must exist for all instruments, plus also for instrument=GUIDE 
+    platedesignstandards text, --/D specify what instruments we want plate design to find standards for; otherwise one of the plateInput files specified by the plateDefinition file should find them; (default: plate design doesn't find standards) 
+    standardtype text, --/D for each pointing, type of standard to find (can be "SDSS" or "2MASS", or "None" --- in fact, any value other than SDSS or 2MASS is equivalent to "None") 
+    platedesignskies text, --/D specify what instruments we want plate design to find skies for, if any 
+    skytype text, --/D for each pointing, type of skies to find (can be "SDSS" or "2MASS") 
+    plugmapstyle text, --/D type of plugmap file to create (default "plplugmap") 
+    bossmagtype text, --/D type of magnitude used for fiber magnitudes for BOSS targets 
+    pointing_name text, --/D "name" for each of the pointings (in legacy plates where not given, default to "A B C D E F") 
+    max_off_fiber_for_ha real, --/D set HA limits (ha_observable_min, haobservable_max) to guarantee no offsets greater than this limit, in arcsec (platedesign v1_27 and above) 
+    collectfactor integer, --/D oversampling factor for collecting skies and standards; to ensure pluggability, should be at least 5 (default: 5) 
+    designid integer, --/D design identification number 
+    platedesignversion text, --/D version of plateDefault file to use (for backwards compatibility; if specified it must agree with the corresponding entry in the platePlans file 
+    platetype text, --/D type of plateDefault file to use (always "APOGEE-BOSS") 
+    racen real, --/D right ascension of pointing center, J2000 deg 
+    deccen real, --/D declination of pointing center, J2000 deg 
+    ninputs integer, --/D Number of input files to platedesign 
+    plateinput1 text, --/D filename of input to platedesign 
+    plateinput2 text, --/D filename of input to platedesign 
+    plateinput3 text, --/D filename of input to platedesign 
+    plateinput4 text, --/D filename of input to platedesign 
+    plateinput5 text, --/D filename of input to platedesign 
+    plateinput6 text, --/D filename of input to platedesign 
+    plateinput7 text, --/D filename of input to platedesign 
+    priority text, --/D order of priority for input files; lower numbers get checked first; if two files have the same priority, their targets are checked simultaneously (in order of the individual priority number for each object); (default is 1..nInputs). 
+    relaxed_fiber_classes integer, --/D for APOGEE, do not break target classes up into bright/medium/faint. 
+    targettypes text, --/D Which targettypes to include in plate design (e.g. "standard science sky") 
+    napogee_shared_standard integer, --/D The number of APOGEE standard star targets in this plate 
+    napogee_shared_science integer, --/D The number of APOGEE science targets in this plate 
+    napogee_shared_sky integer, --/D - The number of APOGEE sky targets in this plate 
+    nboss_shared_standard integer, --/D The number of BOSS standard star targets in this plate 
+    nboss_shared_science integer, --/D The number of BOSS science targets in this plate 
+    nboss_shared_sky integer, --/D The number of BOSS sky targets in this plate 
+    minskyinblockboss_shared integer, --/D for the given instrument, specify if we have a minimum number of skies we want to assign per fiber block (default 0) 
+    minstandardinblockboss_shared text, --/D for the given instrument, specify if we have a minimum number of standards we want to assign per fiber block (default 0) 
     reddeningmed_u real, --/U mag --/D The estimated Galactic reddening (u-band) at the sky location of this plate 
     reddeningmed_g real, --/U mag --/D The estimated Galactic reddening (g-band) at the sky location of this plate 
     reddeningmed_r real, --/U mag --/D The estimated Galactic reddening (r-band) at the sky location of this plate 
     reddeningmed_i real, --/U mag --/D The estimated Galactic reddening (i-band) at the sky location of this plate 
     reddeningmed_z real, --/U mag --/D The estimated Galactic reddening (z-band) at the sky location of this plate 
-    tileid integer, --/D Not used
-    theta integer, --/D position angle of design (always 0 in practice)
-    platerun text, --/D name of platerun this file was part of
-    platedesign_version text, --/D version of platedesign used to produce design file
-    yanny_uid integer NOT NULL, --/D internal integer identifier for the platelist file from which this inforation was extracted
-    yanny_filename text, --/D filename from which this information was extracted
-    plateinput8 text, --/D filename of input to platedesign
-    plateinput9 text, --/D filename of input to platedesign
-    plateinput10 text, --/D filename of input to platedesign
-    plateinput11 text, --/D filename of input to platedesign
-    plateinput12 text, --/D filename of input to platedesign
-    plateinput13 text, --/D filename of input to platedesign
-    plateinput14 text, --/D filename of input to platedesign
-    plateinput15 text, --/D filename of input to platedesign
-    plateinput16 text, --/D filename of input to platedesign
-    skyinput17 text, --/D filename of input to platedesign
-    plateinput18 text, --/D filename of input to platedesign
-    plateinput17 text, --/D filename of input to platedesign
-    skyinput18 text, --/D filename of input to platedesign
-    plateinput19 text, --/D filename of input to platedesign
-    skyinput16 text, --/D filename of input to platedesign
-    skyinput19 text, --/D filename of input to platedesign
-    plateinput20 text, --/D filename of input to platedesign
-    skyinput15 text, --/D filename of input to platedesign
-    skyinput21 text, --/D filename of input to platedesign
-    plateinput22 text, --/D filename of input to platedesign
-    skyinput13 text, --/D filename of input to platedesign
-    skyinput20 text, --/D filename of input to platedesign
-    plateinput21 text, --/D filename of input to platedesign
-    skyinput14 text, --/D filename of input to platedesign
-    skyinput6 text, --/D filename of input to platedesign
-    defaultsurveymode text, --/D Which mapper leads the plate design (bhmLead or mwmLead). Ony set for plateID>=15072.
-    skyinput23 text, --/D filename of input to platedesign
-    plateinput24 text, --/D filename of input to platedesign
-    skyinput22 text, --/D filename of input to platedesign
-    plateinput23 text, --/D filename of input to platedesign
-    skyinput8 text, --/D filename of input to platedesign
-    isvalid boolean --/D Whether the plate design is valid (i.e. eligible for drilling+plugging)
+    tileid integer, --/D Not used 
+    theta integer, --/D position angle of design (always 0 in practice) 
+    platerun text, --/D name of platerun this file was part of 
+    platedesign_version text, --/D version of platedesign used to produce design file 
+    yanny_uid integer NOT NULL, --/D internal integer identifier for the platelist file from which this inforation was extracted 
+    yanny_filename text, --/D filename from which this information was extracted 
+    plateinput8 text, --/D filename of input to platedesign 
+    plateinput9 text, --/D filename of input to platedesign 
+    plateinput10 text, --/D filename of input to platedesign 
+    plateinput11 text, --/D filename of input to platedesign 
+    plateinput12 text, --/D filename of input to platedesign 
+    plateinput13 text, --/D filename of input to platedesign 
+    plateinput14 text, --/D filename of input to platedesign 
+    plateinput15 text, --/D filename of input to platedesign 
+    plateinput16 text, --/D filename of input to platedesign 
+    skyinput17 text, --/D filename of input to platedesign 
+    plateinput18 text, --/D filename of input to platedesign 
+    plateinput17 text, --/D filename of input to platedesign 
+    skyinput18 text, --/D filename of input to platedesign 
+    plateinput19 text, --/D filename of input to platedesign 
+    skyinput16 text, --/D filename of input to platedesign 
+    skyinput19 text, --/D filename of input to platedesign 
+    plateinput20 text, --/D filename of input to platedesign 
+    skyinput15 text, --/D filename of input to platedesign 
+    skyinput21 text, --/D filename of input to platedesign 
+    plateinput22 text, --/D filename of input to platedesign 
+    skyinput13 text, --/D filename of input to platedesign 
+    skyinput20 text, --/D filename of input to platedesign 
+    plateinput21 text, --/D filename of input to platedesign 
+    skyinput14 text, --/D filename of input to platedesign 
+    skyinput6 text, --/D filename of input to platedesign 
+    defaultsurveymode text, --/D Which mapper leads the plate design (bhmLead or mwmLead). Ony set for plateID>=15072. 
+    skyinput23 text, --/D filename of input to platedesign 
+    plateinput24 text, --/D filename of input to platedesign 
+    skyinput22 text, --/D filename of input to platedesign 
+    plateinput23 text, --/D filename of input to platedesign 
+    skyinput8 text, --/D filename of input to platedesign 
+    isvalid boolean --/D Whether the plate design is valid (i.e. eligible for drilling+plugging) 
 );
 
 
@@ -7341,8 +7341,8 @@ CREATE TABLE minidb_dr19.dr19_skies_v2 (
     selected_tmass boolean, --/D Whether this sky region was selected in the 2MASS point source catalogue. 
     sep_neighbour_tmass real, --/U arcsec --/D Separation to the nearest 2MASS point source neighbour 
     mag_neighbour_tmass real, --/U mag --/D Magnitude of the nearest 2MASS point source neighbour (H band, Vega). 
-    valid_tycho2 boolean, --/D Whether this is a valid sky region in the Tycho2 catalogue.
-    selected_tycho2 boolean, --/D Whether this sky region was selected in the Tycho2 catalogue.
+    valid_tycho2 boolean, --/D Whether this is a valid sky region in the Tycho2 catalogue. 
+    selected_tycho2 boolean, --/D Whether this sky region was selected in the Tycho2 catalogue. 
     sep_neighbour_tycho2 real, --/U arcsec --/D Separation to the nearest Tycho2 neighbour 
     mag_neighbour_tycho2 real, --/U mag --/D Magnitude of the nearest Tycho2 neighbour (Vt band, Vega). 
     valid_tmass_xsc boolean, --/D Whether this is a valid sky region in the 2MASS extended source catalogue. 
@@ -7379,32 +7379,32 @@ CREATE TABLE minidb_dr19.dr19_skymapper_dr2 (
     ngood_min smallint, --/D Minimum number of observations used in any filter 
     nch_max smallint, --/D Maximum number of child sources combined into this global object_id in any filter 
     density real, --/D Number of DR2 sources within 15 arcsec (including this source) 
-    u_flags smallint, --/D Bitwise OR of Source Extractor flags from u-band measurements in photometry table
-    u_nimaflags integer, --/D Number of flagged pixels from bad, saturated, and crosstalk pixel masks from u-band measurements in photometry table
+    u_flags smallint, --/D Bitwise OR of Source Extractor flags from u-band measurements in photometry table 
+    u_nimaflags integer, --/D Number of flagged pixels from bad, saturated, and crosstalk pixel masks from u-band measurements in photometry table 
     u_ngood smallint, --/D Number of u-band observations used 
     u_nch smallint, --/D Number of u-band child sources combined into this object_id 
     u_nclip smallint, --/D Number of u-band observations with magnitudes clipped from the final PSF magnitude estimate 
-    v_flags smallint, --/D Bitwise OR of Source Extractor flags from v-band measurements in photometry table
-    v_nimaflags integer, --/D Number of flagged pixels from bad, saturated, and crosstalk pixel masks from u-band measurements in photometry table
+    v_flags smallint, --/D Bitwise OR of Source Extractor flags from v-band measurements in photometry table 
+    v_nimaflags integer, --/D Number of flagged pixels from bad, saturated, and crosstalk pixel masks from u-band measurements in photometry table 
     v_ngood smallint, --/D Number of v-band observations used 
     v_nch smallint, --/D Number of v-band child sources combined into this object_id 
     v_nclip smallint, --/D Number of v-band observations with magnitudes clipped from the final PSF magnitude estimate 
-    g_flags smallint, --/D Bitwise OR of Source Extractor flags from g-band measurements in photometry table
+    g_flags smallint, --/D Bitwise OR of Source Extractor flags from g-band measurements in photometry table 
     g_nimaflags integer, --/D Number of flagged pixels from bad, saturated, and crosstalk pixel masks from g-band measurements in photometry table 
     g_ngood smallint, --/D Number of g-band observations used 
     g_nch smallint, --/D Number of g-band child sources combined into this object_id 
     g_nclip smallint, --/D Number of g-band observations with magnitudes clipped from the final PSF magnitude estimate 
-    r_flags smallint, --/D Bitwise OR of Source Extractor flags from r-band measurements in photometry table
+    r_flags smallint, --/D Bitwise OR of Source Extractor flags from r-band measurements in photometry table 
     r_nimaflags integer, --/D Number of flagged pixels from bad, saturated, and crosstalk pixel masks from r-band measurements in photometry table 
     r_ngood smallint, --/D Number of r-band observations used 
     r_nch smallint, --/D Number of r-band child sources combined into this object_id 
     r_nclip smallint, --/D Number of r-band observations with magnitudes clipped from the final PSF magnitude estimate 
-    i_flags smallint, --/D Bitwise OR of Source Extractor flags from i-band measurements in photometry table
+    i_flags smallint, --/D Bitwise OR of Source Extractor flags from i-band measurements in photometry table 
     i_nimaflags integer, --/D Number of flagged pixels from bad, saturated, and crosstalk pixel masks from i-band measurements in photometry table 
     i_ngood smallint, --/D Number of i-band observations used 
     i_nch smallint, --/D Number of i-band child sources combined into this object_id 
     i_nclip smallint, --/D Number of i-band observations with magnitudes clipped from the final PSF magnitude estimate 
-    z_flags smallint, --/D Bitwise OR of Source Extractor flags from z-band measurements in photometry table
+    z_flags smallint, --/D Bitwise OR of Source Extractor flags from z-band measurements in photometry table 
     z_nimaflags integer, --/D Number of flagged pixels from bad, saturated, and crosstalk pixel masks from z-band measurements in photometry table 
     z_ngood smallint, --/D Number of z-band observations used 
     z_nch smallint, --/D Number of z-band child sources combined into this object_id 
@@ -7646,9 +7646,9 @@ CREATE TABLE minidb_dr19.dr19_targeting_generation (
 --/T information available via the rsconfig product
 --/T (https://github.com/sdss/rsconfig).
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D primary key for this table entry
-    label text, --/D A human-readble name for the targeting_generation
-    first_release text --/D The first SDSS data release containing this targeting_generation
+    pk integer NOT NULL, --/D primary key for this table entry 
+    label text, --/D A human-readble name for the targeting_generation 
+    first_release text --/D The first SDSS data release containing this targeting_generation 
 );
 
 
@@ -7675,11 +7675,11 @@ CREATE TABLE minidb_dr19.dr19_targeting_generation_to_carton (
 --/T information available via the rsconfig product
 --/T (https://github.com/sdss/rsconfig).
 ----------------------------------------------------------------------
-    pk integer NOT NULL, --/D primary key for this table entry
-    generation_pk integer, --/D primary key of an entry in the dr19_targeting_generation table
-    carton_pk integer, --/D primary key of an entry in the dr19_carton table, i.e. a carton-version
-    rs_stage text, --/D the algorithimic stage of robostrategy in which targets from this carton-version are considered for assignment. Options: 'none', 'plates', 'srd', 'filler', or 'open'. See the robostrategy documentation for further information.
-    rs_active boolean --/D a Boolean column describing whether the carton-version is considered within robostrategy
+    pk integer NOT NULL, --/D primary key for this table entry 
+    generation_pk integer, --/D primary key of an entry in the dr19_targeting_generation table 
+    carton_pk integer, --/D primary key of an entry in the dr19_carton table, i.e. a carton-version 
+    rs_stage text, --/D the algorithimic stage of robostrategy in which targets from this carton-version are considered for assignment. Options: 'none', 'plates', 'srd', 'filler', or 'open'. See the robostrategy documentation for further information. 
+    rs_active boolean --/D a Boolean column describing whether the carton-version is considered within robostrategy 
 );
 
 
@@ -7706,9 +7706,9 @@ CREATE TABLE minidb_dr19.dr19_targeting_generation_to_version (
 --/T information available via the rsconfig product
 --/T (https://github.com/sdss/rsconfig).
 ----------------------------------------------------------------------
-    generation_pk integer, --/D primary key of an entry in the dr19_targeting_generation table
-    version_pk integer, --/D primary key of an entry in the dr19_targetdb_version table, which lists the robostrategy run version ('plan' and 'tag')
-    pk integer NOT NULL --/D primary key for this table entry
+    generation_pk integer, --/D primary key of an entry in the dr19_targeting_generation table 
+    version_pk integer, --/D primary key of an entry in the dr19_targetdb_version table, which lists the robostrategy run version ('plan' and 'tag') 
+    pk integer NOT NULL --/D primary key for this table entry 
 );
 
 
@@ -7901,11 +7901,11 @@ CREATE TABLE minidb_dr19.dr19_tic_v8 (
     raddflag integer, --/D 1=dwarf by radius, 0=giant by radius 
     wdflag integer, --/D 1=star in Gaia's photometric "White Dwarf region" 
     objid bigint, --/D Object identifier (integer) 
-    gaia_int bigint, --/D Gaia DR2 source ID (integer). Not originally in TIC v8.
-    twomass_psc text, --/D 2MASS PSC identifier. Not originally in TIC v8.
-    twomass_psc_pts_key integer, --/D 2MASS PSC identifier. Not originally in TIC v8.
-    tycho2_tycid integer, --/D Tycho2 identifier (integer). Not originally in TIC v8.
-    allwise_cntr bigint --/D ALLWISE ID (integer). Not originally in TIC v8.
+    gaia_int bigint, --/D Gaia DR2 source ID (integer). Not originally in TIC v8. 
+    twomass_psc text, --/D 2MASS PSC identifier. Not originally in TIC v8. 
+    twomass_psc_pts_key integer, --/D 2MASS PSC identifier. Not originally in TIC v8. 
+    tycho2_tycid integer, --/D Tycho2 identifier (integer). Not originally in TIC v8. 
+    allwise_cntr bigint --/D ALLWISE ID (integer). Not originally in TIC v8. 
 );
 
 
@@ -7938,7 +7938,7 @@ CREATE TABLE minidb_dr19.dr19_twomass_psc (
     k_cmsig real, --/U mag --/D K-band default magnitude uncertainty 
     k_msigcom real, --/U mag --/D K-band total magnitude uncertainty 
     k_snr real, --/D K-band signal-to-noise ratio 
-    ph_qual character(3), --/D JHK photometric quality flag {}
+    ph_qual character(3), --/D JHK photometric quality flag {} 
     rd_flg character(3), --/D Source of JHK default mag 
     bl_flg character(3), --/D JHK components fit to source 
     cc_flg character(3), --/D Artifact contamination, confusion flag 
@@ -8217,7 +8217,7 @@ CREATE TABLE minidb_dr19.dr19_xmm_om_suss_4_1 (
 --/T https://academic.oup.com/mnras/article/426/2/903/976665)
 ----------------------------------------------------------------------
     iauname character varying(22), --/D Coordinate-based name 
-    n_summary integer, --/D Reference number index for the XMM-Newton pointing in which the particular detection was mad
+    n_summary integer, --/D Reference number index for the XMM-Newton pointing in which the particular detection was mad 
     obsid character varying(10), --/D The exclusive 10-digit identification number of the XMM pointing with the detection 
     srcnum integer, --/D The unique reference number within each combined source list created by the pipeline 
     uvw2_srcdist real, --/U arcsec --/D Distance between source and nearest detected neighbor in UVW2 

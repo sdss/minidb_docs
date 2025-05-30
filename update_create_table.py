@@ -107,7 +107,11 @@ def update_create_table(
         if column.strip() == "":
             continue
 
-        match_col = re.search(r"(\w+)\s*\-?\s*([^\[]*)(?:\s*\[(.*)\])?", column.strip())
+        # Ensure that there is a [] at the end of the column description
+        if not re.search(r"\s*\[(.*?)\]\s*$", column.strip()):
+            column += " []"
+
+        match_col = re.search(r"^(\w+?)\s*\-\s*(.*)\s*(?:\[(.*?)\])$", column.strip())
         if not match_col:
             raise ValueError(f"Column {column!r} is badly formatted.")
 
