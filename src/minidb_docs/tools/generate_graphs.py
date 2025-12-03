@@ -12,9 +12,11 @@ import os
 import re
 
 from peewee import ForeignKeyField
+
 from sdssdb.peewee import BaseModel
 from sdssdb.peewee.sdss5db import database
 from sdssdb.utils.schemadisplay import create_schema_graph
+
 
 EXCLUDE_TABLES = ["dr18_carton_txt", "dr18_sdss_dr16_qso_original"]
 
@@ -34,7 +36,6 @@ class MinidbModel(BaseModel):
 
 
 def generate_minidb_graphs(columns: bool = False):
-
     all_tables = database.get_tables("minidb")
     valid_tables = [table for table in all_tables if table not in EXCLUDE_TABLES]
 

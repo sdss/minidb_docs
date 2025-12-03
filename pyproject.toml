@@ -1,0 +1,51 @@
+[project]
+name = "minidb-docs"
+version = "0.1.0"
+description = "Table descriptions for the contents of minidb"
+authors = [ { name = "José Sánchez-Gallego", email = "gallegoj@uw.edu" } ]
+license = { text = "BSD-3-Clause" }
+readme = "README.md"
+
+requires-python = ">=3.12"
+
+dependencies = [
+    "click>=8.3.1",
+    "rich>=14.2.0",
+    "sdssdb>=0.13.5",
+    "sdsstools>=1.9.6",
+]
+
+[project.scripts]
+minidb-docs = "minidb_docs.__main__:minidb_docs_cli"
+
+[dependency-groups]
+dev = [
+    "ipdb>=0.13.13",
+    "ipython>=9.8.0",
+    "ruff>=0.14.7",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = 'py312'
+exclude = ["typings/"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+unfixable = ["F841"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401", "F403", "E402"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["minidb_docs"]
+lines-after-imports = 2
+section-order = ["future", "standard-library", "typing", "third-party", "sdss", "first-party", "local-folder"]
+
+[tool.ruff.lint.isort.sections]
+typing = ["typing"]
+sdss = ["sdsstools", "sdssdb"]
+
+[build-system]
+requires = ["uv_build>=0.9.15,<0.10.0"]
+build-backend = "uv_build"

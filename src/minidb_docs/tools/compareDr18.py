@@ -1,6 +1,7 @@
 import os
 import re
 
+
 def getCols(filepath):
     cols = []
     match1 = re.search(
@@ -19,8 +20,9 @@ def getCols(filepath):
 
         column_name, column_description, column_units = match_col.groups()
         cols.append(column_name)
-    
+
     return set(cols)
+
 
 dr18 = os.listdir("dr18")
 dr19 = os.listdir("dr19")
@@ -40,5 +42,3 @@ for f in dr19:
                 print(f, f2, diff)
     if not inDR18:
         print(f, "NEW")
-        
-    

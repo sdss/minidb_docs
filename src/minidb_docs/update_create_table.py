@@ -8,12 +8,49 @@
 
 from __future__ import annotations
 
+import glob
+import os
 import pathlib
 import re
+import shutil
 import textwrap
 
-import click
 from rich import print as rprint
+
+from minidb_docs import CURRENT_DR as DR
+
+
+def run_all(dr: str | None = None):
+    """Runs ``update_create_table`` for all summary files in the DR."""
+
+    dr = dr or DR
+
+    files = glob.glob(f"{dr}/{dr}_*.txt")
+
+    output_dir = pathlib.Path(__file__).parent / dr
+    output_dir.mkdir(exist_ok=True)
+
+    create_table_orig = output_dir / f"create_minidb_{dr}.sql"
+    create_table_orig_updated = output_dir / f"create_minidb_{dr}_descriptions.sql"
+
+    if os.path.exists(create_table_orig_updated):
+        os.unlink(create_table_orig_updated)
+
+    shutil.copyfile(create_table_orig, create_table_orig_updated)
+
+    for fn in files:
+        name = os.path.basename(fn)
+        table = f"minidb_{dr}." + name.split(".")[0]
+
+        try:
+            print(fn)
+            updated_text = update_create_table(fn, create_table_orig_updated, table)
+        except Exception as err:
+            rprint(f"[bold yellow][WARNING] - {fn}: {err}[/]")
+            continue
+
+        with open(create_table_orig_updated, "w") as f:
+            f.write(updated_text)
 
 
 def update_create_table(
@@ -142,34 +179,3 @@ def update_create_table(
         )
 
     return subd
-
-
-@click.command(name="update-create-table")
-@click.argument("SUMMARY_FILE", type=click.Path(exists=True, dir_okay=False))
-@click.argument("CREATE_TABLE_FILE", type=click.Path(exists=True, dir_okay=False))
-@click.argument("TABLE_NAME", type=str)
-@click.option(
-    "-o",
-    "--output",
-    type=str,
-    help="Output path. Otherwise prints to stdout.",
-)
-def cli(
-    summary_file: str,
-    create_table_file: str,
-    table_name: str,
-    output: str | None = None,
-):
-    """Updates a CREATE TABLE file with the information from a summary file."""
-
-    updated = update_create_table(str(summary_file), str(create_table_file), table_name)
-
-    if output:
-        with open(output, "w") as f:
-            f.write(updated)
-    else:
-        print(updated)
-
-
-if __name__ == "__main__":
-    cli()
