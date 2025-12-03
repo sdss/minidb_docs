@@ -12,6 +12,7 @@ Columns
 
 catalogid21 - The catalogid for the best matched object in the v0.1 cross-match (pk=21).
 catalogid25 - The catalogid for the best matched object in the v0.5 cross-match (pk=25).
+catalogid31 - The catalogid for the best matched object in the v1 cross-match (pk=31).
 ra_sdss_id - The right ascension of the target in ICRS J2015.5 coordinates (taken from the highest version catalogid).
 dec_sdss_id - The declination of the target in ICRS J2015.5 coordinates (taken from the highest version catalogid).
 sdss_id - The SDSS identifier for a unique object.
