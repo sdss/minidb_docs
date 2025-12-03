@@ -1,0 +1,14 @@
+Summary
+-------
+
+The table contains the cross-match between the dr19_catalog targets and the dr19_legacy_survey_dr8 table.
+
+
+Columns
+-------
+
+catalogid - The catalogid identifier in the dr19_catalog table.
+target_id - The primary key identifier in the dr19_legacy_survey_dr8 table.
+version_id - The internal version for the cross-match.
+distance - The distance between the catalog and target coordinates if best=F.
+best - Whether this is considered the best match between the catalog entry and dr19_legacy_survey_dr8.

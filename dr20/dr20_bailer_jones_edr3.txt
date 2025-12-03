@@ -1,0 +1,18 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+source_id - 
+r_med_geo - 
+r_lo_geo - 
+r_hi_geo - 
+r_med_photogeo - 
+r_lo_photogeo - 
+r_hi_photogeo - 
+flag - 
+

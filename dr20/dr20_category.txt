@@ -1,0 +1,11 @@
+Summary
+-------
+
+This table indicates the category of a carton (science, standards, etc.)
+
+
+Columns
+-------
+
+pk - The primary key. A sequential identifier.
+label - The name of the category.

@@ -1,0 +1,19 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+ticid - 
+target_type - 
+toi - 
+tess_disposition - 
+tfopwg_disposition - 
+ctoi - 
+user_disposition - 
+num_sectors - 
+pkey - 
+

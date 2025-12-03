@@ -1,0 +1,44 @@
+Summary
+-------
+Catalog for the selection of bright metal-poor stars from the method of Schlaufman and Casey (2014): https://ui.adsabs.harvard.edu/abs/2014ApJ...797...13S/abstract. WISE values from WHICH CATALOG, 2MASS values from 2MASS point source catalog.
+
+
+Columns
+-------
+
+designation - 2MASS Designation []
+ra_1 - right ascension from the AllWISE catalog [degrees]
+dec_1 - declination from the AllWISE catalog [degrees]
+glon - Galactic longitude from AllWISE catalog [degrees]
+glat - Galactic latitude from the AllWISE catalog [degrees]
+w1mpro - AllWISE W1-band magnitude measured with profile-fitting photometry [mag]
+w2mpro - AllWISE W2-band magnitude measured with profile-fitting photometry [mag]
+w3mpro - AllWISE W3-band magnitude measured with profile-fitting photometry [mag]
+w4mpro - AllWISE W4-band magnitude measured with profile-fitting photometry [mag]
+pmra - Gaia DR2 proper motion [mas/yr]
+pmdec - Gaia DR2 proper motion [mas/yr]
+j_m_2mass - 2MASS J=band magnitude [mag]
+h_m_2mass - 2MASS magnitude [mag]
+k_m_2mass - 2MASS magnitude [mag]
+ra_2 -  Right ascension from the 2MASS catalog [degrees]
+raerr - Uncertainty in right ascension from the 2MASS catalog [degrees]
+dec_2 - Declination from the 2MASS catalog [degrees]
+decerr - Uncertainty in declination from the 2MASS catalog [degrees]
+nobs - Number of observed nights from the APASS catalog []
+mobs - Number of images for this field from the APASS catalog []
+vjmag - APASS V_J magnitude [mag]
+bjmag - APASS B_J magnitude [mag]
+gmag - APASS Sloan g' magnitude [mag]
+rmag - APASS Sloan r' magnitude [mag]
+imag - APASS Sloan i' magnitude [mag]
+evjmag - Uncertainty in APASS V_J  magnitude [mag]
+ebjmag - Uncertainty in APASS B_J magnitude [mag]
+egmag - Uncertainty in APASS Sloan g' magnitude [mag]
+ermag - Uncertainty in APASS Sloan r' magnitude [mag]
+eimag - Uncertainty in APASS Sloan i' magnitude [mag]
+name - APASS field name []
+separation - Separation between AllWISE object and APASS object [arcsec]
+ebv - SFD dustmap E(B-V) [mag]
+version - version 2 is high priiority, version 1 is low priority (see Schlaufman + Casey 2014 for definitions) []
+original_ext_source_id - 2MASS designation removing the "." from the coordinates and getting rid of "J" at the front []
+cntr - Internal Identifier []

@@ -1,0 +1,13 @@
+Summary
+-------
+
+Table containing crossmatch versions
+
+
+Columns
+-------
+
+id - Unique identifier
+plan - Cross match version
+tag - Tag of target selection software used https://github.com/sdss/target_selection/tags
+

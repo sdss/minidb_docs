@@ -1,0 +1,27 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+rave_obs_id - 
+fe_h_gauguin - 
+fe_h_error_gauguin - 
+fe_h_chisq_gauguin - 
+fe_h_nl_gauguin - 
+al_h_gauguin - 
+al_h_error_gauguin - 
+al_h_chisq_gauguin - 
+al_h_nl_gauguin - 
+ni_h_gauguin - 
+ni_h_error_gauguin - 
+ni_h_chisq_gauguin - 
+ni_h_nl_gauguin - 
+alpha_fe_gauguin - 
+alpha_fe_error_gauguin - 
+alpha_fe_chisq_gauguin - 
+n_elements_gauguin - 
+

@@ -1,0 +1,44 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+plate - 
+mjd - 
+fiberid - 
+field - 
+catalogid - 
+bestobjid - 
+targetobjid - 
+run2d - 
+run1d - 
+firstrelease - 
+plug_ra - 
+plug_dec - 
+sourcetype - 
+objtype - 
+targettype - 
+lambda_eff - 
+sn_median_all - 
+sn_median_u - 
+sn_median_g - 
+sn_median_r - 
+sn_median_i - 
+sn_median_z - 
+platesn2 - 
+platequality - 
+z - 
+z_err - 
+zwarning - 
+zwarning_noqso - 
+class - 
+subclass - 
+tfile - 
+specprimary - 
+nspecobs - 
+pk - 
+

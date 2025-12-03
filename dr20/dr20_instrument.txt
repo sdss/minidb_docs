@@ -1,0 +1,12 @@
+Summary
+-------
+
+This table stores the instruments used by SDSS-V.
+
+
+Columns
+-------
+
+pk - The primary key. A sequential identifier.
+label - The name of the instrument.
+default_lambda_eff - The default wavelength for which fibre positioning will be optimised [angstrom]

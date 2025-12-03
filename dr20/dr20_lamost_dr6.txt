@@ -1,0 +1,53 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+obsid - 
+designation - 
+obsdate - 
+lmjd - 
+mjd - 
+planid - 
+spid - 
+fiberid - 
+ra_obs - 
+dec_obs - 
+snru - 
+snrg - 
+snrr - 
+snri - 
+snrz - 
+objtype - 
+class - 
+subclass - 
+z - 
+z_err - 
+magtype - 
+mag1 - 
+mag2 - 
+mag3 - 
+mag4 - 
+mag5 - 
+mag6 - 
+mag7 - 
+tsource - 
+fibertype - 
+tfrom - 
+tcomment - 
+offsets - 
+offsets_v - 
+ra - 
+dec - 
+fibermask - 
+ra_x - 
+dec_x - 
+errhalfmaj - 
+errhalfmin - 
+errposang - 
+source_id - 
+

@@ -1,0 +1,201 @@
+Summary
+-------
+A copy of the PanSTARRS1-dr2 catalogue provided by E. Magnier.
+
+Based on the internal IPP database representation maintained by IfA, U. Hawaii. Column names may differ from publically available catalogues hosted at MAST (mapping provided in column descriptions). The SDSS-V copy of this database is derived from a combination of the PS1-dr2 StackObjectThin and ObjectThin tables (https://outerspace.stsci.edu/display/PANSTARRS/PS1+Database+object+and+detection+tables). The catalogue contains PSF, Kron, and Aper measurements based on stacked and forced warp photometry, and expressed as fluxes, including measurements are made of low-significance detections. The average exposure (chip) measurements are expressed in magnitudes since photometry is not measured at this stage for sources with S/N < 5, so there should not be any negative fluxes. Magnitudes are on the AB system, fluxes are in Janskys. Conversion to AB mags is via: mag = 8.9 - 2.5*log10(flux).
+
+Columns
+-------
+
+ra - mean RA, (J2000, tied to Gaia DR1) [deg]
+dec - mean Dec, (J2000, tied to Gaia DR1) [deg]
+dra - error on RA [arcsec]
+ddec - error on DEC [arcsec]
+tmean - Mean epoch (MJD) [days]
+trange - Time range -- may include 2MASS values [days]
+chisqpos - chi-square of a fixed position astrometry solution (equiv to ObjectThin.posMeanChisq)
+stargal - Measure of extendedness. Computed as the median across all chip measurements of extNsigma, where extNsigma = (PSF mag - Kron mag) expressed as a number of sigmas, so it somewhat adjusts for the spread at low signal-to-noise.
+nmeas - total number of measurements in databases (including non-PS1 data)
+nwarp_ok -  number of warps with psf_qf > 0 (any unmasked pixels)
+flags - ObjectInfoFlags
+objid - internal Pan-STARRS IPP object ID : unique within database spatial partition (see catID)
+catid - database spatial partition ID - (equiv. to StackObjectThin.dvoRegionID)
+extid_hi - upper 32 bits of PSPS object ID (objID in MAST PSPS database)
+extid_lo - lower 32 bits of PSPS object ID (objID in MAST PSPS database)
+g_chp_psf - mean g-band chip PSF magnitude [mag]
+g_chp_psf_err - error on mean g-band chip PSF magnitude [mag]
+g_chp_psf_nphot - number of measurements used for g_chp_psf (excluding outliers)
+g_chp_aper - mean g-band chip seeing-adapted aperture magnitude [mag]
+g_chp_aper_err - error on mean g-band chip seeing-adapted aperture magnitude [mag]
+g_chp_aper_nphot - number of measurements used for above (excluding outliers)
+g_chp_kron - mean g-band chip Kron magnitude [mag]
+g_chp_kron_err - error on mean g-band chip Kron magnitude [mag]
+g_chp_kron_nphot - number of measurements used for g_chp_kron (excluding outliers)
+g_stk_psf_flux - best g-band stack PSF flux [Jy]
+g_stk_psf_fluxerr - error on best g-band stack PSF flux [Jy]
+g_stk_psf_nphot - number of measurements used for g_stk_psf_flux (excluding outliers)
+g_stk_aper_flux - g-band stack seeing-adapted aperture flux [Jy]
+g_stk_aper_fluxerr - error on g-band stack seeing-adapted aperture flux [Jy]
+g_stk_aper_nphot - number of measurements used for g_stk_aper_flux (excluding outliers)
+g_stk_kron_flux - g-band stack Kron flux from same stack as 'best' PSF above [Jy]
+g_stk_kron_fluxerr - error on g-band stack Kron flux from same stack as 'best' PSF above [Jy]
+g_stk_kron_nphot - number of measurements used for g_stk_kron_flux (excluding outliers)
+g_wrp_psf_flux - mean g-band forced-warp PSF flux [Jy]
+g_wrp_psf_fluxerr - error on mean g-band forced-warp PSF flux [Jy]
+g_wrp_psf_nphot - number of measurements used for g_wrp_psf_flux (excluding outliers)
+g_wrp_aper_flux - mean g-band forced-warp seeing-adapted aperture flux [Jy]
+g_wrp_aper_fluxerr - error on mean g-band forced-warp seeing-adapted aperture flux [Jy]
+g_wrp_aper_nphot - number of measurements used for g_wrp_aper_flux (excluding outliers)
+g_wrp_kron_flux - mean g-band forced-warp Kron flux [Jy]
+g_wrp_kron_fluxerr - error on mean g-band forced-warp Kron flux [Jy]
+g_wrp_kron_nphot - number of measurements used for g_wrp_kron_flux (excluding outliers)
+g_flags - per-filter info flags (equiv. to StackObjectThin.ginfoFlag4)
+g_ncode - number of chip detections in this filter (equiv. to StackObjectThin.ng)
+g_nwarp - number of warp measurements in this filter (including primary & secondary skycells)
+g_nwarp_good - number of warp measurements with psfqfperf > 0.85 in this filter (including primary & secondary skycells)
+g_nstack - number of stack measurements (primary and secondary)
+g_nstack_det - number of stack detections (S/N > 5, primary and secondary)
+g_psfqf - g-band PSF coverage factor
+g_psfqfperf - g-band PSF weighted fraction of pixels totally unmasked
+r_chp_psf - mean r-band chip PSF magnitude [mag]
+r_chp_psf_err - error on mean r-band chip PSF magnitude [mag]
+r_chp_psf_nphot - number of measurements used for r_chp_psf (excluding outliers)
+r_chp_aper - mean r-band chip seeing-adapted aperture magnitude [mag]
+r_chp_aper_err - error on mean r-band chip seeing-adapted aperture magnitude [mag]
+r_chp_aper_nphot - number of measurements used for above (excluding outliers)
+r_chp_kron - mean r-band chip Kron magnitude [mag]
+r_chp_kron_err - error on mean r-band chip Kron magnitude [mag]
+r_chp_kron_nphot - number of measurements used for r_chp_kron (excluding outliers)
+r_stk_psf_flux - best r-band stack PSF flux [Jy]
+r_stk_psf_fluxerr - error on best r-band stack PSF flux [Jy]
+r_stk_psf_nphot - number of measurements used for r_stk_psf_flux (excluding outliers)
+r_stk_aper_flux - r-band stack seeing-adapted aperture flux [Jy]
+r_stk_aper_fluxerr - error on r-band stack seeing-adapted aperture flux [Jy]
+r_stk_aper_nphot - number of measurements used for r_stk_aper_flux (excluding outliers)
+r_stk_kron_flux - r-band stack Kron flux from same stack as 'best' PSF above [Jy]
+r_stk_kron_fluxerr - error on r-band stack Kron flux from same stack as 'best' PSF above [Jy]
+r_stk_kron_nphot - number of measurements used for r_stk_kron_flux (excluding outliers)
+r_wrp_psf_flux - mean r-band forced-warp PSF flux [Jy]
+r_wrp_psf_fluxerr - error on mean r-band forced-warp PSF flux [Jy]
+r_wrp_psf_nphot - number of measurements used for r_wrp_psf_flux (excluding outliers)
+r_wrp_aper_flux - mean r-band forced-warp seeing-adapted aperture flux [Jy]
+r_wrp_aper_fluxerr - error on mean r-band forced-warp seeing-adapted aperture flux [Jy]
+r_wrp_aper_nphot - number of measurements used for r_wrp_aper_flux (excluding outliers)
+r_wrp_kron_flux - mean r-band forced-warp Kron flux [Jy]
+r_wrp_kron_fluxerr - error on mean r-band forced-warp Kron flux [Jy]
+r_wrp_kron_nphot - number of measurements used for r_wrp_kron_flux (excluding outliers)
+r_flags - per-filter info flags (equiv. to StackObjectThin.rinfoFlag4)
+r_ncode - number of chip detections in this filter (equiv. to StackObjectThin.nr)
+r_nwarp - number of warp measurements in this filter (including primary & secondary skycells)
+r_nwarp_good - number of warp measurements with psfqfperf > 0.85 in this filter (including primary & secondary skycells)
+r_nstack - number of stack measurements (primary and secondary)
+r_nstack_det - number of stack detections (S/N > 5, primary and secondary)
+r_psfqf - r-band PSF coverage factor
+r_psfqfperf - r-band PSF weighted fraction of pixels totally unmasked
+i_chp_psf - mean i-band chip PSF magnitude [mag]
+i_chp_psf_err - error on mean i-band chip PSF magnitude [mag]
+i_chp_psf_nphot - number of measurements used for i_chp_psf (excluding outliers)
+i_chp_aper - mean i-band chip seeing-adapted aperture magnitude [mag]
+i_chp_aper_err - error on mean i-band chip seeing-adapted aperture magnitude [mag]
+i_chp_aper_nphot - number of measurements used for above (excluding outliers)
+i_chp_kron - mean i-band chip Kron magnitude [mag]
+i_chp_kron_err - error on mean i-band chip Kron magnitude [mag]
+i_chp_kron_nphot - number of measurements used for i_chp_kron (excluding outliers)
+i_stk_psf_flux - best i-band stack PSF flux [Jy]
+i_stk_psf_fluxerr - error on best i-band stack PSF flux [Jy]
+i_stk_psf_nphot - number of measurements used for i_stk_psf_flux (excluding outliers)
+i_stk_aper_flux - i-band stack seeing-adapted aperture flux [Jy]
+i_stk_aper_fluxerr - error on i-band stack seeing-adapted aperture flux [Jy]
+i_stk_aper_nphot - number of measurements used for i_stk_aper_flux (excluding outliers)
+i_stk_kron_flux - i-band stack Kron flux from same stack as 'best' PSF above [Jy]
+i_stk_kron_fluxerr - error on i-band stack Kron flux from same stack as 'best' PSF above [Jy]
+i_stk_kron_nphot - number of measurements used for i_stk_kron_flux (excluding outliers)
+i_wrp_psf_flux - mean i-band forced-warp PSF flux [Jy]
+i_wrp_psf_fluxerr - error on mean i-band forced-warp PSF flux [Jy]
+i_wrp_psf_nphot - number of measurements used for i_wrp_psf_flux (excluding outliers)
+i_wrp_aper_flux - mean i-band forced-warp seeing-adapted aperture flux [Jy]
+i_wrp_aper_fluxerr - error on mean i-band forced-warp seeing-adapted aperture flux [Jy]
+i_wrp_aper_nphot - number of measurements used for i_wrp_aper_flux (excluding outliers)
+i_wrp_kron_flux - mean i-band forced-warp Kron flux [Jy]
+i_wrp_kron_fluxerr - error on mean i-band forced-warp Kron flux [Jy]
+i_wrp_kron_nphot - number of measurements used for i_wrp_kron_flux (excluding outliers)
+i_flags - per-filter info flags (equiv. to StackObjectThin.iinfoFlag4)
+i_ncode - number of chip detections in this filter (equiv. to StackObjectThin.ni)
+i_nwarp - number of warp measurements in this filter (including primary & secondary skycells)
+i_nwarp_good - number of warp measurements with psfqfperf > 0.85 in this filter (including primary & secondary skycells)
+i_nstack - number of stack measurements (primary and secondary)
+i_nstack_det - number of stack detections (S/N > 5, primary and secondary)
+i_psfqf - i-band PSF coverage factor
+i_psfqfperf - i-band PSF weighted fraction of pixels totally unmasked
+z_chp_psf - mean z-band chip PSF magnitude [mag]
+z_chp_psf_err - error on mean z-band chip PSF magnitude [mag]
+z_chp_psf_nphot - number of measurements used for z_chp_psf (excluding outliers)
+z_chp_aper - mean z-band chip seeing-adapted aperture magnitude [mag]
+z_chp_aper_err - error on mean z-band chip seeing-adapted aperture magnitude [mag]
+z_chp_aper_nphot - number of measurements used for above (excluding outliers)
+z_chp_kron - mean z-band chip Kron magnitude [mag]
+z_chp_kron_err - error on mean z-band chip Kron magnitude [mag]
+z_chp_kron_nphot - number of measurements used for z_chp_kron (excluding outliers)
+z_stk_psf_flux - best z-band stack PSF flux [Jy]
+z_stk_psf_fluxerr - error on best z-band stack PSF flux [Jy]
+z_stk_psf_nphot - number of measurements used for z_stk_psf_flux (excluding outliers)
+z_stk_aper_flux - z-band stack seeing-adapted aperture flux [Jy]
+z_stk_aper_fluxerr - error on z-band stack seeing-adapted aperture flux [Jy]
+z_stk_aper_nphot - number of measurements used for z_stk_aper_flux (excluding outliers)
+z_stk_kron_flux - z-band stack Kron flux from same stack as 'best' PSF above [Jy]
+z_stk_kron_fluxerr - error on z-band stack Kron flux from same stack as 'best' PSF above [Jy]
+z_stk_kron_nphot - number of measurements used for z_stk_kron_flux (excluding outliers)
+z_wrp_psf_flux - mean z-band forced-warp PSF flux [Jy]
+z_wrp_psf_fluxerr - error on mean z-band forced-warp PSF flux [Jy]
+z_wrp_psf_nphot - number of measurements used for z_wrp_psf_flux (excluding outliers)
+z_wrp_aper_flux - mean z-band forced-warp seeing-adapted aperture flux [Jy]
+z_wrp_aper_fluxerr - error on mean z-band forced-warp seeing-adapted aperture flux [Jy]
+z_wrp_aper_nphot - number of measurements used for z_wrp_aper_flux (excluding outliers)
+z_wrp_kron_flux - mean z-band forced-warp Kron flux [Jy]
+z_wrp_kron_fluxerr - error on mean z-band forced-warp Kron flux [Jy]
+z_wrp_kron_nphot - number of measurements used for z_wrp_kron_flux (excluding outliers)
+z_flags - per-filter info flags (equiv. to StackObjectThin.zinfoFlag4)
+z_ncode - number of chip detections in this filter (equiv. to StackObjectThin.nz)
+z_nwarp - number of warp measurements in this filter (including primary & secondary skycells)
+z_nwarp_good - number of warp measurements with psfqfperf > 0.85 in this filter (including primary & secondary skycells)
+z_nstack - number of stack measurements (primary and secondary)
+z_nstack_det - number of stack detections (S/N > 5, primary and secondary)
+z_psfqf - z-band PSF coverage factor
+z_psfqfperf - z-band PSF weighted fraction of pixels totally unmasked
+y_chp_psf - mean y-band chip PSF magnitude [mag]
+y_chp_psf_err - error on mean y-band chip PSF magnitude [mag]
+y_chp_psf_nphot - number of measurements used for y_chp_psf (excluding outliers)
+y_chp_aper - mean y-band chip seeing-adapted aperture magnitude [mag]
+y_chp_aper_err - error on mean y-band chip seeing-adapted aperture magnitude [mag]
+y_chp_aper_nphot - number of measurements used for above (excluding outliers)
+y_chp_kron - mean y-band chip Kron magnitude [mag]
+y_chp_kron_err - error on mean y-band chip Kron magnitude [mag]
+y_chp_kron_nphot - number of measurements used for y_chp_kron (excluding outliers)
+y_stk_psf_flux - best y-band stack PSF flux [Jy]
+y_stk_psf_fluxerr - error on best y-band stack PSF flux [Jy]
+y_stk_psf_nphot - number of measurements used for y_stk_psf_flux (excluding outliers)
+y_stk_aper_flux - y-band stack seeing-adapted aperture flux [Jy]
+y_stk_aper_fluxerr - error on y-band stack seeing-adapted aperture flux [Jy]
+y_stk_aper_nphot - number of measurements used for y_stk_aper_flux (excluding outliers)
+y_stk_kron_flux - y-band stack Kron flux from same stack as 'best' PSF above [Jy]
+y_stk_kron_fluxerr - error on y-band stack Kron flux from same stack as 'best' PSF above [Jy]
+y_stk_kron_nphot - number of measurements used for y_stk_kron_flux (excluding outliers)
+y_wrp_psf_flux - mean y-band forced-warp PSF flux [Jy]
+y_wrp_psf_fluxerr - error on mean y-band forced-warp PSF flux [Jy]
+y_wrp_psf_nphot - number of measurements used for y_wrp_psf_flux (excluding outliers)
+y_wrp_aper_flux - mean y-band forced-warp seeing-adapted aperture flux [Jy]
+y_wrp_aper_fluxerr - error on mean y-band forced-warp seeing-adapted aperture flux [Jy]
+y_wrp_aper_nphot - number of measurements used for y_wrp_aper_flux (excluding outliers)
+y_wrp_kron_flux - mean y-band forced-warp Kron flux [Jy]
+y_wrp_kron_fluxerr - error on mean y-band forced-warp Kron flux [Jy]
+y_wrp_kron_nphot - number of measurements used for y_wrp_kron_flux (excluding outliers)
+y_flags - per-filter info flags (equiv. to StackObjectThin.yinfoFlag4)
+y_ncode - number of chip detections in this filter (equiv. to StackObjectThin.ny)
+y_nwarp - number of warp measurements in this filter (including primary & secondary skycells)
+y_nwarp_good - number of warp measurements with psfqfperf > 0.85 in this filter (including primary & secondary skycells)
+y_nstack - number of stack measurements (primary and secondary)
+y_nstack_det - number of stack detections (S/N > 5, primary and secondary)
+y_psfqf - y-band PSF coverage factor
+y_psfqfperf - y-band PSF weighted fraction of pixels totally unmasked
+catid_objid - computed as (catid << 32) & objid. Equivalent to StackObjectThin.ippObjID
+extid_hi_lo - computed as (extid_hi << 32) & extid_lo. Equivalent to StackObjectThin.ObjID

@@ -1,0 +1,22 @@
+Summary
+-------
+
+This table includes associations between sdss_id identifiers and the best matched catalogid for each catalogue cross-match.
+
+Unlike dr19_sdss_id_stacked, this table contains multiple rows per sdss_id, one for each cross-match association. When multiple sdss_ids are associated with the same catalogid, the one with the lowest rank (rank=1) should be preferred.
+
+Note: The sdss_id match was extended internally for a more recent crossmatch not yet part of the publicly released data. As such, the ra/dec_sdss_id columns may differ from the catalogid coordinates.
+
+Columns
+-------
+
+sdss_id - The SDSS identifier for a unique object.
+catalogid - The associated catalogid for this target.
+version_id - The version of the cross-match associated with the catalogid.
+ra_sdss_id - The right ascension of the target in ICRS J2015.5 coordinates (taken from the highest version catalogid in dr19_sdss_id_stacked).
+dec_sdss_id - The declination of the target in ICRS J2015.5 coordinates (taken from the highest version catalogid in dr19_sdss_id_stacked).
+n_associated - The number of sdss_ids associated with this catalogid.
+ra_catalogid - The right ascension of this row's catalogid from the dr19_catalog table.
+dec_catalogid - The declination of this row's catalogid from the dr19_catalog table.
+pk - The primary key. A sequential identifier for this table.
+rank - The rank of the sdss_id to catalogid association. When multiple sdss_ids are associated with the same catalogid, the one with the lowest rank (rank=1) should be preferred.

@@ -1,0 +1,21 @@
+Summary
+-------
+
+Chandra Source Catalogue version 2.0 (CSC2) sources.
+
+Chandra Source Catalogue version 2.0 (CSC2) sources that have been matched (separately) to the PanSTARRS-1 and 2MASS catalogs.  This version of the CSC2 catalog informed early (plate era) SDSS-V observations but was then replaced by updated versions.
+
+Columns
+-------
+
+pk - primary key of this table entry
+csc_version - Always equal to 'CSC2stub1'
+cxo_name - unique identifier for the CSC X-ray source
+oir_ra - despite the name, this is the X-ray coordinate of the target [deg]
+oir_dec - despite the name, this is the X-ray coordinate of the target [deg]
+mag_g - optical magnitude (g-band) from Pan-STARRS1 catalog, if available [mag]
+mag_r - optical magnitude (r-band) from Pan-STARRS1 catalog, if available [mag]
+mag_i - optical magnitude (i-band) from Pan-STARRS1 catalog, if available [mag]
+mag_z - optical magnitude (z-band) from Pan-STARRS1 catalog, if available [mag]
+mag_h - H-band NIR magnitude from 2MASS catalog, if available [mag]
+spectrograph - Which spectrograph this target should be observed with (BOSS or APOGEE)

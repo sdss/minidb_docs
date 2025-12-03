@@ -1,0 +1,110 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+pgc - 
+objname - 
+id_ned - 
+id_nedd - 
+id_iras - 
+id_2mass - 
+sdss_photid - 
+sdss_specid - 
+ra - 
+dec - 
+f_astrom - 
+r1 - 
+r2 - 
+pa - 
+rsource - 
+rflag - 
+t - 
+e_t - 
+incl - 
+v - 
+e_v - 
+v_vir - 
+e_v_vir - 
+ndist - 
+edist - 
+d - 
+e_d - 
+d_lo68 - 
+d_hi68 - 
+d_lo95 - 
+d_hi95 - 
+dmethod - 
+ut - 
+bt - 
+vt - 
+it - 
+e_ut - 
+e_bt - 
+e_vt - 
+e_it - 
+ag - 
+ai - 
+s12 - 
+s25 - 
+s60 - 
+s100 - 
+q12 - 
+q25 - 
+q60 - 
+q100 - 
+wf1 - 
+wf2 - 
+wf3 - 
+wf4 - 
+e_wf1 - 
+e_wf2 - 
+e_wf3 - 
+e_wf4 - 
+wfpoint - 
+wftreat - 
+j - 
+h - 
+k - 
+e_j - 
+e_h - 
+e_k - 
+flag_2mass - 
+u - 
+g - 
+r - 
+i - 
+z - 
+e_u - 
+e_g - 
+e_r - 
+e_i - 
+e_z - 
+logl_tir - 
+logl_fir - 
+logl_60u - 
+logl_12u - 
+logl_22u - 
+logl_k - 
+ml_ratio - 
+logsfr_tir - 
+logsfr_fir - 
+logsfr_60u - 
+logsfr_12u - 
+logsfr_22u - 
+logsfr_hec - 
+flag_sfr_hec - 
+logm_hec - 
+logsfr_gsw - 
+logm_gsw - 
+min_snr - 
+metal - 
+flag_metal - 
+class_sp - 
+agn_s17 - 
+agn_hec - 
+

@@ -1,0 +1,42 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+pk - 
+sdss_id - 
+catalogid - 
+version_id - 
+lead - 
+allstar_dr17_synspec_rev1__apstar_id - 
+allwise__cntr - 
+bhm_rm_v0__pk - 
+bhm_rm_v0_2__pk - 
+catwise__source_id - 
+catwise2020__source_id - 
+gaia_dr2_source__source_id - 
+gaia_dr3_source__source_id - 
+glimpse__pk - 
+guvcat__objid - 
+legacy_survey_dr10__ls_id - 
+legacy_survey_dr8__ls_id - 
+mangatarget__mangaid - 
+marvels_dr11_star__starname - 
+marvels_dr12_star__pk - 
+mastar_goodstars__mangaid - 
+panstarrs1__catid_objid - 
+ps1_g18__objid - 
+sdss_dr13_photoobj__objid - 
+sdss_dr17_specobj__specobjid - 
+skymapper_dr1_1__object_id - 
+skymapper_dr2__object_id - 
+supercosmos__objid - 
+tic_v8__id - 
+twomass_psc__pts_key - 
+tycho2__designation - 
+unwise__unwise_objid - 
+

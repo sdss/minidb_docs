@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import os
 import pathlib
+import shutil
 import warnings
 
 from sdssdb.peewee.sdss5db import database
@@ -18,10 +19,12 @@ from sdssdb.peewee.sdss5db import database
 def create_docs_files(overwrite: bool = False):
 
     database.set_profile("tunnel_operations")
-    schema = "minidb_dr19"
+    schema = "minidb_dr20"
 
-    output_dir = pathlib.Path(__file__).parent / "dr19"
-    output_dir.mkdir(exist_ok=True)
+    dr19_dir = pathlib.Path(__file__).parent / "dr19"
+
+    dr20_dir = pathlib.Path(__file__).parent / "dr20"
+    dr20_dir.mkdir(exist_ok=True)
 
     tables = database.get_tables(schema)
     legacy_tables = [
@@ -53,11 +56,12 @@ def create_docs_files(overwrite: bool = False):
             table = fqtn
             this_schema = schema
 
-        # Small hack for legacy tables not yet in the minidb_dr19 schema but that
-        # will get the dr19_ prefix.
-        fname = output_dir / f"{table}.txt"
-        if not table.startswith("dr19_"):
-            fname = output_dir / f"dr19_{table}.txt"
+        # Small hack for legacy tables not yet in the minidb_dr20 schema but that
+        # will get the dr20_ prefix.
+        fname = dr20_dir / f"{table}.txt"
+        if not table.startswith("dr20_"):
+            fname = dr20_dir / f"dr20_{table}.txt"
+        fname_dr19 = dr19_dir / fname.name.replace("dr20_", "dr19_")
 
         if os.path.exists(fname):
             if not overwrite:
@@ -65,6 +69,10 @@ def create_docs_files(overwrite: bool = False):
                 continue
             else:
                 os.remove(fname)
+
+        if fname_dr19.exists():
+            shutil.copyfile(fname_dr19, fname)
+            continue
 
         f = open(fname, "w")
 

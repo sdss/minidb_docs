@@ -1,0 +1,36 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+csc21p_id - 
+csc21p_ensemble - 
+ra - 
+dec - 
+best_oir_cat - 
+best_mag - 
+mag_type - 
+gaia_dr3_srcid - 
+ls_dr10_lsid - 
+ls_dr10_objid - 
+ls_dr10_brickid - 
+ls_dr10_release - 
+ps21p_objid - 
+ps21p_ippobjid - 
+tmass_designation - 
+tmass_ra - 
+tmass_dec - 
+tmass_h - 
+csc21p_ra - 
+csc21p_dec - 
+logfx - 
+xband - 
+extent - 
+xsig - 
+xpriority - 
+pk - 
+

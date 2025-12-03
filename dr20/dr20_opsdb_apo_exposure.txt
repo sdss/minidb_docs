@@ -1,0 +1,17 @@
+Summary
+-------
+
+The table contains exposures taken at the observatory.
+
+
+Columns
+-------
+
+pk - Unique identifier []
+configuration_id - Unique identifier in the configuration table []
+exposure_no - An Exposure Number assigned by the on mountain pipelines []
+comment - Optional comment []
+start_time - The time an exposure started [datetime]
+exposure_time - The length of the exposure [seconds]
+exposure_flavor_pk - Unique identifier in the exposure_flavor table []
+

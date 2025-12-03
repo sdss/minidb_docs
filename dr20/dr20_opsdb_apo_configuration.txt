@@ -1,0 +1,16 @@
+Summary
+-------
+
+This table contains basic information about a configuration of robots loaded at the telescope.
+
+
+Columns
+-------
+
+configuration_id - Unique identifier
+design_id - Unique identifier of the design loaded
+comment - An optional comment
+temperature - The ambient temperature when the design was loaded
+epoch - The Julian Date (JD) when the design was loaded
+calibration_version - The version of fps_calibration used, https://github.com/sdss/fps_calibrations/tags
+

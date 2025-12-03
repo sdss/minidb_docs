@@ -1,0 +1,38 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+ero_version - 
+ero_detuid - 
+ero_flux - 
+ero_flux_type - 
+ero_mjd - 
+ero_morph - 
+ero_flags - 
+ero_det_like - 
+ero_ra - 
+ero_dec - 
+ero_radec_err - 
+xmatch_method - 
+xmatch_version - 
+xmatch_dist - 
+xmatch_metric - 
+xmatch_flags - 
+target_class - 
+target_priority - 
+target_has_spec - 
+opt_cat - 
+ls_id - 
+gaia_dr3_source_id - 
+opt_ra - 
+opt_dec - 
+opt_pmra - 
+opt_pmdec - 
+opt_epoch - 
+pkey - 
+

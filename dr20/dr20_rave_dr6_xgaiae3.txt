@@ -1,0 +1,29 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+obsid - 
+gaiae3 - 
+id - 
+epoch - 
+radeg - 
+e_radeg - 
+dedeg - 
+e_dedeg - 
+plx - 
+e_plx - 
+pmra - 
+e_pmra - 
+pmde - 
+e_pmde - 
+dup - 
+ng - 
+fg - 
+e_fg - 
+gmag - 
+

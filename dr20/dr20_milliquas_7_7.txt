@@ -1,0 +1,29 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+ra - 
+dec - 
+name - 
+type - 
+rmag - 
+bmag - 
+comment - 
+r - 
+b - 
+z - 
+cite - 
+zcite - 
+rxpct - 
+qpct - 
+xname - 
+rname - 
+lobe1 - 
+lobe2 - 
+pk - 
+

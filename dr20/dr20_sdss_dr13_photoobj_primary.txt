@@ -1,0 +1,13 @@
+Summary
+-------
+
+Columns from the PhotoPrimary Table of SDSS DR13.
+
+
+Columns
+-------
+
+objid - Unique SDSS identifier composed from skyVersion,rerun,run,camcol,field,obj []
+ra - Right ascension [degrees]
+dec - Declination [degrees]
+

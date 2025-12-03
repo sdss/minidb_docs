@@ -1,0 +1,15 @@
+Summary
+-------
+
+The table contains observing constraints for different observing modes. Cadences have an observing mode associated with each epoch, and the constraints are checked before an epoch can be scheduled.
+
+
+Columns
+-------
+
+label - Descriptive name for the observing mode, e.g. 'dark_rm' []
+min_moon_sep - Minimum distance a target must be from the Moon [deg]
+min_deltav_ks91 - Minimum estimated background flux from the Moon, using the method of Krisciunas, K., & Schaefer 1991 [mag]
+min_twilight_ang - Minimum twilight angle (angle of the Sun below the horizon) for a target to be observed [deg]
+max_airmass_apo - Max airmass at which a target can be observed at APO
+max_airmass_lco - Max airmass at which a target can be observed at LCO

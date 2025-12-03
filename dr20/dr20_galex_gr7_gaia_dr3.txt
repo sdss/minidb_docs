@@ -1,0 +1,18 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+gaia_edr3_source_id - 
+galex_objid - 
+fuv_mag - 
+fuv_magerr - 
+nuv_mag - 
+nuv_magerr - 
+galex_separation - 
+pk - 
+

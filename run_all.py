@@ -20,13 +20,13 @@ from update_create_table import update_create_table
 
 def run_all():
 
-    files = glob.glob("dr19/dr19_*.txt")
+    files = glob.glob("dr20/dr20_*.txt")
 
-    output_dir = pathlib.Path(__file__).parent / "dr19"
+    output_dir = pathlib.Path(__file__).parent / "dr20"
     output_dir.mkdir(exist_ok=True)
 
-    create_table_orig = output_dir / "create_minidb_dr19.sql"
-    create_table_orig_updated = output_dir / "create_minidb_dr19_descriptions.sql"
+    create_table_orig = output_dir / "create_minidb_dr20.sql"
+    create_table_orig_updated = output_dir / "create_minidb_dr20_descriptions.sql"
 
     if os.path.exists(create_table_orig_updated):
         os.unlink(create_table_orig_updated)
@@ -35,7 +35,7 @@ def run_all():
 
     for fn in files:
         name = os.path.basename(fn)
-        table = "minidb_dr19." + name.split(".")[0]
+        table = "minidb_dr20." + name.split(".")[0]
 
         try:
             print(fn)

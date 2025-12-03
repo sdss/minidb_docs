@@ -1,0 +1,33 @@
+Summary
+-------
+
+
+
+
+Columns
+-------
+
+rm_field_name - 
+ra - 
+dec - 
+catalogidv05 - 
+rm_known_spec - 
+rm_core - 
+rm_var - 
+rm_ancillary - 
+mag_g - 
+mag_r - 
+mag_i - 
+mag_z - 
+gaia_g - 
+gaia_bp - 
+gaia_rp - 
+ls_id_dr8 - 
+ls_id_dr10 - 
+gaia_dr2_source_id - 
+gaia_dr3_source_id - 
+panstarrs1_catid_objid - 
+rm_unsuitable - 
+rm_xrayqso - 
+pkey - 
+
