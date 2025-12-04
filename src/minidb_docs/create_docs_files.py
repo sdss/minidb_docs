@@ -39,29 +39,7 @@ def create_docs_files(
     dr_dir.mkdir(exist_ok=True)
 
     tables = database.get_tables(schema)
-    legacy_tables = [
-        "catalogdb.sdss_id_flat",
-        "catalogdb.sdss_id_stacked",
-        "catalogdb.sdss_id_to_catalog",
-        "catalogdb.catalog_to_mangatarget",
-        "catalogdb.mangatarget",
-        "catalogdb.catalog_to_mastar_goodstars",
-        "catalogdb.mastar_goodstars",
-        "catalogdb.mastar_goodvisits",
-        "catalogdb.catalog_to_allstar_dr17_synspec_rev1",
-        "catalogdb.allstar_dr17_synspec_rev1",
-        "catalogdb.catalog_to_marvels_dr11_star",
-        "catalogdb.marvels_dr11_star",
-        "catalogdb.catalog_to_marvels_dr12_star",
-        "catalogdb.marvels_dr12_star",
-        "catalogdb.catalog_to_sdss_dr16_specobj",
-        "catalogdb.sdss_dr16_specobj",
-        "catalogdb.catalog_to_sdss_dr17_specobj",
-        "catalogdb.sdss_dr17_specobj",
-        "catalogdb.mangadapall",
-        "catalogdb.mangadrpall",
-    ]
-    for fqtn in tables + legacy_tables:
+    for fqtn in tables:
         if "." in fqtn:
             this_schema, table = fqtn.split(".")
         else:
