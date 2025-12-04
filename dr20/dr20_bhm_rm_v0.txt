@@ -122,7 +122,7 @@ pqso_xdqso - QSO probability from the public XDQSO catalog
 photoz_xdqso -  Photometric redshift of QSO from the public XDQSO catalog
 prob_rf_gaia_unwise - AGN probability from the Gaia-unWISE AGN catalog
 photoz_gaia_unwise - Photometric redshift from the Gaia-unWISE AGN catalog
-des_var_sn_max -The signal-to-noise ratio of the measured intrinsic RMS in grizy bands (DES).
+des_var_sn_max - The signal-to-noise ratio of the measured intrinsic RMS in grizy bands (DES).
 ps1_var_sn_max - The maximum signal-to-noise ratio of the measured intrinsic RMS over 5 bands (PS1).
 spec_q - flag indicating if the object was spectroscopically confirmed as QSO from earlier surveys (-9=False, 1=True). Note that contents of this column are incorrect in this version of the table.
 spec_strmask - string format of spec_bitmask, e.g., '000001'.

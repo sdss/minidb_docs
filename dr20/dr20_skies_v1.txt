@@ -13,7 +13,7 @@ pix_32768 - The HEALpix pixel (nside=32768, nested indexing, Equatorial coords) 
 ra - The RA of the centre of the sky pixel. [degrees]
 dec - The declination of the centre of the sky pixel. [degrees]
 down_pix - The HEALpix pixel (nside=256, nested indexing, Equatorial coords) of the sky region. Used internally to downsample the list of candidate region. []
-tile_32 -The HEALpix pixel (nside=32, nested indexing, Equatorial coords) of the sky region. []
+tile_32 - The HEALpix pixel (nside=32, nested indexing, Equatorial coords) of the sky region. []
 gaia_sky - Whether this is a valid sky region in the Gaia DR2 catalogue. []
 sep_neighbour_gaia - Separation to the nearest Gaia DR2 neighbour. [arcsec]
 mag_neighbour_gaia - Magnitude of the nearest Gaia DR2 neighbour (G band, Vega). [mag]

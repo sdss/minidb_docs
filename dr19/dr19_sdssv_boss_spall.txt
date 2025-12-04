@@ -124,9 +124,9 @@ spectroskyflux_i - Sky spectrum projected onto SDSS-i filter [nanomaggy]
 spectroskyflux_z - Sky spectrum projected onto SDSS-z filter [nanomaggy]
 anyandmask - For each bit, records whether any pixel in the spectrum has that bit set in its ANDMASK
 anyormask - For each bit, records whether any pixel in the spectrum has that bit set in its ORMASK
-spec1_g -(S/N)^2 at g=20.20 for spectrograph #1 (same value for 500 fibers)
-spec1_r -(S/N)^2 at r=20.25 for spectrograph #1 (same value for 500 fibers)
-spec1_i -(S/N)^2 at i=19.90 for spectrograph #1 (same value for 500 fibers)
+spec1_g - (S/N)^2 at g=20.20 for spectrograph #1 (same value for 500 fibers)
+spec1_r - (S/N)^2 at r=20.25 for spectrograph #1 (same value for 500 fibers)
+spec1_i - (S/N)^2 at i=19.90 for spectrograph #1 (same value for 500 fibers)
 elodie_filename - File name for best-fit Elodie star
 elodie_object - Star name (mostly Henry Draper names)
 elodie_sptype - Spectral type

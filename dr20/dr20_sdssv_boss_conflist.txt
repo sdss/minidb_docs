@@ -107,4 +107,4 @@ status1d - Status of 1d analysis
 public - Is this Plate Public
 qualcomments - Comments on Plate Quality
 moon_frac - Mean Moon phase of the Coadded Spectra
-pkey -primary key for table entry
+pkey - primary key for table entry
