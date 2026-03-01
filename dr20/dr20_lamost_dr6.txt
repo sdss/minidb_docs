@@ -1,53 +1,54 @@
 Summary
 -------
 
+Cross-match between the LAMOST DR6 low resolution spectral survey and Gaia eDR3. For more details on the LAMOS LRS survey, refer to https://dr6.lamost.org/doc/lr-data-production-description.
 
+[INCOMPLETE] Missing column descriptions for what I think is the cross-match with eDR3.
 
 
 Columns
 -------
 
-obsid - 
-designation - 
-obsdate - 
-lmjd - 
-mjd - 
-planid - 
-spid - 
-fiberid - 
-ra_obs - 
-dec_obs - 
-snru - 
-snrg - 
-snrr - 
-snri - 
-snrz - 
-objtype - 
-class - 
-subclass - 
-z - 
-z_err - 
-magtype - 
-mag1 - 
-mag2 - 
-mag3 - 
-mag4 - 
-mag5 - 
-mag6 - 
-mag7 - 
-tsource - 
-fibertype - 
-tfrom - 
-tcomment - 
-offsets - 
-offsets_v - 
-ra - 
-dec - 
-fibermask - 
-ra_x - 
-dec_x - 
-errhalfmaj - 
-errhalfmin - 
-errposang - 
-source_id - 
-
+obsid - Unique Spectra ID
+designation - Target Designation
+obsdate - Target Observation Date
+lmjd - Local Modified Julian Day
+mjd - Modified Julian Day
+planid - Plan Name
+spid - Spectrograph ID
+fiberid - Fiber ID
+ra_obs - Fiber Pointing Right Ascension [degrees]
+dec_obs - Fiber Pointing Declination [degrees]
+snru - S/N of u filter
+snrg - S/N of g filter
+snrr - S/N of r filter
+snri - S/N of i filter
+snrz - S/N of z filter
+objtype - Object Type
+class - Spectra Type
+subclass - Stellar Sub-Class
+z - Redshift
+z_err - Redshift Uncertainty
+magtype - Target Magnitude Type
+mag1 - Associated Magnitude 1 [mag]
+mag2 - Associated Magnitude 2 [mag]
+mag3 - Associated Magnitude 3 [mag]
+mag4 - Associated Magnitude 4 [mag]
+mag5 - Associated Magnitude 5 [mag]
+mag6 - Associated Magnitude 6 [mag]
+mag7 - Associated Magnitude 7 [mag]
+tsource - Organization or person who submit input catalog
+fibertype - Fiber Type of target [Obj, Sky, F-std, Unused, PosErr, Dead]
+tfrom - Input catalog submitted by an organization or a person determined by the tsource
+tcomment - Target ID from SDSS, UCAC4, PANSTAR and other catalogues
+offsets - Whether there is a fiber offset during observation
+offsets_v - If the offsets field is true, offsets_v gives the offset distance from the target's coordinator in input catalog [arcsec]
+ra - Right Ascension from input catalog [degrees]
+dec - Declination from input catalog [degrees]
+fibermask - Possible fiber problems
+ra_x -
+dec_x -
+errhalfmaj -
+errhalfmin -
+errposang -
+source_id -

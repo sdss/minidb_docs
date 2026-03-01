@@ -1,110 +1,109 @@
 Summary
 -------
 
-
+The Heraklion Extragalactic Catalogue (HECATE). For more details, refer to Kovlakas et al. 2021 (https://academic.oup.com/mnras/article/506/2/1896/6309318).
 
 
 Columns
 -------
 
-pgc - 
-objname - 
-id_ned - 
-id_nedd - 
-id_iras - 
-id_2mass - 
-sdss_photid - 
-sdss_specid - 
-ra - 
-dec - 
-f_astrom - 
-r1 - 
-r2 - 
-pa - 
-rsource - 
-rflag - 
-t - 
-e_t - 
-incl - 
-v - 
-e_v - 
-v_vir - 
-e_v_vir - 
-ndist - 
-edist - 
-d - 
-e_d - 
-d_lo68 - 
-d_hi68 - 
-d_lo95 - 
-d_hi95 - 
-dmethod - 
-ut - 
-bt - 
-vt - 
-it - 
-e_ut - 
-e_bt - 
-e_vt - 
-e_it - 
-ag - 
-ai - 
-s12 - 
-s25 - 
-s60 - 
-s100 - 
-q12 - 
-q25 - 
-q60 - 
-q100 - 
-wf1 - 
-wf2 - 
-wf3 - 
-wf4 - 
-e_wf1 - 
-e_wf2 - 
-e_wf3 - 
-e_wf4 - 
-wfpoint - 
-wftreat - 
-j - 
-h - 
-k - 
-e_j - 
-e_h - 
-e_k - 
-flag_2mass - 
-u - 
-g - 
-r - 
-i - 
-z - 
-e_u - 
-e_g - 
-e_r - 
-e_i - 
-e_z - 
-logl_tir - 
-logl_fir - 
-logl_60u - 
-logl_12u - 
-logl_22u - 
-logl_k - 
-ml_ratio - 
-logsfr_tir - 
-logsfr_fir - 
-logsfr_60u - 
-logsfr_12u - 
-logsfr_22u - 
-logsfr_hec - 
-flag_sfr_hec - 
-logm_hec - 
-logsfr_gsw - 
-logm_gsw - 
-min_snr - 
-metal - 
-flag_metal - 
-class_sp - 
-agn_s17 - 
-agn_hec - 
-
+pgc - Principal Catalogue of Galaxies number
+objname - Object name in the HyperLEDA
+id_ned - Name in NED
+id_nedd - Name in NED-Distance Catalogue
+id_iras - Name in IRAS-RBGS, or in RIFSCz if in the form Fxxxxx+xxxx
+id_2mass - ID in 2MASS-LGA, 2MASS-XSC, or 2MASS-PSC (see flag_2mass)
+sdss_photid - SDSS photometric ID (consistent with DR8 releases and later)
+sdss_specid - SDSS spectroscopic ID (consistent with DR8 releases and later)
+ra - Decimal right ascension J2000.0 [degrees]
+dec - Decimal declination J2000.0 [degrees]
+f_astrom - Astrometric precision flag: -1 for ~0.1 arcsec, 0 for 1 arcsec, 1 for 10 arcsec, etc
+r1 - D25 semi-major axis [arcmin]
+r2 - D25 semi-minor axis [arcmin]
+pa - D25 positional angle, North-to-Northeast [degrees]
+rsource - Source of the galaxy-size information: H=HyperLEDA, S=SDSS, 2=2MASS, 6=2dFGS, W=WINGS, Y=SkyMapper, A=Amiga-CIG, K=UNGC, V=VIII/77, 1=KKH2001, 7=KKH2007, N=NED
+rflag - Galaxy-size information flag: 0=missing, 1=all axes and positional angle defined, 2=r2 and/or pa were missing and they were set equal to r1 and 0 (circular isophote)
+t - Numerical Hubble-type following the de Vaucouleurs et al. 1976 system
+e_t - Uncertainty on the numerical Hubble-type
+incl - Inclination [degrees]
+v - Heliocentric radial velocity [km/s]
+e_v - Uncertainty on the heliocentric radial velocity [km/s]
+v_vir - Virgo-infall corrected radial velocity [km/s]
+e_v_vir - Uncertainty on the Virgo-infall corrected radial velocity [km/s]
+ndist - Number of redshift-independent measurements in NED-D used for the computation of the distance
+edist - If True, the NED-D distance measurements had uncertainties
+d - Distance [Mpc]
+e_d - Uncertainty on the distance [Mpc]
+d_lo68 - Lower bound of the 68% confidence interval of the distance [Mpc]
+d_hi68 - Upper bound of the 68% confidence interval of the distance [Mpc]
+d_lo95 - Lower bound of the 95% confidence interval of the distance [Mpc]
+d_hi95 - Upper bound of the 95% confidence interval of the distance [Mpc]
+dmethod - Method for the estimation of the distance: N=using NED-D distance measurements, Z=regression, Zv=regression for Virgo Cluster members, C=distance from NED-D measurements but uncertainty from regression, Cv=distance from NED-D measurements but uncertainty from Virgo Cluster regressor
+ut - Total U-band apparent magnitude [mag]
+bt - Total B-band apparent magnitude [mag]
+vt - Total V-band apparent magnitude [mag]
+it - Total I-band apparent magnitude [mag]
+e_ut - Uncertainty on the total U-band apparent magnitude [mag]
+e_bt - Uncertainty on the total B-band apparent magnitude [mag]
+e_vt - Uncertainty on the total V-band apparent magnitude [mag]
+e_it - Uncertainty on the total I-band apparent magnitude [mag]
+ag - Galactic absorption in B-band [mag]
+ai - Intrinsic absorption in B-band [mag]
+s12 - 12μm-band flux from IRAS [Jy]
+s25 - 25μm-band flux from IRAS [Jy]
+s60 - 60μm-band flux from IRAS [Jy]
+s100 - 100μm-band flux from IRAS [Jy]
+q12 - Quality flag for the 12μm-band flux from IRAS: 0=not in IRAS, 1=upper limit, 2=moderate, 3=high, 4=flux from IRAS-RBGS
+q25 - Quality flag for the 25μm-band flux from IRAS: 0=not in IRAS, 1=upper limit, 2=moderate, 3=high, 4=flux from IRAS-RBGS
+q60 - Quality flag for the 60μm-band flux from IRAS: 0=not in IRAS, 1=upper limit, 2=moderate, 3=high, 4=flux from IRAS-RBGS
+q100 - Quality flag for the 100μm-band flux from IRAS: 0=not in IRAS, 1=upper limit, 2=moderate, 3=high, 4=flux from IRAS-RBGS
+wf1 - 3.3μm-band (W1) apparent magnitude in the WISE forced photometry catalog [mag]
+wf2 - 4.6μm-band (W2) apparent magnitude in the WISE forced photometry catalog [mag]
+wf3 - 12μm-band (W3) apparent magnitude in the WISE forced photometry catalog [mag]
+wf4 - 22μm-band (W4) apparent magnitude in the WISE forced photometry catalog [mag]
+e_wf1 - Uncertainty on the 3.3μm-band (W1) apparent magnitude in the WISE forced photometry catalog [mag]
+e_wf2 - Uncertainty on the 4.6μm-band (W2) apparent magnitude in the WISE forced photometry catalog [mag]
+e_wf3 - Uncertainty on the 12μm-band (W3) apparent magnitude in the WISE forced photometry catalog [mag]
+e_wf4 - Uncertainty on the 22μm-band (W4) apparent magnitude in the WISE forced photometry catalog [mag]
+wfpoint - True if point source in the WISE forced photometry catalog
+wftreat - True if treated as point source in the WISE forced photometry catalog
+j - J-band apparent magnitude in 2MASS [mag]
+h - H-band apparent magnitude in 2MASS [mag]
+k - K-band apparent magnitude in 2MASS [mag]
+e_j - Uncertainty on the J-band apparent magnitude in 2MASS [mag]
+e_h - Uncertainty on the H-band apparent magnitude in 2MASS [mag]
+e_k - Uncertainty on the K-band apparent magnitude in 2MASS [mag]
+flag_2mass - Source of the 2MASS ID and magnitudes: 0=none, 1=LGA, 2=XSC, 3=PSC
+u - u-band SDSS apparent magnitude [mag]
+g - g-band SDSS apparent magnitude [mag]
+r - r-band SDSS apparent magnitude [mag]
+i - i-band SDSS apparent magnitude [mag]
+z - z-band SDSS apparent magnitude [mag]
+e_u - Uncertainty on the u-band SDSS apparent magnitude [mag]
+e_g - Uncertainty on the g-band SDSS apparent magnitude [mag]
+e_r - Uncertainty on the r-band SDSS apparent magnitude [mag]
+e_i - Uncertainty on the i-band SDSS apparent magnitude [mag]
+e_z - Uncertainty on the z-band SDSS apparent magnitude [mag]
+logl_tir - Decimal logarithm of the total-infrared (TIR) luminosity in solar luminosities
+logl_fir - Decimal logarithm of the far-infrared (FIR) luminosity in solar luminosities
+logl_60u - Decimal logarithm of the 60μm-band luminosity in solar luminosities
+logl_12u - Decimal logarithm of the 12μm-band luminosity in solar luminosities
+logl_22u - Decimal logarithm of the 22μm-band luminosity in solar luminosities
+logl_k - Decimal logarithm of the K-band luminosity in solar luminosities
+ml_ratio - Mass-to-light ratio for the 2MASS K-band using SDSS g-r colour (Bell et al. 2003)
+logsfr_tir - Decimal logarithm of the TIR-based star-formation rate in solar masses per year
+logsfr_fir - Decimal logarithm of the FIR-based star-formation rate in solar masses per year
+logsfr_60u - Decimal logarithm of the 60μm-based star-formation rate in solar masses per year
+logsfr_12u - Decimal logarithm of the 12μm-based star-formation rate in solar masses per year
+logsfr_22u - Decimal logarithm of the 22μm-based star-formation rate in solar masses per year
+logsfr_hec - Decimal logarithm of the homogenised star-formation rate in solar masses per year
+flag_sfr_hec - Flag indicating the source of the photometry and the SFR indicator used in the homogenised SFR: RT=IRAS-RBGS photometry and TIR indicator, FT=RIFSCz photometry and TIR indicator, FF=RIFSCz photometry and FIR indicator, W3=WISE W3-band forced photometry and indicator, W4=WISE W4-band forced photometry and indicator
+logm_hec - Decimal logarithm of the total stellar mass in solar masses
+logsfr_gsw - Decimal logarithm of the SED-based star-formation rate from the GSWLC-2 in solar masses per year
+logm_gsw - Decimal logarithm of the SED-based stellar mass from the GSWLC-2 in solar masses
+min_snr - Minimum signal-to-noise ratio of the emission lines used for the activity classification
+metal - 12+log(O/H) gas-phase metallicity
+flag_metal - Metallicity flag: -1=missing, 0=reliable, 1=O3N2 ratio >2 (outside the PP04 range), 2=low signal-to-noise ratio (<3 for the weakest line)
+class_sp - Nuclear activity classification using the method in Stampoulis et al. 2019: 0=star-forming, 1=Seyfert, 2=LINER, 3=composite, -1=unknown
+agn_s17 - AGN classification in She et al. 2017: Y=AGN, N=non-AGN, ?=unknown
+agn_hec - Adopted activity classification based on the combination of class_sp and agn_s17: Y=AGN, N=non-AGN, ?=unknown
