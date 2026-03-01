@@ -1,7 +1,7 @@
 Summary
 -------
 
-This table stores the names of the mappers associated with cartons in dr19_carton.
+This table stores the names of the mappers associated with cartons in dr20_carton.
 
 
 Columns

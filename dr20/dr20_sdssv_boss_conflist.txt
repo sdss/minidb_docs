@@ -1,12 +1,12 @@
 Summary
 -------
 
-The dr19_sdssv_boss_conflist table is a database representation of an
+The dr20_sdssv_boss_conflist table is a database representation of an
 early version of the SDSS-V BOSS fieldlist data product.
 
-The dr19_sdssv_boss_conflist table was used within early iterations of FPS target_selection as a way to communicate information about which SDSS-V plates had been observed by the time of target selection. This information was used to e.g. de-prioritise targets that were expected to have a good quality spectroscopic measurement before the start of SDSS-V FPS operations.
+The dr20_sdssv_boss_conflist table was used within early iterations of FPS target_selection as a way to communicate information about which SDSS-V plates had been observed by the time of target selection. This information was used to e.g. de-prioritise targets that were expected to have a good quality spectroscopic measurement before the start of SDSS-V FPS operations.
 
-Caution. The dr19_sdssv_boss_conflist table should only be used in order to recreate the target_selection selection function.
+Caution. The dr20_sdssv_boss_conflist table should only be used in order to recreate the target_selection selection function.
 
 Column descriptions are mainly derived from: https://data.sdss.org/datamodel/files/BOSS_SPECTRO_REDUX/RUN2D/platelist.html
 

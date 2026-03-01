@@ -1,207 +1,206 @@
 Summary
 -------
 
-
+The GALAH DR3 main catalogue. See https://www.galah-survey.org/dr3/table_schema/
 
 
 Columns
 -------
 
-star_id - 
-sobject_id - 
-dr2_source_id - 
-dr3_source_id - 
-survey_name - 
-field_id - 
-flag_repeat - 
-wg4_field - 
-wg4_pipeline - 
-flag_sp - 
-teff - 
-e_teff - 
-irfm_teff - 
-irfm_ebv - 
-irfm_ebv_ref - 
-logg - 
-e_logg - 
-fe_h - 
-e_fe_h - 
-flag_fe_h - 
-fe_h_atmo - 
-vmic - 
-vbroad - 
-e_vbroad - 
-chi2_sp - 
-alpha_fe - 
-e_alpha_fe - 
-nr_alpha_fe - 
-flag_alpha_fe - 
-flux_a_fe - 
-chi_a_fe - 
-li_fe - 
-e_li_fe - 
-nr_li_fe - 
-flag_li_fe - 
-c_fe - 
-e_c_fe - 
-nr_c_fe - 
-flag_c_fe - 
-o_fe - 
-e_o_fe - 
-nr_o_fe - 
-flag_o_fe - 
-na_fe - 
-e_na_fe - 
-nr_na_fe - 
-flag_na_fe - 
-mg_fe - 
-e_mg_fe - 
-nr_mg_fe - 
-flag_mg_fe - 
-al_fe - 
-e_al_fe - 
-nr_al_fe - 
-flag_al_fe - 
-si_fe - 
-e_si_fe - 
-nr_si_fe - 
-flag_si_fe - 
-k_fe - 
-e_k_fe - 
-nr_k_fe - 
-flag_k_fe - 
-ca_fe - 
-e_ca_fe - 
-nr_ca_fe - 
-flag_ca_fe - 
-sc_fe - 
-e_sc_fe - 
-nr_sc_fe - 
-flag_sc_fe - 
-sc2_fe - 
-e_sc2_fe - 
-nr_sc2_fe - 
-flag_sc2_fe - 
-ti_fe - 
-e_ti_fe - 
-nr_ti_fe - 
-flag_ti_fe - 
-ti2_fe - 
-e_ti2_fe - 
-nr_ti2_fe - 
-flag_ti2_fe - 
-v_fe - 
-e_v_fe - 
-nr_v_fe - 
-flag_v_fe - 
-cr_fe - 
-e_cr_fe - 
-nr_cr_fe - 
-flag_cr_fe - 
-cr2_fe - 
-e_cr2_fe - 
-nr_cr2_fe - 
-flag_cr2_fe - 
-mn_fe - 
-e_mn_fe - 
-nr_mn_fe - 
-flag_mn_fe - 
-co_fe - 
-e_co_fe - 
-nr_co_fe - 
-flag_co_fe - 
-ni_fe - 
-e_ni_fe - 
-nr_ni_fe - 
-flag_ni_fe - 
-cu_fe - 
-e_cu_fe - 
-nr_cu_fe - 
-flag_cu_fe - 
-zn_fe - 
-e_zn_fe - 
-nr_zn_fe - 
-flag_zn_fe - 
-rb_fe - 
-e_rb_fe - 
-nr_rb_fe - 
-flag_rb_fe - 
-sr_fe - 
-e_sr_fe - 
-nr_sr_fe - 
-flag_sr_fe - 
-y_fe - 
-e_y_fe - 
-nr_y_fe - 
-flag_y_fe - 
-zr_fe - 
-e_zr_fe - 
-nr_zr_fe - 
-flag_zr_fe - 
-mo_fe - 
-e_mo_fe - 
-nr_mo_fe - 
-flag_mo_fe - 
-ru_fe - 
-e_ru_fe - 
-nr_ru_fe - 
-flag_ru_fe - 
-ba_fe - 
-e_ba_fe - 
-nr_ba_fe - 
-flag_ba_fe - 
-la_fe - 
-e_la_fe - 
-nr_la_fe - 
-flag_la_fe - 
-ce_fe - 
-e_ce_fe - 
-nr_ce_fe - 
-flag_ce_fe - 
-nd_fe - 
-e_nd_fe - 
-nr_nd_fe - 
-flag_nd_fe - 
-sm_fe - 
-e_sm_fe - 
-nr_sm_fe - 
-flag_sm_fe - 
-eu_fe - 
-e_eu_fe - 
-nr_eu_fe - 
-flag_eu_fe - 
-ra_dr2 - 
-dec_dr2 - 
-parallax_dr2 - 
-parallax_error_dr2 - 
-r_est_dr2 - 
-r_lo_dr2 - 
-r_hi_dr2 - 
-r_len_dr2 - 
-rv_galah - 
-e_rv_galah - 
-rv_gaia_dr2 - 
-e_rv_gaia_dr2 - 
-red_flag - 
-ebv - 
-snr_c1_iraf - 
-snr_c2_iraf - 
-snr_c3_iraf - 
-snr_c4_iraf - 
-flag_guess - 
-v_jk - 
-j_m - 
-j_msigcom - 
-h_m - 
-h_msigcom - 
-ks_m - 
-ks_msigcom - 
-ph_qual_tmass - 
-w2mpro - 
-w2mpro_error - 
-ph_qual_wise - 
-a_ks - 
-e_a_ks - 
-bc_ks - 
-ruwe_dr2 - 
-
+star_id - 2MASS identifier
+sobject_id - GALAH identifier
+dr2_source_id - Gaia DR2 source_id
+dr3_source_id - Gaia DR3 source_id
+survey_name - Name of survey as part of GALAH+DR3
+field_id - GALAH field identifier
+flag_repeat - Repeat observation flag, indicating if used for clean catalog
+wg4_field - GALAH WG4 field
+wg4_pipeline - SME pipeline version free/lbol/seis
+flag_sp - Stellar parameter quality flag
+teff - Spectroscopic effective temperature (used for fitting) [K]
+e_teff - Uncertainty teff [K]
+irfm_teff - IRFM temperature (not used for synthesis) [K]
+irfm_ebv - E(B-V) used for IRFM teff estimation [mag]
+irfm_ebv_ref - Reference irfm_ebv
+logg - Surface gravity (not fitted via spectra if wg4_pipeline not free) [log(cm s-2)]
+e_logg - Uncertainty logg [log(cm s-2)]
+fe_h - Fe atomic abundance from Fe lines (final, 1D-NLTE)
+e_fe_h - Uncertainty fe_h
+flag_fe_h - Quality flag fe_h
+fe_h_atmo - sme.feh from stellar parameter run, fitted from H, Ti, Sc, Fe
+vmic - Microturbulence velocity (from empirical relation) [km s-1]
+vbroad - Broadening velocity (fitted sme.vsini with sme.vmac=0) [km s-1]
+e_vbroad - Uncertainty of vbroad [km s-1]
+chi2_sp - Chi-square value of stellar parameter fitting
+alpha_fe - Combined, weighted alpha-process element abundance
+e_alpha_fe - Uncertainty of alpha_fe
+nr_alpha_fe - Bitmask of used measurements for alpha_fe
+flag_alpha_fe - Quality flag of measurements for alpha_fe
+flux_a_fe - Normalised maximum absorption strength in iron lines
+chi_a_fe - Chi-square value of iron abundance fitting
+li_fe - Neutral/ionised Li atomic abundance (final, 1D-LTE or NLTE)
+e_li_fe - Uncertainty li_fe
+nr_li_fe - Bitmask of used Li individual lines
+flag_li_fe - Quality flag of li_fe
+c_fe - Neutral/ionised C atomic abundance (final, 1D-LTE or NLTE)
+e_c_fe - Uncertainty c_fe
+nr_c_fe - Bitmask of used C individual lines
+flag_c_fe - Quality flag of c_fe
+o_fe - Neutral/ionised O atomic abundance (final, 1D-LTE or NLTE)
+e_o_fe - Uncertainty o_fe
+nr_o_fe - Bitmask of used O individual lines
+flag_o_fe - Quality flag of o_fe
+na_fe - Neutral/ionised Na atomic abundance (final, 1D-LTE or NLTE)
+e_na_fe - Uncertainty na_fe
+nr_na_fe - Bitmask of used Na individual lines
+flag_na_fe - Quality flag of na_fe
+mg_fe - Neutral/ionised Mg atomic abundance (final, 1D-LTE or NLTE)
+e_mg_fe - Uncertainty mg_fe
+nr_mg_fe - Bitmask of used Mg individual lines
+flag_mg_fe - Quality flag of mg_fe
+al_fe - Neutral/ionised Al atomic abundance (final, 1D-LTE or NLTE)
+e_al_fe - Uncertainty al_fe
+nr_al_fe - Bitmask of used Al individual lines
+flag_al_fe - Quality flag of al_fe
+si_fe - Neutral/ionised Si atomic abundance (final, 1D-LTE or NLTE)
+e_si_fe - Uncertainty si_fe
+nr_si_fe - Bitmask of used Si individual lines
+flag_si_fe - Quality flag of si_fe
+k_fe - Neutral/ionised K atomic abundance (final, 1D-LTE or NLTE)
+e_k_fe - Uncertainty k_fe
+nr_k_fe - Bitmask of used K individual lines
+flag_k_fe - Quality flag of k_fe
+ca_fe - Neutral/ionised Ca atomic abundance (final, 1D-LTE or NLTE)
+e_ca_fe - Uncertainty ca_fe
+nr_ca_fe - Bitmask of used Ca individual lines
+flag_ca_fe - Quality flag of ca_fe
+sc_fe - Neutral/ionised Sc atomic abundance (final, 1D-LTE or NLTE)
+e_sc_fe - Uncertainty sc_fe
+nr_sc_fe - Bitmask of used Sc individual lines
+flag_sc_fe - Quality flag of sc_fe
+sc2_fe - Neutral/ionised Sc2 atomic abundance (final, 1D-LTE or NLTE)
+e_sc2_fe - Uncertainty sc2_fe
+nr_sc2_fe - Bitmask of used Sc2 individual lines
+flag_sc2_fe - Quality flag of sc2_fe
+ti_fe - Neutral/ionised Ti atomic abundance (final, 1D-LTE or NLTE)
+e_ti_fe - Uncertainty ti_fe
+nr_ti_fe - Bitmask of used Ti individual lines
+flag_ti_fe - Quality flag of ti_fe
+ti2_fe - Neutral/ionised Ti2 atomic abundance (final, 1D-LTE or NLTE)
+e_ti2_fe - Uncertainty ti2_fe
+nr_ti2_fe - Bitmask of used Ti2 individual lines
+flag_ti2_fe - Quality flag of ti2_fe
+v_fe - Neutral/ionised V atomic abundance (final, 1D-LTE or NLTE)
+e_v_fe - Uncertainty v_fe
+nr_v_fe - Bitmask of used V individual lines
+flag_v_fe - Quality flag of v_fe
+cr_fe - Neutral/ionised Cr atomic abundance (final, 1D-LTE or NLTE)
+e_cr_fe - Uncertainty cr_fe
+nr_cr_fe - Bitmask of used Cr individual lines
+flag_cr_fe - Quality flag of cr_fe
+cr2_fe - Neutral/ionised Cr2 atomic abundance (final, 1D-LTE or NLTE)
+e_cr2_fe - Uncertainty cr2_fe
+nr_cr2_fe - Bitmask of used Cr2 individual lines
+flag_cr2_fe - Quality flag of cr2_fe
+mn_fe - Neutral/ionised Mn atomic abundance (final, 1D-LTE or NLTE)
+e_mn_fe - Uncertainty mn_fe
+nr_mn_fe - Bitmask of used Mn individual lines
+flag_mn_fe - Quality flag of mn_fe
+co_fe - Neutral/ionised Co atomic abundance (final, 1D-LTE or NLTE)
+e_co_fe - Uncertainty co_fe
+nr_co_fe - Bitmask of used Co individual lines
+flag_co_fe - Quality flag of co_fe
+ni_fe - Neutral/ionised Ni atomic abundance (final, 1D-LTE or NLTE)
+e_ni_fe - Uncertainty ni_fe
+nr_ni_fe - Bitmask of used Ni individual lines
+flag_ni_fe - Quality flag of ni_fe
+cu_fe - Neutral/ionised Cu atomic abundance (final, 1D-LTE or NLTE)
+e_cu_fe - Uncertainty cu_fe
+nr_cu_fe - Bitmask of used Cu individual lines
+flag_cu_fe - Quality flag of cu_fe
+zn_fe - Neutral/ionised Zn atomic abundance (final, 1D-LTE or NLTE)
+e_zn_fe - Uncertainty zn_fe
+nr_zn_fe - Bitmask of used Zn individual lines
+flag_zn_fe - Quality flag of zn_fe
+rb_fe - Neutral/ionised Rb atomic abundance (final, 1D-LTE or NLTE)
+e_rb_fe - Uncertainty rb_fe
+nr_rb_fe - Bitmask of used Rb individual lines
+flag_rb_fe - Quality flag of rb_fe
+sr_fe - Neutral/ionised Sr atomic abundance (final, 1D-LTE or NLTE)
+e_sr_fe - Uncertainty sr_fe
+nr_sr_fe - Bitmask of used Sr individual lines
+flag_sr_fe - Quality flag of sr_fe
+y_fe - Neutral/ionised Y atomic abundance (final, 1D-LTE or NLTE)
+e_y_fe - Uncertainty y_fe
+nr_y_fe - Bitmask of used Y individual lines
+flag_y_fe - Quality flag of y_fe
+zr_fe - Neutral/ionised Zr atomic abundance (final, 1D-LTE or NLTE)
+e_zr_fe - Uncertainty zr_fe
+nr_zr_fe - Bitmask of used Zr individual lines
+flag_zr_fe - Quality flag of zr_fe
+mo_fe - Neutral/ionised Mo atomic abundance (final, 1D-LTE or NLTE)
+e_mo_fe - Uncertainty mo_fe
+nr_mo_fe - Bitmask of used Mo individual lines
+flag_mo_fe - Quality flag of mo_fe
+ru_fe - Neutral/ionised Ru atomic abundance (final, 1D-LTE or NLTE)
+e_ru_fe - Uncertainty ru_fe
+nr_ru_fe - Bitmask of used Ru individual lines
+flag_ru_fe - Quality flag of ru_fe
+ba_fe - Neutral/ionised Ba atomic abundance (final, 1D-LTE or NLTE)
+e_ba_fe - Uncertainty ba_fe
+nr_ba_fe - Bitmask of used Ba individual lines
+flag_ba_fe - Quality flag of ba_fe
+la_fe - Neutral/ionised La atomic abundance (final, 1D-LTE or NLTE)
+e_la_fe - Uncertainty la_fe
+nr_la_fe - Bitmask of used La individual lines
+flag_la_fe - Quality flag of la_fe
+ce_fe - Neutral/ionised Ce atomic abundance (final, 1D-LTE or NLTE)
+e_ce_fe - Uncertainty ce_fe
+nr_ce_fe - Bitmask of used Ce individual lines
+flag_ce_fe - Quality flag of ce_fe
+nd_fe - Neutral/ionised Nd atomic abundance (final, 1D-LTE or NLTE)
+e_nd_fe - Uncertainty nd_fe
+nr_nd_fe - Bitmask of used Nd individual lines
+flag_nd_fe - Quality flag of nd_fe
+sm_fe - Neutral/ionised Sm atomic abundance (final, 1D-LTE or NLTE)
+e_sm_fe - Uncertainty sm_fe
+nr_sm_fe - Bitmask of used Sm individual lines
+flag_sm_fe - Quality flag of sm_fe
+eu_fe - Neutral/ionised Eu atomic abundance (final, 1D-LTE or NLTE)
+e_eu_fe - Uncertainty eu_fe
+nr_eu_fe - Bitmask of used Eu individual lines
+flag_eu_fe - Quality flag of eu_fe
+ra_dr2 - Right Ascension propagated from Gaia DR2 [deg]
+dec_dr2 - Declination propagated from Gaia DR2 [deg]
+parallax_dr2 - Parallax propagated from Gaia DR2 [mas]
+parallax_error_dr2 - Parallax error propagated from Gaia DR2 [mas]
+r_est_dr2 - Estimated distance propagated from Bailer-Jones et al. (2018) [pc]
+r_lo_dr2 - Lower bound on the confidence interval of the estimated distance propagated
+r_hi_dr2 - Upper bound on the confidence interval of the estimated distance propagated
+r_len_dr2 - Length scale used in the prior for the distance estimation propagated from
+rv_galah - Best-method radial velocity from GALAH spectra [km s-1]
+e_rv_galah - Uncertainty of rv_galah [km s-1]
+rv_gaia_dr2 - Radial velocity propagated from Gaia DR2; identical to
+e_rv_gaia_dr2 - Radial velocity error propagated from Gaia DR2; identical to
+red_flag - Reduction pipeline quality flag
+ebv - Schlegel et al. (1998) extinction value [mag]
+snr_c1_iraf - Average SNR/px CCD1
+snr_c2_iraf - Average SNR/px CCD2
+snr_c3_iraf - Average SNR/px CCD3
+snr_c4_iraf - Average SNR/px CCD4
+flag_guess - GUESS reduction pipeline quality flag
+v_jk - V magnitude estimated from 2MASS J and Ks mag [mag]
+j_m - J magnitude propagated from 2MASS [mag]
+j_msigcom - J magnitude uncertainty propagated from 2MASS [mag]
+h_m - Band H magnitude propagated from 2MASS [mag]
+h_msigcom - H magnitude uncertainty propagated from 2MASS [mag]
+ks_m - Band Ks magnitude propagated from 2MASS [mag]
+ks_msigcom - Ks magnitude uncertainty propagated from 2MASS [mag]
+ph_qual_tmass - JHKs photometric quality flag propagated from 2MASS
+w2mpro - W2 profile-fitting magnitude propagated from AllWISE [mag]
+w2mpro_error - Error on W2 profile-fitting magnitude propagated from AllWISE [mag]
+ph_qual_wise - Photometric quality flag propagated from AllWISE
+a_ks - Used Ks band extinction [mag]
+e_a_ks - Uncertainty of a_ks [mag]
+bc_ks - Used bolometric correction for Ks band [mag]
+ruwe_dr2 - Renormalised unit weight error propagated from Gaia DR2

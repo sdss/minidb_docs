@@ -8,8 +8,7 @@ Columns
 -------
 
 pk - The primary key. A sequential identifier.
-design_id - The primary key of the design in the dr19_design table.
-field_pk - The primary key of the field in the dr19_field table.
+design_id - The primary key of the design in the dr20_design table.
+field_pk - The primary key of the field in the dr20_field table.
 exposure - The 0-indexed exposure number in the lunation sequence for the field.
 field_exposure - The 0-indexed overall exposure number in the sequence for the field.
-

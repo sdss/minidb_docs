@@ -1,11 +1,11 @@
 Summary
 -------
 
-The dr19_sdssv_boss_spall table is a database representation of an early version of the SDSS-V BOSS spAll data product.
+The dr20_sdssv_boss_spall table is a database representation of an early version of the SDSS-V BOSS spAll data product.
 
-The dr19_sdssv_boss_spall table was used within early iterations of FPS target_selection as a way to communicate information about which targets had been observed in SDSS-V plates. This information was used to e.g. de-prioritise targets that were expected to have a good quality spectroscopic measurement before the start of SDSS-V FPS operations.
+The dr20_sdssv_boss_spall table was used within early iterations of FPS target_selection as a way to communicate information about which targets had been observed in SDSS-V plates. This information was used to e.g. de-prioritise targets that were expected to have a good quality spectroscopic measurement before the start of SDSS-V FPS operations.
 
-Caution. The dr19_sdssv_boss_spall table should only be used in order to recreate the target_selection selection function.
+Caution. The dr20_sdssv_boss_spall table should only be used in order to recreate the target_selection selection function.
 
 Column descriptions are mainly derived from: https://data.sdss.org/datamodel/files/BOSS_SPECTRO_REDUX/RUN2D/spAll.html
 

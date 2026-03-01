@@ -1,236 +1,235 @@
 Summary
 -------
 
-
+This is the main table containing the 1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8. For more details refer to https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_astrophysical_parameter_tables/ssec_dm_astrophysical_parameters.html.
 
 
 Columns
 -------
 
-solution_id - 
-source_id - 
-classprob_dsc_combmod_quasar - 
-classprob_dsc_combmod_galaxy - 
-classprob_dsc_combmod_star - 
-classprob_dsc_combmod_whitedwarf - 
-classprob_dsc_combmod_binarystar - 
-classprob_dsc_specmod_quasar - 
-classprob_dsc_specmod_galaxy - 
-classprob_dsc_specmod_star - 
-classprob_dsc_specmod_whitedwarf - 
-classprob_dsc_specmod_binarystar - 
-classprob_dsc_allosmod_quasar - 
-classprob_dsc_allosmod_galaxy - 
-classprob_dsc_allosmod_star - 
-teff_gspphot - 
-teff_gspphot_lower - 
-teff_gspphot_upper - 
-logg_gspphot - 
-logg_gspphot_lower - 
-logg_gspphot_upper - 
-mh_gspphot - 
-mh_gspphot_lower - 
-mh_gspphot_upper - 
-distance_gspphot - 
-distance_gspphot_lower - 
-distance_gspphot_upper - 
-azero_gspphot - 
-azero_gspphot_lower - 
-azero_gspphot_upper - 
-ag_gspphot - 
-ag_gspphot_lower - 
-ag_gspphot_upper - 
-abp_gspphot - 
-abp_gspphot_lower - 
-abp_gspphot_upper - 
-arp_gspphot - 
-arp_gspphot_lower - 
-arp_gspphot_upper - 
-ebpminrp_gspphot - 
-ebpminrp_gspphot_lower - 
-ebpminrp_gspphot_upper - 
-mg_gspphot - 
-mg_gspphot_lower - 
-mg_gspphot_upper - 
-radius_gspphot - 
-radius_gspphot_lower - 
-radius_gspphot_upper - 
-logposterior_gspphot - 
-mcmcaccept_gspphot - 
-libname_gspphot - 
-teff_gspspec - 
-teff_gspspec_lower - 
-teff_gspspec_upper - 
-logg_gspspec - 
-logg_gspspec_lower - 
-logg_gspspec_upper - 
-mh_gspspec - 
-mh_gspspec_lower - 
-mh_gspspec_upper - 
-alphafe_gspspec - 
-alphafe_gspspec_lower - 
-alphafe_gspspec_upper - 
-fem_gspspec - 
-fem_gspspec_lower - 
-fem_gspspec_upper - 
-fem_gspspec_nlines - 
-fem_gspspec_linescatter - 
-sife_gspspec - 
-sife_gspspec_lower - 
-sife_gspspec_upper - 
-sife_gspspec_nlines - 
-sife_gspspec_linescatter - 
-cafe_gspspec - 
-cafe_gspspec_lower - 
-cafe_gspspec_upper - 
-cafe_gspspec_nlines - 
-cafe_gspspec_linescatter - 
-tife_gspspec - 
-tife_gspspec_lower - 
-tife_gspspec_upper - 
-tife_gspspec_nlines - 
-tife_gspspec_linescatter - 
-mgfe_gspspec - 
-mgfe_gspspec_lower - 
-mgfe_gspspec_upper - 
-mgfe_gspspec_nlines - 
-mgfe_gspspec_linescatter - 
-ndfe_gspspec - 
-ndfe_gspspec_lower - 
-ndfe_gspspec_upper - 
-ndfe_gspspec_nlines - 
-ndfe_gspspec_linescatter - 
-feiim_gspspec - 
-feiim_gspspec_lower - 
-feiim_gspspec_upper - 
-feiim_gspspec_nlines - 
-feiim_gspspec_linescatter - 
-sfe_gspspec - 
-sfe_gspspec_lower - 
-sfe_gspspec_upper - 
-sfe_gspspec_nlines - 
-sfe_gspspec_linescatter - 
-zrfe_gspspec - 
-zrfe_gspspec_lower - 
-zrfe_gspspec_upper - 
-zrfe_gspspec_nlines - 
-zrfe_gspspec_linescatter - 
-nfe_gspspec - 
-nfe_gspspec_lower - 
-nfe_gspspec_upper - 
-nfe_gspspec_nlines - 
-nfe_gspspec_linescatter - 
-crfe_gspspec - 
-crfe_gspspec_lower - 
-crfe_gspspec_upper - 
-crfe_gspspec_nlines - 
-crfe_gspspec_linescatter - 
-cefe_gspspec - 
-cefe_gspspec_lower - 
-cefe_gspspec_upper - 
-cefe_gspspec_nlines - 
-cefe_gspspec_linescatter - 
-nife_gspspec - 
-nife_gspspec_lower - 
-nife_gspspec_upper - 
-nife_gspspec_nlines - 
-nife_gspspec_linescatter - 
-cn0ew_gspspec - 
-cn0ew_gspspec_uncertainty - 
-cn0_gspspec_centralline - 
-cn0_gspspec_width - 
-dib_gspspec_lambda - 
-dib_gspspec_lambda_uncertainty - 
-dibew_gspspec - 
-dibew_gspspec_uncertainty - 
-dibewnoise_gspspec_uncertainty - 
-dibp0_gspspec - 
-dibp2_gspspec - 
-dibp2_gspspec_uncertainty - 
-dibqf_gspspec - 
-flags_gspspec - 
-logchisq_gspspec - 
-ew_espels_halpha - 
-ew_espels_halpha_uncertainty - 
-ew_espels_halpha_flag - 
-ew_espels_halpha_model - 
-classlabel_espels - 
-classlabel_espels_flag - 
-classprob_espels_wcstar - 
-classprob_espels_wnstar - 
-classprob_espels_bestar - 
-classprob_espels_ttauristar - 
-classprob_espels_herbigstar - 
-classprob_espels_dmestar - 
-classprob_espels_pne - 
-azero_esphs - 
-azero_esphs_uncertainty - 
-ag_esphs - 
-ag_esphs_uncertainty - 
-ebpminrp_esphs - 
-ebpminrp_esphs_uncertainty - 
-teff_esphs - 
-teff_esphs_uncertainty - 
-logg_esphs - 
-logg_esphs_uncertainty - 
-vsini_esphs - 
-vsini_esphs_uncertainty - 
-flags_esphs - 
-spectraltype_esphs - 
-activityindex_espcs - 
-activityindex_espcs_uncertainty - 
-activityindex_espcs_input - 
-teff_espucd - 
-teff_espucd_uncertainty - 
-flags_espucd - 
-radius_flame - 
-radius_flame_lower - 
-radius_flame_upper - 
-lum_flame - 
-lum_flame_lower - 
-lum_flame_upper - 
-mass_flame - 
-mass_flame_lower - 
-mass_flame_upper - 
-age_flame - 
-age_flame_lower - 
-age_flame_upper - 
-flags_flame - 
-evolstage_flame - 
-gravredshift_flame - 
-gravredshift_flame_lower - 
-gravredshift_flame_upper - 
-bc_flame - 
-mh_msc - 
-mh_msc_upper - 
-mh_msc_lower - 
-azero_msc - 
-azero_msc_upper - 
-azero_msc_lower - 
-distance_msc - 
-distance_msc_upper - 
-distance_msc_lower - 
-teff_msc1 - 
-teff_msc1_upper - 
-teff_msc1_lower - 
-teff_msc2 - 
-teff_msc2_upper - 
-teff_msc2_lower - 
-logg_msc1 - 
-logg_msc1_upper - 
-logg_msc1_lower - 
-logg_msc2 - 
-logg_msc2_upper - 
-logg_msc2_lower - 
-ag_msc - 
-ag_msc_upper - 
-ag_msc_lower - 
-logposterior_msc - 
-mcmcaccept_msc - 
-mcmcdrift_msc - 
-flags_msc - 
-neuron_oa_id - 
-neuron_oa_dist - 
-neuron_oa_dist_percentile_rank - 
-flags_oa - 
-
+solution_id - Solution Identifier
+source_id - Source Identifier in the dr20_gaia_dr3_source table (source_id column)
+classprob_dsc_combmod_quasar - Probability from DSC-Combmod of being a quasar (data used: BP/RP spectrum, photometry, astrometry)
+classprob_dsc_combmod_galaxy - Probability from DSC-Combmod of being a galaxy (data used: BP/RP spectrum, photometry, astrometry)
+classprob_dsc_combmod_star - Probability from DSC-Combmod of being a single star (but not a white dwarf) (data used: BP/RP spectrum, photometry, astrometry)
+classprob_dsc_combmod_whitedwarf - Probability from DSC-Combmod of being a white dwarf (data used: BP/RP spectrum, photometry, astrometry)
+classprob_dsc_combmod_binarystar - Probability from DSC-Combmod of being a binary star (data used: BP/RP spectrum, photometry, astrometry)
+classprob_dsc_specmod_quasar - Probability from DSC-Specmod of being a quasar (data used: BP/RP spectrum)
+classprob_dsc_specmod_galaxy - Probability from DSC-Specmod of being a galaxy (data used: BP/RP spectrum)
+classprob_dsc_specmod_star - Probability from DSC-Specmod of being a single star (but not a white dwarf) (data used: BP/RP spectrum)
+classprob_dsc_specmod_whitedwarf - Probability from DSC-Specmod of being a white dwarf (data used: BP/RP spectrum)
+classprob_dsc_specmod_binarystar - Probability from DSC-Specmod of being a binary star (data used: BP/RP spectrum)
+classprob_dsc_allosmod_quasar - Probability from DSC-Allosmod of being a quasar (data used: photometry, astrometry)
+classprob_dsc_allosmod_galaxy - Probability from DSC-Allosmod of being a galaxy (data used: photometry, astrometry)
+classprob_dsc_allosmod_star - Probability from DSC-Allosmod of being a star (data used: photometry, astrometry)
+teff_gspphot - Effective temperature from GSP-Phot Aeneas best library using BP/RP spectra [K]
+teff_gspphot_lower - Lower confidence level (16%) of effective temperature from GSP-Phot Aeneas best library using BP/RP spectra [K]
+teff_gspphot_upper - Upper confidence level (84%) of effective temperature from GSP-Phot Aeneas best library using BP/RP spectra [K]
+logg_gspphot - Surface gravity from GSP-Phot Aeneas best library using BP/RP spectra [log cgs]
+logg_gspphot_lower - Lower confidence level (16%) of surface gravity from GSP-Phot Aeneas best library using BP/RP spectra [log cgs]
+logg_gspphot_upper - Upper confidence level (84%) of surface gravity from GSP-Phot Aeneas best library using BP/RP spectra [log cgs]
+mh_gspphot - Iron abundance from GSP-Phot Aeneas best library using BP/RP spectra [dex]
+mh_gspphot_lower - Lower confidence level (16%) of iron abundance from GSP-Phot Aeneas best library using BP/RP spectra [dex]
+mh_gspphot_upper - Upper confidence level (84%) of iron abundance from GSP-Phot Aeneas best library using BP/RP spectra [dex]
+distance_gspphot - Distance from GSP-Phot Aeneas best library using BP/RP spectra [pc]
+distance_gspphot_lower - Lower confidence level (16%) of distance from GSP-Phot Aeneas best library using BP/RP spectra [pc]
+distance_gspphot_upper - Upper confidence level (84%) of distance from GSP-Phot Aeneas best library using BP/RP spectra [pc]
+azero_gspphot - Monochromatic extinction 𝐴0 at 541.4 nm from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+azero_gspphot_lower - Lower confidence level (16%) of monochromatic extinction 𝐴0 at 541.4 nm from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+azero_gspphot_upper - Upper confidence level (84%) of monochromatic extinction 𝐴0 at 541.4 nm from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+ag_gspphot - Extinction in G band from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+ag_gspphot_lower - Lower confidence level (16%) of extinction in G band from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+ag_gspphot_upper - Upper confidence level (84%) of extinction in G band from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+abp_gspphot - Extinction in 𝐺BP band from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+abp_gspphot_lower - Lower confidence level (16%) of extinction in 𝐺BP band from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+abp_gspphot_upper - Upper confidence level (84%) of extinction in 𝐺BP band from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+arp_gspphot - Extinction in 𝐺RP band from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+arp_gspphot_lower - Lower confidence level (16%) of extinction in 𝐺RP band from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+arp_gspphot_upper - Upper confidence level (84%) of extinction in 𝐺RP band from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+ebpminrp_gspphot - Reddening 𝐸(𝐺BP−𝐺RP) from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+ebpminrp_gspphot_lower - Lower confidence level (16%) of reddening 𝐸(𝐺BP−𝐺RP) from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+ebpminrp_gspphot_upper - Upper confidence level (84%) of reddening 𝐸(𝐺BP−𝐺RP) from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+mg_gspphot - Absolute magnitude 𝑀G from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+mg_gspphot_lower - Lower confidence level (16%) of absolute magnitude 𝑀G from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+mg_gspphot_upper - Upper confidence level (84%) of absolute magnitude 𝑀G from GSP-Phot Aeneas best library using BP/RP spectra [mag]
+radius_gspphot - Radius from GSP-Phot Aeneas best library using BP/RP spectra [solar radius]
+radius_gspphot_lower - Lower confidence level (16%) of radius from GSP-Phot Aeneas best library using BP/RP spectra [solar radius]
+radius_gspphot_upper - Upper confidence level (84%) of radius from GSP-Phot Aeneas best library using BP/RP spectra [solar radius]
+logposterior_gspphot - Goodness-of-fit score (mean log-posterior of MCMC) of GSP-Phot Aeneas MCMC best library
+mcmcaccept_gspphot - MCMC acceptance rate of GSP-Phot Aeneas MCMC best library
+libname_gspphot - Name of library that achieves the highest mean log-posterior in MCMC samples and was used to derive GSP-Phot parameters in this table
+teff_gspspec - Effective temperature from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [K]
+teff_gspspec_lower - 16th percentile of effective temperature from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [K]
+teff_gspspec_upper - 84th percentile of effective temperature from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [K]
+logg_gspspec - Logarithm of the stellar surface gravity from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [log cgs]
+logg_gspspec_lower - 16th percentile of the logarithm of the stellar surface gravity from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [log cgs]
+logg_gspspec_upper - 84th percentile of the logarithm of the stellar surface gravity from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [log cgs]
+mh_gspspec - Global metallicity [M/H] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+mh_gspspec_lower - 16th percentile of global metallicity [M/H] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+mh_gspspec_upper - 84th percentile of global metallicity [M/H] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+alphafe_gspspec - Abundance of alpha-elements [alpha/Fe] with respect to iron from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+alphafe_gspspec_lower - 16th percentile of the abundance of alpha-elements [alpha/Fe] with respect to iron from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+alphafe_gspspec_upper - 84th percentile of the abundance of alpha-elements [alpha/Fe] with respect to iron from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+fem_gspspec - Abundance of neutral iron [Fe/M] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations, applied to the individual N lines of the element, given in fem_gspspec_nlines [dex]
+fem_gspspec_lower - 16th percentile of the abundance of neutral iron [Fe/M] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+fem_gspspec_upper - 84th percentile of the abundance of neutral iron [Fe/M] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+fem_gspspec_nlines - Number of lines used for [Fe/M] abundance estimation
+fem_gspspec_linescatter - Uncertainty estimation of [Fe/M] abundance using N lines of the element, given in fem_gspspec_nlines [dex]
+sife_gspspec - Abundance of silicon [Si/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations, applied to the individual N lines of the element, given in sife_gspspec_nlines [dex]
+sife_gspspec_lower - 16th percentile of the abundance of silicon [Si/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+sife_gspspec_upper - 84th percentile of the abundance of silicon [Si/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+sife_gspspec_nlines - Number of lines used for [Si/Fe] abundance estimation
+sife_gspspec_linescatter - Uncertainty estimation of [Si/Fe] abundance using N lines of the element, given in sife_gspspec_nlines [dex]
+cafe_gspspec - Abundance of calcium [Ca/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations, applied to the individual N lines of the element, given in cafe_gspspec_nlines [dex]
+cafe_gspspec_lower - 16th percentile of the abundance of calcium [Ca/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+cafe_gspspec_upper - 84th percentile of the abundance of calcium [Ca/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+cafe_gspspec_nlines - Number of lines used for [Ca/Fe] abundance estimation
+cafe_gspspec_linescatter - Uncertainty estimation of [Ca/Fe] abundance using N lines of the element, given in cafe_gspspec_nlines [dex]
+tife_gspspec - Abundance of titanium [Ti/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations, applied to the individual N lines of the element, given in tife_gspspec_nlines [dex]
+tife_gspspec_lower - 16th percentile of the abundance of titanium [Ti/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+tife_gspspec_upper - 84th percentile of the abundance of titanium [Ti/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+tife_gspspec_nlines - Number of lines used for [Ti/Fe] abundance estimation
+tife_gspspec_linescatter - Uncertainty estimation of [Ti/Fe] abundance using N lines of the element, given in tife_gspspec_nlines [dex]
+mgfe_gspspec - Abundance of magnesium [Mg/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations, applied to the individual N lines of the element, given in mgfe_gspspec_nlines [dex]
+mgfe_gspspec_lower - 16th percentile of the abundance of magnesium [Mg/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+mgfe_gspspec_upper - 84th percentile of the abundance of magnesium [Mg/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+mgfe_gspspec_nlines - Number of lines used for [Mg/Fe] abundance estimation
+mgfe_gspspec_linescatter - Uncertainty estimation of [Mg/Fe] abundance using N lines of the element, given in mgfe_gspspec_nlines [dex]
+ndfe_gspspec - Abundance of neodymium [Nd/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations, applied to the individual N lines of the element, given in ndfe_gspspec_nlines [dex]
+ndfe_gspspec_lower - 16th percentile of the abundance of neodymium [Nd/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+ndfe_gspspec_upper - 84th percentile of the abundance of neodymium [Nd/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+ndfe_gspspec_nlines - Number of lines used for [Nd/Fe] abundance estimation
+ndfe_gspspec_linescatter - Uncertainty estimation of [Nd/Fe] abundance using N lines of the element, given in ndfe_gspspec_nlines [dex]
+feiim_gspspec - Abundance of ionised iron [FeII/M] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations, applied to the individual N lines of the element, given in feiim_gspspec_nlines [dex]
+feiim_gspspec_lower - 16th percentile of the abundance of ionised iron [FeII/M] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+feiim_gspspec_upper - 84th percentile of the abundance of ionised iron [FeII/M] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+feiim_gspspec_nlines - Number of lines used for [FeII/M] abundance estimation
+feiim_gspspec_linescatter - Uncertainty estimation of [FeII/M] abundance using N lines of the element, given in feiim_gspspec_nlines [dex]
+sfe_gspspec - Abundance of sulphur [S/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations, applied to the individual N lines of the element, given in sfe_gspspec_nlines [dex]
+sfe_gspspec_lower - 16th percentile of the abundance of sulphur [S/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+sfe_gspspec_upper - 84th percentile of the abundance of sulphur [S/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+sfe_gspspec_nlines - Number of lines used for [S/Fe] abundance estimation
+sfe_gspspec_linescatter - Uncertainty estimation of [S/Fe] abundance using N lines of the element, given in sfe_gspspec_nlines [dex]
+zrfe_gspspec - Abundance of zirconium [Zr/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations, applied to the individual N lines of the element, given in zrfe_gspspec_nlines [dex]
+zrfe_gspspec_lower - 16th percentile of the abundance of zirconium [Zr/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+zrfe_gspspec_upper - 84th percentile of the abundance of zirconium [Zr/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+zrfe_gspspec_nlines - Number of lines used for [Zr/Fe] abundance estimation
+zrfe_gspspec_linescatter - Uncertainty estimation of [Zr/Fe] abundance using N lines of the element, given in zrfe_gspspec_nlines [dex]
+nfe_gspspec - Abundance of nitrogen [N/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations, applied to the individual N lines of the element, given in nfe_gspspec_nlines [dex]
+nfe_gspspec_lower - 16th percentile of the abundance of nitrogen [N/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+nfe_gspspec_upper - 84th percentile of the abundance of nitrogen [N/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+nfe_gspspec_nlines - Number of lines used for [N/Fe] abundance estimation
+nfe_gspspec_linescatter - Uncertainty estimation of [N/Fe] abundance using N lines of the element, given in nfe_gspspec_nlines [dex]
+crfe_gspspec - Abundance of chromium [Cr/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations, applied to the individual N lines of the element, given in crfe_gspspec_nlines [dex]
+crfe_gspspec_lower - 16th percentile of the abundance of chromium [Cr/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+crfe_gspspec_upper - 84th percentile of the abundance of chromium [Cr/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+crfe_gspspec_nlines - Number of lines used for [Cr/Fe] abundance estimation
+crfe_gspspec_linescatter - Uncertainty estimation of [Cr/Fe] abundance using N lines of the element, given in crfe_gspspec_nlines [dex]
+cefe_gspspec - Abundance of cerium [Ce/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations, applied to the individual N lines of the element, given in cefe_gspspec_nlines [dex]
+cefe_gspspec_lower - 16th percentile of the abundance of cerium [Ce/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+cefe_gspspec_upper - 84th percentile of the abundance of cerium [Ce/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+cefe_gspspec_nlines - Number of lines used for [Ce/Fe] abundance estimation
+cefe_gspspec_linescatter - Uncertainty estimation of [Ce/Fe] abundance using N lines of the element, given in cefe_gspspec_nlines [dex]
+nife_gspspec - Abundance of nickel [Ni/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations, applied to the individual N lines of the element, given in nife_gspspec_nlines [dex]
+nife_gspspec_lower - 16th percentile of the abundance of nickel [Ni/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+nife_gspspec_upper - 84th percentile of the abundance of nickel [Ni/Fe] from GSP-Spec MatisseGauguin using RVS spectra and Monte Carlo realisations [dex]
+nife_gspspec_nlines - Number of lines used for [Ni/Fe] abundance estimation
+nife_gspspec_linescatter - Uncertainty estimation of [Ni/Fe] abundance using N lines of the element, given in nife_gspspec_nlines [dex]
+cn0ew_gspspec - Equivalent witdh of cyanogen absorption line, derived from RVS spectra [nm]
+cn0ew_gspspec_uncertainty - Uncertainty of equivalent witdh of cyanogen absorption line, derived from RVS spectra [nm]
+cn0_gspspec_centralline - Central wavelength of cyanogen line, derived from RVS spectra using DIB algorithm [nm]
+cn0_gspspec_width - Width of cyoanogen line, derived from RVS spectra using DIB algorithm [nm]
+dib_gspspec_lambda - DIB central wavelength from GSP-Spec MatisseGauguin using RVS spectra [nm]
+dib_gspspec_lambda_uncertainty - Uncertainty on DIB central wavelength from GSP-Spec MatisseGauguin using RVS spectra [nm]
+dibew_gspspec - Equivalent width of the DIB from GSP-Spec MatisseGauguin using RVS spectra [Angstrom]
+dibew_gspspec_uncertainty - Global uncertainty on DIB equivalent width value using DIB algorithm [Angstrom]
+dibewnoise_gspspec_uncertainty - Uncertainty on DIB equivalent width value occuring from noise part [Angstrom]
+dibp0_gspspec - Depth (𝑝0 parameter) of the DIB derived from a Gaussian model fit
+dibp2_gspspec - Width (𝑝2 parameter) of the DIB derived from a Gaussian model fit [Angstrom]
+dibp2_gspspec_uncertainty - Uncertainty on the dibp2_gspspec parameter [Angstrom]
+dibqf_gspspec - Quality flag of the DIB computation
+flags_gspspec - Catalogue flags for GSP-Spec MatisseGauguin
+logchisq_gspspec - Logarithm of the goodness-of-fit for the GSP-Spec MatisseGauguin parameters
+ew_espels_halpha - Halpha pseudo-equivalent width from ESP-ELS [nm]
+ew_espels_halpha_uncertainty - Uncertainty of the Halpha pseudo-equivalent width from ESP-ELS [nm]
+ew_espels_halpha_flag - Quality flag of the Halpha pseudo-equivalent width from ESP-ELS
+ew_espels_halpha_model - Halpha pseudo-equivalent width from ESP-ELS measured on the synthetic spectrum [nm]
+classlabel_espels - Adopted ELS class label from ESP-ELS
+classlabel_espels_flag - Quality flag of the adopted ELS class label from ESP-ELS
+classprob_espels_wcstar - Probability from ESP-ELS of being a Wolf-Rayet star of type WC
+classprob_espels_wnstar - Probability from ESP-ELS of being a Wolf-Rayet star of type WN
+classprob_espels_bestar - Probability from ESP-ELS of being a Be Star
+classprob_espels_ttauristar - Probability from ESP-ELS of being a T Tauri Star
+classprob_espels_herbigstar - Probability from ESP-ELS of being a Herbig Ae/Be Star
+classprob_espels_dmestar - Probability from ESP-ELS of being an active M dwarf Star
+classprob_espels_pne - Probability from ESP-ELS of being a planetary nebula
+azero_esphs - Monochromatic interstellar extinction, A0, from ESP-HS [mag]
+azero_esphs_uncertainty - Uncertainty at a 68% confidence level on A0 from ESP-HS [mag]
+ag_esphs - Intersterstellar extinction in G band from ESP-HS [mag]
+ag_esphs_uncertainty - Uncertainty on 𝐴G from ESP-HS [mag]
+ebpminrp_esphs - Reddening 𝐸(𝐺BP−𝐺RP) from ESP-HS [mag]
+ebpminrp_esphs_uncertainty - Uncertainty on 𝐸(𝐺BP−𝐺RP) from ESP-HS [mag]
+teff_esphs - Effective temperature from ESP-HS [K]
+teff_esphs_uncertainty - Uncertainty at a 68% confidence level on the effective temperature from ESP-HS [K]
+logg_esphs - Surface gravity from ESP-HS [log cgs]
+logg_esphs_uncertainty - Uncertainty at a 68% confidence level on the surface gravity from ESP-HS [log cgs]
+vsini_esphs - Projected rotational velocity from ESP-HS [km s-1]
+vsini_esphs_uncertainty - Uncertainty on the projected rotational velocity from ESP-HS [km s-1]
+flags_esphs - Quality flag of the ESP-HS parametrisation
+spectraltype_esphs - Spectral type from ESP-ELS
+activityindex_espcs - Chromospheric activity index from ESP-CS, measured on the calcium triplet using RVS spectra [nm]
+activityindex_espcs_uncertainty - Uncertainty in the chromospheric activity index from ESP-CS [nm]
+activityindex_espcs_input - Source of input stellar parameters for the computation of the activity index by ESP-CS
+teff_espucd - Effective temperature estimate from ESP-UCD based on the RP spectrum [K]
+teff_espucd_uncertainty - Uncertainty of the effective temperature estimate produced by ESP-UCD [K]
+flags_espucd - Quality flags of the ESP-UCD parameter estimates
+radius_flame - Radius of the star from FLAME using teff_gspphot and lum_flame [solar radius]
+radius_flame_lower - Lower confidence level (16%) of radius_flame [solar radius]
+radius_flame_upper - Upper confidence level (84%) of radius_flame [solar radius]
+lum_flame - Luminosity of the star from FLAME using G band magnitude, extinction (ag_gspphot), parallax or distance, and a bolometric correction bc_flame [solar luminosity]
+lum_flame_lower - Lower confidence level (16%) of lum_flame [solar luminosity]
+lum_flame_upper - Upper confidence level (84%) of lum_flame [solar luminosity]
+mass_flame - Mass of the star from FLAME using stellar models, lum_flame, and teff_gspphot [solar mass]
+mass_flame_lower - Lower confidence level (16%) of mass_flame [solar mass]
+mass_flame_upper - Upper confidence level (84%) of mass_flame [solar mass]
+age_flame - Age of the star from FLAME using stellar models, see mass_flame for details [Gyr]
+age_flame_lower - Lower confidence level (16%) of age_flame [Gyr]
+age_flame_upper - Upper confidence level (84%) of age_flame [Gyr]
+flags_flame - Flags indicating quality and processing information from FLAME
+evolstage_flame - Evolutionary stage of the star from FLAME using stellar models, see mass_flame for details
+gravredshift_flame - Gravitational redshift from FLAME using radius_flame and logg_gspphot [km s-1]
+gravredshift_flame_lower - Lower confidence level (16%) of gravredshift_flame [km s-1]
+gravredshift_flame_upper - Upper confidence level (84%) of gravredshift_flame [km s-1]
+bc_flame - Bolometric correction used to derive lum_flame [mag]
+mh_msc - Metallicity of the source treated as a binary system from MSC using BP/RP spectra and parallax [dex]
+mh_msc_upper - Upper confidence level (84%) of the metallicity from MSC using BP/RP spectra and parallax [dex]
+mh_msc_lower - Lower confidence level (16%) of the metallicity from MSC using BP/RP spectra and parallax [dex]
+azero_msc - Monochromatic extinction 𝐴0 at 541.4 nm of the source treated as a binary system from MSC using BP/RP spectra and parallax [mag]
+azero_msc_upper - Upper confidence level (84%) of monochromatic extinction 𝐴0 at 541.4 nm from MSC using BP/RP spectra and parallax [mag]
+azero_msc_lower - Lower confidence level (16%) of monochromatic extinction 𝐴0 at 541.4 nm from MSC using BP/RP spectra and parallax [mag]
+distance_msc - Distance from MSC using BP/RP spectra and parallax [pc]
+distance_msc_upper - Upper confidence level (84%) of distance from MSC using BP/RP spectra and parallax [pc]
+distance_msc_lower - Lower confidence level (16%) of distance from MSC using BP/RP spectra and parallax [pc]
+teff_msc1 - Effective temperature of the primary from MSC using BP/RP spectra and parallax [K]
+teff_msc1_upper - Upper confidence level (84%) of effective temperature of the primary from MSC using BP/RP spectra and parallax [K]
+teff_msc1_lower - Lower confidence level (16%) of effective temperature of the primary from MSC using BP/RP spectra and parallax [K]
+teff_msc2 - Effective temperature of the secondary from MSC using BP/RP spectra and parallax [K]
+teff_msc2_upper - Upper confidence level (84%) of effective temperature of the secondary from MSC using BP/RP spectra and parallax [K]
+teff_msc2_lower - Lower confidence level (16%) of effective temperature of the secondary from MSC using BP/RP spectra and parallax [K]
+logg_msc1 - Surface gravity of the primary from MSC using BP/RP spectra and parallax [log cgs]
+logg_msc1_upper - Upper confidence level (84%) of surface gravity of the primary from MSC using BP/RP spectra and parallax [log cgs]
+logg_msc1_lower - Lower confidence level (16%) of surface gravity of the primary from MSC using BP/RP spectra and parallax [log cgs]
+logg_msc2 - Surface gravity of the secondary from MSC using BP/RP spectra and parallax [log cgs]
+logg_msc2_upper - Upper confidence level (84%) of surface gravity of the secondary from MSC using BP/RP spectra and parallax [log cgs]
+logg_msc2_lower - Lower confidence level (16%) of surface gravity of the secondary from MSC using BP/RP spectra and parallax [log cgs]
+ag_msc - Extinction in G band of the source treated as a binary system from MSC using BP/RP spectra and parallax [mag]
+ag_msc_upper - Upper confidence level (84%) of extinction in G band from MSC using BP/RP spectra and parallax [mag]
+ag_msc_lower - Lower confidence level (16%) of extinction in G band from MSC using BP/RP spectra and parallax [mag]
+logposterior_msc - Goodness-of-fit score (normalised log-posterior) of MSC MCMC
+mcmcaccept_msc - Mean MCMC acceptance rate of MSC MCMC
+mcmcdrift_msc - Mean drift of the MSC MCMC chain in units of parameter standard deviation
+flags_msc - Flag indicating quality information from MSC
+neuron_oa_id - Identifier of the OA SOM map neuron that represents the source
+neuron_oa_dist - Distance between the source XP spectra and the OA neuron XP prototype that represents the source
+neuron_oa_dist_percentile_rank - Percentile rank according to the distance distribution of the OA neuron that represents the source
+flags_oa - Flags indicating quality and processing information from OA

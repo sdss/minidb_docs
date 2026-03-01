@@ -32,7 +32,7 @@ Near-infrared: LAS: UKIDSS Large Area Surveys (DR11),
 
 Values are set to -9.0 or -9 if null.
 
-The dr19_bhm_rm_v0_2 table corresponds to Version: v0.2, 06/30/2020
+The dr20_bhm_rm_v0_2 table corresponds to Version: v0.2, 06/30/2020
 Changes (wrt v0) include correct error in spec_q column, and add specz from OzDES DR2
 
 Columns

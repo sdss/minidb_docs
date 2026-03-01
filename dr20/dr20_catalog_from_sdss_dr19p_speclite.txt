@@ -1,15 +1,15 @@
 Summary
 -------
 
-
+Relational table linking dr20_catalog with dr20_sdss_dr19p_speclite. Although this table has the same columns and purpose of other "catalog_to_X" tables in this schema, it is explicitly named "catalog_from" as it was generated using a bespoke cross-match different from the usual process used for other cross-matched tables in DR20.
 
 
 Columns
 -------
 
-catalogid - 
-target_id - 
-version_id - 
-distance - 
-best - 
-
+catalogid - The catalogid identifier in the dr20_catalog table.
+target_id - The primary key identifier in the dr20_sdss_dr19p_speclite table.
+version_id - The internal version for the cross-match.
+distance - The distance between the catalog and target coordinates if best=F.
+best - Whether this is considered the best match between the catalog entry and dr20_sdss_dr19p_speclite.
+plan_id - Identifier of the cross-matching plan used to generate this file.

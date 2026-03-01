@@ -1,88 +1,87 @@
 Summary
 -------
 
-
+The Gaia DR3 catalogue of RR Lyrae stars. For more details, refer to https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_variability_tables/ssec_dm_vari_rrlyrae.html.
 
 
 Columns
 -------
 
-solution_id - 
-source_id - 
-pf - 
-pf_error - 
-p1_o - 
-p1_o_error - 
-epoch_g - 
-epoch_g_error - 
-epoch_bp - 
-epoch_bp_error - 
-epoch_rp - 
-epoch_rp_error - 
-epoch_rv - 
-epoch_rv_error - 
-int_average_g - 
-int_average_g_error - 
-int_average_bp - 
-int_average_bp_error - 
-int_average_rp - 
-int_average_rp_error - 
-average_rv - 
-average_rv_error - 
-peak_to_peak_g - 
-peak_to_peak_g_error - 
-peak_to_peak_bp - 
-peak_to_peak_bp_error - 
-peak_to_peak_rp - 
-peak_to_peak_rp_error - 
-peak_to_peak_rv - 
-peak_to_peak_rv_error - 
-metallicity - 
-metallicity_error - 
-r21_g - 
-r21_g_error - 
-r31_g - 
-r31_g_error - 
-phi21_g - 
-phi21_g_error - 
-phi31_g - 
-phi31_g_error - 
-num_clean_epochs_g - 
-num_clean_epochs_bp - 
-num_clean_epochs_rp - 
-num_clean_epochs_rv - 
-zp_mag_g - 
-zp_mag_bp - 
-zp_mag_rp - 
-num_harmonics_for_p1_g - 
-num_harmonics_for_p1_bp - 
-num_harmonics_for_p1_rp - 
-num_harmonics_for_p1_rv - 
-reference_time_g - 
-reference_time_bp - 
-reference_time_rp - 
-reference_time_rv - 
-fund_freq1 - 
-fund_freq1_error - 
-fund_freq2 - 
-fund_freq2_error - 
-fund_freq1_harmonic_ampl_g - 
-fund_freq1_harmonic_ampl_g_error - 
-fund_freq1_harmonic_phase_g - 
-fund_freq1_harmonic_phase_g_error - 
-fund_freq1_harmonic_ampl_bp - 
-fund_freq1_harmonic_ampl_bp_error - 
-fund_freq1_harmonic_phase_bp - 
-fund_freq1_harmonic_phase_bp_error - 
-fund_freq1_harmonic_ampl_rp - 
-fund_freq1_harmonic_ampl_rp_error - 
-fund_freq1_harmonic_phase_rp - 
-fund_freq1_harmonic_phase_rp_error - 
-fund_freq1_harmonic_ampl_rv - 
-fund_freq1_harmonic_ampl_rv_error - 
-fund_freq1_harmonic_phase_rv - 
-fund_freq1_harmonic_phase_rv_error - 
-best_classification - 
-g_absorption - 
-g_absorption_error - 
-
+solution_id - Solution Identifier
+source_id - Unique source identifier
+pf - Period corresponding to the fundamental pulsation mode in the G band time series [day]
+pf_error - Uncertainty of the pf period [day]
+p1_o - Period corresponding to the first overtone pulsation mode in the G band time series [day]
+p1_o_error - Uncertainty of the p1_o period [day]
+epoch_g - Epoch of the maximum of the light curve in the G band [Barycentric JD in TCB − 2 455 197.5 (day)]
+epoch_g_error - Uncertainty on the epoch parameter epoch_g [day]
+epoch_bp - Epoch of the maximum of the light curve in the BP band [Barycentric JD in TCB − 2 455 197.5 (day)]
+epoch_bp_error - Uncertainty on the epoch parameter epoch_bp [day]
+epoch_rp - Epoch of the maximum of the light curve in the RP band [Barycentric JD in TCB − 2 455 197.5 (day)]
+epoch_rp_error - Uncertainty on the epoch parameter epoch_rp [day]
+epoch_rv - Epoch of the minimum of the radial velocity curve [Barycentric JD in TCB − 2 455 197.5 (day)]
+epoch_rv_error - Uncertainty on the epoch parameter epoch_rv [day]
+int_average_g - Intensity-averaged magnitude in the G band [mag]
+int_average_g_error - Uncertainty on int_average_g parameter [mag]
+int_average_bp - Intensity-averaged magnitude in the BP band [mag]
+int_average_bp_error - Uncertainty on int_average_bp parameter [mag]
+int_average_rp - Intensity-averaged magnitude in the RP band [mag]
+int_average_rp_error - Uncertainty on int_average_rp parameter [mag]
+average_rv - Mean radial velocity [km s−1]
+average_rv_error - Uncertainty on average_rv parameter [km s−1]
+peak_to_peak_g - Peak-to-peak amplitude of the G band light curve [mag]
+peak_to_peak_g_error - Uncertainty on the peak_to_peak_g parameter [mag]
+peak_to_peak_bp - Peak-to-peak amplitude of the BP band light curve [mag]
+peak_to_peak_bp_error - Uncertainty on the peak_to_peak_bp parameter [mag]
+peak_to_peak_rp - Peak-to-peak amplitude of the RP band light curve [mag]
+peak_to_peak_rp_error - Uncertainty on the peak_to_peak_rp parameter [mag]
+peak_to_peak_rv - Peak-to-peak amplitude of the radial velocity curve [km s−1]
+peak_to_peak_rv_error - Uncertainty on the peak_to_peak_rv parameter [km s−1]
+metallicity - Metallicity of the star from the Fourier parameters of the light curve [dex]
+metallicity_error - Uncertainty of the metallicity parameter [dex]
+r21_g - Fourier decomposition parameter r21_g: A2/A1 (for G band)
+r21_g_error - Uncertainty on the r21_g parameter: A2/A1 (for G band)
+r31_g - Fourier decomposition parameter r31_g: A3/A1 (for G band)
+r31_g_error - Uncertainty on the r31_g parameter: A3/A1 (for G band)
+phi21_g - Fourier decomposition parameter phi21_g: phi2 - 2*phi1 (for G band) [rad]
+phi21_g_error - Uncertainty on the phi21_g parameter: phi2 - 2*phi1 (for G band) [rad]
+phi31_g - Fourier decomposition parameter phi31_g: phi3 - 3*phi1 (for G band) [rad]
+phi31_g_error - Uncertainty on the phi31_g parameter: phi3 - 3*phi1 (for G band) [rad]
+num_clean_epochs_g - Number of G FoV epochs used in the fitting algorithm
+num_clean_epochs_bp - Number of BP epochs used in the fitting algorithm
+num_clean_epochs_rp - Number of RP epochs used in the fitting algorithm
+num_clean_epochs_rv - Number of radial velocity epochs used in the fitting algorithm
+zp_mag_g - Zero point (mag) of the final model of the G band light curve [mag]
+zp_mag_bp - Zero point (mag) of the final model of the BP band light curve [mag]
+zp_mag_rp - Zero point (mag) of the final model of the RP band light curve [mag]
+num_harmonics_for_p1_g - Number of harmonics used to model the first periodicity of the G-band light curve
+num_harmonics_for_p1_bp - Number of harmonics used to model the first periodicity of the BP-band light curve
+num_harmonics_for_p1_rp - Number of harmonics used to model the first periodicity of the RP-band light curve
+num_harmonics_for_p1_rv - Number of harmonics used to model the first periodicity of the radial velocity curve
+reference_time_g - Reference time of the Fourier modelled G-band light curve [Barycentric JD in TCB − 2 455 197.5 (day)]
+reference_time_bp - Reference time of the Fourier modelled BP-band light curve [Barycentric JD in TCB − 2 455 197.5 (day)]
+reference_time_rp - Reference time of the Fourier modelled RP-band light curve [Barycentric JD in TCB − 2 455 197.5 (day)]
+reference_time_rv - Reference time of the Fourier modelled radial velocity curve [Barycentric JD in TCB − 2 455 197.5 (day)]
+fund_freq1 - First frequency of the non-linear Fourier modelling [day-1]
+fund_freq1_error - Error of the first frequency of the non-linear Fourier modelling [day-1]
+fund_freq2 - Second frequency of the non-linear Fourier modelling in the G band [day-1]
+fund_freq2_error - Error of the second frequency of the non-linear Fourier modelling in the G band [day-1]
+fund_freq1_harmonic_ampl_g - Amplitudes of the Fourier model for the first frequency in the G band [mag]
+fund_freq1_harmonic_ampl_g_error - Errors of the amplitudes of the Fourier model for the first frequency in the G band [mag]
+fund_freq1_harmonic_phase_g - Phases of the Fourier model for the first frequency in the G band [rad]
+fund_freq1_harmonic_phase_g_error - Errors of the phases of the Fourier model for the first frequency in the G band [rad]
+fund_freq1_harmonic_ampl_bp - Amplitudes of the Fourier model for the first frequency in the BP band [mag]
+fund_freq1_harmonic_ampl_bp_error - Errors of the amplitudes of the Fourier model for the first frequency in the BP band [mag]
+fund_freq1_harmonic_phase_bp - Phases of the Fourier model for the first frequency in the BP band [rad]
+fund_freq1_harmonic_phase_bp_error - Errors of the phases of the Fourier model for the first frequency in the BP band [rad]
+fund_freq1_harmonic_ampl_rp - Amplitudes of the Fourier model for the first frequency in the RP band [mag]
+fund_freq1_harmonic_ampl_rp_error - Errors of the amplitudes of the Fourier model for the first frequency in the RP band [mag]
+fund_freq1_harmonic_phase_rp - Phases of the Fourier model for the first frequency in the RP band [rad]
+fund_freq1_harmonic_phase_rp_error - Errors of the phases of the Fourier model for the first frequency in the RP band [rad]
+fund_freq1_harmonic_ampl_rv - Amplitudes of the Fourier model for the first frequency of the radial velocity curve [km s−1]
+fund_freq1_harmonic_ampl_rv_error - Errors of the amplitudes of the Fourier model for the first frequency of the radial velocity curve [km s−1]
+fund_freq1_harmonic_phase_rv - Phases of the Fourier model for the first frequency of the radial velocity curve [rad]
+fund_freq1_harmonic_phase_rv_error - Errors of the phases of the Fourier model for the first frequency of the radial velocity curve [rad]
+best_classification - Best RR Lyrae classification estimate out of: 'RRc', 'RRab', 'RRd'
+g_absorption - Interstellar absorption in the G-band [mag]
+g_absorption_error - Error on the interstellar absorption in the G-band [mag]

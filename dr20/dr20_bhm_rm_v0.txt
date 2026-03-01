@@ -31,7 +31,7 @@ Near-infrared: LAS: UKIDSS Large Area Surveys (DR11),
 
 Values are set to -9.0 or -9 if null.
 
-The dr19_bhm_rm_v0 table corresponds to Version: v0, 04/07/2020
+The dr20_bhm_rm_v0 table corresponds to Version: v0, 04/07/2020
 Note that contents of the spec_q column are incorrect in this version of the table.
 
 Columns

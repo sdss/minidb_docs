@@ -1,14 +1,14 @@
 Summary
 -------
 
-Summary if design passed individual Design Mode checks from dr19_design_mode.
+Summary if design passed individual Design Mode checks from dr20_design_mode.
 
 
 Columns
 -------
 
 pk - The primary key. A sequential identifier.
-design_id - The primary key of the design in the dr19_design table.
+design_id - The primary key of the design in the dr20_design table.
 design_pass - If minimum design checks were passed.
 design_status - Bitmask for design. 1 if revalidated design. 2 if replacement design.
 boss_skies_min_pass - If passed minimum Boss skies metric.
@@ -34,4 +34,3 @@ apogee_bright_limit_targets_pass - If all Apogee science targets within magnitud
 boss_sky_neighbors_targets_pass - If all Boss assignments pass bright neighobor check.
 apogee_sky_neighbors_targets_pass - If all Apogee assignments pass bright neighobor check.
 apogee_trace_diff_targets_pass - If all Apogee assignments pass magnitude difference between adjacent traces check.
-

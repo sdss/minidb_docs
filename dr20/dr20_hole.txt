@@ -11,5 +11,4 @@ pk - The primary key. A sequential identifier.
 row_num - The row of the hole in which the positioner is sitting.
 column_num - The column of the hole in which the positioner is sitting.
 holeid - The identifier for the hole in which the positioner is sitting.
-observatory_pk - The primary key of the observatory in the dr19_observatory table.
-
+observatory_pk - The primary key of the observatory in the dr20_observatory table.

@@ -1,21 +1,20 @@
 Summary
 -------
 
-
+This table contains estimates of the "fidelity" of Gaia eDR3 astrometric solutions, a measure of the likelihood the eDR3 solution is physical rather than spurious obtained using a neural network trained on a small, hand-selected sample.
 
 
 Columns
 -------
 
-source_id - 
-fidelity_v2 - 
-theta_arcsec_worst_source - 
-norm_dg - 
-dist_nearest_neighbor_at_least_m2_brighter - 
-dist_nearest_neighbor_at_least_0_brighter - 
-dist_nearest_neighbor_at_least_2_brighter - 
-dist_nearest_neighbor_at_least_4_brighter - 
-dist_nearest_neighbor_at_least_6_brighter - 
-dist_nearest_neighbor_at_least_10_brighter - 
-fidelity_v1 - 
-
+source_id - Gaia DR3 unique source identifier. Matches the source_id column in the dr20_gaia_dr3_source table.
+fidelity_v2 - A probability that eDR3 has a good astrometric solution for this source, with values between 0 (meaning likely spurious solution) and 1 (meaning likely good solution). This is the published probability estimate.
+theta_arcsec_worst_source - Distance to the eDR3 source within 30 arcsec of the object for which delta_g-theta is maximal. See norm_dg for details. [arcsec]
+norm_dg - This is a heuristic measure for contamination by bright stars in the neighbourhood. It is computed as delta_g-theta, where theta is the distance to another Gaia eDR3 object in arcsec (reported in theta_arcsec_worst_source), and delta_g is the magnitude difference in mag. This column gives the maximum of the values for all eDR3 sources within 30 arcsecs of the object.
+dist_nearest_neighbor_at_least_m2_brighter - Distance to the nearest neighbour in gaia_source at least 2 m fainter than this source. [arcsec]
+dist_nearest_neighbor_at_least_0_brighter - Distance to the nearest neighbour in gaia_source at least as bright as this source. [arcsec]
+dist_nearest_neighbor_at_least_2_brighter - Distance to the nearest neighbour in gaia_source at least 2 m brighter than this source. [arcsec]
+dist_nearest_neighbor_at_least_4_brighter - Distance to the nearest neighbour in gaia_source at least 4 m brighter than this source. [arcsec]
+dist_nearest_neighbor_at_least_6_brighter - Distance to the nearest neighbour in gaia_source at least 6 m brighter than this source. [arcsec]
+dist_nearest_neighbor_at_least_10_brighter - Distance to the nearest neighbour in gaia_source at least 10 m brighter than this source. [arcsec]
+fidelity_v1 - A probablity that eDR3 has a good astrometric solution for this source, with values between 0 (meaning likely spurious solution) and 1 (meaning likely good solution). This comes from a first version of the estimator that was reviewed based on an astro-ph paper.

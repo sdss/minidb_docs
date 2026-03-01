@@ -8,7 +8,7 @@ Columns
 -------
 
 pk - The primary key. A sequential identifier.
-carton_to_target_pk - The primary key of the carton_to_target in the dr19_carton_to_target table.
-hole_pk - The primary key of the hole in the dr19_hole table.
-instrument_pk - The primary key of the instrument in the dr19_instrument table.
-design_id - The primary key of the design in the dr19_design table.
+carton_to_target_pk - The primary key of the carton_to_target in the dr20_carton_to_target table.
+hole_pk - The primary key of the hole in the dr20_hole table.
+instrument_pk - The primary key of the instrument in the dr20_instrument table.
+design_id - The primary key of the design in the dr20_design table.

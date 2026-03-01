@@ -1,18 +1,17 @@
 Summary
 -------
 
-
+Geometric and photogeometric distances to 1.47 billion stars in Gaia Early Data Release 3 from Bailer-Jones et al. (2021) (see https://ui.adsabs.harvard.edu/abs/2021AJ....161..147B/abstract).
 
 
 Columns
 -------
 
-source_id - 
-r_med_geo - 
-r_lo_geo - 
-r_hi_geo - 
-r_med_photogeo - 
-r_lo_photogeo - 
-r_hi_photogeo - 
-flag - 
-
+source_id - Source identifier, identical to the Gaia-EDR3 source_id
+r_med_geo - Median of the geometric distance posterior [pc]
+r_lo_geo - 16th percentile of the geometric distance posterior [pc]
+r_hi_geo - 84th percentile of the geometric distance posterior
+r_med_photogeo - Median of the photogeometric distance posterior [pc]
+r_lo_photogeo - 16th percentile of the photogeometric distance posterior [pc]
+r_hi_photogeo - 84th percentile of the photogeometric distance posterior [pc]
+flag - Quality flag
