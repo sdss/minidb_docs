@@ -1,15 +1,14 @@
 Summary
 -------
 
-
+Robust data-driven metallicities for 120 million stars from Gaia XP spectra. See Andrae et al. (2023).
 
 
 Columns
 -------
 
-source_id - 
-in_training_sample - 
-mh_xgboost - 
-teff_xgboost - 
-logg_xgboost - 
-
+source_id - Gaia EDR3 source_id
+in_training_sample - Boolean flag indicating if the star is in the training sample
+mh_xgboost - XGBoost estimate of [M/H].
+teff_xgboost - XGBoost estimate of T_eff [K]
+logg_xgboost - XGBoost estimate of log g [log(cm s-2)]

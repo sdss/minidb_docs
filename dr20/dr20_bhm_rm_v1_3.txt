@@ -1,33 +1,56 @@
 Summary
 -------
 
+arent sample for the RM project.
 
+Used to select confirmed and candidate quasar targets for the BHM-RM Program in SDSS-V. For more details please see Yang and Shen, (2022, https://ui.adsabs.harvard.edu/abs/2022arXiv220608989Y/abstract).
+
+This table contains all photometric objects detected in the COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields., within a circular area of 10 degree^2 from the field center.
+
+Field center: Name     RA          DEC
+              XMM-LSS  02:22:50.00    -04:45:00.0
+              CDFS     03:30:35.60    -28:06:00.0
+              EDFS     04:04:57.84    -48:25:22.8
+              ELAIS-S1 00:37:48.00    -44:00:00.0
+              COSMOS   10:00:00.00    +02:12:00.0
+              SDSS-RM  14:14:49.00    +53:05:00.0
+              S-CVZ    06:00:00.00    -66:33:38.0
+
+The table includes information from the following survey data releases:
+PS1: Pan-STARRS, DR1, StackObjectThin
+SDSS: Sloan Digital Sky Survey, DR14, PhotoObjAll
+Gaia: DR2, gaia_dr2.gaia_source, DR3, gaia_dr3.gaia_source
+Legacy Survey DR8 and DR10.
+Values are set to -9.0 or -9 if null.
+
+The dr20_bhm_rm_v1_3 table corresponds to Version: v1, 07/31/2023
+
+[INCOMPLETE]: Tom to check summary and missing column descriptions.
 
 
 Columns
 -------
 
-rm_field_name - 
-ra - 
-dec - 
-catalogidv05 - 
-rm_known_spec - 
-rm_core - 
-rm_var - 
-rm_ancillary - 
-mag_g - 
-mag_r - 
-mag_i - 
-mag_z - 
-gaia_g - 
-gaia_bp - 
-gaia_rp - 
-ls_id_dr8 - 
-ls_id_dr10 - 
-gaia_dr2_source_id - 
-gaia_dr3_source_id - 
-panstarrs1_catid_objid - 
-rm_unsuitable - 
-rm_xrayqso - 
-pkey - 
-
+rm_field_name - One of COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, or ELAIS-S1
+ra - Fiducial Right Ascension (J2000) [deg]
+dec - Fiducial Declination (J2000) [deg]
+catalogidv05 - Unique identifier in the dr20_catalog table (corresponding to the v0.5 cross-matching run).
+rm_known_spec -
+rm_core -
+rm_var -
+rm_ancillary -
+mag_g -
+mag_r -
+mag_i -
+mag_z -
+gaia_g - Gaia G-band magnitude [mag]
+gaia_bp - Gaia BP-band magnitude [mag]
+gaia_rp - Gaia RP-band magnitude [mag]
+ls_id_dr8 - Legacy Survey DR8 ID
+ls_id_dr10 - Legacy Survey DR10 ID
+gaia_dr2_source_id - Gaia DR2 source ID
+gaia_dr3_source_id - Gaia DR3 source ID
+panstarrs1_catid_objid - Pan-STARRS1 DR1 StackObjectThin unique object identifier
+rm_unsuitable -
+rm_xrayqso -
+pkey - Primary key identifier for this table row

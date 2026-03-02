@@ -1,44 +1,43 @@
 Summary
 -------
 
-
+[INCOMPLETE]: Tom to provide a summary and check the column descriptions.
 
 
 Columns
 -------
 
-plate - 
-mjd - 
-fiberid - 
-field - 
-catalogid - 
-bestobjid - 
-targetobjid - 
-run2d - 
-run1d - 
-firstrelease - 
-plug_ra - 
-plug_dec - 
-sourcetype - 
-objtype - 
-targettype - 
-lambda_eff - 
-sn_median_all - 
-sn_median_u - 
-sn_median_g - 
-sn_median_r - 
-sn_median_i - 
-sn_median_z - 
-platesn2 - 
-platequality - 
-z - 
-z_err - 
-zwarning - 
-zwarning_noqso - 
-class - 
-subclass - 
-tfile - 
-specprimary - 
-nspecobs - 
-pk - 
-
+plate - Plate number (each plate corresponds to an actual plug plate) []
+mjd - Modified Julian Day of observation [day]
+fiberid - Fiber number []
+field - Field identifier []
+catalogid - The associated ID in the dr20_catalog table []
+bestobjid - Unique database ID of (recommended) position-based photometric match based on RUN, RERUN, CAMCOl, FIELD, ID (same as SkyServer version) []
+targetobjid - Unique database ID of targeting object based on RUN, RERUN, CAMCOl, FIELD, ID (same as SkyServer version) []
+run2d - Spectroscopic 2D reduction (extraction of spectra) name []
+run1d - Spectroscopic 1D reduction (redshift and classification) name []
+firstrelease - Name of first release this PLATE, MJD, FIBERID, RUN2D was associated with []
+plug_ra - Right ascension of hole (J2000) [degrees]
+plug_dec - Declination of hole (J2000) [degrees]
+sourcetype - String expressing type of source (similar to OBJTYPE in DR8 and earlier) []
+objtype - Why this object was targeted. Note that if this field says QSO, it could be the case that this object would have been targetted as a GALAXY or any number of other categories as well. The PRIMTARGET and SECTARGET flags in the plug-map structure (in the spField file) gives this full information. []
+targettype - General type of target ("SCIENCE", "STANDARD" or "SKY") []
+lambda_eff - Effective wavelength drilling position was optimized for [Angstroms]
+sn_median_all - Median signal-to-noise per pixel across full spectrum (aka SN_MEDIAN_ALL) []
+sn_median_u - Median signal-to-noise per pixel within the u bandpass []
+sn_median_g - Median signal-to-noise per pixel within the g bandpass []
+sn_median_r - Median signal-to-noise per pixel within the r bandpass []
+sn_median_i - Median signal-to-noise per pixel within the i bandpass []
+sn_median_z - Median signal-to-noise per pixel within the z bandpass []
+platesn2 - Overall signal-to-noise-squared measure for plate (only for SDSS spectrograph plates) []
+platequality - Characterization of plate quality. []
+z - Best redshift []
+z_err - Error in best redshift []
+zwarning - Bitmask of spectroscopic warning values; 0 means everything is OK []
+zwarning_noqso - Best redshift when ignoring QSO fits, recommended for BOSS CMASS and LOWZ targets; calculated only for survey='boss' spectra, not for any SDSS spectrograph data []
+class - Best spectroscopic classification ("STAR", "GALAXY" or "QSO") []
+subclass - Best spectroscopic subclassification []
+tfile - File that best fit template comes from in idlspec1d product []
+specprimary - Objects observed multiple times will have this set to 1 for one observation only. This is usually the 'best' observation.
+nspecobs - Number of spectral observations. []
+pk - A unique identifier for this table row. []

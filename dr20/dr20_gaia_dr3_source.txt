@@ -119,10 +119,10 @@ grvs_mag_error - Grvs magnitude uncertainty [mag]
 grvs_mag_nb_transits - Number of transits used to compute Grvs
 rvs_spec_sig_to_noise - Signal to noise ratio in the mean RVS spectrum
 phot_variable_flag - Photometric variability flag
-l - Galactic longitude (double, Angle[deg])
-b - Galactic latitude (double, Angle[deg])
-ecl_lon - Ecliptic longitude (double, Angle[deg])
-ecl_lat - Ecliptic latitude (double, Angle[deg])
+l - Galactic longitude [deg]
+b - Galactic latitude [deg]
+ecl_lon - Ecliptic longitude [deg]
+ecl_lat - Ecliptic latitude [deg]
 in_qso_candidates - Flag indicating the availability of additional information in the QSO candidates table
 in_galaxy_candidates - Flag indicating the availability of additional information in the galaxy candidates table
 non_single_star - Flag indicating the availability of additional information in the various Non-Single Star tables

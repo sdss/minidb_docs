@@ -1,227 +1,226 @@
 Summary
 -------
 
-
+El-Badry, Rix, and Heinz Gaia DR3 visual binary catalog (MNRAS 2021). See https://zenodo.org/records/4435257 for details.
 
 
 Columns
 -------
 
-solution_id1 - 
-solution_id2 - 
-source_id1 - 
-source_id2 - 
-random_index1 - 
-random_index2 - 
-ref_epoch1 - 
-ref_epoch2 - 
-ra1 - 
-ra2 - 
-ra_error1 - 
-ra_error2 - 
-dec1 - 
-dec2 - 
-dec_error1 - 
-dec_error2 - 
-parallax1 - 
-parallax2 - 
-parallax_error1 - 
-parallax_error2 - 
-parallax_over_error1 - 
-parallax_over_error2 - 
-pm1 - 
-pm2 - 
-pmra1 - 
-pmra2 - 
-pmra_error1 - 
-pmra_error2 - 
-pmdec1 - 
-pmdec2 - 
-pmdec_error1 - 
-pmdec_error2 - 
-ra_dec_corr1 - 
-ra_dec_corr2 - 
-ra_parallax_corr1 - 
-ra_parallax_corr2 - 
-ra_pmra_corr1 - 
-ra_pmra_corr2 - 
-ra_pmdec_corr1 - 
-ra_pmdec_corr2 - 
-dec_parallax_corr1 - 
-dec_parallax_corr2 - 
-dec_pmra_corr1 - 
-dec_pmra_corr2 - 
-dec_pmdec_corr1 - 
-dec_pmdec_corr2 - 
-parallax_pmra_corr1 - 
-parallax_pmra_corr2 - 
-parallax_pmdec_corr1 - 
-parallax_pmdec_corr2 - 
-pmra_pmdec_corr1 - 
-pmra_pmdec_corr2 - 
-astrometric_n_obs_al1 - 
-astrometric_n_obs_al2 - 
-astrometric_n_obs_ac1 - 
-astrometric_n_obs_ac2 - 
-astrometric_n_good_obs_al1 - 
-astrometric_n_good_obs_al2 - 
-astrometric_n_bad_obs_al1 - 
-astrometric_n_bad_obs_al2 - 
-astrometric_gof_al1 - 
-astrometric_gof_al2 - 
-astrometric_chi2_al1 - 
-astrometric_chi2_al2 - 
-astrometric_excess_noise1 - 
-astrometric_excess_noise2 - 
-astrometric_excess_noise_sig1 - 
-astrometric_excess_noise_sig2 - 
-astrometric_params_solved1 - 
-astrometric_params_solved2 - 
-astrometric_primary_flag1 - 
-astrometric_primary_flag2 - 
-nu_eff_used_in_astrometry1 - 
-nu_eff_used_in_astrometry2 - 
-pseudocolour1 - 
-pseudocolour2 - 
-pseudocolour_error1 - 
-pseudocolour_error2 - 
-ra_pseudocolour_corr1 - 
-ra_pseudocolour_corr2 - 
-dec_pseudocolour_corr1 - 
-dec_pseudocolour_corr2 - 
-parallax_pseudocolour_corr1 - 
-parallax_pseudocolour_corr2 - 
-pmra_pseudocolour_corr1 - 
-pmra_pseudocolour_corr2 - 
-pmdec_pseudocolour_corr1 - 
-pmdec_pseudocolour_corr2 - 
-astrometric_matched_transits1 - 
-astrometric_matched_transits2 - 
-visibility_periods_used1 - 
-visibility_periods_used2 - 
-astrometric_sigma5d_max1 - 
-astrometric_sigma5d_max2 - 
-matched_transits1 - 
-matched_transits2 - 
-new_matched_transits1 - 
-new_matched_transits2 - 
-matched_transits_removed1 - 
-matched_transits_removed2 - 
-ipd_gof_harmonic_amplitude1 - 
-ipd_gof_harmonic_amplitude2 - 
-ipd_gof_harmonic_phase1 - 
-ipd_gof_harmonic_phase2 - 
-ipd_frac_multi_peak1 - 
-ipd_frac_multi_peak2 - 
-ipd_frac_odd_win1 - 
-ipd_frac_odd_win2 - 
-ruwe1 - 
-ruwe2 - 
-scan_direction_strength_k11 - 
-scan_direction_strength_k12 - 
-scan_direction_strength_k21 - 
-scan_direction_strength_k22 - 
-scan_direction_strength_k31 - 
-scan_direction_strength_k32 - 
-scan_direction_strength_k41 - 
-scan_direction_strength_k42 - 
-scan_direction_mean_k11 - 
-scan_direction_mean_k12 - 
-scan_direction_mean_k21 - 
-scan_direction_mean_k22 - 
-scan_direction_mean_k31 - 
-scan_direction_mean_k32 - 
-scan_direction_mean_k41 - 
-scan_direction_mean_k42 - 
-duplicated_source1 - 
-duplicated_source2 - 
-phot_g_n_obs1 - 
-phot_g_n_obs2 - 
-phot_g_mean_flux1 - 
-phot_g_mean_flux2 - 
-phot_g_mean_flux_error1 - 
-phot_g_mean_flux_error2 - 
-phot_g_mean_flux_over_error1 - 
-phot_g_mean_flux_over_error2 - 
-phot_g_mean_mag1 - 
-phot_g_mean_mag2 - 
-phot_bp_n_obs1 - 
-phot_bp_n_obs2 - 
-phot_bp_mean_flux1 - 
-phot_bp_mean_flux2 - 
-phot_bp_mean_flux_error1 - 
-phot_bp_mean_flux_error2 - 
-phot_bp_mean_flux_over_error1 - 
-phot_bp_mean_flux_over_error2 - 
-phot_bp_mean_mag1 - 
-phot_bp_mean_mag2 - 
-phot_rp_n_obs1 - 
-phot_rp_n_obs2 - 
-phot_rp_mean_flux1 - 
-phot_rp_mean_flux2 - 
-phot_rp_mean_flux_error1 - 
-phot_rp_mean_flux_error2 - 
-phot_rp_mean_flux_over_error1 - 
-phot_rp_mean_flux_over_error2 - 
-phot_rp_mean_mag1 - 
-phot_rp_mean_mag2 - 
-phot_bp_n_contaminated_transits1 - 
-phot_bp_n_contaminated_transits2 - 
-phot_bp_n_blended_transits1 - 
-phot_bp_n_blended_transits2 - 
-phot_rp_n_contaminated_transits1 - 
-phot_rp_n_contaminated_transits2 - 
-phot_rp_n_blended_transits1 - 
-phot_rp_n_blended_transits2 - 
-phot_proc_mode1 - 
-phot_proc_mode2 - 
-phot_bp_rp_excess_factor1 - 
-phot_bp_rp_excess_factor2 - 
-bp_rp1 - 
-bp_rp2 - 
-bp_g1 - 
-bp_g2 - 
-g_rp1 - 
-g_rp2 - 
-dr2_radial_velocity1 - 
-dr2_radial_velocity2 - 
-dr2_radial_velocity_error1 - 
-dr2_radial_velocity_error2 - 
-dr2_rv_nb_transits1 - 
-dr2_rv_nb_transits2 - 
-dr2_rv_template_teff1 - 
-dr2_rv_template_teff2 - 
-dr2_rv_template_logg1 - 
-dr2_rv_template_logg2 - 
-dr2_rv_template_fe_h1 - 
-dr2_rv_template_fe_h2 - 
-l1 - 
-l2 - 
-b1 - 
-b2 - 
-ecl_lon1 - 
-ecl_lon2 - 
-ecl_lat1 - 
-ecl_lat2 - 
-pairdistance - 
-sep_au - 
-binary_type - 
-sigma18 - 
-r_chance_align - 
-dr2_source_id1 - 
-dr2_source_id2 - 
-dr2_parallax1 - 
-dr2_parallax2 - 
-dr2_parallax_error1 - 
-dr2_parallax_error2 - 
-dr2_pmra1 - 
-dr2_pmra2 - 
-dr2_pmdec1 - 
-dr2_pmdec2 - 
-dr2_pmra_error1 - 
-dr2_pmra_error2 - 
-dr2_pmdec_error1 - 
-dr2_pmdec_error2 - 
-dr2_ruwe1 - 
-dr2_ruwe2 - 
-
+solution_id1 - Solution Identifier for star 1
+solution_id2 - Solution Identifier for star 2
+source_id1 - Unique source identifier (unique within a particular Data Release) for star 1
+source_id2 - Unique source identifier (unique within a particular Data Release) for star 2
+random_index1 - Random index for use when selecting subsets for star 1
+random_index2 - Random index for use when selecting subsets for star 2
+ref_epoch1 - Reference epoch for star 1 [Julian years]
+ref_epoch2 - Reference epoch for star 2 [Julian years]
+ra1 - Right ascension for star 1 [deg]
+ra2 - Right ascension for star 2 [deg]
+ra_error1 - Standard error of right ascension for star 1 [mas]
+ra_error2 - Standard error of right ascension for star 2 [mas]
+dec1 - Declination for star 1 [deg]
+dec2 - Declination for star 2 [deg]
+dec_error1 - Standard error of declination for star 1 [mas]
+dec_error2 - Standard error of declination for star 2 [mas]
+parallax1 - Parallax for star 1 [mas]
+parallax2 - Parallax for star 2 [mas]
+parallax_error1 - Standard error of parallax for star 1 [mas]
+parallax_error2 - Standard error of parallax for star 2 [mas]
+parallax_over_error1 - Parallax divided by its standard error for star 1
+parallax_over_error2 - Parallax divided by its standard error for star 2
+pm1 - Total proper motion for star 1 [mas yr−1]
+pm2 - Total proper motion for star 2 [mas yr−1]
+pmra1 - Proper motion in right ascension direction for star 1 [mas yr−1]
+pmra2 - Proper motion in right ascension direction for star 2 [mas yr−1]
+pmra_error1 - Standard error of proper motion in right ascension direction for star 1 [mas yr−1]
+pmra_error2 - Standard error of proper motion in right ascension direction for star 2 [mas yr−1]
+pmdec1 - Proper motion in declination direction for star 1 [mas yr−1]
+pmdec2 - Proper motion in declination direction for star 2 [mas yr−1]
+pmdec_error1 - Standard error of proper motion in declination direction for star 1 [mas yr−1]
+pmdec_error2 - Standard error of proper motion in declination direction for star 2 [mas yr−1]
+ra_dec_corr1 - Correlation between right ascension and declination for star 1
+ra_dec_corr2 - Correlation between right ascension and declination for star 2
+ra_parallax_corr1 - Correlation between right ascension and parallax for star 1
+ra_parallax_corr2 - Correlation between right ascension and parallax for star 2
+ra_pmra_corr1 - Correlation between right ascension and proper motion in right ascension for star 1
+ra_pmra_corr2 - Correlation between right ascension and proper motion in right ascension for star 2
+ra_pmdec_corr1 - Correlation between right ascension and proper motion in declination for star 1
+ra_pmdec_corr2 - Correlation between right ascension and proper motion in declination for star 2
+dec_parallax_corr1 - Correlation between declination and parallax for star 1
+dec_parallax_corr2 - Correlation between declination and parallax for star 2
+dec_pmra_corr1 - Correlation between declination and proper motion in right ascension for star 1
+dec_pmra_corr2 - Correlation between declination and proper motion in right ascension for star 2
+dec_pmdec_corr1 - Correlation between declination and proper motion in declination for star 1
+dec_pmdec_corr2 - Correlation between declination and proper motion in declination for star 2
+parallax_pmra_corr1 - Correlation between parallax and proper motion in right ascension for star 1
+parallax_pmra_corr2 - Correlation between parallax and proper motion in right ascension for star 2
+parallax_pmdec_corr1 - Correlation between parallax and proper motion in declination for star 1
+parallax_pmdec_corr2 - Correlation between parallax and proper motion in declination for star 2
+pmra_pmdec_corr1 - Correlation between proper motion in right ascension and proper motion in declination for star 1
+pmra_pmdec_corr2 - Correlation between proper motion in right ascension and proper motion in declination for star 2
+astrometric_n_obs_al1 - Total number of observations in the along-scan (AL) direction for star 1
+astrometric_n_obs_al2 - Total number of observations in the along-scan (AL) direction for star 2
+astrometric_n_obs_ac1 - Total number of observations in the across-scan (AC) direction for star 1
+astrometric_n_obs_ac2 - Total number of observations in the across-scan (AC) direction for star 2
+astrometric_n_good_obs_al1 - Number of good observations in the along-scan (AL) direction for star 1
+astrometric_n_good_obs_al2 - Number of good observations in the along-scan (AL) direction for star 2
+astrometric_n_bad_obs_al1 - Number of bad observations in the along-scan (AL) direction for star 1
+astrometric_n_bad_obs_al2 - Number of bad observations in the along-scan (AL) direction for star 2
+astrometric_gof_al1 - Goodness of fit statistic of model wrt along-scan observations for star 1
+astrometric_gof_al2 - Goodness of fit statistic of model wrt along-scan observations for star 2
+astrometric_chi2_al1 - AL chi-square value for star 1
+astrometric_chi2_al2 - AL chi-square value for star 2
+astrometric_excess_noise1 - Excess noise of the source for star 1 [mas]
+astrometric_excess_noise2 - Excess noise of the source for star 2 [mas]
+astrometric_excess_noise_sig1 - Significance of excess noise for star 1
+astrometric_excess_noise_sig2 - Significance of excess noise for star 2
+astrometric_params_solved1 - Which parameters have been solved for for star 1?
+astrometric_params_solved2 - Which parameters have been solved for for star 2?
+astrometric_primary_flag1 - Primary or seconday for star 1
+astrometric_primary_flag2 - Primary or seconday for star 2
+nu_eff_used_in_astrometry1 - Effective wavenumber of the source used in the astrometric solution for star 1 [1/micrometer]
+nu_eff_used_in_astrometry2 - Effective wavenumber of the source used in the astrometric solution for star 2 [1/micrometer]
+pseudocolour1 - Astrometrically estimated pseudocolour of the source for star 1 [1/micrometer]
+pseudocolour2 - Astrometrically estimated pseudocolour of the source for star 2 [1/micrometer]
+pseudocolour_error1 - Standard error of the pseudocolour of the source for star 1 [1/micrometer]
+pseudocolour_error2 - Standard error of the pseudocolour of the source for star 2 [1/micrometer]
+ra_pseudocolour_corr1 - Correlation between right ascension and pseudocolour for star 1
+ra_pseudocolour_corr2 - Correlation between right ascension and pseudocolour for star 2
+dec_pseudocolour_corr1 - Correlation between declination and pseudocolour for star 1
+dec_pseudocolour_corr2 - Correlation between declination and pseudocolour for star 2
+parallax_pseudocolour_corr1 - Correlation between parallax and pseudocolour for star 1
+parallax_pseudocolour_corr2 - Correlation between parallax and pseudocolour for star 2
+pmra_pseudocolour_corr1 - Correlation between proper motion in right asension and pseudocolour for star 1
+pmra_pseudocolour_corr2 - Correlation between proper motion in right asension and pseudocolour for star 2
+pmdec_pseudocolour_corr1 - Correlation between proper motion in declination and pseudocolour for star 1
+pmdec_pseudocolour_corr2 - Correlation between proper motion in declination and pseudocolour for star 2
+astrometric_matched_transits1 - Matched FOV transits used in the AGIS solution for star 1
+astrometric_matched_transits2 - Matched FOV transits used in the AGIS solution for star 2
+visibility_periods_used1 - Number of visibility periods used in Astrometric solution for star 1
+visibility_periods_used2 - Number of visibility periods used in Astrometric solution for star 2
+astrometric_sigma5d_max1 - The longest semi-major axis of the 5-d error ellipsoid for star 1 [mas]
+astrometric_sigma5d_max2 - The longest semi-major axis of the 5-d error ellipsoid for star 2 [mas]
+matched_transits1 - The number of transits matched to this source for star 1
+matched_transits2 - The number of transits matched to this source for star 2
+new_matched_transits1 - The number of transits newly incorporated into an existing source in the current cycle for star 1
+new_matched_transits2 - The number of transits newly incorporated into an existing source in the current cycle for star 2
+matched_transits_removed1 - The number of transits removed from an existing source in the current cycle for star 1
+matched_transits_removed2 - The number of transits removed from an existing source in the current cycle for star 2
+ipd_gof_harmonic_amplitude1 - Amplitude of the IPD GoF versus position angle of scan for star 1
+ipd_gof_harmonic_amplitude2 - Amplitude of the IPD GoF versus position angle of scan for star 2
+ipd_gof_harmonic_phase1 - Phase of the IPD GoF versus position angle of scan for star 1 [deg]
+ipd_gof_harmonic_phase2 - Phase of the IPD GoF versus position angle of scan for star 2 [deg]
+ipd_frac_multi_peak1 - Percent of successful-IPD windows with more than one peak for star 1
+ipd_frac_multi_peak2 - Percent of successful-IPD windows with more than one peak for star 2
+ipd_frac_odd_win1 - Percent of transits with truncated windows or multiple gate for star 1
+ipd_frac_odd_win2 - Percent of transits with truncated windows or multiple gate for star 2
+ruwe1 - Renormalised unit weight error for star 1
+ruwe2 - Renormalised unit weight error for star 2
+scan_direction_strength_k11 - Degree of concentration of scan directions across the source for star 1
+scan_direction_strength_k12 - Degree of concentration of scan directions across the source for star 2
+scan_direction_strength_k21 - Degree of concentration of scan directions across the source for star 1
+scan_direction_strength_k22 - Degree of concentration of scan directions across the source for star 2
+scan_direction_strength_k31 - Degree of concentration of scan directions across the source for star 1
+scan_direction_strength_k32 - Degree of concentration of scan directions across the source for star 2
+scan_direction_strength_k41 - Degree of concentration of scan directions across the source for star 1
+scan_direction_strength_k42 - Degree of concentration of scan directions across the source for star 2
+scan_direction_mean_k11 - Mean position angle of scan directions across the source for star 1 [deg]
+scan_direction_mean_k12 - Mean position angle of scan directions across the source for star 2 [deg]
+scan_direction_mean_k21 - Mean position angle of scan directions across the source for star 1 [deg]
+scan_direction_mean_k22 - Mean position angle of scan directions across the source for star 2 [deg]
+scan_direction_mean_k31 - Mean position angle of scan directions across the source for star 1 [deg]
+scan_direction_mean_k32 - Mean position angle of scan directions across the source for star 2 [deg]
+scan_direction_mean_k41 - Mean position angle of scan directions across the source for star 1 [deg]
+scan_direction_mean_k42 - Mean position angle of scan directions across the source for star 2 [deg]
+duplicated_source1 - Source with multiple source identifiers for star 1
+duplicated_source2 - Source with multiple source identifiers for star 2
+phot_g_n_obs1 - Number of observations contributing to G photometry for star 1
+phot_g_n_obs2 - Number of observations contributing to G photometry for star 2
+phot_g_mean_flux1 - G-band mean flux for star 1 [e-/s]
+phot_g_mean_flux2 - G-band mean flux for star 2 [e-/s]
+phot_g_mean_flux_error1 - Error on G-band mean flux for star 1 [e-/s]
+phot_g_mean_flux_error2 - Error on G-band mean flux for star 2 [e-/s]
+phot_g_mean_flux_over_error1 - G-band mean flux divided by its error for star 1
+phot_g_mean_flux_over_error2 - G-band mean flux divided by its error for star 2
+phot_g_mean_mag1 - G-band mean magnitude for star 1 [mag]
+phot_g_mean_mag2 - G-band mean magnitude for star 2 [mag]
+phot_bp_n_obs1 - Number of observations contributing to BP photometry for star 1
+phot_bp_n_obs2 - Number of observations contributing to BP photometry for star 2
+phot_bp_mean_flux1 - Integrated BP mean flux for star 1 [e-/s]
+phot_bp_mean_flux2 - Integrated BP mean flux for star 2 [e-/s]
+phot_bp_mean_flux_error1 - Error on the integrated BP mean flux for star 1 [e-/s]
+phot_bp_mean_flux_error2 - Error on the integrated BP mean flux for star 2 [e-/s]
+phot_bp_mean_flux_over_error1 - Integrated BP mean flux divided by its error for star 1
+phot_bp_mean_flux_over_error2 - Integrated BP mean flux divided by its error for star 2
+phot_bp_mean_mag1 - Integrated BP mean magnitude for star 1 [mag]
+phot_bp_mean_mag2 - Integrated BP mean magnitude for star 2 [mag]
+phot_rp_n_obs1 - Number of observations contributing to RP photometry for star 1
+phot_rp_n_obs2 - Number of observations contributing to RP photometry for star 2
+phot_rp_mean_flux1 - Integrated RP mean flux for star 1 [e-/s]
+phot_rp_mean_flux2 - Integrated RP mean flux for star 2 [e-/s]
+phot_rp_mean_flux_error1 - Error on the integrated RP mean flux for star 1 [e-/s]
+phot_rp_mean_flux_error2 - Error on the integrated RP mean flux for star 2 [e-/s]
+phot_rp_mean_flux_over_error1 - Integrated RP mean flux divided by its error for star 1
+phot_rp_mean_flux_over_error2 - Integrated RP mean flux divided by its error for star 2
+phot_rp_mean_mag1 - Integrated RP mean magnitude for star 1 [mag]
+phot_rp_mean_mag2 - Integrated RP mean magnitude for star 2 [mag]
+phot_bp_n_contaminated_transits1 - Number of BP contaminated transits for star 1
+phot_bp_n_contaminated_transits2 - Number of BP contaminated transits for star 2
+phot_bp_n_blended_transits1 - Number of BP blended transits for star 1
+phot_bp_n_blended_transits2 - Number of BP blended transits for star 2
+phot_rp_n_contaminated_transits1 - Number of RP contaminated transits for star 1
+phot_rp_n_contaminated_transits2 - Number of RP contaminated transits for star 2
+phot_rp_n_blended_transits1 - Number of RP blended transits for star 1
+phot_rp_n_blended_transits2 - Number of RP blended transits for star 2
+phot_proc_mode1 - Photometry processing mode for star 1
+phot_proc_mode2 - Photometry processing mode for star 2
+phot_bp_rp_excess_factor1 - BP/RP excess factor for star 1
+phot_bp_rp_excess_factor2 - BP/RP excess factor for star 2
+bp_rp1 - BP - RP colour for star 1 [mag]
+bp_rp2 - BP - RP colour for star 2 [mag]
+bp_g1 - BP - G colour for star 1 [mag]
+bp_g2 - BP - G colour for star 2 [mag]
+g_rp1 - G - RP colour for star 1 [mag]
+g_rp2 - G - RP colour for star 2 [mag]
+dr2_radial_velocity1 - Radial velocity for star 1 (from Gaia DR2) [km/s]
+dr2_radial_velocity2 - Radial velocity for star 2 (from Gaia DR2) [km/s]
+dr2_radial_velocity_error1 - Radial velocity error for star 1 (from Gaia DR2) [km/s]
+dr2_radial_velocity_error2 - Radial velocity error for star 2 (from Gaia DR2) [km/s]
+dr2_rv_nb_transits1 - Number of transits used to compute radial velocity for star 1 (from Gaia DR2)
+dr2_rv_nb_transits2 - Number of transits used to compute radial velocity for star 2 (from Gaia DR2)
+dr2_rv_template_teff1 - Teff of the template used to compute radial velocity for star 1 (from Gaia DR2) [K]
+dr2_rv_template_teff2 - Teff of the template used to compute radial velocity for star 2 (from Gaia DR2) [K]
+dr2_rv_template_logg1 - logg of the template used to compute radial velocity for star 1 (from Gaia DR2) [log cgs]
+dr2_rv_template_logg2 - logg of the template used to compute radial velocity for star 2 (from Gaia DR2) [log cgs]
+dr2_rv_template_fe_h1 - Fe/H of the template used to compute radial velocity for star 1 (from Gaia DR2) [dex]
+dr2_rv_template_fe_h2 - Fe/H of the template used to compute radial velocity for star 2 (from Gaia DR2) [dex]
+l1 - Galactic longitude for star 1 [deg]
+l2 - Galactic longitude for star 2 [deg]
+b1 - Galactic latitude for star 1 [deg]
+b2 - Galactic latitude for star 2 [deg]
+ecl_lon1 - Ecliptic longitude for star 1 [deg]
+ecl_lon2 - Ecliptic longitude for star 2 [deg]
+ecl_lat1 - Ecliptic latitude for star 1 [deg]
+ecl_lat2 - Ecliptic latitude for star 2 [deg]
+pairdistance - Angular separation between the two stars [deg]
+sep_au - Projected separation between the two stars [AU]
+binary_type - Classification of the binary pair
+sigma18 - G < 18 local source density
+r_chance_align - Probability of chance alignment for the pair
+dr2_source_id1 - Unique source identifier for star 1 (unique within a particular Data Release) (from Gaia DR2)
+dr2_source_id2 - Unique source identifier for star 2 (unique within a particular Data Release) (from Gaia DR2)
+dr2_parallax1 - Parallax for star 1 (from Gaia DR2) [mas]
+dr2_parallax2 - Parallax for star 2 (from Gaia DR2) [mas]
+dr2_parallax_error1 - Standard error of parallax for star 1 (from Gaia DR2) [mas]
+dr2_parallax_error2 - Standard error of parallax for star 2 (from Gaia DR2) [mas]
+dr2_pmra1 - Proper motion in right ascension direction for star 1 (from Gaia DR2) [mas yr−1]
+dr2_pmra2 - Proper motion in right ascension direction for star 2 (from Gaia DR2) [mas yr−1]
+dr2_pmdec1 - Proper motion in declination direction for star 1 (from Gaia DR2) [mas yr−1]
+dr2_pmdec2 - Proper motion in declination direction for star 2 (from Gaia DR2) [mas yr−1]
+dr2_pmra_error1 - Standard error of proper motion in declination direction for star 1 [mas yr−1]
+dr2_pmra_error2 - Standard error of proper motion in declination direction for star 2 [mas yr−1]
+dr2_pmdec_error1 - Standard error of proper motion in declination direction for star 1 (from Gaia DR2) [mas yr−1]
+dr2_pmdec_error2 - Standard error of proper motion in declination direction for star 2 (from Gaia DR2) [mas yr−1]
+dr2_ruwe1 - Renormalised unit weight error for star 1 (from Gaia DR2)
+dr2_ruwe2 - Renormalised unit weight error for star 2 (from Gaia DR2)

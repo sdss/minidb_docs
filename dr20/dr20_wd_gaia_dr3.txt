@@ -1,171 +1,170 @@
 Summary
 -------
 
-
+Catalogue of white dwarfs in Gaia EDR3 Gentile Fusillo et al. (2021).
 
 
 Columns
 -------
 
-wdjname - 
-gaiaedr3 - 
-gaiadr2 - 
-edr3name - 
-radeg - 
-e_radeg - 
-dedeg - 
-e_dedeg - 
-plx - 
-e_plx - 
-rplx - 
-zpcor - 
-pwd - 
-density - 
-solid - 
-randomi - 
-epoch - 
-pm - 
-e_pm - 
-pmra - 
-e_pmra - 
-pmde - 
-e_pmde - 
-radecor - 
-raplxcor - 
-rapmracor - 
-rapmdecor - 
-deplxcor - 
-depmracor - 
-depmdecor - 
-plxpmracor - 
-plxpmdecor - 
-pmrapmdecor - 
-nal - 
-nac - 
-ngal - 
-nbal - 
-gofal - 
-chi2al - 
-epsi - 
-sepsi - 
-solved - 
-apf - 
-nueff - 
-pscol - 
-e_pscol - 
-rapscolcorr - 
-depscolcorr - 
-plxpscolcorr - 
-pmrapscolcorr - 
-pmdepscolcorr - 
-matchobsa - 
-nper - 
-amax - 
-matchobs - 
-newmatchobs - 
-matchobsrm - 
-ipdgofha - 
-ipdgofhp - 
-ipdfmp - 
-ipdfow - 
-ruwe - 
-sdsk1 - 
-sdsk2 - 
-sdsk3 - 
-sdsk4 - 
-sdmk1 - 
-sdmk2 - 
-sdmk3 - 
-sdmk4 - 
-dup - 
-o_gmag - 
-fg - 
-e_fg - 
-rfg - 
-gmag_vega - 
-e_gmag - 
-fgcorr - 
-gmagcorr - 
-e_gmagcorr - 
-o_bpmag - 
-fbp - 
-e_fbp - 
-rfbp - 
-bpmag - 
-e_bpmag - 
-o_rpmag - 
-frp - 
-e_frp - 
-rfrp - 
-rpmag - 
-e_rpmag - 
-nbpcont - 
-nbpblend - 
-nrpcont - 
-nrpblend - 
-mode - 
-e_bp_rp - 
-e_bp_rp_corr - 
-gmag_abs - 
-bp_rp - 
-bp_g - 
-g_rp - 
-rv - 
-e_rv - 
-o_rv - 
-teff - 
-logg - 
-fe_h - 
-glon - 
-glat - 
-elon - 
-elat - 
-exfluxerr - 
-brnflag - 
-meanav - 
-minav - 
-maxav - 
-flagext - 
-teffh - 
-e_teffh - 
-loggh - 
-e_loggh - 
-massh - 
-e_massh - 
-chisqh - 
-teffhe - 
-e_teffhe - 
-logghe - 
-e_logghe - 
-masshe - 
-e_masshe - 
-chisqhe - 
-teffmix - 
-e_teffmix - 
-loggmix - 
-e_loggmix - 
-massmix - 
-e_massmix - 
-chisqmix - 
-rgeo - 
-b_rgeo1 - 
-b_rgeo2 - 
-rpgeo - 
-b_rpgeo1 - 
-b_rpgeo2 - 
-fidel_v1 - 
-sdss12 - 
-sdssclean - 
-umag_sdss - 
-e_umag_sdss - 
-gmag_sdss - 
-e_gmag_sdss - 
-rmag_sdss - 
-e_rmag_sdsss - 
-imag_sdss - 
-e_imag_sdss - 
-zmag_sdss - 
-e_zmag_sdss - 
-sdsssep - 
-sdssspec - 
-
+wdjname - WD name (JHHMMSS.ss+DDMMSS.ss) equinox and epoch 2000
+gaiaedr3 - Gaia EDR3 source_id
+gaiadr2 - Gaia DR2 source_id
+edr3name - GaiaEDR3 name (Gaia EDR3 NNNNNNNNNNNNNNNNNNN)
+radeg - Gaia EDR3 Barycentric right ascension (ICRS) at Ep=2016.0 [deg]
+e_radeg - Gaia EDR3 standard error on right ascension, e_RA=e_RA*cosDE [mas]
+dedeg - Gaia EDR3 Barycentric declination (ICRS) at Ep=2016.0 [deg]
+e_dedeg - Gaia EDR3 standard error on declination [mas]
+plx - Gaia EDR3 Absolute stellar parallax at Ep=2016.0 [mas]
+e_plx - Gaia EDR3 parallax error [mas]
+rplx - Gaia EDR3 Parallax divided by its standard error
+zpcor - Zero point offset correction (Lindegren et al., 2020A&A...633A...2L)
+pwd - The probability of being a white dwarf
+density - The number of Gaia sources in the same ~= 50 arcsec sq. bin as this object
+solid - Gaia EDR3 Solution ID
+randomi - Gaia EDR3 Random index used to select subsets
+epoch - Gaia EDR3 Reference epoch [yr]
+pm - Gaia EDR3 Total proper motion [mas/yr]
+e_pm - Gaia EDR3 Total proper motion error [mas/yr]
+pmra - Gaia EDR3 Proper motion in RA, pmRA*cosDE [mas/yr]
+e_pmra - Gaia EDR3 Proper motion in RA error [mas/yr]
+pmde - Gaia EDR3 Proper motion in DE [mas/yr]
+e_pmde - Gaia EDR3 Proper motion in DE error [mas/yr]
+radecor - Correlation between right ascension and declination [-1/1]
+raplxcor - Correlation between right ascension and parallax [-1/1]
+rapmracor - Correlation between right ascension and proper motion in right ascension [-1/1]
+rapmdecor - Correlation between right ascension and proper motion in declination [-1/1]
+deplxcor - Correlation between declination and parallax [-1/1]
+depmracor - Correlation between declination and proper motion in right ascension [-1/1]
+depmdecor - Correlation between declination and proper motion in declination [-1/1]
+plxpmracor - Correlation between parallax and proper motion in right ascension [-1/1]
+plxpmdecor - Correlation between parallax and proper motion in declination [-1/1]
+pmrapmdecor - Correlation between proper motion in right ascension and proper motion in declination [-1/1]
+nal - Total number of observations AL
+nac - Total number of observations AC
+ngal - Number of good observations AL
+nbal - Number of bad observations AL
+gofal - Goodness of fit statistic of model wrt along-scan observations
+chi2al - AL chi-square value
+epsi - Excess noise of the source [mas]
+sepsi - Significance of excess noise
+solved - Which parameters have been solved for?
+apf - Primary or secondary
+nueff - Effective wavenumber of the source used in the astrometric solution [um-1]
+pscol - Astrometrically estimated pseudocolour of the source [um]
+e_pscol - Standard error of the pseudocolour of the source [um]
+rapscolcorr - Correlation between right ascension and pseudocolour [-1/1]
+depscolcorr - Correlation between declination and pseudocolour [-1/1]
+plxpscolcorr - Correlation between parallax and pseudocolour [-1/1]
+pmrapscolcorr - Correlation between proper motion in right ascension and pseudocolour [-1/1]
+pmdepscolcorr - Correlation between proper motion in declination and pseudocolour [-1/1]
+matchobsa - Matched FOV transits used in the AGIS solution
+nper - Number of visibility periods used in Astrometric solution
+amax - The longest semi-major axis of the 5--10 error ellipsoid [mas]
+matchobs - The total number of field-of-view transits matched to this source
+newmatchobs - The number of transits newly incorporated into an existing source in the current cycle
+matchobsrm - The number of transits removed from an existing source in the current cycle
+ipdgofha - Amplitude of the IPD GoF versus position angle of scan
+ipdgofhp - Phase of the IPD GoF versus position angle of scan
+ipdffmp - Percent of successful-IPD windows with more than one peak
+ipdfow - Percent of transits with truncated windows or multiple gate
+ruwe - Renormalised unit weight error
+sdsk1 - Degree of concentration of scan directions across the source
+sdsk2 - Degree of concentration of scan directions across the source
+sdsk3 - Degree of concentration of scan directions across the source
+sdsk4 - Degree of concentration of scan directions across the source
+sdmk1 - Mean position angle of scan directions across the source
+sdmk2 - Mean position angle of scan directions across the source
+sdmk3 - Mean position angle of scan directions across the source
+sdmk4 - Mean position angle of scan directions across the source
+dup - Source with multiple source identifiers
+o_gmag - Number of observations (CCD transits) that contributed to the G mean flux and mean flux error
+fg - Mean flux in the G-band [e-/s]
+e_fg - Standard deviation of the G-band fluxes divided by sqrt(photGNObs) [e-/s]
+rfg - Mean flux in the G-band divided by its error
+gmag_vega - G-band mean magnitude (Vega) [mag]
+e_gmag - Standard error of G-band mean magnitude (Vega) [mag]
+fgcorr - Calibration corrected G-band mean flux [mag]
+gmagcorr - Calibration corrected G magnitude [mag]
+e_gmagcorr - Standard error of calibration corrected G magnitude [mag]
+o_bpmag - Number of observations contributing to BP photometry
+fbp - Mean flux in the integrated BP band [e-/s]
+e_fbp - Error on the integrated BP mean flux [e-/s]
+rfbp - Integrated BP mean flux divided by its error
+bpmag - Integrated BP mean magnitude (Vega) [mag]
+e_bpmag - Standard error of BP mean magnitude (Vega) [mag]
+o_rpmag - Number of observations (CCD transits) that contributed to the integrated RP mean flux and mean flux error
+frp - Mean flux in the integrated RP band [e-/s]
+e_frp - Error on the integrated RP mean flux [e-/s]
+rfrp - Integrated RP mean flux divided by its error
+rpmag - Integrated RP mean magnitude (Vega) [mag]
+e_rpmag - Standard error of RP mean magnitude (Vega) [mag]
+nbpcont - Number of BP contaminated transits
+nbpblend - Number of BP blended transits
+nrpcont - Number of RP contaminated transits
+nrpblend - Number of RP blended transits
+mode - Photometry processing mode
+e_bp_rp - BP/RP excess factor
+e_bp_rp_corr - BP/RP excess factor corrected for colour dependence (Riello et al., 2021A&A...649A...3R, Cat. J/A+A/649/A3)
+gmag_abs - Absolute G magnitude [mag]
+bp_rp - BP-RP colour [mag]
+bp_g - BP-G colour [mag]
+g_rp - G-RP colour [mag]
+rv - dr2_radial_velocity (not used)
+e_rv - dr2_radial_velocity_error (not used)
+o_rv - dr2_rv_nb_transits (not used)
+teff - dr2_rv_template_teff (not used)
+logg - dr2_rv_template_logg (not used)
+fe_h - dr2_rv_template_fe_h (not used)
+glon - Galactic longitude [deg]
+glat - Galactic latitude [deg]
+elon - Ecliptic longitude [deg]
+elat - Ecliptic latitude [deg]
+exfluxerr - Metric for source photometric variability
+brnflag - If 1 it indicates the presence of a source 5 mag brighter than the target in the G-band within 5"
+meanav - Mean extinction value derived from 3D reddening maps [mag]
+minav - Extinction value derived from 3D reddening maps using -1sigma EDR3 distance [mag]
+maxav - Extinction value derived from 3D reddening maps using +1sigma EDR3 distance [mag]
+flagext - Flag
+teffh - Effective temperature from fitting the dereddened G, BP, and RP absolute fluxes with pure-H model atmospheres [K]
+e_teffh - Uncertainty on teff_H [K]
+loggh - Log of surface gravity from fitting the dereddened G, BP, and RP absolute fluxes with pure-H model atmospheres [cm/s2]
+e_loggh - Uncertainty on logg_H [cm/s2]
+massh - Stellar mass resulting from the adopted mass-radius relation and best fit parameters [Msun]
+e_massh - Uncertainty on mass_H [Msun]
+chisqh - chi square value of the fit (pure-H)
+teffhe - Effective temperature from fitting the dereddened G, BP, and RP absolute fluxes with pure-He model atmospheres [K]
+e_teffhe - Uncertainty on teff_He [K]
+logghe - Log of surface gravity from fitting the dereddened G, BP, and RP absolute fluxes with pure-He model atmospheres [cm/s2]
+e_logghe - Uncertainty on logg_He [cm/s2]
+masshe - Stellar mass resulting from the adopted mass-radius relation and best fit parameters [Msun]
+e_masshe - Uncertainty on mass_He [Msun]
+chisqhe - chi square value of the fit (pure-He)
+teffmix - Effective temperature from fitting the dereddened G, BP, and RP absolute fluxes with mixed H-He model atmospheres [K]
+e_teffmix - Uncertainty on teff_mixed [K]
+loggmix - Log of surface gravity from fitting the dereddened G, BP, and RP absolute fluxes with mixed H-He model atmospheres [cm/s2]
+e_loggmix - Uncertainty on logg_mixed [cm/s2]
+massmix - Stellar mass resulting from the adopted mass-radius relation and best fit parameters [Msun]
+e_massmix - Uncertainty on mass_mixed [Msun]
+chisqmix - chi square value of the fit (mixed H-He)
+rgeo - Median of the geometric distance posterior (Bailer-Jones et al., 2021AJ....161..147B, Cat. I/352) [pc]
+b_rgeo1 - 16th percentile of the geometric distance posterior (Bailer-Jones et al., 2021AJ....161..147B, Cat. I/352) [pc]
+b_rgeo2 - 84th percentile of the geometric distance posterior (Bailer-Jones et al., 2021AJ....161..147B, Cat. I/352) [pc]
+rpgeo - Median of the photogeometric distance posterior (Bailer-Jones et al., 2021AJ....161..147B, Cat. I/352) [pc]
+b_rpgeo1 - 16th percentile of the photogeometric distance posterior (Bailer-Jones et al., 2021AJ....161..147B, Cat. I/352) [pc]
+b_rpgeo2 - 84th percentile of the photogeometric distance posterior (Bailer-Jones et al., 2021AJ....161..147B, Cat. I/352) [pc]
+fidel_v1 - Astrometric fidelity metric from Rybizki et al., (2021, arXiv:2101.11641)
+sdss12 - SDSS object name if available (SDSS + J2000 coordinates)
+sdssclean - If 1 the SDSS photometry for this object is considered clean
+umag_sdss - SDSS u band magnitude [mag]
+e_umag_sdss - SDSS u band magnitude uncertainty [mag]
+gmag_sdss - SDSS g band magnitude [mag]
+e_gmag_sdss - SDSS g band magnitude uncertainty [mag]
+rmag_sdss - SDSS r band magnitude [mag]
+e_rmag_sdsss - SDSS r band magnitude uncertainty [mag]
+imag_sdss - SDSS i band magnitude [mag]
+e_imag_sdss - SDSS i band magnitude uncertainty [mag]
+zmag_sdss - SDSS z band magnitude [mag]
+e_zmag_sdss - SDSS z band magnitude uncertainty [mag]
+sdsssep - Angular separation between the Gaia source and its associated SDSS object, after coordinate propagation [arcsec]
+sdssspec - Number of SDSS spectra available for this object
