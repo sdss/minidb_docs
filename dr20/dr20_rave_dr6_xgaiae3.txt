@@ -1,29 +1,28 @@
 Summary
 -------
 
-
+Position cross-match of RAVE DR6 with Gaia EDR3. See https://www.rave-survey.org/metadata/ravedr6/dr6_x_gaiaedr3/.
 
 
 Columns
 -------
 
-obsid - 
-gaiae3 - 
-id - 
-epoch - 
-radeg - 
-e_radeg - 
-dedeg - 
-e_dedeg - 
-plx - 
-e_plx - 
-pmra - 
-e_pmra - 
-pmde - 
-e_pmde - 
-dup - 
-ng - 
-fg - 
-e_fg - 
-gmag - 
-
+obsid - Unique Identifier for RAVE objects, Observation Date, Fieldname, Fibernumber
+gaiae3 - Unique source identifier
+id - Unique source designation
+epoch - Reference epoch [yr]
+radeg - Right ascension [deg]
+e_radeg - Standard error of right ascension [mas]
+dedeg - Declination [deg]
+e_dedeg - Standard error of declination [mas]
+plx - Parallax [mas]
+e_plx - Standard error of parallax [mas]
+pmra - Proper motion in right ascension direction [mas/yr]
+e_pmra - Standard error of proper motion in right ascension direction [mas/yr]
+pmde - Proper motion in declination direction [mas/yr]
+e_pmde - Standard error of proper motion in declination direction [mas/yr]
+dup - Source with duplicate sources
+ng - Number of observations contributing to G photometry
+fg - G-band mean flux [electron/s]
+e_fg - Error on G-band mean flux [electron/s]
+gmag - G-band mean magnitude [mag]

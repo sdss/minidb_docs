@@ -1,7 +1,7 @@
 Summary
 -------
 
-The table contains exposures taken at the observatory.
+The table contains exposures taken at the observatory. APO version.
 
 
 Columns
@@ -14,4 +14,3 @@ comment - Optional comment []
 start_time - The time an exposure started [datetime]
 exposure_time - The length of the exposure [seconds]
 exposure_flavor_pk - Unique identifier in the exposure_flavor table []
-

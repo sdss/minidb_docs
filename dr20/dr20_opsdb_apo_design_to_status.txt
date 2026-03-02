@@ -1,7 +1,7 @@
 Summary
 -------
 
-The table contains design completion information by joining design and design_status
+The table contains design completion information by joining design and design_status. APO version.
 
 
 Columns
@@ -12,4 +12,3 @@ design_id - Unique identifier in the design table
 completion_status_pk - Unique identifier in the design status table
 mjd - Decimal Modified Julian Date (MJD) on which the design was completed [days]
 manual - A flag indicated whether the design was manually marked complete (True) or met normal pipeline criteria (False)
-

@@ -1,7 +1,7 @@
 Summary
 -------
 
-This table contains basic information about a configuration of robots loaded at the telescope.
+This table contains basic information about a configuration of robots loaded at the telescope. APO version.
 
 
 Columns
@@ -13,4 +13,3 @@ comment - An optional comment
 temperature - The ambient temperature when the design was loaded
 epoch - The Julian Date (JD) when the design was loaded
 calibration_version - The version of fps_calibration used, https://github.com/sdss/fps_calibrations/tags
-

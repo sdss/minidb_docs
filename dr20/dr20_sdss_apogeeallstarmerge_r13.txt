@@ -1,7 +1,7 @@
 Summary
 -------
 
-List of APOGEE DR16 stars for RV followup.
+List of APOGEE DR16 stars for RV follow-up.
 
 
 Columns
@@ -48,7 +48,7 @@ feh_err - feh uncertainty (from PARAM_COV) [dex]
 startype - Best guess of star's evolutionary state based on stellar parameters or external catalogs (RC=red clump, RG=red giant, SG = subgiant, MS=dwarf, PMS=pre-main sequence) []
 vjitter - Atmospheric RV jitter derived from log g using the relationship derived in Hekker, et. al 2008. [km/s]
 dist - Derived or given distance to the star [pc]
-dist_err - uncertainy of the distance [pc]
+dist_err - Uncertainty of the distance [pc]
 dist_src - Source of the star's distance measurement (e.g. gaia=derived from gaia parallax) []
 mstar - Derived or given stellar mass (Solar Mass)
 mstar_err - Uncertainty of the Derived stellar mass [Solar Mass]

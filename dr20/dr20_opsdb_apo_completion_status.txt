@@ -1,7 +1,7 @@
 Summary
 -------
 
-The table complains completion statuses referenced in design_to_status
+The table complains completion statuses referenced in design_to_status. APO version.
 
 
 Columns
@@ -9,4 +9,3 @@ Columns
 
 pk - Unique identifier
 label - Description of status ('not started', 'started', 'done')
-

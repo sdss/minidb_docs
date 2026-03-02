@@ -1,143 +1,144 @@
 Summary
 -------
 
+Legacy Survey DR80 catalogue derived from 'sweep' catalogues.
 
+For more information see <a href="https://www.legacysurvey.org/dr8/">https://www.legacysurvey.org/dr10/</a>.
 
 
 Columns
 -------
 
-release - 
-brickid - 
-brickname - 
-objid - 
-type - 
-ra - 
-dec - 
-ra_ivar - 
-dec_ivar - 
-ebv - 
-flux_g - 
-flux_r - 
-flux_i - 
-flux_z - 
-flux_w1 - 
-flux_w2 - 
-flux_w3 - 
-flux_w4 - 
-flux_ivar_g - 
-flux_ivar_r - 
-flux_ivar_i - 
-flux_ivar_z - 
-flux_ivar_w1 - 
-flux_ivar_w2 - 
-flux_ivar_w3 - 
-flux_ivar_w4 - 
-mw_transmission_g - 
-mw_transmission_r - 
-mw_transmission_i - 
-mw_transmission_z - 
-mw_transmission_w1 - 
-mw_transmission_w2 - 
-mw_transmission_w3 - 
-mw_transmission_w4 - 
-nobs_g - 
-nobs_r - 
-nobs_i - 
-nobs_z - 
-nobs_w1 - 
-nobs_w2 - 
-nobs_w3 - 
-nobs_w4 - 
-rchisq_g - 
-rchisq_r - 
-rchisq_i - 
-rchisq_z - 
-rchisq_w1 - 
-rchisq_w2 - 
-rchisq_w3 - 
-rchisq_w4 - 
-fracflux_g - 
-fracflux_r - 
-fracflux_i - 
-fracflux_z - 
-fracflux_w1 - 
-fracflux_w2 - 
-fracflux_w3 - 
-fracflux_w4 - 
-fracmasked_g - 
-fracmasked_r - 
-fracmasked_i - 
-fracmasked_z - 
-fracin_g - 
-fracin_r - 
-fracin_i - 
-fracin_z - 
-anymask_g - 
-anymask_r - 
-anymask_i - 
-anymask_z - 
-allmask_g - 
-allmask_r - 
-allmask_i - 
-allmask_z - 
-wisemask_w1 - 
-wisemask_w2 - 
-psfsize_g - 
-psfsize_r - 
-psfsize_i - 
-psfsize_z - 
-psfdepth_g - 
-psfdepth_r - 
-psfdepth_i - 
-psfdepth_z - 
-galdepth_g - 
-galdepth_r - 
-galdepth_i - 
-galdepth_z - 
-psfdepth_w1 - 
-psfdepth_w2 - 
-wise_coadd_id - 
-shape_r - 
-shape_r_ivar - 
-shape_e1 - 
-shape_e1_ivar - 
-shape_e2 - 
-shape_e2_ivar - 
-fiberflux_g - 
-fiberflux_r - 
-fiberflux_i - 
-fiberflux_z - 
-fibertotflux_g - 
-fibertotflux_r - 
-fibertotflux_i - 
-fibertotflux_z - 
-ref_cat - 
-ref_id - 
-ref_epoch - 
-gaia_phot_g_mean_mag - 
-gaia_phot_g_mean_flux_over_error - 
-gaia_phot_bp_mean_mag - 
-gaia_phot_bp_mean_flux_over_error - 
-gaia_phot_rp_mean_mag - 
-gaia_phot_rp_mean_flux_over_error - 
-gaia_astrometric_excess_noise - 
-gaia_duplicated_source - 
-gaia_phot_bp_rp_excess_factor - 
-gaia_astrometric_sigma5d_max - 
-gaia_astrometric_params_solved - 
-parallax - 
-parallax_ivar - 
-pmra - 
-pmra_ivar - 
-pmdec - 
-pmdec_ivar - 
-maskbits - 
-fitbits - 
-sersic - 
-sersic_ivar - 
-survey_primary - 
-ls_id - 
-gaia_dr2_source_id - 
-gaia_dr3_source_id - 
-
+release - Integer denoting the camera and filter set used
+brickid - Brick ID
+brickname - Name of brick encoding the sky position
+objid - Catalog object number within this brick
+type - Morphological model (PSF, REX, DEV, EXP, SER, DUP)
+ra - Right ascension at equinox J2000 [deg]
+dec - Declination at equinox J2000 [deg]
+ra_ivar - Inverse variance of RA (no cosine term), excluding astrometric calibration errors [1/deg^2]
+dec_ivar - Inverse variance of DEC, excluding astrometric calibration errors [1/deg^2]
+ebv - Galactic extinction E(B-V) reddening from SFD98 [mag]
+flux_g - Model flux in g [nanomaggy]
+flux_r - Model flux in r [nanomaggy]
+flux_i - Model flux in i [nanomaggy]
+flux_z - Model flux in z [nanomaggy]
+flux_w1 - WISE model flux in W1 (AB system) [nanomaggy]
+flux_w2 - WISE model flux in W2 (AB system) [nanomaggy]
+flux_w3 - WISE model flux in W3 (AB system) [nanomaggy]
+flux_w4 - WISE model flux in W4 (AB system) [nanomaggy]
+flux_ivar_g - Inverse variance of flux_g [1/nanomaggy^2]
+flux_ivar_r - Inverse variance of flux_r [1/nanomaggy^2]
+flux_ivar_i - Inverse variance of flux_i [1/nanomaggy^2]
+flux_ivar_z - Inverse variance of flux_z [1/nanomaggy^2]
+flux_ivar_w1 - Inverse variance of flux_w1 [1/nanomaggy^2]
+flux_ivar_w2 - Inverse variance of flux_w2 [1/nanomaggy^2]
+flux_ivar_w3 - Inverse variance of flux_w3 [1/nanomaggy^2]
+flux_ivar_w4 - Inverse variance of flux_w4 [1/nanomaggy^2]
+mw_transmission_g - Galactic transmission in g filter in linear units
+mw_transmission_r - Galactic transmission in r filter in linear units
+mw_transmission_i - Galactic transmission in i filter in linear units
+mw_transmission_z - Galactic transmission in z filter in linear units
+mw_transmission_w1 - Galactic transmission in W1 filter in linear units
+mw_transmission_w2 - Galactic transmission in W2 filter in linear units
+mw_transmission_w3 - Galactic transmission in W3 filter in linear units
+mw_transmission_w4 - Galactic transmission in W4 filter in linear units
+nobs_g - Number of images contributing to the central pixel in g
+nobs_r - Number of images contributing to the central pixel in r
+nobs_i - Number of images contributing to the central pixel in i
+nobs_z - Number of images contributing to the central pixel in z
+nobs_w1 - Number of images contributing to the central pixel in W1
+nobs_w2 - Number of images contributing to the central pixel in W2
+nobs_w3 - Number of images contributing to the central pixel in W3
+nobs_w4 - Number of images contributing to the central pixel in W4
+rchisq_g - Profile-weighted chi-square of model fit normalized by pixel count in g
+rchisq_r - Profile-weighted chi-square of model fit normalized by pixel count in r
+rchisq_i - Profile-weighted chi-square of model fit normalized by pixel count in i
+rchisq_z - Profile-weighted chi-square of model fit normalized by pixel count in z
+rchisq_w1 - Profile-weighted chi-square of model fit normalized by pixel count in W1
+rchisq_w2 - Profile-weighted chi-square of model fit normalized by pixel count in W2
+rchisq_w3 - Profile-weighted chi-square of model fit normalized by pixel count in W3
+rchisq_w4 - Profile-weighted chi-square of model fit normalized by pixel count in W4
+fracflux_g - Profile-weighted fraction of flux from other sources divided by total flux in g
+fracflux_r - Profile-weighted fraction of flux from other sources divided by total flux in r
+fracflux_i - Profile-weighted fraction of flux from other sources divided by total flux in i
+fracflux_z - Profile-weighted fraction of flux from other sources divided by total flux in z
+fracflux_w1 - Profile-weighted fraction of flux from other sources divided by total flux in W1
+fracflux_w2 - Profile-weighted fraction of flux from other sources divided by total flux in W2
+fracflux_w3 - Profile-weighted fraction of flux from other sources divided by total flux in W3
+fracflux_w4 - Profile-weighted fraction of flux from other sources divided by total flux in W4
+fracmasked_g - Profile-weighted fraction of pixels masked from all observations in g
+fracmasked_r - Profile-weighted fraction of pixels masked from all observations in r
+fracmasked_i - Profile-weighted fraction of pixels masked from all observations in i
+fracmasked_z - Profile-weighted fraction of pixels masked from all observations in z
+fracin_g - Fraction of source flux within the blob in g
+fracin_r - Fraction of source flux within the blob in r
+fracin_i - Fraction of source flux within the blob in i
+fracin_z - Fraction of source flux within the blob in z
+anymask_g - Bitwise mask set if central pixel from any image satisfies each condition in g
+anymask_r - Bitwise mask set if central pixel from any image satisfies each condition in r
+anymask_i - Bitwise mask set if central pixel from any image satisfies each condition in i
+anymask_z - Bitwise mask set if central pixel from any image satisfies each condition in z
+allmask_g - Bitwise mask set if central pixel from all images satisfies each condition in g
+allmask_r - Bitwise mask set if central pixel from all images satisfies each condition in r
+allmask_i - Bitwise mask set if central pixel from all images satisfies each condition in i
+allmask_z - Bitwise mask set if central pixel from all images satisfies each condition in z
+wisemask_w1 - W1 bitmask
+wisemask_w2 - W2 bitmask
+psfsize_g - Weighted average PSF FWHM in g [arcsec]
+psfsize_r - Weighted average PSF FWHM in r [arcsec]
+psfsize_i - Weighted average PSF FWHM in i [arcsec]
+psfsize_z - Weighted average PSF FWHM in z [arcsec]
+psfdepth_g - Point-source detection depth in g [1/nanomaggy^2]
+psfdepth_r - Point-source detection depth in r [1/nanomaggy^2]
+psfdepth_i - Point-source detection depth in i [1/nanomaggy^2]
+psfdepth_z - Point-source detection depth in z [1/nanomaggy^2]
+galdepth_g - Galaxy detection depth in g [1/nanomaggy^2]
+galdepth_r - Galaxy detection depth in r [1/nanomaggy^2]
+galdepth_i - Galaxy detection depth in i [1/nanomaggy^2]
+galdepth_z - Galaxy detection depth in z [1/nanomaggy^2]
+psfdepth_w1 - Point-source detection depth in W1 (AB system) [1/nanomaggy^2]
+psfdepth_w2 - Point-source detection depth in W2 (AB system) [1/nanomaggy^2]
+wise_coadd_id - unWISE coadd brick name for the object center
+shape_r - Half-light radius of galaxy model [arcsec]
+shape_r_ivar - Inverse variance of shape_r [1/arcsec^2]
+shape_e1 - Ellipticity component 1 of galaxy model
+shape_e1_ivar - Inverse variance of shape_e1
+shape_e2 - Ellipticity component 2 of galaxy model
+shape_e2_ivar - Inverse variance of shape_e2
+fiberflux_g - Predicted g-band flux within a 1.5-arcsec diameter fiber in 1-arcsec Gaussian seeing [nanomaggy]
+fiberflux_r - Predicted r-band flux within a 1.5-arcsec diameter fiber in 1-arcsec Gaussian seeing [nanomaggy]
+fiberflux_i - Predicted i-band flux within a 1.5-arcsec diameter fiber in 1-arcsec Gaussian seeing [nanomaggy]
+fiberflux_z - Predicted z-band flux within a 1.5-arcsec diameter fiber in 1-arcsec Gaussian seeing [nanomaggy]
+fibertotflux_g - Predicted g-band flux within a 1.5-arcsec diameter fiber from all sources at this location [nanomaggy]
+fibertotflux_r - Predicted r-band flux within a 1.5-arcsec diameter fiber from all sources at this location [nanomaggy]
+fibertotflux_i - Predicted i-band flux within a 1.5-arcsec diameter fiber from all sources at this location [nanomaggy]
+fibertotflux_z - Predicted z-band flux within a 1.5-arcsec diameter fiber from all sources at this location [nanomaggy]
+ref_cat - Reference catalog source for this object
+ref_id - Reference catalog identifier
+ref_epoch - Reference catalog epoch [yr]
+gaia_phot_g_mean_mag - Gaia EDR3 G-band magnitude [mag]
+gaia_phot_g_mean_flux_over_error - Gaia EDR3 G-band signal-to-noise
+gaia_phot_bp_mean_mag - Gaia EDR3 BP magnitude [mag]
+gaia_phot_bp_mean_flux_over_error - Gaia EDR3 BP signal-to-noise
+gaia_phot_rp_mean_mag - Gaia EDR3 RP magnitude [mag]
+gaia_phot_rp_mean_flux_over_error - Gaia EDR3 RP signal-to-noise
+gaia_astrometric_excess_noise - Gaia EDR3 astrometric excess noise
+gaia_duplicated_source - Gaia EDR3 duplicated source flag
+gaia_phot_bp_rp_excess_factor - Gaia EDR3 BP/RP excess factor
+gaia_astrometric_sigma5d_max - Gaia EDR3 longest semi-major axis of the 5D error ellipsoid [mas]
+gaia_astrometric_params_solved - Gaia EDR3 astrometric-parameter solution flag
+parallax - Reference catalog parallax [mas]
+parallax_ivar - Inverse variance on parallax [1/mas^2]
+pmra - Reference catalog proper motion in RA [mas/yr]
+pmra_ivar - Inverse variance on pmra [1/(mas/yr)^2]
+pmdec - Reference catalog proper motion in Dec [mas/yr]
+pmdec_ivar - Inverse variance on pmdec [1/(mas/yr)^2]
+maskbits - Bitwise mask indicating object touches masked pixels in coadd maskbits maps
+fitbits - Bitwise mask describing peculiarities of model fitting
+sersic - Sersic profile index for type SER
+sersic_ivar - Inverse variance of sersic
+survey_primary - True if object is in the primary survey footprint for unique-object selection
+ls_id - SDSS-V Legacy Survey unique object identifier
+gaia_dr2_source_id - Gaia DR2 source identifier
+gaia_dr3_source_id - Gaia DR3 source identifier

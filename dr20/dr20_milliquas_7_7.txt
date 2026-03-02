@@ -1,29 +1,28 @@
 Summary
 -------
 
-
+The Million Quasars (Milliquas) catalogue, version 7. See Flesch 2021 and https://quasars.org/milliquas.htm.
 
 
 Columns
 -------
 
-ra - 
-dec - 
-name - 
-type - 
-rmag - 
-bmag - 
-comment - 
-r - 
-b - 
-z - 
-cite - 
-zcite - 
-rxpct - 
-qpct - 
-xname - 
-rname - 
-lobe1 - 
-lobe2 - 
-pk - 
-
+ra - Right ascension (J2000) [deg]
+dec - Declination (J2000) [deg]
+name - ID from the literature, or J2000
+type - Classification of object, and associations
+rmag - Red optical magnitude [mag]
+bmag - Blue optical magnitude [mag]
+comment - Comment on optical object
+r - Red optical PSF class
+b - Blue optical PSF class
+z - Redshift from the literature or estimated
+cite - Citation for name/classification source
+zcite - Citation for redshift source
+rxpct - Probability that the displayed radio/X-ray association is genuine [pct]
+qpct - Probability that the object is a QSO [pct]
+xname - X-ray ID, if any
+rname - Radio ID, if any
+lobe1 - Radio lobe ID or extra radio/X-ray ID, if any
+lobe2 - Radio lobe ID or extra radio/X-ray ID, if any
+pk - Primary key identifier for this table row
