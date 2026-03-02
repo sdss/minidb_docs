@@ -1,19 +1,18 @@
 Summary
 -------
 
-
+[INCOMPLETE]: Marina to provide text.
 
 
 Columns
 -------
 
-source_id - 
-l - 
-b - 
-age - 
-age_std - 
-pms - 
-pms_std - 
-av - 
-av_std - 
-
+source_id -
+l -
+b -
+age -
+age_std -
+pms -
+pms_std -
+av -
+av_std -
