@@ -1,18 +1,20 @@
 Summary
 -------
 
-[INCOMPLETE]: Marina to provide text.
+Catalog of pre-main-sequence stars derived from Gaia EDR3 and 2MASS from McBride et al. (2021), their Table 5.
+
+For complete details, see the original paper: https://iopscience.iop.org/article/10.3847/1538-3881/ac2432
 
 
 Columns
 -------
 
-source_id -
-l -
-b -
-age -
-age_std -
-pms -
-pms_std -
-av -
-av_std -
+source_id - Unique identifier in the Gaia (e)DR3 source catalogue
+l - Galactic longitude [deg]
+b - Galactic latitude [deg]
+age - Age [log yrs]
+age_std - Error on age [log yrs]
+​pms​ - Pre-main-sequence probability
+pms_std - Error on pre-main-sequence probability
+av - Predicted extinction along the line of sight (positional only) [mag]
+av_std - Uncertainty in the predicted extinction [mag]
