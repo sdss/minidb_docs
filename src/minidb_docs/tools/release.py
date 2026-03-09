@@ -53,7 +53,7 @@ def generate_mos_target_tree_paths(
     console.quiet = quiet
 
     mos_target_dir = pathlib.Path(mos_target_dir)
-    minidb_docs_path = pathlib.Path(minidb_docs.__file__).parent / f"../../{dr}"
+    minidb_docs_path = pathlib.Path(__file__).parent / f"../../../{dr}"
 
     minidb_docs_files = list(sorted(minidb_docs_path.glob(f"{dr}_*.txt")))
     mos_target_files = get_list_mos_target_fits_files(mos_target_dir)
@@ -100,7 +100,7 @@ def generate_mos_target_tree_paths(
         if needs_num:
             print(f"$MOS_TARGET/{{v_targ}}/{tree_species}_{{num}}.fits")
         else:
-            print(f"$MOS_TARGET/{{v_targ}}/{tree_species}.fits")
+            print(f"$MOS_TARGET/{{v_targ}}/{tree_species}_1.fits")
 
 
 def get_list_mos_target_fits_files(mos_target_dir: str | pathlib.Path) -> list[str]:
