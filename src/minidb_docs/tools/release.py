@@ -16,6 +16,13 @@ from rich.console import Console
 import minidb_docs
 
 
+__all__ = [
+    "generate_mos_target_tree_paths",
+    "get_list_mos_target_fits_files",
+    "mos_target_is_split",
+]
+
+
 console = Console()
 
 

@@ -16,6 +16,9 @@ from minidb_docs import CURRENT_DR as DR
 from minidb_docs import log
 
 
+__all__ = ["serialise_docs", "serialise_table"]
+
+
 def serialise_docs(
     path: str | pathlib.Path,
     dr: str | None = None,
