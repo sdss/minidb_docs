@@ -13,13 +13,15 @@ import re
 
 from rich.console import Console
 
-import minidb_docs
+from sdss_access import RsyncAccess
+from tree import Tree
 
 
 __all__ = [
     "generate_mos_target_tree_paths",
     "get_list_mos_target_fits_files",
     "mos_target_is_split",
+    "download_mos_target_sample_files",
 ]
 
 
@@ -101,6 +103,26 @@ def generate_mos_target_tree_paths(
             print(f"$MOS_TARGET/{{v_targ}}/{tree_species}_{{num}}.fits")
         else:
             print(f"$MOS_TARGET/{{v_targ}}/{tree_species}_1.fits")
+
+
+def download_mos_target_sample_files():
+    """Downloads a target FITS file for each table from sdsswork to the local SAS."""
+
+    tree = Tree("sdsswork")
+
+    rsync = RsyncAccess(release="sdsswork")
+    rsync.remote()
+
+    for path in tree.paths:
+        if "mos_target" in path:
+            remote_path = tree.paths[path]
+            if remote_path.endswith("{num}.fits"):
+                rsync.add(path, num=1)
+            else:
+                rsync.add(path)
+
+    rsync.set_stream()
+    rsync.commit()
 
 
 def get_list_mos_target_fits_files(mos_target_dir: str | pathlib.Path) -> list[str]:

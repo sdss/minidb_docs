@@ -11,6 +11,7 @@ requires-python = ">=3.12"
 dependencies = [
     "click>=8.3.1",
     "rich>=14.2.0",
+    "sdss-access>=3.0.10",
     "sdssdb>=0.13.5",
     "sdsstools>=1.9.6",
 ]
@@ -44,7 +45,7 @@ section-order = ["future", "standard-library", "typing", "third-party", "sdss", 
 
 [tool.ruff.lint.isort.sections]
 typing = ["typing"]
-sdss = ["sdsstools", "sdssdb"]
+sdss = ["sdsstools", "sdssdb", "sdss_access", "tree"]
 
 [build-system]
 requires = ["uv_build>=0.10.9,<0.11.0"]
