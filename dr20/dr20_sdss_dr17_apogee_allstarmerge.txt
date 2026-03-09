@@ -1,7 +1,7 @@
 Summary
 -------
 
-[INCOMPLETE]: Joleen and Nick to provide text.
+In the SDSS-IV APOGEE-2, if a star was observed in multiple fields or multiple survey modes (e.g., observed at APO vs. LCO), then the star would end up with multiple entries in the summary allStar file. This table merges all multiple entries for stars in the DR17 APOGEE allStar file. This file was primarily used for target selection for the mwm_bin_rv_long carton.
 
 
 Columns
@@ -31,23 +31,23 @@ sig_rvvar - Measure of the significance of the star's RV variability (see Troup,
 baseline - Temporal baseline of the observations (JD_last-JD-first) [days]
 mean_fiber - The mean fiberID of all of the star's visits []
 sig_fiber - The standard deviation of the fiberID of all of the star's visits []
-stars_pk -
-nvisits_entry -
-snr_entry -
-telescopes - List of TELESCOPE flags from each of the star's allStar entries []
-fields -
-targflags -
-starflags -
-aspcapflags -
-member -
+stars_pk - Indices of the star’s allStar entries (from DR17)
+nvisits_entry - Number of visits associated with each of the star’s DR17 allStar entries
+snr_entry - Combined spectrum S/N for each of the star’s DR17 allStar entries
+telescopes - List of TELESCOPE flags from each of the star's DR17 allStar entries
+fields - Field associated with each of the star’s DR17 allStar entries
+targflags - Text form of APOGEE target flags concatenated from the star’s DR17 allStar entries
+starflags -  Text form of APOGEE reduction flags concatenated from the star’s DR17 allStar entries
+aspcapflags -  Text form of ASPCAP analysis flags concatenated from the star’s DR17 allStar entries
+member - Text form of the APOGEE cluster membership flag  concatenated from the star’s DR17 allStar entries
 gaia_source_id - Associated Gaia DR3 source ID []
 dist - Derived or given distance to the star [pc]
 dist_err - Uncertainty of the distance [pc]
 dist_src - Source of the star's distance measurement (e.g. gaia=derived from gaia parallax) []
-teff_avg -
-teff_avg_err -
-logg_avg -
-logg_avg_err -
-m_h_avg -
-m_h_avg_err -
-visits_pk -
+teff_avg - SNR-weighted average of the star’s allStar T_eff entries from DR17
+teff_avg_err - Uncertainty in teff_avg
+logg_avg -  SNR-weighted average of the star’s allStar log g entries from DR17
+logg_avg_err -  Uncertainty in logg_avg
+m_h_avg -  SNR-weighted average of the star’s allStar [M/H] entries from DR17
+m_h_avg_err -  Uncertainty in m_h_avg
+visits_pk - The indices of the star’s DR17 allVisit entries included in visit combination
