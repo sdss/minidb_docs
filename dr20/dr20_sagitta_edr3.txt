@@ -14,7 +14,7 @@ l - Galactic longitude [deg]
 b - Galactic latitude [deg]
 age - Age [log yrs]
 age_std - Error on age [log yrs]
-​pms​ - Pre-main-sequence probability
-pms_std - Error on pre-main-sequence probability
+pms - Pre-main-sequence probability []
+pms_std - Error on pre-main-sequence probability []
 av - Predicted extinction along the line of sight (positional only) [mag]
 av_std - Uncertainty in the predicted extinction [mag]
