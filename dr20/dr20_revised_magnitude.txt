@@ -8,7 +8,6 @@ Entries in this revised_magnitude table only exist if there was an issue with th
 Columns
 -------
 
-revised_magnitude_pk - The primary key. A sequential identifier.
 carton_to_target_pk - The primary key of the target in the dr20_carton_to_target table.
 g - The optical g magnitude, AB. [mag]
 r - The optical r magnitude, AB. [mag]
