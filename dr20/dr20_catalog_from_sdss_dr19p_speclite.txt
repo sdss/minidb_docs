@@ -12,4 +12,3 @@ target_id - The primary key identifier in the dr20_sdss_dr19p_speclite table.
 version_id - The internal version for the cross-match.
 distance - The distance between the catalog and target coordinates if best=F.
 best - Whether this is considered the best match between the catalog entry and dr20_sdss_dr19p_speclite.
-plan_id - Identifier of the cross-matching plan used to generate this file.
