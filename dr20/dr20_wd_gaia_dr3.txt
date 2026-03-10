@@ -66,7 +66,7 @@ newmatchobs - The number of transits newly incorporated into an existing source 
 matchobsrm - The number of transits removed from an existing source in the current cycle
 ipdgofha - Amplitude of the IPD GoF versus position angle of scan
 ipdgofhp - Phase of the IPD GoF versus position angle of scan
-ipdffmp - Percent of successful-IPD windows with more than one peak
+ipdfmp - Percent of successful-IPD windows with more than one peak
 ipdfow - Percent of transits with truncated windows or multiple gate
 ruwe - Renormalised unit weight error
 sdsk1 - Degree of concentration of scan directions across the source
