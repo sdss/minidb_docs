@@ -7,7 +7,6 @@ This table stores magnitude information for a target. Optical magnitudes that ar
 Columns
 -------
 
-revised_magnitude_pk - The primary key. A sequential identifier.
 carton_to_target_pk - The primary key of the target in the dr20_carton_to_target table.
 g - The optical g magnitude, AB. [mag]
 r - The optical r magnitude, AB. [mag]
