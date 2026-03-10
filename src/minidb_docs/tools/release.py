@@ -11,9 +11,13 @@ from __future__ import annotations
 import pathlib
 import re
 
+import oyaml as yaml
+from datamodel.generate import DataModel
+from datamodel.models.yaml import ReleaseModel, YamlModel
+from pydantic import ValidationError
 from rich.console import Console
 
-from sdss_access import RsyncAccess
+from sdss_access import Path, RsyncAccess
 from tree import Tree
 
 
@@ -22,6 +26,10 @@ __all__ = [
     "get_list_mos_target_fits_files",
     "mos_target_is_split",
     "download_mos_target_sample_files",
+    "generate_datamodels",
+    "update_datamodels",
+    "validate_mos_target_tree_paths",
+    "validate_datamodels",
 ]
 
 
@@ -150,6 +158,204 @@ def mos_target_is_split(mos_target_dir: str | pathlib.Path, tree_species: str) -
 
     mos_target_dir = pathlib.Path(mos_target_dir)
 
-    fits_files = list(mos_target_dir.glob(f"{tree_species}*.fits"))
+    fits_files = list(mos_target_dir.glob(f"{tree_species}_[0-9]*.fits"))
 
     return len(fits_files) > 1
+
+
+def validate_mos_target_tree_paths(dr: str, verbose: bool = False):
+    """Uses ``sdss-access`` to validate the MOS target tree paths for a data release."""
+
+    path = Path(dr)
+    tree = Tree(dr)
+
+    for file_species in tree.paths:
+        if file_species.startswith("mos_target_"):
+            if verbose:
+                console.print(f"Validating path for [cyan]{file_species}[/] ...")
+
+            keys = {"num": 1} if "{num" in tree.paths[file_species] else {}
+
+            try:
+                pfull = path.full(file_species, **keys)
+            except Exception as e:
+                console.print(
+                    "[red]ERROR:[/] failed to resolve path for "
+                    f"[cyan]{file_species}[/]: {e}"
+                )
+                continue
+
+            if not pathlib.Path(pfull).exists():
+                console.print(f"[red]ERROR:[/] path [cyan]{pfull}[/] does not exist.")
+                continue
+
+
+def generate_datamodels(dr: str):
+    """Generates the MOS target datamodels for the given data release."""
+
+    tree = Tree(dr)
+
+    for file_species in tree.paths:
+        if file_species.startswith("mos_target_"):
+            path = tree.paths[file_species].replace("$", "")
+
+            # This is needed to ignore some old paths that are still in the tree.
+            if "{v_targ}" in path:
+                continue
+
+            if "{num" in path:
+                keys = ["num=1"]
+            else:
+                keys = []
+
+            DataModel(
+                file_spec=file_species,
+                path=path,
+                keywords=keys,
+                release=dr.upper(),
+            ).write_stubs()
+
+
+def update_datamodels(
+    dr: str,
+    datamodel_dir: str | pathlib.Path,
+    tables: list[str] | None = None,
+    force: bool = False,
+):
+    """Updates the MOS target datamodels for the given data release.
+
+    Parameters
+    ----------
+    dr
+        The data release for which to update the datamodels.
+    datamodel_dir
+        The directory where the datamodel YAML files are located.
+    tables
+        A list of tables to update. If :obj:`None`, all tables will be updated.
+        They must be in the format `sdss_dr16_specobj`, without any `drX_` or
+        `mos_target` prefixes.
+    force
+        Replaces the datamodel descriptions with the documentation descriptions
+        even if they are not the default "replace me - with content".
+
+    """
+
+    from minidb_docs.tools import serialise_docs
+
+    datamodel_dir = pathlib.Path(datamodel_dir)
+
+    if not datamodel_dir.is_dir():
+        raise ValueError(f"{datamodel_dir} is not a valid directory.")
+    elif not datamodel_dir.parts[-1] == "yaml":
+        raise ValueError("datamodel must point to the yaml/ directory.")
+
+    data = serialise_docs(dr)
+
+    # Loop over minidb_docs serialised table data.
+    for docs_table in data["tables"]:
+        # This is the name without prefixes. I.e., dr20_sdss_dr16_qso -> sdss_dr16_qso.
+        table: str = docs_table.replace(f"{dr.lower()}_", "")
+
+        if tables is not None and table not in tables:
+            continue
+
+        console.print(f"Updating datamodel for table [cyan]{table}[/] ...")
+
+        # Find the corresponding datamodel file.
+        model_filename = "mos_target_" + table
+        model_file = datamodel_dir / f"{model_filename}.yaml"
+        if not model_file.exists():
+            console.print(
+                f"[yellow]WARNING:[/] datamodel file [cyan]{model_file}[/] does not "
+                "exist. It will be skipped."
+            )
+            continue
+
+        # Load the YAML data as a dict. We are only interested in the hdus section.
+        # We use oyaml to preserve the order of the columns when writing back the file.
+        yaml_data: dict = yaml.safe_load(open(model_file, "r"))
+        hdus: dict = yaml_data["releases"]["DR20"]["hdus"]
+
+        # Update HDU descriptions.
+        hdus["hdu0"]["description"] = "Primary header"
+        hdus["hdu1"]["description"] = f"MOS Target Table: {table}"
+
+        # Loop over the columns in the minidb_docs data for the
+        # table and update the datamodel descriptions and units.
+        for column_data in data["tables"][docs_table]["columns"]:
+            docs_column: str = column_data["name"]
+            docs_description: str = column_data["description"]
+            docs_unit: str = column_data["unit"]
+
+            # Skip if the column does not exist in the datamodel,
+            # but this should be checked.
+            if docs_column not in hdus["hdu1"]["columns"]:
+                console.print(
+                    f"[yellow]WARNING:[/] column [cyan]{docs_column}[/] not "
+                    f"found in datamodel for table [cyan]{table}[/]."
+                )
+                continue
+
+            # Check if the model already has a description. If so and not forcing,
+            # skip updating this column.
+            model_column_data: dict = hdus["hdu1"]["columns"][docs_column]
+            model_description: str = model_column_data["description"]
+
+            if model_description == "replace me - with content" or force:
+                hdus["hdu1"]["columns"][docs_column]["description"] = docs_description
+                hdus["hdu1"]["columns"][docs_column]["unit"] = docs_unit
+
+        # Write the updated YAML data back to the file.
+        yaml.safe_dump(yaml_data, open(model_file, "w"))
+
+
+def validate_datamodels(
+    datamodel_dir: str | pathlib.Path,
+    dr: str | None = None,
+    verbose: bool = False,
+):
+    """Validates the MOS target datamodels.
+
+    Parameters
+    ----------
+    datamodel_dir
+        The directory where the datamodel YAML files are located.
+    dr
+        If provided, only the data release specified here will be validated.
+    verbose
+        Additional printouts will be shown if :obj:`True`.
+
+    """
+
+    dr = dr.upper() if dr is not None else None
+
+    datamodel_dir = pathlib.Path(datamodel_dir)
+
+    if not datamodel_dir.is_dir():
+        raise ValueError(f"{datamodel_dir} is not a valid directory.")
+    elif not datamodel_dir.parts[-1] == "yaml":
+        raise ValueError("datamodel must point to the yaml/ directory.")
+
+    for model_file in datamodel_dir.glob("mos_target_*.yaml"):
+        model_name = model_file.stem
+
+        if verbose:
+            console.print(f"Validating datamodel file [cyan]{model_file}[/] ...")
+
+        try:
+            model = yaml.safe_load(open(model_file, "r"))
+
+            if dr is not None:
+                ReleaseModel.model_validate(model["releases"][dr])
+            else:
+                YamlModel.model_validate(model)
+        except ValidationError as err:
+            console.print(
+                f"[red]ERROR:[/] datamodel [cyan]{model_name}[/] failed "
+                f"validation. {err.error_count()} errors found."
+            )
+        except Exception as err:
+            console.print(
+                f"[red]ERROR:[/] failed validating datamodel [cyan]{model_name}[/]. "
+                f"Error: {err}"
+            )

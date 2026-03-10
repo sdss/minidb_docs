@@ -10,8 +10,11 @@ requires-python = ">=3.12"
 
 dependencies = [
     "click>=8.3.1",
+    "jinja2>=3.1.6",
+    "oyaml>=1.0",
     "rich>=14.2.0",
     "sdss-access>=3.0.10",
+    "sdss-datamodel[gen]",
     "sdssdb>=0.13.5",
     "sdsstools>=1.9.6",
 ]
@@ -25,6 +28,9 @@ dev = [
     "ipython>=9.8.0",
     "ruff>=0.14.7",
 ]
+
+[tool.uv.sources]
+sdss-datamodel = { git = "ssh://git@github.com/sdss/datamodel" }
 
 [tool.ruff]
 line-length = 88
