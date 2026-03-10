@@ -274,6 +274,50 @@ def update_datamodels(
         # Load the YAML data as a dict. We are only interested in the hdus section.
         # We use oyaml to preserve the order of the columns when writing back the file.
         yaml_data: dict = yaml.safe_load(open(model_file, "r"))
+
+        # Check if we need to update the general section. This should only happen
+        # when the datamodel is first generated.
+        general: dict = yaml_data["general"]
+
+        if "replace me - " in general["short"]:
+            general["short"] = f"MOS Target Table: {table}"
+
+        if "replace me - " in general["description"]:
+            table_description = data["tables"][docs_table]["description"]
+
+            # Replace http:// and https:// URLs with <a href> tags
+            table_description = re.sub(
+                r"(https?://[^\s.]+(?:\.[^\s.]+)*)",
+                r'<a href="\1">\1</a>',
+                table_description,
+            )
+
+            general["description"] = table_description
+
+        naming_convention = general["naming_convention"]
+        if "replace me - " in naming_convention:
+            mos_path_match = re.search(r"(\$MOS_TARGET.+?\.fits)", naming_convention)
+            if not mos_path_match:
+                console.print(
+                    f"[yellow]WARNING:[/] could not find MOS target path in naming "
+                    f"convention for table [cyan]{table}[/]. It will be left "
+                    "unchanged."
+                )
+            else:
+                mos_path = mos_path_match.group(1)
+                mos_path = re.sub(r"(.+\[NUM)[0-9]+(\]\.fits)", r"\1\2", mos_path)
+
+            general["naming_convention"] = mos_path
+
+            if "[NUM" in mos_path:
+                general["naming_convention"] += (
+                    " where NUM>0 is the number of the FITS file "
+                    "if the table is split in multiple files."
+                )
+
+        if "replace me - " in general["generated_by"]:
+            general["generated_by"] = "sdss5db targeting database."
+
         hdus: dict = yaml_data["releases"]["DR20"]["hdus"]
 
         # Update HDU descriptions.
