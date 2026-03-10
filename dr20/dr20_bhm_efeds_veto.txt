@@ -3,14 +3,14 @@ Summary
 The BHM-SPIDERS eFEDS veto catalogue.
 
 A minimalist catalogue of 6300 science targets in the SPIDERS eFEDS field that received SDSS-IV spectroscopy during the March2020 SPIDERS observing run (and hence are not in SDSS-SpecObj-DR16). Many of these spectra have very low SNR and so we will want to observe them again, but we will take account of this in the Carton code. This is a subset (in both rows and columns) of the spAll-v5_13_1.fits idlspec2d pipeline product. The original data model for that file is here: https://data.sdss.org/datamodel/files/BOSS_SPECTRO_REDUX/RUN2D/spAll.html
-      
+
 Columns
 -------
 
-programname - program name within a given survey 
+programname - program name within a given survey
 chunk - Name of tiling chunk
-platesn2 - Overall (S/N)^2 measure for plate; minimum of all 4 cameras 
-plate -  Plate ID 
+platesn2 - Overall (S/N)^2 measure for plate; minimum of all 4 cameras
+plate -  Plate ID
 tile - Tile ID
 mjd -  MJD of (last) observation [days]
 fiberid - Fiber ID (1-1000)
@@ -26,9 +26,22 @@ wavemin - Minimum observed (vacuum) wavelength for this object [Angstroms]
 wavemax - Maximum observed (vacuum) wavelength for this object [Angstroms]
 wcoverage - Amount of wavelength coverage in log-10(Angstroms)
 zwarning - A flag bitmask set for bad data or redshift fits
+sn_median_u - Median S/N for all good pixels in u filter
+sn_median_g - Median S/N for all good pixels in g filter
+sn_median_r - Median S/N for all good pixels in r filter
+sn_median_i - Median S/N for all good pixels in i filter
+sn_median_z - Median S/N for all good pixels in z filter
 sn_median_all - Median S/N for all good pixels in all filters
+spectroflux_u - Spectroflux in u filter [nanomaggies]
+spectroflux_g - Spectroflux in g filter [nanomaggies]
+spectroflux_r - Spectroflux in r filter [nanomaggies]
+spectroflux_i - Spectroflux in i filter [nanomaggies]
+spectroflux_z - Spectroflux in z filter [nanomaggies]
+spectroflux_ivar_u - Inverse variance of spectroflux in u filter [nanomaggies^-2]
+spectroflux_ivar_g - Inverse variance of spectroflux in g filter [nanomaggies^-2]
+spectroflux_ivar_r - Inverse variance of spectroflux in r filter [nanomaggies^-2]
+spectroflux_ivar_i - Inverse variance of spectroflux in i filter [nanomaggies^-2]
+spectroflux_ivar_z - Inverse variance of spectroflux in z filter [nanomaggies^-2]
 anyandmask - Mask bits which are set if any pixels for an object's ANDMASK have that bit set
 anyormask - Mask bits which are set if any pixels for an object's ORMASK have that bit set
 pk - primary key in the database table
-
-
