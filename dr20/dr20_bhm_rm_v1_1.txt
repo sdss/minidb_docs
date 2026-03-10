@@ -54,4 +54,3 @@ panstarrs1_catid_objid - Pan-STARRS1 DR1 StackObjectThin unique object identifie
 rm_unsuitable -
 rm_xrayqso -
 pkey - Primary key identifier for this table row
-cd
