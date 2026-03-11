@@ -31,6 +31,7 @@ __all__ = [
     "validate_mos_target_tree_paths",
     "validate_datamodels",
     "create_products_table",
+    "create_mos_target_parquet_files",
 ]
 
 
@@ -454,3 +455,49 @@ def create_products_table(data_dir: str | pathlib.Path, dr: str):
     print("    </tbody>")
     print("  </table>")
     print("</figure>")
+
+def create_mos_target_parquet_files(
+    dr: str,
+    output_path: str | pathlib.Path,
+    only_in_minidb_docs: bool = True,
+    uri: str = "postgres://sdss@operations.sdss.org/sdss5db",
+    overwrite: bool = False,
+):
+    """Creates Parquet files for each MOS target table from minidb."""
+
+    from minidb_docs.tools import serialise_docs
+
+    tables = serialise_docs(dr)["tables"]
+    docs_tables = list(tables)
+
+    minidb_tables = polars.read_database_uri(
+        f"SELECT table_name "
+        f"FROM information_schema.tables "
+        f"WHERE table_schema = 'minidb_{dr}';",
+        uri,
+        engine="adbc",
+    )
+
+    for mtable in sorted(minidb_tables["table_name"]):
+        if only_in_minidb_docs and mtable not in docs_tables:
+            continue
+
+        console.print(f"Creating Parquet file for table [cyan]{mtable}[/] ...")
+
+        mos_table_name = mtable.replace(f"{dr}_", "mos_")
+        output_path = pathlib.Path(output_path) / f"{mos_table_name}.parquet"
+
+        if output_path.exists() and not overwrite:
+            console.print(
+                f"[yellow]WARNING:[/] Parquet file [cyan]{output_path}[/] already "
+                "exists. Skipping this table."
+            )
+            continue
+
+        df = polars.read_database_uri(
+            f"SELECT * FROM minidb_{dr}.{mtable};",
+            uri,
+            engine="adbc",
+        )
+
+        df.write_parquet(output_path)
