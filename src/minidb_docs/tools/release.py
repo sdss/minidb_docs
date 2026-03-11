@@ -30,6 +30,7 @@ __all__ = [
     "update_datamodels",
     "validate_mos_target_tree_paths",
     "validate_datamodels",
+    "create_products_table",
 ]
 
 
@@ -403,3 +404,53 @@ def validate_datamodels(
                 f"[red]ERROR:[/] failed validating datamodel [cyan]{model_name}[/]. "
                 f"Error: {err}"
             )
+
+
+def create_products_table(data_dir: str | pathlib.Path, dr: str):
+    """Creates the products table for the MOS target documentation."""
+
+    from minidb_docs.tools import serialise_docs
+
+    data = serialise_docs(dr)
+    data_dir = pathlib.Path(data_dir)
+
+    dm_base_url = "https://data.sdss.org/datamodel/files/MOS_TARGET/V_TARG/"
+
+    print('<figure class="wp-block-table is-style-stripes">')
+    print("  <table>")
+    print("    <thead>")
+    print("      <tr>")
+    print("        <th style='width: 30%;'>Product</th>")
+    print("        <th style='width: 40%;'>Description</th>")
+    print("        <th style='width: 8%;'>Data model</th>")
+    print("        <th style='width: 8%;'># chunks</th>")
+    print("      </tr>")
+    print("    </thead>")
+    print("    <tbody>")
+
+    for table in data["tables"]:
+        product = table.replace(f"{dr}_", "mos_")
+
+        description = data["tables"][table]["description"]
+        short_description = description.splitlines()[0].strip()
+
+        # Replace http:// and https:// URLs with <a href> tags
+        short_description = re.sub(
+            r"(https?://[^\s.]+(?:\.[^\s.]+)*)",
+            r'<a href="\1">\1</a>',
+            short_description,
+        )
+
+        n_chunks = len(list(data_dir.glob(f"{product}*.fits")))
+        url = f"{dm_base_url}{product.replace('mos_', 'mos_target_')}.html"
+
+        print("      <tr>")
+        print(f"        <td>{product}</td>")
+        print(f"        <td>{short_description}</td>")
+        print(f"        <td><a href='{url}' target='_blank'>⤴️</a></td>")
+        print(f"        <td>{n_chunks}</td>")
+        print("      </tr>")
+
+    print("    </tbody>")
+    print("  </table>")
+    print("</figure>")
