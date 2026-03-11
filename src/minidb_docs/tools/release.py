@@ -12,13 +12,8 @@ import pathlib
 import re
 
 import oyaml as yaml
-from datamodel.generate import DataModel
-from datamodel.models.yaml import ReleaseModel, YamlModel
-from pydantic import ValidationError
+import polars
 from rich.console import Console
-
-from sdss_access import Path, RsyncAccess
-from tree import Tree
 
 
 __all__ = [
@@ -118,6 +113,12 @@ def generate_mos_target_tree_paths(
 def download_mos_target_sample_files():
     """Downloads a target FITS file for each table from sdsswork to the local SAS."""
 
+    try:
+        from sdss_access import RsyncAccess
+        from tree import Tree
+    except ImportError:
+        raise ImportError("The sdss-access and sdss-tree packages are required.")
+
     tree = Tree("sdsswork")
 
     rsync = RsyncAccess(release="sdsswork")
@@ -168,6 +169,12 @@ def mos_target_is_split(mos_target_dir: str | pathlib.Path, tree_species: str) -
 def validate_mos_target_tree_paths(dr: str, verbose: bool = False):
     """Uses ``sdss-access`` to validate the MOS target tree paths for a data release."""
 
+    try:
+        from sdss_access import Path
+        from tree import Tree
+    except ImportError:
+        raise ImportError("The sdss-access and sdss-tree packages are required.")
+
     path = Path(dr)
     tree = Tree(dr)
 
@@ -194,6 +201,12 @@ def validate_mos_target_tree_paths(dr: str, verbose: bool = False):
 
 def generate_datamodels(dr: str):
     """Generates the MOS target datamodels for the given data release."""
+
+    try:
+        from datamodel.generate import DataModel
+        from tree import Tree
+    except ImportError:
+        raise ImportError("The datamodel and sdss-tree packages are required.")
 
     tree = Tree(dr)
 
@@ -373,6 +386,13 @@ def validate_datamodels(
 
     """
 
+    try:
+        from pydantic import ValidationError
+
+        from datamodel.models.yaml import ReleaseModel, YamlModel
+    except ImportError:
+        raise ImportError("The datamodel package is required.")
+
     dr = dr.upper() if dr is not None else None
 
     datamodel_dir = pathlib.Path(datamodel_dir)
@@ -455,6 +475,7 @@ def create_products_table(data_dir: str | pathlib.Path, dr: str):
     print("    </tbody>")
     print("  </table>")
     print("</figure>")
+
 
 def create_mos_target_parquet_files(
     dr: str,

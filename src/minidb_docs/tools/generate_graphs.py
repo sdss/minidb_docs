@@ -11,11 +11,15 @@ from __future__ import annotations
 import os
 import re
 
-from peewee import ForeignKeyField
 
-from sdssdb.peewee import BaseModel
-from sdssdb.peewee.sdss5db import database
-from sdssdb.utils.schemadisplay import create_schema_graph
+try:
+    from peewee import ForeignKeyField
+
+    from sdssdb.peewee import BaseModel
+    from sdssdb.peewee.sdss5db import database
+    from sdssdb.utils.schemadisplay import create_schema_graph
+except ImportError:
+    raise ImportError("The sdssdb package is required.")
 
 
 EXCLUDE_TABLES = ["dr18_carton_txt", "dr18_sdss_dr16_qso_original"]

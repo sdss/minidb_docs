@@ -1,22 +1,28 @@
 [project]
-name = "minidb-docs"
-version = "0.1.0"
+authors = [{name = "José Sánchez-Gallego", email = "gallegoj@uw.edu"}]
 description = "Table descriptions for the contents of minidb"
-authors = [ { name = "José Sánchez-Gallego", email = "gallegoj@uw.edu" } ]
-license = { text = "BSD-3-Clause" }
+license = {text = "BSD-3-Clause"}
+name = "minidb-docs"
 readme = "README.md"
+version = "0.1.0"
 
 requires-python = ">=3.12"
 
 dependencies = [
-    "click>=8.3.1",
-    "jinja2>=3.1.6",
-    "oyaml>=1.0",
-    "rich>=14.2.0",
-    "sdss-access>=3.0.10",
-    "sdss-datamodel[gen]",
-    "sdssdb>=0.13.5",
-    "sdsstools>=1.9.6",
+  "adbc-driver-postgresql>=1.10.0",
+  "click>=8.3.1",
+  "jinja2>=3.1.6",
+  "oyaml>=1.0",
+  "polars>=1.38.1",
+  "rich>=14.2.0",
+]
+
+[project.optional-dependencies]
+all = [
+  "sdss-access>=3.0.10",
+  "sdss-datamodel[gen]",
+  "sdssdb>=0.13.5",
+  "sdsstools>=1.9.6",
 ]
 
 [project.scripts]
@@ -24,18 +30,18 @@ minidb-docs = "minidb_docs.__main__:minidb_docs_cli"
 
 [dependency-groups]
 dev = [
-    "ipdb>=0.13.13",
-    "ipython>=9.8.0",
-    "ruff>=0.14.7",
+  "ipdb>=0.13.13",
+  "ipython>=9.8.0",
+  "ruff>=0.14.7",
 ]
 
 [tool.uv.sources]
-sdss-datamodel = { git = "ssh://git@github.com/sdss/datamodel" }
+sdss-datamodel = {git = "ssh://git@github.com/sdss/datamodel"}
 
 [tool.ruff]
+exclude = ["typings/"]
 line-length = 88
 target-version = 'py312'
-exclude = ["typings/"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I"]
@@ -50,9 +56,9 @@ lines-after-imports = 2
 section-order = ["future", "standard-library", "typing", "third-party", "sdss", "first-party", "local-folder"]
 
 [tool.ruff.lint.isort.sections]
+sdss = ["sdsstools", "sdssdb", "sdss_access", "tree", "datamodel"]
 typing = ["typing"]
-sdss = ["sdsstools", "sdssdb", "sdss_access", "tree"]
 
 [build-system]
-requires = ["uv_build>=0.10.9,<0.11.0"]
 build-backend = "uv_build"
+requires = ["uv_build>=0.10.9,<0.11.0"]
