@@ -14,6 +14,7 @@ import re
 import oyaml as yaml
 import polars
 from rich.console import Console
+from typing_extensions import Literal
 
 
 __all__ = [
@@ -47,7 +48,9 @@ def generate_mos_target_tree_paths(
     dr
         The data release for which to generate the paths.
     mos_target_dir
-        The directory where the ``mos_target`` FITS files are located.
+        The directory where the ``mos_target`` files are located. It is assummed that
+        there are two directories, ``fits/`` and ``parquet/``, inside this directory,
+        containing the FITS and Parquet files, respectively.
     force
         The function will check that the list of FITS files matches the list of
         ``minidb_docs`` documentation stubs for data release``dr`` and will fail if
@@ -64,7 +67,7 @@ def generate_mos_target_tree_paths(
     minidb_docs_path = pathlib.Path(__file__).parent / f"../../../{dr}"
 
     minidb_docs_files = list(sorted(minidb_docs_path.glob(f"{dr}_*.txt")))
-    mos_target_files = get_list_mos_target_fits_files(mos_target_dir)
+    mos_target_files = get_list_mos_target_fits_files(mos_target_dir / "fits")
 
     # Check that all the minidb tables have a corresponding FITS file.
     missing_files_found: bool = False
@@ -72,21 +75,19 @@ def generate_mos_target_tree_paths(
         base_name = ff.stem.replace(f"{dr}_", "")
         if base_name not in mos_target_files:
             missing_files_found = True
-            console.print(
-                f"[yellow]WARNING:[/] missing FITS file for table [cyan]{base_name}[/]."
-            )
+            console.print(f"[yellow]Missing FITS file for table [cyan]{base_name}[/].")
 
     if missing_files_found:
         if not force:
             console.print(
-                "[red]ERROR:[/] missing FITS files found. Use [cyan]--force[/] to "
-                "ignore this error and generate the paths anyway."
+                "[red]Missing FITS files found. Use [cyan]force=True[/] to "
+                "ignore this error and generate the paths anyway.[/]"
             )
             return
         else:
             console.print(
-                "[yellow]WARNING:[/] missing FITS files found, but ignoring this "
-                "error because [cyan]--force[/] was used."
+                "[yellow]Missing FITS files found, but ignoring this "
+                "error because [cyan]force=True[/] was used.[/]"
             )
 
     # We check if there are extra FITS files that do not have a corresponding
@@ -94,21 +95,47 @@ def generate_mos_target_tree_paths(
     for ff in mos_target_files:
         if ff not in [ff.stem.replace(f"{dr}_", "") for ff in minidb_docs_files]:
             console.print(
-                f"[yellow]WARNING:[/] extra FITS file for table [cyan]{ff}[/] found "
-                "without a corresponding documentation stub. It will be ignored."
+                f"[yellow]Extra FITS file for table [cyan]{ff}[/] found without "
+                "a corresponding documentation stub. It will be ignored.[/]"
             )
 
-    print("[blue]Printing MOS target tree lines ...[/]\n")
+    print("# MOS Target FITS files")
 
     for ff in minidb_docs_files:
         tree_species = ff.stem.replace(f"{dr}_", "mos_target_")
-        needs_num = mos_target_is_split(mos_target_dir, tree_species)
+        path_species = tree_species.replace("mos_target_", "mos_")
 
-        print(f"{tree_species} = ", end="")
-        if needs_num:
-            print(f"$MOS_TARGET/{{v_targ}}/{tree_species}_{{num}}.fits")
+        n_num = mos_target_path_num(mos_target_dir / "fits", path_species)
+        if n_num == 0:
+            raise ValueError(f"No FITS files found for {tree_species}.")
+
+        num_digits = len(str(n_num))
+
+        print(f"{tree_species} = $MOS_TARGET/", end="")
+
+        if dr.lower() == "sdsswork":
+            print(f"fits/{tree_species}_1.fits")
         else:
-            print(f"$MOS_TARGET/{{v_targ}}/{tree_species}_1.fits")
+            if n_num == 1:
+                print(f"{{v_targ}}/fits/{path_species}.fits")
+            else:
+                if num_digits == 1:
+                    print(f"{{v_targ}}/fits/{path_species}-{{num}}.fits")
+                else:
+                    print(f"{{v_targ}}/fits/{path_species}-{{num:0>{num_digits}}}.fits")
+
+    print("\n# MOS Target Parquet files")
+
+    for ff in minidb_docs_files:
+        table_name = ff.stem.replace(f"{dr}_", "")
+
+        parquet_file = mos_target_dir / "parquet" / f"mos_{table_name}.parquet"
+        if not parquet_file.exists():
+            console.print(f"[red]Missing Parquet file for table [cyan]{table_name}[/].")
+            return
+
+        tree_species = f"mos_target_{table_name}_parquet"
+        print(f"{tree_species} = $MOS_TARGET/{{v_targ}}/parquet/{parquet_file.name}")
 
 
 def download_mos_target_sample_files():
@@ -151,23 +178,36 @@ def get_list_mos_target_fits_files(mos_target_dir: str | pathlib.Path) -> list[s
     fits_files = sorted(mos_target_dir.glob("mos_*.fits"))
 
     mos_target_files = [
-        re.sub(r"mos\_target\_(.+?)(\_[0-9]+)?$", r"\1", ff.stem) for ff in fits_files
+        re.sub(r"mos\_(.+?)(\-[0-9]+)?$", r"\1", ff.stem) for ff in fits_files
     ]
 
     return sorted(set(mos_target_files))
 
 
-def mos_target_is_split(mos_target_dir: str | pathlib.Path, tree_species: str) -> bool:
-    """Checks if the given MOS target tree species is split in multiple FITS files."""
+def mos_target_path_num(mos_target_dir: str | pathlib.Path, tree_species: str) -> int:
+    """Returns the number of FITS files for the given MOS target tree species."""
 
     mos_target_dir = pathlib.Path(mos_target_dir)
 
-    fits_files = list(mos_target_dir.glob(f"{tree_species}_[0-9]*.fits"))
+    if len(list(mos_target_dir.glob(f"{tree_species}.fits"))) == 1:
+        return 1
 
-    return len(fits_files) > 1
+    fits_files = list(mos_target_dir.glob(f"{tree_species}-[0-9]*.fits"))
+
+    return len(fits_files)
 
 
-def validate_mos_target_tree_paths(dr: str, verbose: bool = False):
+def mos_target_is_split(mos_target_dir: str | pathlib.Path, tree_species: str) -> bool:
+    """Checks if the given MOS target tree species is split in multiple FITS files."""
+
+    return mos_target_path_num(mos_target_dir, tree_species) > 1
+
+
+def validate_mos_target_tree_paths(
+    dr: str,
+    v_targ: str | None = None,
+    verbose: bool = False,
+):
     """Uses ``sdss-access`` to validate the MOS target tree paths for a data release."""
 
     try:
@@ -179,12 +219,24 @@ def validate_mos_target_tree_paths(dr: str, verbose: bool = False):
     path = Path(dr)
     tree = Tree(dr)
 
+    if dr.lower() != "sdsswork" and v_targ is None:
+        raise ValueError("v_targ needs to be provided.")
+
     for file_species in tree.paths:
         if file_species.startswith("mos_target_"):
+            # Skip some old paths that we don't want to generate datamodels for.
+            if file_species in [
+                "mos_target_allstar_dr17_synspec_rev1_1",
+                "mos_target_catalog_to_uvotssc1_2",
+                "mos_target_catalog_to_bhm_rm_v0_1",
+                "mos_target_ebosstarget_v5_2",
+            ]:
+                continue
+
             if verbose:
                 console.print(f"Validating path for [cyan]{file_species}[/] ...")
 
-            keys = {"num": 1} if "{num" in tree.paths[file_species] else {}
+            keys = {"num": 1, "v_targ": v_targ or ""}
 
             try:
                 pfull = path.full(file_species, **keys)
@@ -200,7 +252,11 @@ def validate_mos_target_tree_paths(dr: str, verbose: bool = False):
                 continue
 
 
-def generate_datamodels(dr: str):
+def generate_datamodels(
+    dr: str,
+    v_targ: str | None = None,
+    filetypes: list[str] = ["fits", "parquet"],
+):
     """Generates the MOS target datamodels for the given data release."""
 
     try:
@@ -211,31 +267,54 @@ def generate_datamodels(dr: str):
 
     tree = Tree(dr)
 
+    if not dr.lower() == "sdsswork" and v_targ is None:
+        raise ValueError("v_targ needs to be provided.")
+
     for file_species in tree.paths:
         if file_species.startswith("mos_target_"):
-            path = tree.paths[file_species].replace("$", "")
-
-            # This is needed to ignore some old paths that are still in the tree.
-            if "{v_targ}" in path:
+            # Skip some old paths that we don't want to generate datamodels for.
+            if file_species in [
+                "mos_target_allstar_dr17_synspec_rev1_1",
+                "mos_target_catalog_to_uvotssc1_2",
+                "mos_target_catalog_to_bhm_rm_v0_1",
+                "mos_target_ebosstarget_v5_2",
+            ]:
                 continue
 
-            if "{num" in path:
-                keys = ["num=1"]
-            else:
-                keys = []
+            path = tree.paths[file_species].replace("$", "")
 
-            DataModel(
-                file_spec=file_species,
-                path=path,
-                keywords=keys,
-                release=dr.upper(),
-            ).write_stubs()
+            # Parquet files.
+            if file_species.endswith("_parquet") and "parquet" in filetypes:
+                DataModel(
+                    file_spec=file_species,
+                    path=path,
+                    keywords=[f"v_targ={v_targ}"],
+                    release=dr.upper() if dr != "sdsswork" else "WORK",
+                ).write_stubs()
+
+            elif "fits" in filetypes:
+                # FITS files.
+
+                keys = [f"v_targ={v_targ}"]
+                if "{num" in path:
+                    keys += ["num=1"]
+
+                DataModel(
+                    file_spec=file_species,
+                    path=path,
+                    keywords=keys,
+                    release=dr.upper() if dr != "sdsswork" else "WORK",
+                ).write_stubs()
 
 
 def update_datamodels(
     dr: str,
     datamodel_dir: str | pathlib.Path,
+    mos_target_dir: str | pathlib.Path,
+    v_targ: str,
+    filetype: Literal["fits", "parquet"] = "fits",
     tables: list[str] | None = None,
+    changes: str | None = None,
     force: bool = False,
 ):
     """Updates the MOS target datamodels for the given data release.
@@ -246,10 +325,18 @@ def update_datamodels(
         The data release for which to update the datamodels.
     datamodel_dir
         The directory where the datamodel YAML files are located.
+    v_targ
+        The value of the ``v_targ`` variable to use in the datamodel paths.
+        This will be used to update the ``naming_convention`` field in the
+        datamodel YAML files.
     tables
         A list of tables to update. If :obj:`None`, all tables will be updated.
         They must be in the format `sdss_dr16_specobj`, without any `drX_` or
         `mos_target` prefixes.
+    changes
+        A description of the changes made to the datamodels. This will be added to the
+        "changelog" section of the datamodel YAML files for the given release.
+        If :obj:`None`, no changes will be recorded.
     force
         Replaces the datamodel descriptions with the documentation descriptions
         even if they are not the default "replace me - with content".
@@ -259,6 +346,7 @@ def update_datamodels(
     from minidb_docs.tools import serialise_docs
 
     datamodel_dir = pathlib.Path(datamodel_dir)
+    mos_target_dir = pathlib.Path(mos_target_dir)
 
     if not datamodel_dir.is_dir():
         raise ValueError(f"{datamodel_dir} is not a valid directory.")
@@ -275,15 +363,23 @@ def update_datamodels(
         if tables is not None and table not in tables:
             continue
 
-        console.print(f"Updating datamodel for table [cyan]{table}[/] ...")
+        if filetype == "fits":
+            console.print(f"Updating FITS datamodel for table [cyan]{table}[/] ...")
+        elif filetype == "parquet":
+            console.print(f"Updating Parquet datamodel for table [cyan]{table}[/] ...")
+        else:
+            raise ValueError("filetype must be either 'fits' or 'parquet'.")
 
         # Find the corresponding datamodel file.
         model_filename = "mos_target_" + table
+        if filetype == "parquet":
+            model_filename += "_parquet"
+
         model_file = datamodel_dir / f"{model_filename}.yaml"
         if not model_file.exists():
             console.print(
-                f"[yellow]WARNING:[/] datamodel file [cyan]{model_file}[/] does not "
-                "exist. It will be skipped."
+                f"  [yellow]Datamodel file [cyan]{model_file}[/] does not "
+                "exist. It will be skipped.[/]"
             )
             continue
 
@@ -310,60 +406,106 @@ def update_datamodels(
 
             general["description"] = table_description
 
-        naming_convention = general["naming_convention"]
-        if "replace me - " in naming_convention:
-            mos_path_match = re.search(r"(\$MOS_TARGET.+?\.fits)", naming_convention)
-            if not mos_path_match:
-                console.print(
-                    f"[yellow]WARNING:[/] could not find MOS target path in naming "
-                    f"convention for table [cyan]{table}[/]. It will be left "
-                    "unchanged."
-                )
-            else:
-                mos_path = mos_path_match.group(1)
-                mos_path = re.sub(r"(.+\[NUM)[0-9]+(\]\.fits)", r"\1\2", mos_path)
-
-            general["naming_convention"] = mos_path
-
-            if "[NUM" in mos_path:
-                general["naming_convention"] += (
-                    " where NUM>0 is the number of the FITS file "
-                    "if the table is split in multiple files."
-                )
+        # Update changelog.
+        if changes is not None and dr.upper() in yaml_data["changelog"]["releases"]:
+            yaml_data["changelog"]["releases"][dr.upper()]["note"] = changes
 
         if "replace me - " in general["generated_by"]:
             general["generated_by"] = "sdss5db targeting database."
 
-        hdus: dict = yaml_data["releases"]["DR20"]["hdus"]
+        if filetype == "fits":
+            # Update naming convention.
+            n_files = mos_target_path_num(mos_target_dir, f"mos_{table}")
 
-        # Update HDU descriptions.
-        hdus["hdu0"]["description"] = "Primary header"
-        hdus["hdu1"]["description"] = f"MOS Target Table: {table}"
+            template = yaml_data["releases"][dr.upper()]["template"]
+            template = re.sub(r"(.+\[NUM)[0-9]+(\]\.fits)", r"\1\2", template)
 
-        # Loop over the columns in the minidb_docs data for the
-        # table and update the datamodel descriptions and units.
-        for column_data in data["tables"][docs_table]["columns"]:
-            docs_column: str = column_data["name"]
-            docs_description: str = column_data["description"]
-            docs_unit: str = column_data["unit"]
+            naming_convention = f"{template} with V_TARG={v_targ}"
 
-            # Skip if the column does not exist in the datamodel,
-            # but this should be checked.
-            if docs_column not in hdus["hdu1"]["columns"]:
-                console.print(
-                    f"[yellow]WARNING:[/] column [cyan]{docs_column}[/] not "
-                    f"found in datamodel for table [cyan]{table}[/]."
+            if "[NUM]" in template:
+                naming_convention += f" and NUM=1..{n_files}"
+
+            naming_convention += f" for {dr.upper()}."
+
+            general["naming_convention"] = naming_convention
+
+            # This is a a hack for DR20 when we want to add a changelog but only if
+            # the path template includes [NUM].
+            if (
+                changes is None
+                and dr.upper() == "DR20"
+                and "DR20" in yaml_data["changelog"]["releases"]
+                and "[NUM]" in template
+            ):
+                yaml_data["changelog"]["releases"][dr.upper()]["note"] = (
+                    "The [NUM] chunk is now separated from the main file "
+                    "species name by a dash instead of an underscore."
                 )
-                continue
 
-            # Check if the model already has a description. If so and not forcing,
-            # skip updating this column.
-            model_column_data: dict = hdus["hdu1"]["columns"][docs_column]
-            model_description: str = model_column_data["description"]
+            # Update HDUs
+            hdus: dict = yaml_data["releases"]["DR20"]["hdus"]
 
-            if model_description == "replace me - with content" or force:
-                hdus["hdu1"]["columns"][docs_column]["description"] = docs_description
-                hdus["hdu1"]["columns"][docs_column]["unit"] = docs_unit
+            # Update HDU descriptions.
+            hdus["hdu0"]["description"] = "Primary header"
+            hdus["hdu1"]["description"] = f"MOS Target Table: {table}"
+
+            # Loop over the columns in the minidb_docs data for the
+            # table and update the datamodel descriptions and units.
+            for column_data in data["tables"][docs_table]["columns"]:
+                docs_column: str = column_data["name"]
+                docs_descr: str = column_data["description"]
+                docs_unit: str = column_data["unit"]
+
+                # Skip if the column does not exist in the datamodel,
+                # but this should be checked.
+                if docs_column not in hdus["hdu1"]["columns"]:
+                    console.print(
+                        f"  [yellow]Column [cyan]{docs_column}[/] not "
+                        f"found in datamodel for table [cyan]{table}[/].[/]"
+                    )
+                    continue
+
+                # Check if the model already has a description. If so and not forcing,
+                # skip updating this column.
+                model_column_data: dict = hdus["hdu1"]["columns"][docs_column]
+                model_description: str = model_column_data["description"]
+
+                if model_description == "replace me - with content" or force:
+                    hdus["hdu1"]["columns"][docs_column]["description"] = docs_descr
+                    hdus["hdu1"]["columns"][docs_column]["unit"] = docs_unit
+
+        elif filetype == "parquet":
+            template = yaml_data["releases"][dr.upper()]["template"]
+
+            naming_convention = f"{template} with V_TARG={v_targ} for {dr.upper()}."
+            general["naming_convention"] = naming_convention
+
+            columns = yaml_data["releases"][dr.upper()]["dataframe"]["columns"]
+
+            # Loop over the columns in the minidb_docs data for the
+            # table and update the datamodel descriptions and units.
+            for column_data in data["tables"][docs_table]["columns"]:
+                docs_column: str = column_data["name"]
+                docs_descr: str = column_data["description"]
+                docs_unit: str = column_data["unit"]
+
+                # Skip if the column does not exist in the datamodel,
+                # but this should be checked.
+                if docs_column not in columns:
+                    console.print(
+                        f"  [yellow]Column [cyan]{docs_column}[/] not "
+                        f"found in datamodel for table [cyan]{table}[/].[/]"
+                    )
+                    continue
+
+                # Check if the model already has a description. If so and not forcing,
+                # skip updating this column.
+                model_column_data: dict = columns[docs_column]
+                model_description: str = model_column_data["description"]
+
+                if model_description == "replace me - with content" or force:
+                    columns[docs_column]["description"] = docs_descr
+                    columns[docs_column]["unit"] = docs_unit
 
         # Write the updated YAML data back to the file.
         yaml.safe_dump(yaml_data, open(model_file, "w"))
