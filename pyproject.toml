@@ -19,11 +19,12 @@ dependencies = [
 
 [project.optional-dependencies]
 all = [
-  "sdss-access>=3.0.10",
+  "sdss-access",
   "sdss-datamodel[gen]",
   "sdssdb>=0.13.5",
   "sdsstools>=1.9.6",
 ]
+
 
 [project.scripts]
 minidb-docs = "minidb_docs.__main__:minidb_docs_cli"
@@ -36,7 +37,8 @@ dev = [
 ]
 
 [tool.uv.sources]
-sdss-datamodel = {git = "ssh://git@github.com/sdss/datamodel"}
+sdss-datamodel = {git = "ssh://git@github.com/sdss/datamodel", branch = "main"}
+sdss-access = {git = "ssh://git@github.com/sdss/sdss_access", branch = "main"}
 
 [tool.ruff]
 exclude = ["typings/"]

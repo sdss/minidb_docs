@@ -238,18 +238,23 @@ def validate_mos_target_tree_paths(
 
             keys = {"num": 1, "v_targ": v_targ or ""}
 
-            try:
-                pfull = path.full(file_species, **keys)
-            except Exception as e:
-                console.print(
-                    "[red]ERROR:[/] failed to resolve path for "
-                    f"[cyan]{file_species}[/]: {e}"
-                )
-                continue
+            for ftype in ["fits", "parquet"]:
+                try:
+                    pfull = path.full(file_species, ftype=ftype, **keys)
+                except Exception as e:
+                    raise
+                    console.print(
+                        "[red]ERROR:[/] failed to resolve path for "
+                        f"[cyan]{file_species}[/] ({ftype}): {e}"
+                    )
+                    continue
 
-            if not pathlib.Path(pfull).exists():
-                console.print(f"[red]ERROR:[/] path [cyan]{pfull}[/] does not exist.")
-                continue
+                if not pathlib.Path(pfull).exists():
+                    console.print(
+                        f"[red]ERROR:[/] path [cyan]{pfull}[/] ({ftype}) "
+                        "does not exist."
+                    )
+                    continue
 
 
 def generate_datamodels(
@@ -284,26 +289,43 @@ def generate_datamodels(
             path = tree.paths[file_species].replace("$", "")
 
             # Parquet files.
-            if file_species.endswith("_parquet") and "parquet" in filetypes:
+            if "parquet" in filetypes:
+                # Remove the @mos_target_num(2|3)| part from the path.
+                proc_path = re.sub(r"@mos_target_num[2-3]?\|", "", path)
                 DataModel(
-                    file_spec=file_species,
-                    path=path,
-                    keywords=[f"v_targ={v_targ}"],
+                    file_spec=file_species + "_parquet",
+                    access_path_name=file_species,
+                    path=proc_path,
+                    keywords=[f"v_targ={v_targ}", "ftype=parquet"],
                     release=dr.upper() if dr != "sdsswork" else "WORK",
+                    suffixes=[".parquet"],
                 ).write_stubs()
 
-            elif "fits" in filetypes:
+            if "fits" in filetypes:
                 # FITS files.
 
-                keys = [f"v_targ={v_targ}"]
-                if "{num" in path:
-                    keys += ["num=1"]
+                # The Tree path may include the magic functions @mos_target_num(2|3)|,
+                # and those are not filled in by the datamodel. We replace them with
+                # a NUM variable that we can pass.
+                proc_path = re.sub(r"@mos_target_num[2-3]?\|", r"-{num}", path)
+
+                # We also need to figure out if we need to pad the NUM variable with
+                # zeros. We do this by passing a string with the padding already there.
+                num = "1"
+                if match := re.search(r"@mos_target_num([2-3]?)\|", path):
+                    num_digits = int(match.group(1)) if match.group(1) != "" else 0
+                    num = f"{{num:0>{num_digits}}}".format(num=1)
+
+                keys = [f"v_targ={v_targ}", "ftype=fits"]
+                if "{num}" in proc_path:
+                    keys += [f"num={num}"]
 
                 DataModel(
                     file_spec=file_species,
-                    path=path,
+                    path=proc_path,
                     keywords=keys,
                     release=dr.upper() if dr != "sdsswork" else "WORK",
+                    suffixes=[".fits"],
                 ).write_stubs()
 
 
@@ -420,10 +442,12 @@ def update_datamodels(
             template = yaml_data["releases"][dr.upper()]["template"]
             template = re.sub(r"(.+\[NUM)[0-9]+(\]\.fits)", r"\1\2", template)
 
-            naming_convention = f"{template} with V_TARG={v_targ}"
+            naming_convention = f"{template} with FTYPE='fits'"
 
             if "[NUM]" in template:
-                naming_convention += f" and NUM=1..{n_files}"
+                naming_convention += f", V_TARG='{v_targ}', and NUM=1..{n_files}"
+            else:
+                naming_convention += f" and V_TARG='{v_targ}'"
 
             naming_convention += f" for {dr.upper()}."
 
@@ -441,6 +465,12 @@ def update_datamodels(
                     "The [NUM] chunk is now separated from the main file "
                     "species name by a dash instead of an underscore."
                 )
+
+            # Update the path_kwargs with NUM if needed.
+            path_kwargs = yaml_data["releases"]["DR20"]["access"]["path_kwargs"]
+            if "[NUM]" in template and "num" not in path_kwargs:
+                path_kwargs.append("num")
+            yaml_data["releases"]["DR20"]["access"]["path_kwargs"] = path_kwargs
 
             # Update HDUs
             hdus: dict = yaml_data["releases"]["DR20"]["hdus"]
@@ -477,7 +507,10 @@ def update_datamodels(
         elif filetype == "parquet":
             template = yaml_data["releases"][dr.upper()]["template"]
 
-            naming_convention = f"{template} with V_TARG={v_targ} for {dr.upper()}."
+            naming_convention = (
+                f"{template} with FTYPE='parquet' and "
+                f"V_TARG='{v_targ}' for {dr.upper()}."
+            )
             general["naming_convention"] = naming_convention
 
             columns = yaml_data["releases"][dr.upper()]["dataframe"]["columns"]
