@@ -1,6 +1,8 @@
 Summary
 -------
 
+Abundances from the GAUGUIN and MADERA pipelines for the RAVE DR6 data.
+
 The abundances of the non-iron group elements (Al, Fe, and Ni) and of the alpha enhancement [alpha/Fe] derived with the pipeline GAUGUIN and MADERA input for the Radial Velocity Experiment (RAVE) DR6. See https://www.rave-survey.org/metadata/ravedr6/dr6_gauguin_madera/.
 
 
@@ -8,19 +10,19 @@ Columns
 -------
 
 rave_obs_id - Unique Identifier for RAVE objects, Observation Date, Fieldname, Fibernumber
-fe_h_gauguin - [Fe/H] abundance of Fe
-fe_h_error_gauguin - Error of [Fe/H] abundance of Fe
-fe_h_chisq_gauguin - Chi-square of [Fe/H] abundance of Fe
-fe_h_nl_gauguin - Number of used spectral lines in calc. of [Fe/H]
-al_h_gauguin - [Al/H] abundance of Al
-al_h_error_gauguin - Error of [Al/H] abundance of Al
-al_h_chisq_gauguin - Chi-square of [Al/H] abundance of Al
-al_h_nl_gauguin - Number of used spectral lines in calc. of [Al/H]
-ni_h_gauguin - [Ni/H] abundance of Ni
-ni_h_error_gauguin - Error of [Ni/H] abundance of Ni
-ni_h_chisq_gauguin - Chi-square of [Ni/H] abundance of Ni
-ni_h_nl_gauguin - Number of used spectral lines in calc. of [Ni/H]
-alpha_fe_gauguin - [Alpha/Fe]
-alpha_fe_error_gauguin - Error of [Alpha/Fe]
-alpha_fe_chisq_gauguin - Chi-square of [Alpha/Fe]
-n_elements_gauguin - Number of used spectral lines in calculations
+fe_h_gauguin - [Fe/H] abundance of Fe []
+fe_h_error_gauguin - Error of [Fe/H] abundance of Fe []
+fe_h_chisq_gauguin - Chi-square of [Fe/H] abundance of Fe []
+fe_h_nl_gauguin - Number of used spectral lines in calculation of [Fe/H] []
+al_h_gauguin - [Al/H] abundance of Al []
+al_h_error_gauguin - Error of [Al/H] abundance of Al []
+al_h_chisq_gauguin - Chi-square of [Al/H] abundance of Al []
+al_h_nl_gauguin - Number of used spectral lines in calculation of [Al/H] []
+ni_h_gauguin - [Ni/H] abundance of Ni []
+ni_h_error_gauguin - Error of [Ni/H] abundance of Ni []
+ni_h_chisq_gauguin - Chi-square of [Ni/H] abundance of Ni []
+ni_h_nl_gauguin - Number of used spectral lines in calc. of [Ni/H] []
+alpha_fe_gauguin - [Alpha/Fe] []
+alpha_fe_error_gauguin - Error of [Alpha/Fe] []
+alpha_fe_chisq_gauguin - Chi-square of [Alpha/Fe] []
+n_elements_gauguin - Number of used spectral lines in calculations []

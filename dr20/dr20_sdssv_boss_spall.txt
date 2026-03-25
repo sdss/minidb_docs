@@ -133,7 +133,7 @@ elodie_sptype - Spectral type
 elodie_bv - (B-V) color
 elodie_teff - Effective temperature
 elodie_logg - Log10(gravity)
-elodie_feh - [Fe/H]
+elodie_feh - [Fe/H] []
 elodie_z - redshift
 elodie_z_err -  redshift error; negative for invalid fit
 elodie_z_modelerr - The standard deviation in redshift amongst the 12 best-fit stars

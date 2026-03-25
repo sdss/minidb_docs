@@ -1,7 +1,9 @@
 Summary
 -------
 
-Relational table linking dr20_catalog with dr20_sdss_dr19p_speclite. Although this table has the same columns and purpose of other "catalog_to_X" tables in this schema, it is explicitly named "catalog_from" as it was generated using a bespoke cross-match different from the usual process used for other cross-matched tables in DR20.
+Relational table linking dr20_catalog with dr20_sdss_dr19p_speclite.
+
+Although this table has the same columns and purpose of other "catalog_to_X" tables in this schema, it is explicitly named "catalog_from" as it was generated using a bespoke cross-match different from the usual process used for other cross-matched tables in DR20.
 
 
 Columns

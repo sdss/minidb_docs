@@ -46,9 +46,9 @@ offsets_v - If the offsets field is true, offsets_v gives the offset distance fr
 ra - Right Ascension from input catalog [degrees]
 dec - Declination from input catalog [degrees]
 fibermask - Possible fiber problems
-ra_x -
-dec_x -
-errhalfmaj -
-errhalfmin -
-errposang -
-source_id -
+ra_x - Cross-matched Right Ascension from Gaia eDR3 [degrees]
+dec_x - Cross-matched Declination from Gaia eDR3 [degrees]
+errhalfmaj - Error ellipse half major axis [deg]
+errhalfmin - Error ellipse half minor axis [deg]
+errposang - Error ellipse position angle [deg]
+source_id - Gaia eDR3 source_id
