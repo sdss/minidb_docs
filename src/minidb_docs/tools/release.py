@@ -16,6 +16,8 @@ import polars
 from rich.console import Console
 from typing_extensions import Literal
 
+from minidb_docs import console as log_console
+
 
 __all__ = [
     "generate_mos_target_tree_paths",
@@ -32,7 +34,7 @@ __all__ = [
 ]
 
 
-console = Console()
+console = log_console or Console()
 
 
 def generate_mos_target_tree_paths(

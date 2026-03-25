@@ -17,4 +17,5 @@ CURRENT_DR = os.getenv("MINIDB_DR", "dr20")
 PREVIOUS_DR = os.getenv("MINIDB_PREVIOUS_DR", "dr19")
 
 
-log = get_logger("minidb_docs")  # Mostly for formatting of warnings
+log = get_logger("minidb_docs", use_rich_handler=True)
+console = log.rich_console
