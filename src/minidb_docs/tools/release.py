@@ -50,7 +50,7 @@ def generate_mos_target_tree_paths(
     dr
         The data release for which to generate the paths.
     mos_target_dir
-        The directory where the ``mos_target`` files are located. It is assummed that
+        The directory where the ``mos_target`` files are located. It is assumed that
         there are two directories, ``fits/`` and ``parquet/``, inside this directory,
         containing the FITS and Parquet files, respectively.
     force
@@ -349,6 +349,8 @@ def update_datamodels(
         The data release for which to update the datamodels.
     datamodel_dir
         The directory where the datamodel YAML files are located.
+    mos_target_dir
+        The directory where the ``mos_target`` files are located.
     v_targ
         The value of the ``v_targ`` variable to use in the datamodel paths.
         This will be used to update the ``naming_convention`` field in the
@@ -415,10 +417,10 @@ def update_datamodels(
         # when the datamodel is first generated.
         general: dict = yaml_data["general"]
 
-        if "replace me - " in general["short"]:
+        if "replace me - " in general["short"] or force:
             general["short"] = f"MOS Target Table: {table}"
 
-        if "replace me - " in general["description"]:
+        if "replace me - " in general["description"] or force:
             table_description = data["tables"][docs_table]["description"]
 
             # Replace http:// and https:// URLs with <a href> tags
@@ -434,7 +436,7 @@ def update_datamodels(
         if changes is not None and dr.upper() in yaml_data["changelog"]["releases"]:
             yaml_data["changelog"]["releases"][dr.upper()]["note"] = changes
 
-        if "replace me - " in general["generated_by"]:
+        if "replace me - " in general["generated_by"] or force:
             general["generated_by"] = "sdss5db targeting database."
 
         if filetype == "fits":
