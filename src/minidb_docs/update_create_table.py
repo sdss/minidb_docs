@@ -27,7 +27,7 @@ def run_all(dr: str | None = None):
 
     files = glob.glob(f"{dr}/{dr}_*.txt")
 
-    output_dir = pathlib.Path(__file__).parent / dr
+    output_dir = pathlib.Path(__file__).parent.parent.parent / dr
     output_dir.mkdir(exist_ok=True)
 
     create_table_orig = output_dir / f"create_minidb_{dr}.sql"
