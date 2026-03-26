@@ -128,7 +128,7 @@ x_h_err - Empirical uncertainties in [X/H], derived from repeat observations of 
 x_m - Empirically calibrated individual element array, using ASPCAP stellar abundances fit + calibrations, all expressed in logarithmic abundance relative to M ([X/M]) in order given in ELEM_SYMBOL array in HDU3 []
 x_m_err - Empirical uncertainties in [X/M], derived from repeat observations of stars []
 elem_chi2 - Chi^2 from ASPCAP fit of individual abundances []
-elemfrac - []
+elemfrac - Fractional contribution of good pixels []
 elemflag - Flags for analysis of individual abundances, see bitmask definitions []
 extratarg - Bitmask which identifies main survey targets and other classes, see bitmask definitions. []
 memberflag - memberflag missing missing missing []

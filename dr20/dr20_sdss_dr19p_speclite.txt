@@ -1,8 +1,7 @@
 Summary
 -------
 
-[INCOMPLETE]: Tom to provide a summary and check the column descriptions.
-
+Selection of columns from the SDSS DR19 specLite file.
 
 Columns
 -------

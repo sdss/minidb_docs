@@ -3,8 +3,6 @@ Summary
 
 Cross-match between the LAMOST DR6 low resolution spectral survey and Gaia eDR3. For more details on the LAMOS LRS survey, refer to https://dr6.lamost.org/doc/lr-data-production-description.
 
-[INCOMPLETE] Missing column descriptions for what I think is the cross-match with eDR3.
-
 
 Columns
 -------

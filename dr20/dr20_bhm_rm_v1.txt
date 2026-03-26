@@ -25,8 +25,6 @@ Values are set to -9.0 or -9 if null.
 
 The dr20_bhm_rm_v1 table corresponds to Version: v1, 11/29/2022
 
-[INCOMPLETE]: Tom to check summary and missing column descriptions.
-
 
 Columns
 -------
@@ -35,14 +33,14 @@ rm_field_name - One of COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, or ELAIS-S1
 ra - Fiducial Right Ascension (J2000) [deg]
 dec - Fiducial Declination (J2000) [deg]
 catalogidv05 - Unique identifier in the dr20_catalog table (corresponding to the v0.5 cross-matching run).
-rm_known_spec -
-rm_core -
-rm_var -
-rm_ancillary -
-mag_g -
-mag_r -
-mag_i -
-mag_z -
+rm_known_spec - Boolen flag indicating if the object belongs to the bhm_rm_known_spec carton
+rm_core - Boolean flag indicating if the object belongs to the bhm_rm_core carton
+rm_var - Boolean flag indicating if the object belongs to the bhm_rm_var carton
+rm_ancillary - Boolean flag indicating if the object belongs to the bhm_rm_ancillary carton
+mag_g - PS1 g-band magnitude [mag]
+mag_r - PS1 r-band magnitude [mag]
+mag_i - PS1 i-band magnitude [mag]
+mag_z - PS1 z-band magnitude [mag]
 gaia_g - Gaia G-band magnitude [mag]
 gaia_bp - Gaia BP-band magnitude [mag]
 gaia_rp - Gaia RP-band magnitude [mag]
@@ -51,6 +49,6 @@ ls_id_dr10 - Legacy Survey DR10 ID
 gaia_dr2_source_id - Gaia DR2 source ID
 gaia_dr3_source_id - Gaia DR3 source ID
 panstarrs1_catid_objid - Pan-STARRS1 DR1 StackObjectThin unique object identifier
-rm_unsuitable -
-rm_xrayqso -
+rm_unsuitable - Whether the entry is consider unsuitable as a RM target
+rm_xrayqso - Whether to include the target in the bhm_rm_xrayqso carton
 pkey - Primary key identifier for this table row
