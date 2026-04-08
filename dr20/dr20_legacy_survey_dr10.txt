@@ -1,17 +1,16 @@
 Summary
 -------
 
-Legacy Survey DR80 catalogue derived from 'sweep' catalogues.
+Legacy Survey DR10 catalog derived from 'sweep' catalog files, supplemented with Legacy Survey DR9 North catalog entries (mostly Dec>+32.375 deg). DR9 entries had a slighly different native data model, and so have been transformed into the DR10 format. Note that Gaia information for DR9 entries is based on Gaia DR2 (vs Gaia EDR3 for DR10 entries).  
 
-For more information see <a href="https://www.legacysurvey.org/dr8/">https://www.legacysurvey.org/dr10/</a>.
-
+Note that (due to time pressures) we used a pre-release version of DR10 that differs slightly (over a few tens of 0.25x0.25 deg 'bricks' from the official DR10 released by the LegacySurvey team). For more information about LegacySurvey data products see <a href="https://www.legacysurvey.org/dr10/">https://www.legacysurvey.org/dr10/</a>. 
 
 Columns
 -------
 
-release - Integer denoting the camera and filter set used
-brickid - Brick ID
-brickname - Name of brick encoding the sky position
+release - Integer encoding the camera and data reduction version
+brickid - Brick identifier (integer version)
+brickname - Brick identifier (string version)
 objid - Catalog object number within this brick
 type - Morphological model (PSF, REX, DEV, EXP, SER, DUP)
 ra - Right ascension at equinox J2000 [deg]
@@ -139,6 +138,6 @@ fitbits - Bitwise mask describing peculiarities of model fitting
 sersic - Sersic profile index for type SER
 sersic_ivar - Inverse variance of sersic
 survey_primary - True if object is in the primary survey footprint for unique-object selection
-ls_id - SDSS-V Legacy Survey unique object identifier
-gaia_dr2_source_id - Gaia DR2 source identifier
-gaia_dr3_source_id - Gaia DR3 source identifier
+ls_id - SDSS-V Legacy Survey unique object identifier (computed internally from release, brickid, objid)
+gaia_dr2_source_id - Gaia DR2 source identifier (DR9 entries only)
+gaia_dr3_source_id - Gaia DR3 source identifier (DR10 entries only)
