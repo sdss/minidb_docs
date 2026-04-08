@@ -1,7 +1,7 @@
 Summary
 -------
 
-Legacy Survey DR10 catalog derived from 'sweep' catalog files, supplemented with Legacy Survey DR9 North catalog entries (mostly Dec>+32.375 deg). DR9 entries had a slighly different native data model, and so have been transformed into the DR10 format. Note that Gaia information for DR9 entries is based on Gaia DR2 (vs Gaia EDR3 for DR10 entries).  
+Legacy Survey DR10 catalog derived from 'sweep' catalog files, supplemented with Legacy Survey DR9 North catalog entries (mostly Dec>+32.375 deg). DR9 entries had a slightly different native datamodel, and so have been transformed into the DR10 format. Note that Gaia information for DR9 entries is based on Gaia DR2 (vs Gaia EDR3 for DR10 entries).  
 
 Note that (due to time pressures) we used a pre-release version of DR10 that differs slightly (over a few tens of 0.25x0.25 deg 'bricks' from the official DR10 released by the LegacySurvey team). For more information about LegacySurvey data products see <a href="https://www.legacysurvey.org/dr10/">https://www.legacysurvey.org/dr10/</a>. 
 
