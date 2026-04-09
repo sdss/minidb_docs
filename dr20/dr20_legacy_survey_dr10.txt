@@ -1,9 +1,9 @@
 Summary
 -------
 
-Legacy Survey DR10 catalog derived from 'sweep' catalog files, supplemented with Legacy Survey DR9 North catalog entries (mostly Dec>+32.375 deg). DR9 entries had a slightly different native datamodel, and so have been transformed into the DR10 format. Note that Gaia information for DR9 entries is based on Gaia DR2 (vs Gaia EDR3 for DR10 entries).  
+LegacySurvey DR10 catalog derived from 'sweep' catalog files, supplemented with LegacySurvey DR9 North catalog entries (mostly Dec>+32.375 deg). DR9 entries had a slightly different native datamodel, and so have been transformed into the DR10 format (padded with null values where necessary). Note that Gaia information for LegacySurvey DR9 entries is based on Gaia DR2 (vs Gaia EDR3 for DR10 entries).  
 
-Note that (due to time pressures) we used a pre-release version of DR10 that differs slightly (over a few tens of 0.25x0.25 deg 'bricks' from the official DR10 released by the LegacySurvey team). For more information about LegacySurvey data products see <a href="https://www.legacysurvey.org/dr10/">https://www.legacysurvey.org/dr10/</a>. 
+Note that (due to time pressures) the version of LegacySurvey DR10 catalog loaded into the SDSS catalogdb is a pre-release version which differs slightly (over a few tens of 0.25x0.25 deg 'bricks') from the official DR10 released by the LegacySurvey team. For more general information about LegacySurvey data products see <a href="https://www.legacysurvey.org/dr10/">https://www.legacysurvey.org/dr10/</a>. 
 
 Columns
 -------
@@ -116,17 +116,17 @@ fibertotflux_z - Predicted z-band flux within a 1.5-arcsec diameter fiber from a
 ref_cat - Reference catalog source for this object
 ref_id - Reference catalog identifier
 ref_epoch - Reference catalog epoch [yr]
-gaia_phot_g_mean_mag - Gaia EDR3 G-band magnitude [mag]
-gaia_phot_g_mean_flux_over_error - Gaia EDR3 G-band signal-to-noise
-gaia_phot_bp_mean_mag - Gaia EDR3 BP magnitude [mag]
-gaia_phot_bp_mean_flux_over_error - Gaia EDR3 BP signal-to-noise
-gaia_phot_rp_mean_mag - Gaia EDR3 RP magnitude [mag]
-gaia_phot_rp_mean_flux_over_error - Gaia EDR3 RP signal-to-noise
-gaia_astrometric_excess_noise - Gaia EDR3 astrometric excess noise
-gaia_duplicated_source - Gaia EDR3 duplicated source flag
-gaia_phot_bp_rp_excess_factor - Gaia EDR3 BP/RP excess factor
-gaia_astrometric_sigma5d_max - Gaia EDR3 longest semi-major axis of the 5D error ellipsoid [mas]
-gaia_astrometric_params_solved - Gaia EDR3 astrometric-parameter solution flag
+gaia_phot_g_mean_mag - Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) G-band magnitude [mag]
+gaia_phot_g_mean_flux_over_error - Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) G-band signal-to-noise
+gaia_phot_bp_mean_mag - Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) BP magnitude [mag]
+gaia_phot_bp_mean_flux_over_error - Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) BP signal-to-noise
+gaia_phot_rp_mean_mag - Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) RP magnitude [mag]
+gaia_phot_rp_mean_flux_over_error - Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) RP signal-to-noise
+gaia_astrometric_excess_noise - Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) astrometric excess noise
+gaia_duplicated_source - Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) duplicated source flag
+gaia_phot_bp_rp_excess_factor - Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) BP/RP excess factor
+gaia_astrometric_sigma5d_max - Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) longest semi-major axis of the 5D error ellipsoid [mas]
+gaia_astrometric_params_solved - Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) astrometric-parameter solution flag
 parallax - Reference catalog parallax [mas]
 parallax_ivar - Inverse variance on parallax [1/mas^2]
 pmra - Reference catalog proper motion in RA [mas/yr]
@@ -140,4 +140,4 @@ sersic_ivar - Inverse variance of sersic
 survey_primary - True if object is in the primary survey footprint for unique-object selection
 ls_id - SDSS-V Legacy Survey unique object identifier (computed internally from release, brickid, objid. ls_id = release << 42 + brickid << 22 + objid)
 gaia_dr2_source_id - Gaia DR2 source identifier (DR9 entries only)
-gaia_dr3_source_id - Gaia DR3 source identifier (DR10 entries only)
+gaia_dr3_source_id - Gaia EDR3 source identifier (DR10 entries only)
