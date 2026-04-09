@@ -8,13 +8,13 @@ Note that (due to time pressures) we used a pre-release version of DR10 that dif
 Columns
 -------
 
-release - Integer encoding the camera and data reduction version
-brickid - Brick identifier (integer version)
-brickname - Brick identifier (string version)
+release - Integer encoding the imaging camera and data reduction version
+brickid - Brick (sky region) identifier (integer version)
+brickname - Brick (sky region) identifier (string version)
 objid - Catalog object number within this brick
 type - Morphological model (PSF, REX, DEV, EXP, SER, DUP)
-ra - Right ascension at equinox J2000 [deg]
-dec - Declination at equinox J2000 [deg]
+ra - Right ascension [ICRS, deg]
+dec - Declination [ICRS, deg]
 ra_ivar - Inverse variance of RA (no cosine term), excluding astrometric calibration errors [1/deg^2]
 dec_ivar - Inverse variance of DEC, excluding astrometric calibration errors [1/deg^2]
 ebv - Galactic extinction E(B-V) reddening from SFD98 [mag]
@@ -138,6 +138,6 @@ fitbits - Bitwise mask describing peculiarities of model fitting
 sersic - Sersic profile index for type SER
 sersic_ivar - Inverse variance of sersic
 survey_primary - True if object is in the primary survey footprint for unique-object selection
-ls_id - SDSS-V Legacy Survey unique object identifier (computed internally from release, brickid, objid)
+ls_id - SDSS-V Legacy Survey unique object identifier (computed internally from release, brickid, objid. ls_id = release << 42 + brickid << 22 + objid)
 gaia_dr2_source_id - Gaia DR2 source identifier (DR9 entries only)
 gaia_dr3_source_id - Gaia DR3 source identifier (DR10 entries only)
