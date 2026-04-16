@@ -25,7 +25,7 @@ hmag - H mag from 2MASS [mag]
 irmatchtype - X-ray/IR match type (1-4 definite/likely/multiple opt, multiple X)
 lgal - Galactic longitude (from X-ray position) [deg]
 bgal - Galactic latitude (from X-ray position) [deg]
-logfx - log10 of X-ray cgs flux in xband []
+logfx - log10 of X-ray cgs flux in xband [log10(erg/cm2/s)]
 xband - X-ray bandpass for logfx, priority b,m,s,h,w
 xsn - X-ray S/N
 xflags - concatenated X-ray source flags: extended,confused,piledup,variable,streak,saturated

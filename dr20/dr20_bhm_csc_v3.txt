@@ -1,8 +1,8 @@
 Summary
 -------
 
-Chandra Source Catalog (CSC) 2.1 Optical/IR Counterparts Catalog
-2022 Dec. See https://asc.harvard.edu/csc2.1/index.html for the CSC 2.1 release notes and documentation.
+Catalog of Chandra Source Catalog (CSC) 2.1 X-ray sources crossmatched matched to optical/IR counterparts from Gaia DR3, LegacySurvey DR10, PanSTARRS-1, and 2MASS.
+(Dec 2022 version). See the <a href="https://asc.harvard.edu/csc2.1/index.html">CSC 2.1 release notes and documentation</a>.
 
 
 Columns
@@ -14,7 +14,7 @@ ra - Preferred counterpart RA coordinate [deg]
 dec - Preferred counterpart Dec coordinate [deg]
 best_oir_cat - Best optical counterpart match; 'gdr3', 'lsdr10', 'ps1dr2', or '2mass' in that order of decreasing priority.
 best_mag - Preferred magnitude of the optical counterpart [mag]
-mag_type - Source of best_mag; GAIA_G, LS_g,LS_r, LS_z, PS_gMeanPSFMag, PS_rMeanPSFMag, PS_iMeanPSFMag, PS_zMeanPSFMag,2MASS_h_m in that order of decreasing priority.
+mag_type - Source of best_mag; GAIA_G, LS_g, LS_r, LS_z, PS_gMeanPSFMag, PS_rMeanPSFMag, PS_iMeanPSFMag, PS_zMeanPSFMag,2MASS_h_m in that order of decreasing priority.
 gaia_dr3_srcid - Gaia DR3 source ID
 ls_dr10_lsid - Legacy Survey DR10 ID
 ls_dr10_objid - Legacy Survey DR10 object ID
@@ -26,9 +26,9 @@ tmass_designation - 2MASS designation
 tmass_ra - RA from 2MASS [deg]
 tmass_dec - Dec from 2MASS [deg]
 tmass_h - H-band magnitude from 2MASS [mag]
-csc21p_ra - RA of X-ray source
-csc21p_dec - DEC of X-ray source
-logfx - log10 of X-ray flux in xband
+csc21p_ra - RA of X-ray source [deg]
+csc21p_dec - DEC of X-ray source [deg]
+logfx - log10 of X-ray flux in xband [log10(erg/cm2/s)]
 xband - X-ray bandpass for logfx, priority b,m,s,h,w
 extent - X-ray extent flag
 xsig - X-ray significance
