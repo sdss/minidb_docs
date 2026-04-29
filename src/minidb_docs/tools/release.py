@@ -662,6 +662,7 @@ def create_mos_target_parquet_files(
     output_path: str | pathlib.Path,
     only_in_minidb_docs: bool = True,
     uri: str = "postgres://sdss@operations.sdss.org/sdss5db",
+    schema: str | None = None,
     overwrite: bool = False,
     use_chunking: bool = True,
     chunk_size: int = 10_000_000,
@@ -682,6 +683,9 @@ def create_mos_target_parquet_files(
     uri
         The URI for the minidb database. It should be in the format
         ``postgres://user@host/database``.
+    schema
+        The schema for the minidb database. If not provided, defaults to
+        ``minidb_{dr}``.
     overwrite
         If :obj:`True`, existing Parquet files with the same name will be overwritten.
     use_chunking
@@ -702,10 +706,12 @@ def create_mos_target_parquet_files(
     minidb_docs_tables = serialise_docs(dr)["tables"]
     docs_tables = list(minidb_docs_tables)
 
+    schema = schema or f"minidb_{dr}"
+
     db_tables = polars.read_database_uri(
         f"SELECT table_name "
         f"FROM information_schema.tables "
-        f"WHERE table_schema = 'minidb_{dr}';",
+        f"WHERE table_schema = '{schema}';",
         uri,
         engine="adbc",
     )
@@ -719,8 +725,8 @@ def create_mos_target_parquet_files(
 
         console.print(f"Creating Parquet file for table [cyan]{db_table}[/] ...")
 
-        mos_table_name = db_table.replace(f"{dr}_", "mos_")
-        output_file = pathlib.Path(output_path) / f"{mos_table_name}.parquet"
+        parquet_file_name = db_table.replace(f"{dr}_", "mos_target_") + ".parquet"
+        output_file = pathlib.Path(output_path) / parquet_file_name
 
         if output_file.exists() and not overwrite:
             console.print(
@@ -730,7 +736,7 @@ def create_mos_target_parquet_files(
             continue
 
         # Get the primary keys.
-        pks = get_primary_keys(db_table, f"minidb_{dr}", uri)
+        pks = get_primary_keys(db_table, schema, uri)
 
         if len(pks) == 0 and use_chunking:
             console.print(
@@ -740,7 +746,7 @@ def create_mos_target_parquet_files(
 
         # Get the total number of rows in the table
         n_rows = polars.read_database_uri(
-            f"SELECT COUNT(*) FROM minidb_{dr}.{db_table};",
+            f"SELECT COUNT(*) FROM {schema}.{db_table};",
             uri,
             engine="adbc",
         )[0, 0]
@@ -748,8 +754,9 @@ def create_mos_target_parquet_files(
         n_chunks_table = int(max(1, (n_rows // chunk_size) + 1))
 
         if not use_chunking or len(pks) == 0 or n_chunks_table == 1:
+            console.print("  [bright_black]Writing final Parquet file ...[/]")
             polars.read_database_uri(
-                f"SELECT * FROM minidb_{dr}.{db_table};",
+                f"SELECT * FROM {schema}.{db_table};",
                 uri,
                 engine="adbc",
             ).write_parquet(output_file)
@@ -767,7 +774,7 @@ def create_mos_target_parquet_files(
                 offset = ii * chunk_size
 
                 chunk_df = polars.read_database_uri(
-                    f"SELECT * FROM minidb_{dr}.{db_table} "
+                    f"SELECT * FROM {schema}.{db_table} "
                     f"ORDER BY {', '.join(pks)} "
                     f"LIMIT {chunk_size} OFFSET {offset};",
                     uri,
@@ -803,6 +810,7 @@ def validate_mos_target_parquet_files(
     dr: str,
     parquet_dir: str | pathlib.Path,
     uri: str = "postgres://sdss@operations.sdss.org/sdss5db",
+    schema: str | None = None,
 ):
     """Validates the MOS target Parquet files by comparing their row counts."""
 
@@ -816,7 +824,7 @@ def validate_mos_target_parquet_files(
     db_tables = polars.read_database_uri(
         f"SELECT table_name "
         f"FROM information_schema.tables "
-        f"WHERE table_schema = 'minidb_{dr}';",
+        f"WHERE table_schema = '{schema}';",
         uri,
         engine="adbc",
     )["table_name"].to_list()
@@ -827,6 +835,7 @@ def validate_mos_target_parquet_files(
         console.print(f"Validating Parquet file [cyan]{parquet_file.name}[/] ...")
 
         db_table_name = f"{dr}_{table_name}"
+        schema = schema or f"minidb_{dr}"
 
         # Check that the table is in the minidb_docs documentation.
         if db_table_name not in minidb_docs_tables:
@@ -849,7 +858,7 @@ def validate_mos_target_parquet_files(
         n_rows_parquet = get_lazyframe_len(df)
 
         n_rows_db = polars.read_database_uri(
-            f"SELECT COUNT(*) FROM minidb_{dr}.{db_table_name}",
+            f"SELECT COUNT(*) FROM {schema}.{db_table_name}",
             uri,
             engine="adbc",
         )[0, 0]
@@ -862,7 +871,7 @@ def validate_mos_target_parquet_files(
             continue
 
         # Check that there are no duplicate rows based on the primary keys.
-        pks = get_primary_keys(db_table_name, f"minidb_{dr}", uri)
+        pks = get_primary_keys(db_table_name, schema, uri)
         if len(pks) == 0:
             n_rows_distinct = get_lazyframe_len(df)
             if n_rows_parquet != n_rows_distinct:
