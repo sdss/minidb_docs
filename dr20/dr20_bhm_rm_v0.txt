@@ -1,12 +1,12 @@
 Summary
 -------
-Parent sample for the RM project.
+Parent sample for the BHM Reverberation Mapping project.
 
 Used to select confirmed and candidate quasar targets for the BHM-RM Program in SDSS-V. For more details please see Yang and Shen, (2022, https://ui.adsabs.harvard.edu/abs/2022arXiv220608989Y/abstract).
 
-This table contains all photometric objects detected in the COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields., within a circular area of 10 degree^2 from the field center.
+This table contains all photometric objects detected in the COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields, within a circular area of 10 degree^2 centered on the following Equatorial coordinates.
 
-Field center: Name     RA          DEC
+Field center: Name     RA             DEC
               XMM-LSS  02:22:50.00    -04:45:00.0
               CDFS     03:30:35.60    -28:06:00.0
               EDFS     04:04:57.84    -48:25:22.8
@@ -31,7 +31,7 @@ Near-infrared: LAS: UKIDSS Large Area Surveys (DR11),
 
 Values are set to -9.0 or -9 if null.
 
-The dr20_bhm_rm_v0 table corresponds to Version: v0, 04/07/2020
+The dr20_bhm_rm_v0 table corresponds to Version: v0, 07/April/2020
 Note that contents of the spec_q column are incorrect in this version of the table.
 
 Columns

@@ -1,7 +1,7 @@
 Summary
 -------
 
- A catalog of targets, selected from SDSS+WISE imaging that were considered for observation in the SDSS-IV/eBOSS project, including spectrophotometric starts and candidate QSOs.
+ A catalog of targets, selected from SDSS+WISE imaging that were considered for observation in the SDSS-IV/eBOSS project, including spectrophotometric stars and candidate QSOs.
 
  This catalogue is a data product of the ebosstarget target selection software, version "v5_0".
 

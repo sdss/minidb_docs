@@ -1,7 +1,9 @@
 Summary
 -------
 
-Selection of columns from the SDSS DR19 specLite file.
+In earlier BHM target selection, the process of determining which potential targets had previously been observed with good quality SDSS optical spectroscopy had become quite cumbersome, involving complex database joins and filtering logic. In an effort to simplify this process for the cartons released as part of DR20, we have created a new catalog table, dr20_sdss_dr19p_speclite, which documents all SDSS optical spectroscopic observations carried out until June 2021 (i.e., up to the end of plug plate observations at APO, and before the start of FPS operations). This table combines information from the final specObj-dr17.fits file released at the end of SDSS-IV (supplemented with PLATE-MJD = 10658--58439 from DR16), the catalog of stacked spectra in the eFEDS field (eFEDS/spAll-v6_0_4-eFEDS.fits released as part of DR18), plus a catalog based on early reductions of of all year-1 SDSS-V optical plate-based observations (eFEDS/spAll-v6_0_4.fits, released later via an updated pipeline as part of DR19).
+
+In cases where a single astrophysical object had been observed multiple times, we selected the 'best' spectrum per object via a heuristic algorithm based on SNR, redshift warnings and plate quality. The dr20_sdss_dr19p_speclite table was connected to the dr20_catalog cross-match table in a non-standard way, reflecting its most common use as a veto table rather than as a parent catalog from which targets could be selected. This results in the dr20_catalog_from_sdss_dr19p_speclite table, in which we have exactly one entry per spectrum listed in dr20_sdss_dr19p_speclite.
 
 Columns
 -------

@@ -3,7 +3,9 @@ Summary
 
 Relational table linking dr20_catalog with dr20_sdss_dr19p_speclite.
 
-Although this table has the same columns and purpose of other "catalog_to_X" tables in this schema, it is explicitly named "catalog_from" as it was generated using a bespoke cross-match different from the usual process used for other cross-matched tables in DR20.
+The sdss_dr19p_speclite table is a particularly degenerate example of a table containing multiple rows per astrophysical object - some objects are associated with several tens of spectroscopic observations, and so we handle the linking to the dr20_catalog table via a non-standard method. Although this table has the same columns and purpose of other "catalog_to_X" tables in this schema, it is explicitly named "catalog_from" as it was generated using a bespoke cross-match different from the usual process used for other cross-matched tables in DR20. This table contains exactly one entry for each dr20_sdss_dr19p_speclite entry - multiple target_ids can be associated with a single catalogid.
+
+
 
 
 Columns

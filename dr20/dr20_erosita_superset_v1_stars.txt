@@ -4,8 +4,7 @@ Summary
 One of several tables describing optical/IR counterparts to eROSITA
 X-ray sources identified via various methods.
 
-These tables contain a superset of potential targets from which the SDSS-V spectroscopic targets were drawn. The dr20_erosita_superset_v1_stars table includes counterparts to point-like X-ray sources, chosen via an algorithm optimised to select coronally active stars. Each row corresponds to one possible match between an X-ray source and a potential optical/IR counterpart. The X-ray columns (ero_*) record the eROSITA information known at the time of target selection and may differ from publicly available eROSITA catalogs. The dr20_erosita_superset_v1* tables are derived from a combination of eROSITA's first 6-month survey of of the West Galactic hemisphere ('eRASS1'), and from the eROSITA observations of the eROSITA Final Equatorial Depth performance verification field ('eFEDS').
-
+These tables contain a superset of potential targets from which the SDSS-V spectroscopic targets were drawn. The dr20_erosita_superset_v1_stars table includes counterparts to point-like X-ray sources, chosen via an algorithm optimised to select coronally active stars. Each row corresponds to one possible match between an X-ray source and a potential optical/IR counterpart. The X-ray columns (ero_*) record the eROSITA information known at the time of target selection and may differ from publicly available eROSITA catalogs. The dr20_erosita_superset_v1_stars table is derived from eROSITA's first 1.5 year survey of the West Galactic hemisphere ('eRASS:3').
 
 Columns
 -------
@@ -17,7 +16,7 @@ ero_flux_type - Flux range used to compute ero_flux, e.g. '0.2-2.3keV', '0.5-2ke
 ero_mjd - This column is empty
 ero_morph - Morphological classification of X-ray source, e.g. 'pointlike', 'extended', 'unknown', ...
 ero_flags - Flags indicating properties of the X-ray detection
-ero_det_like - Detection likelihood of X-ray source [%]
+ero_det_like - Detection likelihood of X-ray source []
 ero_ra - Best determination of X-ray position (J2000) [deg]
 ero_dec - Best determination of X-ray position (J2000) [deg]
 ero_radec_err - Best estimate of X-ray position uncertainty [arcsec]
@@ -30,7 +29,7 @@ target_class - Best guess of source classification at time of xmatch e.g. 'GALAX
 target_priority - Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority
 target_has_spec - Flags used to indicate if target has good quality archival spectroscopy available
 opt_cat - Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns
-ls_id - Identifier of counterpart (if any) in dr20_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40)
+ls_id - Identifier of counterpart (if any) in dr20_legacy_survey_dr10 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**22) + (release * 2**42)
 gaia_dr3_source_id - Identifier of counterpart (if any) in dr20_gaia_dr3_source ('source_id' field)
 opt_ra - Sky coordinate of optical/IR counterpart, included for validity checks only [deg]
 opt_dec - Sky coordinate of optical/IR counterpart, included for validity checks only [deg]

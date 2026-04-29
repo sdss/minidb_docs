@@ -1,11 +1,11 @@
 Summary
 -------
 
-arent sample for the RM project.
+Parent sample for the BHM Reverberation Mapping project.
 
 Used to select confirmed and candidate quasar targets for the BHM-RM Program in SDSS-V. For more details please see Yang and Shen, (2022, https://ui.adsabs.harvard.edu/abs/2022arXiv220608989Y/abstract).
 
-This table contains all photometric objects detected in the COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields., within a circular area of 10 degree^2 from the field center.
+This table contains all photometric objects detected in the COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields, within a circular area of 10 degree^2 centered on the following Equatorial coordinates.
 
 Field center: Name     RA          DEC
               XMM-LSS  02:22:50.00    -04:45:00.0
@@ -23,7 +23,8 @@ Gaia: DR2, gaia_dr2.gaia_source, DR3, gaia_dr3.gaia_source
 Legacy Survey DR8 and DR10.
 Values are set to -9.0 or -9 if null.
 
-The dr20_bhm_rm_v1 table corresponds to Version: v1, 11/29/2022
+The dr20_bhm_rm_v1 table corresponds to Version: v1, 29/Nov/2022.
+The v1 version contains a much simplified set of columns wrt earlier versions. New columns include: i) rm_xrayqso, used to flag up targets that have been selected because they have X-ray detections and have multi-wavelength SEDs that make them likely to be QSOs, ii) rm_unsuitable used to flag if an entry is now considered unsuitable as a RM target (usually because early SDSS-V spectroscopy has shown a candidate QSO to be a star or relatively low redshift blue galaxy. 
 
 
 Columns
@@ -33,14 +34,14 @@ rm_field_name - One of COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, or ELAIS-S1
 ra - Fiducial Right Ascension (J2000) [deg]
 dec - Fiducial Declination (J2000) [deg]
 catalogidv05 - Unique identifier in the dr20_catalog table (corresponding to the v0.5 cross-matching run).
-rm_known_spec - Boolen flag indicating if the object belongs to the bhm_rm_known_spec carton
-rm_core - Boolean flag indicating if the object belongs to the bhm_rm_core carton
-rm_var - Boolean flag indicating if the object belongs to the bhm_rm_var carton
-rm_ancillary - Boolean flag indicating if the object belongs to the bhm_rm_ancillary carton
-mag_g - PS1 g-band magnitude [mag]
-mag_r - PS1 r-band magnitude [mag]
-mag_i - PS1 i-band magnitude [mag]
-mag_z - PS1 z-band magnitude [mag]
+rm_known_spec - Boolen flag indicating if the object could belong to the bhm_rm_known_spec carton
+rm_core - Boolean flag indicating if the object could belong to the bhm_rm_core carton
+rm_var - Boolean flag indicating if the object could belong to the bhm_rm_var carton
+rm_ancillary - Boolean flag indicating if the object could belong to the bhm_rm_ancillary carton
+mag_g - g-band PSF magnitude, from various surveys [mag]
+mag_r - r-band PSF magnitude, from various surveys [mag]
+mag_i - i-band PSF magnitude, from various surveys [mag]
+mag_z - z-band PSF magnitude, from various surveys [mag]
 gaia_g - Gaia G-band magnitude [mag]
 gaia_bp - Gaia BP-band magnitude [mag]
 gaia_rp - Gaia RP-band magnitude [mag]
@@ -50,5 +51,5 @@ gaia_dr2_source_id - Gaia DR2 source ID
 gaia_dr3_source_id - Gaia DR3 source ID
 panstarrs1_catid_objid - Pan-STARRS1 DR1 StackObjectThin unique object identifier
 rm_unsuitable - Whether the entry is consider unsuitable as a RM target
-rm_xrayqso - Whether to include the target in the bhm_rm_xrayqso carton
+rm_xrayqso - Boolean flag indicating if the object could belong to the bhm_rm_xrayqso carton
 pkey - Primary key identifier for this table row

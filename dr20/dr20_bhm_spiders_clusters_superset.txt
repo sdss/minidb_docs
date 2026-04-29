@@ -1,8 +1,7 @@
 Summary
 -------
 
-One of several tables describing optical/IR counterparts to eROSITA
-X-ray sources identified via various methods.
+One of several tables describing optical/IR counterparts to eROSITA X-ray sources identified via various methods.
 
 These tables contain a superset of potential targets from which the SDSS-V spectroscopic targets were drawn.  The dr20_bhm_spiders_clusters_superset table includes counterparts selected via algorithms optimised to find clusters of galaxies. Each row corresponds to one possible match between an X-ray source and a potential optical/IR counterpart.  The X-ray columns (ero_*) record the eROSITA information known at the time of target selection and may differ from publicly available eROSITA catalogs. The dr20_bhm_spiders_*_superset tables are derived from eROSITA observations of the eROSITA Final Equatorial Depth performance verification field ('eFEDS').
 
@@ -35,7 +34,7 @@ ls_id - Identifier of counterpart (if any) in dr20_legacy_survey_dr8 ('ls_id' fi
 ps1_dr2_objid - Identifier of counterpart (if any) in dr20_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier
 gaia_dr2_source_id - Identifier of counterpart (if any) in dr20_gaia_dr2_source ('source_id' field)
 unwise_dr1_objid -  Identifier of counterpart (if any) in dr20_unwise (not used)
-des_dr1_coadd_object_id -  Identifier of counterpart (if any) in DES/dr1 coadd catalogg (not used)
+des_dr1_coadd_object_id -  Identifier of counterpart (if any) in DES/dr1 coadd catalog (not used)
 sdss_dr16_objid -  Identifier of counterpart (if any) in SDSS dr16 photobj table (not used)
 opt_ra - Sky coordinate of optical/IR counterpart, included for validity checks only [deg]
 opt_dec - Sky coordinate of optical/IR counterpart, included for validity checks only [deg]

@@ -1,9 +1,9 @@
 Summary
 -------
 
-This table stores magnitude information for a target. Optical magnitudes that are not selected from SDSS photometry have been converted to the SDSS system.
+This table stores refined optical magnitude information for selected targets. Optical magnitudes that are not selected from SDSS photometry have been converted to the SDSS system.
 
-Entries in this revised_magnitude table only exist if there was an issue with the values in the original magnitude table. Therefore: if a carton_to_target_pk exists in this table, the values in this table should be used instead.
+Entries in this revised_magnitude table exist if either i) there was some fixable problem with the magnitudes loaded into the original dr20_magnitude table, or ii) better data and/or refined methods have been used to improve the accuracy/precision of photometry (particularly useful for BOSS spectrophotometric standards). Therefore, if a carton_to_target_pk exists in the dr20_revised_magnitude table, then the magnitudes therein should be used in preference to those from dr20_magnitude.
 
 Columns
 -------
@@ -20,4 +20,4 @@ rp - The Gaia RP magnitude, Vega. [mag]
 h - The IR H magnitude, Vega. [mag]
 j -  The IR J magnitude, Vega. [mag]
 k -  The IR K magnitude, Vega. [mag]
-optical_prov - The providence/origin of the optical magnitudes.
+optical_prov - The providence/origin of the optical magnitudes, also describes the type of magnitude (psf, fiber etc).

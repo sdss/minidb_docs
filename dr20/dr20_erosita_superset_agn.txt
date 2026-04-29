@@ -1,10 +1,9 @@
 Summary
 -------
 
-One of several tables describing optical/IR counterparts to eROSITA
-X-ray sources identified via various methods.
+One of several tables describing optical/IR counterparts to eROSITA X-ray sources identified via various methods.
 
-These tables contain a superset of potential targets from which the SDSS-V spectroscopic targets were drawn.  The dr20_erosita_superset_agn table includes counterparts to point-like X-ray sources. The sample is expected to be dominated by Active Galactic Nuclei (AGN) but should also include a significant minority of galaxies, stars and other Galactic sources. Each row corresponds to one possible match between an X-ray source and a potential optical/IR counterpart.  The X-ray columns (ero_*) record the eROSITA information known at the time of target selection and may differ from publicly available eROSITA catalogs. The dr20_erosita_superset_* tables are derived from a combination of eROSITA's first 6-month survey of of the West Galactic hemisphere ('eRASS1'), and from the eROSITA observations of the eROSITA Final Equatorial Depth performance verification field ('eFEDS').
+These tables contain a superset of potential targets from which the SDSS-V spectroscopic targets were drawn.  The dr20_erosita_superset_agn table includes counterparts to point-like X-ray sources. The sample is expected to be dominated by Active Galactic Nuclei (AGN) but should also include a significant minority of galaxies, stars and other Galactic sources. Each row corresponds to one possible match between an X-ray source and a potential optical/IR counterpart.  The X-ray columns (ero_*) record the eROSITA information known at the time of target selection and may differ from publicly available eROSITA catalogs. The dr20_erosita_superset_* tables are derived from a combination of eROSITA's first 6-month survey of the West Galactic hemisphere ('eRASS1'), and from the eROSITA observations of the eROSITA Final Equatorial Depth performance verification field ('eFEDS').
 
 
 Columns
