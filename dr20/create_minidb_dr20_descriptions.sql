@@ -739,7 +739,7 @@ CREATE TABLE minidb_dr20.dr20_bhm_csc_v2 (
     irmatchtype smallint, --/D X-ray/IR match type (1-4 definite/likely/multiple opt, multiple X) 
     lgal double precision, --/U deg --/D Galactic longitude (from X-ray position) 
     bgal double precision, --/U deg --/D Galactic latitude (from X-ray position) 
-    logfx real, --/D log10 of X-ray cgs flux in xband 
+    logfx real, --/U log10(erg/cm2/s) --/D log10 of X-ray cgs flux in xband 
     xband text, --/D X-ray bandpass for logfx, priority b,m,s,h,w 
     xsn double precision, --/D X-ray S/N 
     xflags integer, --/D concatenated X-ray source flags: extended,confused,piledup,variable,streak,saturated 
@@ -758,9 +758,10 @@ ALTER TABLE minidb_dr20.dr20_bhm_csc_v2 OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_bhm_csc_v3 (
 ----------------------------------------------------------------------
---/H Chandra Source Catalog (CSC) 2.1 Optical/IR Counterparts Catalog
---/T 2022 Dec. See https://asc.harvard.edu/csc2.1/index.html for the CSC 2.1 release
---/T notes and documentation.
+--/H Catalog of Chandra Source Catalog (CSC) 2.1 X-ray sources crossmatched matched to optical/IR counterparts from Gaia DR3, LegacySurvey DR10, PanSTARRS-1, and 2MASS.
+--/T (Dec 2022 version). See the <a
+--/T href="https://asc.harvard.edu/csc2.1/index.html">CSC 2.1 release notes and
+--/T documentation</a>.
 ----------------------------------------------------------------------
     csc21p_id text, --/D CSC 2.1 source name in the form "2CXO Jhhmmss.s{+|-}ddmmss" 
     csc21p_ensemble text, --/D CSC 2.1 ensemble. An ensemble is a set of overlapping stacks. It represents all the data used to match detections (i.e. to identify sources), and for calculating source properties. 
@@ -768,7 +769,7 @@ CREATE TABLE minidb_dr20.dr20_bhm_csc_v3 (
     "dec" double precision, --/U deg --/D Preferred counterpart Dec coordinate 
     best_oir_cat text, --/D Best optical counterpart match; 'gdr3', 'lsdr10', 'ps1dr2', or '2mass' in that order of decreasing priority. 
     best_mag real, --/U mag --/D Preferred magnitude of the optical counterpart 
-    mag_type text, --/D Source of best_mag; GAIA_G, LS_g,LS_r, LS_z, PS_gMeanPSFMag, PS_rMeanPSFMag, PS_iMeanPSFMag, PS_zMeanPSFMag,2MASS_h_m in that order of decreasing priority. 
+    mag_type text, --/D Source of best_mag; GAIA_G, LS_g, LS_r, LS_z, PS_gMeanPSFMag, PS_rMeanPSFMag, PS_iMeanPSFMag, PS_zMeanPSFMag,2MASS_h_m in that order of decreasing priority. 
     gaia_dr3_srcid bigint, --/D Gaia DR3 source ID 
     ls_dr10_lsid bigint, --/D Legacy Survey DR10 ID 
     ls_dr10_objid integer, --/D Legacy Survey DR10 object ID 
@@ -780,9 +781,9 @@ CREATE TABLE minidb_dr20.dr20_bhm_csc_v3 (
     tmass_ra double precision, --/U deg --/D RA from 2MASS 
     tmass_dec double precision, --/U deg --/D Dec from 2MASS 
     tmass_h real, --/U mag --/D H-band magnitude from 2MASS 
-    csc21p_ra double precision, --/D RA of X-ray source 
-    csc21p_dec double precision, --/D DEC of X-ray source 
-    logfx double precision, --/D log10 of X-ray flux in xband 
+    csc21p_ra double precision, --/U deg --/D RA of X-ray source 
+    csc21p_dec double precision, --/U deg --/D DEC of X-ray source 
+    logfx double precision, --/U log10(erg/cm2/s) --/D log10 of X-ray flux in xband 
     xband text, --/D X-ray bandpass for logfx, priority b,m,s,h,w 
     extent boolean, --/D X-ray extent flag 
     xsig double precision, --/D X-ray significance 
@@ -895,14 +896,14 @@ ALTER TABLE minidb_dr20.dr20_bhm_rm_tweaks OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_bhm_rm_v0 (
 ----------------------------------------------------------------------
---/H Parent sample for the RM project.
+--/H Parent sample for the BHM Reverberation Mapping project.
 --/T Used to select confirmed and candidate quasar targets for the BHM-RM Program in
 --/T SDSS-V. For more details please see Yang and Shen, (2022,
 --/T https://ui.adsabs.harvard.edu/abs/2022arXiv220608989Y/abstract). <br>
 --/T This table contains all photometric objects detected in the COSMOS, SDSS-RM,
---/T XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields., within a circular area of 10
---/T degree^2 from the field center. <br>
---/T Field center: Name     RA          DEC <br>
+--/T XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields, within a circular area of 10 degree^2
+--/T centered on the following Equatorial coordinates. <br>
+--/T Field center: Name     RA             DEC <br>
 --/T               XMM-LSS  02:22:50.00    -04:45:00.0 <br>
 --/T               CDFS     03:30:35.60    -28:06:00.0 <br>
 --/T               EDFS     04:04:57.84    -48:25:22.8 <br>
@@ -924,7 +925,7 @@ CREATE TABLE minidb_dr20.dr20_bhm_rm_v0 (
 --/T                VIDEO: VISTA Deep Extragalactic Observations Survey (DR5), <br>
 --/T                VMC: VISTA Magellanic Cloud Survey (DR4) <br>
 --/T Values are set to -9.0 or -9 if null. <br>
---/T The dr20_bhm_rm_v0 table corresponds to Version: v0, 04/07/2020 <br>
+--/T The dr20_bhm_rm_v0 table corresponds to Version: v0, 07/April/2020 <br>
 --/T Note that contents of the spec_q column are incorrect in this version of the
 --/T table.
 ----------------------------------------------------------------------
@@ -1188,13 +1189,13 @@ ALTER TABLE minidb_dr20.dr20_bhm_rm_v0 OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_bhm_rm_v0_2 (
 ----------------------------------------------------------------------
---/H Parent sample for the RM project.
+--/H Parent sample for the BHM Reverberation Mapping project.
 --/T Used to select confirmed and candidate quasar targets for the BHM-RM Program in
 --/T SDSS-V. For more details please see Yang and Shen, (2022,
 --/T https://ui.adsabs.harvard.edu/abs/2022arXiv220608989Y/abstract). <br>
 --/T This table contains all photometric objects detected in the COSMOS, SDSS-RM,
---/T XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields., within a circular area of 10
---/T degree^2 from the field center. <br>
+--/T XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields, within a circular area of 10 degree^2
+--/T centered on the following Equatorial coordinates. <br>
 --/T Field center: Name     RA          DEC <br>
 --/T               XMM-LSS  02:22:50.00    -04:45:00.0 <br>
 --/T               CDFS     03:30:35.60    -28:06:00.0 <br>
@@ -1217,7 +1218,7 @@ CREATE TABLE minidb_dr20.dr20_bhm_rm_v0_2 (
 --/T                VIDEO: VISTA Deep Extragalactic Observations Survey (DR5), <br>
 --/T                VMC: VISTA Magellanic Cloud Survey (DR4) <br>
 --/T Values are set to -9.0 or -9 if null. <br>
---/T The dr20_bhm_rm_v0_2 table corresponds to Version: v0.2, 06/30/2020 <br>
+--/T The dr20_bhm_rm_v0_2 table corresponds to Version: v0.2, 30/June/2020 <br>
 --/T Changes (wrt v0) include correct error in spec_q column, and add specz from
 --/T OzDES DR2
 ----------------------------------------------------------------------
@@ -1481,13 +1482,13 @@ ALTER TABLE minidb_dr20.dr20_bhm_rm_v0_2 OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_bhm_rm_v1 (
 ----------------------------------------------------------------------
---/H arent sample for the RM project.
+--/H Parent sample for the BHM Reverberation Mapping project.
 --/T Used to select confirmed and candidate quasar targets for the BHM-RM Program in
 --/T SDSS-V. For more details please see Yang and Shen, (2022,
 --/T https://ui.adsabs.harvard.edu/abs/2022arXiv220608989Y/abstract). <br>
 --/T This table contains all photometric objects detected in the COSMOS, SDSS-RM,
---/T XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields., within a circular area of 10
---/T degree^2 from the field center. <br>
+--/T XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields, within a circular area of 10 degree^2
+--/T centered on the following Equatorial coordinates. <br>
 --/T Field center: Name     RA          DEC <br>
 --/T               XMM-LSS  02:22:50.00    -04:45:00.0 <br>
 --/T               CDFS     03:30:35.60    -28:06:00.0 <br>
@@ -1502,20 +1503,26 @@ CREATE TABLE minidb_dr20.dr20_bhm_rm_v1 (
 --/T Gaia: DR2, gaia_dr2.gaia_source, DR3, gaia_dr3.gaia_source <br>
 --/T Legacy Survey DR8 and DR10. <br>
 --/T Values are set to -9.0 or -9 if null. <br>
---/T The dr20_bhm_rm_v1 table corresponds to Version: v1, 11/29/2022
+--/T The dr20_bhm_rm_v1 table corresponds to Version: v1, 29/Nov/2022. <br>
+--/T The v1 version contains a much simplified set of columns wrt earlier versions.
+--/T New columns include: i) rm_xrayqso, used to flag up targets that have been
+--/T selected because they have X-ray detections and have multi-wavelength SEDs that
+--/T make them likely to be QSOs, ii) rm_unsuitable used to flag if an entry is now
+--/T considered unsuitable as a RM target (usually because early SDSS-V spectroscopy
+--/T has shown a candidate QSO to be a star or relatively low redshift blue galaxy.
 ----------------------------------------------------------------------
     rm_field_name character(8), --/D One of COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, or ELAIS-S1 
     ra double precision, --/U deg --/D Fiducial Right Ascension (J2000) 
     "dec" double precision, --/U deg --/D Fiducial Declination (J2000) 
     catalogidv05 bigint, --/D Unique identifier in the dr20_catalog table (corresponding to the v0.5 cross-matching run). 
-    rm_known_spec boolean, --/D Boolen flag indicating if the object belongs to the bhm_rm_known_spec carton 
-    rm_core boolean, --/D Boolean flag indicating if the object belongs to the bhm_rm_core carton 
-    rm_var boolean, --/D Boolean flag indicating if the object belongs to the bhm_rm_var carton 
-    rm_ancillary boolean, --/D Boolean flag indicating if the object belongs to the bhm_rm_ancillary carton 
-    mag_g real, --/U mag --/D PS1 g-band magnitude 
-    mag_r real, --/U mag --/D PS1 r-band magnitude 
-    mag_i real, --/U mag --/D PS1 i-band magnitude 
-    mag_z real, --/U mag --/D PS1 z-band magnitude 
+    rm_known_spec boolean, --/D Boolen flag indicating if the object could belong to the bhm_rm_known_spec carton 
+    rm_core boolean, --/D Boolean flag indicating if the object could belong to the bhm_rm_core carton 
+    rm_var boolean, --/D Boolean flag indicating if the object could belong to the bhm_rm_var carton 
+    rm_ancillary boolean, --/D Boolean flag indicating if the object could belong to the bhm_rm_ancillary carton 
+    mag_g real, --/U mag --/D g-band PSF magnitude, from various surveys 
+    mag_r real, --/U mag --/D r-band PSF magnitude, from various surveys 
+    mag_i real, --/U mag --/D i-band PSF magnitude, from various surveys 
+    mag_z real, --/U mag --/D z-band PSF magnitude, from various surveys 
     gaia_g real, --/U mag --/D Gaia G-band magnitude 
     gaia_bp real, --/U mag --/D Gaia BP-band magnitude 
     gaia_rp real, --/U mag --/D Gaia RP-band magnitude 
@@ -1525,7 +1532,7 @@ CREATE TABLE minidb_dr20.dr20_bhm_rm_v1 (
     gaia_dr3_source_id bigint, --/D Gaia DR3 source ID 
     panstarrs1_catid_objid bigint, --/D Pan-STARRS1 DR1 StackObjectThin unique object identifier 
     rm_unsuitable boolean, --/D Whether the entry is consider unsuitable as a RM target 
-    rm_xrayqso integer, --/D Whether to include the target in the bhm_rm_xrayqso carton 
+    rm_xrayqso integer, --/D Boolean flag indicating if the object could belong to the bhm_rm_xrayqso carton 
     pkey bigint NOT NULL --/D Primary key identifier for this table row 
 );
 
@@ -1538,13 +1545,13 @@ ALTER TABLE minidb_dr20.dr20_bhm_rm_v1 OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_bhm_rm_v1_1 (
 ----------------------------------------------------------------------
---/H arent sample for the RM project.
+--/H Parent sample for the BHM Reverberation Mapping project.
 --/T Used to select confirmed and candidate quasar targets for the BHM-RM Program in
 --/T SDSS-V. For more details please see Yang and Shen, (2022,
 --/T https://ui.adsabs.harvard.edu/abs/2022arXiv220608989Y/abstract). <br>
 --/T This table contains all photometric objects detected in the COSMOS, SDSS-RM,
---/T XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields., within a circular area of 10
---/T degree^2 from the field center. <br>
+--/T XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields, within a circular area of 10 degree^2
+--/T centered on the following Equatorial coordinates. <br>
 --/T Field center: Name     RA          DEC <br>
 --/T               XMM-LSS  02:22:50.00    -04:45:00.0 <br>
 --/T               CDFS     03:30:35.60    -28:06:00.0 <br>
@@ -1559,20 +1566,21 @@ CREATE TABLE minidb_dr20.dr20_bhm_rm_v1_1 (
 --/T Gaia: DR2, gaia_dr2.gaia_source, DR3, gaia_dr3.gaia_source <br>
 --/T Legacy Survey DR8 and DR10. <br>
 --/T Values are set to -9.0 or -9 if null. <br>
---/T The dr20_bhm_rm_v1 table corresponds to Version: v1, 03/31/2023
+--/T The dr20_bhm_rm_v1_1 table corresponds to Version: v1.1, 31/Mar/2023 <br>
+--/T The v1.1 version contains more rows wrt v1.
 ----------------------------------------------------------------------
     rm_field_name character(8), --/D One of COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, or ELAIS-S1 
     ra double precision, --/U deg --/D Fiducial Right Ascension (J2000) 
     "dec" double precision, --/U deg --/D Fiducial Declination (J2000) 
     catalogidv05 bigint, --/D Unique identifier in the dr20_catalog table (corresponding to the v0.5 cross-matching run). 
-    rm_known_spec boolean, --/D Boolen flag indicating if the object belongs to the bhm_rm_known_spec carton 
-    rm_core boolean, --/D Boolean flag indicating if the object belongs to the bhm_rm_core carton 
-    rm_var boolean, --/D Boolean flag indicating if the object belongs to the bhm_rm_var carton 
-    rm_ancillary boolean, --/D Boolean flag indicating if the object belongs to the bhm_rm_ancillary carton 
-    mag_g real, --/U mag --/D PS1 g-band magnitude 
-    mag_r real, --/U mag --/D PS1 r-band magnitude 
-    mag_i real, --/U mag --/D PS1 i-band magnitude 
-    mag_z real, --/U mag --/D PS1 z-band magnitude 
+    rm_known_spec boolean, --/D Boolen flag indicating if the object could belong to the bhm_rm_known_spec carton 
+    rm_core boolean, --/D Boolean flag indicating if the object could belong to the bhm_rm_core carton 
+    rm_var boolean, --/D Boolean flag indicating if the object could belong to the bhm_rm_var carton 
+    rm_ancillary boolean, --/D Boolean flag indicating if the object could belong to the bhm_rm_ancillary carton 
+    mag_g real, --/U mag --/D g-band PSF magnitude, from various surveys 
+    mag_r real, --/U mag --/D r-band PSF magnitude, from various surveys 
+    mag_i real, --/U mag --/D i-band PSF magnitude, from various surveys 
+    mag_z real, --/U mag --/D z-band PSF magnitude, from various surveys 
     gaia_g real, --/U mag --/D Gaia G-band magnitude 
     gaia_bp real, --/U mag --/D Gaia BP-band magnitude 
     gaia_rp real, --/U mag --/D Gaia RP-band magnitude 
@@ -1582,7 +1590,7 @@ CREATE TABLE minidb_dr20.dr20_bhm_rm_v1_1 (
     gaia_dr3_source_id bigint, --/D Gaia DR3 source ID 
     panstarrs1_catid_objid bigint, --/D Pan-STARRS1 DR1 StackObjectThin unique object identifier 
     rm_unsuitable boolean, --/D Whether the entry is consider unsuitable as a RM target 
-    rm_xrayqso integer, --/D Whether to include the target in the bhm_rm_xrayqso carton 
+    rm_xrayqso integer, --/D Boolean flag indicating if the object could belong to the bhm_rm_xrayqso carton 
     pkey bigint NOT NULL --/D Primary key identifier for this table row 
 );
 
@@ -1595,13 +1603,13 @@ ALTER TABLE minidb_dr20.dr20_bhm_rm_v1_1 OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_bhm_rm_v1_3 (
 ----------------------------------------------------------------------
---/H arent sample for the RM project.
+--/H Parent sample for the BHM Reverberation Mapping project.
 --/T Used to select confirmed and candidate quasar targets for the BHM-RM Program in
 --/T SDSS-V. For more details please see Yang and Shen, (2022,
 --/T https://ui.adsabs.harvard.edu/abs/2022arXiv220608989Y/abstract). <br>
 --/T This table contains all photometric objects detected in the COSMOS, SDSS-RM,
---/T XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields., within a circular area of 10
---/T degree^2 from the field center. <br>
+--/T XMM-LSS, CDFS, S-CVZ, and ELAIS-S1 fields, within a circular area of 10 degree^2
+--/T centered on the following Equatorial coordinates. <br>
 --/T Field center: Name     RA          DEC <br>
 --/T               XMM-LSS  02:22:50.00    -04:45:00.0 <br>
 --/T               CDFS     03:30:35.60    -28:06:00.0 <br>
@@ -1616,20 +1624,26 @@ CREATE TABLE minidb_dr20.dr20_bhm_rm_v1_3 (
 --/T Gaia: DR2, gaia_dr2.gaia_source, DR3, gaia_dr3.gaia_source <br>
 --/T Legacy Survey DR8 and DR10. <br>
 --/T Values are set to -9.0 or -9 if null. <br>
---/T The dr20_bhm_rm_v1_3 table corresponds to Version: v1, 07/31/2023
+--/T The dr20_bhm_rm_v1_3 table corresponds to Version: v1.3, 31/July/2023 <br>
+--/T The v1.3 version corrects a bug whereby a few handfuls of RM targets were
+--/T carrying incorrect legacy_survey_dr8/10 ls_ids, which were unlinkable to the
+--/T main catalogb.catalog crossmatch table (and so they were not entering the
+--/T relevant cartons). This was fixed by ensuring that only counterparts from the
+--/T the correct LegacySurvey sub-survey (north or south) were considered when
+--/T generating the input table.
 ----------------------------------------------------------------------
     rm_field_name character(8), --/D One of COSMOS, SDSS-RM, XMM-LSS, CDFS, S-CVZ, or ELAIS-S1 
     ra double precision, --/U deg --/D Fiducial Right Ascension (J2000) 
     "dec" double precision, --/U deg --/D Fiducial Declination (J2000) 
     catalogidv05 bigint, --/D Unique identifier in the dr20_catalog table (corresponding to the v0.5 cross-matching run). 
-    rm_known_spec boolean, --/D Boolen flag indicating if the object belongs to the bhm_rm_known_spec carton 
-    rm_core boolean, --/D Boolean flag indicating if the object belongs to the bhm_rm_core carton 
-    rm_var boolean, --/D Boolean flag indicating if the object belongs to the bhm_rm_var carton 
-    rm_ancillary boolean, --/D Boolean flag indicating if the object belongs to the bhm_rm_ancillary carton 
-    mag_g real, --/U mag --/D PS1 g-band magnitude 
-    mag_r real, --/U mag --/D PS1 r-band magnitude 
-    mag_i real, --/U mag --/D PS1 i-band magnitude 
-    mag_z real, --/U mag --/D PS1 z-band magnitude 
+    rm_known_spec boolean, --/D Boolen flag indicating if the object could belong to the bhm_rm_known_spec carton 
+    rm_core boolean, --/D Boolean flag indicating if the object could belong to the bhm_rm_core carton 
+    rm_var boolean, --/D Boolean flag indicating if the object could belong to the bhm_rm_var carton 
+    rm_ancillary boolean, --/D Boolean flag indicating if the object could belong to the bhm_rm_ancillary carton 
+    mag_g real, --/U mag --/D g-band PSF magnitude, from various surveys 
+    mag_r real, --/U mag --/D r-band PSF magnitude, from various surveys 
+    mag_i real, --/U mag --/D i-band PSF magnitude, from various surveys 
+    mag_z real, --/U mag --/D z-band PSF magnitude, from various surveys 
     gaia_g real, --/U mag --/D Gaia G-band magnitude 
     gaia_bp real, --/U mag --/D Gaia BP-band magnitude 
     gaia_rp real, --/U mag --/D Gaia RP-band magnitude 
@@ -1639,7 +1653,7 @@ CREATE TABLE minidb_dr20.dr20_bhm_rm_v1_3 (
     gaia_dr3_source_id bigint, --/D Gaia DR3 source ID 
     panstarrs1_catid_objid bigint, --/D Pan-STARRS1 DR1 StackObjectThin unique object identifier 
     rm_unsuitable boolean, --/D Whether the entry is consider unsuitable as a RM target 
-    rm_xrayqso integer, --/D Whether to include the target in the bhm_rm_xrayqso carton 
+    rm_xrayqso integer, --/D Boolean flag indicating if the object could belong to the bhm_rm_xrayqso carton 
     pkey bigint NOT NULL --/D Primary key identifier for this table row 
 );
 
@@ -1652,8 +1666,7 @@ ALTER TABLE minidb_dr20.dr20_bhm_rm_v1_3 OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_bhm_spiders_agn_superset (
 ----------------------------------------------------------------------
---/H One of several tables describing optical/IR counterparts to eROSITA
---/T X-ray sources identified via various methods. <br>
+--/H One of several tables describing optical/IR counterparts to eROSITA X-ray sources identified via various methods.
 --/T These tables contain a superset of potential targets from which the SDSS-V
 --/T spectroscopic targets were drawn.  The dr20_bhm_spiders_agn_superset table
 --/T includes is expected to be dominated by Active Galactic Nuclei (AGN) but should
@@ -1690,7 +1703,7 @@ CREATE TABLE minidb_dr20.dr20_bhm_spiders_agn_superset (
     ps1_dr2_objid bigint, --/D Identifier of counterpart (if any) in dr20_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier 
     gaia_dr2_source_id bigint, --/D Identifier of counterpart (if any) in dr20_gaia_dr2_source ('source_id' field) 
     unwise_dr1_objid text, --/D Identifier of counterpart (if any) in dr20_unwise (not used) 
-    des_dr1_coadd_object_id bigint, --/D Identifier of counterpart (if any) in DES/dr1 coadd catalogg (not used) 
+    des_dr1_coadd_object_id bigint, --/D Identifier of counterpart (if any) in DES/dr1 coadd catalog (not used) 
     sdss_dr16_objid bigint, --/D Identifier of counterpart (if any) in SDSS dr16 photobj table (not used) 
     opt_ra double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_dec double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
@@ -1716,8 +1729,7 @@ ALTER TABLE minidb_dr20.dr20_bhm_spiders_agn_superset OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_bhm_spiders_clusters_superset (
 ----------------------------------------------------------------------
---/H One of several tables describing optical/IR counterparts to eROSITA
---/T X-ray sources identified via various methods. <br>
+--/H One of several tables describing optical/IR counterparts to eROSITA X-ray sources identified via various methods.
 --/T These tables contain a superset of potential targets from which the SDSS-V
 --/T spectroscopic targets were drawn.  The dr20_bhm_spiders_clusters_superset table
 --/T includes counterparts selected via algorithms optimised to find clusters of
@@ -1753,7 +1765,7 @@ CREATE TABLE minidb_dr20.dr20_bhm_spiders_clusters_superset (
     ps1_dr2_objid bigint, --/D Identifier of counterpart (if any) in dr20_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier 
     gaia_dr2_source_id bigint, --/D Identifier of counterpart (if any) in dr20_gaia_dr2_source ('source_id' field) 
     unwise_dr1_objid text, --/D Identifier of counterpart (if any) in dr20_unwise (not used) 
-    des_dr1_coadd_object_id bigint, --/D Identifier of counterpart (if any) in DES/dr1 coadd catalogg (not used) 
+    des_dr1_coadd_object_id bigint, --/D Identifier of counterpart (if any) in DES/dr1 coadd catalog (not used) 
     sdss_dr16_objid bigint, --/D Identifier of counterpart (if any) in SDSS dr16 photobj table (not used) 
     opt_ra double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_dec double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
@@ -2011,10 +2023,15 @@ ALTER TABLE minidb_dr20.dr20_catalog OWNER TO postgres;
 CREATE TABLE minidb_dr20.dr20_catalog_from_sdss_dr19p_speclite (
 ----------------------------------------------------------------------
 --/H Relational table linking dr20_catalog with dr20_sdss_dr19p_speclite.
---/T Although this table has the same columns and purpose of other "catalog_to_X"
---/T tables in this schema, it is explicitly named "catalog_from" as it was generated
---/T using a bespoke cross-match different from the usual process used for other
---/T cross-matched tables in DR20.
+--/T The sdss_dr19p_speclite table is a particularly degenerate example of a table
+--/T containing multiple rows per astrophysical object - some objects are associated
+--/T with several tens of spectroscopic observations, and so we handle the linking to
+--/T the dr20_catalog table via a non-standard method. Although this table has the
+--/T same columns and purpose of other "catalog_to_X" tables in this schema, it is
+--/T explicitly named "catalog_from" as it was generated using a bespoke cross-match
+--/T different from the usual process used for other cross-matched tables in DR20.
+--/T This table contains exactly one entry for each dr20_sdss_dr19p_speclite entry -
+--/T multiple target_ids can be associated with a single catalogid.
 ----------------------------------------------------------------------
     catalogid bigint, --/D The catalogid identifier in the dr20_catalog table. 
     target_id bigint, --/D The primary key identifier in the dr20_sdss_dr19p_speclite table. 
@@ -3119,7 +3136,7 @@ ALTER TABLE minidb_dr20.dr20_design_to_field OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_ebosstarget_v5 (
 ----------------------------------------------------------------------
---/H A catalog of targets, selected from SDSS+WISE imaging that were considered for observation in the SDSS-IV/eBOSS project, including spectrophotometric starts and candidate QSOs.
+--/H A catalog of targets, selected from SDSS+WISE imaging that were considered for observation in the SDSS-IV/eBOSS project, including spectrophotometric stars and candidate QSOs.
 --/T  This catalogue is a data product of the ebosstarget target selection software,
 --/T version "v5_0".
 ----------------------------------------------------------------------
@@ -3233,8 +3250,7 @@ ALTER TABLE minidb_dr20.dr20_ebosstarget_v5 OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_erosita_superset_agn (
 ----------------------------------------------------------------------
---/H One of several tables describing optical/IR counterparts to eROSITA
---/T X-ray sources identified via various methods. <br>
+--/H One of several tables describing optical/IR counterparts to eROSITA X-ray sources identified via various methods.
 --/T These tables contain a superset of potential targets from which the SDSS-V
 --/T spectroscopic targets were drawn.  The dr20_erosita_superset_agn table includes
 --/T counterparts to point-like X-ray sources. The sample is expected to be dominated
@@ -3244,9 +3260,9 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_agn (
 --/T The X-ray columns (ero_*) record the eROSITA information known at the time of
 --/T target selection and may differ from publicly available eROSITA catalogs. The
 --/T dr20_erosita_superset_* tables are derived from a combination of eROSITA's first
---/T 6-month survey of of the West Galactic hemisphere ('eRASS1'), and from the
---/T eROSITA observations of the eROSITA Final Equatorial Depth performance
---/T verification field ('eFEDS').
+--/T 6-month survey of the West Galactic hemisphere ('eRASS1'), and from the eROSITA
+--/T observations of the eROSITA Final Equatorial Depth performance verification
+--/T field ('eFEDS').
 ----------------------------------------------------------------------
     ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
     ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
@@ -3300,9 +3316,9 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_clusters (
 --/T counterpart.  The X-ray columns (ero_*) record the eROSITA information known at
 --/T the time of target selection and may differ from publicly available eROSITA
 --/T catalogs. The dr20_erosita_superset_* tables are derived from a combination of
---/T eROSITA's first 6-month survey of of the West Galactic hemisphere ('eRASS1'),
---/T and from the eROSITA observations of the eROSITA Final Equatorial Depth
---/T performance verification field ('eFEDS').
+--/T eROSITA's first 6-month survey of the West Galactic hemisphere ('eRASS1'), and
+--/T from the eROSITA observations of the eROSITA Final Equatorial Depth performance
+--/T verification field ('eFEDS').
 ----------------------------------------------------------------------
     ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
     ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
@@ -3321,7 +3337,7 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_clusters (
     target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority 
     target_has_spec bigint, --/D Flags used to indicate if target has good quality archival spectroscopy available 
     opt_cat character(12), --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns 
-    ls_id bigint, --/D Identifier of counterpart (if any) in dr20_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40) 
+    ls_id bigint, --/D Identifier of counterpart (if any) in dr20_legacy_survey_dr10 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40) 
     ps1_dr2_id bigint, --/D Identifier of counterpart (if any) in dr20_panstarrs1 (catid_objid field). Identical to MAST 'ippObjID' identifier 
     gaia_dr2_id bigint, --/D Identifier of counterpart (if any) in dr20_gaia_dr2_source ('source_id' field) 
     catwise2020_id character(25), --/D Identifier of counterpart (if any) in dr20_catwise2020 ('source_id' field) 
@@ -3355,9 +3371,9 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_compactobjects (
 --/T X-ray source and a potential optical/IR counterpart. The X-ray columns (ero_*)
 --/T record the eROSITA information known at the time of target selection and may
 --/T differ from publicly available eROSITA catalogs. The dr20_erosita_superset_*
---/T tables are derived from a combination of eROSITA's first 6-month survey of of
---/T the West Galactic hemisphere ('eRASS1'), and from the eROSITA observations of
---/T the eROSITA Final Equatorial Depth performance verification field ('eFEDS').
+--/T tables are derived from a combination of eROSITA's first 6-month survey of the
+--/T West Galactic hemisphere ('eRASS1'), and from the eROSITA observations of the
+--/T eROSITA Final Equatorial Depth performance verification field ('eFEDS').
 ----------------------------------------------------------------------
     ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
     ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
@@ -3411,9 +3427,9 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_stars (
 --/T columns (ero_*) record the eROSITA information known at the time of target
 --/T selection and may differ from publicly available eROSITA catalogs. The
 --/T dr20_erosita_superset_* tables are derived from a combination of eROSITA's first
---/T 6-month survey of of the West Galactic hemisphere ('eRASS1'), and from the
---/T eROSITA observations of the eROSITA Final Equatorial Depth performance
---/T verification field ('eFEDS').
+--/T 6-month survey of the West Galactic hemisphere ('eRASS1'), and from the eROSITA
+--/T observations of the eROSITA Final Equatorial Depth performance verification
+--/T field ('eFEDS').
 ----------------------------------------------------------------------
     ero_version character(24), --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
     ero_detuid character(32), --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
@@ -3457,8 +3473,7 @@ ALTER TABLE minidb_dr20.dr20_erosita_superset_stars OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_erosita_superset_v1_agn (
 ----------------------------------------------------------------------
---/H One of several tables describing optical/IR counterparts to eROSITA
---/T X-ray sources identified via various methods. <br>
+--/H One of several tables describing optical/IR counterparts to eROSITA X-ray sources identified via various methods.
 --/T These tables contain a superset of potential targets from which the SDSS-V
 --/T spectroscopic targets were drawn.  The dr20_erosita_superset_v1_agn table
 --/T includes counterparts to point-like X-ray sources. The sample is expected to be
@@ -3467,10 +3482,12 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_v1_agn (
 --/T one possible match between an X-ray source and a potential optical/IR
 --/T counterpart.  The X-ray columns (ero_*) record the eROSITA information known at
 --/T the time of target selection and may differ from publicly available eROSITA
---/T catalogs. The dr20_erosita_superset_v1* tables are derived from a combination of
---/T eROSITA's first 6-month survey of of the West Galactic hemisphere ('eRASS1'),
---/T and from the eROSITA observations of the eROSITA Final Equatorial Depth
---/T performance verification field ('eFEDS').
+--/T catalogs. The dr20_erosita_superset_v1_agn table is derived from several eROSITA
+--/T catalogs, including eROSITA's first 1.5 year survey of the West Galactic
+--/T hemisphere ('eRASS:3'), special reductions of 2.3 years observations in the
+--/T South Ecliptic Pole field, as well as sources selected because of their hard-
+--/T band (2.3-5keV) X-ray emission or their X-ray variability between independent
+--/T eROSITA observations.
 ----------------------------------------------------------------------
     ero_version text, --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
     ero_detuid text, --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
@@ -3479,7 +3496,7 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_v1_agn (
     ero_mjd text, --/D This column is empty 
     ero_morph text, --/D Morphological classification of X-ray source, e.g. 'pointlike', 'extended', 'unknown', ... 
     ero_flags bigint, --/D Flags indicating properties of the X-ray detection 
-    ero_det_like real, --/U % --/D Detection likelihood of X-ray source 
+    ero_det_like real, --/D Detection likelihood of X-ray source 
     ero_ra double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_dec double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_radec_err real, --/U arcsec --/D Best estimate of X-ray position uncertainty 
@@ -3492,7 +3509,7 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_v1_agn (
     target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority 
     target_has_spec bigint, --/D Flags used to indicate if target has good quality archival spectroscopy available 
     opt_cat text, --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns 
-    ls_id bigint, --/D Identifier of counterpart (if any) in dr20_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40) 
+    ls_id bigint, --/D Identifier of counterpart (if any) in dr20_legacy_survey_dr10 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**22) + (release * 2**42) 
     gaia_dr3_source_id bigint, --/D Identifier of counterpart (if any) in dr20_gaia_dr3_source ('source_id' field) 
     opt_ra double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_dec double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
@@ -3520,10 +3537,8 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_v1_clusters (
 --/T one possible match between an X-ray source and a potential optical/IR
 --/T counterpart.  The X-ray columns (ero_*) record the eROSITA information known at
 --/T the time of target selection and may differ from publicly available eROSITA
---/T catalogs. The dr20_erosita_superset_v1* tables are derived from a combination of
---/T eROSITA's first 6-month survey of of the West Galactic hemisphere ('eRASS1'),
---/T and from the eROSITA observations of the eROSITA Final Equatorial Depth
---/T performance verification field ('eFEDS').
+--/T catalogs. The dr20_erosita_superset_v1_clusters table is derived from eROSITA's
+--/T first 2.0 year survey of the West Galactic hemisphere ('eRASS:4').
 ----------------------------------------------------------------------
     ero_version text, --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
     ero_detuid text, --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
@@ -3532,7 +3547,7 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_v1_clusters (
     ero_mjd text, --/D This column is empty 
     ero_morph text, --/D Morphological classification of X-ray source, e.g. 'pointlike', 'extended', 'unknown', ... 
     ero_flags bigint, --/D Flags indicating properties of the X-ray detection 
-    ero_det_like real, --/U % --/D Detection likelihood of X-ray source 
+    ero_det_like real, --/D Detection likelihood of X-ray source 
     ero_ra double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_dec double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_radec_err real, --/U arcsec --/D Best estimate of X-ray position uncertainty 
@@ -3545,7 +3560,7 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_v1_clusters (
     target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority 
     target_has_spec bigint, --/D Flags used to indicate if target has good quality archival spectroscopy available 
     opt_cat text, --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns 
-    ls_id bigint, --/D Identifier of counterpart (if any) in dr20_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40) 
+    ls_id bigint, --/D Identifier of counterpart (if any) in dr20_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**22) + (release * 2**42) 
     gaia_dr3_source_id bigint, --/D Identifier of counterpart (if any) in dr20_gaia_dr3_source ('source_id' field) 
     opt_ra double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_dec double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
@@ -3575,10 +3590,8 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_v1_compactobjects (
 --/T between an X-ray source and a potential optical/IR counterpart. The X-ray
 --/T columns (ero_*) record the eROSITA information known at the time of target
 --/T selection and may differ from publicly available eROSITA catalogs. The
---/T dr20_erosita_superset_v1* tables are derived from a combination of eROSITA's
---/T first 6-month survey of of the West Galactic hemisphere ('eRASS1'), and from the
---/T eROSITA observations of the eROSITA Final Equatorial Depth performance
---/T verification field ('eFEDS').
+--/T dr20_erosita_superset_v1_compactobjects table is derived from eROSITA's first
+--/T 1.5 year survey of the West Galactic hemisphere ('eRASS:3').
 ----------------------------------------------------------------------
     ero_version text, --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
     ero_detuid text, --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
@@ -3587,7 +3600,7 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_v1_compactobjects (
     ero_mjd text, --/D This column is empty 
     ero_morph text, --/D Morphological classification of X-ray source, e.g. 'pointlike', 'extended', 'unknown', ... 
     ero_flags bigint, --/D Flags indicating properties of the X-ray detection 
-    ero_det_like real, --/U % --/D Detection likelihood of X-ray source 
+    ero_det_like real, --/D Detection likelihood of X-ray source 
     ero_ra double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_dec double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_radec_err real, --/U arcsec --/D Best estimate of X-ray position uncertainty 
@@ -3600,7 +3613,7 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_v1_compactobjects (
     target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority 
     target_has_spec bigint, --/D Flags used to indicate if target has good quality archival spectroscopy available 
     opt_cat text, --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns 
-    ls_id bigint, --/D Identifier of counterpart (if any) in dr20_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40) 
+    ls_id bigint, --/D Identifier of counterpart (if any) in dr20_legacy_survey_dr10 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**22) + (release * 2**42) 
     gaia_dr3_source_id bigint, --/D Identifier of counterpart (if any) in dr20_gaia_dr3_source ('source_id' field) 
     opt_ra double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_dec double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
@@ -3628,10 +3641,8 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_v1_stars (
 --/T match between an X-ray source and a potential optical/IR counterpart. The X-ray
 --/T columns (ero_*) record the eROSITA information known at the time of target
 --/T selection and may differ from publicly available eROSITA catalogs. The
---/T dr20_erosita_superset_v1* tables are derived from a combination of eROSITA's
---/T first 6-month survey of of the West Galactic hemisphere ('eRASS1'), and from the
---/T eROSITA observations of the eROSITA Final Equatorial Depth performance
---/T verification field ('eFEDS').
+--/T dr20_erosita_superset_v1_stars table is derived from eROSITA's first 1.5 year
+--/T survey of the West Galactic hemisphere ('eRASS:3').
 ----------------------------------------------------------------------
     ero_version text, --/D Identifier giving the eROSITA dataset and processing version e.g. 'eFEDS_c940', 'em01_c946_201008_poscorr' etc 
     ero_detuid text, --/D The standard official eROSITA unique detection identifier, e.g. 'em01_123456_020_ML12345_001_c946' etc 
@@ -3640,7 +3651,7 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_v1_stars (
     ero_mjd text, --/D This column is empty 
     ero_morph text, --/D Morphological classification of X-ray source, e.g. 'pointlike', 'extended', 'unknown', ... 
     ero_flags bigint, --/D Flags indicating properties of the X-ray detection 
-    ero_det_like real, --/U % --/D Detection likelihood of X-ray source 
+    ero_det_like real, --/D Detection likelihood of X-ray source 
     ero_ra double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_dec double precision, --/U deg --/D Best determination of X-ray position (J2000) 
     ero_radec_err real, --/U arcsec --/D Best estimate of X-ray position uncertainty 
@@ -3653,7 +3664,7 @@ CREATE TABLE minidb_dr20.dr20_erosita_superset_v1_stars (
     target_priority integer, --/D Relative to other targets in this catalog, interpreted/adapted later to derive a final target priority 
     target_has_spec bigint, --/D Flags used to indicate if target has good quality archival spectroscopy available 
     opt_cat text, --/D Describes which OIR survey provided the optical counterpart for this row of the table, i.e. which OIR cat gives the entries in fields opt_ra, opt_dec, opt_pmra, opt_pmdec, opt_epoch, and which OIR identifier is given in the *_id columns 
-    ls_id bigint, --/D Identifier of counterpart (if any) in dr20_legacy_survey_dr8 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**16) + (release * 2**40) 
+    ls_id bigint, --/D Identifier of counterpart (if any) in dr20_legacy_survey_dr10 ('ls_id' field). Arithmetically derived from legacysurvey sweep file columns: release, brickid and objid:  ls_id = objid + (brickid * 2**22) + (release * 2**42) 
     gaia_dr3_source_id bigint, --/D Identifier of counterpart (if any) in dr20_gaia_dr3_source ('source_id' field) 
     opt_ra double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
     opt_dec double precision, --/U deg --/D Sky coordinate of optical/IR counterpart, included for validity checks only 
@@ -5644,17 +5655,25 @@ ALTER TABLE minidb_dr20.dr20_legacy_catalog_catalogid OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_legacy_survey_dr10 (
 ----------------------------------------------------------------------
---/H Legacy Survey DR80 catalogue derived from 'sweep' catalogues.
---/T For more information see <a
---/T href="https://www.legacysurvey.org/dr8/">https://www.legacysurvey.org/dr10/</a>.
+--/H LegacySurvey DR10 catalog derived from 'sweep' catalog files, supplemented with LegacySurvey DR9 North catalog entries (mostly Dec>+32.375 deg).
+--/T DR9 entries had a slightly different native datamodel, and so have been
+--/T transformed into the DR10 format (padded with null values where necessary). Note
+--/T that Gaia information for LegacySurvey DR9 entries is based on Gaia DR2 (vs Gaia
+--/T EDR3 for DR10 entries). <br>
+--/T Note that (due to schedule pressures) the version of LegacySurvey DR10 catalog
+--/T loaded into the SDSS catalogdb is a pre-release version (Aug 2022) which differs
+--/T slightly (over a few tens of 0.25x0.25 deg 'bricks') from the official DR10 that
+--/T was released by the LegacySurvey team. For more general information about
+--/T LegacySurvey data products see <a href="https://www.legacysurvey.org/dr10/">http
+--/T s://www.legacysurvey.org/dr10/</a>.
 ----------------------------------------------------------------------
-    release smallint, --/D Integer denoting the camera and filter set used 
-    brickid integer, --/D Brick ID 
-    brickname text, --/D Name of brick encoding the sky position 
-    objid integer, --/D Catalog object number within this brick 
-    type text, --/D Morphological model (PSF, REX, DEV, EXP, SER, DUP) 
-    ra double precision, --/U deg --/D Right ascension at equinox J2000 
-    "dec" double precision, --/U deg --/D Declination at equinox J2000 
+    release smallint, --/D Unique integer denoting the camera and filter set used (RELEASE documentation: https://www.legacysurvey.org/release/) 
+    brickid integer, --/D A unique Brick ID (in the range 1-662174) 
+    brickname text, --/D Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2 
+    objid integer, --/D Catalog object number within this brick; a unique identifier hash is RELEASE,BRICKID,OBJID; OBJID spans 0 to N-1 and is contiguously enumerated within each blob 
+    type text, --/D Morphological model: "PSF"=stellar, "REX"="round exponential galaxy" = round EXP galaxy with a variable radius, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite, "DUP"==Gaia source fit by different model. Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string 
+    ra double precision, --/U ICRS, deg --/D Right ascension 
+    "dec" double precision, --/U ICRS, deg --/D Declination 
     ra_ivar real, --/U 1/deg^2 --/D Inverse variance of RA (no cosine term), excluding astrometric calibration errors 
     dec_ivar real, --/U 1/deg^2 --/D Inverse variance of DEC, excluding astrometric calibration errors 
     ebv real, --/U mag --/D Galactic extinction E(B-V) reddening from SFD98 
@@ -5756,17 +5775,17 @@ CREATE TABLE minidb_dr20.dr20_legacy_survey_dr10 (
     ref_cat text, --/D Reference catalog source for this object 
     ref_id bigint, --/D Reference catalog identifier 
     ref_epoch real, --/U yr --/D Reference catalog epoch 
-    gaia_phot_g_mean_mag real, --/U mag --/D Gaia EDR3 G-band magnitude 
-    gaia_phot_g_mean_flux_over_error real, --/D Gaia EDR3 G-band signal-to-noise 
-    gaia_phot_bp_mean_mag real, --/U mag --/D Gaia EDR3 BP magnitude 
-    gaia_phot_bp_mean_flux_over_error real, --/D Gaia EDR3 BP signal-to-noise 
-    gaia_phot_rp_mean_mag real, --/U mag --/D Gaia EDR3 RP magnitude 
-    gaia_phot_rp_mean_flux_over_error real, --/D Gaia EDR3 RP signal-to-noise 
-    gaia_astrometric_excess_noise real, --/D Gaia EDR3 astrometric excess noise 
-    gaia_duplicated_source boolean, --/D Gaia EDR3 duplicated source flag 
-    gaia_phot_bp_rp_excess_factor real, --/D Gaia EDR3 BP/RP excess factor 
-    gaia_astrometric_sigma5d_max real, --/U mas --/D Gaia EDR3 longest semi-major axis of the 5D error ellipsoid 
-    gaia_astrometric_params_solved smallint, --/D Gaia EDR3 astrometric-parameter solution flag 
+    gaia_phot_g_mean_mag real, --/U mag --/D Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) G-band magnitude 
+    gaia_phot_g_mean_flux_over_error real, --/D Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) G-band signal-to-noise 
+    gaia_phot_bp_mean_mag real, --/U mag --/D Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) BP magnitude 
+    gaia_phot_bp_mean_flux_over_error real, --/D Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) BP signal-to-noise 
+    gaia_phot_rp_mean_mag real, --/U mag --/D Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) RP magnitude 
+    gaia_phot_rp_mean_flux_over_error real, --/D Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) RP signal-to-noise 
+    gaia_astrometric_excess_noise real, --/D Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) astrometric excess noise 
+    gaia_duplicated_source boolean, --/D Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) duplicated source flag 
+    gaia_phot_bp_rp_excess_factor real, --/D Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) BP/RP excess factor 
+    gaia_astrometric_sigma5d_max real, --/U mas --/D Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) longest semi-major axis of the 5D error ellipsoid 
+    gaia_astrometric_params_solved smallint, --/D Gaia EDR3 (Gaia DR2 for LegacySurvey DR9 entries) astrometric-parameter solution flag 
     parallax real, --/U mas --/D Reference catalog parallax 
     parallax_ivar real, --/U 1/mas^2 --/D Inverse variance on parallax 
     pmra real, --/U mas/yr --/D Reference catalog proper motion in RA 
@@ -5778,9 +5797,9 @@ CREATE TABLE minidb_dr20.dr20_legacy_survey_dr10 (
     sersic real, --/D Sersic profile index for type SER 
     sersic_ivar real, --/D Inverse variance of sersic 
     survey_primary boolean, --/D True if object is in the primary survey footprint for unique-object selection 
-    ls_id bigint NOT NULL, --/D SDSS-V Legacy Survey unique object identifier 
-    gaia_dr2_source_id bigint, --/D Gaia DR2 source identifier 
-    gaia_dr3_source_id bigint --/D Gaia DR3 source identifier 
+    ls_id bigint NOT NULL, --/D SDSS-V Legacy Survey unique object identifier (computed internally from release, brickid, objid. ls_id = release << 42 + brickid << 22 + objid) 
+    gaia_dr2_source_id bigint, --/D Gaia DR2 source identifier (DR9 entries only) 
+    gaia_dr3_source_id bigint --/D Gaia EDR3 source identifier (DR10 entries only) 
 );
 
 
@@ -5792,7 +5811,7 @@ ALTER TABLE minidb_dr20.dr20_legacy_survey_dr10 OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_legacy_survey_dr8 (
 ----------------------------------------------------------------------
---/H Legacy Survey DR8 catalogue derived from 'sweep' catalogues.
+--/H LegacySurvey DR8 catalog derived from 'sweep' catalog files.
 --/T For more information see <a
 --/T href="https://www.legacysurvey.org/dr8/">https://www.legacysurvey.org/dr8/</a>.
 ----------------------------------------------------------------------
@@ -5801,8 +5820,8 @@ CREATE TABLE minidb_dr20.dr20_legacy_survey_dr8 (
     brickname text, --/D Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2 
     objid bigint, --/D Catalog object number within this brick; a unique identifier hash is RELEASE,BRICKID,OBJID; OBJID spans 0 to N-1 and is contiguously enumerated within each blob 
     type text, --/D Morphological model: "PSF"=stellar, "REX"="round exponential galaxy" = round EXP galaxy with a variable radius, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite, "DUP"==Gaia source fit by different model. Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string 
-    ra double precision, --/U deg --/D Right ascension at equinox J2000 
-    "dec" double precision, --/U deg --/D Declination at equinox J2000 
+    ra double precision, --/U ICRS, deg --/D Right ascension 
+    "dec" double precision, --/U ICRS, deg --/D Declination 
     ra_ivar real, --/U 1/deg^2 --/D Inverse variance of RA (no cosine term!), excluding astrometric calibration errors 
     dec_ivar real, --/U 1/deg^2 --/D Inverse variance of DEC, excluding astrometric calibration errors 
     dchisq_psf real, --/D Difference in chi2 between successively more-complex model fits: PSF. The difference is versus no source. 
@@ -8051,10 +8070,14 @@ ALTER TABLE minidb_dr20.dr20_rave_dr6_xgaiae3 OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_revised_magnitude (
 ----------------------------------------------------------------------
---/H This table stores magnitude information for a target. Optical magnitudes that are not selected from SDSS photometry have been converted to the SDSS system.
---/T Entries in this revised_magnitude table only exist if there was an issue with
---/T the values in the original magnitude table. Therefore: if a carton_to_target_pk
---/T exists in this table, the values in this table should be used instead.
+--/H This table stores refined optical magnitude information for selected targets. Optical magnitudes that are not selected from SDSS photometry have been converted to the SDSS system.
+--/T Entries in this revised_magnitude table exist if either i) there was some
+--/T fixable problem with the magnitudes loaded into the original dr20_magnitude
+--/T table, or ii) better data and/or refined methods have been used to improve the
+--/T accuracy/precision of photometry (particularly useful for BOSS
+--/T spectrophotometric standards). Therefore, if a carton_to_target_pk exists in the
+--/T dr20_revised_magnitude table, then the magnitudes therein should be used in
+--/T preference to those from dr20_magnitude.
 ----------------------------------------------------------------------
     carton_to_target_pk bigint, --/D The primary key of the target in the dr20_carton_to_target table. 
     revised_magnitude_pk bigint NOT NULL, --/D The primary key of the revised magnitude entry. 
@@ -8068,7 +8091,7 @@ CREATE TABLE minidb_dr20.dr20_revised_magnitude (
     j real, --/U mag --/D The IR J magnitude, Vega. 
     k real, --/U mag --/D The IR K magnitude, Vega. 
     gaia_g real, --/U mag --/D The Gaia G magnitude, Vega. 
-    optical_prov text --/D The providence/origin of the optical magnitudes. 
+    optical_prov text --/D The providence/origin of the optical magnitudes, also describes the type of magnitude (psf, fiber etc). 
 );
 
 
@@ -8426,13 +8449,15 @@ ALTER TABLE minidb_dr20.dr20_sdss_dr16_qso OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_sdss_dr16_specobj (
 ----------------------------------------------------------------------
---/H This table contains the list of all SDSS optical spectra for a given data release, with associated parameters from the 2D and 1D pipelines for each.
+--/H This table contains the list of all SDSS optical spectra for a given data release (dr16), with associated parameters from the 2D and 1D pipelines for each.
 --/T The table contains both the BOSS and SDSS spectrograph data. The database
 --/T representation is derived from the flat file information described here: <a href
 --/T ="https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html">https://data
 --/T .sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html</a> Note: the order of the
 --/T columns in this documentation may not match the order of the columns in the
---/T database table.
+--/T database table. Any array columns in the original catalog have been expanded
+--/T into a set of scalar columns, with the array index indicated via a numeric
+--/T suffix.
 ----------------------------------------------------------------------
     specobjid numeric(20,0) NOT NULL, --/D Unique database ID based on PLATE, MJD, FIBERID, RUN2D (same as SkyServer version) 
     bestobjid bigint, --/D Unique database ID of (recommended) position-based photometric match based on RUN, RERUN, CAMCOl, FIELD, ID (same as SkyServer version) 
@@ -8916,7 +8941,15 @@ ALTER TABLE minidb_dr20.dr20_sdss_dr17_specobj OWNER TO postgres;
 
 CREATE TABLE minidb_dr20.dr20_sdss_dr19p_speclite (
 ----------------------------------------------------------------------
---/H Selection of columns from the SDSS DR19 specLite file.
+--/H In earlier BHM target selection, the process of determining which potential targets had previously been observed with good quality SDSS optical spectroscopy had become quite cumbersome, involving complex database joins and filtering logic. In an effort to simplify this process for the cartons released as part of DR20, we have created a new catalog table, dr20_sdss_dr19p_speclite, which documents all SDSS optical spectroscopic observations carried out until June 2021 (i.e., up to the end of plug plate observations at APO, and before the start of FPS operations). This table combines information from the final specObj-dr17.fits file released at the end of SDSS-IV (supplemented with PLATE-MJD = 10658--58439 from DR16), the catalog of stacked spectra in the eFEDS field (eFEDS/spAll-v6_0_4-eFEDS.fits released as part of DR18), plus a catalog based on early reductions of of all year-1 SDSS-V optical plate-based observations (eFEDS/spAll-v6_0_4.fits, released later via an updated pipeline as part of DR19).
+--/T In cases where a single astrophysical object had been observed multiple times,
+--/T we selected the 'best' spectrum per object via a heuristic algorithm based on
+--/T SNR, redshift warnings and plate quality. The dr20_sdss_dr19p_speclite table was
+--/T connected to the dr20_catalog cross-match table in a non-standard way,
+--/T reflecting its most common use as a veto table rather than as a parent catalog
+--/T from which targets could be selected. This results in the
+--/T dr20_catalog_from_sdss_dr19p_speclite table, in which we have exactly one entry
+--/T per spectrum listed in dr20_sdss_dr19p_speclite.
 ----------------------------------------------------------------------
     plate integer, --/D Plate number (each plate corresponds to an actual plug plate) 
     mjd integer, --/U day --/D Modified Julian Day of observation 
@@ -10100,11 +10133,13 @@ CREATE TABLE minidb_dr20.dr20_targeting_generation (
 --/T The dr20_targeting_generation table contains all targeting_generations that were
 --/T considered for observations in the timespan covered by the dr20 data release. In
 --/T addition, we include the 'v0.5.3' targeting_generation since this was the
---/T version released as part of dr20. <br>
+--/T version released as part of dr18. <br>
 --/T During the initial plate operations phase of SDSS-V, we did not use the
 --/T robostrategy code to assign fibers to targets. However, for completeness, the
 --/T 'v0.plates' pseudo-targeting_generation has been reverse engineered in order to
---/T describe the set of carton-versions that were considered during that phase. <br>
+--/T describe the set of carton-versions that were considered during that phase. An
+--/T additional pseudo targeting generation ('dr20.manual') contains a few cartons
+--/T that have been to create manual (i.e. non-robostrategy) designs. <br>
 --/T The dr20_targeting_generation table can be joined to the dr20_carton table via
 --/T the dr20_targeting_generation_to_carton table. To associate a
 --/T targeting_generation with a robostrategy plan, join dr20_targeting_generation to
